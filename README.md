@@ -1,10 +1,17 @@
-# CQ2Onto: A benchmark for assessing the LLM-assisted ontology generation from competency questions
-[![DOI](https://zenodo.org/badge/20080308.svg)](https://doi.org/10.5281/zenodo.20080308)
+# CQ4OE: A benchmark for assessing the LLM-assisted ontology generation from competency questions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20080309.svg)](https://doi.org/10.5281/zenodo.20080309)
 
 This repository contains a benchmark for assessing the performance of different LLM-based ontology generation methods from competency questions. The benchmark is built on six domain experts annotated ontologies that are exact mirroring the corresponding competency questions. 
 
-**CQ2Onto:** Given a set of competency questions in any domain, processing by LLM-based ontology generation method, producing a full OWL ontology.
+The gold standards for both tasks and entire annotation process are also published as a dataset on HuggingFace: [oeg/CQ4OE](https://huggingface.co/datasets/oeg/CQ2Onto);
+
+**Task 1: [CQ2Term](https://w3id.org/cq4oe/task/CQ2Term)** Given a competency question, the LLM-based method aims to extract the classes and properties required to answer it.
+ 
+**Task 2: [CQ2Onto](https://w3id.org/cq4oe/task/CQ2Onto)** Given a set of competency questions in any domain, processing by LLM-based ontology generation method, producing a full OWL ontology.
+
+
+
 
 **Annotated Ontologies**:
 - [Wine](https://github.com/UCDavisLibrary/wine-ontology): Wine Ontology
@@ -67,17 +74,11 @@ We have selected six ontologies in three diferent scales:
 | VGO      | large  | 68  | 30  | 1 | 31 | 22 |
 | SWO      | large  | 88  | 35  | 0 | 35 | 26 |
 
-## LLM-assiat ontology generation
+## LLM Usage:
 
-### Generation Methods
+This repository evaluates LLM-based methods for two tasks: CQ2Onto (full-ontology generation) and CQ2Term (term-level generation), with the selection of baseline LLMs.
 
-This repository evaluates three different LLM-assiat ontology generation methods.
-
-- **normal**: Give the model all the CQs and ask for the OWL ontology in one shot.
-- [Cq-by-Cq Generation](https://github.com/LiUSemWeb/LLMs4OntologyDev-ESWC2024): generate a partial ontology per CQ and merge them. Slower but the model has to think about each question individually.
-- [MASEO](https://github.com/oeg-upm/maseo): Multi-Agent System for Explainable Ontology Generation
-
-### Baseline LLMs
+### Baseline LLMs Selection
 
 - **Qwen-3.6 Series**: 
   - **Qwen-3.6-27B**: Open-source dense 27B parameter model
@@ -91,7 +92,21 @@ This repository evaluates three different LLM-assiat ontology generation methods
   - **Deepseek-V3.2-671B**: The previous-generation flagship, Mixture-of-Experts  model from Deepseek.
   - **Deepseek-V4-flash-284B**: Efficient Mixture-of-Experts model with 13B activate parameter
   - **Deepseek-V4-1.6T**: Flagship Mixture-of-Experts model with 49B activate parameter, 1M context window.
-  
+
+### CQ2Onto
+ 
+This repository evaluates three different LLM-assiat ontology generation methods.:
+ 
+- **normal**: Give the model all the CQs and ask for the OWL ontology in one shot.
+- [Cq-by-Cq Generation](https://github.com/LiUSemWeb/LLMs4OntologyDev-ESWC2024): generate a partial ontology per CQ and merge them. Slower but the model has to think about each question individually.
+- [MASEO](https://github.com/oeg-upm/maseo): Multi-Agent System for Explainable Ontology Generation.
+
+
+### CQ2Term
+ 
+One LLM-based method for term-level prediction:
+ 
+- **zero-shot term prediction**: Given a competency question, the model directly outputs the classes and properties required to answer it.
 
 ### Prompts
 
@@ -109,55 +124,52 @@ The prompts that drive every model for each method is under `CQ2Onto/prompts/` a
 
 ## Evaluation
 
-### The metric catalogue
+The benchmark is organized as **tasks** → **dimensions** → **metrics**. A task is an evaluation track (CQ2Onto, CQ2Term); a dimension is one aspect evaluated within a task; a metric is a single measurement applied to a dimension. Definitions, formulas, and persistent identifiers for every dimension and metric are in the catalogue.
  
-`OntoCatalogue/` is the catalogue describing every metric used in this benchmark. Each metric has its own Turtle file under `KG/` and a matching HTML page under `html/`. The catalogue is browsable by opening `OntoCatalogue/html/catalog.html`. 
+To submit a new model: place its outputs under the corresponding `predictions/` folder and run the script. The pipeline locates the gold standard, runs every dimension, and writes per-dataset and per-model results to `03_evaluation_results/` and `04_summary/`.
 
-[idealy we have a web page]
+```bash
+# CQ2Term
+cd CQ2Term && python scripts/run_all_cq2term.py
  
-
-### CQ2Onto Evaluation
-
-For a given generated ontology, evaluation runs in stages, each producing its own evaluation file. The script `CQ2Onto/scripts/run_all_evaluation_agent_4datsets.py` runs the whole process across all three strategies and all six ontologies.
-
-1. **Concept** (`CQ2Onto/../scripts/concept/eval_concept.py`):
-   - Target: Evaluating if the generated ontology contains the correct classes and properties
-   - Metrics:
-2. **Property** (`scripts/property/eval_property.py`): characteristics, domains, ranges of object/data properties.
-   - Target: Evaluating if the generated ontology contains the correct domains, ranges and object/data properties.
-   - Metrics:
-3. **Triple** (`scripts/triple/eval_triple.py`): RDF triples (asserted statements).
-   - Target: Evaluating if the triples in the generated ontology is correct
-   - Metrics:
-4. **Axioms** (`scripts/axioms/eval_axioms.py`): 
-   - Target: Atomic-level axioms evaluation against the gold standard ontology
-   - Metrics:
-5. **Hierarchy** (`scripts/hierarchy/eval_hierarchy.py`):
-   - Target:
-   - Metric
-
-
-### CQ2Terms Evaluation
-
-[JIayi]
-
-## Execution
-
-CQ-to-terms:
- 
+# CQ2Onto, all three generation strategies
+cd CQ2Onto && python scripts/run_all_evaluation_agent_4datsets.py
 ```
-cd CQ2Term
-python scripts/run_all_cq2term.py
-```
+
+### CQ2Onto
  
-CQ-to-ontology, all three strategies:
+Given a set of competency questions, the LLM produces a full OWL ontology. The output is evaluated against a CQ-aligned gold OWL ontology along the dimensions below. The first dimension yields a one-to-one term alignment that the others reuse to translate predicted vocabulary into gold vocabulary.
  
-```
-cd CQ2Onto
-python scripts/run_all_evaluation_agent_4datsets.py
-```
+1. [`ClassProperty`](https://w3id.org/cq4oe/dimension/ClassProperty)
+   1. Target: Do the generated classes and properties match the gold ones?
+   2. Metrics: [`HardMatch`](https://w3id.org/cq4oe/metric/HardMatch), [`SequenceMatch`](https://w3id.org/cq4oe/metric/SequenceMatch), [`LevenshteinDistance`](https://w3id.org/cq4oe/metric/LevenshteinDistance), [`JaroWinklerDistance`](https://w3id.org/cq4oe/metric/JaroWinklerDistance), [`SemanticCosineSimilarity`](https://w3id.org/cq4oe/metric/SemanticCosineSimilarity), [`AggregatedTop3`](https://w3id.org/cq4oe/metric/AggregatedTop3); [`Precision`](https://w3id.org/cq4oe/metric/Precision), [`Recall`](https://w3id.org/cq4oe/metric/Recall), [`F1`](https://w3id.org/cq4oe/metric/F1).
+2. [`PropertyCharacteristics`](https://w3id.org/cq4oe/dimension/PropertyCharacteristics)
+   1. Target: Are the OWL property characteristics (functional, transitive, etc.) on each aligned property correct?
+   2. Metrics: [`Precision`](https://w3id.org/cq4oe/metric/Precision), [`Recall`](https://w3id.org/cq4oe/metric/Recall), [`F1`](https://w3id.org/cq4oe/metric/F1).
+3. [`Triple`](https://w3id.org/cq4oe/dimension/Triple)
+   1. Target: Do the generated domain/range triples match the gold ones?
+   2. Metrics: [`Precision`](https://w3id.org/cq4oe/metric/Precision), [`Recall`](https://w3id.org/cq4oe/metric/Recall), [`F1`](https://w3id.org/cq4oe/metric/F1); [`EmbeddingDiagnostic`](https://w3id.org/cq4oe/metric/EmbeddingDiagnostic).
+4. [`Axiom`](https://w3id.org/cq4oe/dimension/Axiom)
+   1. Target: Do the generated TBox axioms match the gold ones at the atomic level?
+   2. Metrics: [`Precision`](https://w3id.org/cq4oe/metric/Precision), [`Recall`](https://w3id.org/cq4oe/metric/Recall), [`F1`](https://w3id.org/cq4oe/metric/F1); [`EmbeddingDiagnostic`](https://w3id.org/cq4oe/metric/EmbeddingDiagnostic); [`AtLeastOneCoverage`](https://w3id.org/cq4oe/metric/AtLeastOneCoverage), [`MeanCoverage`](https://w3id.org/cq4oe/metric/MeanCoverage), [`FullCoverage`](https://w3id.org/cq4oe/metric/FullCoverage).
+5. [`HierarchyClosure`](https://w3id.org/cq4oe/dimension/HierarchyClosure)
+   1. Target: Does the generated ontology entail the same class and property subsumptions as the gold one? Closure is computed with the HermiT reasoner.
+   2. Metrics: [`Precision`](https://w3id.org/cq4oe/metric/Precision), [`Recall`](https://w3id.org/cq4oe/metric/Recall), [`F1`](https://w3id.org/cq4oe/metric/F1); [`ClosureRescueCoverage`](https://w3id.org/cq4oe/metric/ClosureRescueCoverage).
+6. [`CQCoverage`](https://w3id.org/cq4oe/dimension/CQCoverage)
+   1. Target: For each CQ, how many of its required TBox axioms appear in the generated ontology?
+   2. Metrics: [`AtLeastOneCoverage`](https://w3id.org/cq4oe/metric/AtLeastOneCoverage), [`MeanCoverage`](https://w3id.org/cq4oe/metric/MeanCoverage), [`FullCoverage`](https://w3id.org/cq4oe/metric/FullCoverage); [`ClosureRescueCoverage`](https://w3id.org/cq4oe/metric/ClosureRescueCoverage) credits hierarchy axioms reachable through reasoner closure.
+
+   
+### CQ2Term
  
-Both execution dive in the prediction folders, find the corresponding gold standard files, and write per-dataset and per-model evaluation results into `03_evaluation_results/` and `04_summary/`.
+Given a single competency question, the LLM outputs the classes and properties needed to answer it. The output is evaluated against the explicit term set annotated for that CQ.
+ 
+1. [`ClassProperty`](https://w3id.org/cq4oe/dimension/ClassProperty)
+   1. Target: Do the generated classes and properties match the gold ones for the CQ?
+   2. Metrics: [`HardMatch`](https://w3id.org/cq4oe/metric/HardMatch), [`SequenceMatch`](https://w3id.org/cq4oe/metric/SequenceMatch), [`LevenshteinDistance`](https://w3id.org/cq4oe/metric/LevenshteinDistance), [`JaroWinklerDistance`](https://w3id.org/cq4oe/metric/JaroWinklerDistance), [`SemanticCosineSimilarity`](https://w3id.org/cq4oe/metric/SemanticCosineSimilarity), [`AggregatedTop3`](https://w3id.org/cq4oe/metric/AggregatedTop3); global [`Precision`](https://w3id.org/cq4oe/metric/Precision), [`Recall`](https://w3id.org/cq4oe/metric/Recall), [`F1`](https://w3id.org/cq4oe/metric/F1).
+2. [`CQCoverage`](https://w3id.org/cq4oe/dimension/CQCoverage)
+   1. Target: Are the required terms generated under the CQ that requires them?
+   2. Metrics: [`AtLeastOneCoverage`](https://w3id.org/cq4oe/metric/AtLeastOneCoverage), [`MeanCoverage`](https://w3id.org/cq4oe/metric/MeanCoverage), [`FullCoverage`](https://w3id.org/cq4oe/metric/FullCoverage).
 
 
 ## Ackownledgement
