@@ -13,7 +13,7 @@ The gold standards for both tasks and entire annotation process are also publish
 
 
 
-**Annotated Ontologies**:
+**Source Ontologies**:
 - [Wine](https://github.com/UCDavisLibrary/wine-ontology): Wine Ontology
 - [VGO](https://vocab.linkeddata.es/vgo/): VideoGame Ontolgy
 - [SWO](https://obofoundry.org/ontology/swo.html): Software Ontology
@@ -21,45 +21,56 @@ The gold standards for both tasks and entire annotation process are also publish
 - [ODRL](https://www.w3.org/ns/odrl/2/): Open Digital Rights Language Ontology
 - [Water](https://saref.etsi.org/saref4watr/v1.1.1/#clause-4-2-7): SAREF4WATR Ontolgy
 
-
 ## Annotation
 
 The annotated ontologies in this benchmark are not just snapshots of existing ontologies. Every class, property and axiom is explicitly tied back to the competency questions. This section documents how that link was built so anyone adding a new domain can do the same thing.
+
+### Annotation Pipeline
+
+The annotation runs as a four-phase pipeline. Phase 1 fixes the conceptual backbone of the source ontology; Phase 2 filters and annotates the CQs; Phase 3 augments the CQ set so that each core term is covered; Phase 4 composes the two gold standards (CQ2Term and CQ2Onto) with full CQ-to-term and CQ-to-axiom provenance. Each decision is reviewed by three people independently (one annotator with OE background and two reviewers), and an item is kept only if at least 2 of 3 agree.
+
+![Annotation pipeline](https://raw.githubusercontent.com/oeg-upm/cq4oe-benchmark/main/diagram/cq4or_anno_pipeline.png)
+
+*Figure 1. CQ4OE annotation pipeline. Include 4 Phase*
 
 ### Annotation Guideline
 
 For each source ontology, the annotation runs in three stages.
 
-**1. Identify the core terms**: Before processing the competency question, domain experts extracts the conceptual backbone (key concepts and properties) from the source ontology by calculating the degree for each node as the relevance of the concept or property in the ontology. This can kept the backbone of the source ontology with maximum coverage.
+For each source ontology, the annotation runs through the four phases shown in Figure 1.
+
+**Phase 1 — Core term selection.** Before processing any competency question, domain experts identify the conceptual backbone (key concepts and properties) of the source ontology using two complementary criteria. **Quantitatively**, named classes and properties are ranked by in- and out-degree, and the highly connected nodes are taken as initial candidates. **Qualitatively**, the ontology is visualized with [`owl2diagram`](https://github.com/jatoledo/owl2diagram) and inspected against the published requirements. A term is retained as a core term if it is highly connected, visually central, and domain-relevant. This keeps the backbone of the source ontology with maximum coverage.
+
+**Phase 2 — CQ filtering and annotation.** Filter out CQs that use external knowledge or out-of-scope concepts, that cannot be answered from the ontology, or that target instance-level (ABox) rather than TBox knowledge. For each retained CQ, annotate its terms in three categories:
+- **Explicit:** terms that appear lexically in the CQ. *Example:* in *"Which animal eats which other animal?"*, `Animal` and `eats` are explicit.
+- **Implicit:** terms expressed through synonymous phrasing. *Example:* in a wine CQ saying *"used to make"*, `madeFromGrape` is implicit.
+- **Derived:** terms required to answer the CQ but not stated in it (including answer-side concepts). *Example:* a CQ about *"duration"* requires `hasStartTimestamp` and `hasEndTimestamp` to formulate the answer.
 
 
-**2. Annotated the CQs**: We annotated each CQ with two different terms. Exclude all CQs with external or out-of-the-scope concepts from the domain of the ontology. The two categories of the terms are:
-- **Explicit:** terms that appear lexically in the CQ
-- **Implicit:** terms expressed through synonymous phrasing
-- **Missing Element**: terms are indicates in the CQ however do not mentioned in the ontology
+**Phase 3 — CQ augmentation.** Check whether each core term selected in Phase 1 is required by at least one annotated CQ. For each uncovered core term, domain experts author a brand-new CQ that (i) is answerable from the source ontology, (ii) requires the uncovered term, and (iii) follows the style of the original CQs. New CQs are annotated as in Phase 2 and marked with **⋆** in the dataset.
+
+
+**Phase 4 — Gold standard construction.** Build two gold standards in parallel:
+
+- **CQ2Term gold.** For each CQ with at least one Explicit term, keep its Explicit classes and properties. Output: **CQ-to-term provenance**. CQs without Explicit terms are excluded here, but stay in CQ2Onto.
+
+- **CQ2Onto gold.**  For each CQ, take its Explicit + Implicit + Derived terms, extract a fair and equivalent ontology fragment containing them and the axioms involving them, and drop ABox assertions. Keep an axiom if removing it would make the CQ unanswerable. Output: a CQ-aligned sub-ontology with **CQ-to-axiom provenance**.
 
 
 
-**3. CQ Creation:** 
-[Jiayi]
-Due to the selection of the CQs after step 2, if there is any missing core concepts, domain experts create brand new CQs based on the missing core concepts.
+Missing Elements are documented but are not part of either gold standard.
 
-**4. Axiom:**
-[JiaYi]
-
-**5. Annotating Ontology:**
-[Jiayi]
+All decisions in Phases 1–4 follow the review protocol introduced above (three people independently, ≥ 2/3 agreement to keep, otherwise discard).
 
 
-Example of the annotation process
-```
 CQ: Which animals are the predators of [these animals]?
-- Explicit Class: animal
-- Explicit Property: eaten-by
-- Implicit Class: Carnivore
-- Implicit Property: None
-- Missing Element: Predators is not in the ontology, however, carnivore indicates predators
-```
+- Explicit Class:     Animal
+- Explicit Property:  —
+- Implicit Class:     —
+- Implicit Property:  eats          (CQ says "predators of", ontology has `eats`)
+- Derived Class:      Carnivore     (needed to answer; CQ doesn't mention it)
+- Derived Property:   —
+- Missing Element:    "predators" is not in the ontology; expressed via `eats` + `Carnivore`
 
 
 ### Dataset Description
