@@ -1,7 +1,7 @@
 import subprocess
 from pathlib import Path
 
-PYTHON = "/Users/ljymacbook/opt/anaconda3/envs/tempautocl/bin/python"
+PYTHON = "YOUR PATH"
 
 MODES = ["agent", "normal", "cqbycq"]
 
