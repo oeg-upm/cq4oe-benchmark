@@ -60,12 +60,14 @@ CQ4OE has two evaluation tasks. **Pick one before going further.** The directory
 | **CQ2Term** | Whether your LLM predicts the **explicit classes and properties** required by each CQ | one JSON file per (model, dataset) listing predicted terms per CQ | term-level P/R/F1 + CQ-conditioned coverage |
 | **CQ2Onto** | Whether your LLM produces a **full OWL ontology** that satisfies the CQs | one ontology file per (model, dataset) | five evaluation tasks + CQ-conditioned axiom coverage |
 
-Supported formats for CQ2Onto: `.owl`, `.rdf`, `.xml`, `.ttl`, `.turtle` (anything `rdflib` can parse). The constant in the runner is named `PRED_OWL` for historical reasons but accepts any of these.
+Supported formats for CQ2Onto: `.owl`, `.rdf`, `.xml`, `.ttl`, `.turtle` (anything `rdflib` can parse).
+
+**Filename convention (important).** For CQ2Term and CQ2Onto , each prediction file must start with the dataset name (e.g. wine_*.owl, awo_*.owl). The runner uses this prefix to find the matching gold.**
 
 Quick rules of thumb:
 
-- Use **CQ2Term** if you only want to test the model's ability to recognize the relevant vocabulary for each CQ.
-- Use **CQ2Onto** if you want to grade a complete generated ontology, including property semantics, triples, hierarchy, and axioms.
+- Use **CQ2Term** if you only want to test the ability of model to recognize/recover the relevant vocabulary for each CQ.
+- Use **CQ2Onto** if you want to evaluate a complete generated ontology, including property semantics, triples, hierarchy, and axioms.
 - You can run **both** on the same model. Just go through each section in turn.
 
 ## 3. CQ2Term: term-level evaluation
@@ -146,7 +148,7 @@ After a run, each (model, dataset) pair produces:
 ├── cq_coverage.csv                    ← per-CQ coverage (At-least-one / Mean / Full)
 └── term_coverage.csv                  ← per-term coverage
 
-04_summary/<model>/<dataset>_report.md ← read this first
+**Read the Markdown report first.** The JSON and CSV files under `03_evaluation_results/` hold the raw numbers if you want to do your own analysis. Different runs do not overwrite each other.
 ```
 
 ### 3.5 Run a single (model, dataset) pair
@@ -164,7 +166,7 @@ python scripts/eval_cq_terms.py \
   --save_result_json 03_evaluation_results/my_model/wine/06_cq_terms/eval_cq_terms_result.json \
   --save_report_md   04_summary/my_model/wine_report.md
 ```
-
+Optionally override the per-method similarity thresholds with `--hard_threshold` (default `1.0`), `--lexical_threshold` (default `0.8`), and `--semantic_threshold` (default `0.6`).
 ---
 
 ## 4. CQ2Onto: full-ontology evaluation
@@ -178,6 +180,15 @@ CQ2Onto/
 │       ├── ontology/sub_<domain>.owl         ← CQ-aligned gold ontology
 │       └── axioms/<domain>_axiom_gold.json   ← TBox axioms with CQ provenance
 ├── 01_predictions/             ← drop your generated ontology files here
+│   └── <mode>/                 ← agent / normal / cqbycq (your generation strategy)
+│       └── <model_name>/       ← any label (e.g. deepseek-v4-pro, gpt4)
+│           └── ontology/
+│               ├── wine_*.owl          ← filename must start with the dataset
+│               ├── awo_*.owl
+│               ├── odrl_*.owl
+│               ├── water_*.owl
+│               ├── vgo_*.owl
+│               └── swo_*.owl
 ├── 02_atomic_axioms/           ← intermediate axiom decomposition
 ├── 03_evaluation_results/      ← per-layer raw scores (CSV / JSON)
 ├── 04_summary/                 ← Markdown reports
@@ -190,58 +201,86 @@ CQ2Onto/
     ├── axioms/Axioms_atomic.py
     ├── axioms/eval_axioms.py
     ├── hierarchy/eval_hierarchy.py
-    └── run_all_evaluation_agent_4datsets.py
+    └── run_all_evaluation_agent_datasets.py
 ```
+
+The runner expects the three-level layout `01_predictions/<mode>/<model_name>/ontology/<dataset>_*.owl`. If you only have one mode and one model, still create those two layers (`01_predictions/single/my_model/ontology/wine_*.owl`).
 
 ### 4.2 Choose your scope
 
-You decide how many domains to test, from one to all six. The runner evaluates **one (prediction, domain) pair per run**.
+You decide how many (mode, model, domain) combinations to test. The runner **automatically discovers** each prediction file under `01_predictions/<mode>/<model>/ontology/` and evaluates it against its matching gold standard.
 
-- One domain: produce one ontology file, run the script once. One report.
-- Multiple domains: produce one ontology file for each. Run the script once for each, editing `PRED_OWL` and `DATASET` between runs. One report per domain.
+- One domain: drop one ontology file (e.g. `wine_my_model.owl`) into `01_predictions/single/my_model/ontology/`. One report comes out.
+- Multiple domains, one model: drop six files (`wine_*.owl`, `awo_*.owl`, …) into the same `ontology/` folder. The runner evaluates each one.
+- Multiple models, multiple domains: create one `<model_name>/` subfolder per model. The runner walks all of them.
+- Multiple generation strategies: use the top-level `<mode>/` layer (`agent` vs `cqbycq` vs `normal`). The runner walks all modes that exist.
 
-Supported formats: `.owl`, `.rdf`, `.xml`, `.ttl`, `.turtle` (anything `rdflib` can parse). The constant in the runner is named `PRED_OWL` for historical reasons but accepts any of these.
+Supported formats: `.owl`, `.rdf`, `.xml`, `.ttl`, `.turtle` (anything `rdflib` can parse).
 
 Partial benchmarks are valid (e.g. Wine + AWO only). Just report which domains you ran. To match the numbers in the CQ4OE paper, run all six.
 
 Common situations:
 
-- Testing a prompt change on one domain: one file, one run.
-- Comparing two prompting strategies on Wine: two files, two runs.
-- Full benchmark on a new LLM: six files, six runs.
+- Testing a prompt change on one domain: one file in one model folder, one run.
+- Comparing two models on Wine: two model folders each with `wine_*.owl`, one run.
+- Comparing agent vs cqbycq strategies: two mode folders, one run.
+- Full benchmark on a new LLM: one model folder with all six `<dataset>_*.owl` files, one run.
 
 ### 4.3 Generate predictions
 
-For each domain you want to evaluate:
+For each (mode, model, domain) combination you want to evaluate:
 
 1. Read the CQs from `CQ2Onto/competency_question/<domain>_cqs.json` (some domains use `<domain>_cq2onto_cqs.json`).
 2. Feed them to your LLM under any generation strategy (one-shot, CQ-by-CQ, multi-agent, …). Prompts used in the paper are under `CQ2Onto/prompts/` if you want to reproduce them.
 3. Save the result as one ontology file per domain (`.owl`, `.rdf`, `.xml`, `.ttl`, or `.turtle`).
+4. **Name the file so it starts with the dataset**: `wine_my_run.owl`, `awo_v2.owl`, `vgo_cq2onto_output.owl`. The dataset prefix is how the runner identifies which gold to compare against.
 
-Drop the file into `01_predictions/`. Naming is up to you. A convention like `<ModelName>_<domain>.owl` keeps multiple runs distinguishable.
+Place the file under `01_predictions/<mode>/<model_name>/ontology/`:
 
 ```
 01_predictions/
-└── Claude_wine.owl
+└── agent/                          ← generation mode (must match MODES in runner)
+    └── my_model/                   ← any model label (used verbatim in outputs)
+        └── ontology/
+            ├── wine_agent_ontology.owl
+            ├── awo_agent_ontology.owl
+            └── vgo_cq2onto_agent_ontology.owl
 ```
+
+The `<mode>` layer must match one of the names in `MODES` at the top of the runner (default: `agent`, `normal`, `cqbycq`). To use a different name, edit `MODES`. The `<model_name>` layer can be anything (e.g. `gpt4`, `deepseek-v3`); it is auto-discovered and used verbatim as the folder name in `03_evaluation_results/` and `04_summary/`.
 
 ### 4.4 Configure the runner
 
-Open `scripts/run_all_evaluation_agent_4datsets.py` and edit the three constants at the top.
+Open `scripts/run_all_evaluation_agent_datsets.py`. Edit only what you need:
 
 ```python
-PYTHON   = "/path/to/your/python"
-PRED_OWL = Path("01_predictions/Claude_wine.owl")
-DATASET  = "wine"
+PYTHON  = "/path/to/your/python"        # required: which Python to use
+MODES   = ["agent", "normal", "cqbycq"]  # which mode folders to scan
+DATASETS = ["wine", "vgo", "swo", "awo", "odrl", "water"]  # whitelist
 ```
 
 | Constant | What to put | Notes |
 |---|---|---|
 | `PYTHON` | absolute path to the Python in your `cq4oe` env | run `which python` inside the env |
-| `PRED_OWL` | path to your ontology file, relative to `CQ2Onto/` | must exist; any `rdflib`-readable format |
-| `DATASET` | one of `wine`, `awo`, `odrl`, `water`, `vgo`, `swo` | must match the domain your ontology was generated for |
+| `MODES` | list of mode subfolders to scan under `01_predictions/` | remove items you don't have, e.g. `["normal"]` if you only have one mode |
+| `DATASETS` | the six benchmark domains | shouldn't need to change unless adding a new domain |
 
-> The script evaluates **one (prediction, domain) pair per run**. For multi-domain evaluation, edit these constants and re-run.
+The runner **does not** need you to specify which file to evaluate. It walks `01_predictions/<mode>/<model>/ontology/`, picks each `.owl` file, infers the dataset from the filename prefix, and runs the full pipeline. Missing modes are skipped with a SKIP message.
+
+**Optional arguements inside the runner.** Two kinds of parameters are passed to the underlying scripts and can be edited inline in the relevant `run([...])` blocks:
+
+- **Per-method thresholds** (passed to `eval_concept.py` and `eval_property.py`):
+  - `--hard_threshold` (default `1.0`)
+  - `--lexical_threshold` (default `0.8`)
+  - `--semantic_threshold` (default `0.6`)
+
+- **Layer-2 cosine threshold** (passed to `eval_triple.py`; `eval_axioms.py` has it too but its Layer 2 is disabled by `--no_layer2`):
+  - `--threshold` (default `0.6`). Controls the cosine-similarity cutoff used by the embedding-based Layer 2 in the triple evaluation. Raise to be stricter, lower to be looser.
+
+- **Datatype relaxation** (passed to `eval_triple.py` and `eval_axioms.py`):
+  - `--literal_relax yes` or `no` (default in the shipped runner: `yes`)
+
+When `--literal_relax yes`, a generic literal root in the gold (`rdfs:Literal`, `xsd:anySimpleType`, `xsd:anyAtomicType`) matches any concrete `xsd:*` or `rdf:*` datatype in the prediction, treating a concrete prediction as a sound specialization of a generic gold. Set to `no` to keep strict equality (matches the numbers in the paper's strict configuration).
 
 ### 4.5 Run the evaluation
 
@@ -249,7 +288,7 @@ From the `CQ2Onto/` directory.
 
 ```bash
 cd CQ2Onto
-python -u scripts/run_all_evaluation_agent_4datsets.py
+python -u scripts/run_all_evaluation_agent_datasets.py
 ```
 
 The script runs five evaluation layers in order.
@@ -275,50 +314,66 @@ The five layers are independent scripts and can be run on their own. Useful for 
 After `concept` and `property` finish you have:
 
 ```
-03_evaluation_results/single/<dataset>/01_class/class_best_matching.csv
-03_evaluation_results/single/<dataset>/02_property/property_best_matching.csv
+03_evaluation_results/<mode>/<model>/<dataset>/01_class/class_best_matching.csv
+03_evaluation_results/<mode>/<model>/<dataset>/02_property/property_best_matching.csv
 ```
 
 These two CSVs are read by the later layers through `--class_csv` and `--property_csv`.
 
-**Example.** Run only the triple layer on Wine, assuming concept and property already ran.
+**Example: run only the triple layer on Wine.** This example assumes you already ran concept and property for the `agent / my_model` configuration. Replace `my_model` with your actual model folder name:
 
 ```bash
 python scripts/triple/eval_triple.py \
-  --pred_onto 01_predictions/Claude_wine.owl \
+  --pred_onto 01_predictions/agent/my_model/ontology/wine_agent_ontology.owl \
   --gold_onto 00_gold_standard/wine/ontology/sub_wine.owl \
-  --class_csv    03_evaluation_results/single/wine/01_class/class_best_matching.csv \
-  --property_csv 03_evaluation_results/single/wine/02_property/property_best_matching.csv \
-  --save_result      03_evaluation_results/single/wine/03_triple/triple_result.json \
-  --save_layer3_csv  03_evaluation_results/single/wine/03_triple/triple_layer3_pairs.csv \
-  --save_layer3_json 03_evaluation_results/single/wine/03_triple/triple_layer3_pairs.json \
-  --save_report_md   04_summary/single/wine_report.md
+  --class_csv    03_evaluation_results/agent/my_model/wine/01_class/class_best_matching.csv \
+  --property_csv 03_evaluation_results/agent/my_model/wine/02_property/property_best_matching.csv \
+  --save_result      03_evaluation_results/agent/my_model/wine/03_triple/triple_result.json \
+  --save_layer3_csv  03_evaluation_results/agent/my_model/wine/03_triple/triple_layer3_pairs.csv \
+  --save_layer3_json 03_evaluation_results/agent/my_model/wine/03_triple/triple_layer3_pairs.json \
+  --save_report_md   04_summary/agent/my_model/wine_report.md \
+  --literal_relax    no
 ```
 
-The CLI flags for each layer are the ones the runner passes. Open `run_all_evaluation_agent_4datsets.py` and copy the relevant `run([...])` block.
+To run a different layer, open `run_all_evaluation_agent_datasets.py` and copy the relevant `run([...])` block; that block lists exactly the arguments that layer's script accepts.
 
 **Skipping concept or property is not allowed.** Running any of `triple` / `axioms` / `hierarchy` without those two CSVs will fail.
 
 ### 4.7 Inspect the outputs
 
-After a successful run on `wine`, the outputs land under three top-level directories. The `single/` segment is the `model` label (hard-coded to `"single"` in the runner). Change it to keep different models apart.
+After a successful run, the outputs follow the same `<mode>/<model>/<dataset>/` layout as the predictions:
 
 ```
-02_atomic_axioms/single/wine/
-  └── Claude_wine_atomic_tbox.json        ← your prediction in atomic-TBox form
-
-03_evaluation_results/single/wine/
-  ├── 01_class/
-  ├── 02_property/
-  ├── 03_triple/
-  ├── 04_axiom/
-  │   └── strict_cq_coverage.csv          ← per-CQ axiom recovery
-  └── 05_hierarchy/
-
-04_summary/single/wine_report.md          ← read this first
+02_atomic_axioms/<mode>/<model>/<dataset>/
+└── <pred_stem>_atomic_tbox.json        ← your prediction in atomic-TBox form
+03_evaluation_results/<mode>/<model>/<dataset>/
+├── 01_class/
+│   ├── class_result.json               ← per-method P/R/F1 (raw)
+│   ├── class_best_matching.csv         ← final gold↔pred alignment (used by later layers)
+│   ├── class_alignment_trace.csv       ← per-pair scoring trace
+│   └── class_alignment_trace.json      ← same trace, JSON form
+├── 02_property/
+│   ├── property_result.json            ← per-method + characteristics raw results
+│   ├── property_best_matching.csv      ← final gold↔pred alignment (used by later layers)
+│   ├── property_alignment_trace.csv
+│   └── property_alignment_trace.json
+├── 03_triple/
+│   ├── triple_result.json              ← layer 1-4 raw results
+│   ├── triple_layer3_pairs.csv         ← per-aligned-pair domain/range verdicts
+│   └── triple_layer3_pairs.json
+├── 04_axiom/
+│   ├── eval_axioms_result.json         ← strict TBox matching raw results
+│   ├── axiom_details.csv               ← per-axiom verdict (TP/FP/FN/mismatch)
+│   └── strict_cq_coverage.csv          ← per-CQ axiom recovery
+└── 05_hierarchy/
+├── hierarchy_result.json           ← closure-based P/R/F1
+└── hierarchy_pairs.csv             ← per-pair subsumption verdicts
+04_summary/<mode>/<model>/<dataset>_report.md   ← read this first
 ```
 
-**Read `04_summary/single/wine_report.md` first.** It aggregates all five layers in one place, with per-CQ traces of what was matched, what was missed, and what was rescued through reasoning.
+For example, evaluating `01_predictions/agent/my_model/ontology/wine_agent_ontology.owl` produces `04_summary/agent/my_model/wine_report.md`.
+
+**Read the Markdown report first.** It aggregates all five layers in one place, with per-CQ traces of what was matched, what was missed, and what was rescued through reasoning. The JSON and CSV files under `03_evaluation_results/` hold the raw numbers if you want to do your own analysis. Different runs do not overwrite each other, so you can compare models or strategies side by side.
 
 ---
 
@@ -339,33 +394,23 @@ These are exactly what the evaluation pipeline compares against. Anything you re
 
 ## 6. Interpret the metrics
 
-Each layer reports **TP, FP, FN, Precision, Recall, and F1**. The Markdown report shows them all. F1 is the headline number used for cross-layer comparison, but Precision and Recall are equally available and often more informative (a low Precision with high Recall means the model over-generates; the opposite means it is too conservative).
+Each layer reports **TP, FP, FN, Precision, Recall, F1**. F1 is the headline; Precision and Recall tell you the failure mode (low P + high R = over-generates; high P + low R = too conservative).
 
-The metric names match those used in the CQ4OE paper.
+**What each layer measures:**
 
-**Term-level (Class, Property).** P/R/F1 between gold and predicted terms after one-to-one alignment. The alignment aggregates five similarity methods (`hard_match`, `sequence_match`, `levenshtein`, `jaro_winkler`, `semantic`), keeping the top-3 mean. Thresholds default to `0.6` for classes and `0.7` for properties.
+- **Class / Property**: P/R/F1 between gold and predicted terms after one-to-one alignment over five similarity methods (top-3 mean).
+- **Property characteristics** *(CQ2Onto)*: P/R/F1 over OWL flags (functional, inverse, transitive, …).
+- **Domain / range triples** *(CQ2Onto)*: P/R/F1 over `(subject, predicate, object)` triples from `rdfs:domain` / `rdfs:range`.
+- **TBox axioms** *(CQ2Onto)*: P/R/F1 over strict axiom matches after term translation.
+- **Hierarchy closure** *(CQ2Onto)*: P/R/F1 over inferred subsumptions (entailed, not just asserted).
 
-**Property characteristics** *(CQ2Onto only)*. P/R/F1 over OWL property flags (functional, inverse, transitive, …) on aligned properties.
+**Two views (CQ2Onto):**
 
-**Domain / range triples** *(CQ2Onto only)*. P/R/F1 over `(subject, predicate, object)` triples derived from `rdfs:domain` / `rdfs:range`.
+- *Global*: over all gold and predicted items.
+- *AC (Alignment-Conditioned)*: restricted to items whose terms aligned, isolating structural mistakes from vocabulary mistakes.
 
-**TBox axioms** *(CQ2Onto only)*. P/R/F1 over strictly matched TBox axioms after recursively translating terms through the alignment.
+**CQ-conditioned coverage.** Per CQ-level target: *At-least-one*, *Mean*, *Full*. For axioms, reported twice (`Axioms-…` before closure rescue, `Closure-…` after); comparing the two shows how much was rescued by reasoning.
 
-**Hierarchy closure** *(CQ2Onto only)*. P/R/F1 over inferred class and property subsumptions, capturing hierarchy that is entailed rather than explicitly asserted.
-
-**Two views, Global vs Alignment-Conditioned (AC)** *(CQ2Onto only)*.
-
-- *Global*: over the entire gold and predicted sets. Penalises both wrong vocabulary and wrong structure.
-- *AC*: restricted to elements whose terms successfully aligned. Isolates structural mistakes from vocabulary mistakes.
-
-A large gap between AC and Global means the model knows the structure but uses the wrong labels (or vice versa).
-
-**CQ-conditioned coverage.** Three numbers per CQ-level target.
-
-- *At-least-one*: share of CQs with ≥ 1 required item recovered.
-- *Mean*: average per-CQ recovery.
-- *Full*: share of CQs whose required items are *all* recovered.
-
-For axioms (CQ2Onto), this is reported twice: before closure rescue (`Axioms-…`) and after closure rescue (`Closure-…`). The gain `Δ = Closure-Mean − Axioms-Mean` tells you how much of the missed axiom requirement is rescued by reasoning over the predicted hierarchy.
+**Datatype literal relaxation** *(triple and axiom layers)*. With `--literal_relax yes`, a generic literal root in the gold (`rdfs:Literal`, `xsd:anySimpleType`, `xsd:anyAtomicType`) matches any concrete `xsd:*` or `rdf:*` datatype in the prediction. With `no` (default), strict equality only. Reverse direction (pred broader than gold) is never relaxed.
 
 ---
