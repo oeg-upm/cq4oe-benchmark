@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import argparse
 import csv
 import difflib
@@ -14,7 +16,6 @@ from langchain_ollama import OllamaEmbeddings
 from rdflib import Graph, Literal, OWL, RDF, RDFS
 from rdflib.term import BNode
 from sentence_transformers import util
-
 from eva_char_in_property import eval_characteristics
 
 
@@ -841,7 +842,6 @@ def build_property_report_md(
                  f"`{model_id}`)_")
     lines.append("")
 
-    # ─── Layer 1
     lines.append("## Layer 1 — Property Statistics")
     lines.append("")
     lines.append("| Property type | Gold | Pred | Diff | Note |")
@@ -857,13 +857,13 @@ def build_property_report_md(
                  f"pred = {n_pred} properties.")
     lines.append("")
 
-    # ─── Layer 2
     lines.append("## Layer 2 — Per-Method Matching Results")
     lines.append("")
     lines.append("This layer reports the result of each matching method "
              "separately, grouped by property type. Each method applies "
              "one-to-one greedy matching with a fixed threshold "
-             "(hard_match 1.0; lexical methods at 0.8; semantic at 0.6). "
+             f"(hard_match {HARD_THRESHOLD}; lexical methods at "
+             f"{LEXICAL_THRESHOLD}; semantic at {SEMANTIC_THRESHOLD}). "
              "These results are used for comparison before the final "
              "combined matching step.")
     lines.append("")
@@ -1288,11 +1288,40 @@ def get_parser():
                         "and contains a placeholder for property-level "
                         "results, the property report is appended to it; "
                         "otherwise a new file is written.")
+    p.add_argument("--hard_threshold", type=float, default=None,
+                   help="Override the hard_match threshold "
+                        "(default 1.0).")
+    p.add_argument("--lexical_threshold", type=float, default=None,
+                   help="Override the lexical methods threshold "
+                        "(sequence_match / levenshtein / jaro_winkler, "
+                        "default 0.8).")
+    p.add_argument("--semantic_threshold", type=float, default=None,
+                   help="Override the semantic threshold "
+                        "(default 0.6).")
     return p
 
 
 def main():
     args = get_parser().parse_args()
+
+    # Apply per-method threshold overrides FIRST, before any evaluation.
+    global SEMANTIC_THRESHOLD, LEXICAL_THRESHOLD, HARD_THRESHOLD
+    if args.semantic_threshold is not None:
+        SEMANTIC_THRESHOLD = float(args.semantic_threshold)
+    if args.lexical_threshold is not None:
+        LEXICAL_THRESHOLD = float(args.lexical_threshold)
+    if args.hard_threshold is not None:
+        HARD_THRESHOLD = float(args.hard_threshold)
+    # Rebuild the dict so downstream lookups see the new values.
+    METHOD_THRESHOLDS["hard_match"]     = HARD_THRESHOLD
+    METHOD_THRESHOLDS["sequence_match"] = LEXICAL_THRESHOLD
+    METHOD_THRESHOLDS["levenshtein"]    = LEXICAL_THRESHOLD
+    METHOD_THRESHOLDS["jaro_winkler"]   = LEXICAL_THRESHOLD
+    METHOD_THRESHOLDS["semantic"]       = SEMANTIC_THRESHOLD
+    print(f"[main] Per-method thresholds: "
+          f"hard={HARD_THRESHOLD}, "
+          f"lexical={LEXICAL_THRESHOLD}, "
+          f"semantic={SEMANTIC_THRESHOLD}")
 
     methods = [m.strip() for m in args.methods.split(",") if m.strip()]
     valid_methods = set(METHOD_THRESHOLDS.keys())
