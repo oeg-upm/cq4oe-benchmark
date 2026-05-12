@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 import argparse
 import csv
 import json
@@ -455,6 +458,32 @@ def _judge_class_set(
     return "tp"
 
 
+#expand the soft verion for Literals with string, int...
+def _is_literal_root(norm_dt: Optional[str]) -> bool:
+    """Return True if a normalized datatype string refers to a generic
+    'any literal' root (rdfs:Literal / xsd:anySimpleType / xsd:anyAtomicType).
+
+    normalize_datatype() force-prepends 'xsd:', so 'rdfs:Literal' becomes
+    'xsd:rdfs:literal'; this helper covers both raw and normalized spellings.
+    """
+    if not norm_dt:
+        return False
+    t = norm_dt.lower().strip()
+    return t in {
+        "rdfs:literal", "xsd:literal",
+        "xsd:anysimpletype", "xsd:anyatomictype",
+        "xsd:rdfs:literal",
+        "xsd:xsd:anysimpletype", "xsd:xsd:anyatomictype",
+    }
+
+
+
+# When True, _judge_datatype_set treats a generic literal root in the gold
+# as compatible with any concrete xsd:* / rdf:* datatype in the prediction.
+# Off by default; turn on with --literal_relax yes.
+LITERAL_RELAX = False
+
+
 
 def _judge_datatype_set(
     gold_set: Optional[tuple], pred_set: Optional[tuple],
@@ -468,7 +497,24 @@ def _judge_datatype_set(
         return "fn"
     g_norm = {normalize_datatype(x) for x in gold_set}
     p_norm = {normalize_datatype(x) for x in pred_set}
-    return "tp" if g_norm == p_norm else "mismatch"
+    if g_norm == p_norm:
+        return "tp"
+
+    # Relaxation (opt-in via --literal_relax yes): if the gold side is
+    # a generic literal root, any non-empty set of concrete datatypes on
+    # the prediction side is a sound specialization and is treated as TP.
+    if (
+        LITERAL_RELAX
+        and len(g_norm) == 1
+        and _is_literal_root(next(iter(g_norm)))
+        and p_norm
+        and not any(_is_literal_root(p) for p in p_norm)
+    ):
+        return "tp"
+
+    return "mismatch"
+
+
 
 
 def evaluate_layer3(
@@ -1587,11 +1633,27 @@ def get_parser():
                         "eval_property.py), the triple-evaluation report "
                         "is appended after those sections. Otherwise a "
                         "new MD file is created with only this report.")
+    
+
+    #add soft version
+    p.add_argument("--literal_relax",
+                   choices=["yes", "no"], default="no",
+                   help="If 'yes', a generic literal root in the gold "
+                        "(rdfs:Literal / xsd:anySimpleType / "
+                        "xsd:anyAtomicType) matches any concrete xsd:* "
+                        "or rdf:* datatype in the prediction. "
+                        "Default 'no' keeps strict equality.")
     return p
 
 
 def main():
     args = get_parser().parse_args()
+    # add soft version
+    global LITERAL_RELAX
+    LITERAL_RELAX = (args.literal_relax == "yes")
+    print(f"[main] literal_relax = {args.literal_relax}")
+
+
 
     result = evaluate(
         pred_file=args.pred_onto,
