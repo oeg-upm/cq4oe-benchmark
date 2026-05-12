@@ -30,6 +30,24 @@ HARD_THRESHOLD = 1.0
 
 
 
+# add the thresholds for 5 simi methods
+def override_thresholds(semantic=None, lexical=None, hard=None):
+    """Override the per-method similarity thresholds at runtime.
+
+    Each argument is optional. Pass ``None`` (the default) to keep the
+    current value. Pass a float to override it. Called by ``eval_cq_terms``
+    when the user supplies the matching CLI flags.
+    """
+    global SEMANTIC_THRESHOLD, LEXICAL_THRESHOLD, HARD_THRESHOLD
+    if semantic is not None:
+        SEMANTIC_THRESHOLD = float(semantic)
+    if lexical is not None:
+        LEXICAL_THRESHOLD = float(lexical)
+    if hard is not None:
+        HARD_THRESHOLD = float(hard)
+
+
+
 def ensure_nltk_resource():
     try:
         wn.synsets("dog")

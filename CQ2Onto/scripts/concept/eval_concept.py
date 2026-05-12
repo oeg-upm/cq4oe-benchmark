@@ -29,6 +29,11 @@ LEXICAL_THRESHOLD = 0.8
 HARD_THRESHOLD = 1.0
 
 
+
+# add the thresholds
+
+
+
 def ensure_nltk_resource():
     try:
         wn.synsets("dog")
@@ -1492,13 +1497,13 @@ def build_class_report_md(ground_class, gen_class, result, best_class_map,
 
     lines.append("## Layer 2 — Per-Method Matching Results")
     lines.append("")
-    lines.append("This layer reports each method's **standalone** "
-                 "matching quality. Each method runs an independent "
-                 "one-to-one greedy matching at its own conventional "
-                 "threshold (hard_match 1.0; lexical methods such as "
-                 "jaro_winkler, levenshtein, and sequence_match at 0.8; "
-                 "semantic at 0.6) and reports its own Precision, "
-                 "Recall, and F1. These numbers are diagnostic only. ")
+    lines.append("This layer reports the result of each matching method "
+             "separately, grouped by property type. Each method applies "
+             "one-to-one greedy matching with a fixed threshold "
+             f"(hard_match {HARD_THRESHOLD}; lexical methods at "
+             f"{LEXICAL_THRESHOLD}; semantic at {SEMANTIC_THRESHOLD}). "
+             "These results are used for comparison before the final "
+             "combined matching step.")
     lines.append("")
     lines.append("| Method | TP_gold | Coverage | Precision | Recall | F1 |")
     lines.append("|---|---:|---:|---:|---:|---:|")
@@ -1743,7 +1748,18 @@ def get_parser():
              "to be appended later.",
         type=str
     )
+    # add thresholds
 
+    parser.add_argument("--semantic_threshold", type=float, default=None,
+                    help="Per-method threshold for the 'semantic' method. "
+                         "Defaults to 0.6 if not set.")
+    parser.add_argument("--lexical_threshold", type=float, default=None,
+                    help="Per-method threshold for lexical methods "
+                         "(levenshtein, jaro_winkler, sequence_match). "
+                         "Defaults to 0.8 if not set.")
+    parser.add_argument("--hard_threshold", type=float, default=None,
+                    help="Per-method threshold for 'hard_match'. "
+                         "Defaults to 1.0 if not set.")
     return parser
 
 
@@ -1760,6 +1776,7 @@ def main():
         if m.strip()
     ]
 
+
     valid_methods = {
         "hard_match",
         "sequence_match",
@@ -1768,6 +1785,18 @@ def main():
         "semantic",
         "synonym"
     }
+
+
+
+    global SEMANTIC_THRESHOLD, LEXICAL_THRESHOLD, HARD_THRESHOLD
+    if args_dict.get("semantic_threshold") is not None:
+     SEMANTIC_THRESHOLD = float(args_dict["semantic_threshold"])
+    if args_dict.get("lexical_threshold") is not None:
+     LEXICAL_THRESHOLD = float(args_dict["lexical_threshold"])
+    if args_dict.get("hard_threshold") is not None:
+     HARD_THRESHOLD = float(args_dict["hard_threshold"])
+    print(f"[main] Per-method thresholds: hard={HARD_THRESHOLD}, "
+    f"lexical={LEXICAL_THRESHOLD}, semantic={SEMANTIC_THRESHOLD}")
 
     for m in requested_methods:
         if m not in valid_methods:

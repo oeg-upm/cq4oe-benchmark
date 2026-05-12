@@ -1,7 +1,7 @@
 import subprocess
 from pathlib import Path
 
-PYTHON = "YOUR PATH"
+PYTHON = "PATH"
 
 MODES = ["agent", "normal", "cqbycq"]
 
@@ -115,6 +115,7 @@ def main():
                 pred_axiom_json = atomic_dir / f"{pred_owl.stem}_atomic_tbox.json"
                 strict_cq_csv = axiom_dir / "strict_cq_coverage.csv"
 
+                # 1. Class / concept evaluation
                 run([
                     PYTHON, "scripts/concept/eval_concept.py",
                     "--generate_onto_file_path", pred_owl,
@@ -122,6 +123,9 @@ def main():
                     "--model_id", "embeddinggemma",
                     "--methods", "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
                     "--top_n", "3",
+                    "--hard_threshold", "1.0",
+                    "--lexical_threshold", "0.8",
+                    "--semantic_threshold", "0.6",
                     "--final_threshold", "0.6",
                     "--save_file_path", class_dir / "class_result.json",
                     "--save_best_matching_csv", class_csv,
@@ -130,6 +134,7 @@ def main():
                     "--save_report_md", report_path,
                 ])
 
+                # 2. Property evaluation
                 run([
                     PYTHON, "scripts/property/eval_property.py",
                     "--pred_onto", pred_owl,
@@ -138,6 +143,9 @@ def main():
                     "--methods", "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
                     "--top_n", "3",
                     "--final_threshold", "0.7",
+                    "--hard_threshold", "1.0",
+                    "--lexical_threshold", "0.8",
+                    "--semantic_threshold", "0.6",
                     "--save_result", prop_dir / "property_result.json",
                     "--save_best_matching_csv", property_csv,
                     "--save_alignment_trace_csv", prop_dir / "property_alignment_trace.csv",
@@ -145,6 +153,7 @@ def main():
                     "--save_report_md", report_path,
                 ])
 
+                # 3. Triple / domain-range evaluation
                 run([
                     PYTHON, "scripts/triple/eval_triple.py",
                     "--pred_onto", pred_owl,
@@ -155,8 +164,11 @@ def main():
                     "--save_layer3_csv", triple_dir / "triple_layer3_pairs.csv",
                     "--save_layer3_json", triple_dir / "triple_layer3_pairs.json",
                     "--save_report_md", report_path,
+                    "--threshold", "0.6",
+                    "--literal_relax", "no",
                 ])
 
+                # 4. Extract predicted atomic axioms
                 run([
                     PYTHON, "scripts/axioms/Axioms_atomic.py",
                     pred_owl,
@@ -170,6 +182,7 @@ def main():
                         f"Pred axiom JSON not found after extraction: {pred_axiom_json}"
                     )
 
+                # 5. Axiom evaluation
                 run([
                     PYTHON, "scripts/axioms/eval_axioms.py",
                     "--gold", gold_axioms,
@@ -180,9 +193,11 @@ def main():
                     "--details_csv", axiom_dir / "axiom_details.csv",
                     "--save_cq_csv", strict_cq_csv,
                     "--save_report_md", report_path,
-                    "--no_layer2",
+                    "--literal_relax", "no",
+                    "--threshold", "0.6",
                 ])
 
+                # 6. Hierarchy / HermiT evaluation
                 run([
                     PYTHON, "scripts/hierarchy/eval_hierarchy.py",
                     "--gold_owl", gold_owl,

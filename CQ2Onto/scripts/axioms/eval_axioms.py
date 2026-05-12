@@ -1,3 +1,4 @@
+from __future__ import annotations
 import argparse
 import csv
 import hashlib
@@ -13,6 +14,7 @@ try:
     import requests
 except ImportError:
     requests = None  
+global LITERAL_RELAX
 
 
 
@@ -481,6 +483,10 @@ _XSD_PREFIXES = (
 )
 
 
+
+#default
+LITERAL_RELAX = False
+
 def normalize_datatype(s: str) -> str:
     if not s:
         return ""
@@ -626,9 +632,26 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
         return False, f"property {gn!r} not aligned to {pn!r}"
 
     if gt == "Datatype":
-        if normalize_datatype(g.get("name", "")) == normalize_datatype(p.get("name", "")):
+        g_norm = normalize_datatype(g.get("name", ""))
+        p_norm = normalize_datatype(p.get("name", ""))
+        if g_norm == p_norm:
             return True, ""
+        # Relaxation (opt-in via --literal_relax yes)
+        if LITERAL_RELAX:
+            gl = g_norm.lower() if g_norm else ""
+            pl = p_norm.lower() if p_norm else ""
+            literal_roots = {
+                "rdfs:literal", "xsd:literal",
+                "xsd:anysimpletype", "xsd:anyatomictype",
+                "xsd:rdfs:literal",
+                "xsd:xsd:anysimpletype", "xsd:xsd:anyatomictype",
+            }
+            if gl in literal_roots and pl and pl not in literal_roots:
+                return True, ""
         return False, f"datatype {g.get('name')!r} != {p.get('name')!r}"
+    
+
+
     if gt == "Top":
         return True, ""
 
@@ -2151,7 +2174,21 @@ def main():
                              "(config + Layer 1-4 metrics + Layer-3 "
                              "evaluation + CQ coverage). Useful for "
                              "downstream programmatic checking.")
+    
+
+    parser.add_argument("--literal_relax",
+                        choices=["yes", "no"], default="no",
+                        help="If 'yes', a generic literal root in the "
+                             "gold (rdfs:Literal / xsd:anySimpleType / "
+                             "xsd:anyAtomicType) matches any concrete "
+                             "xsd:* or rdf:* datatype in the prediction. "
+                             "Default 'no' keeps strict equality.")
     args = parser.parse_args()
+
+
+  
+    LITERAL_RELAX = (args.literal_relax == "yes")
+    print(f"[main] literal_relax = {args.literal_relax}", file=sys.stderr)
 
     print(f"Loading gold axioms from '{args.gold}'...", file=sys.stderr)
     gold = load_axioms(args.gold)

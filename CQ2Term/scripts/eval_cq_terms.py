@@ -885,6 +885,18 @@ def main():
     parser.add_argument("--final_threshold", type=float, default=0.6,
                         help="Drop pairs with averaged top-N score "
                              "below this")
+    
+
+    parser.add_argument("--semantic_threshold", type=float, default=None,
+                    help="Per-method threshold for the 'semantic' "
+                         "method. Defaults to 0.6 if not set.")
+    parser.add_argument("--lexical_threshold", type=float, default=None,
+                    help="Per-method threshold for lexical methods "
+                         "(levenshtein, jaro_winkler, sequence_match). "
+                         "Defaults to 0.8 if not set.")
+    parser.add_argument("--hard_threshold", type=float, default=None,
+                    help="Per-method threshold for 'hard_match'. "
+                         "Defaults to 1.0 if not set.")
     parser.add_argument("--semantic_model", default="embeddinggemma:latest",
                         help="Ollama model for the 'semantic' method")
 
@@ -920,6 +932,23 @@ def main():
              "term in the wrong CQ.")
 
     args = parser.parse_args()
+
+    import concept_label_matching as _clm
+    if any(t is not None for t in (args.semantic_threshold,
+                               args.lexical_threshold,
+                               args.hard_threshold)):
+        _clm.override_thresholds(
+        semantic=args.semantic_threshold,
+        lexical=args.lexical_threshold,
+        hard=args.hard_threshold,
+    )
+
+# ...
+    print(f"Per-method thresholds: "
+    f"hard={_clm.HARD_THRESHOLD}, "
+    f"lexical={_clm.LEXICAL_THRESHOLD}, "
+    f"semantic={_clm.SEMANTIC_THRESHOLD}",
+    file=sys.stderr)
 
     methods = [m.strip() for m in args.methods.split(",") if m.strip()]
     print(f"Methods: {methods}", file=sys.stderr)
