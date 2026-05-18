@@ -147,9 +147,9 @@ After a run, each (model, dataset) pair produces:
 ├── cqterm_prop_trace.csv              ← per-method similarity scores (properties)
 ├── cq_coverage.csv                    ← per-CQ coverage (At-least-one / Mean / Full)
 └── term_coverage.csv                  ← per-term coverage
+```
 
 **Read the Markdown report first.** The JSON and CSV files under `03_evaluation_results/` hold the raw numbers if you want to do your own analysis. Different runs do not overwrite each other.
-```
 
 ### 3.5 Run a single (model, dataset) pair
 
@@ -194,6 +194,7 @@ CQ2Onto/
 ├── 04_summary/                 ← Markdown reports
 ├── competency_question/        ← raw CQs per domain
 ├── prompts/                    ← prompts used in the paper (cqbycq, MASEO)
+├── leaderboard/                ← interactive HTML + data + Markdown summary
 └── scripts/
     ├── concept/eval_concept.py
     ├── property/eval_property.py
@@ -201,6 +202,7 @@ CQ2Onto/
     ├── axioms/Axioms_atomic.py
     ├── axioms/eval_axioms.py
     ├── hierarchy/eval_hierarchy.py
+    ├── build_leaderboard.py
     └── run_all_evaluation_agent_datasets.py
 ```
 
@@ -291,36 +293,36 @@ cd CQ2Onto
 python -u scripts/run_all_evaluation_agent_datasets.py
 ```
 
-The script runs five evaluation layers in order.
+The script evaluates each prediction against the five targets defined in paper Section 4.3.
 
-1. **Concept** (`scripts/concept/eval_concept.py`). Class alignment and recovery.
-2. **Property** (`scripts/property/eval_property.py`). Property alignment and recovery.
-3. **Triple** (`scripts/triple/eval_triple.py`). Domain / range triple match.
-4. **Axioms** (`scripts/axioms/Axioms_atomic.py`, then `scripts/axioms/eval_axioms.py`). The first decomposes your prediction into atomic TBox axioms. The second compares them to the gold axioms with CQ provenance.
-5. **Hierarchy** (`scripts/hierarchy/eval_hierarchy.py`). Reasoner-based closure recovery (needs Java).
+1. **Term Recovery.** Class and property alignment and recovery (`eval_concept.py` and `eval_property.py`).
+2. **Property Characteristics.** OWL property flags. Computed inside the property layer.
+3. **Triple.** Domain and range triple match (`eval_triple.py`).
+4. **TBox Axioms.** Strict structural matching of TBox axioms (`Axioms_atomic.py` decomposes the prediction into atomic axioms, then `eval_axioms.py` compares them to the gold).
+5. **Hierarchy Closure.** Reasoner-based closure recovery (`eval_hierarchy.py`, needs Java).
 
-If any layer fails the script stops. A successful run means all five layers completed.
+If any layer fails the script stops. A successful run means all five targets completed. When the runner finishes it also refreshes the leaderboard (see Section 7). Pass `--no_leaderboard` to skip the refresh.
+
+**Run a subset of layers.** The `--layers` flag accepts a comma-separated list of underlying scripts to run. Downstream layers need the alignment CSVs from concept and property, so the runner skips with a clear error message if those CSVs are missing.
+
+```bash
+# Only term-level layers (fastest, no Java needed)
+python scripts/run_all_evaluation_agent_datasets.py --layers concept,property
+
+# Re-run only triple and axioms after a config change
+python scripts/run_all_evaluation_agent_datasets.py --layers triple,axioms
+
+# Structural layers only (assumes concept + property already ran)
+python scripts/run_all_evaluation_agent_datasets.py --layers triple,atomic,axioms,hierarchy
+```
+
+Accepted layer names are `concept`, `property`, `triple`, `atomic`, `axioms`, `hierarchy`.
 
 ### 4.6 Run individual layers
 
-The five layers are independent scripts and can be run on their own. Useful for debugging or for re-running one part without redoing the whole pipeline.
+The simplest way is `--layers` (see Section 4.5). The runner handles paths and dependencies for you.
 
-**Hard dependency.** The last three layers (`triple`, `axioms`, `hierarchy`) require the alignment CSVs produced by `concept` and `property`. Required order:
-
-1. `concept` (produces `class_best_matching.csv`)
-2. `property` (produces `property_best_matching.csv`)
-3. `triple`, `axioms`, `hierarchy` (all three read the two CSVs above)
-
-After `concept` and `property` finish you have:
-
-```
-03_evaluation_results/<mode>/<model>/<dataset>/01_class/class_best_matching.csv
-03_evaluation_results/<mode>/<model>/<dataset>/02_property/property_best_matching.csv
-```
-
-These two CSVs are read by the later layers through `--class_csv` and `--property_csv`.
-
-**Example: run only the triple layer on Wine.** This example assumes you already ran concept and property for the `agent / my_model` configuration. Replace `my_model` with your actual model folder name:
+If you want to call a layer script directly (useful when sweeping one CLI argument), each script under `scripts/` is a standalone CLI. The example below runs only the triple layer on Wine, assuming the alignment CSVs from concept and property already exist:
 
 ```bash
 python scripts/triple/eval_triple.py \
@@ -335,9 +337,9 @@ python scripts/triple/eval_triple.py \
   --literal_relax    no
 ```
 
-To run a different layer, open `run_all_evaluation_agent_datasets.py` and copy the relevant `run([...])` block; that block lists exactly the arguments that layer's script accepts.
+To see the exact argument list a layer accepts, open `run_all_evaluation_agent_datasets.py` and look at the corresponding `run([...])` block.
 
-**Skipping concept or property is not allowed.** Running any of `triple` / `axioms` / `hierarchy` without those two CSVs will fail.
+**Dependencies.** `triple`, `axioms`, and `hierarchy` need the alignment CSVs from `concept` and `property`. `axioms` and `hierarchy` also need the atomic axioms JSON from `atomic`. Calling a layer script directly without its prerequisites produces a file-not-found error.
 
 ### 4.7 Inspect the outputs
 
@@ -414,3 +416,75 @@ Each layer reports **TP, FP, FN, Precision, Recall, F1**. F1 is the headline; Pr
 **Datatype literal relaxation** *(triple and axiom layers)*. With `--literal_relax yes`, a generic literal root in the gold (`rdfs:Literal`, `xsd:anySimpleType`, `xsd:anyAtomicType`) matches any concrete `xsd:*` or `rdf:*` datatype in the prediction. With `no` (default), strict equality only. Reverse direction (pred broader than gold) is never relaxed.
 
 ---
+
+## 7. Leaderboard
+
+CQ4OE includes an interactive leaderboard that ranks runs by CQ-conditioned coverage, the metric most directly aligned with the benchmark motivation. It scans the contents of `03_evaluation_results/` and produces a sortable HTML view with per-domain tabs and configuration-grouped tables.
+
+### 7.1 What gets generated
+
+`scripts/build_leaderboard.py` writes three artifacts into `leaderboard/`:
+
+- `leaderboard.html`. Static template, never regenerated. Open in a browser.
+- `leaderboard_data.js`. Data file the HTML loads through `<script src="...">`. Regenerated each time the script runs.
+- `leaderboard.md`. Static Markdown summary with the top 10 per task.
+
+The HTML is split from the data on purpose. The template ships with the repository and stays stable across versions. The data file is a snapshot of whatever is currently in `03_evaluation_results/` at the moment the script runs.
+
+### 7.2 How it gets refreshed
+
+The leaderboard refreshes from two entry points.
+
+**Automatic refresh by the runner.** Section 4.5 noted that `run_all_evaluation_agent_datasets.py` calls `build_leaderboard.py` after the evaluation completes. No extra step is needed for the standard workflow. The runner exits successfully even if the leaderboard refresh fails so the evaluation results are never lost to a build issue.
+
+**What appears in the leaderboard.** The refresh scans whatever is currently in `03_evaluation_results/`. New runs add to the rankings, old runs stay until you delete their folders.
+
+**Manual refresh.** You can also run the build script directly. This is useful after editing `03_evaluation_results/` by hand, or to force a refresh without rerunning the evaluation.
+
+```bash
+python scripts/build_leaderboard.py \
+  --cq2term_root ../CQ2Term/03_evaluation_results \
+  --cq2onto_root 03_evaluation_results \
+  --html_data    leaderboard/leaderboard_data.js \
+  --markdown_out leaderboard/leaderboard.md
+```
+
+The script accepts both CQ2Term and CQ2Onto result roots so a single leaderboard covers both tasks. Pass `--assume_config_onto` or `--assume_config_term` (for example, `--assume_config_onto "literal_relax=no,threshold=0.6,no_layer2=True"`) when the result JSONs predate the `config.cli_args` field and you still want to group those runs together.
+
+### 7.3 Viewing the leaderboard
+
+**Locally.** Double-click `leaderboard/leaderboard.html`. It works on the `file://` protocol with no web server.
+
+**Online.** Commit `leaderboard/leaderboard.html` and `leaderboard/leaderboard_data.js` to the repository and enable GitHub Pages (Settings → Pages → Deploy from a branch, root folder). The leaderboard then renders at `https://<user>.github.io/<repo>/leaderboard/leaderboard.html`.
+
+### 7.4 What the interface shows
+
+Three layers of navigation, top to bottom.
+
+- **Task.** CQ2Term (term-level over 99 CQs) or CQ2Onto (full-ontology over 118 CQs).
+- **Target.** What is being evaluated. For CQ2Term, only Term Recovery. For CQ2Onto, five targets following paper Section 4.3 (Term Recovery, Property Characteristics, Triple, TBox Axioms, Hierarchy Closure).
+- **Domain.** Overall (macro-averaged across all six domains) or one of Wine, AWO, ODRL, Water, VGO, SWO. Order follows paper Table 1, from smallest to largest.
+
+Below the navigation, each ranking table lives inside a configuration group. Two runs only appear in the same group when each CLI argument across each evaluation layer matches exactly. The group label shows the configuration as a flat key-value list. This guarantees that runs ranked against each other were produced with the same evaluation settings.
+
+Inside the table:
+
+- **Sortable columns.** Click any header to sort by that column. Click again to reverse direction.
+- **Expand P/R.** F1 columns show a ▶ icon. Clicking it splits that column into Precision, Recall, and F1.
+- **Expand per-method.** Aggregated F1 columns for Term Recovery show a ⋮ icon. Clicking it expands the five similarity methods (hard match, sequence match, Levenshtein, Jaro-Winkler, semantic embedding) into separate columns.
+- **Hover tooltips.** Each cell shows the underlying TP, FP, FN counts on hover.
+- **Partial-coverage warning.** On the Overall tab, runs that did not evaluate on all six domains show an extra Datasets column with an `n/6 ⚠` marker so they are not mistaken for full-baseline runs.
+
+### 7.5 Configuration grouping in practice
+
+The leaderboard reads each layer's `config.cli_args` block from the result JSONs (set automatically by the evaluation scripts) and merges them into a single grouping key prefixed by layer name. Any change in any argument places a run into a new group.
+
+| Change | Grouping behavior |
+| --- | --- |
+| Two runs with identical CLI args | Same group |
+| Different `--literal_relax` value | Separate groups |
+| Different `--threshold` | Separate groups |
+| Different similarity method order | Separate groups |
+| Missing `cli_args` (legacy runs) | Falls back to "Unknown configuration" or the values passed through `--assume_config_*` |
+
+This strict policy is intentional. Two runs ranked against each other should be reproducible against each other.
