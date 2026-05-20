@@ -1070,10 +1070,18 @@ def main():
         "top_n": args.top_n,
         "final_threshold": args.final_threshold,
         "semantic_model": args.semantic_model,
+        # MOD: stamp cli_args so the leaderboard can group runs by config.
+        "cli_args": {
+            k: (str(v) if hasattr(v, "__fspath__") else v)
+            for k, v in vars(args).items()
+        },
     }
     if args.save_result_json:
         save_result_json(config, {
             "metrics_overall": metrics,
+            # MOD: persist per-method P/R/F1 for class and property terms.
+            "per_method_class":    per_method_class,
+            "per_method_property": per_method_prop,
             "alignments": {
                 "class":    class_align,
                 "property": prop_align,
