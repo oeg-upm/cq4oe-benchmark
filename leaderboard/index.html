@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CQ4OE Benchmark</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    color: #1a1a1a;
+    background: #f8fafc;
+    line-height: 1.55;
+  }
+
+  /* Top bar */
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: white;
+    padding: 14px 32px;
+    border-radius: 14px;
+    margin: 16px 24px 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .topbar h1.brand {
+    font-size: 18px; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .topbar a {
+    color: #1a1a1a; text-decoration: none;
+    padding: 8px 16px; border-radius: 10px;
+    font-size: 13px; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .topbar a:hover { background: #f1f5f9; }
+  .topbar .nav-group { display: flex; gap: 8px; }
+
+  /* Hero card */
+  .card {
+    background: white;
+    margin: 0 24px 20px;
+    padding: 36px 40px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .eyebrow {
+    color: #64748b;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: #0f172a;
+    max-width: 900px;
+  }
+  .hero p.lead {
+    font-size: 16px;
+    color: #475569;
+    max-width: 800px;
+    margin-bottom: 24px;
+  }
+  .pills {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .pill {
+    background: #eef4ff;
+    color: #2563eb;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Section title */
+  .card h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #0f172a;
+  }
+  .card p.section-lead {
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  /* Tasks grid */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .grid-three { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px 26px;
+    text-decoration: none;
+    color: #0f172a;
+    transition: all 0.15s;
+    display: block;
+  }
+  .grid-item:hover {
+    border-color: #93c5fd;
+    background: #f0f7ff;
+    transform: translateY(-1px);
+  }
+  .grid-item.static {
+    cursor: default;
+  }
+  .grid-item.static:hover {
+    border-color: #e2e8f0;
+    background: #f8fafc;
+    transform: none;
+  }
+  .grid-item .title {
+    font-size: 17px; font-weight: 600;
+  }
+  .grid-item .desc {
+    font-size: 13px; color: #64748b; margin-top: 4px;
+  }
+
+  /* Source ontology card (non-link wrapper with 2 buttons) */
+  .source-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px 26px;
+    display: flex; flex-direction: column;
+  }
+  .source-card .title {
+    font-size: 17px; font-weight: 600; color: #0f172a;
+  }
+  .source-card .desc {
+    font-size: 13px; color: #64748b; margin-top: 4px;
+  }
+  .source-card .btn-row {
+    display: flex; gap: 8px; margin-top: 14px;
+  }
+  .source-card .src-btn {
+    flex: 1;
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    background: #fff;
+    transition: all 0.15s;
+  }
+  .source-card .src-btn:hover {
+    border-color: #93c5fd;
+    background: #f0f7ff;
+    color: #1d4ed8;
+  }
+  .source-card .src-btn.primary {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+  .source-card .src-btn.primary:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    color: #fff;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: #64748b;
+    font-size: 13px;
+  }
+  footer a { color: #2563eb; text-decoration: none; }
+
+  /* Logo row */
+  .logo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+  }
+  .logo-row .logo {
+    max-height: 64px;
+    max-width: 220px;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+  }
+  .logo-row a:hover .logo {
+    opacity: 1;
+  }
+
+  @media (max-width: 720px) {
+    .grid, .grid-three { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 26px; }
+    .card { padding: 24px; }
+    .topbar { padding: 12px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1 class="brand">CQ4OE Benchmark</h1>
+  <div class="nav-group">
+  <a href="leaderboard.html">Leaderboard</a>
+    <a href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/usage_instructions.md" target="_blank" rel="noopener">User Guide</a>
+    <a href="https://github.com/oeg-upm/cq4oe-benchmark">GitHub</a>
+  </div>
+</div>
+
+<section class="card hero">
+  <div class="eyebrow">A benchmark for assessing LLM-assisted ontology generation from competency questions</div>
+  <h1>A reproducible benchmark for evaluating LLM-generated ontologies against CQ-aligned gold standards</h1>
+  <p class="lead">
+    Six source ontologies with explicit provenance from each competency question to the classes, properties, and axioms required to answer it. Two evaluation tasks. CQ2Term measures CQ-specific term prediction over 99 CQs. CQ2Onto measures full-ontology generation over 118 CQs across five targets.
+  </p>
+  <div class="pills">
+    <span class="pill">6 domain ontologies</span>
+    <span class="pill">CQ2Term over 99 CQs</span>
+    <span class="pill">CQ2Onto over 118 CQs</span>
+    <span class="pill">9 LLMs baseline</span>
+    <span class="pill">3 generation strategies</span>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Evaluation Tasks</h2>
+  <p class="section-lead">
+    CQ4OE has two complementary tasks. Pick the one that matches what your method produces.
+  </p>
+  <div class="grid">
+    <a class="grid-item" href="leaderboard.html#cq2term">
+      <div class="title">CQ2Term</div>
+      <div class="desc">Term-level recovery. Given a CQ, predict the required classes and properties.</div>
+    </a>
+    <a class="grid-item" href="leaderboard.html#cq2onto">
+      <div class="title">CQ2Onto</div>
+      <div class="desc">Full ontology generation from a CQ set. Five evaluation dimensions.</div>
+    </a>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Source Ontologies</h2>
+  <p class="section-lead">
+  Six domain ontologies across three scales (small, medium, large), spanning taxonomies, semantics, and domain-specific vocabularies of varying complexity.
+  </p>
+  <div class="grid grid-three">
+    <div class="source-card">
+      <div class="title">Wine</div>
+      <div class="desc">Wine Ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#wine">View CQs</a>
+        <a class="src-btn" href="https://github.com/UCDavisLibrary/wine-ontology" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">AWO</div>
+      <div class="desc">African Wildlife Ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#awo">View CQs</a>
+        <a class="src-btn" href="https://people.cs.uct.ac.za/~mkeet/OEbook/ontologies/AfricanWildlifeOntology1.owl" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">ODRL</div>
+      <div class="desc">Open Digital Rights Language</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#odrl">View CQs</a>
+        <a class="src-btn" href="https://www.w3.org/ns/odrl/2/" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">Water</div>
+      <div class="desc">SAREF4WATR Ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#water">View CQs</a>
+        <a class="src-btn" href="https://saref.etsi.org/saref4watr/v1.1.1/" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">VGO</div>
+      <div class="desc">Video Game Ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#vgo">View CQs</a>
+        <a class="src-btn" href="https://vocab.linkeddata.es/vgo/" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">SWO</div>
+      <div class="desc">Software Ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#swo">View CQs</a>
+        <a class="src-btn" href="https://obofoundry.org/ontology/swo.html" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Acknowledgements</h2>
+  <p class="section-lead">
+    This work was supported by the grant
+    <a href="https://w3id.org/soel" target="_blank">SOEL (Supporting Ontology Engineering with Large Language Models)</a>,
+    PID2023-152703NA-I00, funded by MCIN/AEI/10.13039/501100011033 and by ERDF/UE.
+  </p>
+  <div class="logo-row">
+    <a href="https://www.upm.es" target="_blank" rel="noopener" title="Universidad Politécnica de Madrid">
+      <img src="https://www.upm.es/sfs/Rectorado/Gabinete%20del%20Rector/Logos/UPM/CEI/LOGOTIPO%20leyenda%20color%20JPG%20p.png" alt="Universidad Politécnica de Madrid" class="logo">
+    </a>
+    <a href="https://oeg.fi.upm.es" target="_blank" rel="noopener" title="Ontology Engineering Group">
+      <img src="https://avatars.githubusercontent.com/u/2278211?s=280&v=4" alt="Ontology Engineering Group" class="logo">
+    </a>
+  </div>
+</section>
+
+<footer>
+  CQ4OE is developed by the
+  <a href="https://oeg.fi.upm.es" target="_blank">Ontology Engineering Group</a>
+  at Universidad Politécnica de Madrid.
+  Read the
+  <a href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/README.md">README</a>
+  for citation and contribution details.
+</footer>
+
+</body>
+</html>

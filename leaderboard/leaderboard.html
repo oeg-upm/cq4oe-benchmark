@@ -26,6 +26,68 @@
     border-radius: 3px;
   }
 
+  /* Top home link */
+  .topbar-mini {
+    margin-bottom: 12px;
+  }
+  .topbar-mini a {
+    display: inline-block; padding: 6px 12px;
+    background: #f1f5f9; border: 1px solid #e2e8f0;
+    border-radius: 8px; color: #334155;
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    transition: background 0.15s;
+  }
+  .topbar-mini a:hover { background: #e2e8f0; }
+
+  /* Task / dimension picker */
+  .picker { max-width: 920px; }
+  .picker h2 {
+    font-size: 22px; color: #0f172a; margin: 18px 0 6px;
+  }
+  .picker-lead {
+    color: #475569; font-size: 14px; margin-bottom: 20px;
+  }
+  .picker-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  .picker-card {
+    display: block; padding: 22px 26px; border-radius: 12px;
+    background: #f8fafc; border: 1px solid #e2e8f0;
+    text-decoration: none; color: #0f172a;
+    transition: all 0.15s;
+  }
+  .picker-card:hover {
+    border-color: #93c5fd; background: #f0f7ff;
+    transform: translateY(-1px);
+  }
+  .picker-title {
+    font-size: 17px; font-weight: 600; margin-bottom: 4px;
+  }
+  .picker-desc {
+    font-size: 13px; color: #64748b; line-height: 1.5;
+  }
+  @media (max-width: 720px) {
+    .picker-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Back button + crumb */
+  .table-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 14px;
+  }
+  .back-btn {
+    display: inline-block; padding: 6px 12px;
+    background: #f1f5f9; border: 1px solid #e2e8f0;
+    border-radius: 8px; color: #334155;
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    transition: background 0.15s;
+  }
+  .back-btn:hover { background: #e2e8f0; }
+  .task-crumb {
+    color: #475569; font-size: 14px;
+  }
+  .task-crumb strong { color: #0f172a; }
+
   /* Two-tier nav */
   .nav {
     display: flex; flex-wrap: wrap; gap: 4px;
@@ -57,20 +119,25 @@
     background: #fff; border: 1px solid #e0e0e0;
     border-radius: 8px; padding: 14px 18px;
     margin: 14px 0 24px;
+    overflow-x: auto;
   }
   .config-header {
     display: flex; align-items: center; gap: 12px;
     margin-bottom: 12px;
     font-size: 13px;
+    flex-wrap: wrap;
   }
   .config-label {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
     background: #f0f0f0; padding: 4px 10px;
     border-radius: 4px; color: #444;
     font-size: 12px;
+    white-space: normal;
+    word-break: break-all;
   }
   .config-count {
     color: #888; font-size: 12px;
+    white-space: nowrap;
   }
 
   /* Tables */
@@ -97,9 +164,10 @@
   th.col-g, td.col-g { background: #f5f5f5; }
   th.col-diag, td.col-diag { background: #f7f0ff; }
   th.col-cq, td.col-cq { background: #fff8e6; }
+  th.col-score, td.col-score { background: #e8f5e9; }
   th.col-meta, td.col-meta { background: #f3f0ff; color: #555; }
   td.col-meta.partial { color: #b35400; font-weight: 600; }
-  th.headline, td.headline { font-weight: 700; }
+  th.headline { font-weight: 700; }
 
   tbody tr:hover { background: #fcfcfc; }
   td.rank { color: #888; font-variant-numeric: tabular-nums; }
@@ -116,6 +184,18 @@
   .expand-btn:hover { color: #0066cc; }
   .expand-btn.active { color: #0066cc; font-weight: 700; }
 
+  /* Catalog link icon */
+  .info-icon {
+    display: inline-block;
+    margin-left: 3px;
+    color: #999;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: normal;
+    cursor: help;
+  }
+  .info-icon:hover { color: #0066cc; }
+
   /* Empty state */
   .empty {
     color: #999; padding: 24px; text-align: center;
@@ -125,27 +205,76 @@
 </head>
 <body>
 
+<div class="topbar-mini">
+  <a href="../index.html">← Home</a>
+</div>
+
 <h1>CQ4OE Benchmark Leaderboard</h1>
 <p class="intro">
 CQ4OE leaderboard for LLM-based ontology generation from competency questions. Runs are grouped by evaluation configuration so only identical settings are ranked against each other.
 </p>
 
-<div class="nav">
-  <span class="nav-label">Task:</span>
-  <div id="benchmark-nav"></div>
-</div>
-<div class="nav">
-  <span class="nav-label">Target:</span>
-  <div id="task-nav"></div>
-</div>
-<div class="nav">
-  <span class="nav-label">Domain:</span>
-  <div id="domain-nav"></div>
+<!-- Task picker view -->
+<div id="task-picker" class="picker">
+  <h2>Choose an evaluation task</h2>
+  <p class="picker-lead">CQ4OE has two complementary tasks. Pick the one that matches what your method produces.</p>
+  <div class="picker-grid">
+    <a href="#cq2term" class="picker-card">
+      <div class="picker-title">CQ2Term</div>
+      <div class="picker-desc">Term-level recovery. Given a CQ, predict the required classes and properties. Single evaluation target over 99 CQs.</div>
+    </a>
+    <a href="#cq2onto" class="picker-card">
+      <div class="picker-title">CQ2Onto</div>
+      <div class="picker-desc">Full OWL ontology generation. Five evaluation targets over 118 CQs covering term recovery, property modeling, axioms, and hierarchy.</div>
+    </a>
+  </div>
 </div>
 
-<p id="task-desc" class="task-desc"></p>
+<!-- Dimension picker view (CQ2Onto only) -->
+<div id="dim-picker" class="picker" style="display:none">
+  <a href="#" class="back-btn" id="back-to-tasks">← Back to tasks</a>
+  <h2>CQ2Onto evaluation targets</h2>
+  <p class="picker-lead">Five evaluation targets at different modeling depths. Pick one to view its leaderboard.</p>
+  <div class="picker-grid">
+    <a href="#cq2onto-term_recovery" class="picker-card">
+      <div class="picker-title">Term Recovery</div>
+      <div class="picker-desc">Class and property alignment between predicted and gold ontology.</div>
+    </a>
+    <a href="#cq2onto-property_chars" class="picker-card">
+      <div class="picker-title">Property Characteristics</div>
+      <div class="picker-desc">OWL flags such as functional, transitive, symmetric.</div>
+    </a>
+    <a href="#cq2onto-triple" class="picker-card">
+      <div class="picker-title">Triple (Domain and Range)</div>
+      <div class="picker-desc">Whether each property has the right domain and range.</div>
+    </a>
+    <a href="#cq2onto-axiom" class="picker-card">
+      <div class="picker-title">TBox Axioms</div>
+      <div class="picker-desc">Strict structural matching of TBox axioms after term alignment.</div>
+    </a>
+    <a href="#cq2onto-hierarchy" class="picker-card">
+      <div class="picker-title">Hierarchy Closure</div>
+      <div class="picker-desc">Reasoner-based recovery of subsumptions (entailed, not just asserted).</div>
+    </a>
+  </div>
+</div>
 
-<div id="content"></div>
+<!-- Table view -->
+<div id="table-view" style="display:none">
+  <div class="table-header">
+    <a href="#" class="back-btn" id="back-from-table">← Back</a>
+    <div class="task-crumb" id="task-crumb"></div>
+  </div>
+
+  <div class="nav">
+    <span class="nav-label">Domain:</span>
+    <div id="domain-nav"></div>
+  </div>
+
+  <p id="task-desc" class="task-desc"></p>
+
+  <div id="content"></div>
+</div>
 
 <script src="leaderboard_data.js"></script>
 <script>
@@ -163,11 +292,13 @@ const TASKS = {
   cq2term: {
     term_recovery: {
       label: "Term Recovery",
-      desc: "Recovery of the classes and properties that each competency question (CQ) requires. Each cell is the aggregated F1 from a top-3 mean over the five similarity methods (hard match, sequence match, Levenshtein, Jaro-Winkler, semantic embedding). Hover any cell for Precision (P), Recall (R) and F1, or click the per-method icon to see all five methods. CQ-conditioned coverage reports the share of CQs with at least one required term recovered (At-least-one), the average per-CQ recovery rate (Mean), and the share with all required terms recovered (Full).",
+      desc: "Recovery of the classes and properties that each competency question (CQ) requires. Each cell is the aggregated F1 from a top-3 mean over the five similarity methods (hard match, sequence match, Levenshtein, Jaro-Winkler, semantic embedding). Hover any cell for Precision (P), Recall (R) and F1, or click the per-method icon to see all five methods. The AggregatedTop3 columns show the mean alignment confidence per selected pair, taken as 100% for hard matches and otherwise the mean of the top 3 non-hard method scores. CQ-conditioned coverage reports the share of CQs with at least one required term recovered (At-least-one), the average per-CQ recovery rate (Mean), and the share with all required terms recovered (Full).",
       defaultSort: "cq__mean",
       cols: [
         { kind: "agg_method", id: "class",     label: "Class F1",    cls: "", methodKey: "per_method_class", subKey: "class" },
         { kind: "agg_method", id: "property",  label: "Property F1", cls: "", methodKey: "per_method_property", subKey: "property" },
+        { kind: "score",      id: "agg_top3_class",    label: "AggTop3 Class",    cls: "col-score" },
+        { kind: "score",      id: "agg_top3_property", label: "AggTop3 Property", cls: "col-score" },
         { kind: "prf1",       id: "combined",  label: "Combined F1", cls: "" },
         { kind: "cq",         id: "cq",        label: "CQ-Any",      cls: "col-cq", sub: "any" },
         { kind: "cq",         id: "cq",        label: "CQ-Mean",     cls: "col-cq", sub: "mean", headline: true },
@@ -178,11 +309,13 @@ const TASKS = {
   cq2onto: {
     term_recovery: {
       label: "Term Recovery",
-      desc: "Recovery of all classes and properties in the predicted ontology. Aggregated F1 uses a top-3 mean over the five similarity methods. Click the per-method icon to expand the five method scores.",
+      desc: "Recovery of all classes and properties in the predicted ontology. Aggregated F1 uses a top-3 mean over the five similarity methods. Click the per-method icon to expand the five method scores. The AggregatedTop3 columns show the mean alignment confidence per selected pair, taken as 100% for hard matches and otherwise the mean of the top 3 non-hard method scores.",
       defaultSort: "property__f1",
       cols: [
         { kind: "agg_method", id: "class",    label: "Class F1",    cls: "", methodKey: "per_method", subKey: "class" },
         { kind: "agg_method", id: "property", label: "Property F1", cls: "", methodKey: "per_method", subKey: "property", headline: true },
+        { kind: "score",      id: "agg_top3_class",    label: "AggTop3 Class",    cls: "col-score", subKey: "class" },
+        { kind: "score",      id: "agg_top3_property", label: "AggTop3 Property", cls: "col-score", subKey: "property" },
       ],
     },
     property_chars: {
@@ -232,10 +365,69 @@ const TASKS = {
 };
 
 // ─────────────────────────────────────────────────────────────
-// Page state
+// CATALOG LINK MAPPING
+// Each leaderboard column links to a metric entry in the OntoCatalogue.
+// URL pattern: https://oeg-upm.github.io/cq4oe-benchmark/OntoCatalogue/html/<Name>.html
 // ─────────────────────────────────────────────────────────────
+const CATALOG_BASE = "https://oeg-upm.github.io/cq4oe-benchmark/OntoCatalogue/html";
+
+const CATALOG_PAGE = {
+  // Aggregated alignment scores
+  agg_top3:                  "AggregatedTop3",
+  // Per-method similarity metrics
+  hard_match:                "HardMatch",
+  sequence_match:            "SequenceMatch",
+  levenshtein:               "LevenshteinDistance",
+  jaro_winkler:              "JaroWinklerDistance",
+  semantic:                  "SemanticCosineSimilarity",
+  // Set-based metrics
+  precision:                 "Precision",
+  recall:                    "Recall",
+  f1:                        "F1",
+  // Diagnostic
+  cosine:                    "EmbeddingDiagnostic",
+  // CQ coverage
+  cq_any:                    "AtLeastOneCoverage",
+  cq_mean:                   "MeanCoverage",
+  cq_full:                   "FullCoverage",
+  // Hierarchy closure rescue
+  closure_rescue:            "ClosureRescueCoverage",
+};
+
+function catalogUrl(metricKey) {
+  const page = CATALOG_PAGE[metricKey];
+  return page ? `${CATALOG_BASE}/${page}.html` : null;
+}
+
+// Resolve a column to its primary catalog link
+function colCatalogUrl(col) {
+  // agg_method columns (Class F1, Property F1) report F1 from the top-3 aggregation.
+  // The metric itself is F1 - the aggregation method is documented separately.
+  if (col.kind === "agg_method")  return catalogUrl("f1");
+  // score columns are the AggregatedTop3 alignment score itself.
+  if (col.kind === "score")       return catalogUrl("agg_top3");
+  if (col.kind === "prf1") {
+    if (col.id === "cosine")      return catalogUrl("cosine");
+    return catalogUrl("f1");
+  }
+  if (col.kind === "cq") {
+    // Hierarchy task uses closure-rescue CQ coverage
+    if (state.task === "hierarchy") return catalogUrl("closure_rescue");
+    if (col.sub === "any")          return catalogUrl("cq_any");
+    if (col.sub === "mean")         return catalogUrl("cq_mean");
+    if (col.sub === "full")         return catalogUrl("cq_full");
+  }
+  return null;
+}
+
+// Helper to produce the (?) icon link HTML for a header
+function infoIcon(url, title) {
+  if (!url) return "";
+  return ` <a class="info-icon" href="${url}" target="_blank" rel="noopener" title="${title || "Catalog entry"}" onclick="event.stopPropagation()">ⓘ</a>`;
+}
 
 let state = {
+  view:      "task_picker", // "task_picker" | "dim_picker" | "table"
   benchmark: "cq2onto",      // "cq2term" | "cq2onto"
   task:      "axiom",        // task key
   domain:    "overall",      // "overall" | dataset name
@@ -296,6 +488,17 @@ function getMetric(run, task, col) {
     } else {
       // CQ2Term — class/property at top of scope
       return scope[col.subKey] || null;
+    }
+  }
+  if (col.kind === "score") {
+    // 0-1 alignment score. For CQ2Term: scope.agg_top3_class / agg_top3_property
+    // For CQ2Onto: scope.class.agg_top3 / scope.property.agg_top3
+    if (state.benchmark === "cq2onto") {
+      const sub = scope[col.subKey];
+      return sub && sub.agg_top3 !== undefined && sub.agg_top3 !== null ? sub.agg_top3 : null;
+    } else {
+      const v = scope[col.id];
+      return (v !== undefined && v !== null) ? v : null;
     }
   }
   return null;
@@ -387,6 +590,11 @@ function aggregateOverall(runs) {
       });
       return out;
     }
+    function avgScalar(getter) {
+      const vals = recs.map(r => getter(r)).filter(v => v !== null && v !== undefined);
+      if (vals.length === 0) return null;
+      return vals.reduce((a, b) => a + b, 0) / vals.length;
+    }
     function avgTermRecovery() {
       const scopes = recs.map(r => r.term_recovery).filter(s => s);
       if (scopes.length === 0) return null;
@@ -396,17 +604,27 @@ function aggregateOverall(runs) {
         out.property = avgMetric(r => (r.term_recovery || {}).property);
         out.combined = avgMetric(r => (r.term_recovery || {}).combined);
         out.cq       = avgCQ(r => (r.term_recovery || {}).cq);
-        // per-method — average across datasets per method
-        out.per_method_class = {};
+        // per-method: average across datasets per method
+        out.per_method_class    = {};
         out.per_method_property = {};
+        const methods = LEADERBOARD_DATA.methods;
+        methods.forEach(m => {
+          out.per_method_class[m]    = avgMetric(r => ((r.term_recovery || {}).per_method_class    || {})[m]);
+          out.per_method_property[m] = avgMetric(r => ((r.term_recovery || {}).per_method_property || {})[m]);
+        });
+        // AggregatedTop3 scalar scores
+        out.agg_top3_class    = avgScalar(r => (r.term_recovery || {}).agg_top3_class);
+        out.agg_top3_property = avgScalar(r => (r.term_recovery || {}).agg_top3_property);
       } else {
         out.class = {
           aggregated: avgMetric(r => ((r.term_recovery || {}).class || {}).aggregated),
           per_method: {},
+          agg_top3:   avgScalar(r => ((r.term_recovery || {}).class || {}).agg_top3),
         };
         out.property = {
           aggregated: avgMetric(r => ((r.term_recovery || {}).property || {}).aggregated),
           per_method: {},
+          agg_top3:   avgScalar(r => ((r.term_recovery || {}).property || {}).agg_top3),
         };
         // Average per-method
         const methods = LEADERBOARD_DATA.methods;
@@ -434,14 +652,34 @@ function aggregateOverall(runs) {
 // ─────────────────────────────────────────────────────────────
 
 function getSortValue(run, sortCol) {
-  // sortCol is "<col.id>__<sub>" e.g. "ac__f1", "cq__mean", "class__f1"
+  // sortCol is one of:
+  //   "<col.id>__<sub>"          aggregated columns, e.g. "ac__f1", "cq__mean", "class__f1"
+  //   "<col.id>_<method>__f1"    per-method expanded columns, e.g. "class_hard_match__f1"
+  //   "n_datasets"               meta column on the Overall tab
+  if (sortCol === "n_datasets") {
+    return run.n_datasets ?? null;
+  }
   const [id, sub] = sortCol.split("__");
   const cols = TASKS[state.benchmark][state.task].cols;
+
+  // Per-method sub-column: "class_hard_match" → base "class", method "hard_match"
+  for (const col of cols) {
+    if (col.kind !== "agg_method") continue;
+    if (!id.startsWith(col.id + "_")) continue;
+    const method = id.slice(col.id.length + 1);
+    if (!LEADERBOARD_DATA.methods.includes(method)) continue;
+    const pm = getPerMethod(run, col);
+    const mm = pm ? pm[method] : null;
+    return mm ? mm[sub] : null;
+  }
+
+  // Aggregated columns
   const col = cols.find(c =>
     (c.id === id) && (
       (c.kind === "prf1" && (sub === "p" || sub === "r" || sub === "f1")) ||
       (c.kind === "cq" && c.sub === sub) ||
-      (c.kind === "agg_method" && sub === "f1")
+      (c.kind === "agg_method" && sub === "f1") ||
+      (c.kind === "score" && sub === "v")
     )
   );
   if (!col) return null;
@@ -453,11 +691,23 @@ function getSortValue(run, sortCol) {
     const m = getMetric(run, state.task, col);
     return m ? m[sub] : null;
   }
+  if (col.kind === "score") {
+    return getMetric(run, state.task, col);
+  }
   return null;
 }
 
-function sortRuns(runs, sortCol, dir) {
+function sortRuns(runs, sortCol, dir, coveragePrimary) {
   return runs.slice().sort((a, b) => {
+    // Primary key: coverage descending (only in Overall view).
+    // Runs with fewer covered datasets always sort below fully covered ones,
+    // unless the user explicitly sorts by the coverage column itself.
+    if (coveragePrimary && sortCol !== "n_datasets") {
+      const ca = a.n_datasets ?? 0;
+      const cb = b.n_datasets ?? 0;
+      if (ca !== cb) return cb - ca;
+    }
+
     const x = getSortValue(a, sortCol);
     const y = getSortValue(b, sortCol);
     if (x === null || x === undefined) return 1;
@@ -471,46 +721,84 @@ function sortRuns(runs, sortCol, dir) {
 // ─────────────────────────────────────────────────────────────
 
 function buildHeader(table, cols, showOverall, totalDatasets) {
+  const showMode = (state.benchmark === "cq2onto");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
-  tr.innerHTML = `<th>Rank</th><th>Mode</th><th>Model</th>`;
+  tr.innerHTML = `<th>Rank</th>` + (showMode ? `<th>Mode</th>` : ``) + `<th>Model</th>`;
 
   cols.forEach(col => {
     if (col.kind === "prf1") {
       const expanded = state.expandedPRF1.has(col.id);
       const cls = col.cls + (col.headline ? " headline" : "");
+      const f1Link  = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      const pLink   = infoIcon(catalogUrl("precision"), "Precision catalog entry");
+      const rLink   = infoIcon(catalogUrl("recall"),    "Recall catalog entry");
       if (expanded) {
         ["p", "r"].forEach(sub => {
           const colId = `${col.id}__${sub}`;
-          tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label.replace(/F1.*/, sub.toUpperCase())}<span class="arrow"></span></th>`;
+          const subLink = sub === "p" ? pLink : rLink;
+          tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label.replace(/F1.*/, sub.toUpperCase())}<span class="arrow"></span>${subLink}</th>`;
         });
         const colId = `${col.id}__f1`;
-        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span> <span class="expand-btn active" data-expand-prf1="${col.id}" title="Collapse P/R">◀</span></th>`;
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${f1Link} <span class="expand-btn active" data-expand-prf1="${col.id}" title="Collapse P/R">◀</span></th>`;
       } else {
         const colId = `${col.id}__f1`;
-        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span> <span class="expand-btn" data-expand-prf1="${col.id}" title="Expand P/R columns">▶</span></th>`;
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${f1Link} <span class="expand-btn" data-expand-prf1="${col.id}" title="Expand P/R columns">▶</span></th>`;
       }
     } else if (col.kind === "agg_method") {
       const expanded = state.expandedMethod.has(col.id);
+      const parentPrf1Expanded = state.expandedPRF1.has(col.id);
       const cls = col.cls + (col.headline ? " headline" : "");
       const colId = `${col.id}__f1`;
-      tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span> <span class="expand-btn ${expanded ? "active" : ""}" data-expand-method="${col.id}" title="${expanded ? "Hide" : "Show"} per-method scores">⋮</span></th>`;
+      const aggLink = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      const pLink   = infoIcon(catalogUrl("precision"), "Precision catalog entry");
+      const rLink   = infoIcon(catalogUrl("recall"),    "Recall catalog entry");
+
+      // The aggregated header itself. ▶ controls P/R expansion. ⋮ controls per-method.
+      if (parentPrf1Expanded) {
+        // Expand aggregated F1 into P / R / F1 first
+        ["p", "r"].forEach(sub => {
+          const aggSubId = `${col.id}__${sub}`;
+          const subLink = sub === "p" ? pLink : rLink;
+          tr.innerHTML += `<th class="sortable ${cls}" data-sort="${aggSubId}">${col.label.replace(/F1.*/, sub.toUpperCase())}<span class="arrow"></span>${subLink}</th>`;
+        });
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${aggLink} <span class="expand-btn active" data-expand-prf1="${col.id}" title="Collapse P/R">◀</span> <span class="expand-btn ${expanded ? "active" : ""}" data-expand-method="${col.id}" title="${expanded ? "Hide" : "Show"} per-method scores">⋮</span></th>`;
+      } else {
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${aggLink} <span class="expand-btn" data-expand-prf1="${col.id}" title="Expand P/R columns">▶</span> <span class="expand-btn ${expanded ? "active" : ""}" data-expand-method="${col.id}" title="${expanded ? "Hide" : "Show"} per-method scores">⋮</span></th>`;
+      }
+
+      // Per-method sub-columns
       if (expanded) {
         const methods = LEADERBOARD_DATA.methods;
         methods.forEach(m => {
-          const subColId = `${col.id}_${m}__f1`;
-          tr.innerHTML += `<th class="sortable" style="background:#fef9e7" data-sort="${subColId}" title="${m} F1">${m.replace("_", " ")}<span class="arrow"></span></th>`;
+          const methodLink = infoIcon(catalogUrl(m), m + " catalog entry");
+          if (parentPrf1Expanded) {
+            ["p", "r", "f1"].forEach(sub => {
+              const subColId = `${col.id}_${m}__${sub}`;
+              const labelSuffix = sub === "f1" ? "F1" : sub.toUpperCase();
+              tr.innerHTML += `<th class="sortable" style="background:#fef9e7" data-sort="${subColId}" title="${m} ${labelSuffix}">${m.replace("_", " ")} ${labelSuffix}<span class="arrow"></span>${methodLink}</th>`;
+            });
+          } else {
+            const subColId = `${col.id}_${m}__f1`;
+            tr.innerHTML += `<th class="sortable" style="background:#fef9e7" data-sort="${subColId}" title="${m} F1">${m.replace("_", " ")}<span class="arrow"></span>${methodLink}</th>`;
+          }
         });
       }
     } else if (col.kind === "cq") {
       const cls = col.cls + (col.headline ? " headline" : "");
       const colId = `${col.id}__${col.sub}`;
-      tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span></th>`;
+      const cqLink = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${cqLink}</th>`;
+    } else if (col.kind === "score") {
+      const cls = col.cls + (col.headline ? " headline" : "");
+      const colId = `${col.id}__v`;
+      const scoreLink = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${scoreLink}</th>`;
     }
   });
 
   if (showOverall) {
-    tr.innerHTML += `<th class="sortable col-meta" data-sort="n_datasets">Datasets<span class="arrow"></span></th>`;
+    tr.innerHTML += `<th class="sortable col-meta" data-sort="n_datasets" title="Number of benchmark domains this run has been evaluated on (e.g. 6/6 means all six). Models without full coverage are flagged with ⚠ and not directly comparable.">Domains<span class="arrow"></span></th>`;
   }
 
   thead.appendChild(tr);
@@ -518,11 +806,12 @@ function buildHeader(table, cols, showOverall, totalDatasets) {
 }
 
 function buildRows(table, runs, cols, showOverall, totalDatasets) {
+  const showMode = (state.benchmark === "cq2onto");
   const tbody = document.createElement("tbody");
   runs.forEach((run, idx) => {
     const tr = document.createElement("tr");
-    const modeStr = run.mode || "—";
-    tr.innerHTML = `<td class="rank">${idx + 1}</td><td class="mono">${modeStr}</td><td class="mono">${run.model}</td>`;
+    const modeCell = showMode ? `<td class="mono">${run.mode || "—"}</td>` : ``;
+    tr.innerHTML = `<td class="rank">${idx + 1}</td>${modeCell}<td class="mono">${run.model}</td>`;
 
     cols.forEach(col => {
       const cls = col.cls + (col.headline ? " headline" : "");
@@ -540,19 +829,39 @@ function buildRows(table, runs, cols, showOverall, totalDatasets) {
       } else if (col.kind === "agg_method") {
         const m = getMetric(run, state.task, col);
         const tt = tooltipPRF1(m);
-        tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.f1)}</td>`;
+        const parentPrf1Expanded = state.expandedPRF1.has(col.id);
+        // Aggregated cell
+        if (parentPrf1Expanded) {
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.p)}</td>`;
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.r)}</td>`;
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.f1)}</td>`;
+        } else {
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.f1)}</td>`;
+        }
+        // Per-method cells
         if (state.expandedMethod.has(col.id)) {
           const pm = getPerMethod(run, col);
           LEADERBOARD_DATA.methods.forEach(method => {
             const mm = pm ? pm[method] : null;
             const ttm = tooltipPRF1(mm);
-            tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.f1)}</td>`;
+            if (parentPrf1Expanded) {
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.p)}</td>`;
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.r)}</td>`;
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.f1)}</td>`;
+            } else {
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.f1)}</td>`;
+            }
           });
         }
       } else if (col.kind === "cq") {
         const m = getMetric(run, state.task, col);
         const tt = tooltipCQ(m);
         tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m[col.sub])}</td>`;
+      } else if (col.kind === "score") {
+        const v = getMetric(run, state.task, col);
+        const txt = (v === null || v === undefined) ? "—" : (v * 100).toFixed(1) + "%";
+        const tt = (v === null || v === undefined) ? "" : `Score = ${(v * 100).toFixed(2)}% (mean alignment confidence)`;
+        tr.innerHTML += `<td class="${cls}" title="${tt}">${txt}</td>`;
       }
     });
 
@@ -597,49 +906,7 @@ function getTaskCols() {
 }
 
 function renderNav() {
-  // Benchmark
-  const bnav = document.getElementById("benchmark-nav");
-  bnav.innerHTML = "";
-  ["cq2term", "cq2onto"].forEach(b => {
-    const btn = document.createElement("div");
-    btn.className = "nav-btn" + (state.benchmark === b ? " active" : "");
-    btn.textContent = b === "cq2term" ? "CQ2Term" : "CQ2Onto";
-    btn.addEventListener("click", () => {
-      if (state.benchmark === b) return;
-      state.benchmark = b;
-      // Reset task to first valid for this benchmark
-      const tasks = Object.keys(TASKS[b]);
-      state.task = tasks[0];
-      // Reset sort based on new task default
-      const def = TASKS[b][state.task].defaultSort;
-      state.sort = { col: def, dir: "desc" };
-      state.expandedPRF1.clear();
-      state.expandedMethod.clear();
-      render();
-    });
-    bnav.appendChild(btn);
-  });
-
-  // Task
-  const tnav = document.getElementById("task-nav");
-  tnav.innerHTML = "";
-  const tasks = TASKS[state.benchmark];
-  Object.entries(tasks).forEach(([key, def]) => {
-    const btn = document.createElement("div");
-    btn.className = "nav-btn" + (state.task === key ? " active" : "");
-    btn.textContent = def.label;
-    btn.addEventListener("click", () => {
-      if (state.task === key) return;
-      state.task = key;
-      state.sort = { col: def.defaultSort, dir: "desc" };
-      state.expandedPRF1.clear();
-      state.expandedMethod.clear();
-      render();
-    });
-    tnav.appendChild(btn);
-  });
-
-  // Domain
+  // Domain nav (only shown in table view)
   const dnav = document.getElementById("domain-nav");
   dnav.innerHTML = "";
   const datasets = getBenchmarkData().datasets;
@@ -656,11 +923,28 @@ function renderNav() {
     dnav.appendChild(btn);
   });
 
+  // Crumb showing current task path
+  const taskLabel = TASKS[state.benchmark][state.task].label;
+  const bmLabel = state.benchmark === "cq2term" ? "CQ2Term" : "CQ2Onto";
+  document.getElementById("task-crumb").innerHTML = `<strong>${bmLabel}</strong> &rsaquo; ${taskLabel}`;
+
   // Task description
   document.getElementById("task-desc").textContent = TASKS[state.benchmark][state.task].desc;
 }
 
+function showView() {
+  const taskPicker = document.getElementById("task-picker");
+  const dimPicker  = document.getElementById("dim-picker");
+  const tableView  = document.getElementById("table-view");
+  taskPicker.style.display = state.view === "task_picker" ? "" : "none";
+  dimPicker.style.display  = state.view === "dim_picker"  ? "" : "none";
+  tableView.style.display  = state.view === "table"       ? "" : "none";
+}
+
 function render() {
+  showView();
+  if (state.view !== "table") return;
+
   if (!state.sort.col) {
     state.sort.col = TASKS[state.benchmark][state.task].defaultSort;
   }
@@ -714,6 +998,10 @@ function render() {
           const m = getMetric(r, state.task, col);
           return m && (m[col.sub] !== null && m[col.sub] !== undefined);
         }
+        if (col.kind === "score") {
+          const v = getMetric(r, state.task, col);
+          return v !== null && v !== undefined;
+        }
         return false;
       });
     });
@@ -727,7 +1015,7 @@ function render() {
       return;
     }
 
-    const sorted = sortRuns(rows, state.sort.col, state.sort.dir);
+    const sorted = sortRuns(rows, state.sort.col, state.sort.dir, showOverall);
     const table = document.createElement("table");
     buildHeader(table, cols, showOverall, totalDatasets);
     buildRows(table, sorted, cols, showOverall, totalDatasets);
@@ -736,8 +1024,9 @@ function render() {
     // Wire sort headers
     table.querySelectorAll("th.sortable").forEach(th => {
       th.addEventListener("click", (e) => {
-        // Don't sort if user clicked the expand button
+        // Don't sort if user clicked the expand button or info icon
         if (e.target.classList.contains("expand-btn")) return;
+        if (e.target.classList.contains("info-icon")) return;
         const col = th.dataset.sort;
         if (state.sort.col === col) {
           state.sort.dir = state.sort.dir === "desc" ? "asc" : "desc";
@@ -773,6 +1062,70 @@ function render() {
     content.appendChild(wrap);
   });
 }
+
+// Initialize from URL hash if present
+function initFromHash() {
+  const hash = (window.location.hash || "").slice(1);
+  // Default = task picker
+  if (!hash) {
+    state.view = "task_picker";
+    return;
+  }
+  // #cq2term → straight to CQ2Term table
+  if (hash === "cq2term") {
+    state.view = "table";
+    state.benchmark = "cq2term";
+    state.task = "term_recovery";
+  }
+  // #cq2onto → dimension picker
+  else if (hash === "cq2onto") {
+    state.view = "dim_picker";
+    state.benchmark = "cq2onto";
+  }
+  // #cq2onto-<dim> → table for that dimension
+  else if (hash.startsWith("cq2onto-")) {
+    const t = hash.slice("cq2onto-".length);
+    if (TASKS.cq2onto[t]) {
+      state.view = "table";
+      state.benchmark = "cq2onto";
+      state.task = t;
+    } else {
+      state.view = "dim_picker";
+      state.benchmark = "cq2onto";
+    }
+  }
+  // Reset sort + expansion when entering a table view
+  if (state.view === "table") {
+    const def = TASKS[state.benchmark][state.task].defaultSort;
+    if (def) state.sort = { col: def, dir: "desc" };
+    state.expandedPRF1.clear();
+    state.expandedMethod.clear();
+    state.domain = "overall";
+  }
+}
+
+// Back button handler (used by both pickers)
+function setupBackHandlers() {
+  document.getElementById("back-to-tasks").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.hash = "";
+    initFromHash();
+    render();
+  });
+  document.getElementById("back-from-table").addEventListener("click", (e) => {
+    e.preventDefault();
+    // If we came from CQ2Onto, go back to dim picker. Else back to task picker.
+    window.location.hash = state.benchmark === "cq2onto" ? "cq2onto" : "";
+    initFromHash();
+    render();
+  });
+}
+
+initFromHash();
+setupBackHandlers();
+
+// Re-render when user manually changes hash (back/forward button)
+window.addEventListener("hashchange", () => { initFromHash(); render(); });
 
 // Initial render
 render();
