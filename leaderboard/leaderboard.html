@@ -70,6 +70,10 @@
     background: #1a73e8; color: white; border-color: #1a73e8;
     font-weight: 600;
   }
+  /* Domain row active state: amber, to distinguish from blue Task row */
+  .nav-btn.domain.active {
+    background: #d97706; color: white; border-color: #d97706;
+  }
   /* Target buttons get a colored active state matching the column theme */
   .nav-btn.target.active[data-accent="term"]     { background:#2e7d32; border-color:#2e7d32; }
   .nav-btn.target.active[data-accent="prop"]      { background:#00838f; border-color:#00838f; }
@@ -976,7 +980,7 @@ function renderNav() {
       if (state.domain === k) return;
       state.domain = k;
       render();
-    });
+    }, { extraClass: "domain" });
   });
 
   // Task description
