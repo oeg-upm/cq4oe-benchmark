@@ -222,6 +222,7 @@
   }
   .lb-btn:hover { background: #e2e8f0; }
   .lb-btn.active { background: #2563eb; color: #fff; border-color: #2563eb; font-weight: 600; }
+  .lb-btn.domain.active { background: #d97706; color: #fff; border-color: #d97706; }
   .lb-btn.target.active[data-accent="term"]      { background:#2e7d32; border-color:#2e7d32; }
   .lb-btn.target.active[data-accent="prop"]       { background:#00838f; border-color:#00838f; }
   .lb-btn.target.active[data-accent="triple"]     { background:#6a1b9a; border-color:#6a1b9a; }
@@ -678,7 +679,7 @@
     const dnav = document.getElementById("lb-domain-nav"); dnav.innerHTML = "";
     const datasets = LEADERBOARD_DATA[state.benchmark].datasets;
     [["overall","Overall"]].concat(datasets.map(d => [d, d.toUpperCase()])).forEach(([k,lbl]) =>
-      navBtn(dnav, lbl, state.domain===k, () => { if (state.domain===k) return; state.domain = k; render(); }));
+      navBtn(dnav, lbl, state.domain===k, () => { if (state.domain===k) return; state.domain = k; render(); }, { extra: "domain" }));
     document.getElementById("lb-desc").textContent = TASKS[state.benchmark][state.task].desc;
     const full = document.getElementById("lb-full-link");
     full.href = `leaderboard.html#${state.benchmark}/${state.task}`;
