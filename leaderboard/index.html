@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CQ4OE Benchmark</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    color: #1a1a1a;
+    background: #f8fafc;
+    line-height: 1.55;
+  }
+
+  /* Top bar */
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: white;
+    padding: 14px 32px;
+    border-radius: 14px;
+    margin: 16px 24px 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .topbar h1.brand {
+    font-size: 18px; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .topbar a {
+    color: #1a1a1a; text-decoration: none;
+    padding: 8px 16px; border-radius: 10px;
+    font-size: 13px; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .topbar a:hover { background: #f1f5f9; }
+  .topbar .nav-group { display: flex; gap: 8px; }
+
+  /* Hero card */
+  .card {
+    background: white;
+    margin: 0 24px 20px;
+    padding: 36px 40px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .eyebrow {
+    color: #64748b;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: #0f172a;
+    max-width: 900px;
+  }
+  .hero p.lead {
+    font-size: 16px;
+    color: #475569;
+    max-width: 800px;
+    margin-bottom: 24px;
+  }
+  .pills {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .pill {
+    background: #eef4ff;
+    color: #2563eb;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Section title */
+  .card h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #0f172a;
+  }
+  .card p.section-lead {
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  /* Tasks grid */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .grid-three { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px 26px;
+    text-decoration: none;
+    color: #0f172a;
+    transition: all 0.15s;
+    display: block;
+  }
+  .grid-item:hover {
+    border-color: #93c5fd;
+    background: #f0f7ff;
+    transform: translateY(-1px);
+  }
+  .grid-item.static {
+    cursor: default;
+  }
+  .grid-item.static:hover {
+    border-color: #e2e8f0;
+    background: #f8fafc;
+    transform: none;
+  }
+  .grid-item .title {
+    font-size: 17px; font-weight: 600;
+  }
+  .grid-item .desc {
+    font-size: 13px; color: #64748b; margin-top: 4px;
+  }
+
+  /* Source ontology card (non-link wrapper with 2 buttons) */
+  .source-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px 26px;
+    display: flex; flex-direction: column;
+  }
+  .source-card .title {
+    font-size: 16px; font-weight: 600; color: #0f172a;
+    line-height: 1.35;
+  }
+  .source-card .btn-row {
+    display: flex; gap: 6px; margin-top: 14px;
+  }
+  .source-card .src-btn {
+    flex: 1;
+    text-align: center;
+    padding: 7px 6px;
+    font-size: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    background: #fff;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .source-card .src-btn:hover {
+    border-color: #93c5fd;
+    background: #f0f7ff;
+    color: #1d4ed8;
+  }
+  .source-card .src-btn.primary {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+  .source-card .src-btn.primary:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    color: #fff;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: #64748b;
+    font-size: 13px;
+  }
+  footer a { color: #2563eb; text-decoration: none; }
+
+  /* Logo row */
+  .logo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+  }
+  .logo-row .logo {
+    max-height: 64px;
+    max-width: 220px;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+  }
+  .logo-row .logo.logo-wide { max-width: 360px; }
+  .logo-row a:hover .logo {
+    opacity: 1;
+  }
+
+  /* ── Embedded mini leaderboard ── */
+  .lb-controls { margin-bottom: 18px; }
+  .lb-nav {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    align-items: center; margin-bottom: 10px;
+  }
+  .lb-nav:last-child { margin-bottom: 0; }
+  .lb-nav > div {
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  }
+  .lb-nav-label {
+    font-size: 13px; color: #64748b; font-weight: 600;
+    margin-right: 8px; min-width: 56px;
+  }
+  .lb-btn {
+    padding: 6px 14px; cursor: pointer; user-select: none;
+    background: #f1f5f9; border: 1px solid #e2e8f0;
+    border-radius: 6px; font-size: 13px; color: #334155;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  }
+  .lb-btn:hover { background: #e2e8f0; }
+  .lb-btn.active { background: #2563eb; color: #fff; border-color: #2563eb; font-weight: 600; }
+  .lb-btn.target.active[data-accent="term"]      { background:#2e7d32; border-color:#2e7d32; }
+  .lb-btn.target.active[data-accent="prop"]       { background:#00838f; border-color:#00838f; }
+  .lb-btn.target.active[data-accent="triple"]     { background:#6a1b9a; border-color:#6a1b9a; }
+  .lb-btn.target.active[data-accent="axiom"]      { background:#b35400; border-color:#b35400; }
+  .lb-btn.target.active[data-accent="hierarchy"]  { background:#c2185b; border-color:#c2185b; }
+
+  .lb-table-wrap {
+    border: 1px solid #e2e8f0; border-radius: 12px;
+    overflow: hidden; overflow-x: auto;
+  }
+  .lb-table-wrap[data-accent="term"]      { border-left: 4px solid #2e7d32; }
+  .lb-table-wrap[data-accent="prop"]       { border-left: 4px solid #00838f; }
+  .lb-table-wrap[data-accent="triple"]     { border-left: 4px solid #6a1b9a; }
+  .lb-table-wrap[data-accent="axiom"]      { border-left: 4px solid #b35400; }
+  .lb-table-wrap[data-accent="hierarchy"]  { border-left: 4px solid #c2185b; }
+  table.lb-table {
+    width: 100%; border-collapse: collapse; font-size: 13px; background: #fff;
+  }
+  table.lb-table thead { background: #f8fafc; }
+  table.lb-table th, table.lb-table td {
+    padding: 9px 14px; text-align: right; border-bottom: 1px solid #eef2f7;
+    white-space: nowrap;
+  }
+  table.lb-table th:nth-child(-n+3), table.lb-table td:nth-child(-n+3) { text-align: left; }
+  table.lb-table th { color: #475569; font-weight: 600; font-size: 12px; }
+  table.lb-table tbody tr:last-child td { border-bottom: none; }
+  table.lb-table tbody tr:hover { background: #fafbfc; }
+  table.lb-table td.lb-rank { color: #94a3b8; font-variant-numeric: tabular-nums; }
+  table.lb-table td.lb-mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  a.lb-model-link { color: #2563eb; text-decoration: none; }
+  a.lb-model-link:hover { text-decoration: underline; }
+  .lb-table th.headline, .lb-table td.headline { font-weight: 700; }
+  .lb-table-wrap[data-accent="term"]      th.headline, .lb-table-wrap[data-accent="term"]      td.headline { background:#e6f4ea; }
+  .lb-table-wrap[data-accent="prop"]       th.headline, .lb-table-wrap[data-accent="prop"]       td.headline { background:#e0f3f5; }
+  .lb-table-wrap[data-accent="triple"]     th.headline, .lb-table-wrap[data-accent="triple"]     td.headline { background:#f3e9f9; }
+  .lb-table-wrap[data-accent="axiom"]      th.headline, .lb-table-wrap[data-accent="axiom"]      td.headline { background:#fbeede; }
+  .lb-table-wrap[data-accent="hierarchy"]  th.headline, .lb-table-wrap[data-accent="hierarchy"]  td.headline { background:#fce4ec; }
+  .lb-desc { color:#64748b; font-size:13px; font-style:italic; margin: 4px 0 14px; }
+  .lb-config { font-size:12px; color:#94a3b8; padding: 8px 14px 0; }
+  .lb-footer-link {
+    display: inline-block; margin-top: 16px;
+    font-size: 14px; font-weight: 600; color: #2563eb; text-decoration: none;
+  }
+  .lb-footer-link:hover { text-decoration: underline; }
+  .lb-empty { color:#94a3b8; padding: 20px; text-align:center; font-style:italic; }
+
+  @media (max-width: 720px) {
+    .grid, .grid-three { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 26px; }
+    .card { padding: 24px; }
+    .topbar { padding: 12px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1 class="brand">CQ4OE Benchmark</h1>
+  <div class="nav-group">
+    <a href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/usage_instructions.md" target="_blank" rel="noopener">User Guide</a>
+    <a href="https://github.com/oeg-upm/cq4oe-benchmark">GitHub</a>
+  </div>
+</div>
+
+<section class="card hero">
+  <div class="eyebrow">A benchmark for assessing LLM-assisted ontology generation from competency questions</div>
+  <h1>A reproducible benchmark for evaluating LLM-generated ontologies against CQ-aligned gold standards</h1>
+  <p class="lead">
+    Six source ontologies with explicit provenance from each competency question to the classes, properties, and axioms required to answer it. Two evaluation tasks. CQ2Term measures CQ-specific term prediction over 99 CQs. CQ2Onto measures full-ontology generation over 118 CQs across five targets.
+  </p>
+  <div class="pills">
+    <span class="pill">6 domain ontologies</span>
+    <span class="pill">CQ2Term over 99 CQs</span>
+    <span class="pill">CQ2Onto over 118 CQs</span>
+    <span class="pill">9 LLMs baseline</span>
+    <span class="pill">3 generation strategies</span>
+  </div>
+</section>
+
+<section class="card" id="leaderboard">
+  <h2>Leaderboard</h2>
+  <p class="section-lead">
+    Top 10 per evaluation target, grouped by configuration so only identical settings are ranked together. Pick a task, target, and domain. In the Overall view, the Domains column (e.g. 6/6) shows how many of the six benchmark domains a model was evaluated on; anything below full coverage is flagged with ⚠ and is not directly comparable.
+  </p>
+
+  <div class="lb-controls">
+    <div class="lb-nav">
+      <span class="lb-nav-label">Task:</span>
+      <div id="lb-task-nav"></div>
+    </div>
+    <div class="lb-nav">
+      <span class="lb-nav-label">Target:</span>
+      <div id="lb-target-nav"></div>
+    </div>
+    <div class="lb-nav">
+      <span class="lb-nav-label">Domain:</span>
+      <div id="lb-domain-nav"></div>
+    </div>
+  </div>
+
+  <p id="lb-desc" class="lb-desc"></p>
+  <div id="lb-content"></div>
+
+  <a id="lb-full-link" class="lb-footer-link" href="leaderboard.html">View full leaderboard (all columns, per-method breakdowns) →</a>
+</section>
+
+<section class="card">
+  <h2>Source Ontologies</h2>
+  <p class="section-lead">
+  Six domain ontologies across three scales (small, medium, large), spanning taxonomies, semantics, and domain-specific vocabularies of varying complexity.
+  </p>
+  <div class="grid grid-three">
+    <div class="source-card">
+      <div class="title">WINE wine ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#wine">View CQs</a>
+        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/wine/ontology/sub_wine.owl" target="_blank" rel="noopener">CQ-aligned</a>
+        <a class="src-btn" href="https://github.com/UCDavisLibrary/wine-ontology" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">AWO african wildlife ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#awo">View CQs</a>
+        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/tree/main/CQ2Onto/00_gold_standard/awo/ontology" target="_blank" rel="noopener">CQ-aligned</a>
+        <a class="src-btn" href="https://people.cs.uct.ac.za/~mkeet/OEbook/ontologies/AfricanWildlifeOntology1.owl" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">ODRL open digital rights language</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#odrl">View CQs</a>
+        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/odrl/ontology/sub_odrl.owl" target="_blank" rel="noopener">CQ-aligned</a>
+        <a class="src-btn" href="https://www.w3.org/ns/odrl/2/" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">WATER saref4watr ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#water">View CQs</a>
+        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/water/ontology/sub_water.owl" target="_blank" rel="noopener">CQ-aligned</a>
+        <a class="src-btn" href="https://saref.etsi.org/saref4watr/v1.1.1/" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">VGO video game ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#vgo">View CQs</a>
+        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/vgo/ontology/sub_vgo.owl" target="_blank" rel="noopener">CQ-aligned</a>
+        <a class="src-btn" href="https://vocab.linkeddata.es/vgo/" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="source-card">
+      <div class="title">SWO software ontology</div>
+      <div class="btn-row">
+        <a class="src-btn primary" href="cqs.html#swo">View CQs</a>
+        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/swo/ontology/sub_swo.owl" target="_blank" rel="noopener">CQ-aligned</a>
+        <a class="src-btn" href="https://obofoundry.org/ontology/swo.html" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Acknowledgements</h2>
+  <p class="section-lead">
+    This work was supported by the grant
+    <a href="https://w3id.org/soel" target="_blank">SOEL (Supporting Ontology Engineering with Large Language Models)</a>,
+    PID2023-152703NA-I00, funded by MCIN/AEI/10.13039/501100011033 and by ERDF/UE.
+  </p>
+  <div class="logo-row">
+    <a href="https://www.upm.es" target="_blank" rel="noopener" title="Universidad Politécnica de Madrid">
+      <img src="https://www.upm.es/sfs/Rectorado/Gabinete%20del%20Rector/Logos/UPM/CEI/LOGOTIPO%20leyenda%20color%20JPG%20p.png" alt="Universidad Politécnica de Madrid" class="logo">
+    </a>
+    <a href="https://oeg.fi.upm.es" target="_blank" rel="noopener" title="Ontology Engineering Group">
+      <img src="https://avatars.githubusercontent.com/u/2278211?s=280&v=4" alt="Ontology Engineering Group" class="logo">
+    </a>
+    <a href="https://w3id.org/soel" target="_blank" rel="noopener" title="SOEL — Supporting Ontology Engineering with Large Language Models">
+      <img src="https://oeg-upm.github.io/soel-site/website/images/MICIU+Cofinanciado+AEI.jpg" alt="Funded by MICIU/AEI and co-financed by ERDF/EU" class="logo logo-wide">
+    </a>
+  </div>
+</section>
+
+<footer>
+  CQ4OE is developed by the
+  <a href="https://oeg.fi.upm.es" target="_blank">Ontology Engineering Group</a>
+  at Universidad Politécnica de Madrid.
+  Read the
+  <a href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/README.md">README</a>
+  for citation and contribution details.
+</footer>
+
+<script src="leaderboard_data.js"></script>
+<script>
+// ── Embedded mini leaderboard (Top 10, headline metrics only) ───────────
+// Reuses LEADERBOARD_DATA. Full version with all columns lives in leaderboard.html.
+(function () {
+  if (typeof LEADERBOARD_DATA === "undefined") return;
+
+  // Column kinds: prf1 (PRF1 obj), agg (term-recovery aggregated F1), cq (coverage)
+  const TASKS = {
+    cq2term: {
+      term_recovery: {
+        label: "Term Recovery", accent: "term",
+        desc: "Recovery of the classes and properties each CQ requires. Ranked by per-CQ mean coverage.",
+        defaultSort: "cq__mean",
+        cols: [
+          { kind: "agg", id: "class",    label: "Class F1",    subKey: "class" },
+          { kind: "agg", id: "property", label: "Property F1", subKey: "property" },
+          { kind: "cq",  id: "cq",       label: "CQ-Mean", sub: "mean", headline: true },
+        ],
+      },
+    },
+    cq2onto: {
+      term_recovery: {
+        label: "Term Recovery", accent: "term",
+        desc: "Recovery of all classes and properties in the predicted ontology. Ranked by Property F1.",
+        defaultSort: "property__f1",
+        cols: [
+          { kind: "agg", id: "class",    label: "Class F1",    subKey: "class" },
+          { kind: "agg", id: "property", label: "Property F1", subKey: "property", headline: true },
+        ],
+      },
+      property_chars: {
+        label: "Property Characteristics", accent: "prop",
+        desc: "Recovery of OWL property flags (functional, inverse, transitive, …). Ranked by F1-AC.",
+        defaultSort: "ac__f1",
+        cols: [
+          { kind: "prf1", id: "ac", label: "F1-AC", headline: true },
+          { kind: "prf1", id: "g",  label: "F1-G" },
+        ],
+      },
+      triple: {
+        label: "Triple (domain/range)", accent: "triple",
+        desc: "Recovery of (subject, predicate, object) triples from rdfs domain/range. Ranked by F1-AC.",
+        defaultSort: "ac__f1",
+        cols: [
+          { kind: "prf1", id: "ac",     label: "F1-AC", headline: true },
+          { kind: "prf1", id: "g",      label: "F1-G" },
+          { kind: "prf1", id: "cosine", label: "Cosine" },
+        ],
+      },
+      axiom: {
+        label: "TBox Axioms", accent: "axiom",
+        desc: "Strict structural matching of TBox axioms after alignment. Ranked by Axiom-Mean.",
+        defaultSort: "cq__mean",
+        cols: [
+          { kind: "cq",   id: "cq", label: "Axiom-Mean", sub: "mean", headline: true },
+          { kind: "prf1", id: "ac", label: "F1-AC" },
+        ],
+      },
+      hierarchy: {
+        label: "Hierarchy Closure", accent: "hierarchy",
+        desc: "Reasoner-based recovery of subClassOf / subPropertyOf entailments. Ranked by Closure-Mean.",
+        defaultSort: "cq__mean",
+        cols: [
+          { kind: "cq",   id: "cq", label: "Closure-Mean", sub: "mean", headline: true },
+          { kind: "cq",   id: "cq", label: "Closure-Any",  sub: "any" },
+        ],
+      },
+    },
+  };
+
+  const TASK_ORDER = {
+    cq2term: ["term_recovery"],
+    cq2onto: ["term_recovery", "property_chars", "triple", "axiom", "hierarchy"],
+  };
+  const BENCHMARK_LABELS = { cq2term: "CQ2Term", cq2onto: "CQ2Onto" };
+  const TOP_N = 10;
+
+  const state = { benchmark: "cq2onto", task: "term_recovery", domain: "overall", sort: { col: null, dir: "desc" } };
+
+  const fmtPct = v => (v === null || v === undefined) ? "—" : v.toFixed(1) + "%";
+
+  // Model display names + vendor homepages (display-only; raw data untouched).
+  const VENDOR_HOME = {
+    deepseek: "https://www.deepseek.com/en/",
+    qwen:     "https://qwenlm.github.io/",
+    google:   "https://deepmind.google/models/gemma/",
+    gemma:    "https://deepmind.google/models/gemma/",
+  };
+  const PLACEHOLDER_MODELS = new Set(["mymethod", "mymodel"]);
+  function prettyModelName(raw) {
+    if (!raw) return "";
+    if (PLACEHOLDER_MODELS.has(raw)) return raw;
+    let s = raw;
+    const us = s.indexOf("_");
+    if (us !== -1) s = s.slice(us + 1);
+    const SPECIAL = { it: "it", a3b: "A3B", a4b: "A4B" };
+    return s.split("-").map(tok => {
+      const low = tok.toLowerCase();
+      if (SPECIAL[low]) return SPECIAL[low];
+      if (/^\d+(\.\d+)?b$/.test(low)) return low.toUpperCase();
+      if (/^v\d/.test(low)) return "V" + tok.slice(1);
+      if (low.startsWith("deepseek")) return "DeepSeek" + tok.slice(8);
+      if (low.startsWith("qwen"))     return "Qwen" + tok.slice(4);
+      if (low.startsWith("gemma"))    return "Gemma" + tok.slice(5);
+      if (low === "flash") return "Flash";
+      if (low === "plus")  return "Plus";
+      if (low === "pro")   return "Pro";
+      return tok.charAt(0).toUpperCase() + tok.slice(1);
+    }).join("-");
+  }
+  function modelLink(raw) {
+    if (!raw || PLACEHOLDER_MODELS.has(raw)) return null;
+    const low = raw.toLowerCase();
+    for (const v in VENDOR_HOME) if (low.startsWith(v + "_") || low.startsWith(v)) return VENDOR_HOME[v];
+    return null;
+  }
+  function modelCellHTML(raw) {
+    const name = prettyModelName(raw), href = modelLink(raw);
+    return href
+      ? `<a class="lb-model-link" href="${href}" target="_blank" rel="noopener" title="${raw}">${name}</a>`
+      : `<span title="${raw}">${name}</span>`;
+  }
+
+  // ── Data access ──
+  function scopeOf(run) {
+    if (state.benchmark === "cq2term") return run.term_recovery;
+    return run[state.task];
+  }
+  function getMetric(run, col) {
+    const scope = scopeOf(run);
+    if (!scope) return null;
+    if (col.kind === "prf1") return scope[col.id] || null;
+    if (col.kind === "cq")   return scope[col.id] || null;
+    if (col.kind === "agg") {
+      if (state.benchmark === "cq2onto") {
+        const sub = scope[col.subKey];
+        return sub ? sub.aggregated : null;
+      }
+      return scope[col.subKey] || null;
+    }
+    return null;
+  }
+
+  // ── Aggregate across domains (Overall) ──
+  function avgMetric(recs, getter) {
+    const vals = recs.map(getter).filter(v => v && v.f1 !== null && v.f1 !== undefined);
+    if (!vals.length) return null;
+    const mean = arr => arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : null;
+    return {
+      p:  mean(vals.map(v=>v.p).filter(v=>v!=null)),
+      r:  mean(vals.map(v=>v.r).filter(v=>v!=null)),
+      f1: mean(vals.map(v=>v.f1).filter(v=>v!=null)),
+    };
+  }
+  function avgCQ(recs, getter) {
+    const vals = recs.map(getter).filter(v => v);
+    if (!vals.length) return null;
+    const mean = k => vals.reduce((s,v)=>s+(v[k]||0),0)/vals.length;
+    return { any: mean("any"), mean: mean("mean"), full: mean("full") };
+  }
+  function aggregateOverall(runs) {
+    const map = new Map();
+    runs.forEach(r => {
+      const k = (r.mode || "") + "||" + r.model;
+      if (!map.has(k)) map.set(k, []);
+      map.get(k).push(r);
+    });
+    const out = [];
+    for (const [, recs] of map) {
+      const s = recs[0];
+      const avg = { mode: s.mode, model: s.model, n_datasets: recs.length };
+      // term recovery
+      if (state.benchmark === "cq2term") {
+        avg.term_recovery = {
+          class:    avgMetric(recs, r => (r.term_recovery||{}).class),
+          property: avgMetric(recs, r => (r.term_recovery||{}).property),
+          cq:       avgCQ(recs, r => (r.term_recovery||{}).cq),
+        };
+      } else {
+        avg.term_recovery = {
+          class:    { aggregated: avgMetric(recs, r => ((r.term_recovery||{}).class||{}).aggregated) },
+          property: { aggregated: avgMetric(recs, r => ((r.term_recovery||{}).property||{}).aggregated) },
+        };
+        ["property_chars","triple","axiom","hierarchy"].forEach(name => {
+          const scopes = recs.map(r => r[name]).filter(Boolean);
+          if (!scopes.length) { avg[name] = null; return; }
+          const o = {}; const keys = new Set();
+          scopes.forEach(sc => Object.keys(sc).forEach(k => keys.add(k)));
+          keys.forEach(k => {
+            const sample = scopes.find(sc => sc[k]);
+            if (!sample) { o[k] = null; return; }
+            if (sample[k].f1 !== undefined)        o[k] = avgMetric(recs, r => (r[name]||{})[k]);
+            else if (sample[k].mean !== undefined) o[k] = avgCQ(recs, r => (r[name]||{})[k]);
+            else o[k] = sample[k];
+          });
+          avg[name] = o;
+        });
+      }
+      out.push(avg);
+    }
+    return out;
+  }
+
+  // ── Sort ──
+  function getSortValue(run, sortCol) {
+    if (sortCol === "n_datasets") return run.n_datasets ?? null;
+    const [id, sub] = sortCol.split("__");
+    const cols = TASKS[state.benchmark][state.task].cols;
+    const col = cols.find(c =>
+      c.id === id && (
+        (c.kind === "prf1" && ["p","r","f1"].includes(sub)) ||
+        (c.kind === "cq"   && c.sub === sub) ||
+        (c.kind === "agg"  && sub === "f1")
+      )
+    );
+    if (!col) return null;
+    const m = getMetric(run, col);
+    return m ? (m[sub] ?? null) : null;
+  }
+  function sortRuns(runs, sortCol, dir, coveragePrimary) {
+    return runs.slice().sort((a, b) => {
+      if (coveragePrimary && sortCol !== "n_datasets") {
+        const ca = a.n_datasets ?? 0, cb = b.n_datasets ?? 0;
+        if (ca !== cb) return cb - ca;
+      }
+      const x = getSortValue(a, sortCol), y = getSortValue(b, sortCol);
+      if (x === null || x === undefined) return 1;
+      if (y === null || y === undefined) return -1;
+      return dir === "desc" ? y - x : x - y;
+    });
+  }
+
+  // ── Nav ──
+  function navBtn(container, label, active, onClick, opts) {
+    opts = opts || {};
+    const b = document.createElement("div");
+    b.className = "lb-btn" + (opts.extra ? " " + opts.extra : "") + (active ? " active" : "");
+    if (opts.accent) b.dataset.accent = opts.accent;
+    b.textContent = label;
+    b.addEventListener("click", onClick);
+    container.appendChild(b);
+  }
+  function resetSort() {
+    state.sort = { col: TASKS[state.benchmark][state.task].defaultSort, dir: "desc" };
+    state.domain = "overall";
+  }
+  function renderNav() {
+    const tnav = document.getElementById("lb-task-nav"); tnav.innerHTML = "";
+    ["cq2term","cq2onto"].forEach(bm => navBtn(tnav, BENCHMARK_LABELS[bm], state.benchmark===bm, () => {
+      if (state.benchmark===bm) return;
+      state.benchmark = bm; state.task = TASK_ORDER[bm][0]; resetSort(); render();
+    }));
+    const gnav = document.getElementById("lb-target-nav"); gnav.innerHTML = "";
+    TASK_ORDER[state.benchmark].forEach(tk => {
+      const def = TASKS[state.benchmark][tk];
+      navBtn(gnav, def.label, state.task===tk, () => {
+        if (state.task===tk) return;
+        state.task = tk; resetSort(); render();
+      }, { extra: "target", accent: def.accent });
+    });
+    const dnav = document.getElementById("lb-domain-nav"); dnav.innerHTML = "";
+    const datasets = LEADERBOARD_DATA[state.benchmark].datasets;
+    [["overall","Overall"]].concat(datasets.map(d => [d, d.toUpperCase()])).forEach(([k,lbl]) =>
+      navBtn(dnav, lbl, state.domain===k, () => { if (state.domain===k) return; state.domain = k; render(); }));
+    document.getElementById("lb-desc").textContent = TASKS[state.benchmark][state.task].desc;
+    const full = document.getElementById("lb-full-link");
+    full.href = `leaderboard.html#${state.benchmark}/${state.task}`;
+  }
+
+  // ── Render tables ──
+  function render() {
+    if (!state.sort.col) state.sort.col = TASKS[state.benchmark][state.task].defaultSort;
+    renderNav();
+    const def = TASKS[state.benchmark][state.task];
+    const cols = def.cols;
+    const bData = LEADERBOARD_DATA[state.benchmark];
+    const content = document.getElementById("lb-content");
+    content.innerHTML = "";
+    if (!bData.groups || !bData.groups.length) {
+      content.innerHTML = `<div class="lb-empty">No runs found.</div>`; return;
+    }
+    const showOverall = state.domain === "overall";
+    const totalDatasets = bData.datasets.length;
+    const showMode = state.benchmark === "cq2onto";
+
+    bData.groups.forEach((group, gIdx) => {
+      let rows = group.runs.filter(r => showOverall || r.dataset === state.domain);
+      rows = showOverall ? aggregateOverall(rows) : rows.map(r => Object.assign({}, r, { n_datasets: 1 }));
+      rows = rows.filter(r => cols.some(c => {
+        const m = getMetric(r, c);
+        if (!m) return false;
+        if (c.kind === "cq") return m[c.sub] !== null && m[c.sub] !== undefined;
+        return m.f1 !== null && m.f1 !== undefined;
+      }));
+      if (!rows.length) return;
+
+      const sorted = sortRuns(rows, state.sort.col, state.sort.dir, showOverall).slice(0, TOP_N);
+
+      const wrap = document.createElement("div");
+      wrap.className = "lb-table-wrap";
+      wrap.dataset.accent = def.accent;
+      if (bData.groups.length > 1) {
+        const cfg = document.createElement("div");
+        cfg.className = "lb-config";
+        cfg.textContent = `Configuration group ${gIdx + 1} · ${group.runs.length} runs`;
+        wrap.appendChild(cfg);
+      }
+
+      const table = document.createElement("table");
+      table.className = "lb-table";
+      // header
+      let head = `<thead><tr><th>Rank</th>${showMode ? "<th>Mode</th>" : ""}<th>Model</th>`;
+      cols.forEach(c => {
+        const hl = c.headline ? " headline" : "";
+        head += `<th class="${hl.trim()}">${c.label}</th>`;
+      });
+      if (showOverall) head += `<th title="Number of benchmark domains this model was evaluated on (e.g. 6/6 means all six). Models below full coverage are flagged with ⚠ and not directly comparable.">Domains</th>`;
+      head += `</tr></thead>`;
+      // body
+      let body = "<tbody>";
+      sorted.forEach((run, i) => {
+        const modeCell = showMode ? `<td class="lb-mono">${run.mode || "—"}</td>` : "";
+        body += `<tr><td class="lb-rank">${i+1}</td>${modeCell}<td class="lb-mono">${modelCellHTML(run.model)}</td>`;
+        cols.forEach(c => {
+          const hl = c.headline ? " headline" : "";
+          const m = getMetric(run, c);
+          let txt;
+          if (c.kind === "cq") txt = fmtPct(m && m[c.sub]);
+          else txt = fmtPct(m && m.f1);
+          body += `<td class="${hl.trim()}">${txt}</td>`;
+        });
+        if (showOverall) {
+          const partial = run.n_datasets < totalDatasets;
+          body += `<td>${run.n_datasets}/${totalDatasets}${partial ? " ⚠" : ""}</td>`;
+        }
+        body += `</tr>`;
+      });
+      body += "</tbody>";
+      table.innerHTML = head + body;
+      wrap.appendChild(table);
+      content.appendChild(wrap);
+    });
+
+    if (!content.children.length) {
+      content.innerHTML = `<div class="lb-empty">No data in this domain for this target.</div>`;
+    }
+  }
+
+  render();
+})();
+</script>
+
+</body>
+</html>

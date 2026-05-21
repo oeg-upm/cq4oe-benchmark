@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CQ4OE Benchmark Leaderboard</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 24px 32px 48px;
+    color: #1a1a1a;
+    background: #fafafa;
+  }
+  h1 { margin: 0 0 4px; font-size: 26px; }
+  h2 { font-size: 17px; margin: 20px 0 6px; color: #333; }
+  p.intro {
+    color: #555; max-width: 920px; line-height: 1.55;
+    margin: 8px 0 18px; font-size: 14px;
+  }
+  p.task-desc {
+    color: #666; font-size: 13px; line-height: 1.5;
+    margin: 10px 0 14px; max-width: 920px;
+    font-style: italic;
+    padding: 8px 12px; background: #f5f6f8; border-left: 3px solid #cfd6e1;
+    border-radius: 3px;
+  }
+
+  /* Top home link */
+  .topbar-mini {
+    margin-bottom: 12px;
+  }
+  .topbar-mini a {
+    display: inline-block; padding: 6px 12px;
+    background: #f1f5f9; border: 1px solid #e2e8f0;
+    border-radius: 8px; color: #334155;
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    transition: background 0.15s;
+  }
+  .topbar-mini a:hover { background: #e2e8f0; }
+
+  /* Control panel: Task / Target / Domain button rows */
+  .controls {
+    margin: 18px 0 6px;
+    max-width: 1100px;
+  }
+  .nav {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 0 0 12px;
+    align-items: center;
+  }
+  .nav:last-child { margin-bottom: 0; }
+  .nav > div {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    align-items: center;
+  }
+  .nav-label {
+    font-size: 13px; color: #555; font-weight: 600;
+    margin-right: 10px; min-width: 64px;
+  }
+  .nav-btn {
+    padding: 7px 16px;
+    cursor: pointer; user-select: none;
+    background: #ececec; border: 1px solid #ddd;
+    border-radius: 6px; font-size: 13px;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  }
+  .nav-btn:hover { background: #dcdcdc; }
+  .nav-btn.active {
+    background: #1a73e8; color: white; border-color: #1a73e8;
+    font-weight: 600;
+  }
+  /* Target buttons get a colored active state matching the column theme */
+  .nav-btn.target.active[data-accent="term"]     { background:#2e7d32; border-color:#2e7d32; }
+  .nav-btn.target.active[data-accent="prop"]      { background:#00838f; border-color:#00838f; }
+  .nav-btn.target.active[data-accent="triple"]    { background:#6a1b9a; border-color:#6a1b9a; }
+  .nav-btn.target.active[data-accent="axiom"]     { background:#b35400; border-color:#b35400; }
+  .nav-btn.target.active[data-accent="hierarchy"] { background:#c2185b; border-color:#c2185b; }
+
+  /* Config group */
+  .config-group {
+    background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 8px; padding: 14px 18px;
+    margin: 14px 0 24px;
+    overflow-x: auto;
+  }
+  .config-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  .config-label {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    background: #f0f0f0; padding: 4px 10px;
+    border-radius: 4px; color: #444;
+    font-size: 12px;
+    white-space: normal;
+    word-break: break-all;
+  }
+  .config-count {
+    color: #888; font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Tables */
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+  }
+  thead { background: #f5f5f5; }
+  th, td {
+    padding: 7px 9px; text-align: right;
+    border-bottom: 1px solid #eee; white-space: nowrap;
+  }
+  th:nth-child(-n+3), td:nth-child(-n+3) { text-align: left; }
+  th.sortable {
+    cursor: pointer; user-select: none; position: relative;
+  }
+  th.sortable:hover { background: #e9e9e9; }
+  th .arrow {
+    color: #999; margin-left: 4px; font-size: 10px;
+  }
+  th.sort-desc .arrow, th.sort-asc .arrow { color: #0066cc; }
+
+  /* Column color groups */
+  th.col-ac, td.col-ac { background: #f0f7ff; }
+  th.col-g, td.col-g { background: #f5f5f5; }
+  th.col-diag, td.col-diag { background: #f7f0ff; }
+  th.col-cq, td.col-cq { background: #fff8e6; }
+  th.col-score, td.col-score { background: #e8f5e9; }
+  th.col-meta, td.col-meta { background: #f3f0ff; color: #555; }
+  td.col-meta.partial { color: #b35400; font-weight: 600; }
+  th.headline { font-weight: 700; }
+
+  /* Per-target accent: colored left rail on the group + tinted headline column */
+  .config-group[data-accent="term"]      { border-left: 4px solid #2e7d32; }
+  .config-group[data-accent="prop"]      { border-left: 4px solid #00838f; }
+  .config-group[data-accent="triple"]    { border-left: 4px solid #6a1b9a; }
+  .config-group[data-accent="axiom"]     { border-left: 4px solid #b35400; }
+  .config-group[data-accent="hierarchy"] { border-left: 4px solid #c2185b; }
+
+  .config-group[data-accent="term"]      th.headline, .config-group[data-accent="term"]      td.headline { background:#e6f4ea; }
+  .config-group[data-accent="prop"]      th.headline, .config-group[data-accent="prop"]      td.headline { background:#e0f3f5; }
+  .config-group[data-accent="triple"]    th.headline, .config-group[data-accent="triple"]    td.headline { background:#f3e9f9; }
+  .config-group[data-accent="axiom"]     th.headline, .config-group[data-accent="axiom"]     td.headline { background:#fbeede; }
+  .config-group[data-accent="hierarchy"] th.headline, .config-group[data-accent="hierarchy"] td.headline { background:#fce4ec; }
+
+  tbody tr:hover { background: #fcfcfc; }
+  td.rank { color: #888; font-variant-numeric: tabular-nums; }
+  td.mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  a.model-link {
+    color: #0066cc; text-decoration: none;
+  }
+  a.model-link:hover { text-decoration: underline; }
+
+  td[title] { cursor: help; }
+
+  /* Expand controls */
+  .expand-btn {
+    display: inline-block; cursor: pointer;
+    color: #888; font-size: 11px; margin-left: 4px;
+    user-select: none;
+  }
+  .expand-btn:hover { color: #0066cc; }
+  .expand-btn.active { color: #0066cc; font-weight: 700; }
+
+  /* Catalog link icon */
+  .info-icon {
+    display: inline-block;
+    margin-left: 3px;
+    color: #999;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: normal;
+    cursor: help;
+  }
+  .info-icon:hover { color: #0066cc; }
+
+  /* Empty state */
+  .empty {
+    color: #999; padding: 24px; text-align: center;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar-mini">
+  <a href="index.html">← Home</a>
+</div>
+
+<h1>CQ4OE Benchmark Leaderboard</h1>
+<p class="intro">
+CQ4OE leaderboard for LLM-based ontology generation from competency questions. Runs are grouped by evaluation configuration so only identical settings are ranked against each other.
+</p>
+
+<div class="controls">
+  <div class="nav">
+    <span class="nav-label">Task:</span>
+    <div id="task-nav"></div>
+  </div>
+  <div class="nav">
+    <span class="nav-label">Target:</span>
+    <div id="target-nav"></div>
+  </div>
+  <div class="nav">
+    <span class="nav-label">Domain:</span>
+    <div id="domain-nav"></div>
+  </div>
+</div>
+
+<p id="task-desc" class="task-desc"></p>
+
+<div id="content"></div>
+
+<script src="leaderboard_data.js"></script>
+<script>
+// ─────────────────────────────────────────────────────────────
+// TASK DEFINITIONS
+// Each task: (benchmark, key, label, description, columns)
+// A column is either:
+//   { kind: "prf1", id, label, cls, headline?, expandable? }   // P/R/F1 group
+//   { kind: "agg_method", id, label, cls, methodKey }          // aggregated F1 with per-method ⋮
+//   { kind: "cq", id, label, cls, subkey: "any"|"mean"|"full", headline? }
+//   { kind: "single", id, label, cls, valuePath }              // single number
+// ─────────────────────────────────────────────────────────────
+
+const TASKS = {
+  cq2term: {
+    term_recovery: {
+      label: "Term Recovery",
+      accent: "term",
+      desc: "Recovery of the classes and properties that each competency question (CQ) requires. Each cell is the aggregated F1 from a top-3 mean over the five similarity methods (hard match, sequence match, Levenshtein, Jaro-Winkler, semantic embedding). Hover any cell for Precision (P), Recall (R) and F1, or click the per-method icon to see all five methods. The AggregatedTop3 columns show the mean alignment confidence per selected pair, taken as 100% for hard matches and otherwise the mean of the top 3 non-hard method scores. CQ-conditioned coverage reports the share of CQs with at least one required term recovered (At-least-one), the average per-CQ recovery rate (Mean), and the share with all required terms recovered (Full).",
+      defaultSort: "cq__mean",
+      cols: [
+        { kind: "agg_method", id: "class",     label: "Class F1",    cls: "", methodKey: "per_method_class", subKey: "class" },
+        { kind: "agg_method", id: "property",  label: "Property F1", cls: "", methodKey: "per_method_property", subKey: "property" },
+        { kind: "score",      id: "agg_top3_class",    label: "AggTop3 Class",    cls: "col-score" },
+        { kind: "score",      id: "agg_top3_property", label: "AggTop3 Property", cls: "col-score" },
+        { kind: "prf1",       id: "combined",  label: "Combined F1", cls: "" },
+        { kind: "cq",         id: "cq",        label: "CQ-Any",      cls: "col-cq", sub: "any" },
+        { kind: "cq",         id: "cq",        label: "CQ-Mean",     cls: "col-cq", sub: "mean", headline: true },
+        { kind: "cq",         id: "cq",        label: "CQ-Full",     cls: "col-cq", sub: "full" },
+      ],
+    },
+  },
+  cq2onto: {
+    term_recovery: {
+      label: "Term Recovery",
+      accent: "term",
+      desc: "Recovery of all classes and properties in the predicted ontology. Aggregated F1 uses a top-3 mean over the five similarity methods. Click the per-method icon to expand the five method scores. The AggregatedTop3 columns show the mean alignment confidence per selected pair, taken as 100% for hard matches and otherwise the mean of the top 3 non-hard method scores.",
+      defaultSort: "property__f1",
+      cols: [
+        { kind: "agg_method", id: "class",    label: "Class F1",    cls: "", methodKey: "per_method", subKey: "class" },
+        { kind: "agg_method", id: "property", label: "Property F1", cls: "", methodKey: "per_method", subKey: "property", headline: true },
+        { kind: "score",      id: "agg_top3_class",    label: "AggTop3 Class",    cls: "col-score", subKey: "class" },
+        { kind: "score",      id: "agg_top3_property", label: "AggTop3 Property", cls: "col-score", subKey: "property" },
+      ],
+    },
+    property_chars: {
+      label: "Property Characteristics",
+      accent: "prop",
+      desc: "Recovery of OWL property flags such as functional, inverse, transitive, symmetric, and reflexive. AC (Alignment-Conditioned) view counts only properties whose names align with gold names. G (Global) view counts over all gold and predicted properties so unaligned items are penalised.",
+      defaultSort: "ac__f1",
+      cols: [
+        { kind: "prf1", id: "ac", label: "F1-AC", cls: "col-ac", headline: true },
+        { kind: "prf1", id: "g",  label: "F1-G",  cls: "col-g" },
+      ],
+    },
+    triple: {
+      label: "Triple (domain/range)",
+      accent: "triple",
+      desc: "Recovery of (subject, predicate, object) triples derived from the rdfs domain and rdfs range axioms of each property (rdfs domain declares the subject class of a property, rdfs range declares the object class or datatype). AC (Alignment-Conditioned) view counts only triples whose subject, predicate, and object all align with gold names. G (Global) view counts over the full predicted and gold ontologies so unaligned triples are penalised. Cosine F1 is a diagnostic that compares triples by embedding-based similarity instead of strict structural equality.",
+      defaultSort: "ac__f1",
+      cols: [
+        { kind: "prf1", id: "ac",     label: "F1-AC",   cls: "col-ac", headline: true },
+        { kind: "prf1", id: "g",      label: "F1-G",    cls: "col-g" },
+        { kind: "prf1", id: "cosine", label: "Cosine",  cls: "col-diag" },
+      ],
+    },
+    axiom: {
+      label: "TBox Axioms",
+      accent: "axiom",
+      desc: "Strict structural matching of TBox axioms (the schema-level class and property axioms of an ontology) after translating predicted term names to gold names through the alignment. AC (Alignment-Conditioned) view counts only axioms whose terms all align. G (Global) view counts over the full ontology. Cosine F1 is the embedding-based diagnostic. Axiom@1, Axiom-Mean, and Axiom-Full give CQ-conditioned coverage from strict axiom matches, reporting the share of CQs with at least one required axiom recovered (Axiom@1), the average per-CQ recovery rate (Axiom-Mean), and the share of CQs with all required axioms recovered (Axiom-Full).",
+      defaultSort: "cq__mean",
+      cols: [
+        { kind: "prf1", id: "ac",     label: "F1-AC",      cls: "col-ac" },
+        { kind: "prf1", id: "g",      label: "F1-G",       cls: "col-g" },
+        { kind: "prf1", id: "cosine", label: "Cosine",     cls: "col-diag" },
+        { kind: "cq",   id: "cq",     label: "Axiom@1",    cls: "col-cq", sub: "any" },
+        { kind: "cq",   id: "cq",     label: "Axiom-Mean", cls: "col-cq", sub: "mean", headline: true },
+        { kind: "cq",   id: "cq",     label: "Axiom-Full", cls: "col-cq", sub: "full" },
+      ],
+    },
+    hierarchy: {
+      label: "Hierarchy Closure",
+      accent: "hierarchy",
+      desc: "Inferred class and property subsumption (subClassOf, subPropertyOf) closures compared via the HermiT reasoner after translating the predicted closure to gold vocabulary through the alignment. Closure@1, Closure-Mean, and Closure-Full give CQ-conditioned coverage after hierarchy reasoning rescues missed axioms, reporting the share of CQs with at least one required item recovered (Closure@1), the average per-CQ recovery rate (Closure-Mean), and the share of CQs with all required items recovered (Closure-Full).",
+      defaultSort: "cq__mean",
+      cols: [
+        { kind: "prf1", id: "g",  label: "F1-G",         cls: "col-g" },
+        { kind: "cq",   id: "cq", label: "Closure@1",    cls: "col-cq", sub: "any" },
+        { kind: "cq",   id: "cq", label: "Closure-Mean", cls: "col-cq", sub: "mean", headline: true },
+        { kind: "cq",   id: "cq", label: "Closure-Full", cls: "col-cq", sub: "full" },
+      ],
+    },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────
+// CATALOG LINK MAPPING
+// Each leaderboard column links to a metric entry in the OntoCatalogue.
+// URL pattern: https://oeg-upm.github.io/cq4oe-benchmark/OntoCatalogue/html/<Name>.html
+// ─────────────────────────────────────────────────────────────
+const CATALOG_BASE = "https://oeg-upm.github.io/cq4oe-benchmark/OntoCatalogue/html";
+
+const CATALOG_PAGE = {
+  // Aggregated alignment scores
+  agg_top3:                  "AggregatedTop3",
+  // Per-method similarity metrics
+  hard_match:                "HardMatch",
+  sequence_match:            "SequenceMatch",
+  levenshtein:               "LevenshteinDistance",
+  jaro_winkler:              "JaroWinklerDistance",
+  semantic:                  "SemanticCosineSimilarity",
+  // Set-based metrics
+  precision:                 "Precision",
+  recall:                    "Recall",
+  f1:                        "F1",
+  // Diagnostic
+  cosine:                    "EmbeddingDiagnostic",
+  // CQ coverage
+  cq_any:                    "AtLeastOneCoverage",
+  cq_mean:                   "MeanCoverage",
+  cq_full:                   "FullCoverage",
+  // Hierarchy closure rescue
+  closure_rescue:            "ClosureRescueCoverage",
+};
+
+function catalogUrl(metricKey) {
+  const page = CATALOG_PAGE[metricKey];
+  return page ? `${CATALOG_BASE}/${page}.html` : null;
+}
+
+// Resolve a column to its primary catalog link
+function colCatalogUrl(col) {
+  // agg_method columns (Class F1, Property F1) report F1 from the top-3 aggregation.
+  // The metric itself is F1 - the aggregation method is documented separately.
+  if (col.kind === "agg_method")  return catalogUrl("f1");
+  // score columns are the AggregatedTop3 alignment score itself.
+  if (col.kind === "score")       return catalogUrl("agg_top3");
+  if (col.kind === "prf1") {
+    if (col.id === "cosine")      return catalogUrl("cosine");
+    return catalogUrl("f1");
+  }
+  if (col.kind === "cq") {
+    // Hierarchy task uses closure-rescue CQ coverage
+    if (state.task === "hierarchy") return catalogUrl("closure_rescue");
+    if (col.sub === "any")          return catalogUrl("cq_any");
+    if (col.sub === "mean")         return catalogUrl("cq_mean");
+    if (col.sub === "full")         return catalogUrl("cq_full");
+  }
+  return null;
+}
+
+// Helper to produce the (?) icon link HTML for a header
+function infoIcon(url, title) {
+  if (!url) return "";
+  return ` <a class="info-icon" href="${url}" target="_blank" rel="noopener" title="${title || "Catalog entry"}" onclick="event.stopPropagation()">ⓘ</a>`;
+}
+
+let state = {
+  benchmark: "cq2onto",      // "cq2term" | "cq2onto"
+  task:      "term_recovery", // task key
+  domain:    "overall",      // "overall" | dataset name
+  sort:      { col: null, dir: "desc" },
+  expandedPRF1: new Set(),   // column ids whose P/R are shown
+  expandedMethod: new Set(), // column ids whose per-method are shown
+};
+
+function fmtPct(v) {
+  return v === null || v === undefined ? "—" : v.toFixed(1) + "%";
+}
+
+// ─────────────────────────────────────────────────────────────
+// Model display names + vendor official homepages.
+// Display-only: original data (run.model) is never mutated.
+// ─────────────────────────────────────────────────────────────
+const VENDOR_HOME = {
+  deepseek: "https://www.deepseek.com/en/",
+  qwen:     "https://qwenlm.github.io/",
+  google:   "https://deepmind.google/models/gemma/",
+  gemma:    "https://deepmind.google/models/gemma/",
+};
+
+// Models that are placeholders / example rows — shown as plain text, no link.
+const PLACEHOLDER_MODELS = new Set(["mymethod", "mymodel"]);
+
+// Turn a raw id like "qwen_qwen3.6-35b-a3b" into "Qwen3.6-35B-A3B".
+function prettyModelName(raw) {
+  if (!raw) return "";
+  if (PLACEHOLDER_MODELS.has(raw)) return raw;
+  let s = raw;
+  // Drop a leading vendor prefix before the first underscore (e.g. "google_", "qwen_").
+  const us = s.indexOf("_");
+  if (us !== -1) {
+    const prefix = s.slice(0, us).toLowerCase();
+    const rest = s.slice(us + 1);
+    // If the rest already starts with the same vendor word, the prefix is redundant.
+    // Either way we drop the prefix for display.
+    if (VENDOR_HOME[prefix] || rest.toLowerCase().startsWith(prefix)) {
+      s = rest;
+    } else {
+      s = rest; // still drop unknown vendor prefixes for a clean name
+    }
+  }
+  // Capitalise each hyphen-separated token; size/type suffixes get special casing.
+  const SPECIAL = { it: "it", a3b: "A3B", a4b: "A4B" };
+  s = s.split("-").map(tok => {
+    const low = tok.toLowerCase();
+    if (SPECIAL[low]) return SPECIAL[low];
+    // size tokens like 35b, 27b, 26b, 31b → 35B
+    if (/^\d+(\.\d+)?b$/.test(low)) return low.toUpperCase();
+    // version tokens like v3.2, v4 → V3.2
+    if (/^v\d/.test(low)) return "V" + tok.slice(1);
+    // brand tokens
+    if (low.startsWith("deepseek")) return "DeepSeek" + tok.slice("deepseek".length);
+    if (low.startsWith("qwen"))     return "Qwen" + tok.slice("qwen".length);
+    if (low.startsWith("gemma"))    return "Gemma" + tok.slice("gemma".length);
+    if (low === "flash") return "Flash";
+    if (low === "plus")  return "Plus";
+    if (low === "pro")   return "Pro";
+    return tok.charAt(0).toUpperCase() + tok.slice(1);
+  }).join("-");
+  return s;
+}
+
+// Resolve a raw model id to its vendor homepage, or null.
+function modelLink(raw) {
+  if (!raw || PLACEHOLDER_MODELS.has(raw)) return null;
+  const low = raw.toLowerCase();
+  for (const vendor in VENDOR_HOME) {
+    if (low.startsWith(vendor + "_") || low.startsWith(vendor)) return VENDOR_HOME[vendor];
+  }
+  return null;
+}
+
+// Build the <td> inner HTML for a model cell (link if known vendor).
+function modelCellHTML(raw) {
+  const name = prettyModelName(raw);
+  const href = modelLink(raw);
+  if (href) {
+    return `<a class="model-link" href="${href}" target="_blank" rel="noopener" title="${raw}">${name}</a>`;
+  }
+  return `<span title="${raw}">${name}</span>`;
+}
+
+function tooltipPRF1(m) {
+  if (!m) return "";
+  const p  = m.p  === null || m.p  === undefined ? "—" : m.p.toFixed(1) + "%";
+  const r  = m.r  === null || m.r  === undefined ? "—" : m.r.toFixed(1) + "%";
+  const f1 = m.f1 === null || m.f1 === undefined ? "—" : m.f1.toFixed(1) + "%";
+  const tp = m.tp ?? 0, fp = m.fp ?? 0, fn = m.fn ?? 0;
+  return `P=${p} · R=${r} · F1=${f1}\nTP=${tp}, FP=${fp}, FN=${fn}`;
+}
+
+function tooltipCQ(m) {
+  if (!m) return "";
+  return `At-least-one=${fmtPct(m.any)} · Mean=${fmtPct(m.mean)} · Full=${fmtPct(m.full)}`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Data access helpers — get metric m for a run, by task config
+// ─────────────────────────────────────────────────────────────
+
+function getMetric(run, task, col) {
+  // Navigate into run depending on benchmark+task
+  let scope;
+  if (state.benchmark === "cq2term") {
+    scope = run.term_recovery;
+  } else {
+    if (state.task === "term_recovery") scope = run.term_recovery;
+    else if (state.task === "property_chars") scope = run.property_chars;
+    else if (state.task === "triple") scope = run.triple;
+    else if (state.task === "axiom") scope = run.axiom;
+    else if (state.task === "hierarchy") scope = run.hierarchy;
+  }
+  if (!scope) return null;
+
+  if (col.kind === "prf1") {
+    // scope[col.id] is the PRF1 object
+    return scope[col.id] || null;
+  }
+  if (col.kind === "cq") {
+    return scope[col.id] || null;
+  }
+  if (col.kind === "agg_method") {
+    // For CQ2Onto term_recovery: scope is {class, property}, each has {aggregated, per_method}
+    // For CQ2Term term_recovery: scope is {class, property, combined, cq, per_method_class, per_method_property}
+    if (state.benchmark === "cq2onto") {
+      const sub = scope[col.subKey];
+      return sub ? sub.aggregated : null;
+    } else {
+      // CQ2Term — class/property at top of scope
+      return scope[col.subKey] || null;
+    }
+  }
+  if (col.kind === "score") {
+    // 0-1 alignment score. For CQ2Term: scope.agg_top3_class / agg_top3_property
+    // For CQ2Onto: scope.class.agg_top3 / scope.property.agg_top3
+    if (state.benchmark === "cq2onto") {
+      const sub = scope[col.subKey];
+      return sub && sub.agg_top3 !== undefined && sub.agg_top3 !== null ? sub.agg_top3 : null;
+    } else {
+      const v = scope[col.id];
+      return (v !== undefined && v !== null) ? v : null;
+    }
+  }
+  return null;
+}
+
+function getPerMethod(run, col) {
+  if (col.kind !== "agg_method") return null;
+  let scope = run.term_recovery;
+  if (!scope) return null;
+  if (state.benchmark === "cq2onto") {
+    const sub = scope[col.subKey];
+    return sub ? sub.per_method : null;
+  } else {
+    return scope[col.methodKey] || null;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Filter & aggregate
+// ─────────────────────────────────────────────────────────────
+
+function filterRuns(group, domain) {
+  return group.runs.filter(r => domain === "overall" || r.dataset === domain);
+}
+
+function aggregateOverall(runs) {
+  // Group by (mode, model), average each metric
+  const map = new Map();
+  runs.forEach(r => {
+    const k = (r.mode || "") + "||" + r.model;
+    if (!map.has(k)) map.set(k, []);
+    map.get(k).push(r);
+  });
+
+  const result = [];
+  for (const [k, recs] of map) {
+    const sample = recs[0];
+    // Build a synthetic run shaped like a single run with averaged metrics
+    const avg = {
+      mode: sample.mode,
+      model: sample.model,
+      dataset: "overall",
+      n_datasets: recs.length,
+    };
+    // Average each nested PRF1 / CQ block
+    function avgMetric(getter) {
+      const vals = recs.map(r => getter(r)).filter(v => v && v.f1 !== null && v.f1 !== undefined);
+      if (vals.length === 0) return null;
+      const p_vals = vals.map(v => v.p).filter(v => v !== null);
+      const r_vals = vals.map(v => v.r).filter(v => v !== null);
+      const f_vals = vals.map(v => v.f1).filter(v => v !== null);
+      return {
+        p:  p_vals.length ? p_vals.reduce((a,b)=>a+b,0)/p_vals.length : null,
+        r:  r_vals.length ? r_vals.reduce((a,b)=>a+b,0)/r_vals.length : null,
+        f1: f_vals.length ? f_vals.reduce((a,b)=>a+b,0)/f_vals.length : null,
+        tp: vals.reduce((s,v) => s + (v.tp||0), 0),
+        fp: vals.reduce((s,v) => s + (v.fp||0), 0),
+        fn: vals.reduce((s,v) => s + (v.fn||0), 0),
+      };
+    }
+    function avgCQ(getter) {
+      const vals = recs.map(r => getter(r)).filter(v => v);
+      if (vals.length === 0) return null;
+      return {
+        any:  vals.reduce((s,v)=>s+(v.any||0),0)/vals.length,
+        mean: vals.reduce((s,v)=>s+(v.mean||0),0)/vals.length,
+        full: vals.reduce((s,v)=>s+(v.full||0),0)/vals.length,
+      };
+    }
+    function avgScope(name) {
+      // For top-level scopes like property_chars, triple, axiom, hierarchy
+      const scopes = recs.map(r => r[name]).filter(s => s);
+      if (scopes.length === 0) return null;
+      const out = {};
+      // Collect all sub-fields seen
+      const keys = new Set();
+      scopes.forEach(s => Object.keys(s).forEach(k => keys.add(k)));
+      keys.forEach(k => {
+        const vals = scopes.map(s => s[k]).filter(v => v);
+        if (vals.length === 0) { out[k] = null; return; }
+        // Detect PRF1 vs CQ by presence of f1 vs mean
+        if (vals[0].f1 !== undefined) {
+          out[k] = avgMetric(r => (r[name] || {})[k]);
+        } else if (vals[0].mean !== undefined) {
+          out[k] = avgCQ(r => (r[name] || {})[k]);
+        } else {
+          out[k] = vals[0];  // unknown shape
+        }
+      });
+      return out;
+    }
+    function avgScalar(getter) {
+      const vals = recs.map(r => getter(r)).filter(v => v !== null && v !== undefined);
+      if (vals.length === 0) return null;
+      return vals.reduce((a, b) => a + b, 0) / vals.length;
+    }
+    function avgTermRecovery() {
+      const scopes = recs.map(r => r.term_recovery).filter(s => s);
+      if (scopes.length === 0) return null;
+      const out = {};
+      if (state.benchmark === "cq2term") {
+        out.class    = avgMetric(r => (r.term_recovery || {}).class);
+        out.property = avgMetric(r => (r.term_recovery || {}).property);
+        out.combined = avgMetric(r => (r.term_recovery || {}).combined);
+        out.cq       = avgCQ(r => (r.term_recovery || {}).cq);
+        // per-method: average across datasets per method
+        out.per_method_class    = {};
+        out.per_method_property = {};
+        const methods = LEADERBOARD_DATA.methods;
+        methods.forEach(m => {
+          out.per_method_class[m]    = avgMetric(r => ((r.term_recovery || {}).per_method_class    || {})[m]);
+          out.per_method_property[m] = avgMetric(r => ((r.term_recovery || {}).per_method_property || {})[m]);
+        });
+        // AggregatedTop3 scalar scores
+        out.agg_top3_class    = avgScalar(r => (r.term_recovery || {}).agg_top3_class);
+        out.agg_top3_property = avgScalar(r => (r.term_recovery || {}).agg_top3_property);
+      } else {
+        out.class = {
+          aggregated: avgMetric(r => ((r.term_recovery || {}).class || {}).aggregated),
+          per_method: {},
+          agg_top3:   avgScalar(r => ((r.term_recovery || {}).class || {}).agg_top3),
+        };
+        out.property = {
+          aggregated: avgMetric(r => ((r.term_recovery || {}).property || {}).aggregated),
+          per_method: {},
+          agg_top3:   avgScalar(r => ((r.term_recovery || {}).property || {}).agg_top3),
+        };
+        // Average per-method
+        const methods = LEADERBOARD_DATA.methods;
+        methods.forEach(m => {
+          out.class.per_method[m]    = avgMetric(r => (((r.term_recovery || {}).class || {}).per_method || {})[m]);
+          out.property.per_method[m] = avgMetric(r => (((r.term_recovery || {}).property || {}).per_method || {})[m]);
+        });
+      }
+      return out;
+    }
+
+    avg.term_recovery  = avgTermRecovery();
+    avg.property_chars = avgScope("property_chars");
+    avg.triple         = avgScope("triple");
+    avg.axiom          = avgScope("axiom");
+    avg.hierarchy      = avgScope("hierarchy");
+
+    result.push(avg);
+  }
+  return result;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Sorting
+// ─────────────────────────────────────────────────────────────
+
+function getSortValue(run, sortCol) {
+  // sortCol is one of:
+  //   "<col.id>__<sub>"          aggregated columns, e.g. "ac__f1", "cq__mean", "class__f1"
+  //   "<col.id>_<method>__f1"    per-method expanded columns, e.g. "class_hard_match__f1"
+  //   "n_datasets"               meta column on the Overall tab
+  if (sortCol === "n_datasets") {
+    return run.n_datasets ?? null;
+  }
+  const [id, sub] = sortCol.split("__");
+  const cols = TASKS[state.benchmark][state.task].cols;
+
+  // Per-method sub-column: "class_hard_match" → base "class", method "hard_match"
+  for (const col of cols) {
+    if (col.kind !== "agg_method") continue;
+    if (!id.startsWith(col.id + "_")) continue;
+    const method = id.slice(col.id.length + 1);
+    if (!LEADERBOARD_DATA.methods.includes(method)) continue;
+    const pm = getPerMethod(run, col);
+    const mm = pm ? pm[method] : null;
+    return mm ? mm[sub] : null;
+  }
+
+  // Aggregated columns
+  const col = cols.find(c =>
+    (c.id === id) && (
+      (c.kind === "prf1" && (sub === "p" || sub === "r" || sub === "f1")) ||
+      (c.kind === "cq" && c.sub === sub) ||
+      (c.kind === "agg_method" && sub === "f1") ||
+      (c.kind === "score" && sub === "v")
+    )
+  );
+  if (!col) return null;
+  if (col.kind === "prf1" || col.kind === "agg_method") {
+    const m = getMetric(run, state.task, col);
+    return m ? m[sub] : null;
+  }
+  if (col.kind === "cq") {
+    const m = getMetric(run, state.task, col);
+    return m ? m[sub] : null;
+  }
+  if (col.kind === "score") {
+    return getMetric(run, state.task, col);
+  }
+  return null;
+}
+
+function sortRuns(runs, sortCol, dir, coveragePrimary) {
+  return runs.slice().sort((a, b) => {
+    // Primary key: coverage descending (only in Overall view).
+    // Runs with fewer covered datasets always sort below fully covered ones,
+    // unless the user explicitly sorts by the coverage column itself.
+    if (coveragePrimary && sortCol !== "n_datasets") {
+      const ca = a.n_datasets ?? 0;
+      const cb = b.n_datasets ?? 0;
+      if (ca !== cb) return cb - ca;
+    }
+
+    const x = getSortValue(a, sortCol);
+    const y = getSortValue(b, sortCol);
+    if (x === null || x === undefined) return 1;
+    if (y === null || y === undefined) return -1;
+    return dir === "desc" ? y - x : x - y;
+  });
+}
+
+// ─────────────────────────────────────────────────────────────
+// Rendering
+// ─────────────────────────────────────────────────────────────
+
+function buildHeader(table, cols, showOverall, totalDatasets) {
+  const showMode = (state.benchmark === "cq2onto");
+  const thead = document.createElement("thead");
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<th>Rank</th>` + (showMode ? `<th>Mode</th>` : ``) + `<th>Model</th>`;
+
+  cols.forEach(col => {
+    if (col.kind === "prf1") {
+      const expanded = state.expandedPRF1.has(col.id);
+      const cls = col.cls + (col.headline ? " headline" : "");
+      const f1Link  = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      const pLink   = infoIcon(catalogUrl("precision"), "Precision catalog entry");
+      const rLink   = infoIcon(catalogUrl("recall"),    "Recall catalog entry");
+      if (expanded) {
+        ["p", "r"].forEach(sub => {
+          const colId = `${col.id}__${sub}`;
+          const subLink = sub === "p" ? pLink : rLink;
+          tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label.replace(/F1.*/, sub.toUpperCase())}<span class="arrow"></span>${subLink}</th>`;
+        });
+        const colId = `${col.id}__f1`;
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${f1Link} <span class="expand-btn active" data-expand-prf1="${col.id}" title="Collapse P/R">◀</span></th>`;
+      } else {
+        const colId = `${col.id}__f1`;
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${f1Link} <span class="expand-btn" data-expand-prf1="${col.id}" title="Expand P/R columns">▶</span></th>`;
+      }
+    } else if (col.kind === "agg_method") {
+      const expanded = state.expandedMethod.has(col.id);
+      const parentPrf1Expanded = state.expandedPRF1.has(col.id);
+      const cls = col.cls + (col.headline ? " headline" : "");
+      const colId = `${col.id}__f1`;
+      const aggLink = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      const pLink   = infoIcon(catalogUrl("precision"), "Precision catalog entry");
+      const rLink   = infoIcon(catalogUrl("recall"),    "Recall catalog entry");
+
+      // The aggregated header itself. ▶ controls P/R expansion. ⋮ controls per-method.
+      if (parentPrf1Expanded) {
+        // Expand aggregated F1 into P / R / F1 first
+        ["p", "r"].forEach(sub => {
+          const aggSubId = `${col.id}__${sub}`;
+          const subLink = sub === "p" ? pLink : rLink;
+          tr.innerHTML += `<th class="sortable ${cls}" data-sort="${aggSubId}">${col.label.replace(/F1.*/, sub.toUpperCase())}<span class="arrow"></span>${subLink}</th>`;
+        });
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${aggLink} <span class="expand-btn active" data-expand-prf1="${col.id}" title="Collapse P/R">◀</span> <span class="expand-btn ${expanded ? "active" : ""}" data-expand-method="${col.id}" title="${expanded ? "Hide" : "Show"} per-method scores">⋮</span></th>`;
+      } else {
+        tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${aggLink} <span class="expand-btn" data-expand-prf1="${col.id}" title="Expand P/R columns">▶</span> <span class="expand-btn ${expanded ? "active" : ""}" data-expand-method="${col.id}" title="${expanded ? "Hide" : "Show"} per-method scores">⋮</span></th>`;
+      }
+
+      // Per-method sub-columns
+      if (expanded) {
+        const methods = LEADERBOARD_DATA.methods;
+        methods.forEach(m => {
+          const methodLink = infoIcon(catalogUrl(m), m + " catalog entry");
+          if (parentPrf1Expanded) {
+            ["p", "r", "f1"].forEach(sub => {
+              const subColId = `${col.id}_${m}__${sub}`;
+              const labelSuffix = sub === "f1" ? "F1" : sub.toUpperCase();
+              tr.innerHTML += `<th class="sortable" style="background:#fef9e7" data-sort="${subColId}" title="${m} ${labelSuffix}">${m.replace("_", " ")} ${labelSuffix}<span class="arrow"></span>${methodLink}</th>`;
+            });
+          } else {
+            const subColId = `${col.id}_${m}__f1`;
+            tr.innerHTML += `<th class="sortable" style="background:#fef9e7" data-sort="${subColId}" title="${m} F1">${m.replace("_", " ")}<span class="arrow"></span>${methodLink}</th>`;
+          }
+        });
+      }
+    } else if (col.kind === "cq") {
+      const cls = col.cls + (col.headline ? " headline" : "");
+      const colId = `${col.id}__${col.sub}`;
+      const cqLink = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${cqLink}</th>`;
+    } else if (col.kind === "score") {
+      const cls = col.cls + (col.headline ? " headline" : "");
+      const colId = `${col.id}__v`;
+      const scoreLink = infoIcon(colCatalogUrl(col), col.label + " catalog entry");
+      tr.innerHTML += `<th class="sortable ${cls}" data-sort="${colId}">${col.label}<span class="arrow"></span>${scoreLink}</th>`;
+    }
+  });
+
+  if (showOverall) {
+    tr.innerHTML += `<th class="sortable col-meta" data-sort="n_datasets" title="Number of benchmark domains this run has been evaluated on (e.g. 6/6 means all six). Models without full coverage are flagged with ⚠ and not directly comparable.">Domains<span class="arrow"></span></th>`;
+  }
+
+  thead.appendChild(tr);
+  table.appendChild(thead);
+}
+
+function buildRows(table, runs, cols, showOverall, totalDatasets) {
+  const showMode = (state.benchmark === "cq2onto");
+  const tbody = document.createElement("tbody");
+  runs.forEach((run, idx) => {
+    const tr = document.createElement("tr");
+    const modeCell = showMode ? `<td class="mono">${run.mode || "—"}</td>` : ``;
+    tr.innerHTML = `<td class="rank">${idx + 1}</td>${modeCell}<td class="mono">${modelCellHTML(run.model)}</td>`;
+
+    cols.forEach(col => {
+      const cls = col.cls + (col.headline ? " headline" : "");
+
+      if (col.kind === "prf1") {
+        const m = getMetric(run, state.task, col);
+        const tt = tooltipPRF1(m);
+        if (state.expandedPRF1.has(col.id)) {
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.p)}</td>`;
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.r)}</td>`;
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.f1)}</td>`;
+        } else {
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.f1)}</td>`;
+        }
+      } else if (col.kind === "agg_method") {
+        const m = getMetric(run, state.task, col);
+        const tt = tooltipPRF1(m);
+        const parentPrf1Expanded = state.expandedPRF1.has(col.id);
+        // Aggregated cell
+        if (parentPrf1Expanded) {
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.p)}</td>`;
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.r)}</td>`;
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.f1)}</td>`;
+        } else {
+          tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m.f1)}</td>`;
+        }
+        // Per-method cells
+        if (state.expandedMethod.has(col.id)) {
+          const pm = getPerMethod(run, col);
+          LEADERBOARD_DATA.methods.forEach(method => {
+            const mm = pm ? pm[method] : null;
+            const ttm = tooltipPRF1(mm);
+            if (parentPrf1Expanded) {
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.p)}</td>`;
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.r)}</td>`;
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.f1)}</td>`;
+            } else {
+              tr.innerHTML += `<td style="background:#fef9e7" title="${ttm}">${fmtPct(mm && mm.f1)}</td>`;
+            }
+          });
+        }
+      } else if (col.kind === "cq") {
+        const m = getMetric(run, state.task, col);
+        const tt = tooltipCQ(m);
+        tr.innerHTML += `<td class="${cls}" title="${tt}">${fmtPct(m && m[col.sub])}</td>`;
+      } else if (col.kind === "score") {
+        const v = getMetric(run, state.task, col);
+        const txt = (v === null || v === undefined) ? "—" : (v * 100).toFixed(1) + "%";
+        const tt = (v === null || v === undefined) ? "" : `Score = ${(v * 100).toFixed(2)}% (mean alignment confidence)`;
+        tr.innerHTML += `<td class="${cls}" title="${tt}">${txt}</td>`;
+      }
+    });
+
+    if (showOverall) {
+      const partial = run.n_datasets < totalDatasets;
+      const mcls = "col-meta" + (partial ? " partial" : "");
+      const warn = partial ? " ⚠" : "";
+      const tip = partial
+        ? `Only ${run.n_datasets} of ${totalDatasets} domains — not directly comparable.`
+        : `All ${totalDatasets} domains.`;
+      tr.innerHTML += `<td class="${mcls}" title="${tip}">${run.n_datasets}/${totalDatasets}${warn}</td>`;
+    }
+
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+}
+
+function updateArrows(table) {
+  table.querySelectorAll("th.sortable").forEach(th => {
+    th.classList.remove("sort-asc", "sort-desc");
+    const arrow = th.querySelector(".arrow");
+    if (th.dataset.sort === state.sort.col) {
+      th.classList.add("sort-" + state.sort.dir);
+      arrow.textContent = state.sort.dir === "desc" ? "▼" : "▲";
+    } else {
+      arrow.textContent = "";
+    }
+  });
+}
+
+// ─────────────────────────────────────────────────────────────
+// Top-level render
+// ─────────────────────────────────────────────────────────────
+
+function getBenchmarkData() {
+  return LEADERBOARD_DATA[state.benchmark];
+}
+
+function getTaskCols() {
+  return TASKS[state.benchmark][state.task].cols;
+}
+
+// Order of targets within each benchmark (controls Target button order)
+const TASK_ORDER = {
+  cq2term: ["term_recovery"],
+  cq2onto: ["term_recovery", "property_chars", "triple", "axiom", "hierarchy"],
+};
+
+const BENCHMARK_LABELS = { cq2term: "CQ2Term", cq2onto: "CQ2Onto" };
+
+function buildNavButton(container, label, isActive, onClick, opts = {}) {
+  const btn = document.createElement("div");
+  btn.className = "nav-btn" + (opts.extraClass ? " " + opts.extraClass : "") + (isActive ? " active" : "");
+  if (opts.accent) btn.dataset.accent = opts.accent;
+  btn.textContent = label;
+  btn.addEventListener("click", onClick);
+  container.appendChild(btn);
+  return btn;
+}
+
+function renderNav() {
+  // ── Task row ──
+  const tnav = document.getElementById("task-nav");
+  tnav.innerHTML = "";
+  ["cq2term", "cq2onto"].forEach(bm => {
+    buildNavButton(tnav, BENCHMARK_LABELS[bm], state.benchmark === bm, () => {
+      if (state.benchmark === bm) return;
+      state.benchmark = bm;
+      // Snap to first available target for the new benchmark
+      state.task = TASK_ORDER[bm][0];
+      resetTableState();
+      render();
+    });
+  });
+
+  // ── Target row ──
+  const gnav = document.getElementById("target-nav");
+  gnav.innerHTML = "";
+  TASK_ORDER[state.benchmark].forEach(tk => {
+    const def = TASKS[state.benchmark][tk];
+    buildNavButton(gnav, def.label, state.task === tk, () => {
+      if (state.task === tk) return;
+      state.task = tk;
+      resetTableState();
+      render();
+    }, { extraClass: "target", accent: def.accent });
+  });
+
+  // ── Domain row ──
+  const dnav = document.getElementById("domain-nav");
+  dnav.innerHTML = "";
+  const datasets = getBenchmarkData().datasets;
+  const opts = [["overall", "Overall"]].concat(datasets.map(d => [d, d.toUpperCase()]));
+  opts.forEach(([k, lbl]) => {
+    buildNavButton(dnav, lbl, state.domain === k, () => {
+      if (state.domain === k) return;
+      state.domain = k;
+      render();
+    });
+  });
+
+  // Task description
+  document.getElementById("task-desc").textContent = TASKS[state.benchmark][state.task].desc;
+
+  // Keep URL hash in sync with current task/target
+  if (typeof syncHash === "function") syncHash();
+}
+
+function resetTableState() {
+  const def = TASKS[state.benchmark][state.task].defaultSort;
+  state.sort = { col: def || null, dir: "desc" };
+  state.expandedPRF1.clear();
+  state.expandedMethod.clear();
+  state.domain = "overall";
+}
+function render() {
+  if (!state.sort.col) {
+    state.sort.col = TASKS[state.benchmark][state.task].defaultSort;
+  }
+
+  renderNav();
+
+  const content = document.getElementById("content");
+  content.innerHTML = "";
+
+  const bData = getBenchmarkData();
+  if (!bData.groups || bData.groups.length === 0) {
+    content.innerHTML = `<div class="empty">No runs found for ${state.benchmark.toUpperCase()}.</div>`;
+    return;
+  }
+
+  const cols = getTaskCols();
+  const totalDatasets = bData.datasets.length;
+  const showOverall = (state.domain === "overall");
+
+  bData.groups.forEach((group, gIdx) => {
+    const wrap = document.createElement("div");
+    wrap.className = "config-group";
+    wrap.dataset.accent = TASKS[state.benchmark][state.task].accent || "";
+
+    const header = document.createElement("div");
+    header.className = "config-header";
+    header.innerHTML = `
+      <strong>Configuration group ${gIdx + 1}</strong>
+      <span class="config-label">${group.label}</span>
+      <span class="config-count">${group.runs.length} runs</span>
+    `;
+    wrap.appendChild(header);
+
+    // Filter and aggregate
+    let rows = filterRuns(group, state.domain);
+    if (showOverall) {
+      rows = aggregateOverall(rows);
+    } else {
+      // each row is already a single dataset; add n_datasets=1 for consistency
+      rows = rows.map(r => Object.assign({}, r, { n_datasets: 1 }));
+    }
+
+    // Drop rows where the headline metric is null (no signal for this task)
+    rows = rows.filter(r => {
+      // require at least one column to have a non-null value
+      return cols.some(col => {
+        if (col.kind === "prf1" || col.kind === "agg_method") {
+          const m = getMetric(r, state.task, col);
+          return m && (m.f1 !== null && m.f1 !== undefined);
+        }
+        if (col.kind === "cq") {
+          const m = getMetric(r, state.task, col);
+          return m && (m[col.sub] !== null && m[col.sub] !== undefined);
+        }
+        if (col.kind === "score") {
+          const v = getMetric(r, state.task, col);
+          return v !== null && v !== undefined;
+        }
+        return false;
+      });
+    });
+
+    if (rows.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = "No data in this domain for this task.";
+      wrap.appendChild(empty);
+      content.appendChild(wrap);
+      return;
+    }
+
+    const sorted = sortRuns(rows, state.sort.col, state.sort.dir, showOverall);
+    const table = document.createElement("table");
+    buildHeader(table, cols, showOverall, totalDatasets);
+    buildRows(table, sorted, cols, showOverall, totalDatasets);
+    wrap.appendChild(table);
+
+    // Wire sort headers
+    table.querySelectorAll("th.sortable").forEach(th => {
+      th.addEventListener("click", (e) => {
+        // Don't sort if user clicked the expand button or info icon
+        if (e.target.classList.contains("expand-btn")) return;
+        if (e.target.classList.contains("info-icon")) return;
+        const col = th.dataset.sort;
+        if (state.sort.col === col) {
+          state.sort.dir = state.sort.dir === "desc" ? "asc" : "desc";
+        } else {
+          state.sort.col = col;
+          state.sort.dir = "desc";
+        }
+        render();
+      });
+    });
+
+    // Wire expand buttons
+    table.querySelectorAll("[data-expand-prf1]").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const id = btn.dataset.expandPrf1;
+        if (state.expandedPRF1.has(id)) state.expandedPRF1.delete(id);
+        else state.expandedPRF1.add(id);
+        render();
+      });
+    });
+    table.querySelectorAll("[data-expand-method]").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const id = btn.dataset.expandMethod;
+        if (state.expandedMethod.has(id)) state.expandedMethod.delete(id);
+        else state.expandedMethod.add(id);
+        render();
+      });
+    });
+
+    updateArrows(table);
+    content.appendChild(wrap);
+  });
+}
+
+// Initialize from URL hash: "#cq2onto/axiom", "#cq2term", or "#cq2onto-axiom" (legacy)
+function initFromHash() {
+  const raw = (window.location.hash || "").slice(1);
+  if (!raw) return; // keep defaults (cq2onto / term_recovery)
+
+  // Support both "/" and legacy "cq2onto-<task>" separators
+  let bm, tk;
+  if (raw.includes("/")) {
+    [bm, tk] = raw.split("/");
+  } else if (raw.startsWith("cq2onto-")) {
+    bm = "cq2onto"; tk = raw.slice("cq2onto-".length);
+  } else {
+    bm = raw;
+  }
+
+  if (bm !== "cq2term" && bm !== "cq2onto") return;
+  state.benchmark = bm;
+  // Validate task; fall back to first target for the benchmark
+  if (tk && TASKS[bm][tk]) state.task = tk;
+  else state.task = TASK_ORDER[bm][0];
+
+  resetTableState();
+}
+
+function syncHash() {
+  const newHash = `#${state.benchmark}/${state.task}`;
+  if (window.location.hash !== newHash) {
+    try {
+      history.replaceState(null, "", newHash);
+    } catch (e) {
+      // Fallback if replaceState is unavailable (e.g. file:// quirks)
+      window.location.hash = newHash;
+    }
+  }
+}
+
+initFromHash();
+
+// Re-render when user manually changes hash (back/forward button)
+window.addEventListener("hashchange", () => { initFromHash(); render(); });
+
+// Initial render
+render();
+syncHash();
+</script>
+
+</body>
+</html>
