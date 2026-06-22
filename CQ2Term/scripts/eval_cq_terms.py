@@ -1,3 +1,25 @@
+#CQ-to-Terms evaluation.
+# Each competency question (CQ) lists the classes and properties it mentions.
+# This script checks how well a predicted CQ->terms table matches the gold one.
+#
+# How it works:
+#   1. Term statistics — count the class/property terms on each side.
+#   2. Term matching — match gold terms to pred terms (try several matching
+#      methods, then keep the best 1-to-1 pairs). This gives a gold->pred map.
+#   3. Term-level metrics — how many gold terms found a pred match (precision /
+#      recall / F1), ignoring which CQ they came from.
+#   4. CQ coverage — for each CQ, what fraction of its gold terms did pred
+#      cover? (A gold term is covered when its matched pred term shows up in
+#      the SAME CQ) Summarized three ways:
+#      at-least-one covered, average coverage, and fully (100%) covered.
+#
+# Outputs (all optional): the term-matching tables (CSV), the per-CQ and
+# per-term coverage (CSV), a result JSON, and a Markdown report.
+
+
+
+
+
 import argparse
 import csv
 import json
