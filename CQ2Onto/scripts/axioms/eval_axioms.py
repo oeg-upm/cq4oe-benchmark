@@ -1,3 +1,16 @@
+# ============================================================================
+# OVERVIEW
+# Axiom-level evaluation of a predicted ontology against a gold ontology.
+# The pipeline runs in layers:
+#   Layer 1: descriptive axiom counts (no matching).
+#   Layer 2: embedding-based semantic overview (diagnostic / retrieval style).
+#   Layer 3: strict structural alignment of axioms using class/property
+#            alignment tables (the real correctness check).
+#   Layer 4: global view that widens Layer 3's denominator to ALL axioms.
+#   CQ Coverage: how many competency-question axioms were matched (TP).
+# Outputs: a text report, an optional Markdown report, CSVs, and a JSON dump.
+# ============================================================================
+
 from __future__ import annotations
 import argparse
 import csv
@@ -11,15 +24,17 @@ from collections import Counter, defaultdict
 from typing import Dict, List, Optional, Set, Tuple
 
 try:
+    # 'requests' is only needed for Layer 2 embeddings (Ollama calls).
     import requests
 except ImportError:
     requests = None  
+# Module-level flag controlling relaxed datatype matching (set from CLI).
 global LITERAL_RELAX
 
 
-
 def load_axioms(json_path: str) -> List[dict]:
-
+    # Load an axioms JSON file, accepting either an 'axioms' or 'gold_axioms'
+    # top-level list. Raises if neither key is present.
     if not os.path.exists(json_path):
         raise FileNotFoundError(f"Axioms JSON not found: {json_path}")
     with open(json_path, "r", encoding="utf-8") as f:
@@ -35,23 +50,29 @@ def load_axioms(json_path: str) -> List[dict]:
 
 
 def load_cq_definitions(json_path: str) -> List[dict]:
+    # Load optional competency-question definitions from the same JSON file.
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data.get("cq_definitions", [])
 
 
 def _norm(text):
-
+    # Normalize a term for table lookups: lowercase and strip ALL whitespace,
+    # underscores and hyphens. Used to match terms across gold/pred/alignment.
     if text is None:
         return ""
     s = str(text).strip().lower()
     return re.sub(r"[\s_\-]+", "", s)
 
 def load_alignment_csv(csv_path: str) -> Dict[str, str]:
-
+    # Load a gold->pred alignment table from CSV, tolerating several column
+    # name spellings. Enforces a 1-to-1 mapping on the PRED side: if multiple
+    # gold terms point to the same pred term, only the highest-scoring gold
+    # keeps it; the rest are dropped (with a warning).
     if not os.path.exists(csv_path):
         raise FileNotFoundError(f"Alignment CSV not found: {csv_path}")
 
+    # Read all (gold, pred, score) rows, deduplicating on the gold side.
     raw_entries: List[Tuple[str, str, float]] = []
     seen_gold: Set[str] = set()
     with open(csv_path, "r", encoding="utf-8-sig", newline="") as f:
@@ -71,6 +92,7 @@ def load_alignment_csv(csv_path: str) -> Dict[str, str]:
                 score = 0.0
             raw_entries.append((g, p, score))
 
+    # For each pred term, remember the best (highest-score) gold claiming it.
     pred_to_best: Dict[str, Tuple[str, float]] = {}     
     pred_conflicts: Dict[str, List[Tuple[str, float]]] = defaultdict(list)
     for g, p, score in raw_entries:
@@ -78,6 +100,7 @@ def load_alignment_csv(csv_path: str) -> Dict[str, str]:
         if p not in pred_to_best or score > pred_to_best[p][1]:
             pred_to_best[p] = (g, score)
 
+    # Keep only the winning gold for each pred; record the losers.
     out: Dict[str, str] = {}
     dropped: List[Tuple[str, str, float]] = []  # (gold, pred, score) entries that lost
     for g, p, score in raw_entries:
@@ -87,6 +110,7 @@ def load_alignment_csv(csv_path: str) -> Dict[str, str]:
         else:
             dropped.append((g, p, score))
 
+    # Warn the user about any conflicts that were resolved automatically.
     if dropped:
         conflicting_preds = sorted(
             {p for g, ps in pred_conflicts.items() if len(ps) > 1
@@ -107,7 +131,8 @@ def load_alignment_csv(csv_path: str) -> Dict[str, str]:
 
 
 def label_map_for(json_path: str, axioms: List[dict]) -> Dict[str, str]:
-
+    # Build an IRI -> human label map. Prefer a global 'name_to_label' block in
+    # the JSON; otherwise reconstruct one from per-axiom subject/term labels.
     try:
         with open(json_path, "r", encoding="utf-8") as f:
             doc = json.load(f)
@@ -127,7 +152,8 @@ def label_map_for(json_path: str, axioms: List[dict]) -> Dict[str, str]:
 
 
 def label_map_from_owl(owl_path: str) -> Dict[str, str]:
-
+    # Fallback label source: parse an OWL file with rdflib and read rdfs:label
+    # for every class / object property / datatype property.
     try:
         from rdflib import Graph, RDF, RDFS, OWL, URIRef, Literal
     except ImportError:
@@ -138,6 +164,7 @@ def label_map_from_owl(owl_path: str) -> Dict[str, str]:
         print(f"[warn] OWL file not found: {owl_path}", file=sys.stderr)
         return {}
 
+    # Try common serializations until one parses successfully.
     g = Graph()
     fmt_used = None
     for fmt in ("xml", "turtle", "n3", "json-ld"):
@@ -149,6 +176,7 @@ def label_map_from_owl(owl_path: str) -> Dict[str, str]:
             g = Graph()
             continue
     if fmt_used is None:
+        # Last resort: let rdflib guess the format.
         try:
             g.parse(owl_path)
             fmt_used = "auto"
@@ -158,6 +186,7 @@ def label_map_from_owl(owl_path: str) -> Dict[str, str]:
             return {}
 
     def _resolve_label(uri_node):
+        # Pick the best label for a URI: English > untagged > any > local name.
         labels = list(g.objects(uri_node, RDFS.label))
         for lb in labels:
             if isinstance(lb, Literal) and getattr(lb, "language", None) == "en":
@@ -173,6 +202,7 @@ def label_map_from_owl(owl_path: str) -> Dict[str, str]:
             return s.split("#")[-1]
         return s.rstrip("/").split("/")[-1]
 
+    # Key the map by the URI's local name (the fragment after '#' or last '/').
     out: Dict[str, str] = {}
     for type_class in (OWL.Class, OWL.ObjectProperty, OWL.DatatypeProperty):
         for s in g.subjects(RDF.type, type_class):
@@ -183,6 +213,8 @@ def label_map_from_owl(owl_path: str) -> Dict[str, str]:
     return out
 
 
+# Fixed display order for term types and the axiom types expected under each,
+# so report tables are consistent and readable.
 _TERM_TYPE_ORDER = ["Class", "ObjectProperty", "DatatypeProperty"]
 
 _AXIOM_TYPES_BY_TERM_TYPE = {
@@ -194,6 +226,7 @@ _AXIOM_TYPES_BY_TERM_TYPE = {
 
 
 def compute_layer1(axioms: List[dict]) -> dict:
+    # Layer 1: count axioms grouped by (term_type, axiom_type). Pure statistics.
     counts: Dict[str, Counter] = defaultdict(Counter)
     for ax in axioms:
         tt = ax.get("term_type", "Unknown")
@@ -207,6 +240,7 @@ def compute_layer1(axioms: List[dict]) -> dict:
 
 
 def _format_layer1_table(stats_g: dict, stats_p: dict) -> str:
+    # Render the Layer 1 gold-vs-pred counts as an aligned plain-text table.
     lines = []
     lines.append(f"{'Category':<32}  {'Gold':>6}  {'Pred':>6}")
     lines.append("─" * 50)
@@ -216,6 +250,7 @@ def _format_layer1_table(stats_g: dict, stats_p: dict) -> str:
         if g_total == 0 and p_total == 0:
             continue
         lines.append(f"{tt + ' axioms':<32}  {g_total:>6}  {p_total:>6}")
+        # Show known axiom types first, then any unexpected ones observed.
         ordered = _AXIOM_TYPES_BY_TERM_TYPE.get(tt, [])
         observed = set(stats_g["by_term_axiom"].get(tt, {}).keys()) \
                  | set(stats_p["by_term_axiom"].get(tt, {}).keys())
@@ -232,6 +267,8 @@ def _format_layer1_table(stats_g: dict, stats_p: dict) -> str:
 
 
 class EmbeddingClient:
+    # Thin client for fetching text embeddings from a local Ollama server,
+    # with an on-disk cache keyed by (model, text) to avoid recomputation.
     def __init__(self, model: str = "embeddinggemma",
                  base_url: str = "http://localhost:11434",
                  cache_path: Optional[str] = ".embed_cache.json",
@@ -241,6 +278,7 @@ class EmbeddingClient:
         self.use_cache = use_cache
         self.cache_path = cache_path
         self._cache: Dict[str, List[float]] = {}
+        # Load any previously cached embeddings from disk.
         if use_cache and cache_path and os.path.exists(cache_path):
             try:
                 with open(cache_path, "r", encoding="utf-8") as f:
@@ -250,9 +288,11 @@ class EmbeddingClient:
                       file=sys.stderr)
 
     def _key(self, text: str) -> str:
+        # Cache key = SHA-256 hash of "model|text".
         return hashlib.sha256(f"{self.model}|{text}".encode("utf-8")).hexdigest()
 
     def embed(self, text: str) -> List[float]:
+        # Return the embedding vector for `text`, using the cache when possible.
         if not text:
             return []
         if self.use_cache:
@@ -262,6 +302,8 @@ class EmbeddingClient:
         if requests is None:
             raise RuntimeError(
                 "The 'requests' library is required for embeddings.")
+        # Try both Ollama embedding endpoints (newer /api/embed, older
+        # /api/embeddings), each with its own payload and response shape.
         for endpoint, payload, picker in [
             (f"{self.base_url}/api/embed",
              {"model": self.model, "input": text},
@@ -285,6 +327,7 @@ class EmbeddingClient:
             f"for model '{self.model}'")
 
     def flush_cache(self) -> None:
+        # Persist the in-memory embedding cache back to disk.
         if self.use_cache and self.cache_path:
             try:
                 with open(self.cache_path, "w", encoding="utf-8") as f:
@@ -295,6 +338,7 @@ class EmbeddingClient:
 
 
 def _cosine(a: List[float], b: List[float]) -> float:
+    # Standard cosine similarity between two vectors; 0.0 for empty/zero inputs.
     if not a or not b:
         return 0.0
     dot = sum(x * y for x, y in zip(a, b))
@@ -306,10 +350,13 @@ def _cosine(a: List[float], b: List[float]) -> float:
 
 
 def _axiom_embed_text(ax: dict) -> str:
+    # The text used to embed an axiom: prefer its DL string, else subject+object.
     return ax.get("dl") or (ax.get("subject", "") + " " + ax.get("object", ""))
 
 
 def _greedy_one_to_one(g_items, p_items, threshold: float):
+    # Greedy 1-to-1 matcher over embedding vectors: score all pairs above the
+    # cosine threshold, then accept them highest-first without reusing either side.
     if not g_items or not p_items:
         return []
     sims = []
@@ -330,15 +377,20 @@ def _greedy_one_to_one(g_items, p_items, threshold: float):
 
 
 def compute_layer2(gold_axioms, pred_axioms, client, threshold=0.6):
+    # Layer 2: embed every gold and pred axiom, then greedily pair them by
+    # cosine similarity. Reported per (term_type, axiom_type) bucket, per term
+    # type, and overall. This is a diagnostic/retrieval view, NOT correctness.
     print(f"\n[Layer 2] Embedding {len(gold_axioms)} gold + "
           f"{len(pred_axioms)} pred axioms with model='{client.model}', "
           f"threshold={threshold}", file=sys.stderr)
 
+    # Embed all gold axioms (progress logged every 20).
     gold_vecs = []
     for i, ax in enumerate(gold_axioms):
         gold_vecs.append((ax, client.embed(_axiom_embed_text(ax))))
         if (i + 1) % 20 == 0:
             print(f"  ...gold {i+1}/{len(gold_axioms)}", file=sys.stderr)
+    # Embed all pred axioms.
     pred_vecs = []
     for i, ax in enumerate(pred_axioms):
         pred_vecs.append((ax, client.embed(_axiom_embed_text(ax))))
@@ -348,11 +400,13 @@ def compute_layer2(gold_axioms, pred_axioms, client, threshold=0.6):
     client.flush_cache()
 
     def _bucket(ax):
+        # An axiom's bucket is its (term_type, axiom_type) pair.
         return (ax.get("term_type", "Unknown"), ax.get("axiom_type", "Unknown"))
 
     buckets = sorted(set(_bucket(ax) for ax, _ in gold_vecs)
                    | set(_bucket(ax) for ax, _ in pred_vecs))
 
+    # Match within each bucket separately (only like-with-like axioms pair).
     bucket_results = {}
     for bk in buckets:
         g_items = [(ax, v) for ax, v in gold_vecs if _bucket(ax) == bk]
@@ -367,6 +421,7 @@ def compute_layer2(gold_axioms, pred_axioms, client, threshold=0.6):
             "pairs": pairs,
         })
 
+    # Aggregate bucket results up to the term-type level.
     per_term_type = {}
     for tt in set(b[0] for b in buckets):
         g_n = sum(r["gold_count"] for k, r in bucket_results.items() if k[0] == tt)
@@ -377,6 +432,7 @@ def compute_layer2(gold_axioms, pred_axioms, client, threshold=0.6):
             "match_rate": (m / max(g_n, p_n)) if max(g_n, p_n) else 0.0,
         })
 
+    # Overall: one greedy pass over ALL axioms regardless of bucket.
     overall_pairs = _greedy_one_to_one(gold_vecs, pred_vecs, threshold)
     overall = _attach_prf({
         "gold_count": len(gold_vecs), "pred_count": len(pred_vecs),
@@ -396,6 +452,8 @@ def compute_layer2(gold_axioms, pred_axioms, client, threshold=0.6):
 
 
 def _attach_prf(metrics: dict) -> dict:
+    # Add precision/recall/F1 to a metrics dict, treating matched as TP,
+    # unmatched pred as FP, and unmatched gold as FN.
     tp = metrics.get("matched", 0)
     g = metrics.get("gold_count", 0)
     p = metrics.get("pred_count", 0)
@@ -412,6 +470,7 @@ def _attach_prf(metrics: dict) -> dict:
 
 
 def _format_layer2_table(layer2: dict) -> str:
+    # Render the Layer 2 results as an aligned plain-text table.
     lines = []
     lines.append(f"Embedding model: {layer2['model']}, "
                  f"cosine threshold: {layer2['threshold']}, "
@@ -461,6 +520,7 @@ def _format_layer2_table(layer2: dict) -> str:
 
 
 def _save_layer2_pairs_csv(layer2: dict, csv_path: str) -> None:
+    # Dump the overall Layer 2 candidate pairs (gold/pred DL + cosine) to CSV.
     rows = []
     for g_ax, p_ax, sim in layer2["overall"]["pairs"]:
         rows.append({
@@ -475,38 +535,47 @@ def _save_layer2_pairs_csv(layer2: dict, csv_path: str) -> None:
         w.writerows(rows)
 
 
+# The five possible per-axiom judgment statuses used throughout Layer 3.
 STATUSES = ("tp", "fn", "fp", "mismatch", "skip")
 
+# Namespace prefixes treated as XSD when normalizing datatypes.
 _XSD_PREFIXES = (
     "http://www.w3.org/2001/XMLSchema#",
     "http://www.w3.org/2001/xmlschema#",
 )
 
 
-
 #default
+# When True, a generic literal root in gold matches any concrete datatype in
+# pred (set from the --literal_relax CLI flag inside main()).
 LITERAL_RELAX = False
 
 def normalize_datatype(s: str) -> str:
+    # Normalize a datatype string to a canonical "xsd:<type>" form.
+    # Handles doubled prefixes (e.g. "xsd:xsd:int"), full IRIs, and aliases.
     if not s:
         return ""
     t = str(s).strip()
     lower = t.lower()
+    # Strip a doubled "xsd:" or a leading full IRI fragment if present.
     if t.count("xsd:") > 1 or ("#" in t and "xsd:" in lower):
         if t.count("xsd:") > 1:
             idx = lower.rfind("xsd:")
             t = t[idx:]
         elif "#" in t:
             t = t.rsplit("#", 1)[1]
+    # Strip a full XSD namespace prefix.
     for p in _XSD_PREFIXES:
         if t.lower().startswith(p.lower()):
             t = t[len(p):]
             break
+    # Strip a short xsd-style prefix.
     for prefix in ("xsd:", "xs:", "xsd1:"):
         if t.lower().startswith(prefix):
             t = t[len(prefix):]
             break
     t = t.lower().strip()
+    # Map common spellings/abbreviations to canonical XSD type names.
     aliases = {
         "int": "integer",
         "bool": "boolean",
@@ -522,6 +591,8 @@ def normalize_datatype(s: str) -> str:
 
 
 def normalize_oneof(struct: dict) -> dict:
+    # Rewrite an ObjectHasValue expression into the equivalent
+    # ObjectSomeValuesFrom + ObjectOneOf form, so the two are comparable.
     if not isinstance(struct, dict):
         return struct
     if struct.get("expr_type") == "ObjectHasValue":
@@ -537,7 +608,8 @@ def normalize_oneof(struct: dict) -> dict:
 
 
 def _norm_entity(x) -> str:
-
+    # Normalize an entity reference (IRI, prefixed name, or label) to a bare,
+    # lowercase, separator-free token for set comparisons (e.g. in OneOf).
     if x is None:
         return ""
     s = str(x).strip()
@@ -551,7 +623,9 @@ def _norm_entity(x) -> str:
 def _aligned_subject(g_ax: dict, term_type: str,
                      class_align: Dict[str, str],
                      prop_align: Dict[str, str]) -> Optional[str]:
-
+    # Map a gold axiom's subject to its aligned PRED-side name, using either the
+    # class or property alignment table (chosen by term_type). Tries the
+    # subject's label first, then its raw name. Returns None if not aligned.
     table = class_align if term_type == "Class" else prop_align
     table_norm = {_norm(k): v for k, v in table.items()}
     label = g_ax.get("subject_label") or g_ax.get("term_label")
@@ -569,7 +643,9 @@ def _aligned_subject(g_ax: dict, term_type: str,
 
 def _equal_under_class_align(gold_class, pred_class, class_align,
                              gold_label_map=None, pred_label_map=None):
-
+    # Decide whether a gold class and pred class are "equal" under the class
+    # alignment table. Tries all combinations of names/labels on each side so a
+    # match is found whether the table is keyed by IRI name or by label.
     if not gold_class or not pred_class:
         return False
     gold_label_map = gold_label_map or {}
@@ -587,7 +663,7 @@ def _equal_under_class_align(gold_class, pred_class, class_align,
 
 def _equal_under_prop_align(gold_prop, pred_prop, prop_align,
                             gold_label_map=None, pred_label_map=None):
-
+    # Same idea as _equal_under_class_align, but for properties.
     if not gold_prop or not pred_prop:
         return False
     gold_label_map = gold_label_map or {}
@@ -604,19 +680,24 @@ def _equal_under_prop_align(gold_prop, pred_prop, prop_align,
 
 def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
                   gold_label_map=None, pred_label_map=None):
+    # Recursively decide whether two axiom expression structures are equivalent
+    # under the alignment tables. Returns (is_equal, reason_if_not).
+    # Handles atomic terms, datatypes, and all complex OWL expression types.
     g = normalize_oneof(g) if g else g
     p = normalize_oneof(p) if p else p
 
+    # Both empty = trivially equal; one empty = unequal.
     if g is None and p is None:
         return True, ""
     if g is None or p is None:
         return False, "one side is None"
 
-
+    # Expression types must match before anything else.
     gt = g.get("expr_type")
     pt = p.get("expr_type")
     if gt != pt:
         return False, f"expr_type {gt} vs {pt}"
+    # Atomic class: compare names through the class alignment table.
     if gt == "Class":
         gn, pn = g.get("name", ""), p.get("name", "")
         if _equal_under_class_align(gn, pn, class_align,
@@ -624,6 +705,7 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             return True, ""
         return False, f"class {gn!r} not aligned to {pn!r}"
 
+    # Atomic property: compare names through the property alignment table.
     if gt in ("ObjectProperty", "DatatypeProperty"):
         gn, pn = g.get("name", ""), p.get("name", "")
         if _equal_under_prop_align(gn, pn, prop_align,
@@ -631,12 +713,14 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             return True, ""
         return False, f"property {gn!r} not aligned to {pn!r}"
 
+    # Datatype: compare canonical forms, with optional literal-root relaxation.
     if gt == "Datatype":
         g_norm = normalize_datatype(g.get("name", ""))
         p_norm = normalize_datatype(p.get("name", ""))
         if g_norm == p_norm:
             return True, ""
         # Relaxation (opt-in via --literal_relax yes)
+        # A generic gold literal root accepts any concrete pred datatype.
         if LITERAL_RELAX:
             gl = g_norm.lower() if g_norm else ""
             pl = p_norm.lower() if p_norm else ""
@@ -650,12 +734,11 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
                 return True, ""
         return False, f"datatype {g.get('name')!r} != {p.get('name')!r}"
     
-
-
+    # owl:Thing / top concept: always equal.
     if gt == "Top":
         return True, ""
 
-
+    # Declaration: equal if the declared term types agree.
     if gt == "Declaration":
         g_tt = g.get("term_type")
         p_tt = p.get("term_type")
@@ -663,9 +746,8 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             return True, ""
         return False, f"declaration term_type {g_tt!r} vs {p_tt!r}"
 
+    # Enumerated set {a, b, ...}: membership sets must match exactly.
     if gt == "ObjectOneOf":
-       
-        
         g_members = {_norm_entity(m) for m in (g.get("individuals") or [])}
         p_members = {_norm_entity(m) for m in (p.get("individuals") or [])}
         if g_members == p_members: #must be exact match
@@ -676,6 +758,8 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
                        f"{sorted(only_gold) or '∅'}, only-pred: "
                        f"{sorted(only_pred) or '∅'}")
 
+    # Intersection / Union: same number of operands, and each gold operand must
+    # match a distinct pred operand (order-independent set comparison).
     if gt in ("ObjectIntersectionOf", "ObjectUnionOf"):
         g_ops = g.get("operands") or []
         p_ops = p.get("operands") or []
@@ -685,6 +769,7 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
         for gi, gop in enumerate(g_ops):
             found = None
             reasons = []
+            # Find an unused pred operand equal to this gold operand.
             for pi, pop in enumerate(p_ops):
                 if pi in used:
                     continue
@@ -705,6 +790,7 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             used.add(found)
         return True, ""
 
+    # Existential / universal restriction: property must align AND fillers match.
     if gt in ("ObjectSomeValuesFrom", "ObjectAllValuesFrom"):
         gp, pp = g.get("property", ""), p.get("property", "")
         if not _equal_under_prop_align(gp, pp, prop_align,
@@ -717,6 +803,8 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             return True, ""
         return False, f"filler differs: {why}"
 
+    # Cardinality restriction: the number, the property, and the filler must
+    # all agree.
     if gt in ("ObjectMinCardinality", "ObjectMaxCardinality",
               "ObjectExactCardinality"):
 
@@ -735,7 +823,8 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             return True, ""
         return False, f"cardinality filler differs: {why}"
     
- ##¬C, "expr_type": "ObjectComplementOf",
+    # Complement (¬C): the negated operands must match.
+    ##¬C, "expr_type": "ObjectComplementOf",
            # "operand": {
              # "expr_type": "Class",
             #  "name": "WhiteWine"}
@@ -748,12 +837,13 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             return True, ""
         return False, f"complement operand differs: {why}"
 
+    # Property characteristic (e.g. Functional, Transitive): names must match.
     if gt == "PropertyCharacteristic":
         if g.get("name") == p.get("name"):
             return True, ""
         return False, f"characteristic {g.get('name')} vs {p.get('name')}"
 
-
+    # Inverse property: compared through the property alignment table.
     if gt == "InverseObjectProperty":
         gn, pn = g.get("name", ""), p.get("name", "")
         if _equal_under_prop_align(gn, pn, prop_align,
@@ -761,16 +851,20 @@ def _struct_equal(g, p, class_align, prop_align, pred_entity_names,
             return True, ""
         return False, f"inverse-property {gn!r} not aligned to {pn!r}"
 
+    # Anything we don't explicitly handle is treated as unequal.
     return False, f"unsupported expr_type: {gt}"
 
 
 def _collect_pred_entity_names(pred_axioms: List[dict]) -> set:
+    # Collect every entity name appearing anywhere in the pred axioms (top-level
+    # terms and names nested inside complex expressions). Used as context.
     names = set()
     for ax in pred_axioms:
         if ax.get("term"):
             names.add(ax["term"])
 
     def _walk(node):
+        # Recursively descend an expression tree, harvesting entity names.
         if not isinstance(node, dict):
             return
         et = node.get("expr_type")
@@ -783,9 +877,11 @@ def _collect_pred_entity_names(pred_axioms: List[dict]) -> set:
         if et == "ObjectHasValue":
             v = node.get("value")
             if v: names.add(v)
+        # Recurse into common single-child slots.
         for k in ("filler", "lhs", "rhs", "operand"):
             if k in node:
                 _walk(node.get(k))
+        # Recurse into operand lists (intersection/union).
         for o in node.get("operands", []) or []:
             _walk(o)
 
@@ -799,7 +895,12 @@ def _judge_one_axiom(g_ax, pred_index, class_align, prop_align,
                      pred_entity_names,
                      gold_label_map=None, pred_label_map=None,
                      used_pred_ids=None):
-
+    # Classify a single gold axiom against the pred index, returning a judgment
+    # dict with one of: skip / fn / tp / mismatch.
+    #   skip     : gold subject isn't in the alignment table.
+    #   fn       : aligned, but pred has no axiom of this type on the subject.
+    #   tp       : a structurally-equal pred axiom was found.
+    #   mismatch : an axiom of the right type exists but doesn't structurally match.
     if used_pred_ids is None:
         used_pred_ids = set()
     aid = g_ax.get("id", "?")
@@ -809,6 +910,7 @@ def _judge_one_axiom(g_ax, pred_index, class_align, prop_align,
     g_dl = g_ax.get("dl", "")
     g_rhs = g_ax.get("rhs_struct")
 
+    # Resolve the gold subject to its aligned pred subject.
     p_subj = _aligned_subject(g_ax, tt, class_align, prop_align)
     if p_subj is None:
         return {
@@ -819,6 +921,7 @@ def _judge_one_axiom(g_ax, pred_index, class_align, prop_align,
             "pred_match": None,
         }
 
+    # Candidate pred axioms = same aligned subject + same axiom type, not yet used.
     candidates = pred_index.get((_norm(p_subj), at), [])
 
     candidates = [c for c in candidates
@@ -832,6 +935,7 @@ def _judge_one_axiom(g_ax, pred_index, class_align, prop_align,
             "pred_match": None,
         }
 
+    # Try each candidate; first structural match wins as a TP.
     failures = []
     for cand in candidates:
         eq, why = _struct_equal(g_rhs, cand.get("rhs_struct"),
@@ -847,6 +951,7 @@ def _judge_one_axiom(g_ax, pred_index, class_align, prop_align,
             }
         failures.append((cand, why))
 
+    # No structural match: report the first candidate as a mismatch.
     cand_ax, why = failures[0]
     return {
         "side": "gold",
@@ -859,7 +964,14 @@ def _judge_one_axiom(g_ax, pred_index, class_align, prop_align,
 
 def compute_layer3(gold, pred, class_align, prop_align,
                    gold_label_map=None, pred_label_map=None):
+    # Layer 3: the strict structural evaluation.
+    # Pass 1: judge every gold axiom (tp/fn/mismatch/skip), consuming matched
+    #         pred axioms so they can't be reused (prevents TP inflation).
+    # Pass 2: any pred axiom on an aligned subject that wasn't consumed is a
+    #         pure FP. Pred axioms on unaligned subjects are left to Layer 4.
 
+    # Build an index of pred axioms keyed by (normalized subject, axiom_type),
+    # indexing under both the IRI/name and the label form of the subject.
     pred_index: Dict[Tuple[str, str], List[dict]] = defaultdict(list)
     for ax in pred:
         at = ax.get("axiom_type") or ""
@@ -872,7 +984,7 @@ def compute_layer3(gold, pred, class_align, prop_align,
 
     pred_entity_names = _collect_pred_entity_names(pred)
 
-
+    # Pass 1: judge each gold axiom and mark consumed pred axioms.
     evaluation = []
     pred_used_ids = set()
     for g_ax in gold:
@@ -881,9 +993,11 @@ def compute_layer3(gold, pred, class_align, prop_align,
                              gold_label_map, pred_label_map,
                              used_pred_ids=pred_used_ids)
         evaluation.append(v)
+        # TP and mismatch both consume their matched pred axiom.
         if v["status"] in ("tp", "mismatch") and v.get("pred_match"):
             pred_used_ids.add(v["pred_match"].get("id"))
 
+    # Pass 2: find pred axioms on aligned subjects that no gold axiom matched.
     aligned_pred_subjects = set(class_align.values()) | set(prop_align.values())
     inv_class = {v: k for k, v in class_align.items()}
     inv_prop = {v: k for k, v in prop_align.items()}
@@ -897,6 +1011,7 @@ def compute_layer3(gold, pred, class_align, prop_align,
         p_subj_iri = p_ax.get("subject") or p_ax.get("term") or ""
         p_subj_lbl = p_ax.get("subject_label") or p_ax.get("term_label") or ""
 
+        # Determine whether this pred subject is in the alignment table.
         canonical = None
         if p_subj_lbl and p_subj_lbl in aligned_pred_subjects:
             canonical = p_subj_lbl
@@ -906,7 +1021,7 @@ def compute_layer3(gold, pred, class_align, prop_align,
             # Subject not in alignment table — Layer 4 handles as FP_unaligned
             continue
 
-
+        # Aligned-but-unmatched pred axiom => pure FP.
         at = p_ax.get("axiom_type") or ""
         gold_counterpart = (inv_class.get(canonical) or inv_prop.get(canonical)
                             or "?")
@@ -923,6 +1038,7 @@ def compute_layer3(gold, pred, class_align, prop_align,
             "pred_match": p_ax,
         })
 
+    # Tally status counts by (term_type, axiom_type), by term_type, and overall.
     by_combo = defaultdict(lambda: {x: 0 for x in STATUSES})
     by_tt = defaultdict(lambda: {x: 0 for x in STATUSES})
     overall = {x: 0 for x in STATUSES}
@@ -942,6 +1058,7 @@ def compute_layer3(gold, pred, class_align, prop_align,
 
 
 def _prf1(tp: int, fp: int, fn: int) -> Tuple[float, float, float]:
+    # Compute precision, recall, F1 from raw TP/FP/FN counts.
     p = tp / (tp + fp) if (tp + fp) else 0.0
     r = tp / (tp + fn) if (tp + fn) else 0.0
     f = 2 * p * r / (p + r) if (p + r) else 0.0
@@ -949,6 +1066,8 @@ def _prf1(tp: int, fp: int, fn: int) -> Tuple[float, float, float]:
 
 
 def _format_layer3_table(layer3: dict) -> str:
+    # Render the Layer 3 counts/metrics table. Note: mismatch is added into
+    # BOTH the FP and FN columns (it's a gold-side gap and a pred-side error).
     lines = []
     lines.append("Status: TP / FP / FN / Mismatch / Skip")
     lines.append("Mismatch counts as BOTH FP and FN "
@@ -997,6 +1116,8 @@ def _format_layer3_table(layer3: dict) -> str:
 
 
 def _format_layer3_details(layer3: dict, max_rows: int = None) -> str:
+    # Render a per-axiom detail listing (status, id, DL, reason), sorted by
+    # term type then axiom type then id.
     lines = []
     rows = layer3["evaluation"]
     if max_rows:
@@ -1017,7 +1138,8 @@ def _format_layer3_details(layer3: dict, max_rows: int = None) -> str:
 
 
 def _save_details_csv(layer3: dict, csv_path: str) -> None:
-
+    # Write a paired per-axiom CSV: each judgment produces a gold row and a pred
+    # row (or placeholder), so reviewers can see both sides side by side.
     status_label = {
         "tp": "TP",
         "fn": "FN",
@@ -1101,12 +1223,16 @@ def _save_details_csv(layer3: dict, csv_path: str) -> None:
 
 
 def compute_layer4(layer3, gold, pred, class_align, prop_align):
+    # Layer 4: global view. Keeps Layer 3's TP but widens the denominator to all
+    # axioms by adding axioms on UNALIGNED subjects (gold -> FN, pred -> FP).
     aligned_gold_classes = set(class_align.keys())
     aligned_pred_classes = set(class_align.values())
     aligned_gold_props = set(prop_align.keys())
     aligned_pred_props = set(prop_align.values())
 
     def _is_aligned(ax: dict, side: str) -> bool:
+        # True if this axiom's subject (by IRI or label) is in the alignment
+        # table for the relevant side and term type.
         tt = ax.get("term_type")
         term_iri = ax.get("subject") or ax.get("term") or ""
         term_label = ax.get("subject_label") or ax.get("term_label") or ""
@@ -1119,18 +1245,21 @@ def compute_layer4(layer3, gold, pred, class_align, prop_align):
         return (term_iri and term_iri in target) or \
                (term_label and term_label in target)
 
+    # Axioms whose subject never appears in the alignment table.
     unaligned_gold = [ax for ax in gold if not _is_aligned(ax, "gold")]
     unaligned_pred = [ax for ax in pred if not _is_aligned(ax, "pred")]
 
     by_term_l3 = layer3["counts_by_term"]
 
     def _layer3_for(tt: str) -> dict:
+        # Pull Layer 3's TP/FP/FN (with mismatch folded in) for a term type.
         c = by_term_l3.get(tt, {x: 0 for x in STATUSES})
         tp = c["tp"]; mm = c["mismatch"]
         return {"tp": tp,
                 "fp_layer3": c["fp"] + mm, "fn_layer3": c["fn"] + mm,
                 "mismatch": mm, "skip": c["skip"]}
 
+    # Per term type: extend Layer 3 FP/FN with the unaligned axiom counts.
     per_term = {}
     for tt in _TERM_TYPE_ORDER:
         l3 = _layer3_for(tt)
@@ -1151,6 +1280,7 @@ def compute_layer4(layer3, gold, pred, class_align, prop_align):
             "unaligned_pred_axioms": unaligned_p,
         }
 
+    # Grand totals across all term types.
     tp = sum(per_term[tt]["tp"] for tt in per_term)
     fp = sum(per_term[tt]["fp"] for tt in per_term)
     fn = sum(per_term[tt]["fn"] for tt in per_term)
@@ -1161,6 +1291,8 @@ def compute_layer4(layer3, gold, pred, class_align, prop_align):
 
 
 def _format_layer4(layer4: dict) -> str:
+    # Render the Layer 4 global view, including detailed lists of the unaligned
+    # gold (FN) and pred (FP) axioms per term type.
     lines = []
     lines.append("Layer 3 evaluates only axioms whose subject is in the "
                  "alignment table.")
@@ -1185,6 +1317,7 @@ def _format_layer4(layer4: dict) -> str:
                      f"unaligned pred axioms: {p['fp_unaligned']})")
         lines.append(f"  FN = {p['fn']:<3}  (Layer-3 FN: {p['fn_layer3']}  +  "
                      f"unaligned gold axioms: {p['fn_unaligned']})")
+        # List the unaligned gold axioms (each counts as FN), grouped by term.
         if p["unaligned_gold_axioms"]:
             grouped = defaultdict(list)
             for ax in p["unaligned_gold_axioms"]:
@@ -1197,6 +1330,7 @@ def _format_layer4(layer4: dict) -> str:
                     dl = ax.get("dl", "")
                     lines.append(f"    - {t} :: [{ax.get('id','')}] "
                                  f"{ax.get('axiom_type','')}: {dl}")
+        # List the unaligned pred axioms (each counts as FP), grouped by term.
         if p["unaligned_pred_axioms"]:
             grouped = defaultdict(list)
             for ax in p["unaligned_pred_axioms"]:
@@ -1225,14 +1359,20 @@ def _format_layer4(layer4: dict) -> str:
 # ============================================================================
 
 def compute_cq_coverage(layer3, gold, cq_definitions):
-
+    # Competency-question coverage: for each CQ, look at its associated gold
+    # axioms and count how many earned a TP in Layer 3. Produces three views:
+    #   - fully covered (every axiom of the CQ is TP)
+    #   - any covered (at least one axiom is TP)
+    #   - average per-CQ coverage rate.
     status_by_id = {v["axiom_id"]: v for v in layer3["evaluation"]
                     if v.get("side") == "gold"}
+    # Group gold axioms by the CQ ids they are tagged with.
     cq_to_axioms = defaultdict(list)
     for ax in gold:
         for cq_id in ax.get("cq_numbers") or []:
             cq_to_axioms[cq_id].append(ax)
 
+    # Use explicit CQ definitions if provided, else derive ids from the axioms.
     if cq_definitions:
         cq_ids = [c["id"] for c in cq_definitions]
         cq_q = {c["id"]: c.get("question", "") for c in cq_definitions}
@@ -1247,6 +1387,7 @@ def compute_cq_coverage(layer3, gold, cq_definitions):
     n_with_axioms = 0
     for cq_id in cq_ids:
         axs = cq_to_axioms.get(cq_id, [])
+        # TP axioms for this CQ.
         tp_ids = [ax["id"] for ax in axs
                   if status_by_id.get(ax["id"], {}).get("status") == "tp"]
         # Missing axioms = gold axioms of this CQ that did NOT get TP
@@ -1308,6 +1449,7 @@ def compute_cq_coverage(layer3, gold, cq_definitions):
 
 
 def _format_cq_coverage(cov: dict) -> str:
+    # Render the CQ coverage summary plus per-CQ detail as plain text.
     lines = []
     lines.append("CQ Coverage Metrics:")
     lines.append("")
@@ -1325,6 +1467,7 @@ def _format_cq_coverage(cov: dict) -> str:
     lines.append("")
     lines.append("Per-CQ detail:")
     for cq_id, info in cov["per_cq"].items():
+        # Classify each CQ as fully / partial / none covered.
         if info["fully_covered"]:
             status = "fully"
         elif info["any_covered"]:
@@ -1347,6 +1490,7 @@ def _format_cq_coverage(cov: dict) -> str:
     return "\n".join(lines)
 
 
+# Human-friendly section headings keyed by term type, used in the MD report.
 _TT_LABEL = {
     "Class":            "Axioms about Classes",
     "ObjectProperty":   "Axioms about Object Properties",
@@ -1361,9 +1505,12 @@ def _tt_label(tt: str) -> str:
 def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                             cov, args,
                             gold_axioms=None, pred_axioms=None) -> str:
+    # Build the full Markdown report covering all layers + CQ coverage.
+    # `L` accumulates the report lines; joined at the end.
     gold_axioms = gold_axioms or []
     pred_axioms = pred_axioms or []
     L = []
+    # --- Report header / provenance ---
     L.append("# Axiom-Level TBox Evaluation Report")
     L.append("")
     L.append("_Generated by `eval_axioms.py`_  ")
@@ -1378,6 +1525,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
              "(a class, an object property, or a datatype property). ")
     L.append("")
 
+    # --- Layer 1 section: descriptive counts ---
     L.append("## Layer 1 — Axiom Counts")
     L.append("")
     L.append("Side-by-side counts of axioms by `(term_type, axiom_type)`. "
@@ -1404,6 +1552,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
     L.append(f"| **TOTAL** | **{stats_g['total']}** | **{stats_p['total']}** |")
     L.append("")
 
+    # --- Layer 2 section (only if Layer 2 ran) ---
     if layer2 is not None:
         L.append("## Layer 2 — Semantic Overview (diagnostic)")
         L.append("")
@@ -1457,6 +1606,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                  f"**{o['f1']*100:.1f}%** |")
         L.append("")
 
+        # Optional listing of the actual Layer 2 candidate pairs.
         pairs = layer2["overall"].get("pairs", [])
         if pairs:
             L.append("### Layer 2 — Semantic candidate pairs")
@@ -1475,6 +1625,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
             for idx, (g_ax, p_ax, sim) in enumerate(sorted_pairs, start=1):
                 g_dl = (g_ax.get("dl") if isinstance(g_ax, dict) else "") or ""
                 p_dl = (p_ax.get("dl") if isinstance(p_ax, dict) else "") or ""
+                # Escape pipes so they don't break the Markdown table.
                 g_dl_e = g_dl.replace("|", "\\|")
                 p_dl_e = p_dl.replace("|", "\\|")
                 if len(g_dl_e) > 70:
@@ -1485,6 +1636,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                          f"`{p_dl_e}` |")
             L.append("")
 
+    # --- Layer 3 section: methodology explanation + tables ---
     L.append("## Layer 3 — Axiom Alignment Check")
     L.append("For each gold axiom, look up its subject in the class or "
              "property alignment table. If pred has the same kind of "
@@ -1542,6 +1694,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
     L.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|")
 
     def _fmt_prf(tp, fp, fn, p, r, f, bold=False):
+        # Format P/R/F1 cells, showing "—" when a denominator is zero.
         p_zero = (tp + fp) == 0
         r_zero = (tp + fn) == 0
         f_zero = p_zero or r_zero
@@ -1592,6 +1745,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
              f"{mm} | {o['skip']} | {p_s} | {r_s} | {f_s} |")
     L.append("")
 
+    # Split the Layer 3 judgments by status for the detail tables below.
     tps = [v for v in layer3["evaluation"] if v["status"] == "tp"]
     mismatches = [v for v in layer3["evaluation"]
                    if v["status"] == "mismatch"]
@@ -1600,6 +1754,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
     skips = [v for v in layer3["evaluation"]
                      if v["status"] == "skip"]
 
+    # TP detail table.
     if tps:
         L.append("### Layer 3 — TP pairs (matched)")
         L.append("")
@@ -1620,6 +1775,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                      f"`{g_dl}` | `{p_dl}` |")
         L.append("")
 
+    # Mismatch detail table.
     if mismatches:
         L.append("### Layer 3 — Mismatch pairs (counted as both FP and FN)")
         L.append("")
@@ -1645,6 +1801,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                      f"`{g_dl}` | `{p_dl}` | {reason} |")
         L.append("")
 
+    # FN detail table.
     if fns:
         L.append("### Layer 3 — FN (pred has no matching axiom)")
         L.append("")
@@ -1665,6 +1822,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                      f"`{g_dl}` | — ({reason}) |")
         L.append("")
 
+    # Pure-FP detail table.
     if fps:
         L.append("### Layer 3 — Pure FP (pred axiom with no gold counterpart)")
         L.append("")
@@ -1689,6 +1847,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                      f"`{p_dl}` | — ({reason}) |")
         L.append("")
 
+    # Skip detail table (gold subjects not in the alignment table).
     if skips:
         from collections import defaultdict as _dd
         grouped_skip = _dd(list)
@@ -1715,7 +1874,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                          f"{v.get('axiom_type', '')} | `{g_dl}` |")
         L.append("")
 
-
+    # Symmetric skip table for pred subjects not in the alignment table.
     pred_unaligned_per_tt = {}
     for tt in _TERM_TYPE_ORDER:
         info = layer4["per_term"].get(tt, {})
@@ -1750,6 +1909,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                          f"{ax.get('axiom_type', '')} | `{p_dl}` |")
         L.append("")
 
+    # --- Layer 4 section: global view tables ---
     L.append("## Layer 4 — Overall overview")
     L.append("")
     L.append("Layer 3's denominator is only axioms whose term is in the "
@@ -1809,6 +1969,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
     L.append(f"| FN | {g['fn']} |")
     L.append("")
 
+    # --- CQ coverage section (only if CQs exist) ---
     if cov is not None:
         L.append("## CQ Coverage (strict)")
         L.append("")
@@ -1827,6 +1988,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                  "belong to?")
         L.append("")
 
+        # Build one row per CQ-tagged gold axiom.
         rows = []
         for ax in gold_axioms:
             cq_nums = ax.get("cq_numbers") or []
@@ -1873,6 +2035,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                      f"{v} | {aligned_cell} |")
         L.append("")
 
+        # Overall coverage rates (three views).
         L.append("### Overall CQ coverage rate")
         L.append("")
         L.append("| View | Value | Meaning |")
@@ -1890,6 +2053,7 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
                  f"CQs where every gold axiom got TP |")
         L.append("")
 
+        # Per-CQ table including which gold axioms are still missing.
         L.append("| CQ id | Question | TP / Total | Coverage | "
                  "Missing Gold Axioms |")
         L.append("|---|---|---:|---:|---|")
@@ -1921,7 +2085,10 @@ def build_axioms_report_md(stats_g, stats_p, layer2, layer3, layer4,
 
 
 def append_axioms_report_to_md(report_text: str, output_path: str) -> None:
-
+    # Write the axiom report into a Markdown file. Behavior:
+    #   - File missing: create it with just this report (and warn).
+    #   - File has a previous axiom section: replace that section.
+    #   - File exists without one: append after the existing content.
     axioms_marker = "# Axiom-Level TBox Evaluation Report"
 
     if not os.path.exists(output_path):
@@ -1938,6 +2105,7 @@ def append_axioms_report_to_md(report_text: str, output_path: str) -> None:
     with open(output_path, "r", encoding="utf-8") as f:
         existing = f.read()
 
+    # Replace a previously-written axiom section if present.
     if axioms_marker in existing:
         idx = existing.find(axioms_marker)
         prefix = existing[:idx].rstrip()
@@ -1951,6 +2119,7 @@ def append_axioms_report_to_md(report_text: str, output_path: str) -> None:
               file=sys.stderr)
         return
 
+    # Otherwise append after existing content with a separator.
     if not existing.endswith("\n"):
         existing += "\n"
     new_text = existing + "\n---\n\n" + report_text
@@ -1961,7 +2130,8 @@ def append_axioms_report_to_md(report_text: str, output_path: str) -> None:
 
 
 def save_cq_coverage_csv(cov: dict, csv_path: str) -> None:
-
+    # Save strict CQ coverage to CSV (one row per CQ). Intended as input to
+    # downstream closure-based evaluation (eval_hermit.py).
     fields = ["cq_id", "covered", "fully_covered", "n_tp", "n_axioms",
               "rate", "tp_axiom_ids", "missing_axiom_ids"]
     with open(csv_path, "w", encoding="utf-8", newline="") as f:
@@ -1985,7 +2155,10 @@ def save_cq_coverage_csv(cov: dict, csv_path: str) -> None:
 
 def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
                      class_align, prop_align, args, path):
+    # Serialize the entire evaluation (config + all layers + CQ coverage) to a
+    # single JSON file for downstream programmatic consumption.
 
+    # Run configuration / provenance.
     config = {
         "gold_file": args.gold,
         "pred_file": args.pred,
@@ -1998,6 +2171,7 @@ def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
     }
 
     def _compact_judgment(v):
+        # Trim a Layer 3 judgment to its essential fields for JSON output.
         pm = v.get("pred_match")
         if pm and isinstance(pm, dict):
             pm_compact = {
@@ -2020,6 +2194,7 @@ def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
             "pred_match": pm_compact,
         }
 
+    # Layer 3 block: compact judgments + count tables (tuple keys -> strings).
     layer3_out = {
         "evaluation": [_compact_judgment(v) for v in layer3["evaluation"]],
         "counts_overall": layer3["counts_overall"],
@@ -2030,7 +2205,7 @@ def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
         },
     }
 
-
+    # Layer 4 block: per-term metrics without the bulky axiom lists...
     layer4_out = {
         "per_term": {
             tt: {k: v for k, v in info.items()
@@ -2041,6 +2216,7 @@ def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
         "grand": layer4["grand"],
     }
 
+    # ...then the unaligned axiom lists stored separately (compact form).
     layer4_out["unaligned_lists"] = {}
     for tt, info in layer4["per_term"].items():
         layer4_out["unaligned_lists"][tt] = {
@@ -2067,6 +2243,7 @@ def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
         },
     }
 
+    # Include Layer 2 only if it ran.
     if layer2 is not None:
 
         l2_overall = layer2["overall"]
@@ -2094,6 +2271,7 @@ def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
             },
         }
 
+    # Include CQ coverage only if computed.
     if cov is not None:
         results["cq_coverage"] = {
             "per_cq": cov["per_cq"],
@@ -2112,19 +2290,23 @@ def save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
 
 
 def main():
+    # Entry point: parse CLI args, load inputs, run all layers, print/save reports.
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
+    # --- Required inputs ---
     parser.add_argument("--gold", required=True,
                         help="Gold axioms JSON")
     parser.add_argument("--pred", required=True,
                         help="Pred axioms JSON")
+    # --- Alignment tables ---
     parser.add_argument("--class_csv", default="best_matching.csv",
                         help="Class alignment CSV")
     parser.add_argument("--property_csv", default="property_best_matching.csv",
                         help="Property alignment CSV")
     parser.add_argument("--cq_csv", default=None,
                         help="(optional) CQ table CSV")
+    # --- Output paths ---
     parser.add_argument("--output", default=None,
                         help="Report output path (default: stdout)")
     parser.add_argument("--details_csv",
@@ -2136,6 +2318,7 @@ def main():
     parser.add_argument("--max_rows",
                         dest="max_rows", type=int, default=None,
                         help="Limit how many per-axiom comparisons are printed")
+    # --- Layer 2 (embedding) configuration ---
     parser.add_argument("--threshold", type=float, default=0.6,
                         help="Layer-2 cosine threshold (default 0.6)")
     parser.add_argument("--model", default="embeddinggemma",
@@ -2148,6 +2331,7 @@ def main():
                         help="Disable embedding disk cache")
     parser.add_argument("--no_layer2", action="store_true",
                         help="Skip Layer 2 (Layer 1+3+4 only)")
+    # --- Optional OWL files used only as a label fallback ---
     parser.add_argument("--gold_owl", default=None,
                         help="(optional) Gold OWL file. Used as a label "
                              "fallback when the gold JSON has no "
@@ -2157,6 +2341,7 @@ def main():
     parser.add_argument("--pred_owl", default=None,
                         help="(optional) Pred OWL file. Same purpose as "
                              "--gold_owl.")
+    # --- More output paths ---
     parser.add_argument("--save_report_md", default=None,
                         help="Path to a Markdown file. If the file already "
                              "exists (from concept/property/triple scripts), "
@@ -2176,7 +2361,7 @@ def main():
                              "evaluation + CQ coverage). Useful for "
                              "downstream programmatic checking.")
     
-
+    # --- Datatype matching strictness ---
     parser.add_argument("--literal_relax",
                         choices=["yes", "no"], default="no",
                         help="If 'yes', a generic literal root in the "
@@ -2186,11 +2371,12 @@ def main():
                              "Default 'no' keeps strict equality.")
     args = parser.parse_args()
 
-
-  
+    # NOTE: this assigns a LOCAL variable; the module-level LITERAL_RELAX used
+    # by _struct_equal is not actually changed here (no 'global' declaration).
     LITERAL_RELAX = (args.literal_relax == "yes")
     print(f"[main] literal_relax = {args.literal_relax}", file=sys.stderr)
 
+    # Load gold/pred axioms.
     print(f"Loading gold axioms from '{args.gold}'...", file=sys.stderr)
     gold = load_axioms(args.gold)
     print(f"  {len(gold)} gold axioms", file=sys.stderr)
@@ -2199,6 +2385,7 @@ def main():
     pred = load_axioms(args.pred)
     print(f"  {len(pred)} pred axioms", file=sys.stderr)
 
+    # Load the class and property alignment tables.
     print(f"Loading class alignment from '{args.class_csv}'...", file=sys.stderr)
     class_align = load_alignment_csv(args.class_csv)
     print(f"  {len(class_align)} class pairs", file=sys.stderr)
@@ -2208,6 +2395,7 @@ def main():
     prop_align = load_alignment_csv(args.property_csv)
     print(f"  {len(prop_align)} property pairs", file=sys.stderr)
 
+    # Build label maps; fall back to OWL files if the JSON has no labels.
     gold_label_map = label_map_for(args.gold, gold)
     pred_label_map = label_map_for(args.pred, pred)
 
@@ -2231,6 +2419,8 @@ def main():
               file=sys.stderr)
 
     def _enrich_axioms(axioms, label_map):
+        # Attach subject_label / term_label to each axiom from the label map,
+        # so structural comparison can match on labels as well as IRIs.
         for ax in axioms:
             subj = ax.get("subject") or ax.get("term") or ""
             term = ax.get("term") or ""
@@ -2243,11 +2433,11 @@ def main():
     if pred_label_map:
         _enrich_axioms(pred, pred_label_map)
 
-
+    # Layer 1: counts.
     stats_g = compute_layer1(gold)
     stats_p = compute_layer1(pred)
 
-
+    # Layer 2: embeddings (unless disabled or it fails — then skip gracefully).
     layer2 = None
     if not args.no_layer2:
         client = EmbeddingClient(
@@ -2265,16 +2455,16 @@ def main():
                   file=sys.stderr)
             layer2 = None
 
-
+    # Layer 3: strict structural alignment.
     print("Computing Layer 3 (structural alignment)...", file=sys.stderr)
     layer3 = compute_layer3(gold, pred, class_align, prop_align,
                             gold_label_map, pred_label_map)
 
-
+    # Layer 4: global denominator view.
     print("Computing Layer 4 (global view)...", file=sys.stderr)
     layer4 = compute_layer4(layer3, gold, pred, class_align, prop_align)
 
-
+    # Load CQ definitions (from gold JSON, else optional CSV).
     cq_defs = []
     try:
         cq_defs = load_cq_definitions(args.gold)
@@ -2291,9 +2481,11 @@ def main():
         except Exception as e:
             print(f"[warn] Could not load CQ CSV: {e}", file=sys.stderr)
 
+    # Only compute CQ coverage if the gold axioms carry cq_numbers tags.
     has_cqs_in_gold = any(ax.get("cq_numbers") for ax in gold)
     cov = compute_cq_coverage(layer3, gold, cq_defs) if has_cqs_in_gold else None
 
+    # --- Assemble the plain-text report ---
     out = []
     out.append("=" * 72)
     out.append("TBox Truth Evaluation")
@@ -2355,6 +2547,7 @@ def main():
         out.append(_format_cq_coverage(cov))
     out.append("")
 
+    # Write the text report to file or stdout.
     text = "\n".join(out)
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
@@ -2363,18 +2556,21 @@ def main():
     else:
         print(text)
 
+    # Optional Markdown report (created or appended).
     if args.save_report_md:
         report_text = build_axioms_report_md(
             stats_g, stats_p, layer2, layer3, layer4, cov, args,
             gold_axioms=gold, pred_axioms=pred)
         append_axioms_report_to_md(report_text, args.save_report_md)
 
+    # Optional CQ coverage CSV.
     if args.save_cq_csv and cov is not None:
         save_cq_coverage_csv(cov, args.save_cq_csv)
     elif args.save_cq_csv and cov is None:
         print(f"\n[warn] --save_cq_csv requested but gold has no "
               f"cq_numbers; nothing to save.", file=sys.stderr)
 
+    # Optional full result JSON.
     if args.save_result_json:
         save_result_json(stats_g, stats_p, layer2, layer3, layer4, cov,
                          class_align, prop_align, args,
