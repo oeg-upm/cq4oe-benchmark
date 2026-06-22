@@ -1,3 +1,24 @@
+
+# ============================================================================
+# Property-AXIOM ("triple") evaluation: compares the predicted ontology's
+# property domain/range axioms against the gold ontology's, in four layers.
+#   Layer 1 — statistics: count properties by axiom shape (full / domain_only /
+#             range_only / undefined), per property type.
+#   Layer 2 — semantic overview: render each property's axioms into a text
+#             string (e.g. "Wine madeFromGrape WineGrape"), embed via Ollama,
+#             and greedily 1-to-1 match by cosine similarity.
+#   Layer 3 — strict alignment: for property pairs the upstream alignment
+#             matched, judge their domain and range under the class alignment
+#             table (ObjectProperty) or normalized XSD equality (Datatype).
+#   Layer 4 — global overview: put Layer-3 TP/FP/FN on a whole-ontology
+#             denominator by also counting axioms of UNALIGNED properties.
+# Inputs: two ontologies + class/property alignment CSVs (from the upstream
+# concept_label_matching.py / eval_property.py steps).
+# Outputs: result JSON , per-pair Layer-3
+# CSV/JSON, and a Markdown report.
+# ============================================================================
+
+
 from __future__ import annotations
 
 
