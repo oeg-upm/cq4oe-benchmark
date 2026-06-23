@@ -1,0 +1,80 @@
+[
+  {
+    "id": "CQ1",
+    "value": "Which animal eats which other animal?",
+    "class": [
+      "Animal"
+    ],
+    "property": [
+      "eats"
+    ]
+  },
+  {
+    "id": "CQ2",
+    "value": "Is [this animal] a herbivore?",
+    "class": [
+      "Animal",
+      "Herbivore"
+    ],
+    "property": []
+  },
+  {
+    "id": "CQ3",
+    "value": "Which plant parts does [this omnivorous or herbivorourus animal] eat?",
+    "class": [
+      "PlantPart",
+      "Animal",
+      "Herbivore",
+      "Omnivore"
+    ],
+    "property": [
+      "eats"
+    ]
+  },
+  {
+    "id": "CQ4",
+    "value": "Does a lion eat plants or plant parts?",
+    "class": [
+      "Lion",
+      "Plant",
+      "PlantPart"
+    ],
+    "property": [
+      "eats"
+    ]
+  },
+  {
+    "id": "CQ6",
+    "value": "Which plants eat animals?",
+    "class": [
+      "Plant",
+      "Animal"
+    ],
+    "property": [
+      "eats"
+    ]
+  },
+  {
+    "id": "CQ7",
+    "value": "Which animals eat [these animals]?",
+    "class": [
+      "Animal"
+    ],
+    "property": [
+      "eats"
+    ]
+  },
+  {
+    "id": "CQ14",
+    "value": "Are there animals that are carnivore but still eat some plants or parts of plants?",
+    "class": [
+      "Animal",
+      "Carnivore",
+      "Plant",
+      "PlantPart"
+    ],
+    "property": [
+      "eats"
+    ]
+  }
+]

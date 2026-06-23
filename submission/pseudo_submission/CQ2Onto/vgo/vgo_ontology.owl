@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<rdf:RDF xml:base="http://www.semanticweb.org/myontology#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="http://www.semanticweb.org/myontology#"/>
+
+  <!-- owl:Class declarations -->
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Player">
+  <rdfs:comment xml:lang="en">A person who plays a game.</rdfs:comment>
+  <rdfs:label xml:lang="en">Player</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Game">
+  <rdfs:comment xml:lang="en">A game that can be played.</rdfs:comment>
+  <rdfs:label xml:lang="en">Game</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#GameSession">
+  <rdfs:comment xml:lang="en">A session where players play a specific game together.</rdfs:comment>
+  <rdfs:label xml:lang="en">Game Session</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Achievement">
+  <rdfs:comment xml:lang="en">An achievement that a player can earn.</rdfs:comment>
+  <rdfs:label xml:lang="en">Achievement</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#AchievementType">
+  <rdfs:comment xml:lang="en">A category or type of achievement, such as 'bronze', 'silver', or 'gold'.</rdfs:comment>
+  <rdfs:label xml:lang="en">Achievement Type</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Item">
+  <rdfs:comment xml:lang="en">An item that exists in a game, such as a weapon, tool, or collectible.</rdfs:comment>
+  <rdfs:label xml:lang="en">Item</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Ability">
+  <rdfs:comment xml:lang="en">An ability that an item can provide, such as a special move or effect.</rdfs:comment>
+  <rdfs:label xml:lang="en">Ability</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#PlayerGameStat">
+  <rdfs:comment xml:lang="en">Records a player's statistics for a specific game.</rdfs:comment>
+  <rdfs:label xml:lang="en">Player Game Stat</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#GameCompletion">
+  <rdfs:comment xml:lang="en">Indicates that a player has earned all achievements in a specific game.</rdfs:comment>
+  <rdfs:label xml:lang="en">Game Completion</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#PlayerEquipment">
+  <rdfs:comment xml:lang="en">Represents a specific piece of equipment (item) that a player has in a particular game.</rdfs:comment>
+  <rdfs:label xml:lang="en">Player Equipment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#ItemUsage">
+  <rdfs:comment xml:lang="en">Represents a usage of an item by a player in a specific game.</rdfs:comment>
+  <rdfs:label xml:lang="en">Item Usage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#InAppPurchase">
+  <rdfs:comment xml:lang="en">Represents an in-app purchase made by a player in a game, optionally for an item, with a monetary amount and date.</rdfs:comment>
+  <rdfs:label xml:lang="en">In-App Purchase</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#PlayerWithoutPurchase">
+  <rdfs:comment xml:lang="en">A player who has not made any in-app purchases.</rdfs:comment>
+  <rdfs:label xml:lang="en">Player Without Purchase</rdfs:label>
+  <owl:equivalentClass><owl:Class><owl:intersectionOf rdf:parseType='Collection'><owl:Class rdf:about='http://www.semanticweb.org/myontology#Player'/><owl:Class><owl:complementOf><owl:Restriction><owl:onProperty rdf:resource='http://www.semanticweb.org/myontology#hasInAppPurchase'/><owl:someValuesFrom rdf:resource='http://www.semanticweb.org/myontology#InAppPurchase'/></owl:Restriction></owl:complementOf></owl:Class></owl:intersectionOf></owl:Class></owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#PlayingArea">
+  <rdfs:comment xml:lang="en">A distinct area or map within a game where gameplay takes place.</rdfs:comment>
+  <rdfs:label xml:lang="en">Playing Area</rdfs:label>
+</owl:Class>
+
+  <!-- owl:ObjectProperty declarations -->
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasFriend">
+  <rdfs:comment xml:lang="en">Indicates that the player is friends with another player.</rdfs:comment>
+  <rdfs:label xml:lang="en">has friend</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasParticipant">
+  <rdfs:comment xml:lang="en">Links a game session to a player participating in it.</rdfs:comment>
+  <rdfs:label xml:lang="en">has participant</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#GameSession"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasGame">
+  <rdfs:comment xml:lang="en">Specifies the game being played in a session.</rdfs:comment>
+  <rdfs:label xml:lang="en">has game</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#GameSession"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasAchievement">
+  <rdfs:comment xml:lang="en">Indicates that a player has earned an achievement.</rdfs:comment>
+  <rdfs:label xml:lang="en">has achievement</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Achievement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#gameHasAchievement">
+  <rdfs:comment xml:lang="en">Specifies an achievement that can be earned in a game.</rdfs:comment>
+  <rdfs:label xml:lang="en">game has achievement</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Achievement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasAchievementType">
+  <rdfs:comment xml:lang="en">Links an achievement to its type.</rdfs:comment>
+  <rdfs:label xml:lang="en">has achievement type</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Achievement"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#AchievementType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasItem">
+  <rdfs:comment xml:lang="en">Links a game to an item that exists within that game.</rdfs:comment>
+  <rdfs:label xml:lang="en">has item</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasAbility">
+  <rdfs:comment xml:lang="en">Specifies an ability that an item has.</rdfs:comment>
+  <rdfs:label xml:lang="en">has ability</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Item"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Ability"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#forPlayer">
+  <rdfs:comment xml:lang="en">The player whose stat is recorded.</rdfs:comment>
+  <rdfs:label xml:lang="en">for player</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#PlayerGameStat"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#forGame">
+  <rdfs:comment xml:lang="en">The game for which the stat is recorded.</rdfs:comment>
+  <rdfs:label xml:lang="en">for game</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#PlayerGameStat"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#ownsItem">
+  <rdfs:comment xml:lang="en">Indicates that a player owns an item.</rdfs:comment>
+  <rdfs:label xml:lang="en">owns item</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#lastPlayedGame">
+  <rdfs:comment xml:lang="en">The last game a player has played.</rdfs:comment>
+  <rdfs:label xml:lang="en">last played game</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#completionForPlayer">
+  <rdfs:comment xml:lang="en">The player who has achieved all achievements for the game.</rdfs:comment>
+  <rdfs:label xml:lang="en">completion for player</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#GameCompletion"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#completionForGame">
+  <rdfs:comment xml:lang="en">The game for which all achievements have been achieved by the player.</rdfs:comment>
+  <rdfs:label xml:lang="en">completion for game</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#GameCompletion"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#equipmentPlayer">
+  <rdfs:comment xml:lang="en">The player who has the equipment.</rdfs:comment>
+  <rdfs:label xml:lang="en">equipment player</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#PlayerEquipment"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#equipmentGame">
+  <rdfs:comment xml:lang="en">The game in which the player has the equipment.</rdfs:comment>
+  <rdfs:label xml:lang="en">equipment game</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#PlayerEquipment"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#equipmentItem">
+  <rdfs:comment xml:lang="en">The item that represents the equipment.</rdfs:comment>
+  <rdfs:label xml:lang="en">equipment item</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#PlayerEquipment"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Item"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#usagePlayer">
+  <rdfs:comment xml:lang="en">The player who uses the item.</rdfs:comment>
+  <rdfs:label xml:lang="en">usage player</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ItemUsage"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#usageItem">
+  <rdfs:comment xml:lang="en">The item that is used.</rdfs:comment>
+  <rdfs:label xml:lang="en">usage item</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ItemUsage"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Item"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#usageGame">
+  <rdfs:comment xml:lang="en">The game in which the item is used.</rdfs:comment>
+  <rdfs:label xml:lang="en">usage game</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ItemUsage"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#purchasePlayer">
+  <rdfs:comment xml:lang="en">The player who made the in-app purchase.</rdfs:comment>
+  <rdfs:label xml:lang="en">purchase player</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#InAppPurchase"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#purchaseGame">
+  <rdfs:comment xml:lang="en">The game in which the in-app purchase was made.</rdfs:comment>
+  <rdfs:label xml:lang="en">purchase game</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#InAppPurchase"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#purchaseItem">
+  <rdfs:comment xml:lang="en">The item purchased, if applicable.</rdfs:comment>
+  <rdfs:label xml:lang="en">purchase item</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#InAppPurchase"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Item"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasInAppPurchase">
+  <rdfs:comment xml:lang="en">Indicates that a player has made an in-app purchase.</rdfs:comment>
+  <rdfs:label xml:lang="en">has in-app purchase</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#InAppPurchase"/>
+  <owl:inverseOf rdf:resource='http://www.semanticweb.org/myontology#purchasePlayer'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasPlayingArea">
+  <rdfs:comment xml:lang="en">Specifies a playing area that exists in the game.</rdfs:comment>
+  <rdfs:label xml:lang="en">has playing area</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#PlayingArea"/>
+</owl:ObjectProperty>
+
+  <!-- owl:DatatypeProperty declarations -->
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#hasUsername">
+  <rdfs:comment xml:lang="en">The username of the player.</rdfs:comment>
+  <rdfs:label xml:lang="en">has username</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#hoursPlayed">
+  <rdfs:comment xml:lang="en">The duration of the game session in hours, as a decimal number.</rdfs:comment>
+  <rdfs:label xml:lang="en">hours played</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#GameSession"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#hasGenre">
+  <rdfs:comment xml:lang="en">The genre of the game.</rdfs:comment>
+  <rdfs:label xml:lang="en">has genre</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#hasReleaseDate">
+  <rdfs:comment xml:lang="en">The release date of the game.</rdfs:comment>
+  <rdfs:label xml:lang="en">has release date</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Game"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#killCount">
+  <rdfs:comment xml:lang="en">The number of kills a player has achieved in the game.</rdfs:comment>
+  <rdfs:label xml:lang="en">kill count</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#PlayerGameStat"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#purchaseAmount">
+  <rdfs:comment xml:lang="en">The monetary amount of the in-app purchase in a standard currency unit (e.g., USD).</rdfs:comment>
+  <rdfs:label xml:lang="en">purchase amount</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#InAppPurchase"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#purchaseDate">
+  <rdfs:comment xml:lang="en">The date and time when the in-app purchase was made.</rdfs:comment>
+  <rdfs:label xml:lang="en">purchase date</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#InAppPurchase"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#hasLocation">
+  <rdfs:comment xml:lang="en">The location (e.g., city, region) where the player lives.</rdfs:comment>
+  <rdfs:label xml:lang="en">has location</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Player"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#sessionStartDateTime">
+  <rdfs:comment xml:lang="en">The start date and time of the game session.</rdfs:comment>
+  <rdfs:label xml:lang="en">session start date time</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#GameSession"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+</rdf:RDF>
