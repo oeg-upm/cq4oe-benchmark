@@ -1,0 +1,225 @@
+[
+  {
+    "id": "CQ01",
+    "value": "Which assets compose a water distribution infrastructure?",
+    "class": [
+      "Asset",
+      "WaterDistributionInfrastructure"
+    ],
+    "property": [
+      "composes"
+    ]
+  },
+  {
+    "id": "CQ04",
+    "value": "Which types of sensors are used in water infrastructures?",
+    "class": [
+      "Sensor",
+      "WaterInfrastructure"
+    ],
+    "property": [
+      "usedIn"
+    ]
+  },
+  {
+    "id": "CQ05",
+    "value": "Which types of actuators are used in water infrastructures?",
+    "class": [
+      "Actuator",
+      "WaterInfrastructure"
+    ],
+    "property": [
+      "usedIn"
+    ]
+  },
+  {
+    "id": "CQ06",
+    "value": "A water meter is a device that measures different aspects of a water infrastructure.",
+    "class": [
+      "WaterMeter",
+      "Device",
+      "Aspect",
+      "WaterInfrastructure"
+    ],
+    "property": [
+      "measures",
+      "hasAspect"
+    ]
+  },
+  {
+    "id": "CQ08",
+    "value": "What is the fabrication number of the water meter?",
+    "class": [
+      "WaterMeter"
+    ],
+    "property": [
+      "hasFabricationNumber"
+    ]
+  },
+  {
+    "id": "CQ09",
+    "value": "What are the manufacturer and the model of the water meter?",
+    "class": [
+      "WaterMeter"
+    ],
+    "property": [
+      "hasManufacturer",
+      "hasModel"
+    ]
+  },
+  {
+    "id": "CQ10",
+    "value": "What is the version of the water meter?",
+    "class": [
+      "WaterMeter"
+    ],
+    "property": [
+      "hasVersion"
+    ]
+  },
+  {
+    "id": "CQ11",
+    "value": "What is the hardware version number of the water meter?",
+    "class": [
+      "WaterMeter"
+    ],
+    "property": [
+      "hasHardwareVersion"
+    ]
+  },
+  {
+    "id": "CQ12",
+    "value": "What firmware version is the water meter using?",
+    "class": [
+      "WaterMeter",
+      "Firmware"
+    ],
+    "property": [
+      "uses",
+      "hasVersion"
+    ]
+  },
+  {
+    "id": "CQ18",
+    "value": "What is the power of the water meter?",
+    "class": [
+      "WaterMeter"
+    ],
+    "property": [
+      "hasPower"
+    ]
+  },
+  {
+    "id": "CQ19",
+    "value": "What is the radio frequency level of the water meter?",
+    "class": [
+      "WaterMeter"
+    ],
+    "property": [
+      "hasRadioFrequencyLevel"
+    ]
+  },
+  {
+    "id": "CQ20",
+    "value": "What is the geolocation of the water meter?",
+    "class": [
+      "WaterMeter",
+      "Geolocation"
+    ],
+    "property": [
+      "hasGeolocation"
+    ]
+  },
+  {
+    "id": "CQ25",
+    "value": "Water meters can provide measurements according to different temporal settings.",
+    "class": [
+      "WaterMeter",
+      "Measurement",
+      "TemporalSetting"
+    ],
+    "property": [
+      "provides",
+      "hasTemporalSetting"
+    ]
+  },
+  {
+    "id": "CQ34",
+    "value": "What are the chemical properties of water?",
+    "class": [
+      "Water",
+      "ChemicalProperty"
+    ],
+    "property": [
+      "hasChemicalProperty"
+    ]
+  },
+  {
+    "id": "CQ37",
+    "value": "Which water indicators are defined for Burgos?",
+    "class": [
+      "WaterIndicator",
+      "Region"
+    ],
+    "property": [
+      "definedFor"
+    ]
+  },
+  {
+    "id": "CQ38",
+    "value": "What is the start date and time of the tariff in use in the water meter?",
+    "class": [
+      "Tariff",
+      "WaterMeter"
+    ],
+    "property": [
+      "usesTariff",
+      "hasStartDate",
+      "hasStartTime"
+    ]
+  },
+  {
+    "id": "CQ39",
+    "value": "What is the duration of the current tariff of the water meter?",
+    "class": [
+      "WaterMeter",
+      "Tariff"
+    ],
+    "property": [
+      "hasTariff",
+      "hasDuration"
+    ]
+  },
+  {
+    "id": "CQ40",
+    "value": "What is the tariff period of the water meter?",
+    "class": [
+      "WaterMeter",
+      "TariffPeriod"
+    ],
+    "property": [
+      "hasTariffPeriod"
+    ]
+  },
+  {
+    "id": "CQ42",
+    "value": "What is the billing date of the water meter?",
+    "class": [
+      "WaterMeter"
+    ],
+    "property": [
+      "hasBillingDate"
+    ]
+  },
+  {
+    "id": "CQ43",
+    "value": "What is the billing date period of the water meter?",
+    "class": [
+      "WaterMeter",
+      "BillingDatePeriod"
+    ],
+    "property": [
+      "hasBillingDatePeriod"
+    ]
+  }
+]
