@@ -1,70 +1,60 @@
-# CQ4OE submission evaluation Action — setup
+# CQ4OE submission evaluation Action — setup (fork-compatible)
 
-One workflow, `evaluate-submission.yml`, runs automatically on every pull
-request that adds or changes a `submissions/` folder and does four things:
+Two workflows work together so evaluation runs and reports correctly on BOTH
+fork PRs and same-repo PRs.
 
-1. **Detects** which submission changed (git diff against the base branch).
-2. **Validates** it against the submission guideline — `validate_submission.py`
-   checks `metadata.yml`, that every declared task/domain file is present, and
-   that the JSON/OWL files parse in the required formats. If anything is off the
-   run fails here and nothing is evaluated.
-3. **Evaluates** the submitted results — stages the files into the pipeline
-   layout, then runs `run_all_cq2term.py --models <name>` and
-   `run_all_evaluation_agent_datsets.py --modes challenge`.
-4. **Writes results** into a new folder `submissions/<name>/evaluation/`
-   (per-domain result JSONs/CSVs, the `_summary` reports, and a `SUMMARY.md`
-   with headline F1s) and commits it back onto the PR branch.
+## evaluate-submission.yml  (trigger: pull_request on submissions/**)
+1. Detects which submission changed.
+2. Validates it against the submission guideline (metadata, files, formats).
+3. Runs the evaluation over the submitted results.
+4. Produces `submissions/<name>/evaluation/` (+ `SUMMARY.md`), uploads it as the
+   `cq4oe-results` artifact (with the PR number), and — for same-repo PRs only —
+   commits it back onto the PR branch.
 
-CI runs only the repo's own scripts on the submitted data files; it never
-executes the participant's `code/` folder.
+A fork PR's token is read-only, so on a fork it does NOT commit back and CANNOT
+comment. It just uploads the artifact.
+
+## post-results.yml  (trigger: workflow_run, after the above completes)
+Runs with write access but never checks out PR code. It downloads the
+`cq4oe-results` artifact and posts the SUMMARY as a PR comment (updating its own
+previous comment on re-runs). This is what gives fork PRs visible results on the
+PR itself.
+
+## Why two workflows
+GitHub gives fork-PR runs a read-only token (security: untrusted code must not be
+able to write to your repo or read secrets). So the fork-triggered run can only
+*produce* results; a separate `workflow_run` run, which executes from your default
+branch with write access, *publishes* them. This is the standard secure pattern.
+
+## What you get, by PR type
+- **Same-repo PR** (branch in OEG-Clark/cq4oe-benchmark): evaluation folder is
+  committed into the PR AND a summary comment is posted.
+- **Fork PR** (e.g. ClarkWang0519:main): a summary comment is posted and the full
+  `evaluation/` folder is available as the `cq4oe-results` artifact. To get the
+  folder committed for a fork submission, add it at merge time (a push-to-main
+  workflow running the same steps and committing into main).
+
+## One-time repo setup
+1. Apply the runner patch: `git apply .github/challenge/runners.patch`
+2. Commit `.github/` and the patched runners to the default branch (`main`).
+3. Settings -> Actions -> General:
+   - Workflow permissions: **Read and write** (needed for same-repo commit-back).
+   - Fork pull request workflows: allow runs (first-time fork PRs need a one-time
+     "Approve and run" click on the PR).
 
 ## Files
-
 ```
 .github/
-├── workflows/evaluate-submission.yml
+├── workflows/
+│   ├── evaluate-submission.yml   # produce results
+│   └── post-results.yml          # publish results to the PR
 └── challenge/
-    ├── validate_submission.py        # step 2
-    ├── stage_submission.py           # step 3 (maps submission -> pipeline paths)
-    ├── collect_into_submission.py    # step 4 (writes submissions/<name>/evaluation/)
-    └── runners.patch                 # one-time runner edits (see below)
+    ├── validate_submission.py
+    ├── stage_submission.py
+    ├── collect_into_submission.py
+    └── runners.patch
 ```
-
-## One-time repo changes (required)
-
-Apply the runner patch from the repo root (parameterizes the hardcoded `PYTHON`
-path and registers the `challenge` mode in the CQ2Onto runner):
-
-```bash
-git apply .github/challenge/runners.patch
-```
-
-Commit the `.github/` folder to your default branch (`main`). A workflow only
-fires if it already exists on `main`; a workflow added inside a PR does not run
-for that PR.
-
-## The fork limitation (important)
-
-Step 4 commits results onto the PR branch. That is only possible when the PR
-comes from a branch **in this repository**. GitHub gives **fork** PRs a
-read-only token that cannot push to the contributor's fork, so for fork PRs the
-results are produced and uploaded as a **workflow artifact** instead, with a note
-in the run summary. To have committed results for fork submissions, add them at
-merge time (a `push`-to-`main` workflow can run the same steps and commit the
-`evaluation/` folder into `main`) — ask for that variant when needed.
-
-If your participants push branches directly to this repo (collaborator model),
-step 4 commits to the PR branch as described, with no fork caveat.
-
-## Loop prevention
-
-The commit in step 4 uses a `[skip ci]` message, so the resulting branch update
-does not retrigger the workflow. A real new commit from the participant (without
-`[skip ci]`) triggers a fresh evaluation, and `evaluation/` is regenerated
-cleanly each time.
 
 ## Environment (handled by the workflow)
-
-- Ollama serving `embeddinggemma` (semantic matching for both tasks), cached.
-- Java 17 (owlready2/HermiT, CQ2Onto hierarchy layer).
-- Python 3.10 + `requirements.txt`.
+Ollama serving `embeddinggemma` (cached), Java 17 (HermiT), Python 3.10 +
+requirements.txt. First run is slow due to the model pull.
