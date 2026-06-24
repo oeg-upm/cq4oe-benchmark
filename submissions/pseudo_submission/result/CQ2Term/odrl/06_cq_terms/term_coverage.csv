@@ -1,0 +1,40 @@
+term,role,cq_ids,aligned,aligned_to
+action,class,CQ03; CQ24,true,condition
+asset,class,CQ30; CQNew CQ1,true,asset
+assetcollection,class,CQ30,false,
+conflict strategy preference,class,CQNew CQ2,true,conflictresolutionstrategy
+constraint,class,CQ13; CQ14; CQ21; CQ24; CQ26; CQNew CQ6,true,constraint
+duty,class,CQ06; CQ10; CQ21; CQ31; CQNew CQ5,true,duty
+logicalconstraint,class,CQ13; CQ14; CQ26,true,orconstraint
+operator,class,CQNew CQ6,true,operator
+party,class,CQ06; CQ10,true,party
+permission,class,CQ03; CQ06; CQ24,true,permission
+policy,class,CQ33; CQNew CQ1; CQNew CQ2,true,policy
+prohibition,class,CQNew CQ3; CQNew CQ6,true,prohibition
+rule,class,CQ31; CQNew CQ2; CQNew CQ3; CQNew CQ4,true,rule
+and,property,CQ14,false,
+andsequence,property,CQ31,false,
+assignee,property,CQ06,false,
+assigner,property,CQ06,false,
+consequence,property,CQ31; CQNew CQ5,true,isconsequenceof
+failure,property,CQNew CQ4,false,
+function,property,CQ06,false,
+handlepolicyconflicts,property,CQNew CQ2,false,
+hasaction,property,CQ03; CQ24,true,haspart
+hasconstraint,property,CQ13; CQ14; CQ21; CQ24; CQ26,true,hasconstraint
+hasduty,property,CQ10,true,hasduty
+hasoperator,property,CQ21; CQNew CQ6,true,hasoperator
+haspermission,property,CQ03; CQ24,false,
+hasprohibition,property,CQNew CQ6,true,hasparty
+inheritrelation,property,CQ33,false,
+inheritsfrom,property,CQ33,false,
+obligation,property,CQ21,true,violationof
+onlyone,property,CQ14,false,
+operand,property,CQ14,false,
+or,property,CQ14,false,
+partof,property,CQ30,true,ispartof
+relation,property,CQ30,false,
+remedy,property,CQNew CQ3,true,remedies
+scope,property,CQ30,true,hastype
+target,property,CQ30,false,
+targetpolicy,property,CQNew CQ1,false,

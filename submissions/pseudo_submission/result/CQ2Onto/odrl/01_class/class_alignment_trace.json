@@ -1,0 +1,7495 @@
+[
+  {
+    "id": 1,
+    "gold_term": "Asset",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 2,
+    "gold_term": "Constraint",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 3,
+    "gold_term": "Duty",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 4,
+    "gold_term": "Party",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 5,
+    "gold_term": "Permission",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 6,
+    "gold_term": "Policy",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 7,
+    "gold_term": "Prohibition",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 8,
+    "gold_term": "Rule",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.85,
+      "levenshtein": 0.75,
+      "semantic": 0.6701,
+      "sequence_match": 0.75
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7833,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 9,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7334,
+      "levenshtein": 0.6471,
+      "semantic": 0.7901,
+      "sequence_match": 0.7586
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7607,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 10,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8498,
+      "levenshtein": 0.3846,
+      "semantic": 0.6173,
+      "sequence_match": 0.5263
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6645,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 11,
+    "gold_term": "Constraint",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "sequence_match",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8444,
+      "levenshtein": 0.8333,
+      "semantic": 0.8286,
+      "sequence_match": 0.9091
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8623,
+    "selected": false,
+    "reason": "gold already mapped to 'Constraint'"
+  },
+  {
+    "id": 12,
+    "gold_term": "Constraint",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "sequence_match",
+      "semantic",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7897,
+      "levenshtein": 0.7692,
+      "semantic": 0.8672,
+      "sequence_match": 0.8696
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8422,
+    "selected": false,
+    "reason": "gold already mapped to 'Constraint'"
+  },
+  {
+    "id": 13,
+    "gold_term": "Constraint",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "sequence_match",
+      "jaro_winkler",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8231,
+      "levenshtein": 0.7692,
+      "semantic": 0.8135,
+      "sequence_match": 0.8696
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8354,
+    "selected": false,
+    "reason": "gold already mapped to 'Constraint'"
+  },
+  {
+    "id": 14,
+    "gold_term": "Constraint",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9008,
+      "levenshtein": 0.7,
+      "semantic": 0.6848,
+      "sequence_match": 0.7778
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7929,
+    "selected": false,
+    "reason": "gold already mapped to 'Constraint'"
+  },
+  {
+    "id": 15,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7294,
+      "levenshtein": 0.5882,
+      "semantic": 0.8911,
+      "sequence_match": 0.7407
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7871,
+    "selected": false,
+    "reason": "pred already taken by 'Constraint' (higher averaged score)"
+  },
+  {
+    "id": 16,
+    "gold_term": "AssetScope",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9,
+      "levenshtein": 0.5,
+      "semantic": 0.7256,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7641,
+    "selected": false,
+    "reason": "pred already taken by 'Asset' (higher averaged score)"
+  },
+  {
+    "id": 17,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7099,
+      "levenshtein": 0.5882,
+      "semantic": 0.8129,
+      "sequence_match": 0.7333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.752,
+    "selected": false,
+    "reason": "gold already mapped to 'or constraint'"
+  },
+  {
+    "id": 18,
+    "gold_term": "Constraint",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8691,
+      "levenshtein": 0.6,
+      "semantic": 0.6348,
+      "sequence_match": 0.7368
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7469,
+    "selected": false,
+    "reason": "gold already mapped to 'Constraint'"
+  },
+  {
+    "id": 19,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7099,
+      "levenshtein": 0.6471,
+      "semantic": 0.7732,
+      "sequence_match": 0.7333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7388,
+    "selected": false,
+    "reason": "gold already mapped to 'or constraint'"
+  },
+  {
+    "id": 20,
+    "gold_term": "AssetCollection",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8667,
+      "levenshtein": 0.3333,
+      "semantic": 0.8058,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7242,
+    "selected": false,
+    "reason": "pred already taken by 'Asset' (higher averaged score)"
+  },
+  {
+    "id": 21,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.849,
+      "levenshtein": 0.4706,
+      "semantic": 0.7623,
+      "sequence_match": 0.5294
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7136,
+    "selected": false,
+    "reason": "gold already mapped to 'or constraint'"
+  },
+  {
+    "id": 22,
+    "gold_term": "Permission",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4544,
+      "levenshtein": 0.5263,
+      "semantic": 0.8634,
+      "sequence_match": 0.6897
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6931,
+    "selected": false,
+    "reason": "gold already mapped to 'Permission'"
+  },
+  {
+    "id": 23,
+    "gold_term": "Permission",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7833,
+      "levenshtein": 0.5,
+      "semantic": 0.5951,
+      "sequence_match": 0.7
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6928,
+    "selected": false,
+    "reason": "gold already mapped to 'Permission'"
+  },
+  {
+    "id": 24,
+    "gold_term": "Permission",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7436,
+      "levenshtein": 0.4545,
+      "semantic": 0.6716,
+      "sequence_match": 0.5714
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6622,
+    "selected": false,
+    "reason": "gold already mapped to 'Permission'"
+  },
+  {
+    "id": 25,
+    "gold_term": "Prohibition",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7436,
+      "levenshtein": 0.4545,
+      "semantic": 0.6716,
+      "sequence_match": 0.5714
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6622,
+    "selected": false,
+    "reason": "gold already mapped to 'Prohibition'"
+  },
+  {
+    "id": 26,
+    "gold_term": "Permission",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5175,
+      "levenshtein": 0.4762,
+      "semantic": 0.8187,
+      "sequence_match": 0.6452
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6605,
+    "selected": false,
+    "reason": "gold already mapped to 'Permission'"
+  },
+  {
+    "id": 27,
+    "gold_term": "Permission",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5687,
+      "levenshtein": 0.4167,
+      "semantic": 0.812,
+      "sequence_match": 0.5882
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6563,
+    "selected": false,
+    "reason": "gold already mapped to 'Permission'"
+  },
+  {
+    "id": 28,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8176,
+      "levenshtein": 0.5,
+      "semantic": 0.4763,
+      "sequence_match": 0.5714
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6297,
+    "selected": false,
+    "reason": "gold already mapped to 'Conflict Resolution Strategy'"
+  },
+  {
+    "id": 29,
+    "gold_term": "Permission",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7635,
+      "levenshtein": 0.4615,
+      "semantic": 0.5023,
+      "sequence_match": 0.6087
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6248,
+    "selected": false,
+    "reason": "gold already mapped to 'Permission'"
+  },
+  {
+    "id": 30,
+    "gold_term": "Constraint",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7927,
+      "levenshtein": 0.3529,
+      "semantic": 0.5088,
+      "sequence_match": 0.5185
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6067,
+    "selected": false,
+    "reason": "gold already mapped to 'Constraint'"
+  },
+  {
+    "id": 31,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5899,
+      "levenshtein": 0.4118,
+      "semantic": 0.6034,
+      "sequence_match": 0.56
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5844,
+    "selected": false,
+    "reason": "top-3 avg score 0.5844 < final_threshold 0.6"
+  },
+  {
+    "id": 32,
+    "gold_term": "Operator",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5833,
+      "levenshtein": 0.25,
+      "semantic": 0.6358,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.573,
+    "selected": false,
+    "reason": "top-3 avg score 0.5730 < final_threshold 0.6"
+  },
+  {
+    "id": 33,
+    "gold_term": "Operator",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6833,
+      "levenshtein": 0.375,
+      "semantic": 0.5552,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5667,
+    "selected": false,
+    "reason": "top-3 avg score 0.5667 < final_threshold 0.6"
+  },
+  {
+    "id": 34,
+    "gold_term": "Permission",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6087,
+      "levenshtein": 0.3529,
+      "semantic": 0.5564,
+      "sequence_match": 0.5185
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5612,
+    "selected": false,
+    "reason": "top-3 avg score 0.5612 < final_threshold 0.6"
+  },
+  {
+    "id": 35,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6944,
+      "levenshtein": 0.4167,
+      "semantic": 0.4881,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5609,
+    "selected": false,
+    "reason": "top-3 avg score 0.5609 < final_threshold 0.6"
+  },
+  {
+    "id": 36,
+    "gold_term": "Prohibition",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6515,
+      "levenshtein": 0.2727,
+      "semantic": 0.5539,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5605,
+    "selected": false,
+    "reason": "top-3 avg score 0.5605 < final_threshold 0.6"
+  },
+  {
+    "id": 37,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7086,
+      "levenshtein": 0.3846,
+      "semantic": 0.4578,
+      "sequence_match": 0.5116
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5594,
+    "selected": false,
+    "reason": "top-3 avg score 0.5594 < final_threshold 0.6"
+  },
+  {
+    "id": 38,
+    "gold_term": "Operator",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6333,
+      "levenshtein": 0.3,
+      "semantic": 0.5997,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5592,
+    "selected": false,
+    "reason": "top-3 avg score 0.5592 < final_threshold 0.6"
+  },
+  {
+    "id": 39,
+    "gold_term": "Duty",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6333,
+      "levenshtein": 0.4,
+      "semantic": 0.5996,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5591,
+    "selected": false,
+    "reason": "top-3 avg score 0.5591 < final_threshold 0.6"
+  },
+  {
+    "id": 40,
+    "gold_term": "Party",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6333,
+      "levenshtein": 0.4,
+      "semantic": 0.5996,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5591,
+    "selected": false,
+    "reason": "top-3 avg score 0.5591 < final_threshold 0.6"
+  },
+  {
+    "id": 41,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5621,
+      "levenshtein": 0.3529,
+      "semantic": 0.5759,
+      "sequence_match": 0.5385
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5588,
+    "selected": false,
+    "reason": "top-3 avg score 0.5588 < final_threshold 0.6"
+  },
+  {
+    "id": 42,
+    "gold_term": "Asset",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6333,
+      "levenshtein": 0.4,
+      "semantic": 0.5863,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5547,
+    "selected": false,
+    "reason": "top-3 avg score 0.5547 < final_threshold 0.6"
+  },
+  {
+    "id": 43,
+    "gold_term": "Action",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6389,
+      "levenshtein": 0.125,
+      "semantic": 0.5868,
+      "sequence_match": 0.4286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5514,
+    "selected": false,
+    "reason": "top-3 avg score 0.5514 < final_threshold 0.6"
+  },
+  {
+    "id": 44,
+    "gold_term": "LeftOperand",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6596,
+      "levenshtein": 0.0909,
+      "semantic": 0.7079,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5511,
+    "selected": false,
+    "reason": "top-3 avg score 0.5511 < final_threshold 0.6"
+  },
+  {
+    "id": 45,
+    "gold_term": "Constraint",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6381,
+      "levenshtein": 0.2857,
+      "semantic": 0.5038,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5473,
+    "selected": false,
+    "reason": "top-3 avg score 0.5473 < final_threshold 0.6"
+  },
+  {
+    "id": 46,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6659,
+      "levenshtein": 0.25,
+      "semantic": 0.5111,
+      "sequence_match": 0.4545
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5438,
+    "selected": false,
+    "reason": "top-3 avg score 0.5438 < final_threshold 0.6"
+  },
+  {
+    "id": 47,
+    "gold_term": "Operator",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6816,
+      "levenshtein": 0.3077,
+      "semantic": 0.5648,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5424,
+    "selected": false,
+    "reason": "top-3 avg score 0.5424 < final_threshold 0.6"
+  },
+  {
+    "id": 48,
+    "gold_term": "Action",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.663,
+      "levenshtein": 0.2222,
+      "semantic": 0.5611,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5414,
+    "selected": false,
+    "reason": "top-3 avg score 0.5414 < final_threshold 0.6"
+  },
+  {
+    "id": 49,
+    "gold_term": "LeftOperand",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6493,
+      "levenshtein": 0.1765,
+      "semantic": 0.6873,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5408,
+    "selected": false,
+    "reason": "top-3 avg score 0.5408 < final_threshold 0.6"
+  },
+  {
+    "id": 50,
+    "gold_term": "Constraint",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6746,
+      "levenshtein": 0.3077,
+      "semantic": 0.5021,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5404,
+    "selected": false,
+    "reason": "top-3 avg score 0.5404 < final_threshold 0.6"
+  },
+  {
+    "id": 51,
+    "gold_term": "Operator",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6944,
+      "levenshtein": 0.25,
+      "semantic": 0.5127,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5357,
+    "selected": false,
+    "reason": "top-3 avg score 0.5357 < final_threshold 0.6"
+  },
+  {
+    "id": 52,
+    "gold_term": "Action",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6,
+      "levenshtein": 0.3,
+      "semantic": 0.6231,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5327,
+    "selected": false,
+    "reason": "top-3 avg score 0.5327 < final_threshold 0.6"
+  },
+  {
+    "id": 53,
+    "gold_term": "Action",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6444,
+      "levenshtein": 0.2,
+      "semantic": 0.5759,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5318,
+    "selected": false,
+    "reason": "top-3 avg score 0.5318 < final_threshold 0.6"
+  },
+  {
+    "id": 54,
+    "gold_term": "Party",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.481,
+      "levenshtein": 0.2941,
+      "semantic": 0.6569,
+      "sequence_match": 0.4545
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5308,
+    "selected": false,
+    "reason": "top-3 avg score 0.5308 < final_threshold 0.6"
+  },
+  {
+    "id": 55,
+    "gold_term": "Operator",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.3,
+      "semantic": 0.5971,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5305,
+    "selected": false,
+    "reason": "top-3 avg score 0.5305 < final_threshold 0.6"
+  },
+  {
+    "id": 56,
+    "gold_term": "Prohibition",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6297,
+      "levenshtein": 0.2308,
+      "semantic": 0.5309,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5258,
+    "selected": false,
+    "reason": "top-3 avg score 0.5258 < final_threshold 0.6"
+  },
+  {
+    "id": 57,
+    "gold_term": "Action",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6905,
+      "levenshtein": 0.2381,
+      "semantic": 0.515,
+      "sequence_match": 0.3704
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5253,
+    "selected": false,
+    "reason": "top-3 avg score 0.5253 < final_threshold 0.6"
+  },
+  {
+    "id": 58,
+    "gold_term": "Action",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6726,
+      "levenshtein": 0.3077,
+      "semantic": 0.4813,
+      "sequence_match": 0.4211
+    },
+    "is_hard_match": false,
+    "agg_score": 0.525,
+    "selected": false,
+    "reason": "top-3 avg score 0.5250 < final_threshold 0.6"
+  },
+  {
+    "id": 59,
+    "gold_term": "Operator",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6454,
+      "levenshtein": 0.2941,
+      "semantic": 0.5296,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.525,
+    "selected": false,
+    "reason": "top-3 avg score 0.5250 < final_threshold 0.6"
+  },
+  {
+    "id": 60,
+    "gold_term": "Policy",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.3333,
+      "semantic": 0.562,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5244,
+    "selected": false,
+    "reason": "top-3 avg score 0.5244 < final_threshold 0.6"
+  },
+  {
+    "id": 61,
+    "gold_term": "Constraint",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6381,
+      "levenshtein": 0.3571,
+      "semantic": 0.5164,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5237,
+    "selected": false,
+    "reason": "top-3 avg score 0.5237 < final_threshold 0.6"
+  },
+  {
+    "id": 62,
+    "gold_term": "LeftOperand",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5848,
+      "levenshtein": 0.1818,
+      "semantic": 0.598,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5213,
+    "selected": false,
+    "reason": "top-3 avg score 0.5213 < final_threshold 0.6"
+  },
+  {
+    "id": 63,
+    "gold_term": "Operator",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6816,
+      "levenshtein": 0.2308,
+      "semantic": 0.5,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5209,
+    "selected": false,
+    "reason": "top-3 avg score 0.5209 < final_threshold 0.6"
+  },
+  {
+    "id": 64,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6291,
+      "levenshtein": 0.4118,
+      "semantic": 0.4489,
+      "sequence_match": 0.4828
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5202,
+    "selected": false,
+    "reason": "top-3 avg score 0.5202 < final_threshold 0.6"
+  },
+  {
+    "id": 65,
+    "gold_term": "Action",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6,
+      "levenshtein": 0.3,
+      "semantic": 0.5841,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5197,
+    "selected": false,
+    "reason": "top-3 avg score 0.5197 < final_threshold 0.6"
+  },
+  {
+    "id": 66,
+    "gold_term": "Operator",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5972,
+      "levenshtein": 0.125,
+      "semantic": 0.6261,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5189,
+    "selected": false,
+    "reason": "top-3 avg score 0.5189 < final_threshold 0.6"
+  },
+  {
+    "id": 67,
+    "gold_term": "Policy",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5909,
+      "levenshtein": 0.2727,
+      "semantic": 0.608,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5173,
+    "selected": false,
+    "reason": "top-3 avg score 0.5173 < final_threshold 0.6"
+  },
+  {
+    "id": 68,
+    "gold_term": "Prohibition",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5909,
+      "levenshtein": 0.2727,
+      "semantic": 0.608,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5173,
+    "selected": false,
+    "reason": "top-3 avg score 0.5173 < final_threshold 0.6"
+  },
+  {
+    "id": 69,
+    "gold_term": "Asset",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6,
+      "levenshtein": 0.0,
+      "semantic": 0.5452,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5151,
+    "selected": false,
+    "reason": "top-3 avg score 0.5151 < final_threshold 0.6"
+  },
+  {
+    "id": 70,
+    "gold_term": "Party",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6,
+      "levenshtein": 0.0,
+      "semantic": 0.5452,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5151,
+    "selected": false,
+    "reason": "top-3 avg score 0.5151 < final_threshold 0.6"
+  },
+  {
+    "id": 71,
+    "gold_term": "Prohibition",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5726,
+      "levenshtein": 0.2632,
+      "semantic": 0.5719,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5148,
+    "selected": false,
+    "reason": "top-3 avg score 0.5148 < final_threshold 0.6"
+  },
+  {
+    "id": 72,
+    "gold_term": "AssetCollection",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.685,
+      "levenshtein": 0.2941,
+      "semantic": 0.4836,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5145,
+    "selected": false,
+    "reason": "top-3 avg score 0.5145 < final_threshold 0.6"
+  },
+  {
+    "id": 73,
+    "gold_term": "Party",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6242,
+      "levenshtein": 0.1818,
+      "semantic": 0.5388,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5127,
+    "selected": false,
+    "reason": "top-3 avg score 0.5127 < final_threshold 0.6"
+  },
+  {
+    "id": 74,
+    "gold_term": "Prohibition",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6242,
+      "levenshtein": 0.1818,
+      "semantic": 0.5388,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5127,
+    "selected": false,
+    "reason": "top-3 avg score 0.5127 < final_threshold 0.6"
+  },
+  {
+    "id": 75,
+    "gold_term": "Operator",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5648,
+      "levenshtein": 0.2222,
+      "semantic": 0.6136,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5104,
+    "selected": false,
+    "reason": "top-3 avg score 0.5104 < final_threshold 0.6"
+  },
+  {
+    "id": 76,
+    "gold_term": "Action",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.1667,
+      "semantic": 0.5854,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5089,
+    "selected": false,
+    "reason": "top-3 avg score 0.5089 < final_threshold 0.6"
+  },
+  {
+    "id": 77,
+    "gold_term": "Action",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.1667,
+      "semantic": 0.5779,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5064,
+    "selected": false,
+    "reason": "top-3 avg score 0.5064 < final_threshold 0.6"
+  },
+  {
+    "id": 78,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5973,
+      "levenshtein": 0.2353,
+      "semantic": 0.5329,
+      "sequence_match": 0.3871
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5058,
+    "selected": false,
+    "reason": "top-3 avg score 0.5058 < final_threshold 0.6"
+  },
+  {
+    "id": 79,
+    "gold_term": "Operator",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.3,
+      "semantic": 0.6641,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5047,
+    "selected": false,
+    "reason": "top-3 avg score 0.5047 < final_threshold 0.6"
+  },
+  {
+    "id": 80,
+    "gold_term": "AssetCollection",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6056,
+      "levenshtein": 0.2,
+      "semantic": 0.5558,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.503,
+    "selected": false,
+    "reason": "top-3 avg score 0.5030 < final_threshold 0.6"
+  },
+  {
+    "id": 81,
+    "gold_term": "AssetCollection",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.2,
+      "semantic": 0.4904,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5005,
+    "selected": false,
+    "reason": "top-3 avg score 0.5005 < final_threshold 0.6"
+  },
+  {
+    "id": 82,
+    "gold_term": "AssetScope",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5722,
+      "levenshtein": 0.3,
+      "semantic": 0.498,
+      "sequence_match": 0.4286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4996,
+    "selected": false,
+    "reason": "top-3 avg score 0.4996 < final_threshold 0.6"
+  },
+  {
+    "id": 83,
+    "gold_term": "AssetCollection",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5794,
+      "levenshtein": 0.3333,
+      "semantic": 0.5182,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4992,
+    "selected": false,
+    "reason": "top-3 avg score 0.4992 < final_threshold 0.6"
+  },
+  {
+    "id": 84,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6024,
+      "levenshtein": 0.2857,
+      "semantic": 0.5139,
+      "sequence_match": 0.3684
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4949,
+    "selected": false,
+    "reason": "top-3 avg score 0.4949 < final_threshold 0.6"
+  },
+  {
+    "id": 85,
+    "gold_term": "LeftOperand",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6297,
+      "levenshtein": 0.1538,
+      "semantic": 0.6025,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4941,
+    "selected": false,
+    "reason": "top-3 avg score 0.4941 < final_threshold 0.6"
+  },
+  {
+    "id": 86,
+    "gold_term": "Asset",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6103,
+      "levenshtein": 0.2308,
+      "semantic": 0.5297,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4911,
+    "selected": false,
+    "reason": "top-3 avg score 0.4911 < final_threshold 0.6"
+  },
+  {
+    "id": 87,
+    "gold_term": "AssetCollection",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.2667,
+      "semantic": 0.4603,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4905,
+    "selected": false,
+    "reason": "top-3 avg score 0.4905 < final_threshold 0.6"
+  },
+  {
+    "id": 88,
+    "gold_term": "Prohibition",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5829,
+      "levenshtein": 0.2353,
+      "semantic": 0.5287,
+      "sequence_match": 0.3571
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4896,
+    "selected": false,
+    "reason": "top-3 avg score 0.4896 < final_threshold 0.6"
+  },
+  {
+    "id": 89,
+    "gold_term": "Operator",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6265,
+      "levenshtein": 0.2727,
+      "semantic": 0.5263,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4895,
+    "selected": false,
+    "reason": "top-3 avg score 0.4895 < final_threshold 0.6"
+  },
+  {
+    "id": 90,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5922,
+      "levenshtein": 0.1765,
+      "semantic": 0.4591,
+      "sequence_match": 0.4118
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4877,
+    "selected": false,
+    "reason": "top-3 avg score 0.4877 < final_threshold 0.6"
+  },
+  {
+    "id": 91,
+    "gold_term": "AssetCollection",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5912,
+      "levenshtein": 0.2667,
+      "semantic": 0.4357,
+      "sequence_match": 0.4286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4852,
+    "selected": false,
+    "reason": "top-3 avg score 0.4852 < final_threshold 0.6"
+  },
+  {
+    "id": 92,
+    "gold_term": "LeftOperand",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5242,
+      "levenshtein": 0.1818,
+      "semantic": 0.55,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4851,
+    "selected": false,
+    "reason": "top-3 avg score 0.4851 < final_threshold 0.6"
+  },
+  {
+    "id": 93,
+    "gold_term": "Operator",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4951,
+      "levenshtein": 0.2353,
+      "semantic": 0.6386,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4846,
+    "selected": false,
+    "reason": "top-3 avg score 0.4846 < final_threshold 0.6"
+  },
+  {
+    "id": 94,
+    "gold_term": "AssetCollection",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5556,
+      "levenshtein": 0.2667,
+      "semantic": 0.4971,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4842,
+    "selected": false,
+    "reason": "top-3 avg score 0.4842 < final_threshold 0.6"
+  },
+  {
+    "id": 95,
+    "gold_term": "Permission",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4857,
+      "levenshtein": 0.1429,
+      "semantic": 0.6327,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4839,
+    "selected": false,
+    "reason": "top-3 avg score 0.4839 < final_threshold 0.6"
+  },
+  {
+    "id": 96,
+    "gold_term": "LeftOperand",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5361,
+      "levenshtein": 0.2857,
+      "semantic": 0.4777,
+      "sequence_match": 0.4375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4838,
+    "selected": false,
+    "reason": "top-3 avg score 0.4838 < final_threshold 0.6"
+  },
+  {
+    "id": 97,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6495,
+      "levenshtein": 0.2857,
+      "semantic": 0.4167,
+      "sequence_match": 0.3846
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4836,
+    "selected": false,
+    "reason": "top-3 avg score 0.4836 < final_threshold 0.6"
+  },
+  {
+    "id": 98,
+    "gold_term": "Party",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.3333,
+      "semantic": 0.5078,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4831,
+    "selected": false,
+    "reason": "top-3 avg score 0.4831 < final_threshold 0.6"
+  },
+  {
+    "id": 99,
+    "gold_term": "Policy",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.3333,
+      "semantic": 0.5078,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4831,
+    "selected": false,
+    "reason": "top-3 avg score 0.4831 < final_threshold 0.6"
+  },
+  {
+    "id": 100,
+    "gold_term": "AssetCollection",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5548,
+      "levenshtein": 0.381,
+      "semantic": 0.5105,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4821,
+    "selected": false,
+    "reason": "top-3 avg score 0.4821 < final_threshold 0.6"
+  },
+  {
+    "id": 101,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5217,
+      "levenshtein": 0.1765,
+      "semantic": 0.6384,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4819,
+    "selected": false,
+    "reason": "top-3 avg score 0.4819 < final_threshold 0.6"
+  },
+  {
+    "id": 102,
+    "gold_term": "Constraint",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5667,
+      "levenshtein": 0.2,
+      "semantic": 0.5933,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4819,
+    "selected": false,
+    "reason": "top-3 avg score 0.4819 < final_threshold 0.6"
+  },
+  {
+    "id": 103,
+    "gold_term": "Operator",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.125,
+      "semantic": 0.5812,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4796,
+    "selected": false,
+    "reason": "top-3 avg score 0.4796 < final_threshold 0.6"
+  },
+  {
+    "id": 104,
+    "gold_term": "Action",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6139,
+      "levenshtein": 0.2083,
+      "semantic": 0.4906,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4793,
+    "selected": false,
+    "reason": "top-3 avg score 0.4793 < final_threshold 0.6"
+  },
+  {
+    "id": 105,
+    "gold_term": "Constraint",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6509,
+      "levenshtein": 0.2308,
+      "semantic": 0.5555,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4791,
+    "selected": false,
+    "reason": "top-3 avg score 0.4791 < final_threshold 0.6"
+  },
+  {
+    "id": 106,
+    "gold_term": "Asset",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.2,
+      "semantic": 0.6357,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4786,
+    "selected": false,
+    "reason": "top-3 avg score 0.4786 < final_threshold 0.6"
+  },
+  {
+    "id": 107,
+    "gold_term": "Constraint",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.2,
+      "semantic": 0.6357,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4786,
+    "selected": false,
+    "reason": "top-3 avg score 0.4786 < final_threshold 0.6"
+  },
+  {
+    "id": 108,
+    "gold_term": "ConflictTerm",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5794,
+      "levenshtein": 0.0833,
+      "semantic": 0.432,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.476,
+    "selected": false,
+    "reason": "top-3 avg score 0.4760 < final_threshold 0.6"
+  },
+  {
+    "id": 109,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5556,
+      "levenshtein": 0.25,
+      "semantic": 0.4956,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4754,
+    "selected": false,
+    "reason": "top-3 avg score 0.4754 < final_threshold 0.6"
+  },
+  {
+    "id": 110,
+    "gold_term": "Operator",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5675,
+      "levenshtein": 0.2381,
+      "semantic": 0.5069,
+      "sequence_match": 0.3448
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4731,
+    "selected": false,
+    "reason": "top-3 avg score 0.4731 < final_threshold 0.6"
+  },
+  {
+    "id": 111,
+    "gold_term": "Asset",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.2,
+      "semantic": 0.6241,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.471,
+    "selected": false,
+    "reason": "top-3 avg score 0.4710 < final_threshold 0.6"
+  },
+  {
+    "id": 112,
+    "gold_term": "AssetCollection",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5766,
+      "levenshtein": 0.2,
+      "semantic": 0.4221,
+      "sequence_match": 0.4138
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4708,
+    "selected": false,
+    "reason": "top-3 avg score 0.4708 < final_threshold 0.6"
+  },
+  {
+    "id": 113,
+    "gold_term": "Asset",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5286,
+      "levenshtein": 0.2857,
+      "semantic": 0.5669,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4704,
+    "selected": false,
+    "reason": "top-3 avg score 0.4704 < final_threshold 0.6"
+  },
+  {
+    "id": 114,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5806,
+      "levenshtein": 0.25,
+      "semantic": 0.4873,
+      "sequence_match": 0.3415
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4698,
+    "selected": false,
+    "reason": "top-3 avg score 0.4698 < final_threshold 0.6"
+  },
+  {
+    "id": 115,
+    "gold_term": "Action",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5758,
+      "levenshtein": 0.2353,
+      "semantic": 0.4841,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4692,
+    "selected": false,
+    "reason": "top-3 avg score 0.4692 < final_threshold 0.6"
+  },
+  {
+    "id": 116,
+    "gold_term": "LeftOperand",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5829,
+      "levenshtein": 0.25,
+      "semantic": 0.4239,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4689,
+    "selected": false,
+    "reason": "top-3 avg score 0.4689 < final_threshold 0.6"
+  },
+  {
+    "id": 117,
+    "gold_term": "AssetCollection",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6329,
+      "levenshtein": 0.3333,
+      "semantic": 0.4165,
+      "sequence_match": 0.3571
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4688,
+    "selected": false,
+    "reason": "top-3 avg score 0.4688 < final_threshold 0.6"
+  },
+  {
+    "id": 118,
+    "gold_term": "Operator",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.2083,
+      "semantic": 0.4814,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4683,
+    "selected": false,
+    "reason": "top-3 avg score 0.4683 < final_threshold 0.6"
+  },
+  {
+    "id": 119,
+    "gold_term": "AssetScope",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6286,
+      "levenshtein": 0.2381,
+      "semantic": 0.5168,
+      "sequence_match": 0.2581
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4678,
+    "selected": false,
+    "reason": "top-3 avg score 0.4678 < final_threshold 0.6"
+  },
+  {
+    "id": 120,
+    "gold_term": "ConflictTerm",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5644,
+      "levenshtein": 0.1538,
+      "semantic": 0.4376,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4673,
+    "selected": false,
+    "reason": "top-3 avg score 0.4673 < final_threshold 0.6"
+  },
+  {
+    "id": 121,
+    "gold_term": "LeftOperand",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5379,
+      "levenshtein": 0.2727,
+      "semantic": 0.548,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4672,
+    "selected": false,
+    "reason": "top-3 avg score 0.4672 < final_threshold 0.6"
+  },
+  {
+    "id": 122,
+    "gold_term": "Policy",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5278,
+      "levenshtein": 0.25,
+      "semantic": 0.5865,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4667,
+    "selected": false,
+    "reason": "top-3 avg score 0.4667 < final_threshold 0.6"
+  },
+  {
+    "id": 123,
+    "gold_term": "Party",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.1,
+      "semantic": 0.5994,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4665,
+    "selected": false,
+    "reason": "top-3 avg score 0.4665 < final_threshold 0.6"
+  },
+  {
+    "id": 124,
+    "gold_term": "Rule",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.25,
+      "semantic": 0.6489,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4663,
+    "selected": false,
+    "reason": "top-3 avg score 0.4663 < final_threshold 0.6"
+  },
+  {
+    "id": 125,
+    "gold_term": "Action",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3384,
+      "levenshtein": 0.3636,
+      "semantic": 0.5635,
+      "sequence_match": 0.4706
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4659,
+    "selected": false,
+    "reason": "top-3 avg score 0.4659 < final_threshold 0.6"
+  },
+  {
+    "id": 126,
+    "gold_term": "LeftOperand",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5707,
+      "levenshtein": 0.1818,
+      "semantic": 0.5261,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4656,
+    "selected": false,
+    "reason": "top-3 avg score 0.4656 < final_threshold 0.6"
+  },
+  {
+    "id": 127,
+    "gold_term": "Asset",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4417,
+      "levenshtein": 0.125,
+      "semantic": 0.6456,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.465,
+    "selected": false,
+    "reason": "top-3 avg score 0.4650 < final_threshold 0.6"
+  },
+  {
+    "id": 128,
+    "gold_term": "AssetCollection",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5872,
+      "levenshtein": 0.1923,
+      "semantic": 0.4126,
+      "sequence_match": 0.3902
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4634,
+    "selected": false,
+    "reason": "top-3 avg score 0.4634 < final_threshold 0.6"
+  },
+  {
+    "id": 129,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6053,
+      "levenshtein": 0.2105,
+      "semantic": 0.3966,
+      "sequence_match": 0.3871
+    },
+    "is_hard_match": false,
+    "agg_score": 0.463,
+    "selected": false,
+    "reason": "top-3 avg score 0.4630 < final_threshold 0.6"
+  },
+  {
+    "id": 130,
+    "gold_term": "Prohibition",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4993,
+      "levenshtein": 0.2857,
+      "semantic": 0.5753,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4624,
+    "selected": false,
+    "reason": "top-3 avg score 0.4624 < final_threshold 0.6"
+  },
+  {
+    "id": 131,
+    "gold_term": "Constraint",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5167,
+      "levenshtein": 0.1,
+      "semantic": 0.6698,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4622,
+    "selected": false,
+    "reason": "top-3 avg score 0.4622 < final_threshold 0.6"
+  },
+  {
+    "id": 132,
+    "gold_term": "Operator",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.594,
+      "levenshtein": 0.1429,
+      "semantic": 0.5193,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.462,
+    "selected": false,
+    "reason": "top-3 avg score 0.4620 < final_threshold 0.6"
+  },
+  {
+    "id": 133,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.3333,
+      "semantic": 0.4416,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.462,
+    "selected": false,
+    "reason": "top-3 avg score 0.4620 < final_threshold 0.6"
+  },
+  {
+    "id": 134,
+    "gold_term": "Constraint",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5182,
+      "levenshtein": 0.1818,
+      "semantic": 0.6768,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4618,
+    "selected": false,
+    "reason": "top-3 avg score 0.4618 < final_threshold 0.6"
+  },
+  {
+    "id": 135,
+    "gold_term": "Prohibition",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5182,
+      "levenshtein": 0.1818,
+      "semantic": 0.6768,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4618,
+    "selected": false,
+    "reason": "top-3 avg score 0.4618 < final_threshold 0.6"
+  },
+  {
+    "id": 136,
+    "gold_term": "Party",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.2,
+      "semantic": 0.5826,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4609,
+    "selected": false,
+    "reason": "top-3 avg score 0.4609 < final_threshold 0.6"
+  },
+  {
+    "id": 137,
+    "gold_term": "Permission",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.2,
+      "semantic": 0.5826,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4609,
+    "selected": false,
+    "reason": "top-3 avg score 0.4609 < final_threshold 0.6"
+  },
+  {
+    "id": 138,
+    "gold_term": "Asset",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.2,
+      "semantic": 0.5937,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4608,
+    "selected": false,
+    "reason": "top-3 avg score 0.4608 < final_threshold 0.6"
+  },
+  {
+    "id": 139,
+    "gold_term": "Permission",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.2,
+      "semantic": 0.5937,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4608,
+    "selected": false,
+    "reason": "top-3 avg score 0.4608 < final_threshold 0.6"
+  },
+  {
+    "id": 140,
+    "gold_term": "Constraint",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5175,
+      "levenshtein": 0.1905,
+      "semantic": 0.5406,
+      "sequence_match": 0.3226
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4602,
+    "selected": false,
+    "reason": "top-3 avg score 0.4602 < final_threshold 0.6"
+  },
+  {
+    "id": 141,
+    "gold_term": "ConflictTerm",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5644,
+      "levenshtein": 0.0769,
+      "semantic": 0.4131,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4592,
+    "selected": false,
+    "reason": "top-3 avg score 0.4592 < final_threshold 0.6"
+  },
+  {
+    "id": 142,
+    "gold_term": "Rule",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5476,
+      "levenshtein": 0.1429,
+      "semantic": 0.6075,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4591,
+    "selected": false,
+    "reason": "top-3 avg score 0.4591 < final_threshold 0.6"
+  },
+  {
+    "id": 143,
+    "gold_term": "AssetCollection",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5293,
+      "levenshtein": 0.3333,
+      "semantic": 0.4605,
+      "sequence_match": 0.3846
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4581,
+    "selected": false,
+    "reason": "top-3 avg score 0.4581 < final_threshold 0.6"
+  },
+  {
+    "id": 144,
+    "gold_term": "Asset",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.581,
+      "levenshtein": 0.1429,
+      "semantic": 0.5624,
+      "sequence_match": 0.2308
+    },
+    "is_hard_match": false,
+    "agg_score": 0.458,
+    "selected": false,
+    "reason": "top-3 avg score 0.4580 < final_threshold 0.6"
+  },
+  {
+    "id": 145,
+    "gold_term": "Constraint",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5167,
+      "levenshtein": 0.2,
+      "semantic": 0.557,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4579,
+    "selected": false,
+    "reason": "top-3 avg score 0.4579 < final_threshold 0.6"
+  },
+  {
+    "id": 146,
+    "gold_term": "LeftOperand",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5631,
+      "levenshtein": 0.1818,
+      "semantic": 0.5425,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4574,
+    "selected": false,
+    "reason": "top-3 avg score 0.4574 < final_threshold 0.6"
+  },
+  {
+    "id": 147,
+    "gold_term": "Permission",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.2,
+      "semantic": 0.6068,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.456,
+    "selected": false,
+    "reason": "top-3 avg score 0.4560 < final_threshold 0.6"
+  },
+  {
+    "id": 148,
+    "gold_term": "Policy",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.2,
+      "semantic": 0.6068,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.456,
+    "selected": false,
+    "reason": "top-3 avg score 0.4560 < final_threshold 0.6"
+  },
+  {
+    "id": 149,
+    "gold_term": "LeftOperand",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4904,
+      "levenshtein": 0.25,
+      "semantic": 0.5262,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4548,
+    "selected": false,
+    "reason": "top-3 avg score 0.4548 < final_threshold 0.6"
+  },
+  {
+    "id": 150,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5059,
+      "levenshtein": 0.1765,
+      "semantic": 0.5831,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4539,
+    "selected": false,
+    "reason": "top-3 avg score 0.4539 < final_threshold 0.6"
+  },
+  {
+    "id": 151,
+    "gold_term": "LeftOperand",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4797,
+      "levenshtein": 0.3077,
+      "semantic": 0.5479,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4537,
+    "selected": false,
+    "reason": "top-3 avg score 0.4537 < final_threshold 0.6"
+  },
+  {
+    "id": 152,
+    "gold_term": "Asset",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5059,
+      "levenshtein": 0.1765,
+      "semantic": 0.5776,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4521,
+    "selected": false,
+    "reason": "top-3 avg score 0.4521 < final_threshold 0.6"
+  },
+  {
+    "id": 153,
+    "gold_term": "Prohibition",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4998,
+      "levenshtein": 0.25,
+      "semantic": 0.57,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4519,
+    "selected": false,
+    "reason": "top-3 avg score 0.4519 < final_threshold 0.6"
+  },
+  {
+    "id": 154,
+    "gold_term": "Action",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4658,
+      "levenshtein": 0.3077,
+      "semantic": 0.4675,
+      "sequence_match": 0.4211
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4514,
+    "selected": false,
+    "reason": "top-3 avg score 0.4514 < final_threshold 0.6"
+  },
+  {
+    "id": 155,
+    "gold_term": "LeftOperand",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4392,
+      "levenshtein": 0.2105,
+      "semantic": 0.5148,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4514,
+    "selected": false,
+    "reason": "top-3 avg score 0.4514 < final_threshold 0.6"
+  },
+  {
+    "id": 156,
+    "gold_term": "Action",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4673,
+      "levenshtein": 0.2353,
+      "semantic": 0.5349,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.45,
+    "selected": false,
+    "reason": "top-3 avg score 0.4500 < final_threshold 0.6"
+  },
+  {
+    "id": 157,
+    "gold_term": "Action",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5968,
+      "levenshtein": 0.2143,
+      "semantic": 0.448,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4483,
+    "selected": false,
+    "reason": "top-3 avg score 0.4483 < final_threshold 0.6"
+  },
+  {
+    "id": 158,
+    "gold_term": "AssetScope",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5167,
+      "levenshtein": 0.2,
+      "semantic": 0.5273,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.448,
+    "selected": false,
+    "reason": "top-3 avg score 0.4480 < final_threshold 0.6"
+  },
+  {
+    "id": 159,
+    "gold_term": "AssetScope",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5167,
+      "levenshtein": 0.1,
+      "semantic": 0.5257,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4474,
+    "selected": false,
+    "reason": "top-3 avg score 0.4474 < final_threshold 0.6"
+  },
+  {
+    "id": 160,
+    "gold_term": "LeftOperand",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5631,
+      "levenshtein": 0.1818,
+      "semantic": 0.5125,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4474,
+    "selected": false,
+    "reason": "top-3 avg score 0.4474 < final_threshold 0.6"
+  },
+  {
+    "id": 161,
+    "gold_term": "AssetCollection",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5405,
+      "levenshtein": 0.2,
+      "semantic": 0.4307,
+      "sequence_match": 0.3704
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4472,
+    "selected": false,
+    "reason": "top-3 avg score 0.4472 < final_threshold 0.6"
+  },
+  {
+    "id": 162,
+    "gold_term": "Asset",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.1,
+      "semantic": 0.54,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4467,
+    "selected": false,
+    "reason": "top-3 avg score 0.4467 < final_threshold 0.6"
+  },
+  {
+    "id": 163,
+    "gold_term": "AssetScope",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5611,
+      "levenshtein": 0.1765,
+      "semantic": 0.4824,
+      "sequence_match": 0.2963
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4466,
+    "selected": false,
+    "reason": "top-3 avg score 0.4466 < final_threshold 0.6"
+  },
+  {
+    "id": 164,
+    "gold_term": "Asset",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.437,
+      "levenshtein": 0.2222,
+      "semantic": 0.6163,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4464,
+    "selected": false,
+    "reason": "top-3 avg score 0.4464 < final_threshold 0.6"
+  },
+  {
+    "id": 165,
+    "gold_term": "AssetScope",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6163,
+      "levenshtein": 0.2083,
+      "semantic": 0.4872,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4463,
+    "selected": false,
+    "reason": "top-3 avg score 0.4463 < final_threshold 0.6"
+  },
+  {
+    "id": 166,
+    "gold_term": "Constraint",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5167,
+      "levenshtein": 0.1,
+      "semantic": 0.6205,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4457,
+    "selected": false,
+    "reason": "top-3 avg score 0.4457 < final_threshold 0.6"
+  },
+  {
+    "id": 167,
+    "gold_term": "Permission",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5167,
+      "levenshtein": 0.1,
+      "semantic": 0.6205,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4457,
+    "selected": false,
+    "reason": "top-3 avg score 0.4457 < final_threshold 0.6"
+  },
+  {
+    "id": 168,
+    "gold_term": "Rule",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.0,
+      "semantic": 0.5857,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4452,
+    "selected": false,
+    "reason": "top-3 avg score 0.4452 < final_threshold 0.6"
+  },
+  {
+    "id": 169,
+    "gold_term": "Rule",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5392,
+      "levenshtein": 0.1176,
+      "semantic": 0.6058,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4452,
+    "selected": false,
+    "reason": "top-3 avg score 0.4452 < final_threshold 0.6"
+  },
+  {
+    "id": 170,
+    "gold_term": "Constraint",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.521,
+      "levenshtein": 0.1667,
+      "semantic": 0.5197,
+      "sequence_match": 0.2941
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4449,
+    "selected": false,
+    "reason": "top-3 avg score 0.4449 < final_threshold 0.6"
+  },
+  {
+    "id": 171,
+    "gold_term": "Action",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4795,
+      "levenshtein": 0.2105,
+      "semantic": 0.5342,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4446,
+    "selected": false,
+    "reason": "top-3 avg score 0.4446 < final_threshold 0.6"
+  },
+  {
+    "id": 172,
+    "gold_term": "Action",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5419,
+      "levenshtein": 0.1923,
+      "semantic": 0.4787,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4444,
+    "selected": false,
+    "reason": "top-3 avg score 0.4444 < final_threshold 0.6"
+  },
+  {
+    "id": 173,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5507,
+      "levenshtein": 0.1765,
+      "semantic": 0.5198,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4438,
+    "selected": false,
+    "reason": "top-3 avg score 0.4438 < final_threshold 0.6"
+  },
+  {
+    "id": 174,
+    "gold_term": "Party",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.0769,
+      "semantic": 0.4798,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4437,
+    "selected": false,
+    "reason": "top-3 avg score 0.4437 < final_threshold 0.6"
+  },
+  {
+    "id": 175,
+    "gold_term": "Operator",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4359,
+      "levenshtein": 0.2308,
+      "semantic": 0.5134,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4434,
+    "selected": false,
+    "reason": "top-3 avg score 0.4434 < final_threshold 0.6"
+  },
+  {
+    "id": 176,
+    "gold_term": "Policy",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4402,
+      "levenshtein": 0.1923,
+      "semantic": 0.5754,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4427,
+    "selected": false,
+    "reason": "top-3 avg score 0.4427 < final_threshold 0.6"
+  },
+  {
+    "id": 177,
+    "gold_term": "AssetCollection",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5389,
+      "levenshtein": 0.2,
+      "semantic": 0.4725,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4424,
+    "selected": false,
+    "reason": "top-3 avg score 0.4424 < final_threshold 0.6"
+  },
+  {
+    "id": 178,
+    "gold_term": "Prohibition",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5606,
+      "levenshtein": 0.1818,
+      "semantic": 0.4992,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4421,
+    "selected": false,
+    "reason": "top-3 avg score 0.4421 < final_threshold 0.6"
+  },
+  {
+    "id": 179,
+    "gold_term": "Prohibition",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4904,
+      "levenshtein": 0.25,
+      "semantic": 0.5744,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4419,
+    "selected": false,
+    "reason": "top-3 avg score 0.4419 < final_threshold 0.6"
+  },
+  {
+    "id": 180,
+    "gold_term": "LeftOperand",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5273,
+      "levenshtein": 0.0909,
+      "semantic": 0.5472,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4415,
+    "selected": false,
+    "reason": "top-3 avg score 0.4415 < final_threshold 0.6"
+  },
+  {
+    "id": 181,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4618,
+      "levenshtein": 0.1176,
+      "semantic": 0.6389,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.441,
+    "selected": false,
+    "reason": "top-3 avg score 0.4410 < final_threshold 0.6"
+  },
+  {
+    "id": 182,
+    "gold_term": "Permission",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5776,
+      "levenshtein": 0.1923,
+      "semantic": 0.4673,
+      "sequence_match": 0.2778
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4409,
+    "selected": false,
+    "reason": "top-3 avg score 0.4409 < final_threshold 0.6"
+  },
+  {
+    "id": 183,
+    "gold_term": "Duty",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.0,
+      "semantic": 0.5705,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4402,
+    "selected": false,
+    "reason": "top-3 avg score 0.4402 < final_threshold 0.6"
+  },
+  {
+    "id": 184,
+    "gold_term": "Policy",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5507,
+      "levenshtein": 0.1765,
+      "semantic": 0.5084,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.44,
+    "selected": false,
+    "reason": "top-3 avg score 0.4400 < final_threshold 0.6"
+  },
+  {
+    "id": 185,
+    "gold_term": "Constraint",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4647,
+      "levenshtein": 0.1765,
+      "semantic": 0.6313,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4394,
+    "selected": false,
+    "reason": "top-3 avg score 0.4394 < final_threshold 0.6"
+  },
+  {
+    "id": 186,
+    "gold_term": "AssetScope",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5524,
+      "levenshtein": 0.2143,
+      "semantic": 0.4325,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4394,
+    "selected": false,
+    "reason": "top-3 avg score 0.4394 < final_threshold 0.6"
+  },
+  {
+    "id": 187,
+    "gold_term": "Party",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4937,
+      "levenshtein": 0.2143,
+      "semantic": 0.5069,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4388,
+    "selected": false,
+    "reason": "top-3 avg score 0.4388 < final_threshold 0.6"
+  },
+  {
+    "id": 188,
+    "gold_term": "LeftOperand",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4913,
+      "levenshtein": 0.1429,
+      "semantic": 0.5032,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4382,
+    "selected": false,
+    "reason": "top-3 avg score 0.4382 < final_threshold 0.6"
+  },
+  {
+    "id": 189,
+    "gold_term": "AssetScope",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.1,
+      "semantic": 0.4801,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4378,
+    "selected": false,
+    "reason": "top-3 avg score 0.4378 < final_threshold 0.6"
+  },
+  {
+    "id": 190,
+    "gold_term": "LeftOperand",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4797,
+      "levenshtein": 0.3077,
+      "semantic": 0.5251,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4375,
+    "selected": false,
+    "reason": "top-3 avg score 0.4375 < final_threshold 0.6"
+  },
+  {
+    "id": 191,
+    "gold_term": "Asset",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5722,
+      "levenshtein": 0.125,
+      "semantic": 0.5333,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4375,
+    "selected": false,
+    "reason": "top-3 avg score 0.4375 < final_threshold 0.6"
+  },
+  {
+    "id": 192,
+    "gold_term": "Rule",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.1,
+      "semantic": 0.6261,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4373,
+    "selected": false,
+    "reason": "top-3 avg score 0.4373 < final_threshold 0.6"
+  },
+  {
+    "id": 193,
+    "gold_term": "Rule",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4833,
+      "levenshtein": 0.2,
+      "semantic": 0.6039,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4365,
+    "selected": false,
+    "reason": "top-3 avg score 0.4365 < final_threshold 0.6"
+  },
+  {
+    "id": 194,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4937,
+      "levenshtein": 0.1765,
+      "semantic": 0.5452,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4352,
+    "selected": false,
+    "reason": "top-3 avg score 0.4352 < final_threshold 0.6"
+  },
+  {
+    "id": 195,
+    "gold_term": "Policy",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2,
+      "semantic": 0.566,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.435,
+    "selected": false,
+    "reason": "top-3 avg score 0.4350 < final_threshold 0.6"
+  },
+  {
+    "id": 196,
+    "gold_term": "Action",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.25,
+      "semantic": 0.4713,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4349,
+    "selected": false,
+    "reason": "top-3 avg score 0.4349 < final_threshold 0.6"
+  },
+  {
+    "id": 197,
+    "gold_term": "Policy",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.2,
+      "semantic": 0.5424,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4345,
+    "selected": false,
+    "reason": "top-3 avg score 0.4345 < final_threshold 0.6"
+  },
+  {
+    "id": 198,
+    "gold_term": "AssetCollection",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5102,
+      "levenshtein": 0.3333,
+      "semantic": 0.4596,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4344,
+    "selected": false,
+    "reason": "top-3 avg score 0.4344 < final_threshold 0.6"
+  },
+  {
+    "id": 199,
+    "gold_term": "Prohibition",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5023,
+      "levenshtein": 0.2308,
+      "semantic": 0.5496,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.434,
+    "selected": false,
+    "reason": "top-3 avg score 0.4340 < final_threshold 0.6"
+  },
+  {
+    "id": 200,
+    "gold_term": "Duty",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5513,
+      "levenshtein": 0.1538,
+      "semantic": 0.5147,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4338,
+    "selected": false,
+    "reason": "top-3 avg score 0.4338 < final_threshold 0.6"
+  },
+  {
+    "id": 201,
+    "gold_term": "LeftOperand",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5242,
+      "levenshtein": 0.1818,
+      "semantic": 0.4807,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4302,
+    "selected": false,
+    "reason": "top-3 avg score 0.4302 < final_threshold 0.6"
+  },
+  {
+    "id": 202,
+    "gold_term": "Permission",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5056,
+      "levenshtein": 0.1667,
+      "semantic": 0.5114,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4299,
+    "selected": false,
+    "reason": "top-3 avg score 0.4299 < final_threshold 0.6"
+  },
+  {
+    "id": 203,
+    "gold_term": "AssetScope",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5399,
+      "levenshtein": 0.2353,
+      "semantic": 0.451,
+      "sequence_match": 0.2963
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4291,
+    "selected": false,
+    "reason": "top-3 avg score 0.4291 < final_threshold 0.6"
+  },
+  {
+    "id": 204,
+    "gold_term": "Duty",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4583,
+      "levenshtein": 0.125,
+      "semantic": 0.6595,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4282,
+    "selected": false,
+    "reason": "top-3 avg score 0.4282 < final_threshold 0.6"
+  },
+  {
+    "id": 205,
+    "gold_term": "AssetCollection",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5265,
+      "levenshtein": 0.2105,
+      "semantic": 0.4636,
+      "sequence_match": 0.2941
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4281,
+    "selected": false,
+    "reason": "top-3 avg score 0.4281 < final_threshold 0.6"
+  },
+  {
+    "id": 206,
+    "gold_term": "Policy",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5675,
+      "levenshtein": 0.2143,
+      "semantic": 0.4166,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.428,
+    "selected": false,
+    "reason": "top-3 avg score 0.4280 < final_threshold 0.6"
+  },
+  {
+    "id": 207,
+    "gold_term": "AssetCollection",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5255,
+      "levenshtein": 0.2,
+      "semantic": 0.4012,
+      "sequence_match": 0.3571
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4279,
+    "selected": false,
+    "reason": "top-3 avg score 0.4279 < final_threshold 0.6"
+  },
+  {
+    "id": 208,
+    "gold_term": "Rule",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.6097,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4273,
+    "selected": false,
+    "reason": "top-3 avg score 0.4273 < final_threshold 0.6"
+  },
+  {
+    "id": 209,
+    "gold_term": "AssetCollection",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4963,
+      "levenshtein": 0.1333,
+      "semantic": 0.5347,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.427,
+    "selected": false,
+    "reason": "top-3 avg score 0.4270 < final_threshold 0.6"
+  },
+  {
+    "id": 210,
+    "gold_term": "Policy",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5185,
+      "levenshtein": 0.2222,
+      "semantic": 0.491,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4254,
+    "selected": false,
+    "reason": "top-3 avg score 0.4254 < final_threshold 0.6"
+  },
+  {
+    "id": 211,
+    "gold_term": "Action",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.6034,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4252,
+    "selected": false,
+    "reason": "top-3 avg score 0.4252 < final_threshold 0.6"
+  },
+  {
+    "id": 212,
+    "gold_term": "Prohibition",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.54,
+      "levenshtein": 0.1923,
+      "semantic": 0.4113,
+      "sequence_match": 0.3243
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4252,
+    "selected": false,
+    "reason": "top-3 avg score 0.4252 < final_threshold 0.6"
+  },
+  {
+    "id": 213,
+    "gold_term": "Duty",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.6033,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4252,
+    "selected": false,
+    "reason": "top-3 avg score 0.4252 < final_threshold 0.6"
+  },
+  {
+    "id": 214,
+    "gold_term": "Policy",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.6033,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4252,
+    "selected": false,
+    "reason": "top-3 avg score 0.4252 < final_threshold 0.6"
+  },
+  {
+    "id": 215,
+    "gold_term": "AssetScope",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3952,
+      "levenshtein": 0.2143,
+      "semantic": 0.4633,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4251,
+    "selected": false,
+    "reason": "top-3 avg score 0.4251 < final_threshold 0.6"
+  },
+  {
+    "id": 216,
+    "gold_term": "Asset",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4833,
+      "levenshtein": 0.2,
+      "semantic": 0.5658,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4238,
+    "selected": false,
+    "reason": "top-3 avg score 0.4238 < final_threshold 0.6"
+  },
+  {
+    "id": 217,
+    "gold_term": "Operator",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5391,
+      "levenshtein": 0.1923,
+      "semantic": 0.4378,
+      "sequence_match": 0.2941
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4237,
+    "selected": false,
+    "reason": "top-3 avg score 0.4237 < final_threshold 0.6"
+  },
+  {
+    "id": 218,
+    "gold_term": "Asset",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.1667,
+      "semantic": 0.5129,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4235,
+    "selected": false,
+    "reason": "top-3 avg score 0.4235 < final_threshold 0.6"
+  },
+  {
+    "id": 219,
+    "gold_term": "AssetScope",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4333,
+      "levenshtein": 0.1,
+      "semantic": 0.5212,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4234,
+    "selected": false,
+    "reason": "top-3 avg score 0.4234 < final_threshold 0.6"
+  },
+  {
+    "id": 220,
+    "gold_term": "Action",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3444,
+      "levenshtein": 0.1,
+      "semantic": 0.5492,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4229,
+    "selected": false,
+    "reason": "top-3 avg score 0.4229 < final_threshold 0.6"
+  },
+  {
+    "id": 221,
+    "gold_term": "Party",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3833,
+      "levenshtein": 0.125,
+      "semantic": 0.5763,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4224,
+    "selected": false,
+    "reason": "top-3 avg score 0.4224 < final_threshold 0.6"
+  },
+  {
+    "id": 222,
+    "gold_term": "Permission",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4741,
+      "levenshtein": 0.0,
+      "semantic": 0.5821,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4222,
+    "selected": false,
+    "reason": "top-3 avg score 0.4222 < final_threshold 0.6"
+  },
+  {
+    "id": 223,
+    "gold_term": "Action",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4915,
+      "levenshtein": 0.2308,
+      "semantic": 0.4521,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4198,
+    "selected": false,
+    "reason": "top-3 avg score 0.4198 < final_threshold 0.6"
+  },
+  {
+    "id": 224,
+    "gold_term": "Prohibition",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5194,
+      "levenshtein": 0.1818,
+      "semantic": 0.5389,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4194,
+    "selected": false,
+    "reason": "top-3 avg score 0.4194 < final_threshold 0.6"
+  },
+  {
+    "id": 225,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4647,
+      "levenshtein": 0.1176,
+      "semantic": 0.5714,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4194,
+    "selected": false,
+    "reason": "top-3 avg score 0.4194 < final_threshold 0.6"
+  },
+  {
+    "id": 226,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5621,
+      "levenshtein": 0.1765,
+      "semantic": 0.4886,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4192,
+    "selected": false,
+    "reason": "top-3 avg score 0.4192 < final_threshold 0.6"
+  },
+  {
+    "id": 227,
+    "gold_term": "Party",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3741,
+      "levenshtein": 0.1111,
+      "semantic": 0.5958,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4185,
+    "selected": false,
+    "reason": "top-3 avg score 0.4185 < final_threshold 0.6"
+  },
+  {
+    "id": 228,
+    "gold_term": "Constraint",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2,
+      "semantic": 0.566,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4183,
+    "selected": false,
+    "reason": "top-3 avg score 0.4183 < final_threshold 0.6"
+  },
+  {
+    "id": 229,
+    "gold_term": "Rule",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4363,
+      "levenshtein": 0.1765,
+      "semantic": 0.5326,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4182,
+    "selected": false,
+    "reason": "top-3 avg score 0.4182 < final_threshold 0.6"
+  },
+  {
+    "id": 230,
+    "gold_term": "Duty",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5476,
+      "levenshtein": 0.1429,
+      "semantic": 0.484,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4179,
+    "selected": false,
+    "reason": "top-3 avg score 0.4179 < final_threshold 0.6"
+  },
+  {
+    "id": 231,
+    "gold_term": "LeftOperand",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.54,
+      "levenshtein": 0.2308,
+      "semantic": 0.3895,
+      "sequence_match": 0.3243
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4179,
+    "selected": false,
+    "reason": "top-3 avg score 0.4179 < final_threshold 0.6"
+  },
+  {
+    "id": 232,
+    "gold_term": "Permission",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4222,
+      "levenshtein": 0.2,
+      "semantic": 0.5305,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4176,
+    "selected": false,
+    "reason": "top-3 avg score 0.4176 < final_threshold 0.6"
+  },
+  {
+    "id": 233,
+    "gold_term": "Rule",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5317,
+      "levenshtein": 0.0952,
+      "semantic": 0.5609,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4175,
+    "selected": false,
+    "reason": "top-3 avg score 0.4175 < final_threshold 0.6"
+  },
+  {
+    "id": 234,
+    "gold_term": "Rule",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5513,
+      "levenshtein": 0.1154,
+      "semantic": 0.4988,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4167,
+    "selected": false,
+    "reason": "top-3 avg score 0.4167 < final_threshold 0.6"
+  },
+  {
+    "id": 235,
+    "gold_term": "Asset",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.1538,
+      "semantic": 0.5094,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4165,
+    "selected": false,
+    "reason": "top-3 avg score 0.4165 < final_threshold 0.6"
+  },
+  {
+    "id": 236,
+    "gold_term": "AssetCollection",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.2,
+      "semantic": 0.5067,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.416,
+    "selected": false,
+    "reason": "top-3 avg score 0.4160 < final_threshold 0.6"
+  },
+  {
+    "id": 237,
+    "gold_term": "Rule",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.1,
+      "semantic": 0.56,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4152,
+    "selected": false,
+    "reason": "top-3 avg score 0.4152 < final_threshold 0.6"
+  },
+  {
+    "id": 238,
+    "gold_term": "Action",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.5718,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4147,
+    "selected": false,
+    "reason": "top-3 avg score 0.4147 < final_threshold 0.6"
+  },
+  {
+    "id": 239,
+    "gold_term": "AssetScope",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4833,
+      "levenshtein": 0.1,
+      "semantic": 0.5374,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4143,
+    "selected": false,
+    "reason": "top-3 avg score 0.4143 < final_threshold 0.6"
+  },
+  {
+    "id": 240,
+    "gold_term": "AssetScope",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.1,
+      "semantic": 0.4409,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4136,
+    "selected": false,
+    "reason": "top-3 avg score 0.4136 < final_threshold 0.6"
+  },
+  {
+    "id": 241,
+    "gold_term": "Permission",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4083,
+      "levenshtein": 0.0,
+      "semantic": 0.6077,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4128,
+    "selected": false,
+    "reason": "top-3 avg score 0.4128 < final_threshold 0.6"
+  },
+  {
+    "id": 242,
+    "gold_term": "Rule",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5249,
+      "levenshtein": 0.1053,
+      "semantic": 0.6081,
+      "sequence_match": 0.087
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4127,
+    "selected": false,
+    "reason": "top-3 avg score 0.4127 < final_threshold 0.6"
+  },
+  {
+    "id": 243,
+    "gold_term": "Operator",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4583,
+      "levenshtein": 0.125,
+      "semantic": 0.6117,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4122,
+    "selected": false,
+    "reason": "top-3 avg score 0.4122 < final_threshold 0.6"
+  },
+  {
+    "id": 244,
+    "gold_term": "Prohibition",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4957,
+      "levenshtein": 0.1429,
+      "semantic": 0.5007,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4121,
+    "selected": false,
+    "reason": "top-3 avg score 0.4121 < final_threshold 0.6"
+  },
+  {
+    "id": 245,
+    "gold_term": "Permission",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4949,
+      "levenshtein": 0.2308,
+      "semantic": 0.4804,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.412,
+    "selected": false,
+    "reason": "top-3 avg score 0.4120 < final_threshold 0.6"
+  },
+  {
+    "id": 246,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5317,
+      "levenshtein": 0.1429,
+      "semantic": 0.3946,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4114,
+    "selected": false,
+    "reason": "top-3 avg score 0.4114 < final_threshold 0.6"
+  },
+  {
+    "id": 247,
+    "gold_term": "AssetScope",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4949,
+      "levenshtein": 0.1538,
+      "semantic": 0.4777,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4112,
+    "selected": false,
+    "reason": "top-3 avg score 0.4112 < final_threshold 0.6"
+  },
+  {
+    "id": 248,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4982,
+      "levenshtein": 0.1053,
+      "semantic": 0.507,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4091,
+    "selected": false,
+    "reason": "top-3 avg score 0.4091 < final_threshold 0.6"
+  },
+  {
+    "id": 249,
+    "gold_term": "AssetCollection",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5617,
+      "levenshtein": 0.1176,
+      "semantic": 0.4156,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4091,
+    "selected": false,
+    "reason": "top-3 avg score 0.4091 < final_threshold 0.6"
+  },
+  {
+    "id": 250,
+    "gold_term": "Asset",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5143,
+      "levenshtein": 0.1429,
+      "semantic": 0.5014,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4087,
+    "selected": false,
+    "reason": "top-3 avg score 0.4087 < final_threshold 0.6"
+  },
+  {
+    "id": 251,
+    "gold_term": "Constraint",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1,
+      "semantic": 0.6327,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4085,
+    "selected": false,
+    "reason": "top-3 avg score 0.4085 < final_threshold 0.6"
+  },
+  {
+    "id": 252,
+    "gold_term": "Duty",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1,
+      "semantic": 0.6327,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4085,
+    "selected": false,
+    "reason": "top-3 avg score 0.4085 < final_threshold 0.6"
+  },
+  {
+    "id": 253,
+    "gold_term": "Party",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.0833,
+      "semantic": 0.4672,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4082,
+    "selected": false,
+    "reason": "top-3 avg score 0.4082 < final_threshold 0.6"
+  },
+  {
+    "id": 254,
+    "gold_term": "Operator",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3999,
+      "levenshtein": 0.2105,
+      "semantic": 0.5275,
+      "sequence_match": 0.2963
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4079,
+    "selected": false,
+    "reason": "top-3 avg score 0.4079 < final_threshold 0.6"
+  },
+  {
+    "id": 255,
+    "gold_term": "AssetCollection",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5389,
+      "levenshtein": 0.2,
+      "semantic": 0.473,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4075,
+    "selected": false,
+    "reason": "top-3 avg score 0.4075 < final_threshold 0.6"
+  },
+  {
+    "id": 256,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4272,
+      "levenshtein": 0.1765,
+      "semantic": 0.4704,
+      "sequence_match": 0.3226
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4067,
+    "selected": false,
+    "reason": "top-3 avg score 0.4067 < final_threshold 0.6"
+  },
+  {
+    "id": 257,
+    "gold_term": "Policy",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.1667,
+      "semantic": 0.4955,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4059,
+    "selected": false,
+    "reason": "top-3 avg score 0.4059 < final_threshold 0.6"
+  },
+  {
+    "id": 258,
+    "gold_term": "Constraint",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4535,
+      "levenshtein": 0.2105,
+      "semantic": 0.5521,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4054,
+    "selected": false,
+    "reason": "top-3 avg score 0.4054 < final_threshold 0.6"
+  },
+  {
+    "id": 259,
+    "gold_term": "Prohibition",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4738,
+      "levenshtein": 0.1538,
+      "semantic": 0.5755,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4053,
+    "selected": false,
+    "reason": "top-3 avg score 0.4053 < final_threshold 0.6"
+  },
+  {
+    "id": 260,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.496,
+      "levenshtein": 0.1905,
+      "semantic": 0.4162,
+      "sequence_match": 0.303
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4051,
+    "selected": false,
+    "reason": "top-3 avg score 0.4051 < final_threshold 0.6"
+  },
+  {
+    "id": 261,
+    "gold_term": "AssetScope",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4667,
+      "levenshtein": 0.1,
+      "semantic": 0.5471,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4046,
+    "selected": false,
+    "reason": "top-3 avg score 0.4046 < final_threshold 0.6"
+  },
+  {
+    "id": 262,
+    "gold_term": "Prohibition",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4665,
+      "levenshtein": 0.2143,
+      "semantic": 0.4262,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4042,
+    "selected": false,
+    "reason": "top-3 avg score 0.4042 < final_threshold 0.6"
+  },
+  {
+    "id": 263,
+    "gold_term": "Party",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.581,
+      "levenshtein": 0.0952,
+      "semantic": 0.4741,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.403,
+    "selected": false,
+    "reason": "top-3 avg score 0.4030 < final_threshold 0.6"
+  },
+  {
+    "id": 264,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4647,
+      "levenshtein": 0.1765,
+      "semantic": 0.5164,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4011,
+    "selected": false,
+    "reason": "top-3 avg score 0.4011 < final_threshold 0.6"
+  },
+  {
+    "id": 265,
+    "gold_term": "Prohibition",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4381,
+      "levenshtein": 0.0909,
+      "semantic": 0.5517,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4001,
+    "selected": false,
+    "reason": "top-3 avg score 0.4001 < final_threshold 0.6"
+  },
+  {
+    "id": 266,
+    "gold_term": "Rule",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.1,
+      "semantic": 0.6558,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3996,
+    "selected": false,
+    "reason": "top-3 avg score 0.3996 < final_threshold 0.6"
+  },
+  {
+    "id": 267,
+    "gold_term": "AssetScope",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5205,
+      "levenshtein": 0.1538,
+      "semantic": 0.4166,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3993,
+    "selected": false,
+    "reason": "top-3 avg score 0.3993 < final_threshold 0.6"
+  },
+  {
+    "id": 268,
+    "gold_term": "Action",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4841,
+      "levenshtein": 0.1429,
+      "semantic": 0.5125,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3989,
+    "selected": false,
+    "reason": "top-3 avg score 0.3989 < final_threshold 0.6"
+  },
+  {
+    "id": 269,
+    "gold_term": "Party",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.1538,
+      "semantic": 0.4561,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3987,
+    "selected": false,
+    "reason": "top-3 avg score 0.3987 < final_threshold 0.6"
+  },
+  {
+    "id": 270,
+    "gold_term": "Party",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4991,
+      "levenshtein": 0.0769,
+      "semantic": 0.474,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3985,
+    "selected": false,
+    "reason": "top-3 avg score 0.3985 < final_threshold 0.6"
+  },
+  {
+    "id": 271,
+    "gold_term": "AssetScope",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.2,
+      "semantic": 0.5431,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3977,
+    "selected": false,
+    "reason": "top-3 avg score 0.3977 < final_threshold 0.6"
+  },
+  {
+    "id": 272,
+    "gold_term": "Rule",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5278,
+      "levenshtein": 0.0833,
+      "semantic": 0.5225,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3977,
+    "selected": false,
+    "reason": "top-3 avg score 0.3977 < final_threshold 0.6"
+  },
+  {
+    "id": 273,
+    "gold_term": "Policy",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4477,
+      "levenshtein": 0.1765,
+      "semantic": 0.484,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3975,
+    "selected": false,
+    "reason": "top-3 avg score 0.3975 < final_threshold 0.6"
+  },
+  {
+    "id": 274,
+    "gold_term": "Rule",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.0909,
+      "semantic": 0.6115,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3973,
+    "selected": false,
+    "reason": "top-3 avg score 0.3973 < final_threshold 0.6"
+  },
+  {
+    "id": 275,
+    "gold_term": "Party",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3667,
+      "levenshtein": 0.1,
+      "semantic": 0.5582,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3972,
+    "selected": false,
+    "reason": "top-3 avg score 0.3972 < final_threshold 0.6"
+  },
+  {
+    "id": 276,
+    "gold_term": "Rule",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4423,
+      "levenshtein": 0.0769,
+      "semantic": 0.5133,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.397,
+    "selected": false,
+    "reason": "top-3 avg score 0.3970 < final_threshold 0.6"
+  },
+  {
+    "id": 277,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5298,
+      "levenshtein": 0.1667,
+      "semantic": 0.3832,
+      "sequence_match": 0.2778
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3969,
+    "selected": false,
+    "reason": "top-3 avg score 0.3969 < final_threshold 0.6"
+  },
+  {
+    "id": 278,
+    "gold_term": "LeftOperand",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4706,
+      "levenshtein": 0.2857,
+      "semantic": 0.4337,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3967,
+    "selected": false,
+    "reason": "top-3 avg score 0.3967 < final_threshold 0.6"
+  },
+  {
+    "id": 279,
+    "gold_term": "Operator",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4187,
+      "levenshtein": 0.1429,
+      "semantic": 0.4977,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3964,
+    "selected": false,
+    "reason": "top-3 avg score 0.3964 < final_threshold 0.6"
+  },
+  {
+    "id": 280,
+    "gold_term": "Permission",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.1,
+      "semantic": 0.6404,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3944,
+    "selected": false,
+    "reason": "top-3 avg score 0.3944 < final_threshold 0.6"
+  },
+  {
+    "id": 281,
+    "gold_term": "Duty",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5278,
+      "levenshtein": 0.0833,
+      "semantic": 0.5122,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3943,
+    "selected": false,
+    "reason": "top-3 avg score 0.3943 < final_threshold 0.6"
+  },
+  {
+    "id": 282,
+    "gold_term": "Duty",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4537,
+      "levenshtein": 0.1111,
+      "semantic": 0.5694,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3923,
+    "selected": false,
+    "reason": "top-3 avg score 0.3923 < final_threshold 0.6"
+  },
+  {
+    "id": 283,
+    "gold_term": "Action",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.1667,
+      "semantic": 0.5581,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3897,
+    "selected": false,
+    "reason": "top-3 avg score 0.3897 < final_threshold 0.6"
+  },
+  {
+    "id": 284,
+    "gold_term": "Permission",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4786,
+      "levenshtein": 0.2143,
+      "semantic": 0.4402,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3896,
+    "selected": false,
+    "reason": "top-3 avg score 0.3896 < final_threshold 0.6"
+  },
+  {
+    "id": 285,
+    "gold_term": "AssetScope",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4544,
+      "levenshtein": 0.1579,
+      "semantic": 0.5073,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3895,
+    "selected": false,
+    "reason": "top-3 avg score 0.3895 < final_threshold 0.6"
+  },
+  {
+    "id": 286,
+    "gold_term": "Party",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.575,
+      "levenshtein": 0.125,
+      "semantic": 0.449,
+      "sequence_match": 0.1379
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3873,
+    "selected": false,
+    "reason": "top-3 avg score 0.3873 < final_threshold 0.6"
+  },
+  {
+    "id": 287,
+    "gold_term": "Duty",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4363,
+      "levenshtein": 0.1176,
+      "semantic": 0.5338,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3868,
+    "selected": false,
+    "reason": "top-3 avg score 0.3868 < final_threshold 0.6"
+  },
+  {
+    "id": 288,
+    "gold_term": "AssetCollection",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.0667,
+      "semantic": 0.4471,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3861,
+    "selected": false,
+    "reason": "top-3 avg score 0.3861 < final_threshold 0.6"
+  },
+  {
+    "id": 289,
+    "gold_term": "LeftOperand",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.404,
+      "levenshtein": 0.0,
+      "semantic": 0.4788,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3852,
+    "selected": false,
+    "reason": "top-3 avg score 0.3852 < final_threshold 0.6"
+  },
+  {
+    "id": 290,
+    "gold_term": "Constraint",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1,
+      "semantic": 0.5622,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.385,
+    "selected": false,
+    "reason": "top-3 avg score 0.3850 < final_threshold 0.6"
+  },
+  {
+    "id": 291,
+    "gold_term": "Policy",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4957,
+      "levenshtein": 0.1538,
+      "semantic": 0.4483,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3849,
+    "selected": false,
+    "reason": "top-3 avg score 0.3849 < final_threshold 0.6"
+  },
+  {
+    "id": 292,
+    "gold_term": "Party",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4196,
+      "levenshtein": 0.1176,
+      "semantic": 0.5462,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3826,
+    "selected": false,
+    "reason": "top-3 avg score 0.3826 < final_threshold 0.6"
+  },
+  {
+    "id": 293,
+    "gold_term": "Operator",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4167,
+      "levenshtein": 0.125,
+      "semantic": 0.5565,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3799,
+    "selected": false,
+    "reason": "top-3 avg score 0.3799 < final_threshold 0.6"
+  },
+  {
+    "id": 294,
+    "gold_term": "Prohibition",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4606,
+      "levenshtein": 0.0909,
+      "semantic": 0.4849,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3787,
+    "selected": false,
+    "reason": "top-3 avg score 0.3787 < final_threshold 0.6"
+  },
+  {
+    "id": 295,
+    "gold_term": "LeftOperand",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4303,
+      "levenshtein": 0.1818,
+      "semantic": 0.5238,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3786,
+    "selected": false,
+    "reason": "top-3 avg score 0.3786 < final_threshold 0.6"
+  },
+  {
+    "id": 296,
+    "gold_term": "AssetScope",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4606,
+      "levenshtein": 0.0,
+      "semantic": 0.4833,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3781,
+    "selected": false,
+    "reason": "top-3 avg score 0.3781 < final_threshold 0.6"
+  },
+  {
+    "id": 297,
+    "gold_term": "AssetCollection",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4429,
+      "levenshtein": 0.0667,
+      "semantic": 0.4769,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3755,
+    "selected": false,
+    "reason": "top-3 avg score 0.3755 < final_threshold 0.6"
+  },
+  {
+    "id": 298,
+    "gold_term": "LeftOperand",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.0909,
+      "semantic": 0.5418,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.374,
+    "selected": false,
+    "reason": "top-3 avg score 0.3740 < final_threshold 0.6"
+  },
+  {
+    "id": 299,
+    "gold_term": "LeftOperand",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5217,
+      "levenshtein": 0.1765,
+      "semantic": 0.4239,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.374,
+    "selected": false,
+    "reason": "top-3 avg score 0.3740 < final_threshold 0.6"
+  },
+  {
+    "id": 300,
+    "gold_term": "Rule",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.0833,
+      "semantic": 0.5497,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.373,
+    "selected": false,
+    "reason": "top-3 avg score 0.3730 < final_threshold 0.6"
+  },
+  {
+    "id": 301,
+    "gold_term": "Duty",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4405,
+      "levenshtein": 0.0714,
+      "semantic": 0.5648,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3721,
+    "selected": false,
+    "reason": "top-3 avg score 0.3721 < final_threshold 0.6"
+  },
+  {
+    "id": 302,
+    "gold_term": "Permission",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.1,
+      "semantic": 0.5707,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3712,
+    "selected": false,
+    "reason": "top-3 avg score 0.3712 < final_threshold 0.6"
+  },
+  {
+    "id": 303,
+    "gold_term": "Policy",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4415,
+      "levenshtein": 0.1053,
+      "semantic": 0.5108,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3708,
+    "selected": false,
+    "reason": "top-3 avg score 0.3708 < final_threshold 0.6"
+  },
+  {
+    "id": 304,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4196,
+      "levenshtein": 0.1176,
+      "semantic": 0.5093,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3703,
+    "selected": false,
+    "reason": "top-3 avg score 0.3703 < final_threshold 0.6"
+  },
+  {
+    "id": 305,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5076,
+      "levenshtein": 0.1667,
+      "semantic": 0.4278,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3698,
+    "selected": false,
+    "reason": "top-3 avg score 0.3698 < final_threshold 0.6"
+  },
+  {
+    "id": 306,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3944,
+      "levenshtein": 0.0833,
+      "semantic": 0.4394,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3688,
+    "selected": false,
+    "reason": "top-3 avg score 0.3688 < final_threshold 0.6"
+  },
+  {
+    "id": 307,
+    "gold_term": "Permission",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4026,
+      "levenshtein": 0.1538,
+      "semantic": 0.5239,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3668,
+    "selected": false,
+    "reason": "top-3 avg score 0.3668 < final_threshold 0.6"
+  },
+  {
+    "id": 308,
+    "gold_term": "Duty",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.0833,
+      "semantic": 0.5275,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3656,
+    "selected": false,
+    "reason": "top-3 avg score 0.3656 < final_threshold 0.6"
+  },
+  {
+    "id": 309,
+    "gold_term": "Rule",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4423,
+      "levenshtein": 0.0769,
+      "semantic": 0.5345,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3648,
+    "selected": false,
+    "reason": "top-3 avg score 0.3648 < final_threshold 0.6"
+  },
+  {
+    "id": 310,
+    "gold_term": "Prohibition",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.0909,
+      "semantic": 0.5135,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3646,
+    "selected": false,
+    "reason": "top-3 avg score 0.3646 < final_threshold 0.6"
+  },
+  {
+    "id": 311,
+    "gold_term": "Duty",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1,
+      "semantic": 0.5001,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3643,
+    "selected": false,
+    "reason": "top-3 avg score 0.3643 < final_threshold 0.6"
+  },
+  {
+    "id": 312,
+    "gold_term": "AssetScope",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1,
+      "semantic": 0.4995,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3641,
+    "selected": false,
+    "reason": "top-3 avg score 0.3641 < final_threshold 0.6"
+  },
+  {
+    "id": 313,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5427,
+      "levenshtein": 0.0769,
+      "semantic": 0.388,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3636,
+    "selected": false,
+    "reason": "top-3 avg score 0.3636 < final_threshold 0.6"
+  },
+  {
+    "id": 314,
+    "gold_term": "Asset",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4303,
+      "levenshtein": 0.0909,
+      "semantic": 0.5349,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3634,
+    "selected": false,
+    "reason": "top-3 avg score 0.3634 < final_threshold 0.6"
+  },
+  {
+    "id": 315,
+    "gold_term": "Prohibition",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4303,
+      "levenshtein": 0.0909,
+      "semantic": 0.5349,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3634,
+    "selected": false,
+    "reason": "top-3 avg score 0.3634 < final_threshold 0.6"
+  },
+  {
+    "id": 316,
+    "gold_term": "AssetScope",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4222,
+      "levenshtein": 0.1,
+      "semantic": 0.5336,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3603,
+    "selected": false,
+    "reason": "top-3 avg score 0.3603 < final_threshold 0.6"
+  },
+  {
+    "id": 317,
+    "gold_term": "Asset",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3513,
+      "levenshtein": 0.1538,
+      "semantic": 0.5068,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3601,
+    "selected": false,
+    "reason": "top-3 avg score 0.3601 < final_threshold 0.6"
+  },
+  {
+    "id": 318,
+    "gold_term": "Asset",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4607,
+      "levenshtein": 0.1154,
+      "semantic": 0.4815,
+      "sequence_match": 0.129
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3571,
+    "selected": false,
+    "reason": "top-3 avg score 0.3571 < final_threshold 0.6"
+  },
+  {
+    "id": 319,
+    "gold_term": "Asset",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3351,
+      "levenshtein": 0.1053,
+      "semantic": 0.568,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3566,
+    "selected": false,
+    "reason": "top-3 avg score 0.3566 < final_threshold 0.6"
+  },
+  {
+    "id": 320,
+    "gold_term": "Rule",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.381,
+      "levenshtein": 0.1429,
+      "semantic": 0.4638,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3556,
+    "selected": false,
+    "reason": "top-3 avg score 0.3556 < final_threshold 0.6"
+  },
+  {
+    "id": 321,
+    "gold_term": "Duty",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4342,
+      "levenshtein": 0.0526,
+      "semantic": 0.5453,
+      "sequence_match": 0.087
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3555,
+    "selected": false,
+    "reason": "top-3 avg score 0.3555 < final_threshold 0.6"
+  },
+  {
+    "id": 322,
+    "gold_term": "Duty",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4423,
+      "levenshtein": 0.0769,
+      "semantic": 0.5058,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3552,
+    "selected": false,
+    "reason": "top-3 avg score 0.3552 < final_threshold 0.6"
+  },
+  {
+    "id": 323,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4944,
+      "levenshtein": 0.0833,
+      "semantic": 0.3843,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3535,
+    "selected": false,
+    "reason": "top-3 avg score 0.3535 < final_threshold 0.6"
+  },
+  {
+    "id": 324,
+    "gold_term": "Prohibition",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4496,
+      "levenshtein": 0.1765,
+      "semantic": 0.3949,
+      "sequence_match": 0.2143
+    },
+    "is_hard_match": false,
+    "agg_score": 0.353,
+    "selected": false,
+    "reason": "top-3 avg score 0.3530 < final_threshold 0.6"
+  },
+  {
+    "id": 325,
+    "gold_term": "Constraint",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3667,
+      "levenshtein": 0.1,
+      "semantic": 0.5582,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3527,
+    "selected": false,
+    "reason": "top-3 avg score 0.3527 < final_threshold 0.6"
+  },
+  {
+    "id": 326,
+    "gold_term": "Policy",
+    "pred_term": "Transfer Rights",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4127,
+      "levenshtein": 0.0714,
+      "semantic": 0.5455,
+      "sequence_match": 0.1
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3527,
+    "selected": false,
+    "reason": "top-3 avg score 0.3527 < final_threshold 0.6"
+  },
+  {
+    "id": 327,
+    "gold_term": "AssetCollection",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4389,
+      "levenshtein": 0.0667,
+      "semantic": 0.5127,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3523,
+    "selected": false,
+    "reason": "top-3 avg score 0.3523 < final_threshold 0.6"
+  },
+  {
+    "id": 328,
+    "gold_term": "AssetScope",
+    "pred_term": "or constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4111,
+      "levenshtein": 0.0833,
+      "semantic": 0.4638,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3522,
+    "selected": false,
+    "reason": "top-3 avg score 0.3522 < final_threshold 0.6"
+  },
+  {
+    "id": 329,
+    "gold_term": "Duty",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4423,
+      "levenshtein": 0.0769,
+      "semantic": 0.494,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3513,
+    "selected": false,
+    "reason": "top-3 avg score 0.3513 < final_threshold 0.6"
+  },
+  {
+    "id": 330,
+    "gold_term": "Operator",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3611,
+      "levenshtein": 0.125,
+      "semantic": 0.5405,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3481,
+    "selected": false,
+    "reason": "top-3 avg score 0.3481 < final_threshold 0.6"
+  },
+  {
+    "id": 331,
+    "gold_term": "Operator",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4083,
+      "levenshtein": 0.1,
+      "semantic": 0.5205,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3467,
+    "selected": false,
+    "reason": "top-3 avg score 0.3467 < final_threshold 0.6"
+  },
+  {
+    "id": 332,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.0833,
+      "semantic": 0.4688,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3461,
+    "selected": false,
+    "reason": "top-3 avg score 0.3461 < final_threshold 0.6"
+  },
+  {
+    "id": 333,
+    "gold_term": "AssetScope",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4308,
+      "levenshtein": 0.1538,
+      "semantic": 0.4365,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3446,
+    "selected": false,
+    "reason": "top-3 avg score 0.3446 < final_threshold 0.6"
+  },
+  {
+    "id": 334,
+    "gold_term": "Duty",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4325,
+      "levenshtein": 0.0476,
+      "semantic": 0.5175,
+      "sequence_match": 0.08
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3434,
+    "selected": false,
+    "reason": "top-3 avg score 0.3434 < final_threshold 0.6"
+  },
+  {
+    "id": 335,
+    "gold_term": "AssetScope",
+    "pred_term": "xor constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4026,
+      "levenshtein": 0.0769,
+      "semantic": 0.452,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3428,
+    "selected": false,
+    "reason": "top-3 avg score 0.3428 < final_threshold 0.6"
+  },
+  {
+    "id": 336,
+    "gold_term": "Permission",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.381,
+      "levenshtein": 0.1176,
+      "semantic": 0.4907,
+      "sequence_match": 0.1481
+    },
+    "is_hard_match": false,
+    "agg_score": 0.34,
+    "selected": false,
+    "reason": "top-3 avg score 0.3400 < final_threshold 0.6"
+  },
+  {
+    "id": 337,
+    "gold_term": "Duty",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.359,
+      "levenshtein": 0.1154,
+      "semantic": 0.4604,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3398,
+    "selected": false,
+    "reason": "top-3 avg score 0.3398 < final_threshold 0.6"
+  },
+  {
+    "id": 338,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4278,
+      "levenshtein": 0.0833,
+      "semantic": 0.463,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3361,
+    "selected": false,
+    "reason": "top-3 avg score 0.3361 < final_threshold 0.6"
+  },
+  {
+    "id": 339,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3725,
+      "levenshtein": 0.1176,
+      "semantic": 0.5161,
+      "sequence_match": 0.0952
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3354,
+    "selected": false,
+    "reason": "top-3 avg score 0.3354 < final_threshold 0.6"
+  },
+  {
+    "id": 340,
+    "gold_term": "Policy",
+    "pred_term": "Aggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3095,
+      "levenshtein": 0.0952,
+      "semantic": 0.5469,
+      "sequence_match": 0.1481
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3348,
+    "selected": false,
+    "reason": "top-3 avg score 0.3348 < final_threshold 0.6"
+  },
+  {
+    "id": 341,
+    "gold_term": "Policy",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3291,
+      "levenshtein": 0.1538,
+      "semantic": 0.4573,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3323,
+    "selected": false,
+    "reason": "top-3 avg score 0.3323 < final_threshold 0.6"
+  },
+  {
+    "id": 342,
+    "gold_term": "Policy",
+    "pred_term": "Not Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3291,
+      "levenshtein": 0.1538,
+      "semantic": 0.4488,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3295,
+    "selected": false,
+    "reason": "top-3 avg score 0.3295 < final_threshold 0.6"
+  },
+  {
+    "id": 343,
+    "gold_term": "Asset",
+    "pred_term": "Contract Party Role",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3392,
+      "levenshtein": 0.1176,
+      "semantic": 0.4658,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.329,
+    "selected": false,
+    "reason": "top-3 avg score 0.3290 < final_threshold 0.6"
+  },
+  {
+    "id": 344,
+    "gold_term": "Policy",
+    "pred_term": "Disaggregation Permission",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3056,
+      "levenshtein": 0.0833,
+      "semantic": 0.541,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3266,
+    "selected": false,
+    "reason": "top-3 avg score 0.3266 < final_threshold 0.6"
+  },
+  {
+    "id": 345,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.2889,
+      "levenshtein": 0.0,
+      "semantic": 0.5005,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3237,
+    "selected": false,
+    "reason": "top-3 avg score 0.3237 < final_threshold 0.6"
+  },
+  {
+    "id": 346,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4278,
+      "levenshtein": 0.0833,
+      "semantic": 0.4112,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3189,
+    "selected": false,
+    "reason": "top-3 avg score 0.3189 < final_threshold 0.6"
+  },
+  {
+    "id": 347,
+    "gold_term": "Party",
+    "pred_term": "Deontic Element",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4238,
+      "levenshtein": 0.0714,
+      "semantic": 0.4273,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3188,
+    "selected": false,
+    "reason": "top-3 avg score 0.3188 < final_threshold 0.6"
+  },
+  {
+    "id": 348,
+    "gold_term": "Policy",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3444,
+      "levenshtein": 0.1,
+      "semantic": 0.4848,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3181,
+    "selected": false,
+    "reason": "top-3 avg score 0.3181 < final_threshold 0.6"
+  },
+  {
+    "id": 349,
+    "gold_term": "LeftOperand",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3384,
+      "levenshtein": 0.0909,
+      "semantic": 0.4718,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3093,
+    "selected": false,
+    "reason": "top-3 avg score 0.3093 < final_threshold 0.6"
+  },
+  {
+    "id": 350,
+    "gold_term": "Rule",
+    "pred_term": "Contract",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.125,
+      "semantic": 0.6314,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3077,
+    "selected": false,
+    "reason": "top-3 avg score 0.3077 < final_threshold 0.6"
+  },
+  {
+    "id": 351,
+    "gold_term": "Party",
+    "pred_term": "Conflict Resolution Strategy",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3256,
+      "levenshtein": 0.1154,
+      "semantic": 0.4014,
+      "sequence_match": 0.1935
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3069,
+    "selected": false,
+    "reason": "top-3 avg score 0.3069 < final_threshold 0.6"
+  },
+  {
+    "id": 352,
+    "gold_term": "Rule",
+    "pred_term": "Constraint",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.1,
+      "semantic": 0.6452,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.296,
+    "selected": false,
+    "reason": "top-3 avg score 0.2960 < final_threshold 0.6"
+  },
+  {
+    "id": 353,
+    "gold_term": "Rule",
+    "pred_term": "Container",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.1111,
+      "semantic": 0.6121,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2923,
+    "selected": false,
+    "reason": "top-3 avg score 0.2923 < final_threshold 0.6"
+  },
+  {
+    "id": 354,
+    "gold_term": "ConflictTerm",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.1667,
+      "semantic": 0.4486,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2884,
+    "selected": false,
+    "reason": "top-3 avg score 0.2884 < final_threshold 0.6"
+  },
+  {
+    "id": 355,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.1176,
+      "semantic": 0.5414,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2832,
+    "selected": false,
+    "reason": "top-3 avg score 0.2832 < final_threshold 0.6"
+  },
+  {
+    "id": 356,
+    "gold_term": "Rule",
+    "pred_term": "Party",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.618,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2801,
+    "selected": false,
+    "reason": "top-3 avg score 0.2801 < final_threshold 0.6"
+  },
+  {
+    "id": 357,
+    "gold_term": "Duty",
+    "pred_term": "Prohibition",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0909,
+      "semantic": 0.6154,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2799,
+    "selected": false,
+    "reason": "top-3 avg score 0.2799 < final_threshold 0.6"
+  },
+  {
+    "id": 358,
+    "gold_term": "Prohibition",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0909,
+      "semantic": 0.6154,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2799,
+    "selected": false,
+    "reason": "top-3 avg score 0.2799 < final_threshold 0.6"
+  },
+  {
+    "id": 359,
+    "gold_term": "Asset",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6156,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2793,
+    "selected": false,
+    "reason": "top-3 avg score 0.2793 < final_threshold 0.6"
+  },
+  {
+    "id": 360,
+    "gold_term": "Duty",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6156,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2793,
+    "selected": false,
+    "reason": "top-3 avg score 0.2793 < final_threshold 0.6"
+  },
+  {
+    "id": 361,
+    "gold_term": "Action",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6084,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2695,
+    "selected": false,
+    "reason": "top-3 avg score 0.2695 < final_threshold 0.6"
+  },
+  {
+    "id": 362,
+    "gold_term": "Party",
+    "pred_term": "Exclusive Permission",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.1053,
+      "semantic": 0.5267,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2662,
+    "selected": false,
+    "reason": "top-3 avg score 0.2662 < final_threshold 0.6"
+  },
+  {
+    "id": 363,
+    "gold_term": "Party",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5698,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.264,
+    "selected": false,
+    "reason": "top-3 avg score 0.2640 < final_threshold 0.6"
+  },
+  {
+    "id": 364,
+    "gold_term": "Party",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5675,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2632,
+    "selected": false,
+    "reason": "top-3 avg score 0.2632 < final_threshold 0.6"
+  },
+  {
+    "id": 365,
+    "gold_term": "LogicalConstraint",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0588,
+      "semantic": 0.575,
+      "sequence_match": 0.0952
+    },
+    "is_hard_match": false,
+    "agg_score": 0.243,
+    "selected": false,
+    "reason": "top-3 avg score 0.2430 < final_threshold 0.6"
+  },
+  {
+    "id": 366,
+    "gold_term": "Rule",
+    "pred_term": "and constraint",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0769,
+      "semantic": 0.5306,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2417,
+    "selected": false,
+    "reason": "top-3 avg score 0.2417 < final_threshold 0.6"
+  },
+  {
+    "id": 367,
+    "gold_term": "Policy",
+    "pred_term": "Step",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.481,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.227,
+    "selected": false,
+    "reason": "top-3 avg score 0.2270 < final_threshold 0.6"
+  },
+  {
+    "id": 368,
+    "gold_term": "Duty",
+    "pred_term": "Permission",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6216,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2072,
+    "selected": false,
+    "reason": "top-3 avg score 0.2072 < final_threshold 0.6"
+  },
+  {
+    "id": 369,
+    "gold_term": "Permission",
+    "pred_term": "Duty",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6216,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2072,
+    "selected": false,
+    "reason": "top-3 avg score 0.2072 < final_threshold 0.6"
+  },
+  {
+    "id": 370,
+    "gold_term": "Duty",
+    "pred_term": "Role",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.619,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2063,
+    "selected": false,
+    "reason": "top-3 avg score 0.2063 < final_threshold 0.6"
+  },
+  {
+    "id": 371,
+    "gold_term": "Duty",
+    "pred_term": "Expression",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.603,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.201,
+    "selected": false,
+    "reason": "top-3 avg score 0.2010 < final_threshold 0.6"
+  },
+  {
+    "id": 372,
+    "gold_term": "Duty",
+    "pred_term": "Logical Expression",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5709,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1903,
+    "selected": false,
+    "reason": "top-3 avg score 0.1903 < final_threshold 0.6"
+  },
+  {
+    "id": 373,
+    "gold_term": "Asset",
+    "pred_term": "Policy",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5576,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1859,
+    "selected": false,
+    "reason": "top-3 avg score 0.1859 < final_threshold 0.6"
+  },
+  {
+    "id": 374,
+    "gold_term": "Policy",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5576,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1859,
+    "selected": false,
+    "reason": "top-3 avg score 0.1859 < final_threshold 0.6"
+  },
+  {
+    "id": 375,
+    "gold_term": "Party",
+    "pred_term": "Sequencing",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5158,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1719,
+    "selected": false,
+    "reason": "top-3 avg score 0.1719 < final_threshold 0.6"
+  }
+]

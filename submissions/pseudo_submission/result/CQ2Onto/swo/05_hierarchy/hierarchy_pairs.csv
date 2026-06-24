@@ -1,0 +1,10 @@
+side,dimension,sub,sup,status,raw_pred_sub,raw_pred_sup
+gold,class,SWO_1000008,SWO_0000002,FN,,
+gold,class,SWO_1000059,SWO_1000058,FN,,
+gold,class,SWO_1000060,SWO_1000058,FN,,
+gold,class,SWO_9000051,SWO_9000050,FN,,
+gold,class,SWO_9000054,SWO_9000050,FN,,
+gold,class,SWO_9000073,SWO_9000061,FN,,
+gold,class,format_2332,IAO_0000098,FN,,
+pred,class,,,untranslated,OpenFormat,Format
+gold,property,SWO_0004002,SWO_0000741,FN,,

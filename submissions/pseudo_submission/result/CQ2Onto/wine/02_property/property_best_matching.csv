@@ -1,0 +1,3 @@
+Gold_term,Pre_term,Method,Score
+hasVintageYear,has vintage,top3_avg(jaro_winkler+semantic+sequence_match),0.8854
+hasWineDescriptor,has wine characteristic,top3_avg(jaro_winkler+semantic+sequence_match),0.7371

@@ -1,0 +1,78 @@
+role,gold_term,pred_term,top_methods_used,scores_by_method,is_hard_match,agg_score,selected,reason
+class,player,player,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0000,True,selected
+class,game,game,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0000,True,selected
+class,achievement,achievement,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0000,True,selected
+class,genre,genre,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0000,True,selected
+class,item,item,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0000,True,selected
+class,playingarea,playingarea,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0000,True,selected
+class,inapppurchaseevent,inapppurchase,jaro_winkler+semantic+sequence_match,jaro_winkler=0.9444; levenshtein=0.7222; semantic=0.8825; sequence_match=0.8387,False,0.8886,True,selected
+class,achievement,achievementtype,jaro_winkler+semantic+sequence_match,jaro_winkler=0.9467; levenshtein=0.7333; semantic=0.8547; sequence_match=0.8462,False,0.8825,False,gold already mapped to 'achievement'
+class,player,playingarea,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8576; levenshtein=0.4545; semantic=0.6572; sequence_match=0.5882,False,0.7010,False,gold already mapped to 'player'
+class,playingarea,player,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8576; levenshtein=0.4545; semantic=0.6572; sequence_match=0.5882,False,0.7010,False,gold already mapped to 'playingarea'
+class,inapppurchaseevent,achievement,jaro_winkler+sequence_match+semantic,jaro_winkler=0.6616; levenshtein=0.3889; semantic=0.5154; sequence_match=0.5517,False,0.5763,False,top-3 avg score 0.5763 < final_threshold 0.6
+class,game,genre,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6333; levenshtein=0.4000; semantic=0.6177; sequence_match=0.4444,False,0.5652,False,top-3 avg score 0.5652 < final_threshold 0.6
+class,genre,game,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6333; levenshtein=0.4000; semantic=0.6177; sequence_match=0.4444,False,0.5652,False,top-3 avg score 0.5652 < final_threshold 0.6
+class,player,game,semantic+jaro_winkler+sequence_match,jaro_winkler=0.6111; levenshtein=0.3333; semantic=0.6803; sequence_match=0.4000,False,0.5638,False,top-3 avg score 0.5638 < final_threshold 0.6
+class,game,player,semantic+jaro_winkler+sequence_match,jaro_winkler=0.6111; levenshtein=0.3333; semantic=0.6803; sequence_match=0.4000,False,0.5638,False,top-3 avg score 0.5638 < final_threshold 0.6
+class,achievement,item,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6742; levenshtein=0.2727; semantic=0.5747; sequence_match=0.4000,False,0.5497,False,top-3 avg score 0.5497 < final_threshold 0.6
+class,item,achievement,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6742; levenshtein=0.2727; semantic=0.5747; sequence_match=0.4000,False,0.5497,False,top-3 avg score 0.5497 < final_threshold 0.6
+class,game,achievement,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5606; levenshtein=0.1818; semantic=0.6666; sequence_match=0.4000,False,0.5424,False,top-3 avg score 0.5424 < final_threshold 0.6
+class,achievement,game,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5606; levenshtein=0.1818; semantic=0.6666; sequence_match=0.4000,False,0.5424,False,top-3 avg score 0.5424 < final_threshold 0.6
+class,inapppurchaseevent,achievementtype,jaro_winkler+sequence_match+semantic,jaro_winkler=0.6074; levenshtein=0.1667; semantic=0.4614; sequence_match=0.4848,False,0.5179,False,top-3 avg score 0.5179 < final_threshold 0.6
+class,item,friend,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6111; levenshtein=0.1667; semantic=0.5391; sequence_match=0.4000,False,0.5167,False,top-3 avg score 0.5167 < final_threshold 0.6
+class,playingarea,location,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6212; levenshtein=0.0909; semantic=0.4987; sequence_match=0.4211,False,0.5137,False,top-3 avg score 0.5137 < final_threshold 0.6
+class,game,customer,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5833; levenshtein=0.2500; semantic=0.5859; sequence_match=0.3333,False,0.5008,False,top-3 avg score 0.5008 < final_threshold 0.6
+class,item,achievementtype,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6500; levenshtein=0.2000; semantic=0.5353; sequence_match=0.3158,False,0.5004,False,top-3 avg score 0.5004 < final_threshold 0.6
+class,genre,friend,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5889; levenshtein=0.1667; semantic=0.5380; sequence_match=0.3636,False,0.4968,False,top-3 avg score 0.4968 < final_threshold 0.6
+class,game,playingarea,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4470; levenshtein=0.2727; semantic=0.6287; sequence_match=0.4000,False,0.4919,False,top-3 avg score 0.4919 < final_threshold 0.6
+class,playingarea,game,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4470; levenshtein=0.2727; semantic=0.6287; sequence_match=0.4000,False,0.4919,False,top-3 avg score 0.4919 < final_threshold 0.6
+class,item,customer,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5833; levenshtein=0.2500; semantic=0.5547; sequence_match=0.3333,False,0.4905,False,top-3 avg score 0.4905 < final_threshold 0.6
+class,achievement,friend,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5051; levenshtein=0.2727; semantic=0.5881; sequence_match=0.3529,False,0.4820,False,top-3 avg score 0.4820 < final_threshold 0.6
+class,game,achievementtype,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5389; levenshtein=0.1333; semantic=0.5668; sequence_match=0.3158,False,0.4738,False,top-3 avg score 0.4738 < final_threshold 0.6
+class,player,customer,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5278; levenshtein=0.2500; semantic=0.5971; sequence_match=0.2857,False,0.4702,False,top-3 avg score 0.4702 < final_threshold 0.6
+class,playingarea,inapppurchase,jaro_winkler+sequence_match+semantic,jaro_winkler=0.5821; levenshtein=0.1538; semantic=0.4101; sequence_match=0.4167,False,0.4696,False,top-3 avg score 0.4696 < final_threshold 0.6
+class,achievement,location,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5379; levenshtein=0.0909; semantic=0.5362; sequence_match=0.3158,False,0.4633,False,top-3 avg score 0.4633 < final_threshold 0.6
+class,genre,achievementtype,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5111; levenshtein=0.2000; semantic=0.5591; sequence_match=0.3000,False,0.4568,False,top-3 avg score 0.4568 < final_threshold 0.6
+class,game,item,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5000; levenshtein=0.0000; semantic=0.6119; sequence_match=0.2500,False,0.4540,False,top-3 avg score 0.4540 < final_threshold 0.6
+class,item,game,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5000; levenshtein=0.0000; semantic=0.6119; sequence_match=0.2500,False,0.4540,False,top-3 avg score 0.4540 < final_threshold 0.6
+class,achievement,customer,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4381; levenshtein=0.2727; semantic=0.5864; sequence_match=0.3158,False,0.4468,False,top-3 avg score 0.4468 < final_threshold 0.6
+class,player,achievement,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5051; levenshtein=0.0909; semantic=0.5805; sequence_match=0.2353,False,0.4403,False,top-3 avg score 0.4403 < final_threshold 0.6
+class,achievement,player,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5051; levenshtein=0.0909; semantic=0.5805; sequence_match=0.2353,False,0.4403,False,top-3 avg score 0.4403 < final_threshold 0.6
+class,achievement,genre,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5273; levenshtein=0.1818; semantic=0.5432; sequence_match=0.2500,False,0.4402,False,top-3 avg score 0.4402 < final_threshold 0.6
+class,genre,achievement,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5273; levenshtein=0.1818; semantic=0.5432; sequence_match=0.2500,False,0.4402,False,top-3 avg score 0.4402 < final_threshold 0.6
+class,achievement,playingarea,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4924; levenshtein=0.0909; semantic=0.5365; sequence_match=0.2727,False,0.4339,False,top-3 avg score 0.4339 < final_threshold 0.6
+class,playingarea,achievement,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4924; levenshtein=0.0909; semantic=0.5365; sequence_match=0.2727,False,0.4339,False,top-3 avg score 0.4339 < final_threshold 0.6
+class,player,location,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5278; levenshtein=0.1250; semantic=0.4882; sequence_match=0.2857,False,0.4339,False,top-3 avg score 0.4339 < final_threshold 0.6
+class,player,genre,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4111; levenshtein=0.1667; semantic=0.5096; sequence_match=0.3636,False,0.4281,False,top-3 avg score 0.4281 < final_threshold 0.6
+class,genre,player,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4111; levenshtein=0.1667; semantic=0.5096; sequence_match=0.3636,False,0.4281,False,top-3 avg score 0.4281 < final_threshold 0.6
+class,inapppurchaseevent,playingarea,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5322; levenshtein=0.1667; semantic=0.4057; sequence_match=0.3448,False,0.4276,False,top-3 avg score 0.4276 < final_threshold 0.6
+class,genre,playingarea,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4303; levenshtein=0.2727; semantic=0.4742; sequence_match=0.3750,False,0.4265,False,top-3 avg score 0.4265 < final_threshold 0.6
+class,playingarea,genre,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4303; levenshtein=0.2727; semantic=0.4742; sequence_match=0.3750,False,0.4265,False,top-3 avg score 0.4265 < final_threshold 0.6
+class,genre,item,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4833; levenshtein=0.0000; semantic=0.5661; sequence_match=0.2222,False,0.4239,False,top-3 avg score 0.4239 < final_threshold 0.6
+class,item,genre,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4833; levenshtein=0.0000; semantic=0.5661; sequence_match=0.2222,False,0.4239,False,top-3 avg score 0.4239 < final_threshold 0.6
+class,genre,customer,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4417; levenshtein=0.1250; semantic=0.5197; sequence_match=0.3077,False,0.4230,False,top-3 avg score 0.4230 < final_threshold 0.6
+class,game,friend,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4722; levenshtein=0.1667; semantic=0.5955; sequence_match=0.2000,False,0.4226,False,top-3 avg score 0.4226 < final_threshold 0.6
+class,player,inapppurchase,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4658; levenshtein=0.1538; semantic=0.4514; sequence_match=0.3158,False,0.4110,False,top-3 avg score 0.4110 < final_threshold 0.6
+class,playingarea,friend,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5051; levenshtein=0.0909; semantic=0.4819; sequence_match=0.2353,False,0.4074,False,top-3 avg score 0.4074 < final_threshold 0.6
+class,player,item,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4722; levenshtein=0.1667; semantic=0.5416; sequence_match=0.2000,False,0.4046,False,top-3 avg score 0.4046 < final_threshold 0.6
+class,item,player,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4722; levenshtein=0.1667; semantic=0.5416; sequence_match=0.2000,False,0.4046,False,top-3 avg score 0.4046 < final_threshold 0.6
+class,game,inapppurchase,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4423; levenshtein=0.1538; semantic=0.5295; sequence_match=0.2353,False,0.4024,False,top-3 avg score 0.4024 < final_threshold 0.6
+class,inapppurchaseevent,genre,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5889; levenshtein=0.1111; semantic=0.4326; sequence_match=0.1739,False,0.3985,False,top-3 avg score 0.3985 < final_threshold 0.6
+class,achievement,inapppurchase,semantic+jaro_winkler+sequence_match,jaro_winkler=0.3901; levenshtein=0.0769; semantic=0.4656; sequence_match=0.3333,False,0.3963,False,top-3 avg score 0.3963 < final_threshold 0.6
+class,player,friend,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4444; levenshtein=0.0000; semantic=0.5638; sequence_match=0.1667,False,0.3916,False,top-3 avg score 0.3916 < final_threshold 0.6
+class,inapppurchaseevent,game,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4352; levenshtein=0.1111; semantic=0.5399; sequence_match=0.1818,False,0.3856,False,top-3 avg score 0.3856 < final_threshold 0.6
+class,game,location,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4583; levenshtein=0.1250; semantic=0.5300; sequence_match=0.1667,False,0.3850,False,top-3 avg score 0.3850 < final_threshold 0.6
+class,player,achievementtype,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4889; levenshtein=0.0667; semantic=0.4730; sequence_match=0.1905,False,0.3841,False,top-3 avg score 0.3841 < final_threshold 0.6
+class,item,playingarea,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4470; levenshtein=0.1818; semantic=0.4314; sequence_match=0.2667,False,0.3817,False,top-3 avg score 0.3817 < final_threshold 0.6
+class,playingarea,item,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4470; levenshtein=0.1818; semantic=0.4314; sequence_match=0.2667,False,0.3817,False,top-3 avg score 0.3817 < final_threshold 0.6
+class,item,inapppurchase,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4423; levenshtein=0.0769; semantic=0.4639; sequence_match=0.2353,False,0.3805,False,top-3 avg score 0.3805 < final_threshold 0.6
+class,item,location,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4583; levenshtein=0.1250; semantic=0.4839; sequence_match=0.1667,False,0.3696,False,top-3 avg score 0.3696 < final_threshold 0.6
+class,genre,inapppurchase,jaro_winkler+semantic+levenshtein,jaro_winkler=0.5179; levenshtein=0.1538; semantic=0.4317; sequence_match=0.1111,False,0.3678,False,top-3 avg score 0.3678 < final_threshold 0.6
+class,inapppurchaseevent,friend,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4444; levenshtein=0.1667; semantic=0.4026; sequence_match=0.2500,False,0.3657,False,top-3 avg score 0.3657 < final_threshold 0.6
+class,inapppurchaseevent,item,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4352; levenshtein=0.1111; semantic=0.4650; sequence_match=0.1818,False,0.3607,False,top-3 avg score 0.3607 < final_threshold 0.6
+class,playingarea,achievementtype,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4601; levenshtein=0.0667; semantic=0.4584; sequence_match=0.1538,False,0.3575,False,top-3 avg score 0.3575 < final_threshold 0.6
+class,inapppurchaseevent,player,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4630; levenshtein=0.1667; semantic=0.4182; sequence_match=0.1667,False,0.3493,False,top-3 avg score 0.3493 < final_threshold 0.6
+class,inapppurchaseevent,customer,semantic+jaro_winkler+levenshtein,jaro_winkler=0.4074; levenshtein=0.1667; semantic=0.4626; sequence_match=0.1538,False,0.3456,False,top-3 avg score 0.3456 < final_threshold 0.6
+class,inapppurchaseevent,location,jaro_winkler+semantic+levenshtein,jaro_winkler=0.4074; levenshtein=0.1667; semantic=0.3483; sequence_match=0.1538,False,0.3074,False,top-3 avg score 0.3074 < final_threshold 0.6
+class,playingarea,customer,semantic+jaro_winkler+sequence_match,jaro_winkler=0.3106; levenshtein=0.0909; semantic=0.4454; sequence_match=0.1053,False,0.2871,False,top-3 avg score 0.2871 < final_threshold 0.6
+class,genre,location,semantic+sequence_match+jaro_winkler,jaro_winkler=0.0000; levenshtein=0.0000; semantic=0.4612; sequence_match=0.1538,False,0.2050,False,top-3 avg score 0.2050 < final_threshold 0.6

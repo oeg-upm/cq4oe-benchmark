@@ -1,0 +1,13 @@
+Gold_term,Pre_term,Method,Score
+Actuator,Actuator,hard_match,1.0
+ChemicalProperty,Chemical property,hard_match,1.0
+Measurement,Water measurement,top3_avg(jaro_winkler+semantic+sequence_match),0.8156693486787386
+Sensor,Sensor,hard_match,1.0
+Tariff,Tariff,hard_match,1.0
+Temporal duration,Temperature,top3_avg(jaro_winkler+semantic+sequence_match),0.6394166982401367
+Temporal entity,Temporal setting,top3_avg(jaro_winkler+semantic+sequence_match),0.8259440107360838
+Water,Water,hard_match,1.0
+Water asset,Asset,top3_avg(jaro_winkler+semantic+sequence_match),0.7019510878456963
+Water infrastructure,Water distribution infrastructure,top3_avg(jaro_winkler+semantic+sequence_match),0.8477895568384582
+Water meter,Water meter,hard_match,1.0
+Water property,Physical property,top3_avg(jaro_winkler+semantic+sequence_match),0.6602226145496949

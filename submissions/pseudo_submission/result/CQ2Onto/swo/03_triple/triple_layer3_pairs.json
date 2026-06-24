@@ -1,0 +1,305 @@
+[
+  {
+    "id": 1,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has release date",
+    "pred_predicate": "release date",
+    "gold_predicate_norm": "hasreleasedate",
+    "pred_predicate_norm": "releasedate",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "version"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "version"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": [
+      "xsd:string"
+    ],
+    "pred_range": [
+      "xsd:date"
+    ],
+    "gold_range_norm": [
+      "xsdstring"
+    ],
+    "pred_range_norm": [
+      "xsddate"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 2,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has format specification",
+    "pred_predicate": "has modification",
+    "gold_predicate_norm": "hasformatspecification",
+    "pred_predicate_norm": "hasmodification",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "data item"
+    ],
+    "pred_domain": [
+      "Algorithm"
+    ],
+    "gold_domain_norm": [
+      "dataitem"
+    ],
+    "pred_domain_norm": [
+      "algorithm"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "data format specification"
+    ],
+    "pred_range": [
+      "Modification"
+    ],
+    "gold_range_norm": [
+      "dataformatspecification"
+    ],
+    "pred_range_norm": [
+      "modification"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 3,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has input",
+    "pred_predicate": "has input format",
+    "gold_predicate_norm": "hasinput",
+    "pred_predicate_norm": "hasinputformat",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Tool"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "tool"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "format"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "format"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 4,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has license",
+    "pred_predicate": "has license",
+    "gold_predicate_norm": "haslicense",
+    "pred_predicate_norm": "haslicense",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Tool"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "tool"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "License"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "license"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 5,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has output",
+    "pred_predicate": "has output format",
+    "gold_predicate_norm": "hasoutput",
+    "pred_predicate_norm": "hasoutputformat",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Tool"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "tool"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "format"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "format"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 6,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has version",
+    "pred_predicate": "has export version",
+    "gold_predicate_norm": "hasversion",
+    "pred_predicate_norm": "hasexportversion",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "export capability"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "exportcapability"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": [
+      "version number"
+    ],
+    "pred_range": [
+      "version"
+    ],
+    "gold_range_norm": [
+      "versionnumber"
+    ],
+    "pred_range_norm": [
+      "version"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 7,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "is developed by",
+    "pred_predicate": "has developer",
+    "gold_predicate_norm": "isdevelopedby",
+    "pred_predicate_norm": "hasdeveloper",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Tool"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "tool"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "developer"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "developer"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 8,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "uses platform",
+    "pred_predicate": "runs on platform",
+    "gold_predicate_norm": "usesplatform",
+    "pred_predicate_norm": "runsonplatform",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Tool"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "tool"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "platform"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "platform"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 9,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "uses software",
+    "pred_predicate": "has software type",
+    "gold_predicate_norm": "usessoftware",
+    "pred_predicate_norm": "hassoftwaretype",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "SWO_0000001"
+    ],
+    "pred_domain": [
+      "Tool"
+    ],
+    "gold_domain_norm": [
+      "swo0000001"
+    ],
+    "pred_domain_norm": [
+      "tool"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "SWO_0000001"
+    ],
+    "pred_range": [
+      "software type"
+    ],
+    "gold_range_norm": [
+      "swo0000001"
+    ],
+    "pred_range_norm": [
+      "softwaretype"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  }
+]

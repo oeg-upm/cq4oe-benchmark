@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<rdf:RDF xml:base="http://www.semanticweb.org/myontology#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="http://www.semanticweb.org/myontology#"/>
+
+  <!-- owl:Class declarations -->
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Tool">
+  <rdfs:comment xml:lang="en">A software tool that processes data using algorithms.</rdfs:comment>
+  <rdfs:label xml:lang="en">Tool</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Algorithm">
+  <rdfs:comment xml:lang="en">A named and published computational procedure.</rdfs:comment>
+  <rdfs:label xml:lang="en">Algorithm</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Modification">
+  <rdfs:comment xml:lang="en">A change or alteration made to an algorithm.</rdfs:comment>
+  <rdfs:label xml:lang="en">Modification</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Feature">
+  <rdfs:comment xml:lang="en">A capability or functionality provided by a tool.</rdfs:comment>
+  <rdfs:label xml:lang="en">Feature</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#SoftwareType">
+  <rdfs:comment xml:lang="en">The type of software, e.g., API, Desktop application, Web service, Library.</rdfs:comment>
+  <rdfs:label xml:lang="en">software type</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Task">
+  <rdfs:comment xml:lang="en">A specific computational task that a tool can perform.</rdfs:comment>
+  <rdfs:label xml:lang="en">Task</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Data">
+  <rdfs:comment xml:lang="en">A piece of data or dataset generated or manipulated by a software tool.</rdfs:comment>
+  <rdfs:label xml:lang="en">data</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#ToolTaskDataCapability">
+  <rdfs:comment xml:lang="en">Represents the suitability of a tool to perform a task on given data.</rdfs:comment>
+  <rdfs:label xml:lang="en">tool task data capability</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Format">
+  <rdfs:comment xml:lang="en">The format of data, such as file format or data representation.</rdfs:comment>
+  <rdfs:label xml:lang="en">format</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#OpenFormat">
+  <rdfs:comment xml:lang="en">An open data format, such as CSV or TXT.</rdfs:comment>
+  <rdfs:label xml:lang="en">open format</rdfs:label>
+  <rdfs:subClassOf rdf:resource='http://www.semanticweb.org/myontology#Format'/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#ExportCapability">
+  <rdfs:comment xml:lang="en">Represents the ability of a tool to export data from one format to another.</rdfs:comment>
+  <rdfs:label xml:lang="en">export capability</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Version">
+  <rdfs:comment xml:lang="en">A specific version of a software tool.</rdfs:comment>
+  <rdfs:label xml:lang="en">version</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Developer">
+  <rdfs:comment xml:lang="en">An individual or organization that creates or develops a software tool.</rdfs:comment>
+  <rdfs:label xml:lang="en">developer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#DevelopmentActivityLevel">
+  <rdfs:comment xml:lang="en">The level of development activity of a tool.</rdfs:comment>
+  <rdfs:label xml:lang="en">development activity level</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#License">
+  <rdfs:comment xml:lang="en">A software license under which a tool is distributed or used.</rdfs:comment>
+  <rdfs:label xml:lang="en">License</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#PermissivenessLevel">
+  <rdfs:comment xml:lang="en">The permissiveness category of a license, such as permissive, copyleft, or proprietary.</rdfs:comment>
+  <rdfs:label xml:lang="en">Permissiveness Level</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#ProgrammingLanguage">
+  <rdfs:comment xml:lang="en">A programming language in which a software tool is implemented.</rdfs:comment>
+  <rdfs:label xml:lang="en">programming language</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.semanticweb.org/myontology#Platform">
+  <rdfs:comment xml:lang="en">A computing platform (operating system, runtime environment) on which software can run.</rdfs:comment>
+  <rdfs:label xml:lang="en">platform</rdfs:label>
+</owl:Class>
+
+  <!-- owl:ObjectProperty declarations -->
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#usesAlgorithm">
+  <rdfs:comment xml:lang="en">Indicates that a tool uses an algorithm.</rdfs:comment>
+  <rdfs:label xml:lang="en">uses algorithm</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Algorithm"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasModification">
+  <rdfs:comment xml:lang="en">Indicates that an algorithm has a modification.</rdfs:comment>
+  <rdfs:label xml:lang="en">has modification</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Algorithm"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Modification"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#providesFeature">
+  <rdfs:comment xml:lang="en">Indicates that a tool provides a specific feature.</rdfs:comment>
+  <rdfs:label xml:lang="en">provides feature</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Feature"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasSoftwareType">
+  <rdfs:comment xml:lang="en">Indicates the type of software that a tool is.</rdfs:comment>
+  <rdfs:label xml:lang="en">has software type</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#SoftwareType"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#performsTask">
+  <rdfs:comment xml:lang="en">Indicates that a tool performs a specific task.</rdfs:comment>
+  <rdfs:label xml:lang="en">performs task</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Task"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#createsData">
+  <rdfs:comment xml:lang="en">Indicates that a tool creates some data.</rdfs:comment>
+  <rdfs:label xml:lang="en">creates data</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Data"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasTool">
+  <rdfs:comment xml:lang="en">The tool in the capability.</rdfs:comment>
+  <rdfs:label xml:lang="en">has tool</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ToolTaskDataCapability"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasTask">
+  <rdfs:comment xml:lang="en">The task in the capability.</rdfs:comment>
+  <rdfs:label xml:lang="en">has task</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ToolTaskDataCapability"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Task"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasData">
+  <rdfs:comment xml:lang="en">The data in the capability.</rdfs:comment>
+  <rdfs:label xml:lang="en">has data</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ToolTaskDataCapability"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Data"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasInputFormat">
+  <rdfs:comment xml:lang="en">Indicates that a tool accepts input data in this format.</rdfs:comment>
+  <rdfs:label xml:lang="en">has input format</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Format"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasOutputFormat">
+  <rdfs:comment xml:lang="en">Indicates that a tool produces output data in this format.</rdfs:comment>
+  <rdfs:label xml:lang="en">has output format</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Format"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasExportSourceFormat">
+  <rdfs:comment xml:lang="en">The source format for the export capability.</rdfs:comment>
+  <rdfs:label xml:lang="en">has export source format</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ExportCapability"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Format"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasExportTargetFormat">
+  <rdfs:comment xml:lang="en">The target format for the export capability.</rdfs:comment>
+  <rdfs:label xml:lang="en">has export target format</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ExportCapability"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Format"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasExportTool">
+  <rdfs:comment xml:lang="en">The tool that has this export capability.</rdfs:comment>
+  <rdfs:label xml:lang="en">has export tool</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ExportCapability"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasExportVersion">
+  <rdfs:comment xml:lang="en">Indicates that an export capability applies to a specific version.</rdfs:comment>
+  <rdfs:label xml:lang="en">has export version</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#ExportCapability"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Version"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#isVersionOfTool">
+  <rdfs:comment xml:lang="en">Relates a version to the tool it belongs to.</rdfs:comment>
+  <rdfs:label xml:lang="en">is version of tool</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Version"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasDeveloper">
+  <rdfs:comment xml:lang="en">Indicates that a tool was developed by this developer.</rdfs:comment>
+  <rdfs:label xml:lang="en">has developer</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Developer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasDevelopmentActivityLevel">
+  <rdfs:comment xml:lang="en">Indicates the level of development activity of a tool.</rdfs:comment>
+  <rdfs:label xml:lang="en">has development activity level</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#DevelopmentActivityLevel"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#introducedInVersion">
+  <rdfs:comment xml:lang="en">Indicates the version in which a feature was first introduced.</rdfs:comment>
+  <rdfs:label xml:lang="en">introduced in version</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Feature"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Version"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasLicense">
+  <rdfs:comment xml:lang="en">Indicates the license under which a tool is distributed.</rdfs:comment>
+  <rdfs:label xml:lang="en">has license</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#License"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasPermissivenessLevel">
+  <rdfs:comment xml:lang="en">Indicates the permissiveness level of a license.</rdfs:comment>
+  <rdfs:label xml:lang="en">has permissiveness level</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#License"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#PermissivenessLevel"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#hasImplementationLanguage">
+  <rdfs:comment xml:lang="en">Indicates the programming language in which a tool is implemented.</rdfs:comment>
+  <rdfs:label xml:lang="en">has implementation language</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#ProgrammingLanguage"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.semanticweb.org/myontology#runsOnPlatform">
+  <rdfs:comment xml:lang="en">Indicates the platform on which the tool can run.</rdfs:comment>
+  <rdfs:label xml:lang="en">runs on platform</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/myontology#Platform"/>
+</owl:ObjectProperty>
+
+  <!-- owl:DatatypeProperty declarations -->
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#algorithmName">
+  <rdfs:comment xml:lang="en">The name of the algorithm.</rdfs:comment>
+  <rdfs:label xml:lang="en">algorithm name</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Algorithm"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#algorithmPublished">
+  <rdfs:comment xml:lang="en">Whether the algorithm has been published.</rdfs:comment>
+  <rdfs:label xml:lang="en">algorithm published</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Algorithm"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#taskName">
+  <rdfs:comment xml:lang="en">The name of the task.</rdfs:comment>
+  <rdfs:label xml:lang="en">task name</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Task"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#formatName">
+  <rdfs:comment xml:lang="en">The name or file extension of the format.</rdfs:comment>
+  <rdfs:label xml:lang="en">format name</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Format"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#isOpenSource">
+  <rdfs:comment xml:lang="en">Whether the tool is open source.</rdfs:comment>
+  <rdfs:label xml:lang="en">is open source</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#isMaintained">
+  <rdfs:comment xml:lang="en">Whether the tool is actively maintained.</rdfs:comment>
+  <rdfs:label xml:lang="en">is maintained</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#versionNumber">
+  <rdfs:comment xml:lang="en">The identifier or number of a version.</rdfs:comment>
+  <rdfs:label xml:lang="en">version number</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Version"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#sourceURL">
+  <rdfs:comment xml:lang="en">The URL where the software tool can be obtained.</rdfs:comment>
+  <rdfs:label xml:lang="en">source URL</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#helpURL">
+  <rdfs:comment xml:lang="en">The URL where help or documentation for the tool can be found.</rdfs:comment>
+  <rdfs:label xml:lang="en">help URL</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#developerName">
+  <rdfs:comment xml:lang="en">The name of the developer.</rdfs:comment>
+  <rdfs:label xml:lang="en">developer name</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Developer"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#homepageURL">
+  <rdfs:comment xml:lang="en">The URL of the tool's homepage.</rdfs:comment>
+  <rdfs:label xml:lang="en">homepage URL</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#acceptsContributions">
+  <rdfs:comment xml:lang="en">Indicates whether the tool's developers accept external contributions.</rdfs:comment>
+  <rdfs:label xml:lang="en">accepts contributions</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#inceptionDate">
+  <rdfs:comment xml:lang="en">The date when the software tool first became available (e.g., initial release or creation date).</rdfs:comment>
+  <rdfs:label xml:lang="en">inception date</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#releaseDate">
+  <rdfs:comment xml:lang="en">The date when a specific version was released.</rdfs:comment>
+  <rdfs:label xml:lang="en">release date</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Version"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#licenseName">
+  <rdfs:comment xml:lang="en">The name or identifier of the license.</rdfs:comment>
+  <rdfs:label xml:lang="en">license name</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#License"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#isFOSS">
+  <rdfs:comment xml:lang="en">Whether the tool is Free and Open Source Software (FOSS).</rdfs:comment>
+  <rdfs:label xml:lang="en">is FOSS</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.semanticweb.org/myontology#isFreeOfCharge">
+  <rdfs:comment xml:lang="en">Indicates whether the tool is free of charge (no payment required).</rdfs:comment>
+  <rdfs:label xml:lang="en">is free of charge</rdfs:label>
+  <rdfs:domain rdf:resource="http://www.semanticweb.org/myontology#Tool"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#FunctionalProperty'/>
+</owl:DatatypeProperty>
+
+</rdf:RDF>

@@ -1,0 +1,11 @@
+Gold_term,Pre_term,Method,Score
+CEL binary format,open format,top3_avg(jaro_winkler+semantic+sequence_match),0.6726926701157182
+Development status,development activity level,top3_avg(jaro_winkler+semantic+sequence_match),0.7473763677165568
+algorithm,Algorithm,hard_match,1.0
+data item,data,top3_avg(jaro_winkler+semantic+sequence_match),0.7817458921008639
+function,Modification,top3_avg(jaro_winkler+semantic+sequence_match),0.6057733394481518
+licence,License,top3_avg(jaro_winkler+levenshtein+semantic),0.9058444857597351
+programming language,programming language,hard_match,1.0
+software,software type,top3_avg(jaro_winkler+semantic+sequence_match),0.8461699035432604
+software developer role,developer,top3_avg(jaro_winkler+semantic+sequence_match),0.6612254565565254
+version number,version,top3_avg(jaro_winkler+semantic+sequence_match),0.8496474247712354
