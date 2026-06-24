@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-run_all_evaluation_agent_datsets.py
+run_all_evaluation_agent_datasets.py
 
 Walks 01_predictions/<mode>/<model>/ontology/, evaluates each prediction
 against its matching gold standard, and refreshes the leaderboard at the
@@ -279,7 +279,6 @@ def main():
                         "--save_report_md", report_path,
                         "--literal_relax", "no",
                         "--threshold", "0.6",
-                        "--no_layer2",
                     ])
 
                 # 6. Hierarchy / HermiT evaluation
