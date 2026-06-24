@@ -1,5 +1,0 @@
-# Pin the dependencies a verifier needs to regenerate your results.
-# Example:
-# agno>=2.0
-# rdflib>=7.0,<8.0
-# langchain-openai
