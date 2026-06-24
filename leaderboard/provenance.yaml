@@ -1,0 +1,334 @@
+# CQ4OE Leaderboard provenance.
+#
+# Two badges per (mode, model) for CQ2Onto, per model for CQ2Term.
+# A run with no entry here is treated as a community submission (no badge).
+#
+#   reproduced  - a maintainer invoked the model and obtained the prediction.
+#   verified    - a maintainer checked/corrected the alignment before metrics ran.
+#
+# Ranking: only runs with BOTH badges are ranked; others sit below, unranked.
+# verified.datasets lists the domains a maintainer verified; the overall row is
+# ranked only when every aggregated domain is verified.
+#
+# This file was generated from the runs present in 03_evaluation_results/
+# (all existing runs are maintainer-produced -> reproduced + verified on all
+# domains they cover). Edit by hand as new runs are added or verified.
+
+cq2onto:
+  - mode: agent
+    model: deepseek-v4-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: deepseek-v4-pro
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: deepseek_deepseek-v3.2
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: google_gemma-4-26b-a4b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: google_gemma-4-31b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: qwen_qwen3.6-27b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: qwen_qwen3.6-35b-a3b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: qwen_qwen3.6-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: agent
+    model: qwen_qwen3.6-plus
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: deepseek-v4-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: deepseek-v4-pro
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: deepseek_deepseek-v3.2
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: google_gemma-4-26b-a4b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: google_gemma-4-31b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: qwen_qwen3.6-27b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: qwen_qwen3.6-35b-a3b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: qwen_qwen3.6-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: cqbycq
+    model: qwen_qwen3.6-plus
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: deepseek-v4-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: deepseek-v4-pro
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: deepseek_deepseek-v3.2
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: google_gemma-4-26b-a4b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: google_gemma-4-31b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: qwen_qwen3.6-27b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: qwen_qwen3.6-35b-a3b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: qwen_qwen3.6-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - mode: normal
+    model: qwen_qwen3.6-plus
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+
+cq2term:
+  - model: deepseek-v4-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: deepseek-v4-pro
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: deepseek_deepseek-v3.2
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: google_gemma-4-26b-a4b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: google_gemma-4-31b-it
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: qwen_qwen3.6-27b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: qwen_qwen3.6-35b-a3b
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: qwen_qwen3.6-flash
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
+  - model: qwen_qwen3.6-plus
+    reproduced:
+      by: "OEG team"
+      date: "2026-05-26"
+    verified:
+      by: "OEG team"
+      date: "2026-05-26"
+      datasets: [awo, odrl, swo, vgo, water, wine]
