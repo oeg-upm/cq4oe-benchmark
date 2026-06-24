@@ -7,7 +7,7 @@ fork PRs and same-repo PRs.
 1. Detects which submission changed.
 2. Validates it against the submission guideline (metadata, files, formats).
 3. Runs the evaluation over the submitted results.
-4. Produces `submissions/<name>/evaluation/` (+ `SUMMARY.md`), uploads it as the
+4. Produces `submissions/<name>/result/` (+ `SUMMARY.md`), uploads it as the
    `cq4oe-results` artifact (with the PR number), and — for same-repo PRs only —
    commits it back onto the PR branch.
 
@@ -58,3 +58,23 @@ branch with write access, *publishes* them. This is the standard secure pattern.
 ## Environment (handled by the workflow)
 Ollama serving `embeddinggemma` (cached), Java 17 (HermiT), Python 3.10 +
 requirements.txt. First run is slow due to the model pull.
+
+## Output structure (what the Action writes)
+
+For each task listed in the submission's `metadata.yml`, the Action creates a
+task subfolder under `result/` and saves one markdown report per ontology:
+
+```
+submissions/<name>/result/
+├── CQ2Onto/                 # only if cq2onto is in metadata tasks
+│   ├── awo_report.md
+│   ├── odrl_report.md
+│   └── ...                  # one *_report.md per evaluated ontology
+├── CQ2Term/                 # only if cq2term is in metadata tasks
+│   ├── awo_report.md
+│   └── ...
+└── SUMMARY.md               # headline F1s, links to each report (used for the PR comment)
+```
+
+Each CQ2Onto `*_report.md` is the consolidated report covering all layers
+(class, property, triple, axiom, hierarchy) for that ontology.

@@ -1,0 +1,89 @@
+name: Record results on merge
+
+# Runs after a submission is merged into main (a push to main touching
+# submissions/). Re-runs the evaluation for the merged submission on trusted
+# infrastructure and commits submissions/<name>/result/ into main.
+#
+# This is how FORK submissions get their report saved into the repo: the fork PR
+# itself cannot commit back, but once you merge it, this workflow (running from
+# main, with write access) produces and commits the result/ folder.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "submissions/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: record-on-merge
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Which submissions changed in this push
+        run: |
+          git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
+            | grep '^submissions/' | cut -d/ -f2 | sort -u > names.txt || true
+          # ignore folders whose ONLY change was the result/ output
+          : > to_eval.txt
+          while read -r n; do
+            [ -z "$n" ] && continue
+            changed=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
+                       | grep "^submissions/$n/" | grep -v "^submissions/$n/result/" | head -1)
+            [ -n "$changed" ] && echo "$n" >> to_eval.txt
+          done < names.txt
+          echo "----- to evaluate -----"; cat to_eval.txt
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install pyyaml && pip install -r requirements.txt
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Cache Ollama model
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama
+          key: ollama-embeddinggemma-v1
+      - name: Install Ollama and pull the embedding model
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve & sleep 5
+          ollama pull embeddinggemma
+
+      - name: Evaluate and collect each merged submission
+        env:
+          CQ4OE_PYTHON: python
+        run: |
+          while read -r name; do
+            [ -z "$name" ] && continue
+            echo "=== $name ==="
+            python .github/challenge/stage_submission.py --name "$name" | tee stage.out
+            if grep -q '^RUN_CQ2TERM=1' stage.out; then
+              ( cd CQ2Term && python -u scripts/run_all_cq2term.py --models "$name" --no_leaderboard ) || true
+            fi
+            if grep -q '^RUN_CQ2ONTO=1' stage.out; then
+              ( cd CQ2Onto && python -u scripts/run_all_evaluation_agent_datsets.py --modes challenge --no_leaderboard ) || true
+            fi
+            python .github/challenge/collect_into_submission.py --name "$name" --onto-mode challenge --commit "${{ github.sha }}"
+          done < to_eval.txt
+
+      - name: Commit evaluation folders into main
+        run: |
+          git config user.name  "cq4oe-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add submissions/*/result
+          git commit -m "Record evaluation results for merged submission(s) [skip ci]" || echo "nothing to commit"
+          git push || echo "nothing to push"
