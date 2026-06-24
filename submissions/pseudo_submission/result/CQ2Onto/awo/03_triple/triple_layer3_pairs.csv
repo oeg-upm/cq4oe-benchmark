@@ -1,0 +1,2 @@
+PropertyType,GoldPredicate,PredPredicate,GoldPredicateNorm,PredPredicateNorm,GoldType,PredType,TypeVerdict,GoldDomain,PredDomain,GoldDomainNorm,PredDomainNorm,DomainStatus,GoldRange,PredRange,GoldRangeNorm,PredRangeNorm,RangeStatus,FullMatch,Note
+ObjectProperty,eats,eats,eats,eats,ObjectProperty,ObjectProperty,tp,,Animal,,animal,fp,,Animal,,animal,fp,NO,

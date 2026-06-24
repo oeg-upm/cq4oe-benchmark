@@ -1,0 +1,3 @@
+Gold_term,Pre_term,Method,Score
+consequence,has consequence duty,top3_avg(jaro_winkler+semantic+sequence_match),0.7812
+constraint,has constraint,top3_avg(jaro_winkler+semantic+sequence_match),0.8755

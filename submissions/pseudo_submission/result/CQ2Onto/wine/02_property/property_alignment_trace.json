@@ -1,0 +1,863 @@
+[
+  {
+    "id": 1,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasVintageYear",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9429,
+      "levenshtein": 0.7143,
+      "semantic": 0.8801,
+      "sequence_match": 0.8333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8854,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 2,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasWineDescriptor",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8552,
+      "levenshtein": 0.5238,
+      "semantic": 0.7771,
+      "sequence_match": 0.5789
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7371,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 3,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasVintageYear",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8959,
+      "levenshtein": 0.6471,
+      "semantic": 0.8547,
+      "sequence_match": 0.7097
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8201,
+    "selected": false,
+    "reason": "gold already mapped to 'has vintage'"
+  },
+  {
+    "id": 4,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasVintageYear",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8787,
+      "levenshtein": 0.5,
+      "semantic": 0.8889,
+      "sequence_match": 0.6316
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7997,
+    "selected": false,
+    "reason": "gold already mapped to 'has vintage'"
+  },
+  {
+    "id": 5,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasVintageYear",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7965,
+      "levenshtein": 0.3333,
+      "semantic": 0.6515,
+      "sequence_match": 0.4571
+    },
+    "is_hard_match": false,
+    "agg_score": 0.635,
+    "selected": false,
+    "reason": "top-3 avg score 0.6350 < final_threshold 0.7"
+  },
+  {
+    "id": 6,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasWineDescriptor",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6919,
+      "levenshtein": 0.4167,
+      "semantic": 0.6072,
+      "sequence_match": 0.4878
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5956,
+    "selected": false,
+    "reason": "top-3 avg score 0.5956 < final_threshold 0.7"
+  },
+  {
+    "id": 7,
+    "prop_type": "ObjectProperty",
+    "gold_term": "madeFromGrape",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5365,
+      "levenshtein": 0.3846,
+      "semantic": 0.7394,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.584,
+    "selected": false,
+    "reason": "top-3 avg score 0.5840 < final_threshold 0.7"
+  },
+  {
+    "id": 8,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasFlavor",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6185,
+      "levenshtein": 0.3,
+      "semantic": 0.6587,
+      "sequence_match": 0.4211
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5661,
+    "selected": false,
+    "reason": "top-3 avg score 0.5661 < final_threshold 0.7"
+  },
+  {
+    "id": 9,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasWineDescriptor",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6471,
+      "levenshtein": 0.3529,
+      "semantic": 0.5472,
+      "sequence_match": 0.4706
+    },
+    "is_hard_match": false,
+    "agg_score": 0.555,
+    "selected": false,
+    "reason": "top-3 avg score 0.5550 < final_threshold 0.7"
+  },
+  {
+    "id": 10,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasSugar",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6417,
+      "levenshtein": 0.4,
+      "semantic": 0.5746,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5536,
+    "selected": false,
+    "reason": "top-3 avg score 0.5536 < final_threshold 0.7"
+  },
+  {
+    "id": 11,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasWineDescriptor",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.651,
+      "levenshtein": 0.2941,
+      "semantic": 0.56,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5518,
+    "selected": false,
+    "reason": "top-3 avg score 0.5518 < final_threshold 0.7"
+  },
+  {
+    "id": 12,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasBody",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5762,
+      "levenshtein": 0.3,
+      "semantic": 0.6548,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.528,
+    "selected": false,
+    "reason": "top-3 avg score 0.5280 < final_threshold 0.7"
+  },
+  {
+    "id": 13,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasSugar",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6454,
+      "levenshtein": 0.2941,
+      "semantic": 0.5344,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5266,
+    "selected": false,
+    "reason": "top-3 avg score 0.5266 < final_threshold 0.7"
+  },
+  {
+    "id": 14,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasColor",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5583,
+      "levenshtein": 0.3,
+      "semantic": 0.6735,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5217,
+    "selected": false,
+    "reason": "top-3 avg score 0.5217 < final_threshold 0.7"
+  },
+  {
+    "id": 15,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasWineDescriptor",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5784,
+      "levenshtein": 0.1765,
+      "semantic": 0.6483,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5156,
+    "selected": false,
+    "reason": "top-3 avg score 0.5156 < final_threshold 0.7"
+  },
+  {
+    "id": 16,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasColor",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.621,
+      "levenshtein": 0.2381,
+      "semantic": 0.5784,
+      "sequence_match": 0.3448
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5147,
+    "selected": false,
+    "reason": "top-3 avg score 0.5147 < final_threshold 0.7"
+  },
+  {
+    "id": 17,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasColor",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.2083,
+      "semantic": 0.6144,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5127,
+    "selected": false,
+    "reason": "top-3 avg score 0.5127 < final_threshold 0.7"
+  },
+  {
+    "id": 18,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasFlavor",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5979,
+      "levenshtein": 0.2381,
+      "semantic": 0.6057,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5123,
+    "selected": false,
+    "reason": "top-3 avg score 0.5123 < final_threshold 0.7"
+  },
+  {
+    "id": 19,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasFlavor",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5833,
+      "levenshtein": 0.2083,
+      "semantic": 0.6076,
+      "sequence_match": 0.303
+    },
+    "is_hard_match": false,
+    "agg_score": 0.498,
+    "selected": false,
+    "reason": "top-3 avg score 0.4980 < final_threshold 0.7"
+  },
+  {
+    "id": 20,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasSugar",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.25,
+      "semantic": 0.5074,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4978,
+    "selected": false,
+    "reason": "top-3 avg score 0.4978 < final_threshold 0.7"
+  },
+  {
+    "id": 21,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasSugar",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.621,
+      "levenshtein": 0.2381,
+      "semantic": 0.5088,
+      "sequence_match": 0.3448
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4915,
+    "selected": false,
+    "reason": "top-3 avg score 0.4915 < final_threshold 0.7"
+  },
+  {
+    "id": 22,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasColor",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5172,
+      "levenshtein": 0.2353,
+      "semantic": 0.6329,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.49,
+    "selected": false,
+    "reason": "top-3 avg score 0.4900 < final_threshold 0.7"
+  },
+  {
+    "id": 23,
+    "prop_type": "ObjectProperty",
+    "gold_term": "madeFromGrape",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5269,
+      "levenshtein": 0.1905,
+      "semantic": 0.6449,
+      "sequence_match": 0.2941
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4886,
+    "selected": false,
+    "reason": "top-3 avg score 0.4886 < final_threshold 0.7"
+  },
+  {
+    "id": 24,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasFlavor",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5499,
+      "levenshtein": 0.2353,
+      "semantic": 0.6067,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4881,
+    "selected": false,
+    "reason": "top-3 avg score 0.4881 < final_threshold 0.7"
+  },
+  {
+    "id": 25,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasBody",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.535,
+      "levenshtein": 0.2353,
+      "semantic": 0.5923,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4869,
+    "selected": false,
+    "reason": "top-3 avg score 0.4869 < final_threshold 0.7"
+  },
+  {
+    "id": 26,
+    "prop_type": "ObjectProperty",
+    "gold_term": "locatedIn",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5519,
+      "levenshtein": 0.0,
+      "semantic": 0.5226,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4634,
+    "selected": false,
+    "reason": "top-3 avg score 0.4634 < final_threshold 0.7"
+  },
+  {
+    "id": 27,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasVintageYear",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5298,
+      "levenshtein": 0.1429,
+      "semantic": 0.5265,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.443,
+    "selected": false,
+    "reason": "top-3 avg score 0.4430 < final_threshold 0.7"
+  },
+  {
+    "id": 28,
+    "prop_type": "ObjectProperty",
+    "gold_term": "locatedIn",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5648,
+      "levenshtein": 0.1111,
+      "semantic": 0.401,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4396,
+    "selected": false,
+    "reason": "top-3 avg score 0.4396 < final_threshold 0.7"
+  },
+  {
+    "id": 29,
+    "prop_type": "ObjectProperty",
+    "gold_term": "locatedIn",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5397,
+      "levenshtein": 0.2381,
+      "semantic": 0.4293,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4341,
+    "selected": false,
+    "reason": "top-3 avg score 0.4341 < final_threshold 0.7"
+  },
+  {
+    "id": 30,
+    "prop_type": "ObjectProperty",
+    "gold_term": "madeFromGrape",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5148,
+      "levenshtein": 0.2083,
+      "semantic": 0.5022,
+      "sequence_match": 0.2703
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4291,
+    "selected": false,
+    "reason": "top-3 avg score 0.4291 < final_threshold 0.7"
+  },
+  {
+    "id": 31,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasBody",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.125,
+      "semantic": 0.5636,
+      "sequence_match": 0.1935
+    },
+    "is_hard_match": false,
+    "agg_score": 0.425,
+    "selected": false,
+    "reason": "top-3 avg score 0.4250 < final_threshold 0.7"
+  },
+  {
+    "id": 32,
+    "prop_type": "ObjectProperty",
+    "gold_term": "locatedIn",
+    "pred_term": "has vintage characteristic",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.2083,
+      "semantic": 0.4822,
+      "sequence_match": 0.303
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4191,
+    "selected": false,
+    "reason": "top-3 avg score 0.4191 < final_threshold 0.7"
+  },
+  {
+    "id": 33,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasBody",
+    "pred_term": "has wine characteristic",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5238,
+      "levenshtein": 0.1429,
+      "semantic": 0.5191,
+      "sequence_match": 0.2143
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4191,
+    "selected": false,
+    "reason": "top-3 avg score 0.4191 < final_threshold 0.7"
+  },
+  {
+    "id": 34,
+    "prop_type": "ObjectProperty",
+    "gold_term": "madeFromGrape",
+    "pred_term": "has vintage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4859,
+      "levenshtein": 0.2308,
+      "semantic": 0.5192,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.412,
+    "selected": false,
+    "reason": "top-3 avg score 0.4120 < final_threshold 0.7"
+  },
+  {
+    "id": 35,
+    "prop_type": "ObjectProperty",
+    "gold_term": "locatedIn",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4832,
+      "levenshtein": 0.1765,
+      "semantic": 0.5146,
+      "sequence_match": 0.2308
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4095,
+    "selected": false,
+    "reason": "top-3 avg score 0.4095 < final_threshold 0.7"
+  },
+  {
+    "id": 36,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasFlavor",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.412,
+      "levenshtein": 0.0,
+      "semantic": 0.5195,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3889,
+    "selected": false,
+    "reason": "top-3 avg score 0.3889 < final_threshold 0.7"
+  },
+  {
+    "id": 37,
+    "prop_type": "ObjectProperty",
+    "gold_term": "madeFromGrape",
+    "pred_term": "has vintage quality",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.431,
+      "levenshtein": 0.1765,
+      "semantic": 0.5296,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3869,
+    "selected": false,
+    "reason": "top-3 avg score 0.3869 < final_threshold 0.7"
+  },
+  {
+    "id": 38,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasColor",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4167,
+      "levenshtein": 0.0,
+      "semantic": 0.4775,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3397,
+    "selected": false,
+    "reason": "top-3 avg score 0.3397 < final_threshold 0.7"
+  },
+  {
+    "id": 39,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasBody",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4226,
+      "levenshtein": 0.0,
+      "semantic": 0.4363,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3308,
+    "selected": false,
+    "reason": "top-3 avg score 0.3308 < final_threshold 0.7"
+  },
+  {
+    "id": 40,
+    "prop_type": "ObjectProperty",
+    "gold_term": "hasSugar",
+    "pred_term": "from wine",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5185,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2145,
+    "selected": false,
+    "reason": "top-3 avg score 0.2145 < final_threshold 0.7"
+  },
+  {
+    "id": 41,
+    "prop_type": "DatatypeProperty",
+    "gold_term": "yearValue",
+    "pred_term": "vintage year",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.436,
+      "levenshtein": 0.0909,
+      "semantic": 0.6663,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5008,
+    "selected": false,
+    "reason": "top-3 avg score 0.5008 < final_threshold 0.7"
+  }
+]

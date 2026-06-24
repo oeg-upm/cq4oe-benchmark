@@ -1,0 +1,17 @@
+term,role,cq_ids,aligned,aligned_to
+bordeaux,class,CQ2; CQnew1,false,
+redbordeaux,class,CQ2,false,
+redwine,class,CQ2,true,redwine
+vintage,class,CQ6; CQ7,true,vintage
+vintageyear,class,CQ6,true,vintageyear
+whitebordeaux,class,CQ2,false,
+whitewine,class,CQ2,true,whitewine
+wine,class,CQ1; CQ2; CQ6; CQnew1,true,wine
+winedescriptor,class,CQ1,false,
+winegrape,class,CQnew1,true,grape
+zinfandel,class,CQ7,false,
+hasbody,property,CQ6,true,hasbody
+hasvintageyear,property,CQ6; CQ7,true,hasvintageyear
+haswinedescriptor,property,CQ1,false,
+madefromgrape,property,CQnew1,true,madefrom
+yearvalue,property,CQ6; CQ7,false,

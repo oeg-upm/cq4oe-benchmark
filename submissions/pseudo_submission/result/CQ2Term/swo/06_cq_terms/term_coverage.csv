@@ -1,0 +1,39 @@
+term,role,cq_ids,aligned,aligned_to
+.csv,class,CQ22,true,csv
+algorithm,class,CQ04; CQ05,true,algorithm
+application programming interface,class,CQ07,false,
+cel ascii format,class,CQ19,true,dataformat
+cel binary format,class,CQ19,true,opendataformat
+data,class,CQ29,true,data
+data item,class,CQ15; CQ16; CQ22; CQ23,true,dataexport
+desktop graphical user interface,class,CQ07,false,
+format,class,CQ17; CQ26; CQ29,true,format
+free,class,CQ68,false,
+not free,class,CQ68,false,
+open source software license,class,CQ26; CQ60; CQ65,true,freeopensourcesoftware
+platform,class,CQ85,true,platform
+software,class,CQ06; CQ07; CQ11; CQ15; CQ16; CQ17; CQ19; CQ21; CQ22; CQ23; CQ26; CQ29; CQ30; CQ36; CQ37; CQ38; CQ40; CQ54; CQ57; CQ60; CQ65; CQ68; CQ73; CQ85,true,software
+software developer role,class,CQ36,true,softwaretool
+task,class,CQ16,true,task
+text editing,class,CQ06,true,xmlediting
+version,class,CQ29; CQ54; CQ57,true,version
+web service,class,CQ11,true,webservice
+xml,class,CQ06,false,
+has documentation,property,CQ73,true,haslocation
+has download location,property,CQ30,false,
+has format specification,property,CQ17,true,hasformat
+has input,property,CQ21; CQ29,true,hasinput
+has interface,property,CQ07; CQ11,true,hasinputformat
+has license,property,CQ26; CQ60; CQ65,false,
+has output,property,CQ22; CQ23; CQ29,true,hasoutputformat
+has release date,property,CQ57,true,hasreleasedate
+has specified data input,property,CQ16; CQ17; CQ19; CQ23; CQ26; CQ29,true,hasmodification
+has specified data output,property,CQ15; CQ17; CQ22; CQ23; CQ29,true,hasdataexport
+has support url,property,CQ40,true,hasurl
+has version,property,CQ29; CQ54; CQ57,true,hasversion
+has website homepage,property,CQ30; CQ37; CQ73,true,hashomepage
+implements,property,CQ04; CQ05,false,
+is developed by,property,CQ36; CQ38,true,developedby
+is software for,property,CQ16,false,
+uses platform,property,CQ85,true,usesdata
+uses software,property,CQ06; CQ23,true,hassoftwaretype

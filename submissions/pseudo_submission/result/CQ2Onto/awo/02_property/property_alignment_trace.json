@@ -1,0 +1,316 @@
+[
+  {
+    "id": 1,
+    "prop_type": "ObjectProperty",
+    "gold_term": "eats",
+    "pred_term": "eats",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 2,
+    "prop_type": "ObjectProperty",
+    "gold_term": "eats",
+    "pred_term": "eats animal",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.88,
+      "levenshtein": 0.4,
+      "semantic": 0.707,
+      "sequence_match": 0.5714
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7195,
+    "selected": false,
+    "reason": "gold already mapped to 'eats'"
+  },
+  {
+    "id": 3,
+    "prop_type": "ObjectProperty",
+    "gold_term": "eaten-by",
+    "pred_term": "eats",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8083,
+      "levenshtein": 0.4286,
+      "semantic": 0.7518,
+      "sequence_match": 0.5455
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7018,
+    "selected": false,
+    "reason": "pred already taken by 'eats'"
+  },
+  {
+    "id": 4,
+    "prop_type": "ObjectProperty",
+    "gold_term": "eats",
+    "pred_term": "eats plant part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8615,
+      "levenshtein": 0.3077,
+      "semantic": 0.6561,
+      "sequence_match": 0.4706
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6627,
+    "selected": false,
+    "reason": "top-3 avg score 0.6627 < final_threshold 0.7"
+  },
+  {
+    "id": 5,
+    "prop_type": "ObjectProperty",
+    "gold_term": "eaten-by",
+    "pred_term": "eats animal",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6571,
+      "levenshtein": 0.4,
+      "semantic": 0.7383,
+      "sequence_match": 0.4706
+    },
+    "is_hard_match": false,
+    "agg_score": 0.622,
+    "selected": false,
+    "reason": "top-3 avg score 0.6220 < final_threshold 0.7"
+  },
+  {
+    "id": 6,
+    "prop_type": "ObjectProperty",
+    "gold_term": "has-part",
+    "pred_term": "eats plant part",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5663,
+      "levenshtein": 0.4615,
+      "semantic": 0.6216,
+      "sequence_match": 0.6
+    },
+    "is_hard_match": false,
+    "agg_score": 0.596,
+    "selected": false,
+    "reason": "top-3 avg score 0.5960 < final_threshold 0.7"
+  },
+  {
+    "id": 7,
+    "prop_type": "ObjectProperty",
+    "gold_term": "eaten-by",
+    "pred_term": "eats plant part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6264,
+      "levenshtein": 0.3077,
+      "semantic": 0.6109,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5458,
+    "selected": false,
+    "reason": "top-3 avg score 0.5458 < final_threshold 0.7"
+  },
+  {
+    "id": 8,
+    "prop_type": "ObjectProperty",
+    "gold_term": "has-part",
+    "pred_term": "eats",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5952,
+      "levenshtein": 0.1429,
+      "semantic": 0.534,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4976,
+    "selected": false,
+    "reason": "top-3 avg score 0.4976 < final_threshold 0.7"
+  },
+  {
+    "id": 9,
+    "prop_type": "ObjectProperty",
+    "gold_term": "is-proper-part-of",
+    "pred_term": "eats plant part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5366,
+      "levenshtein": 0.2857,
+      "semantic": 0.4887,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4899,
+    "selected": false,
+    "reason": "top-3 avg score 0.4899 < final_threshold 0.7"
+  },
+  {
+    "id": 10,
+    "prop_type": "ObjectProperty",
+    "gold_term": "is-part-of",
+    "pred_term": "eats plant part",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4359,
+      "levenshtein": 0.3077,
+      "semantic": 0.4829,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.465,
+    "selected": false,
+    "reason": "top-3 avg score 0.4650 < final_threshold 0.7"
+  },
+  {
+    "id": 11,
+    "prop_type": "ObjectProperty",
+    "gold_term": "has-part",
+    "pred_term": "eats animal",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5738,
+      "levenshtein": 0.2,
+      "semantic": 0.4162,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4477,
+    "selected": false,
+    "reason": "top-3 avg score 0.4477 < final_threshold 0.7"
+  },
+  {
+    "id": 12,
+    "prop_type": "ObjectProperty",
+    "gold_term": "is-part-of",
+    "pred_term": "eats",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5972,
+      "levenshtein": 0.25,
+      "semantic": 0.4605,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4359,
+    "selected": false,
+    "reason": "top-3 avg score 0.4359 < final_threshold 0.7"
+  },
+  {
+    "id": 13,
+    "prop_type": "ObjectProperty",
+    "gold_term": "is-proper-part-of",
+    "pred_term": "eats",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.381,
+      "levenshtein": 0.2143,
+      "semantic": 0.4414,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3456,
+    "selected": false,
+    "reason": "top-3 avg score 0.3456 < final_threshold 0.7"
+  },
+  {
+    "id": 14,
+    "prop_type": "ObjectProperty",
+    "gold_term": "is-part-of",
+    "pred_term": "eats animal",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4472,
+      "levenshtein": 0.1,
+      "semantic": 0.3466,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3387,
+    "selected": false,
+    "reason": "top-3 avg score 0.3387 < final_threshold 0.7"
+  },
+  {
+    "id": 15,
+    "prop_type": "ObjectProperty",
+    "gold_term": "is-proper-part-of",
+    "pred_term": "eats animal",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4786,
+      "levenshtein": 0.0714,
+      "semantic": 0.351,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3321,
+    "selected": false,
+    "reason": "top-3 avg score 0.3321 < final_threshold 0.7"
+  }
+]

@@ -1,0 +1,2 @@
+role,gold_term,pred_term,top_methods_used,scores_by_method,is_hard_match,agg_score,selected,reason
+property,eats,eats,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0000,True,selected

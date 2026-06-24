@@ -1,0 +1,21 @@
+cq_id,question,n_gold_classes,n_gold_properties,n_covered_classes,n_covered_properties,coverage,missing_classes,missing_properties
+CQ01,Which assets compose a water distribution infrastructure?,2,0,0,0,0.0000,water asset; water infrastructure,
+CQ04,Which types of sensors are used in water infrastructures?,2,1,2,0,0.6667,,has measurement
+CQ05,Which types of actuators are used in water infrastructures?,2,1,2,0,0.6667,,has measurement
+CQ06,A water meter is a device that measures different aspects of a water infrastructure.,4,1,3,0,0.6000,meter,makes measurement
+CQ08,What is the fabrication number of the water meter?,2,1,1,1,0.6667,meter,
+CQ09,What are the manufacturer and the model of the water meter?,2,2,1,2,0.7500,meter,
+CQ10,What is the version of the water meter?,2,1,1,1,0.6667,meter,
+CQ11,What is the hardware version number of the water meter?,2,1,1,1,0.6667,meter,
+CQ12,What firmware version is the water meter using?,2,1,1,0,0.3333,meter,has firmware version
+CQ18,What is the power of the water meter?,2,1,1,0,0.3333,meter,requires power
+CQ19,What is the radio frequency level of the water meter?,2,1,1,1,0.6667,meter,
+CQ20,What is the geolocation of the water meter?,2,1,1,1,0.6667,meter,
+CQ25,Water meters can provide measurements according to different temporal settings.,4,1,3,0,0.6000,meter,makes measurement
+CQ34,What are the chemical properties of water?,3,1,2,0,0.5000,water property,has property
+CQ37,Which water indicators are defined for Burgos?,2,1,0,0,0.0000,city; key performance indicator,has key performance indicator
+CQ38,What is the start date and time of the tariff in use in the water meter?,2,3,2,2,0.8000,,applies to
+CQ39,What is the duration of the current tariff of the water meter?,2,2,2,1,0.7500,,applies to
+CQ40,What is the tariff period of the water meter?,2,2,1,1,0.5000,tariff,applies to
+CQ42,What is the billing date of the water meter?,2,2,1,1,0.5000,tariff,applies to
+CQ43,What is the billing date period of the water meter?,2,3,1,1,0.4000,tariff,applies to; has billing date

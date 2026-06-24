@@ -1,0 +1,8 @@
+Gold_term,Pre_term,Method,Score
+CarnivorousPlant,Carnivorous Plant,hard_match,1.0
+PlantParts,Plant Part,top3_avg(jaro_winkler+semantic+sequence_match),0.9515350920275637
+animal,Animal,hard_match,1.0
+carnivore,Carnivore,hard_match,1.0
+herbivore,Herbivore,hard_match,1.0
+lion,Lion,hard_match,1.0
+plant,Plant,hard_match,1.0

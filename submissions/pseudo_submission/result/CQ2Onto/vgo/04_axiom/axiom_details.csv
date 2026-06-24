@@ -1,0 +1,201 @@
+id,source,term_type,axiom_type,term,dl,status,note
+AX1-gold,gold,Class,SubClassOf,Collection,Collection ⊑ Achievement,Skip,subject 'Collection' not in alignment table
+AX1-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX2-gold,gold,Class,SubClassOf,Completion,Completion ⊑ Achievement,FN,pred has no SubClassOf axiom on 'Game Completion'
+AX2-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX3-gold,gold,Class,SubClassOf,Curiosity,Curiosity ⊑ Achievement,Skip,subject 'Curiosity' not in alignment table
+AX3-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX4-gold,gold,Class,SubClassOf,Fandom,Fandom ⊑ Achievement,Skip,subject 'Fandom' not in alignment table
+AX4-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX5-gold,gold,Class,SubClassOf,GameProduct,GameProduct ⊑ (Achievement ⊔ Character ⊔ Game ⊔ Item ⊔ PlayingArea),Skip,subject 'GameProduct' not in alignment table
+AX5-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX6-gold,gold,Class,SubClassOf,HardMode,HardMode ⊑ Achievement,Skip,subject 'HardMode' not in alignment table
+AX6-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX7-gold,gold,Class,SubClassOf,Loyalty,Loyalty ⊑ Achievement,Skip,subject 'Loyalty' not in alignment table
+AX7-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX8-gold,gold,Class,SubClassOf,Luck,Luck ⊑ Achievement,Skip,subject 'Luck' not in alignment table
+AX8-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX9-gold,gold,Class,SubClassOf,Paragon,Paragon ⊑ Achievement,Skip,subject 'Paragon' not in alignment table
+AX9-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX10-gold,gold,Class,SubClassOf,SpecialPlayStyle,SpecialPlayStyle ⊑ Achievement,Skip,subject 'SpecialPlayStyle' not in alignment table
+AX10-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX11-gold,gold,Class,SubClassOf,Tutorial,Tutorial ⊑ Achievement,Skip,subject 'Tutorial' not in alignment table
+AX11-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX12-gold,gold,Class,SubClassOf,Veteran,Veteran ⊑ Achievement,Skip,subject 'Veteran' not in alignment table
+AX12-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX13-gold,gold,Class,SubClassOf,Virtuosity,Virtuosity ⊑ Achievement,Skip,subject 'Virtuosity' not in alignment table
+AX13-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX14-gold,gold,ObjectProperty,Domain,hasAchievement,∃hasAchievement.⊤ ⊑ Game,Mismatch,pred AX51 differs: class 'Game' not aligned to 'Player'
+AX14-pred,pred,ObjectProperty,Domain,has achievement,∃has achievement.⊤ ⊑ Player,-,-
+AX15-gold,gold,ObjectProperty,InverseOf,hasAchievement,hasAchievement ≡ isAchievementInGame⁻,FN,pred has no InverseOf axiom on 'has achievement'
+AX15-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX16-gold,gold,ObjectProperty,Range,hasAchievement,⊤ ⊑ ∀hasAchievement.Achievement,TP,matched pred AX52
+AX16-pred,pred,ObjectProperty,Range,has achievement,⊤ ⊑ ∀has achievement.Achievement,-,-
+AX17-gold,gold,ObjectProperty,Domain,hasCharacter,∃hasCharacter.⊤ ⊑ Game,Skip,subject 'hasCharacter' not in alignment table
+AX17-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX18-gold,gold,ObjectProperty,InverseOf,hasCharacter,hasCharacter ≡ isCharacterInGame⁻,Skip,subject 'hasCharacter' not in alignment table
+AX18-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX19-gold,gold,ObjectProperty,Range,hasCharacter,⊤ ⊑ ∀hasCharacter.Character,Skip,subject 'hasCharacter' not in alignment table
+AX19-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX20-gold,gold,ObjectProperty,Domain,hasFeature,∃hasFeature.⊤ ⊑ Item,Skip,subject 'hasFeature' not in alignment table
+AX20-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX21-gold,gold,ObjectProperty,Range,hasFeature,⊤ ⊑ ∀hasFeature.Feature,Skip,subject 'hasFeature' not in alignment table
+AX21-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX22-gold,gold,ObjectProperty,Domain,hasGameGenre,∃hasGameGenre.⊤ ⊑ Game,Mismatch,pred AX61 differs: class 'Game' not aligned to 'Game Session'
+AX22-pred,pred,ObjectProperty,Domain,has game,∃has game.⊤ ⊑ Game Session,-,-
+AX23-gold,gold,ObjectProperty,Range,hasGameGenre,⊤ ⊑ ∀hasGameGenre.Genre,Mismatch,pred AX62 differs: class 'Genre' not aligned to 'Game'
+AX23-pred,pred,ObjectProperty,Range,has game,⊤ ⊑ ∀has game.Game,-,-
+AX24-gold,gold,ObjectProperty,Domain,hasItem,∃hasItem.⊤ ⊑ Game,TP,matched pred AX68
+AX24-pred,pred,ObjectProperty,Domain,has item,∃has item.⊤ ⊑ Game,-,-
+AX25-gold,gold,ObjectProperty,Range,hasItem,⊤ ⊑ ∀hasItem.Item,TP,matched pred AX69
+AX25-pred,pred,ObjectProperty,Range,has item,⊤ ⊑ ∀has item.Item,-,-
+AX26-gold,gold,ObjectProperty,Domain,hasLeaderboard,∃hasLeaderboard.⊤ ⊑ Game,Skip,subject 'hasLeaderboard' not in alignment table
+AX26-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX27-gold,gold,ObjectProperty,InverseOf,hasLeaderboard,hasLeaderboard ≡ isLeaderboardInGame⁻,Skip,subject 'hasLeaderboard' not in alignment table
+AX27-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX28-gold,gold,ObjectProperty,Range,hasLeaderboard,⊤ ⊑ ∀hasLeaderboard.Leaderboard,Skip,subject 'hasLeaderboard' not in alignment table
+AX28-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX29-gold,gold,ObjectProperty,Domain,hasPlayingArea,∃hasPlayingArea.⊤ ⊑ Game,TP,matched pred AX74
+AX29-pred,pred,ObjectProperty,Domain,has playing area,∃has playing area.⊤ ⊑ Game,-,-
+AX30-gold,gold,ObjectProperty,Range,hasPlayingArea,⊤ ⊑ ∀hasPlayingArea.PlayingArea,TP,matched pred AX75
+AX30-pred,pred,ObjectProperty,Range,has playing area,⊤ ⊑ ∀has playing area.Playing Area,-,-
+AX31-gold,gold,ObjectProperty,Domain,involvesCharacter,∃involvesCharacter.⊤ ⊑ Session,Skip,subject 'involvesCharacter' not in alignment table
+AX31-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX32-gold,gold,ObjectProperty,InverseOf,involvesCharacter,involvesCharacter ≡ isCharacterInSession⁻,Skip,subject 'involvesCharacter' not in alignment table
+AX32-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX33-gold,gold,ObjectProperty,Range,involvesCharacter,⊤ ⊑ ∀involvesCharacter.Character,Skip,subject 'involvesCharacter' not in alignment table
+AX33-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX34-gold,gold,ObjectProperty,Domain,involvesPlayer,∃involvesPlayer.⊤ ⊑ Session,Skip,subject 'involvesPlayer' not in alignment table
+AX34-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX35-gold,gold,ObjectProperty,InverseOf,involvesPlayer,involvesPlayer ≡ isPlayerInSession⁻,Skip,subject 'involvesPlayer' not in alignment table
+AX35-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX36-gold,gold,ObjectProperty,Range,involvesPlayer,⊤ ⊑ ∀involvesPlayer.Player,Skip,subject 'involvesPlayer' not in alignment table
+AX36-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX37-gold,gold,ObjectProperty,Domain,isAchievementInGame,∃isAchievementInGame.⊤ ⊑ Achievement,Mismatch,pred AX45 differs: class 'Achievement' not aligned to 'Game'
+AX37-pred,pred,ObjectProperty,Domain,game has achievement,∃game has achievement.⊤ ⊑ Game,-,-
+AX38-gold,gold,ObjectProperty,InverseOf,isAchievementInGame,isAchievementInGame ≡ hasAchievement⁻,FN,pred has no InverseOf axiom on 'game has achievement'
+AX38-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX39-gold,gold,ObjectProperty,Range,isAchievementInGame,⊤ ⊑ ∀isAchievementInGame.Game,Mismatch,pred AX46 differs: class 'Game' not aligned to 'Achievement'
+AX39-pred,pred,ObjectProperty,Range,game has achievement,⊤ ⊑ ∀game has achievement.Achievement,-,-
+AX40-gold,gold,ObjectProperty,Domain,isCharacterInGame,∃isCharacterInGame.⊤ ⊑ Character,Skip,subject 'isCharacterInGame' not in alignment table
+AX40-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX41-gold,gold,ObjectProperty,InverseOf,isCharacterInGame,isCharacterInGame ≡ hasCharacter⁻,Skip,subject 'isCharacterInGame' not in alignment table
+AX41-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX42-gold,gold,ObjectProperty,Range,isCharacterInGame,⊤ ⊑ ∀isCharacterInGame.Game,Skip,subject 'isCharacterInGame' not in alignment table
+AX42-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX43-gold,gold,ObjectProperty,Domain,isCharacterInSession,∃isCharacterInSession.⊤ ⊑ Character,Skip,subject 'isCharacterInSession' not in alignment table
+AX43-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX44-gold,gold,ObjectProperty,InverseOf,isCharacterInSession,isCharacterInSession ≡ involvesCharacter⁻,Skip,subject 'isCharacterInSession' not in alignment table
+AX44-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX45-gold,gold,ObjectProperty,Range,isCharacterInSession,⊤ ⊑ ∀isCharacterInSession.Session,Skip,subject 'isCharacterInSession' not in alignment table
+AX45-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX46-gold,gold,ObjectProperty,Range,isEventAssociatedToPlayer,⊤ ⊑ ∀isEventAssociatedToPlayer.Player,Skip,subject 'isEventAssociatedToPlayer' not in alignment table
+AX46-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX47-gold,gold,ObjectProperty,Characteristics,isFriendWithPlayer,Symmetric(isFriendWithPlayer),Skip,subject 'isFriendWithPlayer' not in alignment table
+AX47-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX48-gold,gold,ObjectProperty,Domain,isFriendWithPlayer,∃isFriendWithPlayer.⊤ ⊑ Player,Skip,subject 'isFriendWithPlayer' not in alignment table
+AX48-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX49-gold,gold,ObjectProperty,Range,isFriendWithPlayer,⊤ ⊑ ∀isFriendWithPlayer.Player,Skip,subject 'isFriendWithPlayer' not in alignment table
+AX49-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX50-gold,gold,ObjectProperty,Domain,isLeaderboardInGame,∃isLeaderboardInGame.⊤ ⊑ Leaderboard,Skip,subject 'isLeaderboardInGame' not in alignment table
+AX50-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX51-gold,gold,ObjectProperty,InverseOf,isLeaderboardInGame,isLeaderboardInGame ≡ hasLeaderboard⁻,Skip,subject 'isLeaderboardInGame' not in alignment table
+AX51-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX52-gold,gold,ObjectProperty,Range,isLeaderboardInGame,⊤ ⊑ ∀isLeaderboardInGame.Game,Skip,subject 'isLeaderboardInGame' not in alignment table
+AX52-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX53-gold,gold,ObjectProperty,Domain,isPlayerInSession,∃isPlayerInSession.⊤ ⊑ Player,Skip,subject 'isPlayerInSession' not in alignment table
+AX53-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX54-gold,gold,ObjectProperty,InverseOf,isPlayerInSession,isPlayerInSession ≡ involvesPlayer⁻,Skip,subject 'isPlayerInSession' not in alignment table
+AX54-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX55-gold,gold,ObjectProperty,Range,isPlayerInSession,⊤ ⊑ ∀isPlayerInSession.Session,Skip,subject 'isPlayerInSession' not in alignment table
+AX55-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX56-gold,gold,ObjectProperty,Domain,isSessionInGame,∃isSessionInGame.⊤ ⊑ Session,Skip,subject 'isSessionInGame' not in alignment table
+AX56-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX57-gold,gold,ObjectProperty,Range,isSessionInGame,⊤ ⊑ ∀isSessionInGame.Game,Skip,subject 'isSessionInGame' not in alignment table
+AX57-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX58-gold,gold,ObjectProperty,Domain,livesIn,∃livesIn.⊤ ⊑ Player,Skip,subject 'livesIn' not in alignment table
+AX58-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX59-gold,gold,ObjectProperty,Domain,ownsAchievement,∃ownsAchievement.⊤ ⊑ Player,Mismatch,pred AX54 differs: class 'Player' not aligned to 'Achievement'
+AX59-pred,pred,ObjectProperty,Domain,has achievement type,∃has achievement type.⊤ ⊑ Achievement,-,-
+AX60-gold,gold,ObjectProperty,Range,ownsAchievement,⊤ ⊑ ∀ownsAchievement.Achievement,Mismatch,pred AX55 differs: class 'Achievement' not aligned to 'Achievement Type'
+AX60-pred,pred,ObjectProperty,Range,has achievement type,⊤ ⊑ ∀has achievement type.Achievement Type,-,-
+AX61-gold,gold,ObjectProperty,Domain,ownsCharacter,∃ownsCharacter.⊤ ⊑ Player,Skip,subject 'ownsCharacter' not in alignment table
+AX61-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX62-gold,gold,ObjectProperty,Range,ownsCharacter,⊤ ⊑ ∀ownsCharacter.Character,Skip,subject 'ownsCharacter' not in alignment table
+AX62-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX63-gold,gold,ObjectProperty,Domain,ownsItem,∃ownsItem.⊤ ⊑ Character,Mismatch,pred AX81 differs: class 'Character' not aligned to 'Player'
+AX63-pred,pred,ObjectProperty,Domain,owns item,∃owns item.⊤ ⊑ Player,-,-
+AX64-gold,gold,ObjectProperty,Range,ownsItem,⊤ ⊑ ∀ownsItem.Item,TP,matched pred AX82
+AX64-pred,pred,ObjectProperty,Range,owns item,⊤ ⊑ ∀owns item.Item,-,-
+AX65-gold,gold,ObjectProperty,Domain,playsGame,∃playsGame.⊤ ⊑ Player,TP,matched pred AX78
+AX65-pred,pred,ObjectProperty,Domain,last played game,∃last played game.⊤ ⊑ Player,-,-
+AX66-gold,gold,ObjectProperty,Range,playsGame,⊤ ⊑ ∀playsGame.Game,TP,matched pred AX79
+AX66-pred,pred,ObjectProperty,Range,last played game,⊤ ⊑ ∀last played game.Game,-,-
+AX67-gold,gold,ObjectProperty,Domain,purchasesGameOffering,∃purchasesGameOffering.⊤ ⊑ InAppPurchaseEvent,TP,matched pred AX85
+AX67-pred,pred,ObjectProperty,Domain,purchase game,∃purchase game.⊤ ⊑ In-App Purchase,-,-
+AX68-gold,gold,ObjectProperty,Range,purchasesGameOffering,⊤ ⊑ ∀purchasesGameOffering.GameProduct,Mismatch,pred AX86 differs: class 'GameProduct' not aligned to 'Game'
+AX68-pred,pred,ObjectProperty,Range,purchase game,⊤ ⊑ ∀purchase game.Game,-,-
+AX69-gold,gold,DatatypeProperty,Domain,endTime,∃endTime.⊤ ⊑ Session,Skip,subject 'endTime' not in alignment table
+AX69-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX70-gold,gold,DatatypeProperty,Range,endTime,endTime maps-to datetime'>,Skip,subject 'endTime' not in alignment table
+AX70-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX71-gold,gold,DatatypeProperty,Range,eventTime,eventTime maps-to datetime'>,Skip,subject 'eventTime' not in alignment table
+AX71-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX72-gold,gold,DatatypeProperty,Domain,releaseDate,∃releaseDate.⊤ ⊑ Game,TP,matched pred AX115
+AX72-pred,pred,DatatypeProperty,Domain,has release date,∃has release date.⊤ ⊑ Game,-,-
+AX73-gold,gold,DatatypeProperty,Range,releaseDate,releaseDate maps-to datetime'>,Mismatch,"pred AX116 differs: datatype ""datetime'>"" != ""date'>"""
+AX73-pred,pred,DatatypeProperty,Range,has release date,has release date maps-to date'>,-,-
+AX74-gold,gold,DatatypeProperty,Domain,startTime,∃startTime.⊤ ⊑ Session,Skip,subject 'startTime' not in alignment table
+AX74-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX75-gold,gold,DatatypeProperty,Range,startTime,startTime maps-to datetime'>,Skip,subject 'startTime' not in alignment table
+AX75-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX76-gold,gold,DatatypeProperty,Domain,username,∃username.⊤ ⊑ Player,TP,matched pred AX119
+AX76-pred,pred,DatatypeProperty,Domain,has username,∃has username.⊤ ⊑ Player,-,-
+AX77-gold,gold,DatatypeProperty,Range,username,username maps-to xsd:string,TP,matched pred AX120
+AX77-pred,pred,DatatypeProperty,Range,has username,has username maps-to xsd:string,-,-
+AX2-pred,pred,Class,Declaration,Achievement,Declaration: Achievement (Class),FP,pred Declaration axiom on 'Achievement' not matched by any gold axiom on 'Achievement'
+AX2-gold,gold,-,-,-,(no gold counterpart),-,-
+AX4-pred,pred,Class,Declaration,Game,Declaration: Game (Class),FP,pred Declaration axiom on 'Game' not matched by any gold axiom on 'Game'
+AX4-gold,gold,-,-,-,(no gold counterpart),-,-
+AX5-pred,pred,Class,Declaration,Game Completion,Declaration: Game Completion (Class),FP,pred Declaration axiom on 'Game Completion' not matched by any gold axiom on 'Completion'
+AX5-gold,gold,-,-,-,(no gold counterpart),-,-
+AX6-pred,pred,Class,Declaration,Game Session,Declaration: Game Session (Class),FP,pred Declaration axiom on 'Game Session' not matched by any gold axiom on 'Session'
+AX6-gold,gold,-,-,-,(no gold counterpart),-,-
+AX7-pred,pred,Class,Declaration,In-App Purchase,Declaration: In-App Purchase (Class),FP,pred Declaration axiom on 'In-App Purchase' not matched by any gold axiom on 'in-app purchase event'
+AX7-gold,gold,-,-,-,(no gold counterpart),-,-
+AX8-pred,pred,Class,Declaration,Item,Declaration: Item (Class),FP,pred Declaration axiom on 'Item' not matched by any gold axiom on 'Item'
+AX8-gold,gold,-,-,-,(no gold counterpart),-,-
+AX10-pred,pred,Class,Declaration,Player,Declaration: Player (Class),FP,pred Declaration axiom on 'Player' not matched by any gold axiom on 'Player'
+AX10-gold,gold,-,-,-,(no gold counterpart),-,-
+AX15-pred,pred,Class,Declaration,Playing Area,Declaration: Playing Area (Class),FP,pred Declaration axiom on 'Playing Area' not matched by any gold axiom on 'playing area'
+AX15-gold,gold,-,-,-,(no gold counterpart),-,-
+AX44-pred,pred,ObjectProperty,Declaration,game has achievement,Declaration: game has achievement (ObjectProperty),FP,pred Declaration axiom on 'game has achievement' not matched by any gold axiom on 'is achievement in game'
+AX44-gold,gold,-,-,-,(no gold counterpart),-,-
+AX50-pred,pred,ObjectProperty,Declaration,has achievement,Declaration: has achievement (ObjectProperty),FP,pred Declaration axiom on 'has achievement' not matched by any gold axiom on 'has achievement'
+AX50-gold,gold,-,-,-,(no gold counterpart),-,-
+AX53-pred,pred,ObjectProperty,Declaration,has achievement type,Declaration: has achievement type (ObjectProperty),FP,pred Declaration axiom on 'has achievement type' not matched by any gold axiom on 'owns achievement'
+AX53-gold,gold,-,-,-,(no gold counterpart),-,-
+AX59-pred,pred,ObjectProperty,Characteristics,has game,Functional(has game),FP,pred Characteristics axiom on 'has game' not matched by any gold axiom on 'has game genre'
+AX59-gold,gold,-,-,-,(no gold counterpart),-,-
+AX60-pred,pred,ObjectProperty,Declaration,has game,Declaration: has game (ObjectProperty),FP,pred Declaration axiom on 'has game' not matched by any gold axiom on 'has game genre'
+AX60-gold,gold,-,-,-,(no gold counterpart),-,-
+AX67-pred,pred,ObjectProperty,Declaration,has item,Declaration: has item (ObjectProperty),FP,pred Declaration axiom on 'has item' not matched by any gold axiom on 'has item'
+AX67-gold,gold,-,-,-,(no gold counterpart),-,-
+AX73-pred,pred,ObjectProperty,Declaration,has playing area,Declaration: has playing area (ObjectProperty),FP,pred Declaration axiom on 'has playing area' not matched by any gold axiom on 'has playing area'
+AX73-gold,gold,-,-,-,(no gold counterpart),-,-
+AX76-pred,pred,ObjectProperty,Characteristics,last played game,Functional(last played game),FP,pred Characteristics axiom on 'last played game' not matched by any gold axiom on 'plays game'
+AX76-gold,gold,-,-,-,(no gold counterpart),-,-
+AX77-pred,pred,ObjectProperty,Declaration,last played game,Declaration: last played game (ObjectProperty),FP,pred Declaration axiom on 'last played game' not matched by any gold axiom on 'plays game'
+AX77-gold,gold,-,-,-,(no gold counterpart),-,-
+AX80-pred,pred,ObjectProperty,Declaration,owns item,Declaration: owns item (ObjectProperty),FP,pred Declaration axiom on 'owns item' not matched by any gold axiom on 'owns item'
+AX80-gold,gold,-,-,-,(no gold counterpart),-,-
+AX83-pred,pred,ObjectProperty,Characteristics,purchase game,Functional(purchase game),FP,pred Characteristics axiom on 'purchase game' not matched by any gold axiom on 'purchases game offering'
+AX83-gold,gold,-,-,-,(no gold counterpart),-,-
+AX84-pred,pred,ObjectProperty,Declaration,purchase game,Declaration: purchase game (ObjectProperty),FP,pred Declaration axiom on 'purchase game' not matched by any gold axiom on 'purchases game offering'
+AX84-gold,gold,-,-,-,(no gold counterpart),-,-
+AX114-pred,pred,DatatypeProperty,Declaration,has release date,Declaration: has release date (DatatypeProperty),FP,pred Declaration axiom on 'has release date' not matched by any gold axiom on 'release date'
+AX114-gold,gold,-,-,-,(no gold counterpart),-,-
+AX117-pred,pred,DatatypeProperty,Characteristics,has username,Functional(has username),FP,pred Characteristics axiom on 'has username' not matched by any gold axiom on 'username'
+AX117-gold,gold,-,-,-,(no gold counterpart),-,-
+AX118-pred,pred,DatatypeProperty,Declaration,has username,Declaration: has username (DatatypeProperty),FP,pred Declaration axiom on 'has username' not matched by any gold axiom on 'username'
+AX118-gold,gold,-,-,-,(no gold counterpart),-,-

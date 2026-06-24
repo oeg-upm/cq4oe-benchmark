@@ -1,0 +1,586 @@
+{
+  "config": {
+    "top_n": 3,
+    "final_threshold": 0.7,
+    "model_id": "embeddinggemma",
+    "methods": [
+      "hard_match",
+      "sequence_match",
+      "levenshtein",
+      "jaro_winkler",
+      "semantic"
+    ],
+    "summary": {
+      "n_gold": 24,
+      "n_pred": 30
+    },
+    "cli_args": {
+      "model_id": "embeddinggemma",
+      "pred_onto": "01_predictions/challenge/pseudo_submission/ontology/water_ontology.owl",
+      "gold_onto": "00_gold_standard/water/ontology/sub_water.owl",
+      "methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+      "top_n": 3,
+      "final_threshold": 0.7,
+      "save_result": "03_evaluation_results/challenge/pseudo_submission/water/02_property/property_result.json",
+      "save_best_matching_csv": "03_evaluation_results/challenge/pseudo_submission/water/02_property/property_best_matching.csv",
+      "save_alignment_trace_csv": "03_evaluation_results/challenge/pseudo_submission/water/02_property/property_alignment_trace.csv",
+      "save_alignment_trace_json": "03_evaluation_results/challenge/pseudo_submission/water/02_property/property_alignment_trace.json",
+      "save_report_md": "04_summary/challenge/pseudo_submission/water_report.md",
+      "hard_threshold": 1.0,
+      "lexical_threshold": 0.8,
+      "semantic_threshold": 0.6
+    }
+  },
+  "results": [
+    {
+      "id": "type_distribution",
+      "DatatypeProperty": {
+        "gold_count": 10,
+        "pred_count": 16,
+        "diff": 6,
+        "note": "pred has 6 extra"
+      },
+      "ObjectProperty": {
+        "gold_count": 14,
+        "pred_count": 14,
+        "diff": 0,
+        "note": "exact"
+      }
+    },
+    {
+      "id": "label_matching",
+      "ObjectProperty": {
+        "n_gold_labels": 14,
+        "n_pred_labels": 14,
+        "gold_to_pred": {
+          "applies to": [],
+          "feature is measured by device": [],
+          "has billing period": [
+            {
+              "pred": "has billing period",
+              "score": 1.0,
+              "method": "hard_match"
+            }
+          ],
+          "has duration": [],
+          "has key performance indicator": [],
+          "has measurement": [
+            {
+              "pred": "is measurement of",
+              "score": 0.8388,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "has period": [],
+          "has phenomenon time": [],
+          "has property": [
+            {
+              "pred": "has physical property",
+              "score": 0.7884,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "hasGeometry": [],
+          "is measured by device": [
+            {
+              "pred": "is measured property of",
+              "score": 0.73,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "isKPIOf": [],
+          "makes measurement": [
+            {
+              "pred": "provides measurement",
+              "score": 0.8231,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "measurement made by": []
+        },
+        "pred_to_gold": {
+          "has billing period": [
+            {
+              "gold": "has billing period",
+              "score": 1.0,
+              "method": "hard_match"
+            }
+          ],
+          "has chemical property": [],
+          "has component": [],
+          "has defined water indicator": [],
+          "has measured property": [],
+          "has physical property": [
+            {
+              "gold": "has property",
+              "score": 0.7884,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "has temporal setting": [],
+          "is billing period of": [],
+          "is component of": [],
+          "is defined water indicator of": [],
+          "is measured property of": [
+            {
+              "gold": "is measured by device",
+              "score": 0.73,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "is measurement of": [
+            {
+              "gold": "has measurement",
+              "score": 0.8388,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "provides measurement": [
+            {
+              "gold": "makes measurement",
+              "score": 0.8231,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "uses tariff": []
+        },
+        "metrics_per_method": {
+          "hard_match": {
+            "coverage": 0.0714,
+            "precision": 0.0714,
+            "recall": 0.0714,
+            "f1": 0.0714,
+            "gold_covered": 1,
+            "pred_supported": 1
+          },
+          "sequence_match": {
+            "coverage": 0.1429,
+            "precision": 0.1429,
+            "recall": 0.1429,
+            "f1": 0.1429,
+            "gold_covered": 2,
+            "pred_supported": 2
+          },
+          "levenshtein": {
+            "coverage": 0.0714,
+            "precision": 0.0714,
+            "recall": 0.0714,
+            "f1": 0.0714,
+            "gold_covered": 1,
+            "pred_supported": 1
+          },
+          "jaro_winkler": {
+            "coverage": 0.5,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "gold_covered": 7,
+            "pred_supported": 7
+          },
+          "semantic": {
+            "coverage": 0.5714,
+            "precision": 0.5714,
+            "recall": 0.5714,
+            "f1": 0.5714,
+            "gold_covered": 8,
+            "pred_supported": 8
+          }
+        },
+        "metrics_best": {
+          "coverage": 0.3571,
+          "precision": 0.3571,
+          "recall": 0.3571,
+          "f1": 0.3571,
+          "gold_covered": 5,
+          "pred_supported": 5
+        }
+      },
+      "DatatypeProperty": {
+        "n_gold_labels": 10,
+        "n_pred_labels": 16,
+        "gold_to_pred": {
+          "has fabrication number": [
+            {
+              "pred": "fabrication number",
+              "score": 0.9139,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "has firmware version": [
+            {
+              "pred": "firmware version",
+              "score": 0.9031,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "has hardware version": [
+            {
+              "pred": "hardware version",
+              "score": 0.9226,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "has manufacturer": [
+            {
+              "pred": "manufacturer",
+              "score": 0.887,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "has model": [
+            {
+              "pred": "model",
+              "score": 0.8411,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "has start timestamp": [
+            {
+              "pred": "start timestamp",
+              "score": 0.8859,
+              "method": "top3_avg(levenshtein+semantic+sequence_match)"
+            }
+          ],
+          "has timestamp": [],
+          "has version": [
+            {
+              "pred": "version",
+              "score": 0.8461,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "operates at radio frequency": [],
+          "requires power": []
+        },
+        "pred_to_gold": {
+          "actuator type": [],
+          "billing date": [],
+          "billing end date": [],
+          "billing start date": [],
+          "duration": [],
+          "fabrication number": [
+            {
+              "gold": "has fabrication number",
+              "score": 0.9139,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "firmware version": [
+            {
+              "gold": "has firmware version",
+              "score": 0.9031,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "geolocation": [],
+          "hardware version": [
+            {
+              "gold": "has hardware version",
+              "score": 0.9226,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "manufacturer": [
+            {
+              "gold": "has manufacturer",
+              "score": 0.887,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "model": [
+            {
+              "gold": "has model",
+              "score": 0.8411,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ],
+          "power": [],
+          "radio frequency level": [],
+          "sensor type": [],
+          "start timestamp": [
+            {
+              "gold": "has start timestamp",
+              "score": 0.8859,
+              "method": "top3_avg(levenshtein+semantic+sequence_match)"
+            }
+          ],
+          "version": [
+            {
+              "gold": "has version",
+              "score": 0.8461,
+              "method": "top3_avg(jaro_winkler+semantic+sequence_match)"
+            }
+          ]
+        },
+        "metrics_per_method": {
+          "hard_match": {
+            "coverage": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "gold_covered": 0,
+            "pred_supported": 0
+          },
+          "sequence_match": {
+            "coverage": 0.6,
+            "precision": 0.375,
+            "recall": 0.6,
+            "f1": 0.4615,
+            "gold_covered": 6,
+            "pred_supported": 6
+          },
+          "levenshtein": {
+            "coverage": 0.5,
+            "precision": 0.3125,
+            "recall": 0.5,
+            "f1": 0.3846,
+            "gold_covered": 5,
+            "pred_supported": 5
+          },
+          "jaro_winkler": {
+            "coverage": 0.6,
+            "precision": 0.375,
+            "recall": 0.6,
+            "f1": 0.4615,
+            "gold_covered": 6,
+            "pred_supported": 6
+          },
+          "semantic": {
+            "coverage": 0.9,
+            "precision": 0.5625,
+            "recall": 0.9,
+            "f1": 0.6923,
+            "gold_covered": 9,
+            "pred_supported": 9
+          }
+        },
+        "metrics_best": {
+          "coverage": 0.7,
+          "precision": 0.4375,
+          "recall": 0.7,
+          "f1": 0.5385,
+          "gold_covered": 7,
+          "pred_supported": 7
+        }
+      },
+      "AnnotationProperty": null,
+      "overall": {
+        "coverage": 0.5,
+        "precision": 0.4,
+        "recall": 0.5,
+        "f1": 0.4444,
+        "gold_covered": 12,
+        "pred_supported": 12
+      }
+    },
+    {
+      "id": "functional_check",
+      "Functional": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "fn_from_pairs": 0,
+        "fn_from_unaligned": 0
+      },
+      "InverseFunctional": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "fn_from_pairs": 0,
+        "fn_from_unaligned": 0
+      }
+    },
+    {
+      "id": "characteristics_check",
+      "n_pairs_evaluated": 0,
+      "n_pairs_skipped": 5,
+      "per_characteristic": {
+        "Functional": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": null,
+          "details": []
+        },
+        "InverseFunctional": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": null,
+          "details": []
+        },
+        "Transitive": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": null,
+          "details": []
+        },
+        "Symmetric": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Asymmetric",
+          "details": []
+        },
+        "Asymmetric": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Symmetric",
+          "details": []
+        },
+        "Reflexive": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Irreflexive",
+          "details": []
+        },
+        "Irreflexive": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Reflexive",
+          "details": []
+        }
+      },
+      "overall": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "unaligned_gold_with_chars": [],
+      "per_characteristic_ontology": {
+        "Functional": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "fn_from_pairs": 0,
+          "fn_from_unaligned": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": null
+        },
+        "InverseFunctional": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "fn_from_pairs": 0,
+          "fn_from_unaligned": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": null
+        },
+        "Transitive": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "fn_from_pairs": 0,
+          "fn_from_unaligned": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": null
+        },
+        "Symmetric": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "fn_from_pairs": 0,
+          "fn_from_unaligned": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Asymmetric"
+        },
+        "Asymmetric": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "fn_from_pairs": 0,
+          "fn_from_unaligned": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Symmetric"
+        },
+        "Reflexive": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "fn_from_pairs": 0,
+          "fn_from_unaligned": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Irreflexive"
+        },
+        "Irreflexive": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "fn_from_pairs": 0,
+          "fn_from_unaligned": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "mutex_partner": "Reflexive"
+        }
+      },
+      "overall_ontology": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "id": "aggregated_overall",
+      "tp": 12,
+      "fp": 18,
+      "fn": 12,
+      "precision": 0.4,
+      "recall": 0.5,
+      "f1": 0.4444,
+      "gold_covered": 12,
+      "pred_supported": 12,
+      "gold_total": 24,
+      "pred_total": 30
+    }
+  ]
+}

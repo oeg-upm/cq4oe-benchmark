@@ -1,0 +1,431 @@
+[
+  {
+    "id": 1,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "release date",
+    "pred_predicate": "has release date",
+    "gold_predicate_norm": "releasedate",
+    "pred_predicate_norm": "hasreleasedate",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Game"
+    ],
+    "pred_domain": [
+      "Game"
+    ],
+    "gold_domain_norm": [
+      "game"
+    ],
+    "pred_domain_norm": [
+      "game"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "xsd:dateTime"
+    ],
+    "pred_range": [
+      "xsd:date"
+    ],
+    "gold_range_norm": [
+      "xsddatetime"
+    ],
+    "pred_range_norm": [
+      "xsddate"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 2,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "username",
+    "pred_predicate": "has username",
+    "gold_predicate_norm": "username",
+    "pred_predicate_norm": "hasusername",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Player"
+    ],
+    "pred_domain": [
+      "Player"
+    ],
+    "gold_domain_norm": [
+      "player"
+    ],
+    "pred_domain_norm": [
+      "player"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "xsd:string"
+    ],
+    "pred_range": [
+      "xsd:string"
+    ],
+    "gold_range_norm": [
+      "xsdstring"
+    ],
+    "pred_range_norm": [
+      "xsdstring"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": true,
+    "note": ""
+  },
+  {
+    "id": 3,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has achievement",
+    "pred_predicate": "has achievement",
+    "gold_predicate_norm": "hasachievement",
+    "pred_predicate_norm": "hasachievement",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Game"
+    ],
+    "pred_domain": [
+      "Player"
+    ],
+    "gold_domain_norm": [
+      "game"
+    ],
+    "pred_domain_norm": [
+      "player"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "Achievement"
+    ],
+    "pred_range": [
+      "Achievement"
+    ],
+    "gold_range_norm": [
+      "achievement"
+    ],
+    "pred_range_norm": [
+      "achievement"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 4,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has game genre",
+    "pred_predicate": "has game",
+    "gold_predicate_norm": "hasgamegenre",
+    "pred_predicate_norm": "hasgame",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Game"
+    ],
+    "pred_domain": [
+      "Game Session"
+    ],
+    "gold_domain_norm": [
+      "game"
+    ],
+    "pred_domain_norm": [
+      "gamesession"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "Genre"
+    ],
+    "pred_range": [
+      "Game"
+    ],
+    "gold_range_norm": [
+      "genre"
+    ],
+    "pred_range_norm": [
+      "game"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 5,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has item",
+    "pred_predicate": "has item",
+    "gold_predicate_norm": "hasitem",
+    "pred_predicate_norm": "hasitem",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Game"
+    ],
+    "pred_domain": [
+      "Game"
+    ],
+    "gold_domain_norm": [
+      "game"
+    ],
+    "pred_domain_norm": [
+      "game"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "Item"
+    ],
+    "pred_range": [
+      "Item"
+    ],
+    "gold_range_norm": [
+      "item"
+    ],
+    "pred_range_norm": [
+      "item"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": true,
+    "note": ""
+  },
+  {
+    "id": 6,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has playing area",
+    "pred_predicate": "has playing area",
+    "gold_predicate_norm": "hasplayingarea",
+    "pred_predicate_norm": "hasplayingarea",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Game"
+    ],
+    "pred_domain": [
+      "Game"
+    ],
+    "gold_domain_norm": [
+      "game"
+    ],
+    "pred_domain_norm": [
+      "game"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "playing area"
+    ],
+    "pred_range": [
+      "Playing Area"
+    ],
+    "gold_range_norm": [
+      "playingarea"
+    ],
+    "pred_range_norm": [
+      "playingarea"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": true,
+    "note": ""
+  },
+  {
+    "id": 7,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "is achievement in game",
+    "pred_predicate": "game has achievement",
+    "gold_predicate_norm": "isachievementingame",
+    "pred_predicate_norm": "gamehasachievement",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Achievement"
+    ],
+    "pred_domain": [
+      "Game"
+    ],
+    "gold_domain_norm": [
+      "achievement"
+    ],
+    "pred_domain_norm": [
+      "game"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "Game"
+    ],
+    "pred_range": [
+      "Achievement"
+    ],
+    "gold_range_norm": [
+      "game"
+    ],
+    "pred_range_norm": [
+      "achievement"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 8,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "owns achievement",
+    "pred_predicate": "has achievement type",
+    "gold_predicate_norm": "ownsachievement",
+    "pred_predicate_norm": "hasachievementtype",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Player"
+    ],
+    "pred_domain": [
+      "Achievement"
+    ],
+    "gold_domain_norm": [
+      "player"
+    ],
+    "pred_domain_norm": [
+      "achievement"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "Achievement"
+    ],
+    "pred_range": [
+      "Achievement Type"
+    ],
+    "gold_range_norm": [
+      "achievement"
+    ],
+    "pred_range_norm": [
+      "achievementtype"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 9,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "owns item",
+    "pred_predicate": "owns item",
+    "gold_predicate_norm": "ownsitem",
+    "pred_predicate_norm": "ownsitem",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Character"
+    ],
+    "pred_domain": [
+      "Player"
+    ],
+    "gold_domain_norm": [
+      "character"
+    ],
+    "pred_domain_norm": [
+      "player"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "Item"
+    ],
+    "pred_range": [
+      "Item"
+    ],
+    "gold_range_norm": [
+      "item"
+    ],
+    "pred_range_norm": [
+      "item"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 10,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "plays game",
+    "pred_predicate": "last played game",
+    "gold_predicate_norm": "playsgame",
+    "pred_predicate_norm": "lastplayedgame",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Player"
+    ],
+    "pred_domain": [
+      "Player"
+    ],
+    "gold_domain_norm": [
+      "player"
+    ],
+    "pred_domain_norm": [
+      "player"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "Game"
+    ],
+    "pred_range": [
+      "Game"
+    ],
+    "gold_range_norm": [
+      "game"
+    ],
+    "pred_range_norm": [
+      "game"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": true,
+    "note": ""
+  },
+  {
+    "id": 11,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "purchases game offering",
+    "pred_predicate": "purchase game",
+    "gold_predicate_norm": "purchasesgameoffering",
+    "pred_predicate_norm": "purchasegame",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "in-app purchase event"
+    ],
+    "pred_domain": [
+      "In-App Purchase"
+    ],
+    "gold_domain_norm": [
+      "inapppurchaseevent"
+    ],
+    "pred_domain_norm": [
+      "inapppurchase"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "game product"
+    ],
+    "pred_range": [
+      "Game"
+    ],
+    "gold_range_norm": [
+      "gameproduct"
+    ],
+    "pred_range_norm": [
+      "game"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  }
+]

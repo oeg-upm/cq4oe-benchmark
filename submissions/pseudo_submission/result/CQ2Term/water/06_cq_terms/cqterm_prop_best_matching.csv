@@ -1,0 +1,16 @@
+Gold_term,Pre_term,Method,Score
+has billing date,hasbillingdate,hard_match,1.0000
+has billing period,hasbillingdateperiod,top3_avg(jaro_winkler+sequence_match+semantic),0.9003
+has duration,hasduration,hard_match,1.0000
+has fabrication number,hasfabricationnumber,hard_match,1.0000
+has geometry,hasgeolocation,top3_avg(jaro_winkler+semantic+sequence_match),0.6906
+has hardware version,hashardwareversion,hard_match,1.0000
+has manufacturer,hasmanufacturer,hard_match,1.0000
+has measurement,measures,top3_avg(semantic+jaro_winkler+sequence_match),0.7332
+has model,hasmodel,hard_match,1.0000
+has period,hastariffperiod,top3_avg(jaro_winkler+sequence_match+semantic),0.7724
+has property,haspower,top3_avg(jaro_winkler+sequence_match+levenshtein),0.7490
+has start timestamp,hasstarttime,top3_avg(jaro_winkler+semantic+sequence_match),0.8684
+has timestamp,hasstartdate,top3_avg(jaro_winkler+semantic+sequence_match),0.6009
+has version,hasversion,hard_match,1.0000
+operates at radio frequency,hasradiofrequencylevel,top3_avg(jaro_winkler+sequence_match+semantic),0.6885

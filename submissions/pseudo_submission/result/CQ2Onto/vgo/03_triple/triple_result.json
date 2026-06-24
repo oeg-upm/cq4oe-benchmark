@@ -1,0 +1,1174 @@
+{
+  "config": {
+    "semantic_threshold": 0.6,
+    "embedding_model": "embeddinggemma",
+    "class_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/01_class/class_best_matching.csv",
+    "property_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/02_property/property_best_matching.csv",
+    "cli_args": {
+      "pred_onto": "01_predictions/challenge/pseudo_submission/ontology/vgo_ontology.owl",
+      "gold_onto": "00_gold_standard/vgo/ontology/sub_vgo.owl",
+      "model_id": "embeddinggemma",
+      "threshold": 0.6,
+      "class_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/01_class/class_best_matching.csv",
+      "property_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/02_property/property_best_matching.csv",
+      "save_result": "03_evaluation_results/challenge/pseudo_submission/vgo/03_triple/triple_result.json",
+      "save_layer3_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/03_triple/triple_layer3_pairs.csv",
+      "save_layer3_json": "03_evaluation_results/challenge/pseudo_submission/vgo/03_triple/triple_layer3_pairs.json",
+      "save_report_md": "04_summary/challenge/pseudo_submission/vgo_report.md",
+      "literal_relax": "no"
+    }
+  },
+  "results": [
+    {
+      "id": "layer1_statistics",
+      "gold": {
+        "ObjectProperty": {
+          "full": 21,
+          "domain_only": 1,
+          "range_only": 1,
+          "undefined": 0
+        },
+        "DatatypeProperty": {
+          "full": 4,
+          "domain_only": 0,
+          "range_only": 1,
+          "undefined": 0
+        }
+      },
+      "pred": {
+        "ObjectProperty": {
+          "full": 25,
+          "domain_only": 0,
+          "range_only": 0,
+          "undefined": 0
+        },
+        "DatatypeProperty": {
+          "full": 9,
+          "domain_only": 0,
+          "range_only": 0,
+          "undefined": 0
+        }
+      },
+      "gold_totals": {
+        "ObjectProperty": 23,
+        "DatatypeProperty": 5
+      },
+      "pred_totals": {
+        "ObjectProperty": 25,
+        "DatatypeProperty": 9
+      },
+      "gold_grand_total": 28,
+      "pred_grand_total": 34
+    },
+    {
+      "id": "layer2_semantic",
+      "threshold": 0.6,
+      "model_id": "embeddinggemma",
+      "overall": {
+        "n_gold": 28,
+        "n_pred": 34,
+        "tp": 20,
+        "fp": 14,
+        "fn": 8,
+        "precision": 0.5882,
+        "recall": 0.7143,
+        "f1": 0.6452
+      },
+      "ObjectProperty": {
+        "n_gold": 23,
+        "n_pred": 25,
+        "tp": 15,
+        "fp": 10,
+        "fn": 8,
+        "precision": 0.6,
+        "recall": 0.6522,
+        "f1": 0.625,
+        "matches": [
+          {
+            "gold_predicate": "has item",
+            "pred_predicate": "has item",
+            "gold_text": "game has item item",
+            "pred_text": "game has item item",
+            "score": 1.0
+          },
+          {
+            "gold_predicate": "has playing area",
+            "pred_predicate": "has playing area",
+            "gold_text": "game has playing area playing area",
+            "pred_text": "game has playing area playing area",
+            "score": 1.0
+          },
+          {
+            "gold_predicate": "has achievement",
+            "pred_predicate": "game has achievement",
+            "gold_text": "game has achievement achievement",
+            "pred_text": "game game has achievement achievement",
+            "score": 0.9822
+          },
+          {
+            "gold_predicate": "is friend with player",
+            "pred_predicate": "has friend",
+            "gold_text": "player is friend with player player",
+            "pred_text": "player has friend player",
+            "score": 0.9171
+          },
+          {
+            "gold_predicate": "owns item",
+            "pred_predicate": "owns item",
+            "gold_text": "character owns item item",
+            "pred_text": "player owns item item",
+            "score": 0.8813
+          },
+          {
+            "gold_predicate": "owns achievement",
+            "pred_predicate": "has achievement",
+            "gold_text": "player owns achievement achievement",
+            "pred_text": "player has achievement achievement",
+            "score": 0.8558
+          },
+          {
+            "gold_predicate": "is session in game",
+            "pred_predicate": "has game",
+            "gold_text": "session is session in game game",
+            "pred_text": "game session has game game",
+            "score": 0.8378
+          },
+          {
+            "gold_predicate": "purchases game offering",
+            "pred_predicate": "purchase game",
+            "gold_text": "in app purchase event purchases game offering game product",
+            "pred_text": "in app purchase purchase game game",
+            "score": 0.8342
+          },
+          {
+            "gold_predicate": "involves player",
+            "pred_predicate": "has participant",
+            "gold_text": "session involves player player",
+            "pred_text": "game session has participant player",
+            "score": 0.7903
+          },
+          {
+            "gold_predicate": "plays game",
+            "pred_predicate": "last played game",
+            "gold_text": "player plays game game",
+            "pred_text": "player last played game game",
+            "score": 0.7454
+          },
+          {
+            "gold_predicate": "is achievement in game",
+            "pred_predicate": "completion for game",
+            "gold_text": "achievement is achievement in game game",
+            "pred_text": "game completion completion for game game",
+            "score": 0.7142
+          },
+          {
+            "gold_predicate": "has feature",
+            "pred_predicate": "has ability",
+            "gold_text": "item has feature feature",
+            "pred_text": "item has ability ability",
+            "score": 0.6729
+          },
+          {
+            "gold_predicate": "owns character",
+            "pred_predicate": "equipment player",
+            "gold_text": "player owns character character",
+            "pred_text": "player equipment equipment player player",
+            "score": 0.6133
+          },
+          {
+            "gold_predicate": "is leaderboard in game",
+            "pred_predicate": "for game",
+            "gold_text": "leaderboard is leaderboard in game game",
+            "pred_text": "player game stat for game game",
+            "score": 0.6116
+          },
+          {
+            "gold_predicate": "is character in game",
+            "pred_predicate": "usage game",
+            "gold_text": "character is character in game game",
+            "pred_text": "item usage usage game game",
+            "score": 0.6025
+          }
+        ]
+      },
+      "DatatypeProperty": {
+        "n_gold": 5,
+        "n_pred": 9,
+        "tp": 5,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.5556,
+        "recall": 1.0,
+        "f1": 0.7143,
+        "matches": [
+          {
+            "gold_predicate": "username",
+            "pred_predicate": "has username",
+            "gold_text": "player username xsd string",
+            "pred_text": "player has username xsd string",
+            "score": 0.9489
+          },
+          {
+            "gold_predicate": "release date",
+            "pred_predicate": "has release date",
+            "gold_text": "game release date xsd date time",
+            "pred_text": "game has release date xsd date",
+            "score": 0.9142
+          },
+          {
+            "gold_predicate": "start time",
+            "pred_predicate": "session start date time",
+            "gold_text": "session start time xsd date time",
+            "pred_text": "game session session start date time xsd date time",
+            "score": 0.8844
+          },
+          {
+            "gold_predicate": "end time",
+            "pred_predicate": "hours played",
+            "gold_text": "session end time xsd date time",
+            "pred_text": "game session hours played xsd decimal",
+            "score": 0.6285
+          },
+          {
+            "gold_predicate": "event time",
+            "pred_predicate": "purchase date",
+            "gold_text": "event time xsd date time",
+            "pred_text": "in app purchase purchase date xsd date time",
+            "score": 0.6015
+          }
+        ]
+      }
+    },
+    {
+      "id": "layer3_strict",
+      "n_aligned_total": 11,
+      "ObjectProperty": {
+        "n_aligned_pairs": 9,
+        "type": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 0,
+          "skip": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "domain": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 5,
+          "skip": 0,
+          "precision": 0.4444,
+          "recall": 0.4444,
+          "f1": 0.4444
+        },
+        "range": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 4,
+          "skip": 0,
+          "precision": 0.5556,
+          "recall": 0.5556,
+          "f1": 0.5556
+        },
+        "overall": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 9,
+          "skip": 0,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "fully_aligned": [
+          {
+            "predicate_type": "ObjectProperty",
+            "gold_predicate": "has item",
+            "pred_predicate": "has item",
+            "gold_type": "ObjectProperty",
+            "pred_type": "ObjectProperty",
+            "gold_domain": [
+              "Game"
+            ],
+            "pred_domain": [
+              "Game"
+            ],
+            "gold_range": [
+              "Item"
+            ],
+            "pred_range": [
+              "Item"
+            ],
+            "type_verdict": "tp",
+            "domain_verdict": "tp",
+            "range_verdict": "tp",
+            "is_full_match": true
+          },
+          {
+            "predicate_type": "ObjectProperty",
+            "gold_predicate": "has playing area",
+            "pred_predicate": "has playing area",
+            "gold_type": "ObjectProperty",
+            "pred_type": "ObjectProperty",
+            "gold_domain": [
+              "Game"
+            ],
+            "pred_domain": [
+              "Game"
+            ],
+            "gold_range": [
+              "playing area"
+            ],
+            "pred_range": [
+              "Playing Area"
+            ],
+            "type_verdict": "tp",
+            "domain_verdict": "tp",
+            "range_verdict": "tp",
+            "is_full_match": true
+          },
+          {
+            "predicate_type": "ObjectProperty",
+            "gold_predicate": "plays game",
+            "pred_predicate": "last played game",
+            "gold_type": "ObjectProperty",
+            "pred_type": "ObjectProperty",
+            "gold_domain": [
+              "Player"
+            ],
+            "pred_domain": [
+              "Player"
+            ],
+            "gold_range": [
+              "Game"
+            ],
+            "pred_range": [
+              "Game"
+            ],
+            "type_verdict": "tp",
+            "domain_verdict": "tp",
+            "range_verdict": "tp",
+            "is_full_match": true
+          }
+        ]
+      },
+      "DatatypeProperty": {
+        "n_aligned_pairs": 2,
+        "type": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 0,
+          "skip": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "domain": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 0,
+          "skip": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "range": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 1,
+          "skip": 0,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "overall": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "mismatch": 1,
+          "skip": 0,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "fully_aligned": [
+          {
+            "predicate_type": "DatatypeProperty",
+            "gold_predicate": "username",
+            "pred_predicate": "has username",
+            "gold_type": "DatatypeProperty",
+            "pred_type": "DatatypeProperty",
+            "gold_domain": [
+              "Player"
+            ],
+            "pred_domain": [
+              "Player"
+            ],
+            "gold_range": [
+              "xsd:string"
+            ],
+            "pred_range": [
+              "xsd:string"
+            ],
+            "type_verdict": "tp",
+            "domain_verdict": "tp",
+            "range_verdict": "tp",
+            "is_full_match": true
+          }
+        ]
+      },
+      "grand_overall": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "mismatch": 10,
+        "skip": 0,
+        "precision": 0.5455,
+        "recall": 0.5455,
+        "f1": 0.5455
+      },
+      "grand_type": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "mismatch": 0,
+        "skip": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "grand_domain": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "mismatch": 5,
+        "skip": 0,
+        "precision": 0.5455,
+        "recall": 0.5455,
+        "f1": 0.5455
+      },
+      "grand_range": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "mismatch": 5,
+        "skip": 0,
+        "precision": 0.5455,
+        "recall": 0.5455,
+        "f1": 0.5455
+      },
+      "type_mismatches": [],
+      "all_pairs": [
+        {
+          "predicate_type": "DatatypeProperty",
+          "gold_predicate": "release date",
+          "pred_predicate": "has release date",
+          "gold_type": "DatatypeProperty",
+          "pred_type": "DatatypeProperty",
+          "gold_domain": [
+            "Game"
+          ],
+          "pred_domain": [
+            "Game"
+          ],
+          "gold_range": [
+            "xsd:dateTime"
+          ],
+          "pred_range": [
+            "xsd:date"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "tp",
+          "range_verdict": "mismatch",
+          "is_full_match": false
+        },
+        {
+          "predicate_type": "DatatypeProperty",
+          "gold_predicate": "username",
+          "pred_predicate": "has username",
+          "gold_type": "DatatypeProperty",
+          "pred_type": "DatatypeProperty",
+          "gold_domain": [
+            "Player"
+          ],
+          "pred_domain": [
+            "Player"
+          ],
+          "gold_range": [
+            "xsd:string"
+          ],
+          "pred_range": [
+            "xsd:string"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "tp",
+          "range_verdict": "tp",
+          "is_full_match": true
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "has achievement",
+          "pred_predicate": "has achievement",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Game"
+          ],
+          "pred_domain": [
+            "Player"
+          ],
+          "gold_range": [
+            "Achievement"
+          ],
+          "pred_range": [
+            "Achievement"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "mismatch",
+          "range_verdict": "tp",
+          "is_full_match": false
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "has game genre",
+          "pred_predicate": "has game",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Game"
+          ],
+          "pred_domain": [
+            "Game Session"
+          ],
+          "gold_range": [
+            "Genre"
+          ],
+          "pred_range": [
+            "Game"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "mismatch",
+          "range_verdict": "mismatch",
+          "is_full_match": false
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "has item",
+          "pred_predicate": "has item",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Game"
+          ],
+          "pred_domain": [
+            "Game"
+          ],
+          "gold_range": [
+            "Item"
+          ],
+          "pred_range": [
+            "Item"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "tp",
+          "range_verdict": "tp",
+          "is_full_match": true
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "has playing area",
+          "pred_predicate": "has playing area",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Game"
+          ],
+          "pred_domain": [
+            "Game"
+          ],
+          "gold_range": [
+            "playing area"
+          ],
+          "pred_range": [
+            "Playing Area"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "tp",
+          "range_verdict": "tp",
+          "is_full_match": true
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "is achievement in game",
+          "pred_predicate": "game has achievement",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Achievement"
+          ],
+          "pred_domain": [
+            "Game"
+          ],
+          "gold_range": [
+            "Game"
+          ],
+          "pred_range": [
+            "Achievement"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "mismatch",
+          "range_verdict": "mismatch",
+          "is_full_match": false
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "owns achievement",
+          "pred_predicate": "has achievement type",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Player"
+          ],
+          "pred_domain": [
+            "Achievement"
+          ],
+          "gold_range": [
+            "Achievement"
+          ],
+          "pred_range": [
+            "Achievement Type"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "mismatch",
+          "range_verdict": "mismatch",
+          "is_full_match": false
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "owns item",
+          "pred_predicate": "owns item",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Character"
+          ],
+          "pred_domain": [
+            "Player"
+          ],
+          "gold_range": [
+            "Item"
+          ],
+          "pred_range": [
+            "Item"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "mismatch",
+          "range_verdict": "tp",
+          "is_full_match": false
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "plays game",
+          "pred_predicate": "last played game",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "Player"
+          ],
+          "pred_domain": [
+            "Player"
+          ],
+          "gold_range": [
+            "Game"
+          ],
+          "pred_range": [
+            "Game"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "tp",
+          "range_verdict": "tp",
+          "is_full_match": true
+        },
+        {
+          "predicate_type": "ObjectProperty",
+          "gold_predicate": "purchases game offering",
+          "pred_predicate": "purchase game",
+          "gold_type": "ObjectProperty",
+          "pred_type": "ObjectProperty",
+          "gold_domain": [
+            "in-app purchase event"
+          ],
+          "pred_domain": [
+            "In-App Purchase"
+          ],
+          "gold_range": [
+            "game product"
+          ],
+          "pred_range": [
+            "Game"
+          ],
+          "type_verdict": "tp",
+          "domain_verdict": "tp",
+          "range_verdict": "mismatch",
+          "is_full_match": false
+        }
+      ]
+    },
+    {
+      "id": "layer4_global",
+      "ObjectProperty": {
+        "matched": 9,
+        "extra": 41,
+        "extra_layer3": 9,
+        "extra_unaligned": 32,
+        "missing": 35,
+        "missing_layer3": 9,
+        "missing_unaligned": 26,
+        "precision": 0.18,
+        "recall": 0.2045,
+        "f1": 0.1915,
+        "unaligned_gold_count": 14,
+        "unaligned_pred_count": 16,
+        "unaligned_gold_axiom_count": 26,
+        "unaligned_pred_axiom_count": 32,
+        "unaligned_gold": [
+          {
+            "predicate": "has character",
+            "domain": [
+              "Game"
+            ],
+            "range": [
+              "Character"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "has feature",
+            "domain": [
+              "Item"
+            ],
+            "range": [
+              "Feature"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "has leaderboard",
+            "domain": [
+              "Game"
+            ],
+            "range": [
+              "Leaderboard"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "involves character",
+            "domain": [
+              "Session"
+            ],
+            "range": [
+              "Character"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "involves player",
+            "domain": [
+              "Session"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "is character in game",
+            "domain": [
+              "Character"
+            ],
+            "range": [
+              "Game"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "is character in session",
+            "domain": [
+              "Character"
+            ],
+            "range": [
+              "Session"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "is event associated to player",
+            "domain": null,
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 1
+          },
+          {
+            "predicate": "is friend with player",
+            "domain": [
+              "Player"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "is leaderboard in game",
+            "domain": [
+              "Leaderboard"
+            ],
+            "range": [
+              "Game"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "is player in session",
+            "domain": [
+              "Player"
+            ],
+            "range": [
+              "Session"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "is session in game",
+            "domain": [
+              "Session"
+            ],
+            "range": [
+              "Game"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "lives in",
+            "domain": [
+              "Player"
+            ],
+            "range": null,
+            "axiom_count": 1
+          },
+          {
+            "predicate": "owns character",
+            "domain": [
+              "Player"
+            ],
+            "range": [
+              "Character"
+            ],
+            "axiom_count": 2
+          }
+        ],
+        "unaligned_pred": [
+          {
+            "predicate": "has friend",
+            "domain": [
+              "Player"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "has participant",
+            "domain": [
+              "Game Session"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "has ability",
+            "domain": [
+              "Item"
+            ],
+            "range": [
+              "Ability"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "for player",
+            "domain": [
+              "Player Game Stat"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "for game",
+            "domain": [
+              "Player Game Stat"
+            ],
+            "range": [
+              "Game"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "completion for player",
+            "domain": [
+              "Game Completion"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "completion for game",
+            "domain": [
+              "Game Completion"
+            ],
+            "range": [
+              "Game"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "equipment player",
+            "domain": [
+              "Player Equipment"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "equipment game",
+            "domain": [
+              "Player Equipment"
+            ],
+            "range": [
+              "Game"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "equipment item",
+            "domain": [
+              "Player Equipment"
+            ],
+            "range": [
+              "Item"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "usage player",
+            "domain": [
+              "Item Usage"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "usage item",
+            "domain": [
+              "Item Usage"
+            ],
+            "range": [
+              "Item"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "usage game",
+            "domain": [
+              "Item Usage"
+            ],
+            "range": [
+              "Game"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "purchase player",
+            "domain": [
+              "In-App Purchase"
+            ],
+            "range": [
+              "Player"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "purchase item",
+            "domain": [
+              "In-App Purchase"
+            ],
+            "range": [
+              "Item"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "has in-app purchase",
+            "domain": [
+              "Player"
+            ],
+            "range": [
+              "In-App Purchase"
+            ],
+            "axiom_count": 2
+          }
+        ]
+      },
+      "DatatypeProperty": {
+        "matched": 3,
+        "extra": 15,
+        "extra_layer3": 1,
+        "extra_unaligned": 14,
+        "missing": 6,
+        "missing_layer3": 1,
+        "missing_unaligned": 5,
+        "precision": 0.1667,
+        "recall": 0.3333,
+        "f1": 0.2222,
+        "unaligned_gold_count": 3,
+        "unaligned_pred_count": 7,
+        "unaligned_gold_axiom_count": 5,
+        "unaligned_pred_axiom_count": 14,
+        "unaligned_gold": [
+          {
+            "predicate": "end time",
+            "domain": [
+              "Session"
+            ],
+            "range": [
+              "xsd:dateTime"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "event time",
+            "domain": null,
+            "range": [
+              "xsd:dateTime"
+            ],
+            "axiom_count": 1
+          },
+          {
+            "predicate": "start time",
+            "domain": [
+              "Session"
+            ],
+            "range": [
+              "xsd:dateTime"
+            ],
+            "axiom_count": 2
+          }
+        ],
+        "unaligned_pred": [
+          {
+            "predicate": "hours played",
+            "domain": [
+              "Game Session"
+            ],
+            "range": [
+              "xsd:decimal"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "has genre",
+            "domain": [
+              "Game"
+            ],
+            "range": [
+              "xsd:string"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "kill count",
+            "domain": [
+              "Player Game Stat"
+            ],
+            "range": [
+              "xsd:integer"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "purchase amount",
+            "domain": [
+              "In-App Purchase"
+            ],
+            "range": [
+              "xsd:decimal"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "purchase date",
+            "domain": [
+              "In-App Purchase"
+            ],
+            "range": [
+              "xsd:dateTime"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "has location",
+            "domain": [
+              "Player"
+            ],
+            "range": [
+              "xsd:string"
+            ],
+            "axiom_count": 2
+          },
+          {
+            "predicate": "session start date time",
+            "domain": [
+              "Game Session"
+            ],
+            "range": [
+              "xsd:dateTime"
+            ],
+            "axiom_count": 2
+          }
+        ]
+      },
+      "grand_overall": {
+        "matched": 12,
+        "extra": 56,
+        "extra_layer3": 10,
+        "extra_unaligned": 46,
+        "missing": 41,
+        "missing_layer3": 10,
+        "missing_unaligned": 31,
+        "precision": 0.1765,
+        "recall": 0.2264,
+        "f1": 0.1983
+      }
+    }
+  ]
+}

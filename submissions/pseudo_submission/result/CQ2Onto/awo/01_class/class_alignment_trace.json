@@ -1,0 +1,1116 @@
+[
+  {
+    "id": 1,
+    "gold_term": "CarnivorousPlant",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 2,
+    "gold_term": "animal",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 3,
+    "gold_term": "carnivore",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 4,
+    "gold_term": "herbivore",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 5,
+    "gold_term": "lion",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 6,
+    "gold_term": "plant",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 7,
+    "gold_term": "PlantParts",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.98,
+      "levenshtein": 0.9,
+      "semantic": 0.9272,
+      "sequence_match": 0.9474
+    },
+    "is_hard_match": false,
+    "agg_score": 0.9515,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 8,
+    "gold_term": "plant",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9111,
+      "levenshtein": 0.5556,
+      "semantic": 0.7975,
+      "sequence_match": 0.7143
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8076,
+    "selected": false,
+    "reason": "gold already mapped to 'Plant'"
+  },
+  {
+    "id": 9,
+    "gold_term": "PlantParts",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9,
+      "levenshtein": 0.5,
+      "semantic": 0.7596,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7754,
+    "selected": false,
+    "reason": "gold already mapped to 'Plant Part'"
+  },
+  {
+    "id": 10,
+    "gold_term": "CarnivorousPlant",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8778,
+      "levenshtein": 0.5,
+      "semantic": 0.7688,
+      "sequence_match": 0.64
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7622,
+    "selected": false,
+    "reason": "gold already mapped to 'Carnivorous Plant'"
+  },
+  {
+    "id": 11,
+    "gold_term": "carnivore",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8778,
+      "levenshtein": 0.5,
+      "semantic": 0.7688,
+      "sequence_match": 0.64
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7622,
+    "selected": false,
+    "reason": "gold already mapped to 'Carnivore'"
+  },
+  {
+    "id": 12,
+    "gold_term": "Omnivore",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8056,
+      "levenshtein": 0.6667,
+      "semantic": 0.7692,
+      "sequence_match": 0.7059
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7602,
+    "selected": false,
+    "reason": "pred already taken by 'carnivore' (higher averaged score)"
+  },
+  {
+    "id": 13,
+    "gold_term": "carnivore",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7778,
+      "levenshtein": 0.6667,
+      "semantic": 0.8348,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7597,
+    "selected": false,
+    "reason": "gold already mapped to 'Carnivore'"
+  },
+  {
+    "id": 14,
+    "gold_term": "herbivore",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7778,
+      "levenshtein": 0.6667,
+      "semantic": 0.8348,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7597,
+    "selected": false,
+    "reason": "gold already mapped to 'Herbivore'"
+  },
+  {
+    "id": 15,
+    "gold_term": "Omnivore",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7269,
+      "levenshtein": 0.5556,
+      "semantic": 0.6737,
+      "sequence_match": 0.5882
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6629,
+    "selected": false,
+    "reason": "pred already taken by 'herbivore' (higher averaged score)"
+  },
+  {
+    "id": 16,
+    "gold_term": "CarnivorousPlant",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5083,
+      "levenshtein": 0.3125,
+      "semantic": 0.8042,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5962,
+    "selected": false,
+    "reason": "top-3 avg score 0.5962 < final_threshold 0.6"
+  },
+  {
+    "id": 17,
+    "gold_term": "plant",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5083,
+      "levenshtein": 0.3125,
+      "semantic": 0.8042,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5962,
+    "selected": false,
+    "reason": "top-3 avg score 0.5962 < final_threshold 0.6"
+  },
+  {
+    "id": 18,
+    "gold_term": "CarnivorousPlant",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6227,
+      "levenshtein": 0.3125,
+      "semantic": 0.7284,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5837,
+    "selected": false,
+    "reason": "top-3 avg score 0.5837 < final_threshold 0.6"
+  },
+  {
+    "id": 19,
+    "gold_term": "herbivore",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6227,
+      "levenshtein": 0.3125,
+      "semantic": 0.7284,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5837,
+    "selected": false,
+    "reason": "top-3 avg score 0.5837 < final_threshold 0.6"
+  },
+  {
+    "id": 20,
+    "gold_term": "Omnivore",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6528,
+      "levenshtein": 0.3125,
+      "semantic": 0.6521,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5738,
+    "selected": false,
+    "reason": "top-3 avg score 0.5738 < final_threshold 0.6"
+  },
+  {
+    "id": 21,
+    "gold_term": "lion",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6333,
+      "levenshtein": 0.2,
+      "semantic": 0.6275,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5684,
+    "selected": false,
+    "reason": "top-3 avg score 0.5684 < final_threshold 0.6"
+  },
+  {
+    "id": 22,
+    "gold_term": "plant",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6333,
+      "levenshtein": 0.2,
+      "semantic": 0.6275,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5684,
+    "selected": false,
+    "reason": "top-3 avg score 0.5684 < final_threshold 0.6"
+  },
+  {
+    "id": 23,
+    "gold_term": "animal",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.3333,
+      "semantic": 0.6886,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5666,
+    "selected": false,
+    "reason": "top-3 avg score 0.5666 < final_threshold 0.6"
+  },
+  {
+    "id": 24,
+    "gold_term": "carnivore",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.3333,
+      "semantic": 0.6886,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5666,
+    "selected": false,
+    "reason": "top-3 avg score 0.5666 < final_threshold 0.6"
+  },
+  {
+    "id": 25,
+    "gold_term": "CarnivorousPlant",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5694,
+      "levenshtein": 0.25,
+      "semantic": 0.6558,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5417,
+    "selected": false,
+    "reason": "top-3 avg score 0.5417 < final_threshold 0.6"
+  },
+  {
+    "id": 26,
+    "gold_term": "animal",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.0,
+      "semantic": 0.6698,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5371,
+    "selected": false,
+    "reason": "top-3 avg score 0.5371 < final_threshold 0.6"
+  },
+  {
+    "id": 27,
+    "gold_term": "plant",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.0,
+      "semantic": 0.6698,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5371,
+    "selected": false,
+    "reason": "top-3 avg score 0.5371 < final_threshold 0.6"
+  },
+  {
+    "id": 28,
+    "gold_term": "PlantParts",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5696,
+      "levenshtein": 0.1875,
+      "semantic": 0.6443,
+      "sequence_match": 0.3846
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5328,
+    "selected": false,
+    "reason": "top-3 avg score 0.5328 < final_threshold 0.6"
+  },
+  {
+    "id": 29,
+    "gold_term": "animal",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.3333,
+      "semantic": 0.5478,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5196,
+    "selected": false,
+    "reason": "top-3 avg score 0.5196 < final_threshold 0.6"
+  },
+  {
+    "id": 30,
+    "gold_term": "CarnivorousPlant",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6389,
+      "levenshtein": 0.25,
+      "semantic": 0.554,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5189,
+    "selected": false,
+    "reason": "top-3 avg score 0.5189 < final_threshold 0.6"
+  },
+  {
+    "id": 31,
+    "gold_term": "Omnivore",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5972,
+      "levenshtein": 0.25,
+      "semantic": 0.5741,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5016,
+    "selected": false,
+    "reason": "top-3 avg score 0.5016 < final_threshold 0.6"
+  },
+  {
+    "id": 32,
+    "gold_term": "PlantParts",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.3,
+      "semantic": 0.5707,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4893,
+    "selected": false,
+    "reason": "top-3 avg score 0.4893 < final_threshold 0.6"
+  },
+  {
+    "id": 33,
+    "gold_term": "animal",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6389,
+      "levenshtein": 0.25,
+      "semantic": 0.554,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.481,
+    "selected": false,
+    "reason": "top-3 avg score 0.4810 < final_threshold 0.6"
+  },
+  {
+    "id": 34,
+    "gold_term": "carnivore",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5407,
+      "levenshtein": 0.1111,
+      "semantic": 0.6075,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.478,
+    "selected": false,
+    "reason": "top-3 avg score 0.4780 < final_threshold 0.6"
+  },
+  {
+    "id": 35,
+    "gold_term": "plant",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5407,
+      "levenshtein": 0.1111,
+      "semantic": 0.6075,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.478,
+    "selected": false,
+    "reason": "top-3 avg score 0.4780 < final_threshold 0.6"
+  },
+  {
+    "id": 36,
+    "gold_term": "lion",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5741,
+      "levenshtein": 0.1111,
+      "semantic": 0.5173,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4664,
+    "selected": false,
+    "reason": "top-3 avg score 0.4664 < final_threshold 0.6"
+  },
+  {
+    "id": 37,
+    "gold_term": "Omnivore",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5139,
+      "levenshtein": 0.25,
+      "semantic": 0.5897,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4631,
+    "selected": false,
+    "reason": "top-3 avg score 0.4631 < final_threshold 0.6"
+  },
+  {
+    "id": 38,
+    "gold_term": "animal",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.1667,
+      "semantic": 0.7439,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4628,
+    "selected": false,
+    "reason": "top-3 avg score 0.4628 < final_threshold 0.6"
+  },
+  {
+    "id": 39,
+    "gold_term": "lion",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.1667,
+      "semantic": 0.7439,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4628,
+    "selected": false,
+    "reason": "top-3 avg score 0.4628 < final_threshold 0.6"
+  },
+  {
+    "id": 40,
+    "gold_term": "PlantParts",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5667,
+      "levenshtein": 0.1,
+      "semantic": 0.5327,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4617,
+    "selected": false,
+    "reason": "top-3 avg score 0.4617 < final_threshold 0.6"
+  },
+  {
+    "id": 41,
+    "gold_term": "herbivore",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4537,
+      "levenshtein": 0.2222,
+      "semantic": 0.6222,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4612,
+    "selected": false,
+    "reason": "top-3 avg score 0.4612 < final_threshold 0.6"
+  },
+  {
+    "id": 42,
+    "gold_term": "lion",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4537,
+      "levenshtein": 0.2222,
+      "semantic": 0.6222,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4612,
+    "selected": false,
+    "reason": "top-3 avg score 0.4612 < final_threshold 0.6"
+  },
+  {
+    "id": 43,
+    "gold_term": "lion",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4074,
+      "levenshtein": 0.2222,
+      "semantic": 0.6544,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4565,
+    "selected": false,
+    "reason": "top-3 avg score 0.4565 < final_threshold 0.6"
+  },
+  {
+    "id": 44,
+    "gold_term": "PlantParts",
+    "pred_term": "Carnivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5444,
+      "levenshtein": 0.2,
+      "semantic": 0.5635,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4395,
+    "selected": false,
+    "reason": "top-3 avg score 0.4395 < final_threshold 0.6"
+  },
+  {
+    "id": 45,
+    "gold_term": "carnivore",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5556,
+      "levenshtein": 0.2222,
+      "semantic": 0.5192,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4323,
+    "selected": false,
+    "reason": "top-3 avg score 0.4323 < final_threshold 0.6"
+  },
+  {
+    "id": 46,
+    "gold_term": "carnivore",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4074,
+      "levenshtein": 0.2222,
+      "semantic": 0.6544,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.428,
+    "selected": false,
+    "reason": "top-3 avg score 0.4280 < final_threshold 0.6"
+  },
+  {
+    "id": 47,
+    "gold_term": "lion",
+    "pred_term": "Carnivorous Plant",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5347,
+      "levenshtein": 0.1875,
+      "semantic": 0.5218,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4188,
+    "selected": false,
+    "reason": "top-3 avg score 0.4188 < final_threshold 0.6"
+  },
+  {
+    "id": 48,
+    "gold_term": "CarnivorousPlant",
+    "pred_term": "Lion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5347,
+      "levenshtein": 0.1875,
+      "semantic": 0.5218,
+      "sequence_match": 0.1
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4147,
+    "selected": false,
+    "reason": "top-3 avg score 0.4147 < final_threshold 0.6"
+  },
+  {
+    "id": 49,
+    "gold_term": "animal",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4259,
+      "levenshtein": 0.1111,
+      "semantic": 0.6577,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4057,
+    "selected": false,
+    "reason": "top-3 avg score 0.4057 < final_threshold 0.6"
+  },
+  {
+    "id": 50,
+    "gold_term": "herbivore",
+    "pred_term": "Animal",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4259,
+      "levenshtein": 0.1111,
+      "semantic": 0.6577,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4057,
+    "selected": false,
+    "reason": "top-3 avg score 0.4057 < final_threshold 0.6"
+  },
+  {
+    "id": 51,
+    "gold_term": "Omnivore",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4907,
+      "levenshtein": 0.2222,
+      "semantic": 0.44,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3887,
+    "selected": false,
+    "reason": "top-3 avg score 0.3887 < final_threshold 0.6"
+  },
+  {
+    "id": 52,
+    "gold_term": "PlantParts",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4037,
+      "levenshtein": 0.1,
+      "semantic": 0.6105,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3732,
+    "selected": false,
+    "reason": "top-3 avg score 0.3732 < final_threshold 0.6"
+  },
+  {
+    "id": 53,
+    "gold_term": "Omnivore",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4417,
+      "levenshtein": 0.0,
+      "semantic": 0.521,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3722,
+    "selected": false,
+    "reason": "top-3 avg score 0.3722 < final_threshold 0.6"
+  },
+  {
+    "id": 54,
+    "gold_term": "herbivore",
+    "pred_term": "Plant Part",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4074,
+      "levenshtein": 0.1111,
+      "semantic": 0.5905,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3697,
+    "selected": false,
+    "reason": "top-3 avg score 0.3697 < final_threshold 0.6"
+  },
+  {
+    "id": 55,
+    "gold_term": "herbivore",
+    "pred_term": "Plant",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6824,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2275,
+    "selected": false,
+    "reason": "top-3 avg score 0.2275 < final_threshold 0.6"
+  },
+  {
+    "id": 56,
+    "gold_term": "plant",
+    "pred_term": "Herbivore",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6824,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2275,
+    "selected": false,
+    "reason": "top-3 avg score 0.2275 < final_threshold 0.6"
+  }
+]

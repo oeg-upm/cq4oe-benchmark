@@ -1,0 +1,13 @@
+Gold_term,Pre_term,Method,Score
+has fabrication number,fabrication number,top3_avg(jaro_winkler+semantic+sequence_match),0.9139
+has firmware version,firmware version,top3_avg(jaro_winkler+semantic+sequence_match),0.9031
+has hardware version,hardware version,top3_avg(jaro_winkler+semantic+sequence_match),0.9226
+has manufacturer,manufacturer,top3_avg(jaro_winkler+semantic+sequence_match),0.887
+has model,model,top3_avg(jaro_winkler+semantic+sequence_match),0.8411
+has start timestamp,start timestamp,top3_avg(levenshtein+semantic+sequence_match),0.8859
+has version,version,top3_avg(jaro_winkler+semantic+sequence_match),0.8461
+has billing period,has billing period,hard_match,1.0
+has measurement,is measurement of,top3_avg(jaro_winkler+semantic+sequence_match),0.8388
+has property,has physical property,top3_avg(jaro_winkler+semantic+sequence_match),0.7884
+is measured by device,is measured property of,top3_avg(jaro_winkler+semantic+sequence_match),0.73
+makes measurement,provides measurement,top3_avg(jaro_winkler+semantic+sequence_match),0.8231

@@ -1,0 +1,1737 @@
+{
+  "config": {
+    "gold_owl": "00_gold_standard/wine/ontology/sub_wine.owl",
+    "pred_owl": "01_predictions/challenge/pseudo_submission/ontology/wine_ontology.owl",
+    "class_csv": "03_evaluation_results/challenge/pseudo_submission/wine/01_class/class_best_matching.csv",
+    "property_csv": "03_evaluation_results/challenge/pseudo_submission/wine/02_property/property_best_matching.csv",
+    "reasoner": "HermiT"
+  },
+  "results": [
+    {
+      "id": "gold_closure",
+      "n_class_pairs": 19,
+      "n_property_pairs": 4,
+      "class_pairs": [
+        {
+          "sub": "Bordeaux",
+          "sup": "Wine"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "Bordeaux"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "RedWine"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "Wine"
+        },
+        {
+          "sub": "RedWine",
+          "sup": "Wine"
+        },
+        {
+          "sub": "WhiteBordeaux",
+          "sup": "Bordeaux"
+        },
+        {
+          "sub": "WhiteBordeaux",
+          "sup": "WhiteWine"
+        },
+        {
+          "sub": "WhiteBordeaux",
+          "sup": "Wine"
+        },
+        {
+          "sub": "WhiteWine",
+          "sup": "Wine"
+        },
+        {
+          "sub": "WineBody",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineBody",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineColor",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineFlavor",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineFlavor",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineSugar",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineSugar",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineTaste",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "Zinfandel",
+          "sup": "RedWine"
+        },
+        {
+          "sub": "Zinfandel",
+          "sup": "Wine"
+        }
+      ],
+      "property_pairs": [
+        {
+          "sub": "hasBody",
+          "sup": "hasWineDescriptor"
+        },
+        {
+          "sub": "hasColor",
+          "sup": "hasWineDescriptor"
+        },
+        {
+          "sub": "hasFlavor",
+          "sup": "hasWineDescriptor"
+        },
+        {
+          "sub": "hasSugar",
+          "sup": "hasWineDescriptor"
+        }
+      ]
+    },
+    {
+      "id": "pred_closure",
+      "n_class_pairs": 18,
+      "n_property_pairs": 0,
+      "class_pairs": [
+        {
+          "sub": "Body",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "BordeauxGrapes",
+          "sup": "GrapeVariety"
+        },
+        {
+          "sub": "BordeauxGrapes",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "BordeauxWine",
+          "sup": "Wine"
+        },
+        {
+          "sub": "Bouquet",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "CabernetFranc",
+          "sup": "BordeauxGrapes"
+        },
+        {
+          "sub": "CabernetFranc",
+          "sup": "GrapeVariety"
+        },
+        {
+          "sub": "CabernetFranc",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "CabernetSauvignon",
+          "sup": "BordeauxGrapes"
+        },
+        {
+          "sub": "CabernetSauvignon",
+          "sup": "GrapeVariety"
+        },
+        {
+          "sub": "CabernetSauvignon",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "GrapeVariety",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "Merlot",
+          "sup": "BordeauxGrapes"
+        },
+        {
+          "sub": "Merlot",
+          "sup": "GrapeVariety"
+        },
+        {
+          "sub": "Merlot",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "RedWineColor",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "Region",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "WhiteWineColor",
+          "sup": "WineCharacteristic"
+        }
+      ],
+      "property_pairs": []
+    },
+    {
+      "id": "translation",
+      "n_class_translated": 8,
+      "n_property_translated": 0,
+      "n_class_untranslated": 10,
+      "n_property_untranslated": 0,
+      "class_translated": [
+        {
+          "sub": "Bordeaux",
+          "sup": "Wine"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "WineGrape"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "Region",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WhiteWine",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineBody",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineColor",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineGrape",
+          "sup": "WineTaste"
+        }
+      ],
+      "property_translated": [],
+      "class_untranslated": [
+        {
+          "sub": "Bouquet",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "CabernetFranc",
+          "sup": "BordeauxGrapes"
+        },
+        {
+          "sub": "CabernetFranc",
+          "sup": "GrapeVariety"
+        },
+        {
+          "sub": "CabernetFranc",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "CabernetSauvignon",
+          "sup": "BordeauxGrapes"
+        },
+        {
+          "sub": "CabernetSauvignon",
+          "sup": "GrapeVariety"
+        },
+        {
+          "sub": "CabernetSauvignon",
+          "sup": "WineCharacteristic"
+        },
+        {
+          "sub": "Merlot",
+          "sup": "BordeauxGrapes"
+        },
+        {
+          "sub": "Merlot",
+          "sup": "GrapeVariety"
+        },
+        {
+          "sub": "Merlot",
+          "sup": "WineCharacteristic"
+        }
+      ],
+      "property_untranslated": []
+    },
+    {
+      "id": "class_metrics",
+      "tp": 2,
+      "fp": 16,
+      "fn": 17,
+      "precision": 0.1111,
+      "recall": 0.1053,
+      "f1": 0.1081,
+      "tp_pairs": [
+        {
+          "sub": "Bordeaux",
+          "sup": "Wine"
+        },
+        {
+          "sub": "WineBody",
+          "sup": "WineTaste"
+        }
+      ],
+      "fp_pairs": [
+        {
+          "sub": "RedBordeaux",
+          "sup": "WineGrape"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "Region",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WhiteWine",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineColor",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineGrape",
+          "sup": "WineTaste"
+        }
+      ],
+      "fn_pairs": [
+        {
+          "sub": "RedBordeaux",
+          "sup": "Bordeaux"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "RedWine"
+        },
+        {
+          "sub": "RedBordeaux",
+          "sup": "Wine"
+        },
+        {
+          "sub": "RedWine",
+          "sup": "Wine"
+        },
+        {
+          "sub": "WhiteBordeaux",
+          "sup": "Bordeaux"
+        },
+        {
+          "sub": "WhiteBordeaux",
+          "sup": "WhiteWine"
+        },
+        {
+          "sub": "WhiteBordeaux",
+          "sup": "Wine"
+        },
+        {
+          "sub": "WhiteWine",
+          "sup": "Wine"
+        },
+        {
+          "sub": "WineBody",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineColor",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineFlavor",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineFlavor",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineSugar",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "WineSugar",
+          "sup": "WineTaste"
+        },
+        {
+          "sub": "WineTaste",
+          "sup": "WineDescriptor"
+        },
+        {
+          "sub": "Zinfandel",
+          "sup": "RedWine"
+        },
+        {
+          "sub": "Zinfandel",
+          "sup": "Wine"
+        }
+      ]
+    },
+    {
+      "id": "property_metrics",
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp_pairs": [],
+      "fp_pairs": [],
+      "fn_pairs": [
+        {
+          "sub": "hasBody",
+          "sup": "hasWineDescriptor"
+        },
+        {
+          "sub": "hasColor",
+          "sup": "hasWineDescriptor"
+        },
+        {
+          "sub": "hasFlavor",
+          "sup": "hasWineDescriptor"
+        },
+        {
+          "sub": "hasSugar",
+          "sup": "hasWineDescriptor"
+        }
+      ]
+    },
+    {
+      "id": "combined_metrics",
+      "tp": 2,
+      "fp": 16,
+      "fn": 21,
+      "precision": 0.1111,
+      "recall": 0.087,
+      "f1": 0.0976
+    },
+    {
+      "id": "cq_coverage_closure",
+      "n_total": 5,
+      "n_fully_covered": 0,
+      "n_any_covered": 5,
+      "fully_coverage": 0.0,
+      "any_coverage": 1.0,
+      "average_rate": 0.2518,
+      "n_covered": 5,
+      "coverage": 1.0,
+      "per_cq": [
+        {
+          "id": "CQ1",
+          "question": "",
+          "n_relevant": 8,
+          "n_matched": 1,
+          "n_missing": 7,
+          "rate": 0.13513513513513514,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "WineBody",
+              "WineTaste"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "WineBody",
+              "sup": "WineTaste"
+            }
+          ],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "WineColor",
+              "sup": "WineDescriptor"
+            },
+            {
+              "kind": "class",
+              "sub": "WineFlavor",
+              "sup": "WineTaste"
+            },
+            {
+              "kind": "class",
+              "sub": "WineSugar",
+              "sup": "WineTaste"
+            },
+            {
+              "kind": "class",
+              "sub": "WineTaste",
+              "sup": "WineDescriptor"
+            },
+            {
+              "kind": "property",
+              "sub": "hasBody",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "kind": "property",
+              "sub": "hasColor",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "kind": "property",
+              "sub": "hasSugar",
+              "sup": "hasWineDescriptor"
+            }
+          ],
+          "source_axioms": [
+            "AX19",
+            "AX22",
+            "AX24",
+            "AX27",
+            "AX31",
+            "AX33",
+            "AX50",
+            "AX55",
+            "AX63"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "WineBody",
+              "sup": "WineTaste",
+              "axioms": [
+                "AX19"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WineColor",
+              "sup": "WineDescriptor",
+              "axioms": [
+                "AX22",
+                "AX24"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WineTaste",
+              "sup": "WineDescriptor",
+              "axioms": [
+                "AX24",
+                "AX33"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WineFlavor",
+              "sup": "WineTaste",
+              "axioms": [
+                "AX27"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WineSugar",
+              "sup": "WineTaste",
+              "axioms": [
+                "AX31"
+              ]
+            },
+            {
+              "kind": "property",
+              "sub": "hasBody",
+              "sup": "hasWineDescriptor",
+              "axioms": [
+                "AX50"
+              ]
+            },
+            {
+              "kind": "property",
+              "sub": "hasColor",
+              "sup": "hasWineDescriptor",
+              "axioms": [
+                "AX55"
+              ]
+            },
+            {
+              "kind": "property",
+              "sub": "hasSugar",
+              "sup": "hasWineDescriptor",
+              "axioms": [
+                "AX63"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX22",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WineColor ⊑ WineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WineColor",
+              "sup": "WineDescriptor"
+            },
+            {
+              "axiom_id": "AX23",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: WineDescriptor (Class)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX24",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "WineDescriptor ≡ (WineColor ⊔ WineTaste)",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 2,
+              "n_pairs_matched": 0,
+              "all_pairs": [
+                {
+                  "kind": "class",
+                  "sub": "WineColor",
+                  "sup": "WineDescriptor"
+                },
+                {
+                  "kind": "class",
+                  "sub": "WineTaste",
+                  "sup": "WineDescriptor"
+                }
+              ],
+              "kind": "class",
+              "sub": "WineColor",
+              "sup": "WineDescriptor"
+            },
+            {
+              "axiom_id": "AX25",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: WineFlavor (Class)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX27",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WineFlavor ⊑ WineTaste",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WineFlavor",
+              "sup": "WineTaste"
+            },
+            {
+              "axiom_id": "AX29",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: WineSugar (Class)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX31",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WineSugar ⊑ WineTaste",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WineSugar",
+              "sup": "WineTaste"
+            },
+            {
+              "axiom_id": "AX33",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WineTaste ⊑ WineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WineTaste",
+              "sup": "WineDescriptor"
+            },
+            {
+              "axiom_id": "AX41",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ ∃locatedIn.Region",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX42",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ ≥1 madeFromGrape.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX43",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ =1 hasBody.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX44",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ =1 hasColor.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX45",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ =1 hasFlavor.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX46",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ =1 hasSugar.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX47",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasBody)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX48",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: hasBody (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX49",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasBody.WineBody",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX50",
+              "axiom_type": "SubPropertyOf",
+              "axiom_dl": "hasBody ⊑ hasWineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "property",
+              "sub": "hasBody",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "axiom_id": "AX51",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasColor)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX52",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: hasColor (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX53",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasColor.⊤ ⊑ wine",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX54",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasColor.WineColor",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX55",
+              "axiom_type": "SubPropertyOf",
+              "axiom_dl": "hasColor ⊑ hasWineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "property",
+              "sub": "hasColor",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "axiom_id": "AX56",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasFlavor)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX61",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: hasSugar (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX62",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasSugar.WineSugar",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX63",
+              "axiom_type": "SubPropertyOf",
+              "axiom_dl": "hasSugar ⊑ hasWineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "property",
+              "sub": "hasSugar",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "axiom_id": "AX71",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(locatedIn)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX74",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀locatedIn.Region",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX75",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: madeFromGrape (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX76",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃madeFromGrape.⊤ ⊑ wine",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX77",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀madeFromGrape.WineGrape",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 5,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX19",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "WineBody",
+              "sup": "WineTaste"
+            }
+          ],
+          "n_closure_confirmed": 1,
+          "n_axioms_total": 37
+        },
+        {
+          "id": "CQ2",
+          "question": "",
+          "n_relevant": 6,
+          "n_matched": 0,
+          "n_missing": 6,
+          "rate": 0.2,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "RedBordeaux",
+              "sup": "Bordeaux"
+            },
+            {
+              "kind": "class",
+              "sub": "RedBordeaux",
+              "sup": "RedWine"
+            },
+            {
+              "kind": "class",
+              "sub": "RedWine",
+              "sup": "Wine"
+            },
+            {
+              "kind": "class",
+              "sub": "WhiteBordeaux",
+              "sup": "Bordeaux"
+            },
+            {
+              "kind": "class",
+              "sub": "WhiteBordeaux",
+              "sup": "WhiteWine"
+            },
+            {
+              "kind": "class",
+              "sub": "WhiteWine",
+              "sup": "Wine"
+            }
+          ],
+          "source_axioms": [
+            "AX13",
+            "AX16",
+            "AX4",
+            "AX7"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "RedBordeaux",
+              "sup": "Bordeaux",
+              "axioms": [
+                "AX4"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "RedBordeaux",
+              "sup": "RedWine",
+              "axioms": [
+                "AX4"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "RedWine",
+              "sup": "Wine",
+              "axioms": [
+                "AX7"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WhiteBordeaux",
+              "sup": "Bordeaux",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WhiteBordeaux",
+              "sup": "WhiteWine",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WhiteWine",
+              "sup": "Wine",
+              "axioms": [
+                "AX16"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX4",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "RedBordeaux ≡ (Bordeaux ⊓ RedWine)",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 2,
+              "n_pairs_matched": 0,
+              "all_pairs": [
+                {
+                  "kind": "class",
+                  "sub": "RedBordeaux",
+                  "sup": "Bordeaux"
+                },
+                {
+                  "kind": "class",
+                  "sub": "RedBordeaux",
+                  "sup": "RedWine"
+                }
+              ],
+              "kind": "class",
+              "sub": "RedBordeaux",
+              "sup": "Bordeaux"
+            },
+            {
+              "axiom_id": "AX6",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: RedWine (Class)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX7",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "RedWine ≡ (wine ⊓ ∃hasColor.{Red})",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "RedWine",
+              "sup": "Wine"
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: WhiteBordeaux (Class)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "WhiteBordeaux ≡ (Bordeaux ⊓ WhiteWine)",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 2,
+              "n_pairs_matched": 0,
+              "all_pairs": [
+                {
+                  "kind": "class",
+                  "sub": "WhiteBordeaux",
+                  "sup": "Bordeaux"
+                },
+                {
+                  "kind": "class",
+                  "sub": "WhiteBordeaux",
+                  "sup": "WhiteWine"
+                }
+              ],
+              "kind": "class",
+              "sub": "WhiteBordeaux",
+              "sup": "Bordeaux"
+            },
+            {
+              "axiom_id": "AX16",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "WhiteWine ≡ (wine ⊓ ∃hasColor.{White})",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WhiteWine",
+              "sup": "Wine"
+            },
+            {
+              "axiom_id": "AX44",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ =1 hasColor.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX46",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ =1 hasSugar.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX47",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasBody)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX48",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: hasBody (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX71",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(locatedIn)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX75",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: madeFromGrape (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 3,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 15
+        },
+        {
+          "id": "CQ6",
+          "question": "",
+          "n_relevant": 3,
+          "n_matched": 0,
+          "n_missing": 3,
+          "rate": 0.13043478260869565,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "WineFlavor",
+              "sup": "WineTaste"
+            },
+            {
+              "kind": "property",
+              "sub": "hasBody",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "kind": "property",
+              "sub": "hasFlavor",
+              "sup": "hasWineDescriptor"
+            }
+          ],
+          "source_axioms": [
+            "AX27",
+            "AX50",
+            "AX59"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "WineFlavor",
+              "sup": "WineTaste",
+              "axioms": [
+                "AX27"
+              ]
+            },
+            {
+              "kind": "property",
+              "sub": "hasBody",
+              "sup": "hasWineDescriptor",
+              "axioms": [
+                "AX50"
+              ]
+            },
+            {
+              "kind": "property",
+              "sub": "hasFlavor",
+              "sup": "hasWineDescriptor",
+              "axioms": [
+                "AX59"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX10",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Vintage ⊑ =1 hasVintageYear.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX25",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: WineFlavor (Class)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX27",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WineFlavor ⊑ WineTaste",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WineFlavor",
+              "sup": "WineTaste"
+            },
+            {
+              "axiom_id": "AX41",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ ∃locatedIn.Region",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX42",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ ≥1 madeFromGrape.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX43",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "wine ⊑ =1 hasBody.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX49",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasBody.WineBody",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX50",
+              "axiom_type": "SubPropertyOf",
+              "axiom_dl": "hasBody ⊑ hasWineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "property",
+              "sub": "hasBody",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "axiom_id": "AX51",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasColor)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX52",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: hasColor (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX57",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: hasFlavor (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX58",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasFlavor.WineFlavor",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX59",
+              "axiom_type": "SubPropertyOf",
+              "axiom_dl": "hasFlavor ⊑ hasWineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "property",
+              "sub": "hasFlavor",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "axiom_id": "AX60",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasSugar)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX71",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(locatedIn)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX74",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀locatedIn.Region",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX76",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃madeFromGrape.⊤ ⊑ wine",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX78",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: yearValue (DatatypeProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX79",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃yearValue.⊤ ⊑ VintageYear",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX80",
+              "axiom_type": "Range",
+              "axiom_dl": "yearValue maps-to xsd:integer",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 3,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 23
+        },
+        {
+          "id": "CQ7",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.2222222222222222,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "property",
+              "sub": "hasFlavor",
+              "sup": "hasWineDescriptor"
+            }
+          ],
+          "source_axioms": [
+            "AX59"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "property",
+              "sub": "hasFlavor",
+              "sup": "hasWineDescriptor",
+              "axioms": [
+                "AX59"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX10",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Vintage ⊑ =1 hasVintageYear.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX34",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: Zinfandel (Class)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX57",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: hasFlavor (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX58",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasFlavor.WineFlavor",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX59",
+              "axiom_type": "SubPropertyOf",
+              "axiom_dl": "hasFlavor ⊑ hasWineDescriptor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "property",
+              "sub": "hasFlavor",
+              "sup": "hasWineDescriptor"
+            },
+            {
+              "axiom_id": "AX60",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasSugar)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX64",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Functional(hasVintageYear)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX66",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasVintageYear.⊤ ⊑ Vintage",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX67",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasVintageYear.VintageYear",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX71",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(locatedIn)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX72",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: locatedIn (ObjectProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX78",
+              "axiom_type": "Declaration",
+              "axiom_dl": "Declaration: yearValue (DatatypeProperty)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX79",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃yearValue.⊤ ⊑ VintageYear",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX80",
+              "axiom_type": "Range",
+              "axiom_dl": "yearValue maps-to xsd:integer",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 4,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 18
+        },
+        {
+          "id": "CQnew1",
+          "question": "",
+          "n_relevant": 0,
+          "n_matched": 0,
+          "n_missing": 0,
+          "rate": 0.5714285714285714,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [],
+          "source_axioms": [],
+          "pair_axiom_records": [],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX70",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasWineDescriptor.WineDescriptor",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX71",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(locatedIn)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX73",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃locatedIn.⊤ ⊑ ⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 4,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 7
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Gold_term,Pre_term,Method,Score
+.csv,csv,hard_match,1.0000
+algorithm,algorithm,hard_match,1.0000
+cel ascii format,dataformat,top3_avg(jaro_winkler+semantic+sequence_match),0.6734
+cel binary format,opendataformat,top3_avg(jaro_winkler+sequence_match+semantic),0.6455
+data,data,hard_match,1.0000
+data item,dataexport,top3_avg(jaro_winkler+semantic+sequence_match),0.6782
+format,format,hard_match,1.0000
+open source software license,freeopensourcesoftware,top3_avg(sequence_match+jaro_winkler+semantic),0.7465
+platform,platform,hard_match,1.0000
+software,software,hard_match,1.0000
+software developer role,softwaretool,top3_avg(jaro_winkler+sequence_match+semantic),0.7329
+task,task,hard_match,1.0000
+text editing,xmlediting,top3_avg(sequence_match+jaro_winkler+semantic),0.7293
+version,version,hard_match,1.0000
+web service,webservice,hard_match,1.0000

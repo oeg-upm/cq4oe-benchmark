@@ -1,0 +1,10 @@
+PropertyType,GoldPredicate,PredPredicate,GoldPredicateNorm,PredPredicateNorm,GoldType,PredType,TypeVerdict,GoldDomain,PredDomain,GoldDomainNorm,PredDomainNorm,DomainStatus,GoldRange,PredRange,GoldRangeNorm,PredRangeNorm,RangeStatus,FullMatch,Note
+DatatypeProperty,has release date,release date,hasreleasedate,releasedate,DatatypeProperty,DatatypeProperty,tp,,version,,version,fp,xsd:string,xsd:date,xsdstring,xsddate,mismatch,NO,
+ObjectProperty,has format specification,has modification,hasformatspecification,hasmodification,ObjectProperty,ObjectProperty,tp,data item,Algorithm,dataitem,algorithm,mismatch,data format specification,Modification,dataformatspecification,modification,mismatch,NO,
+ObjectProperty,has input,has input format,hasinput,hasinputformat,ObjectProperty,ObjectProperty,tp,,Tool,,tool,fp,,format,,format,fp,NO,
+ObjectProperty,has license,has license,haslicense,haslicense,ObjectProperty,ObjectProperty,tp,,Tool,,tool,fp,,License,,license,fp,NO,
+ObjectProperty,has output,has output format,hasoutput,hasoutputformat,ObjectProperty,ObjectProperty,tp,,Tool,,tool,fp,,format,,format,fp,NO,
+ObjectProperty,has version,has export version,hasversion,hasexportversion,ObjectProperty,ObjectProperty,tp,,export capability,,exportcapability,fp,version number,version,versionnumber,version,tp,NO,
+ObjectProperty,is developed by,has developer,isdevelopedby,hasdeveloper,ObjectProperty,ObjectProperty,tp,,Tool,,tool,fp,,developer,,developer,fp,NO,
+ObjectProperty,uses platform,runs on platform,usesplatform,runsonplatform,ObjectProperty,ObjectProperty,tp,,Tool,,tool,fp,,platform,,platform,fp,NO,
+ObjectProperty,uses software,has software type,usessoftware,hassoftwaretype,ObjectProperty,ObjectProperty,tp,SWO_0000001,Tool,swo0000001,tool,mismatch,SWO_0000001,software type,swo0000001,softwaretype,mismatch,NO,

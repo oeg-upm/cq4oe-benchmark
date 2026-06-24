@@ -1,0 +1,9 @@
+side,dimension,sub,sup,status,raw_pred_sub,raw_pred_sup
+gold,class,CarnivorousPlant,plant,TP,,
+gold,class,Omnivore,animal,FN,,
+gold,class,carnivore,animal,TP,,
+gold,class,herbivore,animal,TP,,
+gold,class,lion,animal,TP,,
+gold,class,lion,carnivore,FN,,
+gold,property,is-proper-part-of,has-part,FN,,
+gold,property,is-proper-part-of,is-part-of,FN,,
