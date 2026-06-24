@@ -1,0 +1,7196 @@
+[
+  {
+    "id": 1,
+    "gold_term": "Actuator",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 2,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 3,
+    "gold_term": "Sensor",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 4,
+    "gold_term": "Tariff",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 5,
+    "gold_term": "Water",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 6,
+    "gold_term": "Water meter",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 7,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8699,
+      "levenshtein": 0.6129,
+      "semantic": 0.9134,
+      "sequence_match": 0.76
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8478,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 8,
+    "gold_term": "Temporal entity",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9437,
+      "levenshtein": 0.7333,
+      "semantic": 0.7755,
+      "sequence_match": 0.7586
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8259,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 9,
+    "gold_term": "Measurement",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7746,
+      "levenshtein": 0.6875,
+      "semantic": 0.8576,
+      "sequence_match": 0.8148
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8157,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 10,
+    "gold_term": "Water asset",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.65,
+      "levenshtein": 0.5,
+      "semantic": 0.7892,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.702,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 11,
+    "gold_term": "Water property",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6775,
+      "levenshtein": 0.5,
+      "semantic": 0.6824,
+      "sequence_match": 0.6207
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6602,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 12,
+    "gold_term": "Temporal duration",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8539,
+      "levenshtein": 0.5,
+      "semantic": 0.5458,
+      "sequence_match": 0.5185
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6394,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 13,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8494,
+      "levenshtein": 0.8125,
+      "semantic": 0.7278,
+      "sequence_match": 0.8125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8248,
+    "selected": false,
+    "reason": "gold already mapped to 'Chemical property'"
+  },
+  {
+    "id": 14,
+    "gold_term": "Water asset",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9,
+      "levenshtein": 0.5,
+      "semantic": 0.782,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7829,
+    "selected": false,
+    "reason": "pred already taken by 'Water' (higher averaged score)"
+  },
+  {
+    "id": 15,
+    "gold_term": "Temporal duration",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8842,
+      "levenshtein": 0.625,
+      "semantic": 0.7126,
+      "sequence_match": 0.7097
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7688,
+    "selected": false,
+    "reason": "pred already taken by 'Temporal entity' (higher averaged score)"
+  },
+  {
+    "id": 16,
+    "gold_term": "Water",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9,
+      "levenshtein": 0.5,
+      "semantic": 0.7253,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.764,
+    "selected": false,
+    "reason": "gold already mapped to 'Water'"
+  },
+  {
+    "id": 17,
+    "gold_term": "Water meter",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9,
+      "levenshtein": 0.5,
+      "semantic": 0.7253,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.764,
+    "selected": false,
+    "reason": "gold already mapped to 'Water meter'"
+  },
+  {
+    "id": 18,
+    "gold_term": "Water meter",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8703,
+      "levenshtein": 0.5,
+      "semantic": 0.8028,
+      "sequence_match": 0.6154
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7628,
+    "selected": false,
+    "reason": "gold already mapped to 'Water meter'"
+  },
+  {
+    "id": 19,
+    "gold_term": "Water asset",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.88,
+      "levenshtein": 0.6,
+      "semantic": 0.6763,
+      "sequence_match": 0.7
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7521,
+    "selected": false,
+    "reason": "pred already taken by 'Water meter' (higher averaged score)"
+  },
+  {
+    "id": 20,
+    "gold_term": "Water asset",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8703,
+      "levenshtein": 0.5625,
+      "semantic": 0.6375,
+      "sequence_match": 0.6923
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7333,
+    "selected": false,
+    "reason": "pred already taken by 'Measurement' (higher averaged score)"
+  },
+  {
+    "id": 21,
+    "gold_term": "Water property",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8769,
+      "levenshtein": 0.3846,
+      "semantic": 0.7423,
+      "sequence_match": 0.5556
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7249,
+    "selected": false,
+    "reason": "pred already taken by 'Water' (higher averaged score)"
+  },
+  {
+    "id": 22,
+    "gold_term": "Water property",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8581,
+      "levenshtein": 0.5385,
+      "semantic": 0.6432,
+      "sequence_match": 0.6087
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7033,
+    "selected": false,
+    "reason": "pred already taken by 'Water meter' (higher averaged score)"
+  },
+  {
+    "id": 23,
+    "gold_term": "Water",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8625,
+      "levenshtein": 0.3125,
+      "semantic": 0.7374,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.692,
+    "selected": false,
+    "reason": "gold already mapped to 'Water'"
+  },
+  {
+    "id": 24,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8263,
+      "levenshtein": 0.4211,
+      "semantic": 0.6645,
+      "sequence_match": 0.5714
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6874,
+    "selected": false,
+    "reason": "gold already mapped to 'Water distribution infrastructure'"
+  },
+  {
+    "id": 25,
+    "gold_term": "Meter",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5667,
+      "levenshtein": 0.5,
+      "semantic": 0.8182,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6839,
+    "selected": false,
+    "reason": "pred already taken by 'Water meter' (higher averaged score)"
+  },
+  {
+    "id": 26,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8526,
+      "levenshtein": 0.2632,
+      "semantic": 0.7618,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.677,
+    "selected": false,
+    "reason": "gold already mapped to 'Water distribution infrastructure'"
+  },
+  {
+    "id": 27,
+    "gold_term": "Meter",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7333,
+      "levenshtein": 0.6,
+      "semantic": 0.5983,
+      "sequence_match": 0.6
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6444,
+    "selected": false,
+    "reason": "pred already taken by 'Water' (higher averaged score)"
+  },
+  {
+    "id": 28,
+    "gold_term": "Temporal entity",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8347,
+      "levenshtein": 0.5,
+      "semantic": 0.515,
+      "sequence_match": 0.56
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6366,
+    "selected": false,
+    "reason": "gold already mapped to 'Temporal setting'"
+  },
+  {
+    "id": 29,
+    "gold_term": "Water property",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6647,
+      "levenshtein": 0.5,
+      "semantic": 0.6234,
+      "sequence_match": 0.6207
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6363,
+    "selected": false,
+    "reason": "gold already mapped to 'Physical property'"
+  },
+  {
+    "id": 30,
+    "gold_term": "Acceptability property",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6567,
+      "levenshtein": 0.4762,
+      "semantic": 0.6939,
+      "sequence_match": 0.5405
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6304,
+    "selected": false,
+    "reason": "pred already taken by 'Water property' (higher averaged score)"
+  },
+  {
+    "id": 31,
+    "gold_term": "Acceptability property",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7044,
+      "levenshtein": 0.5238,
+      "semantic": 0.6362,
+      "sequence_match": 0.5405
+    },
+    "is_hard_match": false,
+    "agg_score": 0.627,
+    "selected": false,
+    "reason": "pred already taken by 'ChemicalProperty' (higher averaged score)"
+  },
+  {
+    "id": 32,
+    "gold_term": "Water property",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6635,
+      "levenshtein": 0.4375,
+      "semantic": 0.6251,
+      "sequence_match": 0.5517
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6134,
+    "selected": false,
+    "reason": "gold already mapped to 'Physical property'"
+  },
+  {
+    "id": 33,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.4,
+      "semantic": 0.7981,
+      "sequence_match": 0.5714
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6084,
+    "selected": false,
+    "reason": "pred already taken by 'Tariff' (higher averaged score)"
+  },
+  {
+    "id": 34,
+    "gold_term": "Water",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8323,
+      "levenshtein": 0.1613,
+      "semantic": 0.6983,
+      "sequence_match": 0.2778
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6028,
+    "selected": false,
+    "reason": "gold already mapped to 'Water'"
+  },
+  {
+    "id": 35,
+    "gold_term": "Measurement",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6515,
+      "levenshtein": 0.1818,
+      "semantic": 0.6013,
+      "sequence_match": 0.5455
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5994,
+    "selected": false,
+    "reason": "top-3 avg score 0.5994 < final_threshold 0.6"
+  },
+  {
+    "id": 36,
+    "gold_term": "Water asset",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6419,
+      "levenshtein": 0.2581,
+      "semantic": 0.7524,
+      "sequence_match": 0.3902
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5949,
+    "selected": false,
+    "reason": "top-3 avg score 0.5949 < final_threshold 0.6"
+  },
+  {
+    "id": 37,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6419,
+      "levenshtein": 0.3684,
+      "semantic": 0.6946,
+      "sequence_match": 0.4138
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5834,
+    "selected": false,
+    "reason": "top-3 avg score 0.5834 < final_threshold 0.6"
+  },
+  {
+    "id": 38,
+    "gold_term": "Actuator",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6583,
+      "levenshtein": 0.375,
+      "semantic": 0.5736,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5645,
+    "selected": false,
+    "reason": "top-3 avg score 0.5645 < final_threshold 0.6"
+  },
+  {
+    "id": 39,
+    "gold_term": "Water",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6583,
+      "levenshtein": 0.375,
+      "semantic": 0.5736,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5645,
+    "selected": false,
+    "reason": "top-3 avg score 0.5645 < final_threshold 0.6"
+  },
+  {
+    "id": 40,
+    "gold_term": "Meter",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7515,
+      "levenshtein": 0.3636,
+      "semantic": 0.5646,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5637,
+    "selected": false,
+    "reason": "top-3 avg score 0.5637 < final_threshold 0.6"
+  },
+  {
+    "id": 41,
+    "gold_term": "Meter",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6375,
+      "levenshtein": 0.1875,
+      "semantic": 0.7676,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5636,
+    "selected": false,
+    "reason": "top-3 avg score 0.5636 < final_threshold 0.6"
+  },
+  {
+    "id": 42,
+    "gold_term": "Measurement",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5598,
+      "levenshtein": 0.3636,
+      "semantic": 0.5955,
+      "sequence_match": 0.5263
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5606,
+    "selected": false,
+    "reason": "top-3 avg score 0.5606 < final_threshold 0.6"
+  },
+  {
+    "id": 43,
+    "gold_term": "Geometry",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6265,
+      "levenshtein": 0.3636,
+      "semantic": 0.5179,
+      "sequence_match": 0.5263
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5569,
+    "selected": false,
+    "reason": "top-3 avg score 0.5569 < final_threshold 0.6"
+  },
+  {
+    "id": 44,
+    "gold_term": "Temporal entity",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7032,
+      "levenshtein": 0.3125,
+      "semantic": 0.4967,
+      "sequence_match": 0.4667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5555,
+    "selected": false,
+    "reason": "top-3 avg score 0.5555 < final_threshold 0.6"
+  },
+  {
+    "id": 45,
+    "gold_term": "Geometry",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.625,
+      "levenshtein": 0.25,
+      "semantic": 0.5925,
+      "sequence_match": 0.4286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5487,
+    "selected": false,
+    "reason": "top-3 avg score 0.5487 < final_threshold 0.6"
+  },
+  {
+    "id": 46,
+    "gold_term": "Water asset",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.627,
+      "levenshtein": 0.3333,
+      "semantic": 0.4543,
+      "sequence_match": 0.56
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5471,
+    "selected": false,
+    "reason": "top-3 avg score 0.5471 < final_threshold 0.6"
+  },
+  {
+    "id": 47,
+    "gold_term": "Geometry",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.575,
+      "levenshtein": 0.4,
+      "semantic": 0.5014,
+      "sequence_match": 0.5556
+    },
+    "is_hard_match": false,
+    "agg_score": 0.544,
+    "selected": false,
+    "reason": "top-3 avg score 0.5440 < final_threshold 0.6"
+  },
+  {
+    "id": 48,
+    "gold_term": "Water property",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5868,
+      "levenshtein": 0.2903,
+      "semantic": 0.6664,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5389,
+    "selected": false,
+    "reason": "top-3 avg score 0.5389 < final_threshold 0.6"
+  },
+  {
+    "id": 49,
+    "gold_term": "Measurement",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6359,
+      "levenshtein": 0.2727,
+      "semantic": 0.6948,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5388,
+    "selected": false,
+    "reason": "top-3 avg score 0.5388 < final_threshold 0.6"
+  },
+  {
+    "id": 50,
+    "gold_term": "Sensor",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6389,
+      "levenshtein": 0.375,
+      "semantic": 0.6009,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5382,
+    "selected": false,
+    "reason": "top-3 avg score 0.5382 < final_threshold 0.6"
+  },
+  {
+    "id": 51,
+    "gold_term": "Acceptability property",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6885,
+      "levenshtein": 0.2857,
+      "semantic": 0.5053,
+      "sequence_match": 0.4138
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5359,
+    "selected": false,
+    "reason": "top-3 avg score 0.5359 < final_threshold 0.6"
+  },
+  {
+    "id": 52,
+    "gold_term": "Meter",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.3333,
+      "semantic": 0.666,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5358,
+    "selected": false,
+    "reason": "top-3 avg score 0.5358 < final_threshold 0.6"
+  },
+  {
+    "id": 53,
+    "gold_term": "Water asset",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6596,
+      "levenshtein": 0.2727,
+      "semantic": 0.4639,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5332,
+    "selected": false,
+    "reason": "top-3 avg score 0.5332 < final_threshold 0.6"
+  },
+  {
+    "id": 54,
+    "gold_term": "Point",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5472,
+      "levenshtein": 0.25,
+      "semantic": 0.5812,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.53,
+    "selected": false,
+    "reason": "top-3 avg score 0.5300 < final_threshold 0.6"
+  },
+  {
+    "id": 55,
+    "gold_term": "Acceptability property",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6389,
+      "levenshtein": 0.2381,
+      "semantic": 0.5244,
+      "sequence_match": 0.4242
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5292,
+    "selected": false,
+    "reason": "top-3 avg score 0.5292 < final_threshold 0.6"
+  },
+  {
+    "id": 56,
+    "gold_term": "Actuator",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5833,
+      "levenshtein": 0.25,
+      "semantic": 0.5032,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5288,
+    "selected": false,
+    "reason": "top-3 avg score 0.5288 < final_threshold 0.6"
+  },
+  {
+    "id": 57,
+    "gold_term": "Sensor",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5889,
+      "levenshtein": 0.1667,
+      "semantic": 0.6331,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5285,
+    "selected": false,
+    "reason": "top-3 avg score 0.5285 < final_threshold 0.6"
+  },
+  {
+    "id": 58,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5911,
+      "levenshtein": 0.4211,
+      "semantic": 0.4601,
+      "sequence_match": 0.5333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5282,
+    "selected": false,
+    "reason": "top-3 avg score 0.5282 < final_threshold 0.6"
+  },
+  {
+    "id": 59,
+    "gold_term": "Water meter",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6419,
+      "levenshtein": 0.2258,
+      "semantic": 0.6488,
+      "sequence_match": 0.2927
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5278,
+    "selected": false,
+    "reason": "top-3 avg score 0.5278 < final_threshold 0.6"
+  },
+  {
+    "id": 60,
+    "gold_term": "Water asset",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6417,
+      "levenshtein": 0.2,
+      "semantic": 0.4959,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5273,
+    "selected": false,
+    "reason": "top-3 avg score 0.5273 < final_threshold 0.6"
+  },
+  {
+    "id": 61,
+    "gold_term": "Temporal entity",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.624,
+      "levenshtein": 0.25,
+      "semantic": 0.5559,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5266,
+    "selected": false,
+    "reason": "top-3 avg score 0.5266 < final_threshold 0.6"
+  },
+  {
+    "id": 62,
+    "gold_term": "Water",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6242,
+      "levenshtein": 0.2727,
+      "semantic": 0.5804,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5266,
+    "selected": false,
+    "reason": "top-3 avg score 0.5266 < final_threshold 0.6"
+  },
+  {
+    "id": 63,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6591,
+      "levenshtein": 0.25,
+      "semantic": 0.4731,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5255,
+    "selected": false,
+    "reason": "top-3 avg score 0.5255 < final_threshold 0.6"
+  },
+  {
+    "id": 64,
+    "gold_term": "Water asset",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6417,
+      "levenshtein": 0.2,
+      "semantic": 0.5983,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5244,
+    "selected": false,
+    "reason": "top-3 avg score 0.5244 < final_threshold 0.6"
+  },
+  {
+    "id": 65,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7152,
+      "levenshtein": 0.3529,
+      "semantic": 0.407,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5222,
+    "selected": false,
+    "reason": "top-3 avg score 0.5222 < final_threshold 0.6"
+  },
+  {
+    "id": 66,
+    "gold_term": "Water property",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6142,
+      "levenshtein": 0.3077,
+      "semantic": 0.4472,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5205,
+    "selected": false,
+    "reason": "top-3 avg score 0.5205 < final_threshold 0.6"
+  },
+  {
+    "id": 67,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6746,
+      "levenshtein": 0.2667,
+      "semantic": 0.4866,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5204,
+    "selected": false,
+    "reason": "top-3 avg score 0.5204 < final_threshold 0.6"
+  },
+  {
+    "id": 68,
+    "gold_term": "Water",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6,
+      "levenshtein": 0.2,
+      "semantic": 0.5561,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5187,
+    "selected": false,
+    "reason": "top-3 avg score 0.5187 < final_threshold 0.6"
+  },
+  {
+    "id": 69,
+    "gold_term": "Temporal duration",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6167,
+      "levenshtein": 0.1875,
+      "semantic": 0.5006,
+      "sequence_match": 0.4375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5182,
+    "selected": false,
+    "reason": "top-3 avg score 0.5182 < final_threshold 0.6"
+  },
+  {
+    "id": 70,
+    "gold_term": "Sensor",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.1667,
+      "semantic": 0.6108,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5174,
+    "selected": false,
+    "reason": "top-3 avg score 0.5174 < final_threshold 0.6"
+  },
+  {
+    "id": 71,
+    "gold_term": "Water",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.1667,
+      "semantic": 0.6108,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5174,
+    "selected": false,
+    "reason": "top-3 avg score 0.5174 < final_threshold 0.6"
+  },
+  {
+    "id": 72,
+    "gold_term": "Measurement",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5131,
+      "levenshtein": 0.3636,
+      "semantic": 0.5349,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.516,
+    "selected": false,
+    "reason": "top-3 avg score 0.5160 < final_threshold 0.6"
+  },
+  {
+    "id": 73,
+    "gold_term": "Water meter",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7591,
+      "levenshtein": 0.2727,
+      "semantic": 0.5004,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5151,
+    "selected": false,
+    "reason": "top-3 avg score 0.5151 < final_threshold 0.6"
+  },
+  {
+    "id": 74,
+    "gold_term": "Measurement",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4798,
+      "levenshtein": 0.2727,
+      "semantic": 0.7058,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5128,
+    "selected": false,
+    "reason": "top-3 avg score 0.5128 < final_threshold 0.6"
+  },
+  {
+    "id": 75,
+    "gold_term": "Point",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6278,
+      "levenshtein": 0.25,
+      "semantic": 0.5457,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5088,
+    "selected": false,
+    "reason": "top-3 avg score 0.5088 < final_threshold 0.6"
+  },
+  {
+    "id": 76,
+    "gold_term": "Water property",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.584,
+      "levenshtein": 0.3077,
+      "semantic": 0.5732,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.507,
+    "selected": false,
+    "reason": "top-3 avg score 0.5070 < final_threshold 0.6"
+  },
+  {
+    "id": 77,
+    "gold_term": "Actuator",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5278,
+      "levenshtein": 0.25,
+      "semantic": 0.7073,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5069,
+    "selected": false,
+    "reason": "top-3 avg score 0.5069 < final_threshold 0.6"
+  },
+  {
+    "id": 78,
+    "gold_term": "Sensor",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5278,
+      "levenshtein": 0.25,
+      "semantic": 0.7073,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5069,
+    "selected": false,
+    "reason": "top-3 avg score 0.5069 < final_threshold 0.6"
+  },
+  {
+    "id": 79,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6344,
+      "levenshtein": 0.2941,
+      "semantic": 0.4539,
+      "sequence_match": 0.4286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5056,
+    "selected": false,
+    "reason": "top-3 avg score 0.5056 < final_threshold 0.6"
+  },
+  {
+    "id": 80,
+    "gold_term": "Acceptability property",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6508,
+      "levenshtein": 0.2381,
+      "semantic": 0.4621,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5043,
+    "selected": false,
+    "reason": "top-3 avg score 0.5043 < final_threshold 0.6"
+  },
+  {
+    "id": 81,
+    "gold_term": "Actuator",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6139,
+      "levenshtein": 0.1667,
+      "semantic": 0.5969,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5036,
+    "selected": false,
+    "reason": "top-3 avg score 0.5036 < final_threshold 0.6"
+  },
+  {
+    "id": 82,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6084,
+      "levenshtein": 0.2609,
+      "semantic": 0.4833,
+      "sequence_match": 0.4118
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5011,
+    "selected": false,
+    "reason": "top-3 avg score 0.5011 < final_threshold 0.6"
+  },
+  {
+    "id": 83,
+    "gold_term": "Actuator",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5379,
+      "levenshtein": 0.2727,
+      "semantic": 0.5401,
+      "sequence_match": 0.4211
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4997,
+    "selected": false,
+    "reason": "top-3 avg score 0.4997 < final_threshold 0.6"
+  },
+  {
+    "id": 84,
+    "gold_term": "Temporal duration",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6343,
+      "levenshtein": 0.1875,
+      "semantic": 0.4879,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.499,
+    "selected": false,
+    "reason": "top-3 avg score 0.4990 < final_threshold 0.6"
+  },
+  {
+    "id": 85,
+    "gold_term": "Meter",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.0,
+      "semantic": 0.5541,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4985,
+    "selected": false,
+    "reason": "top-3 avg score 0.4985 < final_threshold 0.6"
+  },
+  {
+    "id": 86,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6222,
+      "levenshtein": 0.3333,
+      "semantic": 0.5372,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4976,
+    "selected": false,
+    "reason": "top-3 avg score 0.4976 < final_threshold 0.6"
+  },
+  {
+    "id": 87,
+    "gold_term": "Temporal entity",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6071,
+      "levenshtein": 0.25,
+      "semantic": 0.4177,
+      "sequence_match": 0.4667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4972,
+    "selected": false,
+    "reason": "top-3 avg score 0.4972 < final_threshold 0.6"
+  },
+  {
+    "id": 88,
+    "gold_term": "Tariff",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.3333,
+      "semantic": 0.4801,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4971,
+    "selected": false,
+    "reason": "top-3 avg score 0.4971 < final_threshold 0.6"
+  },
+  {
+    "id": 89,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6097,
+      "levenshtein": 0.1875,
+      "semantic": 0.4269,
+      "sequence_match": 0.4516
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4961,
+    "selected": false,
+    "reason": "top-3 avg score 0.4961 < final_threshold 0.6"
+  },
+  {
+    "id": 90,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5627,
+      "levenshtein": 0.2632,
+      "semantic": 0.5541,
+      "sequence_match": 0.3704
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4957,
+    "selected": false,
+    "reason": "top-3 avg score 0.4957 < final_threshold 0.6"
+  },
+  {
+    "id": 91,
+    "gold_term": "Actuator",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.3,
+      "semantic": 0.602,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4951,
+    "selected": false,
+    "reason": "top-3 avg score 0.4951 < final_threshold 0.6"
+  },
+  {
+    "id": 92,
+    "gold_term": "Water meter",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.3,
+      "semantic": 0.602,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4951,
+    "selected": false,
+    "reason": "top-3 avg score 0.4951 < final_threshold 0.6"
+  },
+  {
+    "id": 93,
+    "gold_term": "Point",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5667,
+      "levenshtein": 0.2,
+      "semantic": 0.6299,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4941,
+    "selected": false,
+    "reason": "top-3 avg score 0.4941 < final_threshold 0.6"
+  },
+  {
+    "id": 94,
+    "gold_term": "Tariff",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5889,
+      "levenshtein": 0.1667,
+      "semantic": 0.526,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4928,
+    "selected": false,
+    "reason": "top-3 avg score 0.4928 < final_threshold 0.6"
+  },
+  {
+    "id": 95,
+    "gold_term": "Water",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5889,
+      "levenshtein": 0.1667,
+      "semantic": 0.526,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4928,
+    "selected": false,
+    "reason": "top-3 avg score 0.4928 < final_threshold 0.6"
+  },
+  {
+    "id": 96,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6322,
+      "levenshtein": 0.2105,
+      "semantic": 0.5257,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4926,
+    "selected": false,
+    "reason": "top-3 avg score 0.4926 < final_threshold 0.6"
+  },
+  {
+    "id": 97,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6797,
+      "levenshtein": 0.3529,
+      "semantic": 0.3727,
+      "sequence_match": 0.4242
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4922,
+    "selected": false,
+    "reason": "top-3 avg score 0.4922 < final_threshold 0.6"
+  },
+  {
+    "id": 98,
+    "gold_term": "Actuator",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5694,
+      "levenshtein": 0.0,
+      "semantic": 0.552,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4915,
+    "selected": false,
+    "reason": "top-3 avg score 0.4915 < final_threshold 0.6"
+  },
+  {
+    "id": 99,
+    "gold_term": "Temporal entity",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5709,
+      "levenshtein": 0.3571,
+      "semantic": 0.4686,
+      "sequence_match": 0.4348
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4914,
+    "selected": false,
+    "reason": "top-3 avg score 0.4914 < final_threshold 0.6"
+  },
+  {
+    "id": 100,
+    "gold_term": "Actuator",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.25,
+      "semantic": 0.6163,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4913,
+    "selected": false,
+    "reason": "top-3 avg score 0.4913 < final_threshold 0.6"
+  },
+  {
+    "id": 101,
+    "gold_term": "Temporal duration",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5634,
+      "levenshtein": 0.1875,
+      "semantic": 0.634,
+      "sequence_match": 0.2759
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4911,
+    "selected": false,
+    "reason": "top-3 avg score 0.4911 < final_threshold 0.6"
+  },
+  {
+    "id": 102,
+    "gold_term": "Water",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5407,
+      "levenshtein": 0.0,
+      "semantic": 0.6453,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4906,
+    "selected": false,
+    "reason": "top-3 avg score 0.4906 < final_threshold 0.6"
+  },
+  {
+    "id": 103,
+    "gold_term": "Water property",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6032,
+      "levenshtein": 0.1538,
+      "semantic": 0.4813,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4885,
+    "selected": false,
+    "reason": "top-3 avg score 0.4885 < final_threshold 0.6"
+  },
+  {
+    "id": 104,
+    "gold_term": "Meter",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.25,
+      "semantic": 0.6069,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4882,
+    "selected": false,
+    "reason": "top-3 avg score 0.4882 < final_threshold 0.6"
+  },
+  {
+    "id": 105,
+    "gold_term": "Temporal duration",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "sequence_match",
+      "jaro_winkler",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.375,
+      "semantic": 0.4638,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4879,
+    "selected": false,
+    "reason": "top-3 avg score 0.4879 < final_threshold 0.6"
+  },
+  {
+    "id": 106,
+    "gold_term": "Geometry",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5208,
+      "levenshtein": 0.25,
+      "semantic": 0.5103,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4826,
+    "selected": false,
+    "reason": "top-3 avg score 0.4826 < final_threshold 0.6"
+  },
+  {
+    "id": 107,
+    "gold_term": "Water asset",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5444,
+      "levenshtein": 0.2,
+      "semantic": 0.584,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4814,
+    "selected": false,
+    "reason": "top-3 avg score 0.4814 < final_threshold 0.6"
+  },
+  {
+    "id": 108,
+    "gold_term": "Temporal entity",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5714,
+      "levenshtein": 0.2143,
+      "semantic": 0.572,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4811,
+    "selected": false,
+    "reason": "top-3 avg score 0.4811 < final_threshold 0.6"
+  },
+  {
+    "id": 109,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6468,
+      "levenshtein": 0.1875,
+      "semantic": 0.4084,
+      "sequence_match": 0.3871
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4808,
+    "selected": false,
+    "reason": "top-3 avg score 0.4808 < final_threshold 0.6"
+  },
+  {
+    "id": 110,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6166,
+      "levenshtein": 0.2941,
+      "semantic": 0.4406,
+      "sequence_match": 0.3846
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4806,
+    "selected": false,
+    "reason": "top-3 avg score 0.4806 < final_threshold 0.6"
+  },
+  {
+    "id": 111,
+    "gold_term": "Temporal duration",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.628,
+      "levenshtein": 0.3125,
+      "semantic": 0.4972,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4792,
+    "selected": false,
+    "reason": "top-3 avg score 0.4792 < final_threshold 0.6"
+  },
+  {
+    "id": 112,
+    "gold_term": "Geometry",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6056,
+      "levenshtein": 0.2667,
+      "semantic": 0.4786,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4773,
+    "selected": false,
+    "reason": "top-3 avg score 0.4773 < final_threshold 0.6"
+  },
+  {
+    "id": 113,
+    "gold_term": "Measurement",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5492,
+      "levenshtein": 0.0909,
+      "semantic": 0.5643,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4764,
+    "selected": false,
+    "reason": "top-3 avg score 0.4764 < final_threshold 0.6"
+  },
+  {
+    "id": 114,
+    "gold_term": "Temporal entity",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6381,
+      "levenshtein": 0.2143,
+      "semantic": 0.4577,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4764,
+    "selected": false,
+    "reason": "top-3 avg score 0.4764 < final_threshold 0.6"
+  },
+  {
+    "id": 115,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5951,
+      "levenshtein": 0.2353,
+      "semantic": 0.4676,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4755,
+    "selected": false,
+    "reason": "top-3 avg score 0.4755 < final_threshold 0.6"
+  },
+  {
+    "id": 116,
+    "gold_term": "Geometry",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.25,
+      "semantic": 0.5671,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4749,
+    "selected": false,
+    "reason": "top-3 avg score 0.4749 < final_threshold 0.6"
+  },
+  {
+    "id": 117,
+    "gold_term": "Geometry",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5417,
+      "levenshtein": 0.1667,
+      "semantic": 0.578,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4732,
+    "selected": false,
+    "reason": "top-3 avg score 0.4732 < final_threshold 0.6"
+  },
+  {
+    "id": 118,
+    "gold_term": "Water meter",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.627,
+      "levenshtein": 0.2,
+      "semantic": 0.3922,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4731,
+    "selected": false,
+    "reason": "top-3 avg score 0.4731 < final_threshold 0.6"
+  },
+  {
+    "id": 119,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5671,
+      "levenshtein": 0.3043,
+      "semantic": 0.4304,
+      "sequence_match": 0.4211
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4729,
+    "selected": false,
+    "reason": "top-3 avg score 0.4729 < final_threshold 0.6"
+  },
+  {
+    "id": 120,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5319,
+      "levenshtein": 0.1176,
+      "semantic": 0.4625,
+      "sequence_match": 0.4242
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4729,
+    "selected": false,
+    "reason": "top-3 avg score 0.4729 < final_threshold 0.6"
+  },
+  {
+    "id": 121,
+    "gold_term": "Device",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5625,
+      "levenshtein": 0.1875,
+      "semantic": 0.5812,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4722,
+    "selected": false,
+    "reason": "top-3 avg score 0.4722 < final_threshold 0.6"
+  },
+  {
+    "id": 122,
+    "gold_term": "Acceptability property",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.581,
+      "levenshtein": 0.1429,
+      "semantic": 0.6044,
+      "sequence_match": 0.2308
+    },
+    "is_hard_match": false,
+    "agg_score": 0.472,
+    "selected": false,
+    "reason": "top-3 avg score 0.4720 < final_threshold 0.6"
+  },
+  {
+    "id": 123,
+    "gold_term": "Measurement",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6285,
+      "levenshtein": 0.2667,
+      "semantic": 0.4782,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4715,
+    "selected": false,
+    "reason": "top-3 avg score 0.4715 < final_threshold 0.6"
+  },
+  {
+    "id": 124,
+    "gold_term": "Meter",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6444,
+      "levenshtein": 0.2,
+      "semantic": 0.4698,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4714,
+    "selected": false,
+    "reason": "top-3 avg score 0.4714 < final_threshold 0.6"
+  },
+  {
+    "id": 125,
+    "gold_term": "Water property",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4991,
+      "levenshtein": 0.2308,
+      "semantic": 0.6832,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.471,
+    "selected": false,
+    "reason": "top-3 avg score 0.4710 < final_threshold 0.6"
+  },
+  {
+    "id": 126,
+    "gold_term": "Temporal duration",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5735,
+      "levenshtein": 0.1935,
+      "semantic": 0.4535,
+      "sequence_match": 0.383
+    },
+    "is_hard_match": false,
+    "agg_score": 0.47,
+    "selected": false,
+    "reason": "top-3 avg score 0.4700 < final_threshold 0.6"
+  },
+  {
+    "id": 127,
+    "gold_term": "Sensor",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.2,
+      "semantic": 0.6479,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4697,
+    "selected": false,
+    "reason": "top-3 avg score 0.4697 < final_threshold 0.6"
+  },
+  {
+    "id": 128,
+    "gold_term": "Water meter",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.2,
+      "semantic": 0.6479,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4697,
+    "selected": false,
+    "reason": "top-3 avg score 0.4697 < final_threshold 0.6"
+  },
+  {
+    "id": 129,
+    "gold_term": "Water meter",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.3,
+      "semantic": 0.4853,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4692,
+    "selected": false,
+    "reason": "top-3 avg score 0.4692 < final_threshold 0.6"
+  },
+  {
+    "id": 130,
+    "gold_term": "Meter",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4667,
+      "levenshtein": 0.2,
+      "semantic": 0.5404,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.469,
+    "selected": false,
+    "reason": "top-3 avg score 0.4690 < final_threshold 0.6"
+  },
+  {
+    "id": 131,
+    "gold_term": "Geometry",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5472,
+      "levenshtein": 0.25,
+      "semantic": 0.5469,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4673,
+    "selected": false,
+    "reason": "top-3 avg score 0.4673 < final_threshold 0.6"
+  },
+  {
+    "id": 132,
+    "gold_term": "Temporal duration",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5298,
+      "levenshtein": 0.125,
+      "semantic": 0.5593,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4672,
+    "selected": false,
+    "reason": "top-3 avg score 0.4672 < final_threshold 0.6"
+  },
+  {
+    "id": 133,
+    "gold_term": "Water property",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5912,
+      "levenshtein": 0.2667,
+      "semantic": 0.4524,
+      "sequence_match": 0.3571
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4669,
+    "selected": false,
+    "reason": "top-3 avg score 0.4669 < final_threshold 0.6"
+  },
+  {
+    "id": 134,
+    "gold_term": "Sensor",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.1818,
+      "semantic": 0.6598,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4667,
+    "selected": false,
+    "reason": "top-3 avg score 0.4667 < final_threshold 0.6"
+  },
+  {
+    "id": 135,
+    "gold_term": "Sensor",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5611,
+      "levenshtein": 0.2,
+      "semantic": 0.5484,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4651,
+    "selected": false,
+    "reason": "top-3 avg score 0.4651 < final_threshold 0.6"
+  },
+  {
+    "id": 136,
+    "gold_term": "Acceptability property",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5821,
+      "levenshtein": 0.2381,
+      "semantic": 0.4002,
+      "sequence_match": 0.4118
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4647,
+    "selected": false,
+    "reason": "top-3 avg score 0.4647 < final_threshold 0.6"
+  },
+  {
+    "id": 137,
+    "gold_term": "Temporal duration",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5625,
+      "levenshtein": 0.1875,
+      "semantic": 0.5513,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4622,
+    "selected": false,
+    "reason": "top-3 avg score 0.4622 < final_threshold 0.6"
+  },
+  {
+    "id": 138,
+    "gold_term": "Water asset",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5375,
+      "levenshtein": 0.1875,
+      "semantic": 0.5399,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4617,
+    "selected": false,
+    "reason": "top-3 avg score 0.4617 < final_threshold 0.6"
+  },
+  {
+    "id": 139,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6723,
+      "levenshtein": 0.1765,
+      "semantic": 0.3997,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4615,
+    "selected": false,
+    "reason": "top-3 avg score 0.4615 < final_threshold 0.6"
+  },
+  {
+    "id": 140,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5868,
+      "levenshtein": 0.1579,
+      "semantic": 0.5465,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4611,
+    "selected": false,
+    "reason": "top-3 avg score 0.4611 < final_threshold 0.6"
+  },
+  {
+    "id": 141,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6454,
+      "levenshtein": 0.2353,
+      "semantic": 0.496,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4605,
+    "selected": false,
+    "reason": "top-3 avg score 0.4605 < final_threshold 0.6"
+  },
+  {
+    "id": 142,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5582,
+      "levenshtein": 0.3333,
+      "semantic": 0.4335,
+      "sequence_match": 0.3846
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4588,
+    "selected": false,
+    "reason": "top-3 avg score 0.4588 < final_threshold 0.6"
+  },
+  {
+    "id": 143,
+    "gold_term": "Temporal entity",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5274,
+      "levenshtein": 0.2857,
+      "semantic": 0.4852,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4587,
+    "selected": false,
+    "reason": "top-3 avg score 0.4587 < final_threshold 0.6"
+  },
+  {
+    "id": 144,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4961,
+      "levenshtein": 0.2632,
+      "semantic": 0.5063,
+      "sequence_match": 0.3704
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4576,
+    "selected": false,
+    "reason": "top-3 avg score 0.4576 < final_threshold 0.6"
+  },
+  {
+    "id": 145,
+    "gold_term": "Device",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5556,
+      "levenshtein": 0.25,
+      "semantic": 0.4527,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4573,
+    "selected": false,
+    "reason": "top-3 avg score 0.4573 < final_threshold 0.6"
+  },
+  {
+    "id": 146,
+    "gold_term": "Measurement",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5846,
+      "levenshtein": 0.3125,
+      "semantic": 0.4748,
+      "sequence_match": 0.2963
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4573,
+    "selected": false,
+    "reason": "top-3 avg score 0.4573 < final_threshold 0.6"
+  },
+  {
+    "id": 147,
+    "gold_term": "Device",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.25,
+      "semantic": 0.5663,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4573,
+    "selected": false,
+    "reason": "top-3 avg score 0.4573 < final_threshold 0.6"
+  },
+  {
+    "id": 148,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.2,
+      "semantic": 0.4481,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4568,
+    "selected": false,
+    "reason": "top-3 avg score 0.4568 < final_threshold 0.6"
+  },
+  {
+    "id": 149,
+    "gold_term": "Geometry",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5125,
+      "levenshtein": 0.25,
+      "semantic": 0.5225,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4561,
+    "selected": false,
+    "reason": "top-3 avg score 0.4561 < final_threshold 0.6"
+  },
+  {
+    "id": 150,
+    "gold_term": "Device",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5278,
+      "levenshtein": 0.25,
+      "semantic": 0.5541,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4559,
+    "selected": false,
+    "reason": "top-3 avg score 0.4559 < final_threshold 0.6"
+  },
+  {
+    "id": 151,
+    "gold_term": "Point",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2667,
+      "semantic": 0.4787,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4559,
+    "selected": false,
+    "reason": "top-3 avg score 0.4559 < final_threshold 0.6"
+  },
+  {
+    "id": 152,
+    "gold_term": "Actuator",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5923,
+      "levenshtein": 0.1935,
+      "semantic": 0.5164,
+      "sequence_match": 0.2564
+    },
+    "is_hard_match": false,
+    "agg_score": 0.455,
+    "selected": false,
+    "reason": "top-3 avg score 0.4550 < final_threshold 0.6"
+  },
+  {
+    "id": 153,
+    "gold_term": "Water property",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5192,
+      "levenshtein": 0.2308,
+      "semantic": 0.5592,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4547,
+    "selected": false,
+    "reason": "top-3 avg score 0.4547 < final_threshold 0.6"
+  },
+  {
+    "id": 154,
+    "gold_term": "Acceptability property",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5777,
+      "levenshtein": 0.1905,
+      "semantic": 0.4708,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4537,
+    "selected": false,
+    "reason": "top-3 avg score 0.4537 < final_threshold 0.6"
+  },
+  {
+    "id": 155,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5097,
+      "levenshtein": 0.25,
+      "semantic": 0.5625,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4527,
+    "selected": false,
+    "reason": "top-3 avg score 0.4527 < final_threshold 0.6"
+  },
+  {
+    "id": 156,
+    "gold_term": "Measurement",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5223,
+      "levenshtein": 0.25,
+      "semantic": 0.5792,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4505,
+    "selected": false,
+    "reason": "top-3 avg score 0.4505 < final_threshold 0.6"
+  },
+  {
+    "id": 157,
+    "gold_term": "Water asset",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5375,
+      "levenshtein": 0.1875,
+      "semantic": 0.5063,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4505,
+    "selected": false,
+    "reason": "top-3 avg score 0.4505 < final_threshold 0.6"
+  },
+  {
+    "id": 158,
+    "gold_term": "Sensor",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.1875,
+      "semantic": 0.6271,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4504,
+    "selected": false,
+    "reason": "top-3 avg score 0.4504 < final_threshold 0.6"
+  },
+  {
+    "id": 159,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.573,
+      "levenshtein": 0.1765,
+      "semantic": 0.4539,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.449,
+    "selected": false,
+    "reason": "top-3 avg score 0.4490 < final_threshold 0.6"
+  },
+  {
+    "id": 160,
+    "gold_term": "Measurement",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5354,
+      "levenshtein": 0.1818,
+      "semantic": 0.5112,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4489,
+    "selected": false,
+    "reason": "top-3 avg score 0.4489 < final_threshold 0.6"
+  },
+  {
+    "id": 161,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5402,
+      "levenshtein": 0.1739,
+      "semantic": 0.495,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4476,
+    "selected": false,
+    "reason": "top-3 avg score 0.4476 < final_threshold 0.6"
+  },
+  {
+    "id": 162,
+    "gold_term": "Water",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.55,
+      "levenshtein": 0.25,
+      "semantic": 0.4841,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4473,
+    "selected": false,
+    "reason": "top-3 avg score 0.4473 < final_threshold 0.6"
+  },
+  {
+    "id": 163,
+    "gold_term": "Temporal duration",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5696,
+      "levenshtein": 0.125,
+      "semantic": 0.4628,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4467,
+    "selected": false,
+    "reason": "top-3 avg score 0.4467 < final_threshold 0.6"
+  },
+  {
+    "id": 164,
+    "gold_term": "Water meter",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5444,
+      "levenshtein": 0.1,
+      "semantic": 0.4788,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4463,
+    "selected": false,
+    "reason": "top-3 avg score 0.4463 < final_threshold 0.6"
+  },
+  {
+    "id": 165,
+    "gold_term": "Temporal entity",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5286,
+      "levenshtein": 0.1429,
+      "semantic": 0.4943,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4462,
+    "selected": false,
+    "reason": "top-3 avg score 0.4462 < final_threshold 0.6"
+  },
+  {
+    "id": 166,
+    "gold_term": "Temporal duration",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5792,
+      "levenshtein": 0.25,
+      "semantic": 0.5063,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4451,
+    "selected": false,
+    "reason": "top-3 avg score 0.4451 < final_threshold 0.6"
+  },
+  {
+    "id": 167,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5208,
+      "levenshtein": 0.1875,
+      "semantic": 0.4792,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4445,
+    "selected": false,
+    "reason": "top-3 avg score 0.4445 < final_threshold 0.6"
+  },
+  {
+    "id": 168,
+    "gold_term": "Geometry",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4907,
+      "levenshtein": 0.1111,
+      "semantic": 0.4894,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4444,
+    "selected": false,
+    "reason": "top-3 avg score 0.4444 < final_threshold 0.6"
+  },
+  {
+    "id": 169,
+    "gold_term": "Temporal entity",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5274,
+      "levenshtein": 0.1429,
+      "semantic": 0.5322,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4441,
+    "selected": false,
+    "reason": "top-3 avg score 0.4441 < final_threshold 0.6"
+  },
+  {
+    "id": 170,
+    "gold_term": "Temporal duration",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.556,
+      "levenshtein": 0.25,
+      "semantic": 0.4559,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.444,
+    "selected": false,
+    "reason": "top-3 avg score 0.4440 < final_threshold 0.6"
+  },
+  {
+    "id": 171,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4736,
+      "levenshtein": 0.1176,
+      "semantic": 0.4944,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4439,
+    "selected": false,
+    "reason": "top-3 avg score 0.4439 < final_threshold 0.6"
+  },
+  {
+    "id": 172,
+    "gold_term": "Actuator",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.0,
+      "semantic": 0.5811,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4437,
+    "selected": false,
+    "reason": "top-3 avg score 0.4437 < final_threshold 0.6"
+  },
+  {
+    "id": 173,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5194,
+      "levenshtein": 0.2,
+      "semantic": 0.463,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4434,
+    "selected": false,
+    "reason": "top-3 avg score 0.4434 < final_threshold 0.6"
+  },
+  {
+    "id": 174,
+    "gold_term": "Point",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5083,
+      "levenshtein": 0.1875,
+      "semantic": 0.5354,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4432,
+    "selected": false,
+    "reason": "top-3 avg score 0.4432 < final_threshold 0.6"
+  },
+  {
+    "id": 175,
+    "gold_term": "Tariff",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.1818,
+      "semantic": 0.4714,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4431,
+    "selected": false,
+    "reason": "top-3 avg score 0.4431 < final_threshold 0.6"
+  },
+  {
+    "id": 176,
+    "gold_term": "Water property",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5353,
+      "levenshtein": 0.0769,
+      "semantic": 0.5074,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4428,
+    "selected": false,
+    "reason": "top-3 avg score 0.4428 < final_threshold 0.6"
+  },
+  {
+    "id": 177,
+    "gold_term": "Tariff",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "jaro_winkler"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3611,
+      "levenshtein": 0.125,
+      "semantic": 0.5386,
+      "sequence_match": 0.4286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4427,
+    "selected": false,
+    "reason": "top-3 avg score 0.4427 < final_threshold 0.6"
+  },
+  {
+    "id": 178,
+    "gold_term": "Water asset",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2,
+      "semantic": 0.5888,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4426,
+    "selected": false,
+    "reason": "top-3 avg score 0.4426 < final_threshold 0.6"
+  },
+  {
+    "id": 179,
+    "gold_term": "Meter",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5407,
+      "levenshtein": 0.0,
+      "semantic": 0.5003,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4422,
+    "selected": false,
+    "reason": "top-3 avg score 0.4422 < final_threshold 0.6"
+  },
+  {
+    "id": 180,
+    "gold_term": "Measurement",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5131,
+      "levenshtein": 0.1818,
+      "semantic": 0.563,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4421,
+    "selected": false,
+    "reason": "top-3 avg score 0.4421 < final_threshold 0.6"
+  },
+  {
+    "id": 181,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5702,
+      "levenshtein": 0.1053,
+      "semantic": 0.4568,
+      "sequence_match": 0.2963
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4411,
+    "selected": false,
+    "reason": "top-3 avg score 0.4411 < final_threshold 0.6"
+  },
+  {
+    "id": 182,
+    "gold_term": "Temporal duration",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4583,
+      "levenshtein": 0.1875,
+      "semantic": 0.5077,
+      "sequence_match": 0.3571
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4411,
+    "selected": false,
+    "reason": "top-3 avg score 0.4411 < final_threshold 0.6"
+  },
+  {
+    "id": 183,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5565,
+      "levenshtein": 0.1935,
+      "semantic": 0.4309,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4402,
+    "selected": false,
+    "reason": "top-3 avg score 0.4402 < final_threshold 0.6"
+  },
+  {
+    "id": 184,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5424,
+      "levenshtein": 0.2105,
+      "semantic": 0.5675,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4401,
+    "selected": false,
+    "reason": "top-3 avg score 0.4401 < final_threshold 0.6"
+  },
+  {
+    "id": 185,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5778,
+      "levenshtein": 0.2667,
+      "semantic": 0.4082,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4398,
+    "selected": false,
+    "reason": "top-3 avg score 0.4398 < final_threshold 0.6"
+  },
+  {
+    "id": 186,
+    "gold_term": "Point",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5407,
+      "levenshtein": 0.2222,
+      "semantic": 0.4914,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4393,
+    "selected": false,
+    "reason": "top-3 avg score 0.4393 < final_threshold 0.6"
+  },
+  {
+    "id": 187,
+    "gold_term": "Sensor",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.1875,
+      "semantic": 0.5918,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4386,
+    "selected": false,
+    "reason": "top-3 avg score 0.4386 < final_threshold 0.6"
+  },
+  {
+    "id": 188,
+    "gold_term": "Actuator",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5792,
+      "levenshtein": 0.1875,
+      "semantic": 0.4852,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4381,
+    "selected": false,
+    "reason": "top-3 avg score 0.4381 < final_threshold 0.6"
+  },
+  {
+    "id": 189,
+    "gold_term": "Geometry",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.125,
+      "semantic": 0.5626,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4375,
+    "selected": false,
+    "reason": "top-3 avg score 0.4375 < final_threshold 0.6"
+  },
+  {
+    "id": 190,
+    "gold_term": "Geometry",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.125,
+      "semantic": 0.5624,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4375,
+    "selected": false,
+    "reason": "top-3 avg score 0.4375 < final_threshold 0.6"
+  },
+  {
+    "id": 191,
+    "gold_term": "Water meter",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4667,
+      "levenshtein": 0.2,
+      "semantic": 0.507,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4357,
+    "selected": false,
+    "reason": "top-3 avg score 0.4357 < final_threshold 0.6"
+  },
+  {
+    "id": 192,
+    "gold_term": "Tariff",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5982,
+      "levenshtein": 0.129,
+      "semantic": 0.4919,
+      "sequence_match": 0.2162
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4355,
+    "selected": false,
+    "reason": "top-3 avg score 0.4355 < final_threshold 0.6"
+  },
+  {
+    "id": 193,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5517,
+      "levenshtein": 0.1579,
+      "semantic": 0.5393,
+      "sequence_match": 0.2143
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4351,
+    "selected": false,
+    "reason": "top-3 avg score 0.4351 < final_threshold 0.6"
+  },
+  {
+    "id": 194,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5302,
+      "levenshtein": 0.1739,
+      "semantic": 0.5644,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4338,
+    "selected": false,
+    "reason": "top-3 avg score 0.4338 < final_threshold 0.6"
+  },
+  {
+    "id": 195,
+    "gold_term": "Device",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.1667,
+      "semantic": 0.6896,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4336,
+    "selected": false,
+    "reason": "top-3 avg score 0.4336 < final_threshold 0.6"
+  },
+  {
+    "id": 196,
+    "gold_term": "Temporal duration",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5167,
+      "levenshtein": 0.125,
+      "semantic": 0.4982,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4335,
+    "selected": false,
+    "reason": "top-3 avg score 0.4335 < final_threshold 0.6"
+  },
+  {
+    "id": 197,
+    "gold_term": "Device",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.2,
+      "semantic": 0.5393,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4335,
+    "selected": false,
+    "reason": "top-3 avg score 0.4335 < final_threshold 0.6"
+  },
+  {
+    "id": 198,
+    "gold_term": "Water",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5083,
+      "levenshtein": 0.1875,
+      "semantic": 0.5055,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4332,
+    "selected": false,
+    "reason": "top-3 avg score 0.4332 < final_threshold 0.6"
+  },
+  {
+    "id": 199,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5729,
+      "levenshtein": 0.2609,
+      "semantic": 0.4653,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.433,
+    "selected": false,
+    "reason": "top-3 avg score 0.4330 < final_threshold 0.6"
+  },
+  {
+    "id": 200,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5533,
+      "levenshtein": 0.1304,
+      "semantic": 0.4856,
+      "sequence_match": 0.2564
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4318,
+    "selected": false,
+    "reason": "top-3 avg score 0.4318 < final_threshold 0.6"
+  },
+  {
+    "id": 201,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6007,
+      "levenshtein": 0.1304,
+      "semantic": 0.4368,
+      "sequence_match": 0.2564
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4313,
+    "selected": false,
+    "reason": "top-3 avg score 0.4313 < final_threshold 0.6"
+  },
+  {
+    "id": 202,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3907,
+      "levenshtein": 0.2609,
+      "semantic": 0.515,
+      "sequence_match": 0.3871
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4309,
+    "selected": false,
+    "reason": "top-3 avg score 0.4309 < final_threshold 0.6"
+  },
+  {
+    "id": 203,
+    "gold_term": "Meter",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3833,
+      "levenshtein": 0.25,
+      "semantic": 0.6011,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4307,
+    "selected": false,
+    "reason": "top-3 avg score 0.4307 < final_threshold 0.6"
+  },
+  {
+    "id": 204,
+    "gold_term": "Acceptability property",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5675,
+      "levenshtein": 0.1905,
+      "semantic": 0.4457,
+      "sequence_match": 0.2759
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4297,
+    "selected": false,
+    "reason": "top-3 avg score 0.4297 < final_threshold 0.6"
+  },
+  {
+    "id": 205,
+    "gold_term": "Water meter",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5375,
+      "levenshtein": 0.1875,
+      "semantic": 0.4405,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4286,
+    "selected": false,
+    "reason": "top-3 avg score 0.4286 < final_threshold 0.6"
+  },
+  {
+    "id": 206,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6732,
+      "levenshtein": 0.1765,
+      "semantic": 0.4302,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4266,
+    "selected": false,
+    "reason": "top-3 avg score 0.4266 < final_threshold 0.6"
+  },
+  {
+    "id": 207,
+    "gold_term": "Water",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5222,
+      "levenshtein": 0.1333,
+      "semantic": 0.4546,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4256,
+    "selected": false,
+    "reason": "top-3 avg score 0.4256 < final_threshold 0.6"
+  },
+  {
+    "id": 208,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4847,
+      "levenshtein": 0.1875,
+      "semantic": 0.5038,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4247,
+    "selected": false,
+    "reason": "top-3 avg score 0.4247 < final_threshold 0.6"
+  },
+  {
+    "id": 209,
+    "gold_term": "Water",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4847,
+      "levenshtein": 0.1875,
+      "semantic": 0.5038,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4247,
+    "selected": false,
+    "reason": "top-3 avg score 0.4247 < final_threshold 0.6"
+  },
+  {
+    "id": 210,
+    "gold_term": "Device",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.1818,
+      "semantic": 0.5338,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4247,
+    "selected": false,
+    "reason": "top-3 avg score 0.4247 < final_threshold 0.6"
+  },
+  {
+    "id": 211,
+    "gold_term": "Acceptability property",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6143,
+      "levenshtein": 0.0952,
+      "semantic": 0.4367,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4244,
+    "selected": false,
+    "reason": "top-3 avg score 0.4244 < final_threshold 0.6"
+  },
+  {
+    "id": 212,
+    "gold_term": "Device",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.0,
+      "semantic": 0.6327,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4234,
+    "selected": false,
+    "reason": "top-3 avg score 0.4234 < final_threshold 0.6"
+  },
+  {
+    "id": 213,
+    "gold_term": "Actuator",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5194,
+      "levenshtein": 0.1333,
+      "semantic": 0.4892,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4232,
+    "selected": false,
+    "reason": "top-3 avg score 0.4232 < final_threshold 0.6"
+  },
+  {
+    "id": 214,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5431,
+      "levenshtein": 0.2632,
+      "semantic": 0.4322,
+      "sequence_match": 0.2941
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4231,
+    "selected": false,
+    "reason": "top-3 avg score 0.4231 < final_threshold 0.6"
+  },
+  {
+    "id": 215,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4538,
+      "levenshtein": 0.2,
+      "semantic": 0.5271,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4222,
+    "selected": false,
+    "reason": "top-3 avg score 0.4222 < final_threshold 0.6"
+  },
+  {
+    "id": 216,
+    "gold_term": "Water",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3833,
+      "levenshtein": 0.125,
+      "semantic": 0.5746,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4219,
+    "selected": false,
+    "reason": "top-3 avg score 0.4219 < final_threshold 0.6"
+  },
+  {
+    "id": 217,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4808,
+      "levenshtein": 0.1739,
+      "semantic": 0.4616,
+      "sequence_match": 0.3226
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4216,
+    "selected": false,
+    "reason": "top-3 avg score 0.4216 < final_threshold 0.6"
+  },
+  {
+    "id": 218,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4864,
+      "levenshtein": 0.2174,
+      "semantic": 0.492,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4214,
+    "selected": false,
+    "reason": "top-3 avg score 0.4214 < final_threshold 0.6"
+  },
+  {
+    "id": 219,
+    "gold_term": "Geometry",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.125,
+      "semantic": 0.5398,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4207,
+    "selected": false,
+    "reason": "top-3 avg score 0.4207 < final_threshold 0.6"
+  },
+  {
+    "id": 220,
+    "gold_term": "Temporal entity",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5189,
+      "levenshtein": 0.1429,
+      "semantic": 0.5938,
+      "sequence_match": 0.1481
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4203,
+    "selected": false,
+    "reason": "top-3 avg score 0.4203 < final_threshold 0.6"
+  },
+  {
+    "id": 221,
+    "gold_term": "Temporal entity",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5333,
+      "levenshtein": 0.1935,
+      "semantic": 0.4608,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4203,
+    "selected": false,
+    "reason": "top-3 avg score 0.4203 < final_threshold 0.6"
+  },
+  {
+    "id": 222,
+    "gold_term": "Water property",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4658,
+      "levenshtein": 0.2308,
+      "semantic": 0.5638,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4201,
+    "selected": false,
+    "reason": "top-3 avg score 0.4201 < final_threshold 0.6"
+  },
+  {
+    "id": 223,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5064,
+      "levenshtein": 0.2353,
+      "semantic": 0.433,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4198,
+    "selected": false,
+    "reason": "top-3 avg score 0.4198 < final_threshold 0.6"
+  },
+  {
+    "id": 224,
+    "gold_term": "Tariff",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2,
+      "semantic": 0.5169,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4186,
+    "selected": false,
+    "reason": "top-3 avg score 0.4186 < final_threshold 0.6"
+  },
+  {
+    "id": 225,
+    "gold_term": "Water meter",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2,
+      "semantic": 0.5169,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4186,
+    "selected": false,
+    "reason": "top-3 avg score 0.4186 < final_threshold 0.6"
+  },
+  {
+    "id": 226,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5901,
+      "levenshtein": 0.1613,
+      "semantic": 0.4465,
+      "sequence_match": 0.2174
+    },
+    "is_hard_match": false,
+    "agg_score": 0.418,
+    "selected": false,
+    "reason": "top-3 avg score 0.4180 < final_threshold 0.6"
+  },
+  {
+    "id": 227,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5792,
+      "levenshtein": 0.1875,
+      "semantic": 0.4236,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4176,
+    "selected": false,
+    "reason": "top-3 avg score 0.4176 < final_threshold 0.6"
+  },
+  {
+    "id": 228,
+    "gold_term": "Water asset",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2,
+      "semantic": 0.5134,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4174,
+    "selected": false,
+    "reason": "top-3 avg score 0.4174 < final_threshold 0.6"
+  },
+  {
+    "id": 229,
+    "gold_term": "Point",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4667,
+      "levenshtein": 0.2,
+      "semantic": 0.5855,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4174,
+    "selected": false,
+    "reason": "top-3 avg score 0.4174 < final_threshold 0.6"
+  },
+  {
+    "id": 230,
+    "gold_term": "Temporal entity",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4579,
+      "levenshtein": 0.2143,
+      "semantic": 0.483,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4162,
+    "selected": false,
+    "reason": "top-3 avg score 0.4162 < final_threshold 0.6"
+  },
+  {
+    "id": 231,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5696,
+      "levenshtein": 0.1875,
+      "semantic": 0.3706,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.416,
+    "selected": false,
+    "reason": "top-3 avg score 0.4160 < final_threshold 0.6"
+  },
+  {
+    "id": 232,
+    "gold_term": "Water meter",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5696,
+      "levenshtein": 0.1875,
+      "semantic": 0.3706,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.416,
+    "selected": false,
+    "reason": "top-3 avg score 0.4160 < final_threshold 0.6"
+  },
+  {
+    "id": 233,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5742,
+      "levenshtein": 0.2581,
+      "semantic": 0.4153,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4158,
+    "selected": false,
+    "reason": "top-3 avg score 0.4158 < final_threshold 0.6"
+  },
+  {
+    "id": 234,
+    "gold_term": "Measurement",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4779,
+      "levenshtein": 0.1613,
+      "semantic": 0.4791,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4142,
+    "selected": false,
+    "reason": "top-3 avg score 0.4142 < final_threshold 0.6"
+  },
+  {
+    "id": 235,
+    "gold_term": "Water property",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4936,
+      "levenshtein": 0.1538,
+      "semantic": 0.5087,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4141,
+    "selected": false,
+    "reason": "top-3 avg score 0.4141 < final_threshold 0.6"
+  },
+  {
+    "id": 236,
+    "gold_term": "Sensor",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.1875,
+      "semantic": 0.5174,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4138,
+    "selected": false,
+    "reason": "top-3 avg score 0.4138 < final_threshold 0.6"
+  },
+  {
+    "id": 237,
+    "gold_term": "Temporal entity",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5119,
+      "levenshtein": 0.2143,
+      "semantic": 0.4531,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4126,
+    "selected": false,
+    "reason": "top-3 avg score 0.4126 < final_threshold 0.6"
+  },
+  {
+    "id": 238,
+    "gold_term": "Measurement",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.1818,
+      "semantic": 0.4969,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4124,
+    "selected": false,
+    "reason": "top-3 avg score 0.4124 < final_threshold 0.6"
+  },
+  {
+    "id": 239,
+    "gold_term": "Temporal entity",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4937,
+      "levenshtein": 0.1429,
+      "semantic": 0.5999,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4121,
+    "selected": false,
+    "reason": "top-3 avg score 0.4121 < final_threshold 0.6"
+  },
+  {
+    "id": 240,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5294,
+      "levenshtein": 0.1304,
+      "semantic": 0.4289,
+      "sequence_match": 0.2778
+    },
+    "is_hard_match": false,
+    "agg_score": 0.412,
+    "selected": false,
+    "reason": "top-3 avg score 0.4120 < final_threshold 0.6"
+  },
+  {
+    "id": 241,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.2,
+      "semantic": 0.4467,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4119,
+    "selected": false,
+    "reason": "top-3 avg score 0.4119 < final_threshold 0.6"
+  },
+  {
+    "id": 242,
+    "gold_term": "Meter",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4847,
+      "levenshtein": 0.1875,
+      "semantic": 0.4609,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4105,
+    "selected": false,
+    "reason": "top-3 avg score 0.4105 < final_threshold 0.6"
+  },
+  {
+    "id": 243,
+    "gold_term": "Meter",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.1538,
+      "semantic": 0.4912,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4104,
+    "selected": false,
+    "reason": "top-3 avg score 0.4104 < final_threshold 0.6"
+  },
+  {
+    "id": 244,
+    "gold_term": "Point",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.0,
+      "semantic": 0.5936,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4103,
+    "selected": false,
+    "reason": "top-3 avg score 0.4103 < final_threshold 0.6"
+  },
+  {
+    "id": 245,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4815,
+      "levenshtein": 0.1875,
+      "semantic": 0.506,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4092,
+    "selected": false,
+    "reason": "top-3 avg score 0.4092 < final_threshold 0.6"
+  },
+  {
+    "id": 246,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5298,
+      "levenshtein": 0.25,
+      "semantic": 0.4302,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4033,
+    "selected": false,
+    "reason": "top-3 avg score 0.4033 < final_threshold 0.6"
+  },
+  {
+    "id": 247,
+    "gold_term": "Acceptability property",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5175,
+      "levenshtein": 0.1905,
+      "semantic": 0.3691,
+      "sequence_match": 0.3226
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4031,
+    "selected": false,
+    "reason": "top-3 avg score 0.4031 < final_threshold 0.6"
+  },
+  {
+    "id": 248,
+    "gold_term": "Point",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5597,
+      "levenshtein": 0.129,
+      "semantic": 0.4267,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4029,
+    "selected": false,
+    "reason": "top-3 avg score 0.4029 < final_threshold 0.6"
+  },
+  {
+    "id": 249,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.2,
+      "semantic": 0.4663,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4025,
+    "selected": false,
+    "reason": "top-3 avg score 0.4025 < final_threshold 0.6"
+  },
+  {
+    "id": 250,
+    "gold_term": "Sensor",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4957,
+      "levenshtein": 0.1538,
+      "semantic": 0.4988,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4017,
+    "selected": false,
+    "reason": "top-3 avg score 0.4017 < final_threshold 0.6"
+  },
+  {
+    "id": 251,
+    "gold_term": "Device",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4306,
+      "levenshtein": 0.0,
+      "semantic": 0.6315,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4016,
+    "selected": false,
+    "reason": "top-3 avg score 0.4016 < final_threshold 0.6"
+  },
+  {
+    "id": 252,
+    "gold_term": "Acceptability property",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4698,
+      "levenshtein": 0.1905,
+      "semantic": 0.423,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4002,
+    "selected": false,
+    "reason": "top-3 avg score 0.4002 < final_threshold 0.6"
+  },
+  {
+    "id": 253,
+    "gold_term": "Water property",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5256,
+      "levenshtein": 0.0769,
+      "semantic": 0.5394,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3995,
+    "selected": false,
+    "reason": "top-3 avg score 0.3995 < final_threshold 0.6"
+  },
+  {
+    "id": 254,
+    "gold_term": "Measurement",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4495,
+      "levenshtein": 0.1667,
+      "semantic": 0.5713,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3982,
+    "selected": false,
+    "reason": "top-3 avg score 0.3982 < final_threshold 0.6"
+  },
+  {
+    "id": 255,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5011,
+      "levenshtein": 0.25,
+      "semantic": 0.3482,
+      "sequence_match": 0.3448
+    },
+    "is_hard_match": false,
+    "agg_score": 0.398,
+    "selected": false,
+    "reason": "top-3 avg score 0.3980 < final_threshold 0.6"
+  },
+  {
+    "id": 256,
+    "gold_term": "Water asset",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4833,
+      "levenshtein": 0.1,
+      "semantic": 0.4871,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3975,
+    "selected": false,
+    "reason": "top-3 avg score 0.3975 < final_threshold 0.6"
+  },
+  {
+    "id": 257,
+    "gold_term": "Water",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.1538,
+      "semantic": 0.4497,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3966,
+    "selected": false,
+    "reason": "top-3 avg score 0.3966 < final_threshold 0.6"
+  },
+  {
+    "id": 258,
+    "gold_term": "Tariff",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5278,
+      "levenshtein": 0.25,
+      "semantic": 0.3754,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3963,
+    "selected": false,
+    "reason": "top-3 avg score 0.3963 < final_threshold 0.6"
+  },
+  {
+    "id": 259,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5475,
+      "levenshtein": 0.1304,
+      "semantic": 0.5103,
+      "sequence_match": 0.129
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3961,
+    "selected": false,
+    "reason": "top-3 avg score 0.3961 < final_threshold 0.6"
+  },
+  {
+    "id": 260,
+    "gold_term": "Device",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4259,
+      "levenshtein": 0.1111,
+      "semantic": 0.494,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3955,
+    "selected": false,
+    "reason": "top-3 avg score 0.3955 < final_threshold 0.6"
+  },
+  {
+    "id": 261,
+    "gold_term": "Measurement",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4773,
+      "levenshtein": 0.0909,
+      "semantic": 0.4982,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3953,
+    "selected": false,
+    "reason": "top-3 avg score 0.3953 < final_threshold 0.6"
+  },
+  {
+    "id": 262,
+    "gold_term": "Temporal entity",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4603,
+      "levenshtein": 0.2143,
+      "semantic": 0.4255,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3953,
+    "selected": false,
+    "reason": "top-3 avg score 0.3953 < final_threshold 0.6"
+  },
+  {
+    "id": 263,
+    "gold_term": "Actuator",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3611,
+      "levenshtein": 0.125,
+      "semantic": 0.5386,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3951,
+    "selected": false,
+    "reason": "top-3 avg score 0.3951 < final_threshold 0.6"
+  },
+  {
+    "id": 264,
+    "gold_term": "Tariff",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.1875,
+      "semantic": 0.4585,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3942,
+    "selected": false,
+    "reason": "top-3 avg score 0.3942 < final_threshold 0.6"
+  },
+  {
+    "id": 265,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.481,
+      "levenshtein": 0.1765,
+      "semantic": 0.5191,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.394,
+    "selected": false,
+    "reason": "top-3 avg score 0.3940 < final_threshold 0.6"
+  },
+  {
+    "id": 266,
+    "gold_term": "Point",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.1538,
+      "semantic": 0.4396,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3933,
+    "selected": false,
+    "reason": "top-3 avg score 0.3933 < final_threshold 0.6"
+  },
+  {
+    "id": 267,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5056,
+      "levenshtein": 0.2,
+      "semantic": 0.4098,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3921,
+    "selected": false,
+    "reason": "top-3 avg score 0.3921 < final_threshold 0.6"
+  },
+  {
+    "id": 268,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5036,
+      "levenshtein": 0.1765,
+      "semantic": 0.4647,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3917,
+    "selected": false,
+    "reason": "top-3 avg score 0.3917 < final_threshold 0.6"
+  },
+  {
+    "id": 269,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4313,
+      "levenshtein": 0.1579,
+      "semantic": 0.4856,
+      "sequence_match": 0.2581
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3917,
+    "selected": false,
+    "reason": "top-3 avg score 0.3917 < final_threshold 0.6"
+  },
+  {
+    "id": 270,
+    "gold_term": "Tariff",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.1667,
+      "semantic": 0.5376,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3917,
+    "selected": false,
+    "reason": "top-3 avg score 0.3917 < final_threshold 0.6"
+  },
+  {
+    "id": 271,
+    "gold_term": "Sensor",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5315,
+      "levenshtein": 0.129,
+      "semantic": 0.5112,
+      "sequence_match": 0.1081
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3906,
+    "selected": false,
+    "reason": "top-3 avg score 0.3906 < final_threshold 0.6"
+  },
+  {
+    "id": 272,
+    "gold_term": "Water property",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4658,
+      "levenshtein": 0.1538,
+      "semantic": 0.4952,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3905,
+    "selected": false,
+    "reason": "top-3 avg score 0.3905 < final_threshold 0.6"
+  },
+  {
+    "id": 273,
+    "gold_term": "Point",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4417,
+      "levenshtein": 0.125,
+      "semantic": 0.576,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3905,
+    "selected": false,
+    "reason": "top-3 avg score 0.3905 < final_threshold 0.6"
+  },
+  {
+    "id": 274,
+    "gold_term": "Water property",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4551,
+      "levenshtein": 0.1538,
+      "semantic": 0.4828,
+      "sequence_match": 0.2308
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3896,
+    "selected": false,
+    "reason": "top-3 avg score 0.3896 < final_threshold 0.6"
+  },
+  {
+    "id": 275,
+    "gold_term": "Temporal entity",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5238,
+      "levenshtein": 0.0714,
+      "semantic": 0.5193,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3894,
+    "selected": false,
+    "reason": "top-3 avg score 0.3894 < final_threshold 0.6"
+  },
+  {
+    "id": 276,
+    "gold_term": "Temporal duration",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.25,
+      "semantic": 0.443,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.389,
+    "selected": false,
+    "reason": "top-3 avg score 0.3890 < final_threshold 0.6"
+  },
+  {
+    "id": 277,
+    "gold_term": "Point",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4208,
+      "levenshtein": 0.1875,
+      "semantic": 0.459,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3885,
+    "selected": false,
+    "reason": "top-3 avg score 0.3885 < final_threshold 0.6"
+  },
+  {
+    "id": 278,
+    "gold_term": "Device",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.0,
+      "semantic": 0.5263,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3879,
+    "selected": false,
+    "reason": "top-3 avg score 0.3879 < final_threshold 0.6"
+  },
+  {
+    "id": 279,
+    "gold_term": "Acceptability property",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.495,
+      "levenshtein": 0.1905,
+      "semantic": 0.3943,
+      "sequence_match": 0.2703
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3865,
+    "selected": false,
+    "reason": "top-3 avg score 0.3865 < final_threshold 0.6"
+  },
+  {
+    "id": 280,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.1875,
+      "semantic": 0.5174,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3854,
+    "selected": false,
+    "reason": "top-3 avg score 0.3854 < final_threshold 0.6"
+  },
+  {
+    "id": 281,
+    "gold_term": "Point",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4417,
+      "levenshtein": 0.125,
+      "semantic": 0.556,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3838,
+    "selected": false,
+    "reason": "top-3 avg score 0.3838 < final_threshold 0.6"
+  },
+  {
+    "id": 282,
+    "gold_term": "Meter",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4208,
+      "levenshtein": 0.125,
+      "semantic": 0.5395,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3836,
+    "selected": false,
+    "reason": "top-3 avg score 0.3836 < final_threshold 0.6"
+  },
+  {
+    "id": 283,
+    "gold_term": "Point",
+    "pred_term": "Temperature",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3606,
+      "levenshtein": 0.1818,
+      "semantic": 0.5394,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3833,
+    "selected": false,
+    "reason": "top-3 avg score 0.3833 < final_threshold 0.6"
+  },
+  {
+    "id": 284,
+    "gold_term": "Geometry",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4679,
+      "levenshtein": 0.0769,
+      "semantic": 0.3962,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3833,
+    "selected": false,
+    "reason": "top-3 avg score 0.3833 < final_threshold 0.6"
+  },
+  {
+    "id": 285,
+    "gold_term": "Sensor",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4306,
+      "levenshtein": 0.125,
+      "semantic": 0.575,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3828,
+    "selected": false,
+    "reason": "top-3 avg score 0.3828 < final_threshold 0.6"
+  },
+  {
+    "id": 286,
+    "gold_term": "Device",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.1333,
+      "semantic": 0.4668,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.382,
+    "selected": false,
+    "reason": "top-3 avg score 0.3820 < final_threshold 0.6"
+  },
+  {
+    "id": 287,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4591,
+      "levenshtein": 0.1579,
+      "semantic": 0.4575,
+      "sequence_match": 0.2286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3817,
+    "selected": false,
+    "reason": "top-3 avg score 0.3817 < final_threshold 0.6"
+  },
+  {
+    "id": 288,
+    "gold_term": "Acceptability property",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4762,
+      "levenshtein": 0.1429,
+      "semantic": 0.5205,
+      "sequence_match": 0.1481
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3816,
+    "selected": false,
+    "reason": "top-3 avg score 0.3816 < final_threshold 0.6"
+  },
+  {
+    "id": 289,
+    "gold_term": "Water asset",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.0833,
+      "semantic": 0.5063,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3812,
+    "selected": false,
+    "reason": "top-3 avg score 0.3812 < final_threshold 0.6"
+  },
+  {
+    "id": 290,
+    "gold_term": "Sensor",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4259,
+      "levenshtein": 0.0,
+      "semantic": 0.5801,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3798,
+    "selected": false,
+    "reason": "top-3 avg score 0.3798 < final_threshold 0.6"
+  },
+  {
+    "id": 291,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4477,
+      "levenshtein": 0.1765,
+      "semantic": 0.513,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3791,
+    "selected": false,
+    "reason": "top-3 avg score 0.3791 < final_threshold 0.6"
+  },
+  {
+    "id": 292,
+    "gold_term": "Tariff",
+    "pred_term": "Temporal setting",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.2,
+      "semantic": 0.3954,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3789,
+    "selected": false,
+    "reason": "top-3 avg score 0.3789 < final_threshold 0.6"
+  },
+  {
+    "id": 293,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Actuator",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4167,
+      "levenshtein": 0.1875,
+      "semantic": 0.4689,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3785,
+    "selected": false,
+    "reason": "top-3 avg score 0.3785 < final_threshold 0.6"
+  },
+  {
+    "id": 294,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5145,
+      "levenshtein": 0.0435,
+      "semantic": 0.5397,
+      "sequence_match": 0.08
+    },
+    "is_hard_match": false,
+    "agg_score": 0.378,
+    "selected": false,
+    "reason": "top-3 avg score 0.3780 < final_threshold 0.6"
+  },
+  {
+    "id": 295,
+    "gold_term": "Actuator",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4167,
+      "levenshtein": 0.1875,
+      "semantic": 0.5267,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3769,
+    "selected": false,
+    "reason": "top-3 avg score 0.3769 < final_threshold 0.6"
+  },
+  {
+    "id": 296,
+    "gold_term": "Water meter",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4833,
+      "levenshtein": 0.0,
+      "semantic": 0.4236,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3764,
+    "selected": false,
+    "reason": "top-3 avg score 0.3764 < final_threshold 0.6"
+  },
+  {
+    "id": 297,
+    "gold_term": "Device",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4861,
+      "levenshtein": 0.125,
+      "semantic": 0.4605,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3762,
+    "selected": false,
+    "reason": "top-3 avg score 0.3762 < final_threshold 0.6"
+  },
+  {
+    "id": 298,
+    "gold_term": "Temporal duration",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5208,
+      "levenshtein": 0.0625,
+      "semantic": 0.4962,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3761,
+    "selected": false,
+    "reason": "top-3 avg score 0.3761 < final_threshold 0.6"
+  },
+  {
+    "id": 299,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5208,
+      "levenshtein": 0.0625,
+      "semantic": 0.4956,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3759,
+    "selected": false,
+    "reason": "top-3 avg score 0.3759 < final_threshold 0.6"
+  },
+  {
+    "id": 300,
+    "gold_term": "Temporal duration",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4847,
+      "levenshtein": 0.125,
+      "semantic": 0.516,
+      "sequence_match": 0.0952
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3752,
+    "selected": false,
+    "reason": "top-3 avg score 0.3752 < final_threshold 0.6"
+  },
+  {
+    "id": 301,
+    "gold_term": "Geometry",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.2917,
+      "levenshtein": 0.1875,
+      "semantic": 0.5815,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3744,
+    "selected": false,
+    "reason": "top-3 avg score 0.3744 < final_threshold 0.6"
+  },
+  {
+    "id": 302,
+    "gold_term": "Device",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.1667,
+      "semantic": 0.5119,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3743,
+    "selected": false,
+    "reason": "top-3 avg score 0.3743 < final_threshold 0.6"
+  },
+  {
+    "id": 303,
+    "gold_term": "Tariff",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4167,
+      "levenshtein": 0.1667,
+      "semantic": 0.4829,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3739,
+    "selected": false,
+    "reason": "top-3 avg score 0.3739 < final_threshold 0.6"
+  },
+  {
+    "id": 304,
+    "gold_term": "Acceptability property",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.514,
+      "levenshtein": 0.2258,
+      "semantic": 0.3813,
+      "sequence_match": 0.1923
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3737,
+    "selected": false,
+    "reason": "top-3 avg score 0.3737 < final_threshold 0.6"
+  },
+  {
+    "id": 305,
+    "gold_term": "Meter",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4545,
+      "levenshtein": 0.0968,
+      "semantic": 0.4979,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.373,
+    "selected": false,
+    "reason": "top-3 avg score 0.3730 < final_threshold 0.6"
+  },
+  {
+    "id": 306,
+    "gold_term": "Acceptability property",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3948,
+      "levenshtein": 0.1429,
+      "semantic": 0.4468,
+      "sequence_match": 0.2759
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3725,
+    "selected": false,
+    "reason": "top-3 avg score 0.3725 < final_threshold 0.6"
+  },
+  {
+    "id": 307,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4591,
+      "levenshtein": 0.2105,
+      "semantic": 0.4264,
+      "sequence_match": 0.2286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3714,
+    "selected": false,
+    "reason": "top-3 avg score 0.3714 < final_threshold 0.6"
+  },
+  {
+    "id": 308,
+    "gold_term": "Water meter",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4513,
+      "levenshtein": 0.1538,
+      "semantic": 0.4883,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3712,
+    "selected": false,
+    "reason": "top-3 avg score 0.3712 < final_threshold 0.6"
+  },
+  {
+    "id": 309,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Turbidity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3768,
+      "levenshtein": 0.2174,
+      "semantic": 0.4174,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3689,
+    "selected": false,
+    "reason": "top-3 avg score 0.3689 < final_threshold 0.6"
+  },
+  {
+    "id": 310,
+    "gold_term": "Water meter",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.0,
+      "semantic": 0.4688,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3687,
+    "selected": false,
+    "reason": "top-3 avg score 0.3687 < final_threshold 0.6"
+  },
+  {
+    "id": 311,
+    "gold_term": "Tariff",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4145,
+      "levenshtein": 0.1538,
+      "semantic": 0.4805,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3685,
+    "selected": false,
+    "reason": "top-3 avg score 0.3685 < final_threshold 0.6"
+  },
+  {
+    "id": 312,
+    "gold_term": "Meter",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4278,
+      "levenshtein": 0.0833,
+      "semantic": 0.556,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3671,
+    "selected": false,
+    "reason": "top-3 avg score 0.3671 < final_threshold 0.6"
+  },
+  {
+    "id": 313,
+    "gold_term": "Tariff",
+    "pred_term": "Pressure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4306,
+      "levenshtein": 0.0,
+      "semantic": 0.5238,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3658,
+    "selected": false,
+    "reason": "top-3 avg score 0.3658 < final_threshold 0.6"
+  },
+  {
+    "id": 314,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1333,
+      "semantic": 0.4229,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.365,
+    "selected": false,
+    "reason": "top-3 avg score 0.3650 < final_threshold 0.6"
+  },
+  {
+    "id": 315,
+    "gold_term": "Water",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4278,
+      "levenshtein": 0.0833,
+      "semantic": 0.5485,
+      "sequence_match": 0.1176
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3646,
+    "selected": false,
+    "reason": "top-3 avg score 0.3646 < final_threshold 0.6"
+  },
+  {
+    "id": 316,
+    "gold_term": "Point",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4556,
+      "levenshtein": 0.1667,
+      "semantic": 0.4528,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3634,
+    "selected": false,
+    "reason": "top-3 avg score 0.3634 < final_threshold 0.6"
+  },
+  {
+    "id": 317,
+    "gold_term": "Device",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4957,
+      "levenshtein": 0.1538,
+      "semantic": 0.4348,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3615,
+    "selected": false,
+    "reason": "top-3 avg score 0.3615 < final_threshold 0.6"
+  },
+  {
+    "id": 318,
+    "gold_term": "Water asset",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4513,
+      "levenshtein": 0.0769,
+      "semantic": 0.4529,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3594,
+    "selected": false,
+    "reason": "top-3 avg score 0.3594 < final_threshold 0.6"
+  },
+  {
+    "id": 319,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3417,
+      "levenshtein": 0.1875,
+      "semantic": 0.5442,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3588,
+    "selected": false,
+    "reason": "top-3 avg score 0.3588 < final_threshold 0.6"
+  },
+  {
+    "id": 320,
+    "gold_term": "Device",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3611,
+      "levenshtein": 0.125,
+      "semantic": 0.5716,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3585,
+    "selected": false,
+    "reason": "top-3 avg score 0.3585 < final_threshold 0.6"
+  },
+  {
+    "id": 321,
+    "gold_term": "Actuator",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4167,
+      "levenshtein": 0.1875,
+      "semantic": 0.4689,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3577,
+    "selected": false,
+    "reason": "top-3 avg score 0.3577 < final_threshold 0.6"
+  },
+  {
+    "id": 322,
+    "gold_term": "Device",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4211,
+      "levenshtein": 0.129,
+      "semantic": 0.5157,
+      "sequence_match": 0.1081
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3553,
+    "selected": false,
+    "reason": "top-3 avg score 0.3553 < final_threshold 0.6"
+  },
+  {
+    "id": 323,
+    "gold_term": "Point",
+    "pred_term": "Water measurement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4208,
+      "levenshtein": 0.125,
+      "semantic": 0.4527,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3547,
+    "selected": false,
+    "reason": "top-3 avg score 0.3547 < final_threshold 0.6"
+  },
+  {
+    "id": 324,
+    "gold_term": "Acceptability property",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5159,
+      "levenshtein": 0.0476,
+      "semantic": 0.4604,
+      "sequence_match": 0.087
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3544,
+    "selected": false,
+    "reason": "top-3 avg score 0.3544 < final_threshold 0.6"
+  },
+  {
+    "id": 325,
+    "gold_term": "Acceptability property",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4365,
+      "levenshtein": 0.1429,
+      "semantic": 0.404,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3542,
+    "selected": false,
+    "reason": "top-3 avg score 0.3542 < final_threshold 0.6"
+  },
+  {
+    "id": 326,
+    "gold_term": "Meter",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4417,
+      "levenshtein": 0.125,
+      "semantic": 0.4669,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3541,
+    "selected": false,
+    "reason": "top-3 avg score 0.3541 < final_threshold 0.6"
+  },
+  {
+    "id": 327,
+    "gold_term": "Sensor",
+    "pred_term": "Conductivity",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3333,
+      "levenshtein": 0.0833,
+      "semantic": 0.607,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3505,
+    "selected": false,
+    "reason": "top-3 avg score 0.3505 < final_threshold 0.6"
+  },
+  {
+    "id": 328,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4657,
+      "levenshtein": 0.1304,
+      "semantic": 0.4317,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3468,
+    "selected": false,
+    "reason": "top-3 avg score 0.3468 < final_threshold 0.6"
+  },
+  {
+    "id": 329,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4262,
+      "levenshtein": 0.1765,
+      "semantic": 0.347,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3466,
+    "selected": false,
+    "reason": "top-3 avg score 0.3466 < final_threshold 0.6"
+  },
+  {
+    "id": 330,
+    "gold_term": "Point",
+    "pred_term": "Water meter",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4333,
+      "levenshtein": 0.1,
+      "semantic": 0.4598,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3422,
+    "selected": false,
+    "reason": "top-3 avg score 0.3422 < final_threshold 0.6"
+  },
+  {
+    "id": 331,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4592,
+      "levenshtein": 0.1613,
+      "semantic": 0.3958,
+      "sequence_match": 0.1702
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3417,
+    "selected": false,
+    "reason": "top-3 avg score 0.3417 < final_threshold 0.6"
+  },
+  {
+    "id": 332,
+    "gold_term": "Measurement",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3901,
+      "levenshtein": 0.0769,
+      "semantic": 0.4583,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3384,
+    "selected": false,
+    "reason": "top-3 avg score 0.3384 < final_threshold 0.6"
+  },
+  {
+    "id": 333,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4324,
+      "levenshtein": 0.087,
+      "semantic": 0.4436,
+      "sequence_match": 0.1379
+    },
+    "is_hard_match": false,
+    "agg_score": 0.338,
+    "selected": false,
+    "reason": "top-3 avg score 0.3380 < final_threshold 0.6"
+  },
+  {
+    "id": 334,
+    "gold_term": "Geometry",
+    "pred_term": "Water distribution infrastructure",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3763,
+      "levenshtein": 0.129,
+      "semantic": 0.4681,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3328,
+    "selected": false,
+    "reason": "top-3 avg score 0.3328 < final_threshold 0.6"
+  },
+  {
+    "id": 335,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5395,
+      "levenshtein": 0.125,
+      "semantic": 0.3298,
+      "sequence_match": 0.0645
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3314,
+    "selected": false,
+    "reason": "top-3 avg score 0.3314 < final_threshold 0.6"
+  },
+  {
+    "id": 336,
+    "gold_term": "Tariff",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.125,
+      "semantic": 0.4152,
+      "sequence_match": 0.0909
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3305,
+    "selected": false,
+    "reason": "top-3 avg score 0.3305 < final_threshold 0.6"
+  },
+  {
+    "id": 337,
+    "gold_term": "Water infrastructure",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3394,
+      "levenshtein": 0.1579,
+      "semantic": 0.4519,
+      "sequence_match": 0.1875
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3263,
+    "selected": false,
+    "reason": "top-3 avg score 0.3263 < final_threshold 0.6"
+  },
+  {
+    "id": 338,
+    "gold_term": "ChemicalProperty",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.125,
+      "semantic": 0.3925,
+      "sequence_match": 0.0909
+    },
+    "is_hard_match": false,
+    "agg_score": 0.323,
+    "selected": false,
+    "reason": "top-3 avg score 0.3230 < final_threshold 0.6"
+  },
+  {
+    "id": 339,
+    "gold_term": "Tariff",
+    "pred_term": "Chemical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4514,
+      "levenshtein": 0.125,
+      "semantic": 0.3925,
+      "sequence_match": 0.0909
+    },
+    "is_hard_match": false,
+    "agg_score": 0.323,
+    "selected": false,
+    "reason": "top-3 avg score 0.3230 < final_threshold 0.6"
+  },
+  {
+    "id": 340,
+    "gold_term": "Key Performance Indicator",
+    "pred_term": "Asset",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.329,
+      "levenshtein": 0.1304,
+      "semantic": 0.4925,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3214,
+    "selected": false,
+    "reason": "top-3 avg score 0.3214 < final_threshold 0.6"
+  },
+  {
+    "id": 341,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Location",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4139,
+      "levenshtein": 0.2,
+      "semantic": 0.3422,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3187,
+    "selected": false,
+    "reason": "top-3 avg score 0.3187 < final_threshold 0.6"
+  },
+  {
+    "id": 342,
+    "gold_term": "Actuator",
+    "pred_term": "Billing period",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3013,
+      "levenshtein": 0.0769,
+      "semantic": 0.4621,
+      "sequence_match": 0.0952
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2862,
+    "selected": false,
+    "reason": "top-3 avg score 0.2862 < final_threshold 0.6"
+  },
+  {
+    "id": 343,
+    "gold_term": "Time-based tariff",
+    "pred_term": "Physical property",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.425,
+      "levenshtein": 0.0625,
+      "semantic": 0.3555,
+      "sequence_match": 0.0645
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2817,
+    "selected": false,
+    "reason": "top-3 avg score 0.2817 < final_threshold 0.6"
+  },
+  {
+    "id": 344,
+    "gold_term": "Geometry",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.4833,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2563,
+    "selected": false,
+    "reason": "top-3 avg score 0.2563 < final_threshold 0.6"
+  },
+  {
+    "id": 345,
+    "gold_term": "Point",
+    "pred_term": "Water",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5424,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2475,
+    "selected": false,
+    "reason": "top-3 avg score 0.2475 < final_threshold 0.6"
+  },
+  {
+    "id": 346,
+    "gold_term": "Sensor",
+    "pred_term": "Tariff",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5374,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2347,
+    "selected": false,
+    "reason": "top-3 avg score 0.2347 < final_threshold 0.6"
+  },
+  {
+    "id": 347,
+    "gold_term": "Tariff",
+    "pred_term": "Sensor",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5374,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2347,
+    "selected": false,
+    "reason": "top-3 avg score 0.2347 < final_threshold 0.6"
+  },
+  {
+    "id": 348,
+    "gold_term": "Sensor",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6458,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2153,
+    "selected": false,
+    "reason": "top-3 avg score 0.2153 < final_threshold 0.6"
+  },
+  {
+    "id": 349,
+    "gold_term": "Water",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.625,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2083,
+    "selected": false,
+    "reason": "top-3 avg score 0.2083 < final_threshold 0.6"
+  },
+  {
+    "id": 350,
+    "gold_term": "Device",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.605,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2017,
+    "selected": false,
+    "reason": "top-3 avg score 0.2017 < final_threshold 0.6"
+  },
+  {
+    "id": 351,
+    "gold_term": "Actuator",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.601,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2003,
+    "selected": false,
+    "reason": "top-3 avg score 0.2003 < final_threshold 0.6"
+  },
+  {
+    "id": 352,
+    "gold_term": "Geometry",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5778,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1926,
+    "selected": false,
+    "reason": "top-3 avg score 0.1926 < final_threshold 0.6"
+  },
+  {
+    "id": 353,
+    "gold_term": "Meter",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5588,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1863,
+    "selected": false,
+    "reason": "top-3 avg score 0.1863 < final_threshold 0.6"
+  },
+  {
+    "id": 354,
+    "gold_term": "Measurement",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5464,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1821,
+    "selected": false,
+    "reason": "top-3 avg score 0.1821 < final_threshold 0.6"
+  },
+  {
+    "id": 355,
+    "gold_term": "Water asset",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5284,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1761,
+    "selected": false,
+    "reason": "top-3 avg score 0.1761 < final_threshold 0.6"
+  },
+  {
+    "id": 356,
+    "gold_term": "Water infrastructure",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5159,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.172,
+    "selected": false,
+    "reason": "top-3 avg score 0.1720 < final_threshold 0.6"
+  },
+  {
+    "id": 357,
+    "gold_term": "FeatureOfInterest",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5155,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1718,
+    "selected": false,
+    "reason": "top-3 avg score 0.1718 < final_threshold 0.6"
+  },
+  {
+    "id": 358,
+    "gold_term": "Water meter",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5047,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1682,
+    "selected": false,
+    "reason": "top-3 avg score 0.1682 < final_threshold 0.6"
+  },
+  {
+    "id": 359,
+    "gold_term": "Tariff",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.4859,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.162,
+    "selected": false,
+    "reason": "top-3 avg score 0.1620 < final_threshold 0.6"
+  },
+  {
+    "id": 360,
+    "gold_term": "Time-based tariff",
+    "pred_term": "pH",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.4228,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1409,
+    "selected": false,
+    "reason": "top-3 avg score 0.1409 < final_threshold 0.6"
+  }
+]

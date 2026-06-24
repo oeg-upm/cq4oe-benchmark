@@ -1,0 +1,10 @@
+Gold_term,Pre_term,Method,Score
+has release date,release date,top3_avg(jaro_winkler+semantic+sequence_match),0.8759
+has format specification,has modification,top3_avg(jaro_winkler+levenshtein+sequence_match),0.7144
+has input,has input format,top3_avg(jaro_winkler+semantic+sequence_match),0.812
+has license,has license,hard_match,1.0
+has output,has output format,top3_avg(jaro_winkler+semantic+sequence_match),0.8342
+has version,has export version,top3_avg(jaro_winkler+semantic+sequence_match),0.7954
+is developed by,has developer,top3_avg(jaro_winkler+semantic+sequence_match),0.768
+uses platform,runs on platform,top3_avg(jaro_winkler+semantic+sequence_match),0.7907
+uses software,has software type,top3_avg(jaro_winkler+semantic+sequence_match),0.7258

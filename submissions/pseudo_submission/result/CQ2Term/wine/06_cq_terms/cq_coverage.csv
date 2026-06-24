@@ -1,0 +1,6 @@
+cq_id,question,n_gold_classes,n_gold_properties,n_covered_classes,n_covered_properties,coverage,missing_classes,missing_properties
+CQ1,Which wine characteristics should I consider when choosing a wine?,2,1,1,0,0.3333,winedescriptor,haswinedescriptor
+CQ2,Is Bordeaux a red or white wine?,6,0,3,0,0.5000,bordeaux; redbordeaux; whitebordeaux,
+CQ6,Does a bouquet or body of a specific wine change with vintage year?,3,3,2,2,0.6667,vintage,yearvalue
+CQ7,What were good vintages for Napa Zinfandel?,2,2,1,0,0.2500,zinfandel,yearvalue; hasvintageyear
+CQnew1,What grapes are used to make Bordeaux wine?,3,1,2,1,0.7500,bordeaux,

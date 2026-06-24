@@ -1,0 +1,6717 @@
+[
+  {
+    "id": 1,
+    "gold_term": "Achievement",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 2,
+    "gold_term": "Game",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 3,
+    "gold_term": "Item",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 4,
+    "gold_term": "Player",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 5,
+    "gold_term": "playing area",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "hard_match"
+    ],
+    "scores_by_method": {
+      "hard_match": 1.0,
+      "jaro_winkler": 1.0,
+      "levenshtein": 1.0,
+      "semantic": 1.0,
+      "sequence_match": 1.0
+    },
+    "is_hard_match": true,
+    "agg_score": 1.0,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 6,
+    "gold_term": "in-app purchase event",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9444,
+      "levenshtein": 0.7222,
+      "semantic": 0.8777,
+      "sequence_match": 0.8387
+    },
+    "is_hard_match": false,
+    "agg_score": 0.887,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 7,
+    "gold_term": "Session",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8312,
+      "levenshtein": 0.6364,
+      "semantic": 0.8375,
+      "sequence_match": 0.7778
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8155,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 8,
+    "gold_term": "Completion",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "sequence_match",
+      "jaro_winkler",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8048,
+      "levenshtein": 0.7143,
+      "semantic": 0.7649,
+      "sequence_match": 0.8333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.801,
+    "selected": true,
+    "reason": "selected"
+  },
+  {
+    "id": 9,
+    "gold_term": "Achievement",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.9467,
+      "levenshtein": 0.7333,
+      "semantic": 0.8041,
+      "sequence_match": 0.8462
+    },
+    "is_hard_match": false,
+    "agg_score": 0.8656,
+    "selected": false,
+    "reason": "gold already mapped to 'Achievement'"
+  },
+  {
+    "id": 10,
+    "gold_term": "Item",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8889,
+      "levenshtein": 0.4444,
+      "semantic": 0.7932,
+      "sequence_match": 0.6154
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7658,
+    "selected": false,
+    "reason": "gold already mapped to 'Item'"
+  },
+  {
+    "id": 11,
+    "gold_term": "Player",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.88,
+      "levenshtein": 0.4,
+      "semantic": 0.7304,
+      "sequence_match": 0.5714
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7273,
+    "selected": false,
+    "reason": "gold already mapped to 'Player'"
+  },
+  {
+    "id": 12,
+    "gold_term": "Player",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8857,
+      "levenshtein": 0.4286,
+      "semantic": 0.6911,
+      "sequence_match": 0.6
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7256,
+    "selected": false,
+    "reason": "gold already mapped to 'Player'"
+  },
+  {
+    "id": 13,
+    "gold_term": "Game",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8727,
+      "levenshtein": 0.3636,
+      "semantic": 0.7588,
+      "sequence_match": 0.5333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7216,
+    "selected": false,
+    "reason": "gold already mapped to 'Game'"
+  },
+  {
+    "id": 14,
+    "gold_term": "game product",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8727,
+      "levenshtein": 0.3636,
+      "semantic": 0.726,
+      "sequence_match": 0.5333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.7107,
+    "selected": false,
+    "reason": "pred already taken by 'Game' (higher averaged score)"
+  },
+  {
+    "id": 15,
+    "gold_term": "Game",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8571,
+      "levenshtein": 0.2857,
+      "semantic": 0.7624,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.688,
+    "selected": false,
+    "reason": "gold already mapped to 'Game'"
+  },
+  {
+    "id": 16,
+    "gold_term": "playing area",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8478,
+      "levenshtein": 0.5714,
+      "semantic": 0.4441,
+      "sequence_match": 0.64
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6864,
+    "selected": false,
+    "reason": "gold already mapped to 'Playing Area'"
+  },
+  {
+    "id": 17,
+    "gold_term": "Player",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8576,
+      "levenshtein": 0.4545,
+      "semantic": 0.5741,
+      "sequence_match": 0.5882
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6733,
+    "selected": false,
+    "reason": "gold already mapped to 'Player'"
+  },
+  {
+    "id": 18,
+    "gold_term": "playing area",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8576,
+      "levenshtein": 0.4545,
+      "semantic": 0.5741,
+      "sequence_match": 0.5882
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6733,
+    "selected": false,
+    "reason": "gold already mapped to 'Playing Area'"
+  },
+  {
+    "id": 19,
+    "gold_term": "Player",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8571,
+      "levenshtein": 0.2857,
+      "semantic": 0.6637,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6551,
+    "selected": false,
+    "reason": "gold already mapped to 'Player'"
+  },
+  {
+    "id": 20,
+    "gold_term": "Collection",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7071,
+      "levenshtein": 0.5,
+      "semantic": 0.555,
+      "sequence_match": 0.6667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6429,
+    "selected": false,
+    "reason": "pred already taken by 'Completion' (higher averaged score)"
+  },
+  {
+    "id": 21,
+    "gold_term": "game product",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.8347,
+      "levenshtein": 0.3571,
+      "semantic": 0.6135,
+      "sequence_match": 0.48
+    },
+    "is_hard_match": false,
+    "agg_score": 0.6427,
+    "selected": false,
+    "reason": "pred already taken by 'Completion' (higher averaged score)"
+  },
+  {
+    "id": 22,
+    "gold_term": "hard mode",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5833,
+      "levenshtein": 0.375,
+      "semantic": 0.6585,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5806,
+    "selected": false,
+    "reason": "top-3 avg score 0.5806 < final_threshold 0.6"
+  },
+  {
+    "id": 23,
+    "gold_term": "Game",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5952,
+      "levenshtein": 0.2857,
+      "semantic": 0.6966,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5787,
+    "selected": false,
+    "reason": "top-3 avg score 0.5787 < final_threshold 0.6"
+  },
+  {
+    "id": 24,
+    "gold_term": "Curiosity",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.672,
+      "levenshtein": 0.4444,
+      "semantic": 0.5456,
+      "sequence_match": 0.5
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5725,
+    "selected": false,
+    "reason": "top-3 avg score 0.5725 < final_threshold 0.6"
+  },
+  {
+    "id": 25,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6616,
+      "levenshtein": 0.3889,
+      "semantic": 0.4969,
+      "sequence_match": 0.5517
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5701,
+    "selected": false,
+    "reason": "top-3 avg score 0.5701 < final_threshold 0.6"
+  },
+  {
+    "id": 26,
+    "gold_term": "Virtuosity",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5738,
+      "levenshtein": 0.3,
+      "semantic": 0.659,
+      "sequence_match": 0.4706
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5678,
+    "selected": false,
+    "reason": "top-3 avg score 0.5678 < final_threshold 0.6"
+  },
+  {
+    "id": 27,
+    "gold_term": "special play style",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6486,
+      "levenshtein": 0.25,
+      "semantic": 0.5971,
+      "sequence_match": 0.4545
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5668,
+    "selected": false,
+    "reason": "top-3 avg score 0.5668 < final_threshold 0.6"
+  },
+  {
+    "id": 28,
+    "gold_term": "Genre",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6333,
+      "levenshtein": 0.4,
+      "semantic": 0.6177,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5652,
+    "selected": false,
+    "reason": "top-3 avg score 0.5652 < final_threshold 0.6"
+  },
+  {
+    "id": 29,
+    "gold_term": "Game",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.3333,
+      "semantic": 0.6803,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5638,
+    "selected": false,
+    "reason": "top-3 avg score 0.5638 < final_threshold 0.6"
+  },
+  {
+    "id": 30,
+    "gold_term": "Player",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.3333,
+      "semantic": 0.6803,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5638,
+    "selected": false,
+    "reason": "top-3 avg score 0.5638 < final_threshold 0.6"
+  },
+  {
+    "id": 31,
+    "gold_term": "Achievement",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.7119,
+      "levenshtein": 0.4,
+      "semantic": 0.5077,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5604,
+    "selected": false,
+    "reason": "top-3 avg score 0.5604 < final_threshold 0.6"
+  },
+  {
+    "id": 32,
+    "gold_term": "game product",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6364,
+      "levenshtein": 0.3636,
+      "semantic": 0.5884,
+      "sequence_match": 0.4545
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5598,
+    "selected": false,
+    "reason": "top-3 avg score 0.5598 < final_threshold 0.6"
+  },
+  {
+    "id": 33,
+    "gold_term": "Achievement",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6169,
+      "levenshtein": 0.2143,
+      "semantic": 0.7271,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5547,
+    "selected": false,
+    "reason": "top-3 avg score 0.5547 < final_threshold 0.6"
+  },
+  {
+    "id": 34,
+    "gold_term": "Achievement",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6742,
+      "levenshtein": 0.2727,
+      "semantic": 0.5747,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5497,
+    "selected": false,
+    "reason": "top-3 avg score 0.5497 < final_threshold 0.6"
+  },
+  {
+    "id": 35,
+    "gold_term": "Item",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6742,
+      "levenshtein": 0.2727,
+      "semantic": 0.5747,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5497,
+    "selected": false,
+    "reason": "top-3 avg score 0.5497 < final_threshold 0.6"
+  },
+  {
+    "id": 36,
+    "gold_term": "Completion",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6515,
+      "levenshtein": 0.4545,
+      "semantic": 0.5202,
+      "sequence_match": 0.4762
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5493,
+    "selected": false,
+    "reason": "top-3 avg score 0.5493 < final_threshold 0.6"
+  },
+  {
+    "id": 37,
+    "gold_term": "playing area",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6534,
+      "levenshtein": 0.3333,
+      "semantic": 0.5259,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5469,
+    "selected": false,
+    "reason": "top-3 avg score 0.5469 < final_threshold 0.6"
+  },
+  {
+    "id": 38,
+    "gold_term": "Leaderboard",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5934,
+      "levenshtein": 0.2727,
+      "semantic": 0.5686,
+      "sequence_match": 0.4706
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5442,
+    "selected": false,
+    "reason": "top-3 avg score 0.5442 < final_threshold 0.6"
+  },
+  {
+    "id": 39,
+    "gold_term": "Completion",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5182,
+      "levenshtein": 0.1818,
+      "semantic": 0.7286,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5426,
+    "selected": false,
+    "reason": "top-3 avg score 0.5426 < final_threshold 0.6"
+  },
+  {
+    "id": 40,
+    "gold_term": "Achievement",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5606,
+      "levenshtein": 0.1818,
+      "semantic": 0.6666,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5424,
+    "selected": false,
+    "reason": "top-3 avg score 0.5424 < final_threshold 0.6"
+  },
+  {
+    "id": 41,
+    "gold_term": "Game",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5606,
+      "levenshtein": 0.1818,
+      "semantic": 0.6666,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5424,
+    "selected": false,
+    "reason": "top-3 avg score 0.5424 < final_threshold 0.6"
+  },
+  {
+    "id": 42,
+    "gold_term": "Paragon",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6563,
+      "levenshtein": 0.2727,
+      "semantic": 0.4771,
+      "sequence_match": 0.4444
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5259,
+    "selected": false,
+    "reason": "top-3 avg score 0.5259 < final_threshold 0.6"
+  },
+  {
+    "id": 43,
+    "gold_term": "game product",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6169,
+      "levenshtein": 0.2143,
+      "semantic": 0.5598,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5256,
+    "selected": false,
+    "reason": "top-3 avg score 0.5256 < final_threshold 0.6"
+  },
+  {
+    "id": 44,
+    "gold_term": "playing area",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6611,
+      "levenshtein": 0.3333,
+      "semantic": 0.478,
+      "sequence_match": 0.4375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5255,
+    "selected": false,
+    "reason": "top-3 avg score 0.5255 < final_threshold 0.6"
+  },
+  {
+    "id": 45,
+    "gold_term": "Paragon",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5397,
+      "levenshtein": 0.2857,
+      "semantic": 0.5719,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5244,
+    "selected": false,
+    "reason": "top-3 avg score 0.5244 < final_threshold 0.6"
+  },
+  {
+    "id": 46,
+    "gold_term": "Loyalty",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.619,
+      "levenshtein": 0.2857,
+      "semantic": 0.5133,
+      "sequence_match": 0.4286
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5203,
+    "selected": false,
+    "reason": "top-3 avg score 0.5203 < final_threshold 0.6"
+  },
+  {
+    "id": 47,
+    "gold_term": "Veteran",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5671,
+      "levenshtein": 0.2727,
+      "semantic": 0.6506,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.517,
+    "selected": false,
+    "reason": "top-3 avg score 0.5170 < final_threshold 0.6"
+  },
+  {
+    "id": 48,
+    "gold_term": "special play style",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.624,
+      "levenshtein": 0.1875,
+      "semantic": 0.5246,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5162,
+    "selected": false,
+    "reason": "top-3 avg score 0.5162 < final_threshold 0.6"
+  },
+  {
+    "id": 49,
+    "gold_term": "special play style",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.596,
+      "levenshtein": 0.1875,
+      "semantic": 0.5623,
+      "sequence_match": 0.3704
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5096,
+    "selected": false,
+    "reason": "top-3 avg score 0.5096 < final_threshold 0.6"
+  },
+  {
+    "id": 50,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6074,
+      "levenshtein": 0.1667,
+      "semantic": 0.4274,
+      "sequence_match": 0.4848
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5066,
+    "selected": false,
+    "reason": "top-3 avg score 0.5066 < final_threshold 0.6"
+  },
+  {
+    "id": 51,
+    "gold_term": "Veteran",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6159,
+      "levenshtein": 0.2,
+      "semantic": 0.5293,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5029,
+    "selected": false,
+    "reason": "top-3 avg score 0.5029 < final_threshold 0.6"
+  },
+  {
+    "id": 52,
+    "gold_term": "Leaderboard",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5469,
+      "levenshtein": 0.2143,
+      "semantic": 0.5613,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5027,
+    "selected": false,
+    "reason": "top-3 avg score 0.5027 < final_threshold 0.6"
+  },
+  {
+    "id": 53,
+    "gold_term": "Completion",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6,
+      "levenshtein": 0.2,
+      "semantic": 0.528,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.501,
+    "selected": false,
+    "reason": "top-3 avg score 0.5010 < final_threshold 0.6"
+  },
+  {
+    "id": 54,
+    "gold_term": "Item",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.65,
+      "levenshtein": 0.2,
+      "semantic": 0.5342,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.5,
+    "selected": false,
+    "reason": "top-3 avg score 0.5000 < final_threshold 0.6"
+  },
+  {
+    "id": 55,
+    "gold_term": "Feature",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5886,
+      "levenshtein": 0.2222,
+      "semantic": 0.5271,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4969,
+    "selected": false,
+    "reason": "top-3 avg score 0.4969 < final_threshold 0.6"
+  },
+  {
+    "id": 56,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6266,
+      "levenshtein": 0.1905,
+      "semantic": 0.3995,
+      "sequence_match": 0.4615
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4959,
+    "selected": false,
+    "reason": "top-3 avg score 0.4959 < final_threshold 0.6"
+  },
+  {
+    "id": 57,
+    "gold_term": "Achievement",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5758,
+      "levenshtein": 0.1818,
+      "semantic": 0.5481,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4958,
+    "selected": false,
+    "reason": "top-3 avg score 0.4958 < final_threshold 0.6"
+  },
+  {
+    "id": 58,
+    "gold_term": "Paragon",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6238,
+      "levenshtein": 0.2857,
+      "semantic": 0.482,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4956,
+    "selected": false,
+    "reason": "top-3 avg score 0.4956 < final_threshold 0.6"
+  },
+  {
+    "id": 59,
+    "gold_term": "Paragon",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5617,
+      "levenshtein": 0.2727,
+      "semantic": 0.5758,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4903,
+    "selected": false,
+    "reason": "top-3 avg score 0.4903 < final_threshold 0.6"
+  },
+  {
+    "id": 60,
+    "gold_term": "Game",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5444,
+      "levenshtein": 0.2,
+      "semantic": 0.6095,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4899,
+    "selected": false,
+    "reason": "top-3 avg score 0.4899 < final_threshold 0.6"
+  },
+  {
+    "id": 61,
+    "gold_term": "Completion",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5667,
+      "levenshtein": 0.2,
+      "semantic": 0.6137,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4887,
+    "selected": false,
+    "reason": "top-3 avg score 0.4887 < final_threshold 0.6"
+  },
+  {
+    "id": 62,
+    "gold_term": "Completion",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5556,
+      "levenshtein": 0.2,
+      "semantic": 0.5891,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4882,
+    "selected": false,
+    "reason": "top-3 avg score 0.4882 < final_threshold 0.6"
+  },
+  {
+    "id": 63,
+    "gold_term": "Genre",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6242,
+      "levenshtein": 0.1818,
+      "semantic": 0.4648,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.488,
+    "selected": false,
+    "reason": "top-3 avg score 0.4880 < final_threshold 0.6"
+  },
+  {
+    "id": 64,
+    "gold_term": "Game",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.2727,
+      "semantic": 0.617,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.488,
+    "selected": false,
+    "reason": "top-3 avg score 0.4880 < final_threshold 0.6"
+  },
+  {
+    "id": 65,
+    "gold_term": "playing area",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.2727,
+      "semantic": 0.617,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.488,
+    "selected": false,
+    "reason": "top-3 avg score 0.4880 < final_threshold 0.6"
+  },
+  {
+    "id": 66,
+    "gold_term": "Achievement",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5372,
+      "levenshtein": 0.2857,
+      "semantic": 0.5264,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4879,
+    "selected": false,
+    "reason": "top-3 avg score 0.4879 < final_threshold 0.6"
+  },
+  {
+    "id": 67,
+    "gold_term": "Fandom",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.591,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4877,
+    "selected": false,
+    "reason": "top-3 avg score 0.4877 < final_threshold 0.6"
+  },
+  {
+    "id": 68,
+    "gold_term": "Achievement",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4892,
+      "levenshtein": 0.1818,
+      "semantic": 0.6358,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4861,
+    "selected": false,
+    "reason": "top-3 avg score 0.4861 < final_threshold 0.6"
+  },
+  {
+    "id": 69,
+    "gold_term": "hard mode",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5119,
+      "levenshtein": 0.2143,
+      "semantic": 0.5792,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4849,
+    "selected": false,
+    "reason": "top-3 avg score 0.4849 < final_threshold 0.6"
+  },
+  {
+    "id": 70,
+    "gold_term": "Paragon",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5429,
+      "levenshtein": 0.2667,
+      "semantic": 0.5468,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4844,
+    "selected": false,
+    "reason": "top-3 avg score 0.4844 < final_threshold 0.6"
+  },
+  {
+    "id": 71,
+    "gold_term": "Character",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.3333,
+      "semantic": 0.5504,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4835,
+    "selected": false,
+    "reason": "top-3 avg score 0.4835 < final_threshold 0.6"
+  },
+  {
+    "id": 72,
+    "gold_term": "Feature",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5238,
+      "levenshtein": 0.0,
+      "semantic": 0.6329,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4808,
+    "selected": false,
+    "reason": "top-3 avg score 0.4808 < final_threshold 0.6"
+  },
+  {
+    "id": 73,
+    "gold_term": "special play style",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6071,
+      "levenshtein": 0.25,
+      "semantic": 0.4966,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.479,
+    "selected": false,
+    "reason": "top-3 avg score 0.4790 < final_threshold 0.6"
+  },
+  {
+    "id": 74,
+    "gold_term": "game product",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5929,
+      "levenshtein": 0.2667,
+      "semantic": 0.5329,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4778,
+    "selected": false,
+    "reason": "top-3 avg score 0.4778 < final_threshold 0.6"
+  },
+  {
+    "id": 75,
+    "gold_term": "game product",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5934,
+      "levenshtein": 0.1818,
+      "semantic": 0.4811,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4758,
+    "selected": false,
+    "reason": "top-3 avg score 0.4758 < final_threshold 0.6"
+  },
+  {
+    "id": 76,
+    "gold_term": "Collection",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5879,
+      "levenshtein": 0.3636,
+      "semantic": 0.4584,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4757,
+    "selected": false,
+    "reason": "top-3 avg score 0.4757 < final_threshold 0.6"
+  },
+  {
+    "id": 77,
+    "gold_term": "Achievement",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5194,
+      "levenshtein": 0.0909,
+      "semantic": 0.5071,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4755,
+    "selected": false,
+    "reason": "top-3 avg score 0.4755 < final_threshold 0.6"
+  },
+  {
+    "id": 78,
+    "gold_term": "Character",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5367,
+      "levenshtein": 0.2727,
+      "semantic": 0.5851,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4739,
+    "selected": false,
+    "reason": "top-3 avg score 0.4739 < final_threshold 0.6"
+  },
+  {
+    "id": 79,
+    "gold_term": "Veteran",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5397,
+      "levenshtein": 0.1429,
+      "semantic": 0.5733,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4736,
+    "selected": false,
+    "reason": "top-3 avg score 0.4736 < final_threshold 0.6"
+  },
+  {
+    "id": 80,
+    "gold_term": "Curiosity",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5354,
+      "levenshtein": 0.0909,
+      "semantic": 0.5795,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4716,
+    "selected": false,
+    "reason": "top-3 avg score 0.4716 < final_threshold 0.6"
+  },
+  {
+    "id": 81,
+    "gold_term": "Veteran",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5617,
+      "levenshtein": 0.2727,
+      "semantic": 0.5174,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4708,
+    "selected": false,
+    "reason": "top-3 avg score 0.4708 < final_threshold 0.6"
+  },
+  {
+    "id": 82,
+    "gold_term": "hard mode",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5379,
+      "levenshtein": 0.0909,
+      "semantic": 0.5566,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4701,
+    "selected": false,
+    "reason": "top-3 avg score 0.4701 < final_threshold 0.6"
+  },
+  {
+    "id": 83,
+    "gold_term": "special play style",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5423,
+      "levenshtein": 0.25,
+      "semantic": 0.5131,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4677,
+    "selected": false,
+    "reason": "top-3 avg score 0.4677 < final_threshold 0.6"
+  },
+  {
+    "id": 84,
+    "gold_term": "special play style",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6159,
+      "levenshtein": 0.1429,
+      "semantic": 0.4619,
+      "sequence_match": 0.3243
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4674,
+    "selected": false,
+    "reason": "top-3 avg score 0.4674 < final_threshold 0.6"
+  },
+  {
+    "id": 85,
+    "gold_term": "Tutorial",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5694,
+      "levenshtein": 0.1111,
+      "semantic": 0.4795,
+      "sequence_match": 0.3529
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4673,
+    "selected": false,
+    "reason": "top-3 avg score 0.4673 < final_threshold 0.6"
+  },
+  {
+    "id": 86,
+    "gold_term": "special play style",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5727,
+      "levenshtein": 0.0625,
+      "semantic": 0.5046,
+      "sequence_match": 0.3226
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4666,
+    "selected": false,
+    "reason": "top-3 avg score 0.4666 < final_threshold 0.6"
+  },
+  {
+    "id": 87,
+    "gold_term": "Virtuosity",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5667,
+      "levenshtein": 0.2,
+      "semantic": 0.5434,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4653,
+    "selected": false,
+    "reason": "top-3 avg score 0.4653 < final_threshold 0.6"
+  },
+  {
+    "id": 88,
+    "gold_term": "Collection",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5182,
+      "levenshtein": 0.1818,
+      "semantic": 0.5915,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4651,
+    "selected": false,
+    "reason": "top-3 avg score 0.4651 < final_threshold 0.6"
+  },
+  {
+    "id": 89,
+    "gold_term": "hard mode",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4545,
+      "levenshtein": 0.1818,
+      "semantic": 0.623,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4644,
+    "selected": false,
+    "reason": "top-3 avg score 0.4644 < final_threshold 0.6"
+  },
+  {
+    "id": 90,
+    "gold_term": "playing area",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5821,
+      "levenshtein": 0.1538,
+      "semantic": 0.3941,
+      "sequence_match": 0.4167
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4643,
+    "selected": false,
+    "reason": "top-3 avg score 0.4643 < final_threshold 0.6"
+  },
+  {
+    "id": 91,
+    "gold_term": "Genre",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.2,
+      "semantic": 0.5746,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4619,
+    "selected": false,
+    "reason": "top-3 avg score 0.4619 < final_threshold 0.6"
+  },
+  {
+    "id": 92,
+    "gold_term": "Curiosity",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5704,
+      "levenshtein": 0.2,
+      "semantic": 0.4769,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4602,
+    "selected": false,
+    "reason": "top-3 avg score 0.4602 < final_threshold 0.6"
+  },
+  {
+    "id": 93,
+    "gold_term": "Game",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5389,
+      "levenshtein": 0.1333,
+      "semantic": 0.5247,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4598,
+    "selected": false,
+    "reason": "top-3 avg score 0.4598 < final_threshold 0.6"
+  },
+  {
+    "id": 94,
+    "gold_term": "Feature",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5531,
+      "levenshtein": 0.3077,
+      "semantic": 0.4252,
+      "sequence_match": 0.4
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4594,
+    "selected": false,
+    "reason": "top-3 avg score 0.4594 < final_threshold 0.6"
+  },
+  {
+    "id": 95,
+    "gold_term": "game product",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5152,
+      "levenshtein": 0.0909,
+      "semantic": 0.4963,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4584,
+    "selected": false,
+    "reason": "top-3 avg score 0.4584 < final_threshold 0.6"
+  },
+  {
+    "id": 96,
+    "gold_term": "Item",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4643,
+      "levenshtein": 0.1429,
+      "semantic": 0.5428,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4569,
+    "selected": false,
+    "reason": "top-3 avg score 0.4569 < final_threshold 0.6"
+  },
+  {
+    "id": 97,
+    "gold_term": "Veteran",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4286,
+      "levenshtein": 0.2857,
+      "semantic": 0.5731,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4551,
+    "selected": false,
+    "reason": "top-3 avg score 0.4551 < final_threshold 0.6"
+  },
+  {
+    "id": 98,
+    "gold_term": "Completion",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6111,
+      "levenshtein": 0.2,
+      "semantic": 0.4332,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4548,
+    "selected": false,
+    "reason": "top-3 avg score 0.4548 < final_threshold 0.6"
+  },
+  {
+    "id": 99,
+    "gold_term": "Virtuosity",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6148,
+      "levenshtein": 0.2,
+      "semantic": 0.5374,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4542,
+    "selected": false,
+    "reason": "top-3 avg score 0.4542 < final_threshold 0.6"
+  },
+  {
+    "id": 100,
+    "gold_term": "Feature",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5317,
+      "levenshtein": 0.2857,
+      "semantic": 0.5226,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.454,
+    "selected": false,
+    "reason": "top-3 avg score 0.4540 < final_threshold 0.6"
+  },
+  {
+    "id": 101,
+    "gold_term": "Game",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.0,
+      "semantic": 0.6119,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.454,
+    "selected": false,
+    "reason": "top-3 avg score 0.4540 < final_threshold 0.6"
+  },
+  {
+    "id": 102,
+    "gold_term": "Item",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5,
+      "levenshtein": 0.0,
+      "semantic": 0.6119,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.454,
+    "selected": false,
+    "reason": "top-3 avg score 0.4540 < final_threshold 0.6"
+  },
+  {
+    "id": 103,
+    "gold_term": "Loyalty",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5357,
+      "levenshtein": 0.2857,
+      "semantic": 0.4396,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4521,
+    "selected": false,
+    "reason": "top-3 avg score 0.4521 < final_threshold 0.6"
+  },
+  {
+    "id": 104,
+    "gold_term": "hard mode",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5139,
+      "levenshtein": 0.0,
+      "semantic": 0.5563,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.452,
+    "selected": false,
+    "reason": "top-3 avg score 0.4520 < final_threshold 0.6"
+  },
+  {
+    "id": 105,
+    "gold_term": "Session",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4762,
+      "levenshtein": 0.2857,
+      "semantic": 0.4988,
+      "sequence_match": 0.381
+    },
+    "is_hard_match": false,
+    "agg_score": 0.452,
+    "selected": false,
+    "reason": "top-3 avg score 0.4520 < final_threshold 0.6"
+  },
+  {
+    "id": 106,
+    "gold_term": "Genre",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6048,
+      "levenshtein": 0.2143,
+      "semantic": 0.4281,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4496,
+    "selected": false,
+    "reason": "top-3 avg score 0.4496 < final_threshold 0.6"
+  },
+  {
+    "id": 107,
+    "gold_term": "Loyalty",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5317,
+      "levenshtein": 0.1429,
+      "semantic": 0.5074,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4489,
+    "selected": false,
+    "reason": "top-3 avg score 0.4489 < final_threshold 0.6"
+  },
+  {
+    "id": 108,
+    "gold_term": "Veteran",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4762,
+      "levenshtein": 0.2222,
+      "semantic": 0.4954,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4489,
+    "selected": false,
+    "reason": "top-3 avg score 0.4489 < final_threshold 0.6"
+  },
+  {
+    "id": 109,
+    "gold_term": "Completion",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5848,
+      "levenshtein": 0.0,
+      "semantic": 0.4756,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4487,
+    "selected": false,
+    "reason": "top-3 avg score 0.4487 < final_threshold 0.6"
+  },
+  {
+    "id": 110,
+    "gold_term": "Character",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5026,
+      "levenshtein": 0.1111,
+      "semantic": 0.593,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4485,
+    "selected": false,
+    "reason": "top-3 avg score 0.4485 < final_threshold 0.6"
+  },
+  {
+    "id": 111,
+    "gold_term": "Character",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4963,
+      "levenshtein": 0.2,
+      "semantic": 0.5147,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4481,
+    "selected": false,
+    "reason": "top-3 avg score 0.4481 < final_threshold 0.6"
+  },
+  {
+    "id": 112,
+    "gold_term": "hard mode",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5119,
+      "levenshtein": 0.2143,
+      "semantic": 0.4688,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4481,
+    "selected": false,
+    "reason": "top-3 avg score 0.4481 < final_threshold 0.6"
+  },
+  {
+    "id": 113,
+    "gold_term": "Player",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4921,
+      "levenshtein": 0.1429,
+      "semantic": 0.5438,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4453,
+    "selected": false,
+    "reason": "top-3 avg score 0.4453 < final_threshold 0.6"
+  },
+  {
+    "id": 114,
+    "gold_term": "Paragon",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4643,
+      "levenshtein": 0.1429,
+      "semantic": 0.6863,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4441,
+    "selected": false,
+    "reason": "top-3 avg score 0.4441 < final_threshold 0.6"
+  },
+  {
+    "id": 115,
+    "gold_term": "Feature",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5357,
+      "levenshtein": 0.2143,
+      "semantic": 0.5095,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4436,
+    "selected": false,
+    "reason": "top-3 avg score 0.4436 < final_threshold 0.6"
+  },
+  {
+    "id": 116,
+    "gold_term": "Veteran",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5294,
+      "levenshtein": 0.2,
+      "semantic": 0.5243,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4421,
+    "selected": false,
+    "reason": "top-3 avg score 0.4421 < final_threshold 0.6"
+  },
+  {
+    "id": 117,
+    "gold_term": "Virtuosity",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.2,
+      "semantic": 0.5318,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4413,
+    "selected": false,
+    "reason": "top-3 avg score 0.4413 < final_threshold 0.6"
+  },
+  {
+    "id": 118,
+    "gold_term": "Achievement",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.0909,
+      "semantic": 0.5805,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4403,
+    "selected": false,
+    "reason": "top-3 avg score 0.4403 < final_threshold 0.6"
+  },
+  {
+    "id": 119,
+    "gold_term": "Player",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.0909,
+      "semantic": 0.5805,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4403,
+    "selected": false,
+    "reason": "top-3 avg score 0.4403 < final_threshold 0.6"
+  },
+  {
+    "id": 120,
+    "gold_term": "Genre",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5273,
+      "levenshtein": 0.1818,
+      "semantic": 0.5432,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4402,
+    "selected": false,
+    "reason": "top-3 avg score 0.4402 < final_threshold 0.6"
+  },
+  {
+    "id": 121,
+    "gold_term": "Tutorial",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5675,
+      "levenshtein": 0.2381,
+      "semantic": 0.4069,
+      "sequence_match": 0.3448
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4397,
+    "selected": false,
+    "reason": "top-3 avg score 0.4397 < final_threshold 0.6"
+  },
+  {
+    "id": 122,
+    "gold_term": "Leaderboard",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5548,
+      "levenshtein": 0.2381,
+      "semantic": 0.3862,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4387,
+    "selected": false,
+    "reason": "top-3 avg score 0.4387 < final_threshold 0.6"
+  },
+  {
+    "id": 123,
+    "gold_term": "Character",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4537,
+      "levenshtein": 0.2222,
+      "semantic": 0.5543,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4386,
+    "selected": false,
+    "reason": "top-3 avg score 0.4386 < final_threshold 0.6"
+  },
+  {
+    "id": 124,
+    "gold_term": "Feature",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5492,
+      "levenshtein": 0.2,
+      "semantic": 0.492,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.438,
+    "selected": false,
+    "reason": "top-3 avg score 0.4380 < final_threshold 0.6"
+  },
+  {
+    "id": 125,
+    "gold_term": "Character",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.584,
+      "levenshtein": 0.1538,
+      "semantic": 0.3656,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4377,
+    "selected": false,
+    "reason": "top-3 avg score 0.4377 < final_threshold 0.6"
+  },
+  {
+    "id": 126,
+    "gold_term": "Feature",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5671,
+      "levenshtein": 0.2727,
+      "semantic": 0.4731,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4376,
+    "selected": false,
+    "reason": "top-3 avg score 0.4376 < final_threshold 0.6"
+  },
+  {
+    "id": 127,
+    "gold_term": "Veteran",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5357,
+      "levenshtein": 0.2143,
+      "semantic": 0.4891,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4368,
+    "selected": false,
+    "reason": "top-3 avg score 0.4368 < final_threshold 0.6"
+  },
+  {
+    "id": 128,
+    "gold_term": "Feature",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4286,
+      "levenshtein": 0.2857,
+      "semantic": 0.5941,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4361,
+    "selected": false,
+    "reason": "top-3 avg score 0.4361 < final_threshold 0.6"
+  },
+  {
+    "id": 129,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6407,
+      "levenshtein": 0.2778,
+      "semantic": 0.3639,
+      "sequence_match": 0.303
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4359,
+    "selected": false,
+    "reason": "top-3 avg score 0.4359 < final_threshold 0.6"
+  },
+  {
+    "id": 130,
+    "gold_term": "Player",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.0909,
+      "semantic": 0.5658,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4354,
+    "selected": false,
+    "reason": "top-3 avg score 0.4354 < final_threshold 0.6"
+  },
+  {
+    "id": 131,
+    "gold_term": "Fandom",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.0909,
+      "semantic": 0.5597,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4334,
+    "selected": false,
+    "reason": "top-3 avg score 0.4334 < final_threshold 0.6"
+  },
+  {
+    "id": 132,
+    "gold_term": "Feature",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.456,
+      "levenshtein": 0.0909,
+      "semantic": 0.6175,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4319,
+    "selected": false,
+    "reason": "top-3 avg score 0.4319 < final_threshold 0.6"
+  },
+  {
+    "id": 133,
+    "gold_term": "Paragon",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4365,
+      "levenshtein": 0.2143,
+      "semantic": 0.5717,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4313,
+    "selected": false,
+    "reason": "top-3 avg score 0.4313 < final_threshold 0.6"
+  },
+  {
+    "id": 134,
+    "gold_term": "Paragon",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4892,
+      "levenshtein": 0.0909,
+      "semantic": 0.5805,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4306,
+    "selected": false,
+    "reason": "top-3 avg score 0.4306 < final_threshold 0.6"
+  },
+  {
+    "id": 135,
+    "gold_term": "special play style",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5528,
+      "levenshtein": 0.25,
+      "semantic": 0.4862,
+      "sequence_match": 0.129
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4297,
+    "selected": false,
+    "reason": "top-3 avg score 0.4297 < final_threshold 0.6"
+  },
+  {
+    "id": 136,
+    "gold_term": "Virtuosity",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4606,
+      "levenshtein": 0.0909,
+      "semantic": 0.6377,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4296,
+    "selected": false,
+    "reason": "top-3 avg score 0.4296 < final_threshold 0.6"
+  },
+  {
+    "id": 137,
+    "gold_term": "Achievement",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4924,
+      "levenshtein": 0.0909,
+      "semantic": 0.5216,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4289,
+    "selected": false,
+    "reason": "top-3 avg score 0.4289 < final_threshold 0.6"
+  },
+  {
+    "id": 138,
+    "gold_term": "playing area",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4924,
+      "levenshtein": 0.0909,
+      "semantic": 0.5216,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4289,
+    "selected": false,
+    "reason": "top-3 avg score 0.4289 < final_threshold 0.6"
+  },
+  {
+    "id": 139,
+    "gold_term": "Genre",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4111,
+      "levenshtein": 0.1667,
+      "semantic": 0.5096,
+      "sequence_match": 0.3636
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4281,
+    "selected": false,
+    "reason": "top-3 avg score 0.4281 < final_threshold 0.6"
+  },
+  {
+    "id": 140,
+    "gold_term": "Curiosity",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4537,
+      "levenshtein": 0.1111,
+      "semantic": 0.5215,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4276,
+    "selected": false,
+    "reason": "top-3 avg score 0.4276 < final_threshold 0.6"
+  },
+  {
+    "id": 141,
+    "gold_term": "Collection",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5111,
+      "levenshtein": 0.1,
+      "semantic": 0.5167,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.426,
+    "selected": false,
+    "reason": "top-3 avg score 0.4260 < final_threshold 0.6"
+  },
+  {
+    "id": 142,
+    "gold_term": "Collection",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5556,
+      "levenshtein": 0.2,
+      "semantic": 0.4788,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4248,
+    "selected": false,
+    "reason": "top-3 avg score 0.4248 < final_threshold 0.6"
+  },
+  {
+    "id": 143,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5322,
+      "levenshtein": 0.1667,
+      "semantic": 0.3962,
+      "sequence_match": 0.3448
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4244,
+    "selected": false,
+    "reason": "top-3 avg score 0.4244 < final_threshold 0.6"
+  },
+  {
+    "id": 144,
+    "gold_term": "Game",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4074,
+      "levenshtein": 0.2222,
+      "semantic": 0.5572,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4241,
+    "selected": false,
+    "reason": "top-3 avg score 0.4241 < final_threshold 0.6"
+  },
+  {
+    "id": 145,
+    "gold_term": "Genre",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4833,
+      "levenshtein": 0.0,
+      "semantic": 0.5661,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4239,
+    "selected": false,
+    "reason": "top-3 avg score 0.4239 < final_threshold 0.6"
+  },
+  {
+    "id": 146,
+    "gold_term": "Session",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.456,
+      "levenshtein": 0.1818,
+      "semantic": 0.5915,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4232,
+    "selected": false,
+    "reason": "top-3 avg score 0.4232 < final_threshold 0.6"
+  },
+  {
+    "id": 147,
+    "gold_term": "Character",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5042,
+      "levenshtein": 0.2857,
+      "semantic": 0.4791,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.423,
+    "selected": false,
+    "reason": "top-3 avg score 0.4230 < final_threshold 0.6"
+  },
+  {
+    "id": 148,
+    "gold_term": "Loyalty",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5429,
+      "levenshtein": 0.1333,
+      "semantic": 0.4533,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4229,
+    "selected": false,
+    "reason": "top-3 avg score 0.4229 < final_threshold 0.6"
+  },
+  {
+    "id": 149,
+    "gold_term": "Session",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4643,
+      "levenshtein": 0.0,
+      "semantic": 0.6222,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4228,
+    "selected": false,
+    "reason": "top-3 avg score 0.4228 < final_threshold 0.6"
+  },
+  {
+    "id": 150,
+    "gold_term": "hard mode",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4139,
+      "levenshtein": 0.2,
+      "semantic": 0.5066,
+      "sequence_match": 0.3478
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4228,
+    "selected": false,
+    "reason": "top-3 avg score 0.4228 < final_threshold 0.6"
+  },
+  {
+    "id": 151,
+    "gold_term": "Fandom",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4603,
+      "levenshtein": 0.2143,
+      "semantic": 0.5064,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4222,
+    "selected": false,
+    "reason": "top-3 avg score 0.4222 < final_threshold 0.6"
+  },
+  {
+    "id": 152,
+    "gold_term": "hard mode",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4773,
+      "levenshtein": 0.1818,
+      "semantic": 0.4735,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4222,
+    "selected": false,
+    "reason": "top-3 avg score 0.4222 < final_threshold 0.6"
+  },
+  {
+    "id": 153,
+    "gold_term": "game product",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5777,
+      "levenshtein": 0.2381,
+      "semantic": 0.3746,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4216,
+    "selected": false,
+    "reason": "top-3 avg score 0.4216 < final_threshold 0.6"
+  },
+  {
+    "id": 154,
+    "gold_term": "Session",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5026,
+      "levenshtein": 0.2222,
+      "semantic": 0.5115,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4214,
+    "selected": false,
+    "reason": "top-3 avg score 0.4214 < final_threshold 0.6"
+  },
+  {
+    "id": 155,
+    "gold_term": "Veteran",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4643,
+      "levenshtein": 0.1429,
+      "semantic": 0.6161,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4207,
+    "selected": false,
+    "reason": "top-3 avg score 0.4207 < final_threshold 0.6"
+  },
+  {
+    "id": 156,
+    "gold_term": "Veteran",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4365,
+      "levenshtein": 0.2143,
+      "semantic": 0.5368,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4197,
+    "selected": false,
+    "reason": "top-3 avg score 0.4197 < final_threshold 0.6"
+  },
+  {
+    "id": 157,
+    "gold_term": "Paragon",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5873,
+      "levenshtein": 0.1905,
+      "semantic": 0.381,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.418,
+    "selected": false,
+    "reason": "top-3 avg score 0.4180 < final_threshold 0.6"
+  },
+  {
+    "id": 158,
+    "gold_term": "Loyalty",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5357,
+      "levenshtein": 0.2143,
+      "semantic": 0.5027,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4176,
+    "selected": false,
+    "reason": "top-3 avg score 0.4176 < final_threshold 0.6"
+  },
+  {
+    "id": 159,
+    "gold_term": "Curiosity",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4934,
+      "levenshtein": 0.1429,
+      "semantic": 0.4975,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4172,
+    "selected": false,
+    "reason": "top-3 avg score 0.4172 < final_threshold 0.6"
+  },
+  {
+    "id": 160,
+    "gold_term": "game product",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5464,
+      "levenshtein": 0.2308,
+      "semantic": 0.4732,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4168,
+    "selected": false,
+    "reason": "top-3 avg score 0.4168 < final_threshold 0.6"
+  },
+  {
+    "id": 161,
+    "gold_term": "special play style",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.556,
+      "levenshtein": 0.1875,
+      "semantic": 0.5068,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4168,
+    "selected": false,
+    "reason": "top-3 avg score 0.4168 < final_threshold 0.6"
+  },
+  {
+    "id": 162,
+    "gold_term": "Leaderboard",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4924,
+      "levenshtein": 0.0909,
+      "semantic": 0.4842,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4165,
+    "selected": false,
+    "reason": "top-3 avg score 0.4165 < final_threshold 0.6"
+  },
+  {
+    "id": 163,
+    "gold_term": "Leaderboard",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4626,
+      "levenshtein": 0.2,
+      "semantic": 0.4789,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4164,
+    "selected": false,
+    "reason": "top-3 avg score 0.4164 < final_threshold 0.6"
+  },
+  {
+    "id": 164,
+    "gold_term": "Leaderboard",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5354,
+      "levenshtein": 0.1818,
+      "semantic": 0.4123,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4159,
+    "selected": false,
+    "reason": "top-3 avg score 0.4159 < final_threshold 0.6"
+  },
+  {
+    "id": 165,
+    "gold_term": "Completion",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4857,
+      "levenshtein": 0.0714,
+      "semantic": 0.4285,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4159,
+    "selected": false,
+    "reason": "top-3 avg score 0.4159 < final_threshold 0.6"
+  },
+  {
+    "id": 166,
+    "gold_term": "Genre",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6119,
+      "levenshtein": 0.1429,
+      "semantic": 0.4249,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4158,
+    "selected": false,
+    "reason": "top-3 avg score 0.4158 < final_threshold 0.6"
+  },
+  {
+    "id": 167,
+    "gold_term": "Feature",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4317,
+      "levenshtein": 0.2,
+      "semantic": 0.5412,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4152,
+    "selected": false,
+    "reason": "top-3 avg score 0.4152 < final_threshold 0.6"
+  },
+  {
+    "id": 168,
+    "gold_term": "Genre",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4303,
+      "levenshtein": 0.2727,
+      "semantic": 0.439,
+      "sequence_match": 0.375
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4148,
+    "selected": false,
+    "reason": "top-3 avg score 0.4148 < final_threshold 0.6"
+  },
+  {
+    "id": 169,
+    "gold_term": "Paragon",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5026,
+      "levenshtein": 0.1111,
+      "semantic": 0.491,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4145,
+    "selected": false,
+    "reason": "top-3 avg score 0.4145 < final_threshold 0.6"
+  },
+  {
+    "id": 170,
+    "gold_term": "Luck",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.5662,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4128,
+    "selected": false,
+    "reason": "top-3 avg score 0.4128 < final_threshold 0.6"
+  },
+  {
+    "id": 171,
+    "gold_term": "Character",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5194,
+      "levenshtein": 0.1818,
+      "semantic": 0.4173,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4122,
+    "selected": false,
+    "reason": "top-3 avg score 0.4122 < final_threshold 0.6"
+  },
+  {
+    "id": 172,
+    "gold_term": "playing area",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.404,
+      "levenshtein": 0.0,
+      "semantic": 0.5558,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4109,
+    "selected": false,
+    "reason": "top-3 avg score 0.4109 < final_threshold 0.6"
+  },
+  {
+    "id": 173,
+    "gold_term": "Leaderboard",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4924,
+      "levenshtein": 0.1818,
+      "semantic": 0.4643,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4098,
+    "selected": false,
+    "reason": "top-3 avg score 0.4098 < final_threshold 0.6"
+  },
+  {
+    "id": 174,
+    "gold_term": "special play style",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4557,
+      "levenshtein": 0.125,
+      "semantic": 0.5514,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4098,
+    "selected": false,
+    "reason": "top-3 avg score 0.4098 < final_threshold 0.6"
+  },
+  {
+    "id": 175,
+    "gold_term": "Feature",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "sequence_match",
+      "semantic"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5175,
+      "levenshtein": 0.2381,
+      "semantic": 0.3547,
+      "sequence_match": 0.3571
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4098,
+    "selected": false,
+    "reason": "top-3 avg score 0.4098 < final_threshold 0.6"
+  },
+  {
+    "id": 176,
+    "gold_term": "Fandom",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.5551,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4091,
+    "selected": false,
+    "reason": "top-3 avg score 0.4091 < final_threshold 0.6"
+  },
+  {
+    "id": 177,
+    "gold_term": "Item",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4389,
+      "levenshtein": 0.1333,
+      "semantic": 0.5773,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4089,
+    "selected": false,
+    "reason": "top-3 avg score 0.4089 < final_threshold 0.6"
+  },
+  {
+    "id": 178,
+    "gold_term": "Session",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.473,
+      "levenshtein": 0.2,
+      "semantic": 0.4802,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4086,
+    "selected": false,
+    "reason": "top-3 avg score 0.4086 < final_threshold 0.6"
+  },
+  {
+    "id": 179,
+    "gold_term": "Completion",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4651,
+      "levenshtein": 0.2,
+      "semantic": 0.5225,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4076,
+    "selected": false,
+    "reason": "top-3 avg score 0.4076 < final_threshold 0.6"
+  },
+  {
+    "id": 180,
+    "gold_term": "Genre",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6,
+      "levenshtein": 0.1333,
+      "semantic": 0.4227,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4076,
+    "selected": false,
+    "reason": "top-3 avg score 0.4076 < final_threshold 0.6"
+  },
+  {
+    "id": 181,
+    "gold_term": "Loyalty",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4113,
+      "levenshtein": 0.0,
+      "semantic": 0.5881,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4072,
+    "selected": false,
+    "reason": "top-3 avg score 0.4072 < final_threshold 0.6"
+  },
+  {
+    "id": 182,
+    "gold_term": "Leaderboard",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.404,
+      "levenshtein": 0.0909,
+      "semantic": 0.6357,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4072,
+    "selected": false,
+    "reason": "top-3 avg score 0.4072 < final_threshold 0.6"
+  },
+  {
+    "id": 183,
+    "gold_term": "Game",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4643,
+      "levenshtein": 0.0,
+      "semantic": 0.5727,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4063,
+    "selected": false,
+    "reason": "top-3 avg score 0.4063 < final_threshold 0.6"
+  },
+  {
+    "id": 184,
+    "gold_term": "Loyalty",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4643,
+      "levenshtein": 0.1429,
+      "semantic": 0.5693,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4051,
+    "selected": false,
+    "reason": "top-3 avg score 0.4051 < final_threshold 0.6"
+  },
+  {
+    "id": 185,
+    "gold_term": "playing area",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5194,
+      "levenshtein": 0.1818,
+      "semantic": 0.3953,
+      "sequence_match": 0.3
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4049,
+    "selected": false,
+    "reason": "top-3 avg score 0.4049 < final_threshold 0.6"
+  },
+  {
+    "id": 186,
+    "gold_term": "Item",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.5416,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4046,
+    "selected": false,
+    "reason": "top-3 avg score 0.4046 < final_threshold 0.6"
+  },
+  {
+    "id": 187,
+    "gold_term": "Player",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4722,
+      "levenshtein": 0.1667,
+      "semantic": 0.5416,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4046,
+    "selected": false,
+    "reason": "top-3 avg score 0.4046 < final_threshold 0.6"
+  },
+  {
+    "id": 188,
+    "gold_term": "playing area",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3846,
+      "levenshtein": 0.0714,
+      "semantic": 0.5088,
+      "sequence_match": 0.32
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4045,
+    "selected": false,
+    "reason": "top-3 avg score 0.4045 < final_threshold 0.6"
+  },
+  {
+    "id": 189,
+    "gold_term": "Collection",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1,
+      "semantic": 0.6164,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4031,
+    "selected": false,
+    "reason": "top-3 avg score 0.4031 < final_threshold 0.6"
+  },
+  {
+    "id": 190,
+    "gold_term": "Luck",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.0,
+      "semantic": 0.6275,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4026,
+    "selected": false,
+    "reason": "top-3 avg score 0.4026 < final_threshold 0.6"
+  },
+  {
+    "id": 191,
+    "gold_term": "Collection",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4651,
+      "levenshtein": 0.2,
+      "semantic": 0.5071,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4025,
+    "selected": false,
+    "reason": "top-3 avg score 0.4025 < final_threshold 0.6"
+  },
+  {
+    "id": 192,
+    "gold_term": "Feature",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4286,
+      "levenshtein": 0.1429,
+      "semantic": 0.5962,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4022,
+    "selected": false,
+    "reason": "top-3 avg score 0.4022 < final_threshold 0.6"
+  },
+  {
+    "id": 193,
+    "gold_term": "hard mode",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4907,
+      "levenshtein": 0.1111,
+      "semantic": 0.4797,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4019,
+    "selected": false,
+    "reason": "top-3 avg score 0.4019 < final_threshold 0.6"
+  },
+  {
+    "id": 194,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5444,
+      "levenshtein": 0.2222,
+      "semantic": 0.4373,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4013,
+    "selected": false,
+    "reason": "top-3 avg score 0.4013 < final_threshold 0.6"
+  },
+  {
+    "id": 195,
+    "gold_term": "Loyalty",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.456,
+      "levenshtein": 0.2727,
+      "semantic": 0.4139,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.4011,
+    "selected": false,
+    "reason": "top-3 avg score 0.4011 < final_threshold 0.6"
+  },
+  {
+    "id": 196,
+    "gold_term": "Player",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4658,
+      "levenshtein": 0.1538,
+      "semantic": 0.418,
+      "sequence_match": 0.3158
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3999,
+    "selected": false,
+    "reason": "top-3 avg score 0.3999 < final_threshold 0.6"
+  },
+  {
+    "id": 197,
+    "gold_term": "Collection",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4778,
+      "levenshtein": 0.2,
+      "semantic": 0.4806,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3994,
+    "selected": false,
+    "reason": "top-3 avg score 0.3994 < final_threshold 0.6"
+  },
+  {
+    "id": 198,
+    "gold_term": "game product",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4601,
+      "levenshtein": 0.1333,
+      "semantic": 0.4305,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3994,
+    "selected": false,
+    "reason": "top-3 avg score 0.3994 < final_threshold 0.6"
+  },
+  {
+    "id": 199,
+    "gold_term": "special play style",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.6218,
+      "levenshtein": 0.1875,
+      "semantic": 0.3887,
+      "sequence_match": 0.1379
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3993,
+    "selected": false,
+    "reason": "top-3 avg score 0.3993 < final_threshold 0.6"
+  },
+  {
+    "id": 200,
+    "gold_term": "hard mode",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5353,
+      "levenshtein": 0.2308,
+      "semantic": 0.3766,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3992,
+    "selected": false,
+    "reason": "top-3 avg score 0.3992 < final_threshold 0.6"
+  },
+  {
+    "id": 201,
+    "gold_term": "Player",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.373,
+      "levenshtein": 0.0,
+      "semantic": 0.5152,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3986,
+    "selected": false,
+    "reason": "top-3 avg score 0.3986 < final_threshold 0.6"
+  },
+  {
+    "id": 202,
+    "gold_term": "Genre",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.437,
+      "levenshtein": 0.2222,
+      "semantic": 0.4713,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.398,
+    "selected": false,
+    "reason": "top-3 avg score 0.3980 < final_threshold 0.6"
+  },
+  {
+    "id": 203,
+    "gold_term": "Character",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4815,
+      "levenshtein": 0.0,
+      "semantic": 0.4897,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3978,
+    "selected": false,
+    "reason": "top-3 avg score 0.3978 < final_threshold 0.6"
+  },
+  {
+    "id": 204,
+    "gold_term": "Fandom",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.1818,
+      "semantic": 0.4516,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3973,
+    "selected": false,
+    "reason": "top-3 avg score 0.3973 < final_threshold 0.6"
+  },
+  {
+    "id": 205,
+    "gold_term": "special play style",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.529,
+      "levenshtein": 0.125,
+      "semantic": 0.514,
+      "sequence_match": 0.1481
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3971,
+    "selected": false,
+    "reason": "top-3 avg score 0.3971 < final_threshold 0.6"
+  },
+  {
+    "id": 206,
+    "gold_term": "Session",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4643,
+      "levenshtein": 0.0,
+      "semantic": 0.5384,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3948,
+    "selected": false,
+    "reason": "top-3 avg score 0.3948 < final_threshold 0.6"
+  },
+  {
+    "id": 207,
+    "gold_term": "Achievement",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3901,
+      "levenshtein": 0.0769,
+      "semantic": 0.4593,
+      "sequence_match": 0.3333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3942,
+    "selected": false,
+    "reason": "top-3 avg score 0.3942 < final_threshold 0.6"
+  },
+  {
+    "id": 208,
+    "gold_term": "Collection",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5048,
+      "levenshtein": 0.0714,
+      "semantic": 0.4271,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.394,
+    "selected": false,
+    "reason": "top-3 avg score 0.3940 < final_threshold 0.6"
+  },
+  {
+    "id": 209,
+    "gold_term": "Item",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5476,
+      "levenshtein": 0.1429,
+      "semantic": 0.4913,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3939,
+    "selected": false,
+    "reason": "top-3 avg score 0.3939 < final_threshold 0.6"
+  },
+  {
+    "id": 210,
+    "gold_term": "Completion",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5175,
+      "levenshtein": 0.0952,
+      "semantic": 0.3405,
+      "sequence_match": 0.3226
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3935,
+    "selected": false,
+    "reason": "top-3 avg score 0.3935 < final_threshold 0.6"
+  },
+  {
+    "id": 211,
+    "gold_term": "Game",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5317,
+      "levenshtein": 0.0952,
+      "semantic": 0.4878,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3932,
+    "selected": false,
+    "reason": "top-3 avg score 0.3932 < final_threshold 0.6"
+  },
+  {
+    "id": 212,
+    "gold_term": "Collection",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.45,
+      "levenshtein": 0.1,
+      "semantic": 0.5843,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3924,
+    "selected": false,
+    "reason": "top-3 avg score 0.3924 < final_threshold 0.6"
+  },
+  {
+    "id": 213,
+    "gold_term": "Collection",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5242,
+      "levenshtein": 0.0,
+      "semantic": 0.4618,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3922,
+    "selected": false,
+    "reason": "top-3 avg score 0.3922 < final_threshold 0.6"
+  },
+  {
+    "id": 214,
+    "gold_term": "Leaderboard",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3939,
+      "levenshtein": 0.1818,
+      "semantic": 0.5998,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3919,
+    "selected": false,
+    "reason": "top-3 avg score 0.3919 < final_threshold 0.6"
+  },
+  {
+    "id": 215,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.547,
+      "levenshtein": 0.2778,
+      "semantic": 0.3154,
+      "sequence_match": 0.3125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3916,
+    "selected": false,
+    "reason": "top-3 avg score 0.3916 < final_threshold 0.6"
+  },
+  {
+    "id": 216,
+    "gold_term": "hard mode",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4222,
+      "levenshtein": 0.2,
+      "semantic": 0.4891,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3907,
+    "selected": false,
+    "reason": "top-3 avg score 0.3907 < final_threshold 0.6"
+  },
+  {
+    "id": 217,
+    "gold_term": "Character",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5952,
+      "levenshtein": 0.1905,
+      "semantic": 0.3094,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3904,
+    "selected": false,
+    "reason": "top-3 avg score 0.3904 < final_threshold 0.6"
+  },
+  {
+    "id": 218,
+    "gold_term": "Game",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4423,
+      "levenshtein": 0.1538,
+      "semantic": 0.4935,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3904,
+    "selected": false,
+    "reason": "top-3 avg score 0.3904 < final_threshold 0.6"
+  },
+  {
+    "id": 219,
+    "gold_term": "Player",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4259,
+      "levenshtein": 0.1111,
+      "semantic": 0.4743,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.389,
+    "selected": false,
+    "reason": "top-3 avg score 0.3890 < final_threshold 0.6"
+  },
+  {
+    "id": 220,
+    "gold_term": "Fandom",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4921,
+      "levenshtein": 0.1429,
+      "semantic": 0.4745,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3889,
+    "selected": false,
+    "reason": "top-3 avg score 0.3889 < final_threshold 0.6"
+  },
+  {
+    "id": 221,
+    "gold_term": "Curiosity",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.1111,
+      "semantic": 0.4964,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3877,
+    "selected": false,
+    "reason": "top-3 avg score 0.3877 < final_threshold 0.6"
+  },
+  {
+    "id": 222,
+    "gold_term": "playing area",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4784,
+      "levenshtein": 0.1818,
+      "semantic": 0.4616,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3874,
+    "selected": false,
+    "reason": "top-3 avg score 0.3874 < final_threshold 0.6"
+  },
+  {
+    "id": 223,
+    "gold_term": "Fandom",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.0667,
+      "semantic": 0.4792,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3862,
+    "selected": false,
+    "reason": "top-3 avg score 0.3862 < final_threshold 0.6"
+  },
+  {
+    "id": 224,
+    "gold_term": "Leaderboard",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3831,
+      "levenshtein": 0.0714,
+      "semantic": 0.5353,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3861,
+    "selected": false,
+    "reason": "top-3 avg score 0.3861 < final_threshold 0.6"
+  },
+  {
+    "id": 225,
+    "gold_term": "Paragon",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.543,
+      "levenshtein": 0.1538,
+      "semantic": 0.4151,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.386,
+    "selected": false,
+    "reason": "top-3 avg score 0.3860 < final_threshold 0.6"
+  },
+  {
+    "id": 226,
+    "gold_term": "Virtuosity",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5825,
+      "levenshtein": 0.1429,
+      "semantic": 0.3817,
+      "sequence_match": 0.1935
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3859,
+    "selected": false,
+    "reason": "top-3 avg score 0.3859 < final_threshold 0.6"
+  },
+  {
+    "id": 227,
+    "gold_term": "Luck",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4389,
+      "levenshtein": 0.1333,
+      "semantic": 0.5046,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3847,
+    "selected": false,
+    "reason": "top-3 avg score 0.3847 < final_threshold 0.6"
+  },
+  {
+    "id": 228,
+    "gold_term": "Item",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4423,
+      "levenshtein": 0.0769,
+      "semantic": 0.4735,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3837,
+    "selected": false,
+    "reason": "top-3 avg score 0.3837 < final_threshold 0.6"
+  },
+  {
+    "id": 229,
+    "gold_term": "hard mode",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4583,
+      "levenshtein": 0.125,
+      "semantic": 0.5253,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3834,
+    "selected": false,
+    "reason": "top-3 avg score 0.3834 < final_threshold 0.6"
+  },
+  {
+    "id": 230,
+    "gold_term": "Achievement",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4975,
+      "levenshtein": 0.0952,
+      "semantic": 0.4022,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3833,
+    "selected": false,
+    "reason": "top-3 avg score 0.3833 < final_threshold 0.6"
+  },
+  {
+    "id": 231,
+    "gold_term": "Fandom",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4444,
+      "levenshtein": 0.0,
+      "semantic": 0.5378,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.383,
+    "selected": false,
+    "reason": "top-3 avg score 0.3830 < final_threshold 0.6"
+  },
+  {
+    "id": 232,
+    "gold_term": "Fandom",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.1333,
+      "semantic": 0.469,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3828,
+    "selected": false,
+    "reason": "top-3 avg score 0.3828 < final_threshold 0.6"
+  },
+  {
+    "id": 233,
+    "gold_term": "Tutorial",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4583,
+      "levenshtein": 0.125,
+      "semantic": 0.5211,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.382,
+    "selected": false,
+    "reason": "top-3 avg score 0.3820 < final_threshold 0.6"
+  },
+  {
+    "id": 234,
+    "gold_term": "Fandom",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5051,
+      "levenshtein": 0.1818,
+      "semantic": 0.4054,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3819,
+    "selected": false,
+    "reason": "top-3 avg score 0.3819 < final_threshold 0.6"
+  },
+  {
+    "id": 235,
+    "gold_term": "Tutorial",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4381,
+      "levenshtein": 0.0909,
+      "semantic": 0.4903,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3796,
+    "selected": false,
+    "reason": "top-3 avg score 0.3796 < final_threshold 0.6"
+  },
+  {
+    "id": 236,
+    "gold_term": "Virtuosity",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4859,
+      "levenshtein": 0.0769,
+      "semantic": 0.3894,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3787,
+    "selected": false,
+    "reason": "top-3 avg score 0.3787 < final_threshold 0.6"
+  },
+  {
+    "id": 237,
+    "gold_term": "Tutorial",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4359,
+      "levenshtein": 0.1538,
+      "semantic": 0.4139,
+      "sequence_match": 0.2857
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3785,
+    "selected": false,
+    "reason": "top-3 avg score 0.3785 < final_threshold 0.6"
+  },
+  {
+    "id": 238,
+    "gold_term": "Luck",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4423,
+      "levenshtein": 0.1538,
+      "semantic": 0.4562,
+      "sequence_match": 0.2353
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3779,
+    "selected": false,
+    "reason": "top-3 avg score 0.3779 < final_threshold 0.6"
+  },
+  {
+    "id": 239,
+    "gold_term": "Curiosity",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.468,
+      "levenshtein": 0.1818,
+      "semantic": 0.4655,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3779,
+    "selected": false,
+    "reason": "top-3 avg score 0.3779 < final_threshold 0.6"
+  },
+  {
+    "id": 240,
+    "gold_term": "Tutorial",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4306,
+      "levenshtein": 0.0,
+      "semantic": 0.5598,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3777,
+    "selected": false,
+    "reason": "top-3 avg score 0.3777 < final_threshold 0.6"
+  },
+  {
+    "id": 241,
+    "gold_term": "Feature",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.456,
+      "levenshtein": 0.0909,
+      "semantic": 0.4549,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3777,
+    "selected": false,
+    "reason": "top-3 avg score 0.3777 < final_threshold 0.6"
+  },
+  {
+    "id": 242,
+    "gold_term": "Loyalty",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4317,
+      "levenshtein": 0.1333,
+      "semantic": 0.4272,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3772,
+    "selected": false,
+    "reason": "top-3 avg score 0.3772 < final_threshold 0.6"
+  },
+  {
+    "id": 243,
+    "gold_term": "Item",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.1818,
+      "semantic": 0.4171,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3769,
+    "selected": false,
+    "reason": "top-3 avg score 0.3769 < final_threshold 0.6"
+  },
+  {
+    "id": 244,
+    "gold_term": "playing area",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.1818,
+      "semantic": 0.4171,
+      "sequence_match": 0.2667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3769,
+    "selected": false,
+    "reason": "top-3 avg score 0.3769 < final_threshold 0.6"
+  },
+  {
+    "id": 245,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4441,
+      "levenshtein": 0.1667,
+      "semantic": 0.4098,
+      "sequence_match": 0.2759
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3766,
+    "selected": false,
+    "reason": "top-3 avg score 0.3766 < final_threshold 0.6"
+  },
+  {
+    "id": 246,
+    "gold_term": "Character",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.2,
+      "semantic": 0.4791,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3764,
+    "selected": false,
+    "reason": "top-3 avg score 0.3764 < final_threshold 0.6"
+  },
+  {
+    "id": 247,
+    "gold_term": "special play style",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.375,
+      "levenshtein": 0.125,
+      "semantic": 0.6272,
+      "sequence_match": 0.1
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3757,
+    "selected": false,
+    "reason": "top-3 avg score 0.3757 < final_threshold 0.6"
+  },
+  {
+    "id": 248,
+    "gold_term": "Feature",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4365,
+      "levenshtein": 0.1429,
+      "semantic": 0.4997,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3755,
+    "selected": false,
+    "reason": "top-3 avg score 0.3755 < final_threshold 0.6"
+  },
+  {
+    "id": 249,
+    "gold_term": "Virtuosity",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4131,
+      "levenshtein": 0.1818,
+      "semantic": 0.5194,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3743,
+    "selected": false,
+    "reason": "top-3 avg score 0.3743 < final_threshold 0.6"
+  },
+  {
+    "id": 250,
+    "gold_term": "Loyalty",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5841,
+      "levenshtein": 0.1429,
+      "semantic": 0.3229,
+      "sequence_match": 0.2143
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3738,
+    "selected": false,
+    "reason": "top-3 avg score 0.3738 < final_threshold 0.6"
+  },
+  {
+    "id": 251,
+    "gold_term": "Player",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4889,
+      "levenshtein": 0.0667,
+      "semantic": 0.4399,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3731,
+    "selected": false,
+    "reason": "top-3 avg score 0.3731 < final_threshold 0.6"
+  },
+  {
+    "id": 252,
+    "gold_term": "Curiosity",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4101,
+      "levenshtein": 0.1429,
+      "semantic": 0.4481,
+      "sequence_match": 0.2609
+    },
+    "is_hard_match": false,
+    "agg_score": 0.373,
+    "selected": false,
+    "reason": "top-3 avg score 0.3730 < final_threshold 0.6"
+  },
+  {
+    "id": 253,
+    "gold_term": "game product",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.404,
+      "levenshtein": 0.0,
+      "semantic": 0.4421,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.373,
+    "selected": false,
+    "reason": "top-3 avg score 0.3730 < final_threshold 0.6"
+  },
+  {
+    "id": 254,
+    "gold_term": "Veteran",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.456,
+      "levenshtein": 0.0909,
+      "semantic": 0.4343,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3709,
+    "selected": false,
+    "reason": "top-3 avg score 0.3709 < final_threshold 0.6"
+  },
+  {
+    "id": 255,
+    "gold_term": "Paragon",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4286,
+      "levenshtein": 0.0,
+      "semantic": 0.5409,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3708,
+    "selected": false,
+    "reason": "top-3 avg score 0.3708 < final_threshold 0.6"
+  },
+  {
+    "id": 256,
+    "gold_term": "Character",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.468,
+      "levenshtein": 0.0,
+      "semantic": 0.4439,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3706,
+    "selected": false,
+    "reason": "top-3 avg score 0.3706 < final_threshold 0.6"
+  },
+  {
+    "id": 257,
+    "gold_term": "Session",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4799,
+      "levenshtein": 0.0,
+      "semantic": 0.4317,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3705,
+    "selected": false,
+    "reason": "top-3 avg score 0.3705 < final_threshold 0.6"
+  },
+  {
+    "id": 258,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4352,
+      "levenshtein": 0.1111,
+      "semantic": 0.4942,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3704,
+    "selected": false,
+    "reason": "top-3 avg score 0.3704 < final_threshold 0.6"
+  },
+  {
+    "id": 259,
+    "gold_term": "Fandom",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4365,
+      "levenshtein": 0.0,
+      "semantic": 0.5205,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3703,
+    "selected": false,
+    "reason": "top-3 avg score 0.3703 < final_threshold 0.6"
+  },
+  {
+    "id": 260,
+    "gold_term": "Completion",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.1,
+      "semantic": 0.5652,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3694,
+    "selected": false,
+    "reason": "top-3 avg score 0.3694 < final_threshold 0.6"
+  },
+  {
+    "id": 261,
+    "gold_term": "game product",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4242,
+      "levenshtein": 0.0909,
+      "semantic": 0.483,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3691,
+    "selected": false,
+    "reason": "top-3 avg score 0.3691 < final_threshold 0.6"
+  },
+  {
+    "id": 262,
+    "gold_term": "Tutorial",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4286,
+      "levenshtein": 0.1429,
+      "semantic": 0.4949,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3684,
+    "selected": false,
+    "reason": "top-3 avg score 0.3684 < final_threshold 0.6"
+  },
+  {
+    "id": 263,
+    "gold_term": "Luck",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4537,
+      "levenshtein": 0.1111,
+      "semantic": 0.4922,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3666,
+    "selected": false,
+    "reason": "top-3 avg score 0.3666 < final_threshold 0.6"
+  },
+  {
+    "id": 264,
+    "gold_term": "Session",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4286,
+      "levenshtein": 0.1429,
+      "semantic": 0.5245,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3653,
+    "selected": false,
+    "reason": "top-3 avg score 0.3653 < final_threshold 0.6"
+  },
+  {
+    "id": 265,
+    "gold_term": "Session",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4892,
+      "levenshtein": 0.0909,
+      "semantic": 0.4915,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3639,
+    "selected": false,
+    "reason": "top-3 avg score 0.3639 < final_threshold 0.6"
+  },
+  {
+    "id": 266,
+    "gold_term": "game product",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3939,
+      "levenshtein": 0.0909,
+      "semantic": 0.5645,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3639,
+    "selected": false,
+    "reason": "top-3 avg score 0.3639 < final_threshold 0.6"
+  },
+  {
+    "id": 267,
+    "gold_term": "Virtuosity",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4778,
+      "levenshtein": 0.1333,
+      "semantic": 0.4538,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3639,
+    "selected": false,
+    "reason": "top-3 avg score 0.3639 < final_threshold 0.6"
+  },
+  {
+    "id": 268,
+    "gold_term": "Virtuosity",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3952,
+      "levenshtein": 0.1429,
+      "semantic": 0.4444,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3632,
+    "selected": false,
+    "reason": "top-3 avg score 0.3632 < final_threshold 0.6"
+  },
+  {
+    "id": 269,
+    "gold_term": "Curiosity",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4103,
+      "levenshtein": 0.0769,
+      "semantic": 0.4064,
+      "sequence_match": 0.2727
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3631,
+    "selected": false,
+    "reason": "top-3 avg score 0.3631 < final_threshold 0.6"
+  },
+  {
+    "id": 270,
+    "gold_term": "Luck",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.0909,
+      "semantic": 0.5067,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3624,
+    "selected": false,
+    "reason": "top-3 avg score 0.3624 < final_threshold 0.6"
+  },
+  {
+    "id": 271,
+    "gold_term": "Genre",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5179,
+      "levenshtein": 0.1538,
+      "semantic": 0.4147,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3622,
+    "selected": false,
+    "reason": "top-3 avg score 0.3622 < final_threshold 0.6"
+  },
+  {
+    "id": 272,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4352,
+      "levenshtein": 0.1111,
+      "semantic": 0.4669,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3613,
+    "selected": false,
+    "reason": "top-3 avg score 0.3613 < final_threshold 0.6"
+  },
+  {
+    "id": 273,
+    "gold_term": "Luck",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4405,
+      "levenshtein": 0.0714,
+      "semantic": 0.5304,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3607,
+    "selected": false,
+    "reason": "top-3 avg score 0.3607 < final_threshold 0.6"
+  },
+  {
+    "id": 274,
+    "gold_term": "hard mode",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4877,
+      "levenshtein": 0.1905,
+      "semantic": 0.3859,
+      "sequence_match": 0.2069
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3602,
+    "selected": false,
+    "reason": "top-3 avg score 0.3602 < final_threshold 0.6"
+  },
+  {
+    "id": 275,
+    "gold_term": "Leaderboard",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5012,
+      "levenshtein": 0.2308,
+      "semantic": 0.3472,
+      "sequence_match": 0.0833
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3597,
+    "selected": false,
+    "reason": "top-3 avg score 0.3597 < final_threshold 0.6"
+  },
+  {
+    "id": 276,
+    "gold_term": "Genre",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4984,
+      "levenshtein": 0.1429,
+      "semantic": 0.3477,
+      "sequence_match": 0.2308
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3589,
+    "selected": false,
+    "reason": "top-3 avg score 0.3589 < final_threshold 0.6"
+  },
+  {
+    "id": 277,
+    "gold_term": "Item",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5198,
+      "levenshtein": 0.0952,
+      "semantic": 0.3162,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3587,
+    "selected": false,
+    "reason": "top-3 avg score 0.3587 < final_threshold 0.6"
+  },
+  {
+    "id": 278,
+    "gold_term": "Character",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.2222,
+      "semantic": 0.5457,
+      "sequence_match": 0.3077
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3586,
+    "selected": false,
+    "reason": "top-3 avg score 0.3586 < final_threshold 0.6"
+  },
+  {
+    "id": 279,
+    "gold_term": "Veteran",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.504,
+      "levenshtein": 0.1905,
+      "semantic": 0.3542,
+      "sequence_match": 0.2143
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3575,
+    "selected": false,
+    "reason": "top-3 avg score 0.3575 < final_threshold 0.6"
+  },
+  {
+    "id": 280,
+    "gold_term": "hard mode",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4226,
+      "levenshtein": 0.125,
+      "semantic": 0.5137,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3565,
+    "selected": false,
+    "reason": "top-3 avg score 0.3565 < final_threshold 0.6"
+  },
+  {
+    "id": 281,
+    "gold_term": "Session",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4317,
+      "levenshtein": 0.1333,
+      "semantic": 0.455,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3562,
+    "selected": false,
+    "reason": "top-3 avg score 0.3562 < final_threshold 0.6"
+  },
+  {
+    "id": 282,
+    "gold_term": "Virtuosity",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3937,
+      "levenshtein": 0.1429,
+      "semantic": 0.5079,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3561,
+    "selected": false,
+    "reason": "top-3 avg score 0.3561 < final_threshold 0.6"
+  },
+  {
+    "id": 283,
+    "gold_term": "Curiosity",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4259,
+      "levenshtein": 0.0,
+      "semantic": 0.5085,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3559,
+    "selected": false,
+    "reason": "top-3 avg score 0.3559 < final_threshold 0.6"
+  },
+  {
+    "id": 284,
+    "gold_term": "Virtuosity",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4222,
+      "levenshtein": 0.0,
+      "semantic": 0.5138,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3537,
+    "selected": false,
+    "reason": "top-3 avg score 0.3537 < final_threshold 0.6"
+  },
+  {
+    "id": 285,
+    "gold_term": "Luck",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4325,
+      "levenshtein": 0.1429,
+      "semantic": 0.388,
+      "sequence_match": 0.24
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3535,
+    "selected": false,
+    "reason": "top-3 avg score 0.3535 < final_threshold 0.6"
+  },
+  {
+    "id": 286,
+    "gold_term": "Virtuosity",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.397,
+      "levenshtein": 0.0,
+      "semantic": 0.4715,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.353,
+    "selected": false,
+    "reason": "top-3 avg score 0.3530 < final_threshold 0.6"
+  },
+  {
+    "id": 287,
+    "gold_term": "Curiosity",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4,
+      "levenshtein": 0.1333,
+      "semantic": 0.4088,
+      "sequence_match": 0.25
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3529,
+    "selected": false,
+    "reason": "top-3 avg score 0.3529 < final_threshold 0.6"
+  },
+  {
+    "id": 288,
+    "gold_term": "Character",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4101,
+      "levenshtein": 0.1429,
+      "semantic": 0.4734,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3525,
+    "selected": false,
+    "reason": "top-3 avg score 0.3525 < final_threshold 0.6"
+  },
+  {
+    "id": 289,
+    "gold_term": "game product",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4113,
+      "levenshtein": 0.0909,
+      "semantic": 0.4236,
+      "sequence_match": 0.2222
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3524,
+    "selected": false,
+    "reason": "top-3 avg score 0.3524 < final_threshold 0.6"
+  },
+  {
+    "id": 290,
+    "gold_term": "Session",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4048,
+      "levenshtein": 0.1429,
+      "semantic": 0.4608,
+      "sequence_match": 0.1905
+    },
+    "is_hard_match": false,
+    "agg_score": 0.352,
+    "selected": false,
+    "reason": "top-3 avg score 0.3520 < final_threshold 0.6"
+  },
+  {
+    "id": 291,
+    "gold_term": "Tutorial",
+    "pred_term": "Achievement",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4053,
+      "levenshtein": 0.0,
+      "semantic": 0.5445,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3517,
+    "selected": false,
+    "reason": "top-3 avg score 0.3517 < final_threshold 0.6"
+  },
+  {
+    "id": 292,
+    "gold_term": "Session",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.5238,
+      "levenshtein": 0.1429,
+      "semantic": 0.3827,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3498,
+    "selected": false,
+    "reason": "top-3 avg score 0.3498 < final_threshold 0.6"
+  },
+  {
+    "id": 293,
+    "gold_term": "Leaderboard",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.447,
+      "levenshtein": 0.0909,
+      "semantic": 0.4659,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3487,
+    "selected": false,
+    "reason": "top-3 avg score 0.3487 < final_threshold 0.6"
+  },
+  {
+    "id": 294,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4762,
+      "levenshtein": 0.1667,
+      "semantic": 0.4027,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3485,
+    "selected": false,
+    "reason": "top-3 avg score 0.3485 < final_threshold 0.6"
+  },
+  {
+    "id": 295,
+    "gold_term": "Leaderboard",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3798,
+      "levenshtein": 0.1333,
+      "semantic": 0.5117,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3484,
+    "selected": false,
+    "reason": "top-3 avg score 0.3484 < final_threshold 0.6"
+  },
+  {
+    "id": 296,
+    "gold_term": "Fandom",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4259,
+      "levenshtein": 0.0,
+      "semantic": 0.4797,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3463,
+    "selected": false,
+    "reason": "top-3 avg score 0.3463 < final_threshold 0.6"
+  },
+  {
+    "id": 297,
+    "gold_term": "Item",
+    "pred_term": "Game Completion",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.381,
+      "levenshtein": 0.1429,
+      "semantic": 0.5141,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.346,
+    "selected": false,
+    "reason": "top-3 avg score 0.3460 < final_threshold 0.6"
+  },
+  {
+    "id": 298,
+    "gold_term": "Luck",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4405,
+      "levenshtein": 0.0714,
+      "semantic": 0.4833,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.345,
+    "selected": false,
+    "reason": "top-3 avg score 0.3450 < final_threshold 0.6"
+  },
+  {
+    "id": 299,
+    "gold_term": "playing area",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4601,
+      "levenshtein": 0.0667,
+      "semantic": 0.4186,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3442,
+    "selected": false,
+    "reason": "top-3 avg score 0.3442 < final_threshold 0.6"
+  },
+  {
+    "id": 300,
+    "gold_term": "Tutorial",
+    "pred_term": "Player Game Stat",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4187,
+      "levenshtein": 0.1429,
+      "semantic": 0.432,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3442,
+    "selected": false,
+    "reason": "top-3 avg score 0.3442 < final_threshold 0.6"
+  },
+  {
+    "id": 301,
+    "gold_term": "Luck",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4389,
+      "levenshtein": 0.0,
+      "semantic": 0.4836,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3426,
+    "selected": false,
+    "reason": "top-3 avg score 0.3426 < final_threshold 0.6"
+  },
+  {
+    "id": 302,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.463,
+      "levenshtein": 0.1667,
+      "semantic": 0.3959,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3418,
+    "selected": false,
+    "reason": "top-3 avg score 0.3418 < final_threshold 0.6"
+  },
+  {
+    "id": 303,
+    "gold_term": "Curiosity",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4646,
+      "levenshtein": 0.1429,
+      "semantic": 0.3607,
+      "sequence_match": 0.2
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3418,
+    "selected": false,
+    "reason": "top-3 avg score 0.3418 < final_threshold 0.6"
+  },
+  {
+    "id": 304,
+    "gold_term": "Item",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3939,
+      "levenshtein": 0.0909,
+      "semantic": 0.4946,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3406,
+    "selected": false,
+    "reason": "top-3 avg score 0.3406 < final_threshold 0.6"
+  },
+  {
+    "id": 305,
+    "gold_term": "Tutorial",
+    "pred_term": "Player Equipment",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4222,
+      "levenshtein": 0.1333,
+      "semantic": 0.4568,
+      "sequence_match": 0.087
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3374,
+    "selected": false,
+    "reason": "top-3 avg score 0.3374 < final_threshold 0.6"
+  },
+  {
+    "id": 306,
+    "gold_term": "Paragon",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.473,
+      "levenshtein": 0.0667,
+      "semantic": 0.4461,
+      "sequence_match": 0.0909
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3367,
+    "selected": false,
+    "reason": "top-3 avg score 0.3367 < final_threshold 0.6"
+  },
+  {
+    "id": 307,
+    "gold_term": "Loyalty",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4113,
+      "levenshtein": 0.0,
+      "semantic": 0.4858,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3361,
+    "selected": false,
+    "reason": "top-3 avg score 0.3361 < final_threshold 0.6"
+  },
+  {
+    "id": 308,
+    "gold_term": "Completion",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3074,
+      "levenshtein": 0.0,
+      "semantic": 0.4822,
+      "sequence_match": 0.2105
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3334,
+    "selected": false,
+    "reason": "top-3 avg score 0.3334 < final_threshold 0.6"
+  },
+  {
+    "id": 309,
+    "gold_term": "Tutorial",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4053,
+      "levenshtein": 0.0909,
+      "semantic": 0.4846,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3317,
+    "selected": false,
+    "reason": "top-3 avg score 0.3317 < final_threshold 0.6"
+  },
+  {
+    "id": 310,
+    "gold_term": "Loyalty",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.418,
+      "levenshtein": 0.0,
+      "semantic": 0.4456,
+      "sequence_match": 0.125
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3295,
+    "selected": false,
+    "reason": "top-3 avg score 0.3295 < final_threshold 0.6"
+  },
+  {
+    "id": 311,
+    "gold_term": "Tutorial",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3452,
+      "levenshtein": 0.125,
+      "semantic": 0.5073,
+      "sequence_match": 0.1333
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3286,
+    "selected": false,
+    "reason": "top-3 avg score 0.3286 < final_threshold 0.6"
+  },
+  {
+    "id": 312,
+    "gold_term": "Collection",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3923,
+      "levenshtein": 0.0769,
+      "semantic": 0.4164,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3275,
+    "selected": false,
+    "reason": "top-3 avg score 0.3275 < final_threshold 0.6"
+  },
+  {
+    "id": 313,
+    "gold_term": "Veteran",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.442,
+      "levenshtein": 0.1538,
+      "semantic": 0.3867,
+      "sequence_match": 0.1
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3275,
+    "selected": false,
+    "reason": "top-3 avg score 0.3275 < final_threshold 0.6"
+  },
+  {
+    "id": 314,
+    "gold_term": "Collection",
+    "pred_term": "Item Usage",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4037,
+      "levenshtein": 0.0,
+      "semantic": 0.473,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3273,
+    "selected": false,
+    "reason": "top-3 avg score 0.3273 < final_threshold 0.6"
+  },
+  {
+    "id": 315,
+    "gold_term": "Completion",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3923,
+      "levenshtein": 0.0769,
+      "semantic": 0.4126,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3263,
+    "selected": false,
+    "reason": "top-3 avg score 0.3263 < final_threshold 0.6"
+  },
+  {
+    "id": 316,
+    "gold_term": "Fandom",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4762,
+      "levenshtein": 0.0952,
+      "semantic": 0.3458,
+      "sequence_match": 0.1481
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3234,
+    "selected": false,
+    "reason": "top-3 avg score 0.3234 < final_threshold 0.6"
+  },
+  {
+    "id": 317,
+    "gold_term": "special play style",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.375,
+      "levenshtein": 0.125,
+      "semantic": 0.4652,
+      "sequence_match": 0.1
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3217,
+    "selected": false,
+    "reason": "top-3 avg score 0.3217 < final_threshold 0.6"
+  },
+  {
+    "id": 318,
+    "gold_term": "Collection",
+    "pred_term": "Player Without Purchase",
+    "top_methods_used": [
+      "jaro_winkler",
+      "semantic",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.446,
+      "levenshtein": 0.1429,
+      "semantic": 0.3666,
+      "sequence_match": 0.129
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3185,
+    "selected": false,
+    "reason": "top-3 avg score 0.3185 < final_threshold 0.6"
+  },
+  {
+    "id": 319,
+    "gold_term": "Tutorial",
+    "pred_term": "Achievement Type",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.2944,
+      "levenshtein": 0.0,
+      "semantic": 0.4737,
+      "sequence_match": 0.1739
+    },
+    "is_hard_match": false,
+    "agg_score": 0.314,
+    "selected": false,
+    "reason": "top-3 avg score 0.3140 < final_threshold 0.6"
+  },
+  {
+    "id": 320,
+    "gold_term": "Leaderboard",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3225,
+      "levenshtein": 0.0909,
+      "semantic": 0.4985,
+      "sequence_match": 0.1111
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3107,
+    "selected": false,
+    "reason": "top-3 avg score 0.3107 < final_threshold 0.6"
+  },
+  {
+    "id": 321,
+    "gold_term": "Curiosity",
+    "pred_term": "Playing Area",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4007,
+      "levenshtein": 0.0909,
+      "semantic": 0.4232,
+      "sequence_match": 0.1
+    },
+    "is_hard_match": false,
+    "agg_score": 0.308,
+    "selected": false,
+    "reason": "top-3 avg score 0.3080 < final_threshold 0.6"
+  },
+  {
+    "id": 322,
+    "gold_term": "Loyalty",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.4066,
+      "levenshtein": 0.0,
+      "semantic": 0.4148,
+      "sequence_match": 0.1
+    },
+    "is_hard_match": false,
+    "agg_score": 0.3071,
+    "selected": false,
+    "reason": "top-3 avg score 0.3071 < final_threshold 0.6"
+  },
+  {
+    "id": 323,
+    "gold_term": "Luck",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.1429,
+      "semantic": 0.574,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2996,
+    "selected": false,
+    "reason": "top-3 avg score 0.2996 < final_threshold 0.6"
+  },
+  {
+    "id": 324,
+    "gold_term": "in-app purchase event",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.2989,
+      "levenshtein": 0.0556,
+      "semantic": 0.399,
+      "sequence_match": 0.16
+    },
+    "is_hard_match": false,
+    "agg_score": 0.286,
+    "selected": false,
+    "reason": "top-3 avg score 0.2860 < final_threshold 0.6"
+  },
+  {
+    "id": 325,
+    "gold_term": "Fandom",
+    "pred_term": "In-App Purchase",
+    "top_methods_used": [
+      "semantic",
+      "jaro_winkler",
+      "sequence_match"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.3291,
+      "levenshtein": 0.0769,
+      "semantic": 0.378,
+      "sequence_match": 0.1053
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2708,
+    "selected": false,
+    "reason": "top-3 avg score 0.2708 < final_threshold 0.6"
+  },
+  {
+    "id": 326,
+    "gold_term": "Tutorial",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6156,
+      "sequence_match": 0.1667
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2607,
+    "selected": false,
+    "reason": "top-3 avg score 0.2607 < final_threshold 0.6"
+  },
+  {
+    "id": 327,
+    "gold_term": "Veteran",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5847,
+      "sequence_match": 0.1429
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2425,
+    "selected": false,
+    "reason": "top-3 avg score 0.2425 < final_threshold 0.6"
+  },
+  {
+    "id": 328,
+    "gold_term": "Session",
+    "pred_term": "Player",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.57,
+      "sequence_match": 0.1538
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2413,
+    "selected": false,
+    "reason": "top-3 avg score 0.2413 < final_threshold 0.6"
+  },
+  {
+    "id": 329,
+    "gold_term": "Loyalty",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.4976,
+      "sequence_match": 0.1818
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2265,
+    "selected": false,
+    "reason": "top-3 avg score 0.2265 < final_threshold 0.6"
+  },
+  {
+    "id": 330,
+    "gold_term": "Luck",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6515,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2172,
+    "selected": false,
+    "reason": "top-3 avg score 0.2172 < final_threshold 0.6"
+  },
+  {
+    "id": 331,
+    "gold_term": "Virtuosity",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.6123,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.2041,
+    "selected": false,
+    "reason": "top-3 avg score 0.2041 < final_threshold 0.6"
+  },
+  {
+    "id": 332,
+    "gold_term": "Curiosity",
+    "pred_term": "Game",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5857,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1952,
+    "selected": false,
+    "reason": "top-3 avg score 0.1952 < final_threshold 0.6"
+  },
+  {
+    "id": 333,
+    "gold_term": "Paragon",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5597,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1866,
+    "selected": false,
+    "reason": "top-3 avg score 0.1866 < final_threshold 0.6"
+  },
+  {
+    "id": 334,
+    "gold_term": "Luck",
+    "pred_term": "Item",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5492,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1831,
+    "selected": false,
+    "reason": "top-3 avg score 0.1831 < final_threshold 0.6"
+  },
+  {
+    "id": 335,
+    "gold_term": "Luck",
+    "pred_term": "Game Session",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5368,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1789,
+    "selected": false,
+    "reason": "top-3 avg score 0.1789 < final_threshold 0.6"
+  },
+  {
+    "id": 336,
+    "gold_term": "Genre",
+    "pred_term": "Ability",
+    "top_methods_used": [
+      "semantic",
+      "sequence_match",
+      "levenshtein"
+    ],
+    "scores_by_method": {
+      "jaro_winkler": 0.0,
+      "levenshtein": 0.0,
+      "semantic": 0.5331,
+      "sequence_match": 0.0
+    },
+    "is_hard_match": false,
+    "agg_score": 0.1777,
+    "selected": false,
+    "reason": "top-3 avg score 0.1777 < final_threshold 0.6"
+  }
+]

@@ -1,0 +1,1262 @@
+{
+  "config": {
+    "gold_owl": "00_gold_standard/awo/ontology/sub_awo.owl",
+    "pred_owl": "01_predictions/challenge/pseudo_submission/ontology/awo_ontology.owl",
+    "class_csv": "03_evaluation_results/challenge/pseudo_submission/awo/01_class/class_best_matching.csv",
+    "property_csv": "03_evaluation_results/challenge/pseudo_submission/awo/02_property/property_best_matching.csv",
+    "reasoner": "HermiT"
+  },
+  "results": [
+    {
+      "id": "gold_closure",
+      "n_class_pairs": 6,
+      "n_property_pairs": 2,
+      "class_pairs": [
+        {
+          "sub": "CarnivorousPlant",
+          "sup": "plant"
+        },
+        {
+          "sub": "Omnivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "carnivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "herbivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "lion",
+          "sup": "animal"
+        },
+        {
+          "sub": "lion",
+          "sup": "carnivore"
+        }
+      ],
+      "property_pairs": [
+        {
+          "sub": "is-proper-part-of",
+          "sup": "has-part"
+        },
+        {
+          "sub": "is-proper-part-of",
+          "sup": "is-part-of"
+        }
+      ]
+    },
+    {
+      "id": "pred_closure",
+      "n_class_pairs": 4,
+      "n_property_pairs": 0,
+      "class_pairs": [
+        {
+          "sub": "Carnivore",
+          "sup": "Animal"
+        },
+        {
+          "sub": "CarnivorousPlant",
+          "sup": "Plant"
+        },
+        {
+          "sub": "Herbivore",
+          "sup": "Animal"
+        },
+        {
+          "sub": "Lion",
+          "sup": "Animal"
+        }
+      ],
+      "property_pairs": []
+    },
+    {
+      "id": "translation",
+      "n_class_translated": 4,
+      "n_property_translated": 0,
+      "n_class_untranslated": 0,
+      "n_property_untranslated": 0,
+      "class_translated": [
+        {
+          "sub": "CarnivorousPlant",
+          "sup": "plant"
+        },
+        {
+          "sub": "carnivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "herbivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "lion",
+          "sup": "animal"
+        }
+      ],
+      "property_translated": [],
+      "class_untranslated": [],
+      "property_untranslated": []
+    },
+    {
+      "id": "class_metrics",
+      "tp": 4,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "tp_pairs": [
+        {
+          "sub": "CarnivorousPlant",
+          "sup": "plant"
+        },
+        {
+          "sub": "carnivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "herbivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "lion",
+          "sup": "animal"
+        }
+      ],
+      "fp_pairs": [],
+      "fn_pairs": [
+        {
+          "sub": "Omnivore",
+          "sup": "animal"
+        },
+        {
+          "sub": "lion",
+          "sup": "carnivore"
+        }
+      ]
+    },
+    {
+      "id": "property_metrics",
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp_pairs": [],
+      "fp_pairs": [],
+      "fn_pairs": [
+        {
+          "sub": "is-proper-part-of",
+          "sup": "has-part"
+        },
+        {
+          "sub": "is-proper-part-of",
+          "sup": "is-part-of"
+        }
+      ]
+    },
+    {
+      "id": "combined_metrics",
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667
+    },
+    {
+      "id": "cq_coverage_closure",
+      "n_total": 7,
+      "n_fully_covered": 0,
+      "n_any_covered": 7,
+      "fully_coverage": 0.0,
+      "any_coverage": 1.0,
+      "average_rate": 0.3258,
+      "n_covered": 7,
+      "coverage": 1.0,
+      "per_cq": [
+        {
+          "id": "CQ1",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 2,
+          "n_missing": 0,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "herbivore",
+              "animal"
+            ],
+            [
+              "lion",
+              "animal"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "missing_entailments": [],
+          "source_axioms": [
+            "AX13",
+            "AX14"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal",
+              "axioms": [
+                "AX14"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(animal, plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "herbivore ≡ (∀eats.plant ⊔ ∀eats.∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 2,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "n_closure_confirmed": 2,
+          "n_axioms_total": 4
+        },
+        {
+          "id": "CQ2",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 1,
+          "n_missing": 1,
+          "rate": 0.25,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "carnivore",
+              "animal"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "carnivore",
+              "sup": "animal"
+            }
+          ],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Omnivore",
+              "sup": "animal"
+            }
+          ],
+          "source_axioms": [
+            "AX11",
+            "AX6"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Omnivore",
+              "sup": "animal",
+              "axioms": [
+                "AX6"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "carnivore",
+              "sup": "animal",
+              "axioms": [
+                "AX11"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX6",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Omnivore ⊑ animal",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Omnivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX17",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "eats ≡ eaten-by⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX18",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀eats.(animal ⊔ plant ⊔ ∃is-part-of.animal ⊔ ∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 1,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX11",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "carnivore",
+              "sup": "animal"
+            }
+          ],
+          "n_closure_confirmed": 1,
+          "n_axioms_total": 4
+        },
+        {
+          "id": "CQ3",
+          "question": "",
+          "n_relevant": 3,
+          "n_matched": 2,
+          "n_missing": 1,
+          "rate": 0.2,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "herbivore",
+              "animal"
+            ],
+            [
+              "lion",
+              "animal"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Omnivore",
+              "sup": "animal"
+            }
+          ],
+          "source_axioms": [
+            "AX13",
+            "AX14",
+            "AX6"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Omnivore",
+              "sup": "animal",
+              "axioms": [
+                "AX6"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal",
+              "axioms": [
+                "AX14"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX3",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(Omnivore, carnivore)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX4",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(Omnivore, herbivore)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX5",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "Omnivore ≡ (∃eats.animal ⊓ ∃eats.plant ⊓ ∃eats.(∃is-part-of.animal ⊔ ∃is-part-of.plant))",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX6",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Omnivore ⊑ animal",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Omnivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX7",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "PlantParts ⊑ ∃is-proper-part-of.plant",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "herbivore ≡ (∀eats.plant ⊔ ∀eats.∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX17",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "eats ≡ eaten-by⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX18",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀eats.(animal ⊔ plant ⊔ ∃is-part-of.animal ⊔ ∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 2,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "n_closure_confirmed": 2,
+          "n_axioms_total": 10
+        },
+        {
+          "id": "CQ4",
+          "question": "",
+          "n_relevant": 3,
+          "n_matched": 2,
+          "n_missing": 1,
+          "rate": 0.14285714285714285,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "herbivore",
+              "animal"
+            ],
+            [
+              "lion",
+              "animal"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "missing_entailments": [
+            {
+              "kind": "property",
+              "sub": "is-proper-part-of",
+              "sup": "is-part-of"
+            }
+          ],
+          "source_axioms": [
+            "AX13",
+            "AX14",
+            "AX25"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal",
+              "axioms": [
+                "AX14"
+              ]
+            },
+            {
+              "kind": "property",
+              "sub": "is-proper-part-of",
+              "sup": "is-part-of",
+              "axioms": [
+                "AX25"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX7",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "PlantParts ⊑ ∃is-proper-part-of.plant",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(animal, plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "herbivore ≡ (∀eats.plant ⊔ ∀eats.∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "lion ⊑ ∀eats.herbivore",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX16",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "eaten-by ≡ eats⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX19",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(has-part)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX20",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "has-part ≡ is-part-of⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX21",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(is-part-of)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX22",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Reflexive(is-part-of)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX23",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "is-part-of ≡ has-part⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX24",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Irreflexive(is-proper-part-of)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX25",
+              "axiom_type": "SubPropertyOf",
+              "axiom_dl": "is-proper-part-of ⊑ is-part-of",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "property",
+              "sub": "is-proper-part-of",
+              "sup": "is-part-of"
+            }
+          ],
+          "n_strict_tp": 2,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "n_closure_confirmed": 2,
+          "n_axioms_total": 14
+        },
+        {
+          "id": "CQ6",
+          "question": "",
+          "n_relevant": 3,
+          "n_matched": 3,
+          "n_missing": 0,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "CarnivorousPlant",
+              "plant"
+            ],
+            [
+              "herbivore",
+              "animal"
+            ],
+            [
+              "lion",
+              "animal"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "CarnivorousPlant",
+              "sup": "plant"
+            },
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "missing_entailments": [],
+          "source_axioms": [
+            "AX1",
+            "AX13",
+            "AX14"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "CarnivorousPlant",
+              "sup": "plant",
+              "axioms": [
+                "AX1"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal",
+              "axioms": [
+                "AX14"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX2",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "CarnivorousPlant ⊑ ∃eats.animal",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(animal, plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "herbivore ≡ (∀eats.plant ⊔ ∀eats.∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 3,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX1",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "CarnivorousPlant",
+              "sup": "plant"
+            },
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "n_closure_confirmed": 3,
+          "n_axioms_total": 6
+        },
+        {
+          "id": "CQ7",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 2,
+          "n_missing": 0,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "herbivore",
+              "animal"
+            ],
+            [
+              "lion",
+              "animal"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "missing_entailments": [],
+          "source_axioms": [
+            "AX13",
+            "AX14"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal",
+              "axioms": [
+                "AX14"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(animal, plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "herbivore ≡ (∀eats.plant ⊔ ∀eats.∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 2,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "n_closure_confirmed": 2,
+          "n_axioms_total": 4
+        },
+        {
+          "id": "CQ14",
+          "question": "",
+          "n_relevant": 3,
+          "n_matched": 3,
+          "n_missing": 0,
+          "rate": 0.1875,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "carnivore",
+              "animal"
+            ],
+            [
+              "herbivore",
+              "animal"
+            ],
+            [
+              "lion",
+              "animal"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "carnivore",
+              "sup": "animal"
+            },
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "missing_entailments": [],
+          "source_axioms": [
+            "AX11",
+            "AX13",
+            "AX14"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "carnivore",
+              "sup": "animal",
+              "axioms": [
+                "AX11"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal",
+              "axioms": [
+                "AX13"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal",
+              "axioms": [
+                "AX14"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX5",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "Omnivore ≡ (∃eats.animal ⊓ ∃eats.plant ⊓ ∃eats.(∃is-part-of.animal ⊔ ∃is-part-of.plant))",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX7",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "PlantParts ⊑ ∃is-proper-part-of.plant",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(animal, plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX9",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(carnivore, herbivore)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX10",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "carnivore ≡ (∀eats.animal ⊔ ∀eats.∃is-part-of.animal)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "EquivalentClasses",
+              "axiom_dl": "herbivore ≡ (∀eats.plant ⊔ ∀eats.∃is-part-of.plant)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "lion ⊑ ∀eats.herbivore",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX16",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "eaten-by ≡ eats⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX19",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(has-part)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX20",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "has-part ≡ is-part-of⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX21",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Transitive(is-part-of)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX22",
+              "axiom_type": "Characteristics",
+              "axiom_dl": "Reflexive(is-part-of)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX23",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "is-part-of ≡ has-part⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 3,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX11",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "carnivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "herbivore",
+              "sup": "animal"
+            },
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "lion",
+              "sup": "animal"
+            }
+          ],
+          "n_closure_confirmed": 3,
+          "n_axioms_total": 16
+        }
+      ]
+    }
+  ]
+}

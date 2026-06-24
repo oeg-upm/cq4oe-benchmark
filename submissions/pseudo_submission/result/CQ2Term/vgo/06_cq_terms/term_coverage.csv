@@ -1,0 +1,22 @@
+term,role,cq_ids,aligned,aligned_to
+achievement,class,CQ05; CQ07; CQ08; CQ10; CQ11; CQ24,true,achievement
+game,class,CQ03; CQ08; CQ10; CQ11; CQ12; CQ13; CQ15; CQ17; CQ25; CQ55; CQNew1,true,game
+genre,class,CQ12; CQ17,true,genre
+inapppurchaseevent,class,CQ56; CQ62; CQ63; CQ66,true,inapppurchase
+item,class,CQ13; CQ26; CQ55,true,item
+player,class,CQ01; CQ02; CQ03; CQ05; CQ07; CQ24; CQ25; CQ26; CQ55; CQ56; CQ63; CQ65; CQ66,true,player
+playingarea,class,CQNew1,true,playingarea
+eventtime,property,CQ62,false,
+hasachievement,property,CQ08; CQ10; CQ11,true,hasachievement
+hasgamegenre,property,CQ12; CQ17,true,hasgenre
+hasitem,property,CQ13; CQ55,true,hasitem
+hasplayingarea,property,CQNew1,true,hasplayingarea
+iseventassociatedtoplayer,property,CQ56; CQ63; CQ65; CQ66,false,
+isfriendwithplayer,property,CQ02; CQ03; CQ05; CQ07,true,hasfriend
+livesin,property,CQ63; CQ65; CQ66,true,livesin
+ownsachievement,property,CQ05; CQ07; CQ24,true,hasachievementtype
+ownsitem,property,CQ26; CQ55,false,
+playsgame,property,CQ03; CQ25; CQ55,true,playsgame
+purchasesgameoffering,property,CQ56,true,purchases
+releasedate,property,CQ15,true,hasreleasedate
+username,property,CQ01,true,hasusername

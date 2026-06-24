@@ -1,0 +1,16 @@
+prop_type,gold_term,pred_term,top_methods_used,scores_by_method,is_hard_match,agg_score,selected,reason
+ObjectProperty,eats,eats,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0,True,selected
+ObjectProperty,eats,eats animal,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8800; levenshtein=0.4000; semantic=0.7068; sequence_match=0.5714,False,0.7194,False,gold already mapped to 'eats'
+ObjectProperty,eaten-by,eats,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8083; levenshtein=0.4286; semantic=0.7523; sequence_match=0.5455,False,0.702,False,pred already taken by 'eats'
+ObjectProperty,eats,eats plant part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8615; levenshtein=0.3077; semantic=0.6558; sequence_match=0.4706,False,0.6627,False,top-3 avg score 0.6627 < final_threshold 0.7
+ObjectProperty,eaten-by,eats animal,semantic+jaro_winkler+sequence_match,jaro_winkler=0.6571; levenshtein=0.4000; semantic=0.7378; sequence_match=0.4706,False,0.6218,False,top-3 avg score 0.6218 < final_threshold 0.7
+ObjectProperty,has-part,eats plant part,semantic+sequence_match+jaro_winkler,jaro_winkler=0.5663; levenshtein=0.4615; semantic=0.6220; sequence_match=0.6000,False,0.5961,False,top-3 avg score 0.5961 < final_threshold 0.7
+ObjectProperty,eaten-by,eats plant part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6264; levenshtein=0.3077; semantic=0.6104; sequence_match=0.4000,False,0.5456,False,top-3 avg score 0.5456 < final_threshold 0.7
+ObjectProperty,has-part,eats,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5952; levenshtein=0.1429; semantic=0.5350; sequence_match=0.3636,False,0.498,False,top-3 avg score 0.4980 < final_threshold 0.7
+ObjectProperty,is-proper-part-of,eats plant part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5366; levenshtein=0.2857; semantic=0.4893; sequence_match=0.4444,False,0.4901,False,top-3 avg score 0.4901 < final_threshold 0.7
+ObjectProperty,is-part-of,eats plant part,semantic+sequence_match+jaro_winkler,jaro_winkler=0.4359; levenshtein=0.3077; semantic=0.4834; sequence_match=0.4762,False,0.4652,False,top-3 avg score 0.4652 < final_threshold 0.7
+ObjectProperty,has-part,eats animal,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5738; levenshtein=0.2000; semantic=0.4167; sequence_match=0.3529,False,0.4478,False,top-3 avg score 0.4478 < final_threshold 0.7
+ObjectProperty,is-part-of,eats,jaro_winkler+semantic+levenshtein,jaro_winkler=0.5972; levenshtein=0.2500; semantic=0.4601; sequence_match=0.1667,False,0.4358,False,top-3 avg score 0.4358 < final_threshold 0.7
+ObjectProperty,is-proper-part-of,eats,semantic+jaro_winkler+levenshtein,jaro_winkler=0.3810; levenshtein=0.2143; semantic=0.4418; sequence_match=0.1111,False,0.3457,False,top-3 avg score 0.3457 < final_threshold 0.7
+ObjectProperty,is-part-of,eats animal,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4472; levenshtein=0.1000; semantic=0.3462; sequence_match=0.2222,False,0.3386,False,top-3 avg score 0.3386 < final_threshold 0.7
+ObjectProperty,is-proper-part-of,eats animal,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4786; levenshtein=0.0714; semantic=0.3515; sequence_match=0.1667,False,0.3323,False,top-3 avg score 0.3323 < final_threshold 0.7

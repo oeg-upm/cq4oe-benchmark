@@ -1,0 +1,3 @@
+PropertyType,GoldPredicate,PredPredicate,GoldPredicateNorm,PredPredicateNorm,GoldType,PredType,TypeVerdict,GoldDomain,PredDomain,GoldDomainNorm,PredDomainNorm,DomainStatus,GoldRange,PredRange,GoldRangeNorm,PredRangeNorm,RangeStatus,FullMatch,Note
+ObjectProperty,hasVintageYear,has vintage,hasvintageyear,hasvintage,ObjectProperty,ObjectProperty,tp,Vintage,Wine,vintage,wine,mismatch,VintageYear,Vintage,vintageyear,vintage,mismatch,NO,
+ObjectProperty,hasWineDescriptor,has wine characteristic,haswinedescriptor,haswinecharacteristic,ObjectProperty,ObjectProperty,tp,wine,Wine,wine,wine,tp,WineDescriptor,Wine Characteristic,winedescriptor,winecharacteristic,mismatch,NO,

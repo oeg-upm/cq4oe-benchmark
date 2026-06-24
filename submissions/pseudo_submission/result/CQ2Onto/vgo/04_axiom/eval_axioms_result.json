@@ -1,0 +1,4074 @@
+{
+  "config": {
+    "gold_file": "00_gold_standard/vgo/axioms/vgo_axiom_gold.json",
+    "pred_file": "02_atomic_axioms/challenge/pseudo_submission/vgo/vgo_ontology_atomic_tbox.json",
+    "class_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/01_class/class_best_matching.csv",
+    "property_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/02_property/property_best_matching.csv",
+    "layer2_threshold": 0.6,
+    "layer2_model": "embeddinggemma",
+    "layer2_skipped": true,
+    "cli_args": {
+      "gold": "00_gold_standard/vgo/axioms/vgo_axiom_gold.json",
+      "pred": "02_atomic_axioms/challenge/pseudo_submission/vgo/vgo_ontology_atomic_tbox.json",
+      "class_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/01_class/class_best_matching.csv",
+      "property_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/02_property/property_best_matching.csv",
+      "cq_csv": null,
+      "output": null,
+      "details_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/04_axiom/axiom_details.csv",
+      "pairs_csv": null,
+      "max_rows": null,
+      "threshold": 0.6,
+      "model": "embeddinggemma",
+      "ollama_url": "http://localhost:11434",
+      "cache_path": ".embed_cache.json",
+      "no_cache": false,
+      "no_layer2": true,
+      "gold_owl": null,
+      "pred_owl": null,
+      "save_report_md": "04_summary/challenge/pseudo_submission/vgo_report.md",
+      "save_cq_csv": "03_evaluation_results/challenge/pseudo_submission/vgo/04_axiom/strict_cq_coverage.csv",
+      "save_result_json": "03_evaluation_results/challenge/pseudo_submission/vgo/04_axiom/eval_axioms_result.json",
+      "literal_relax": "no"
+    }
+  },
+  "results": {
+    "layer1_stats_gold": {
+      "total": 77,
+      "by_term_type": {
+        "Class": 13,
+        "ObjectProperty": 55,
+        "DatatypeProperty": 9
+      },
+      "by_term_axiom": {
+        "Class": {
+          "SubClassOf": 13
+        },
+        "ObjectProperty": {
+          "Domain": 22,
+          "InverseOf": 10,
+          "Range": 22,
+          "Characteristics": 1
+        },
+        "DatatypeProperty": {
+          "Domain": 4,
+          "Range": 5
+        }
+      }
+    },
+    "layer1_stats_pred": {
+      "total": 139,
+      "by_term_type": {
+        "Class": 15,
+        "ObjectProperty": 92,
+        "DatatypeProperty": 32
+      },
+      "by_term_axiom": {
+        "Class": {
+          "Declaration": 14,
+          "EquivalentClasses": 1
+        },
+        "ObjectProperty": {
+          "Characteristics": 15,
+          "Declaration": 25,
+          "Domain": 25,
+          "Range": 25,
+          "InverseOf": 2
+        },
+        "DatatypeProperty": {
+          "Declaration": 9,
+          "Domain": 9,
+          "Range": 9,
+          "Characteristics": 5
+        }
+      }
+    },
+    "layer3": {
+      "evaluation": [
+        {
+          "side": "gold",
+          "axiom_id": "AX1",
+          "term": "Collection",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Collection ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Collection' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX2",
+          "term": "Completion",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Completion ⊑ Achievement",
+          "status": "fn",
+          "reason": "pred has no SubClassOf axiom on 'Game Completion'",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX3",
+          "term": "Curiosity",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Curiosity ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Curiosity' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX4",
+          "term": "Fandom",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Fandom ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Fandom' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX5",
+          "term": "GameProduct",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "GameProduct ⊑ (Achievement ⊔ Character ⊔ Game ⊔ Item ⊔ PlayingArea)",
+          "status": "skip",
+          "reason": "subject 'GameProduct' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX6",
+          "term": "HardMode",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "HardMode ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'HardMode' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX7",
+          "term": "Loyalty",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Loyalty ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Loyalty' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX8",
+          "term": "Luck",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Luck ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Luck' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX9",
+          "term": "Paragon",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Paragon ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Paragon' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX10",
+          "term": "SpecialPlayStyle",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "SpecialPlayStyle ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'SpecialPlayStyle' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX11",
+          "term": "Tutorial",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Tutorial ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Tutorial' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX12",
+          "term": "Veteran",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Veteran ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Veteran' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX13",
+          "term": "Virtuosity",
+          "term_type": "Class",
+          "axiom_type": "SubClassOf",
+          "dl": "Virtuosity ⊑ Achievement",
+          "status": "skip",
+          "reason": "subject 'Virtuosity' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX14",
+          "term": "hasAchievement",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃hasAchievement.⊤ ⊑ Game",
+          "status": "mismatch",
+          "reason": "pred AX51 differs: class 'Game' not aligned to 'Player'",
+          "pred_match": {
+            "id": "AX51",
+            "dl": "∃has achievement.⊤ ⊑ Player",
+            "axiom_type": "Domain",
+            "term": "has achievement"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX15",
+          "term": "hasAchievement",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "hasAchievement ≡ isAchievementInGame⁻",
+          "status": "fn",
+          "reason": "pred has no InverseOf axiom on 'has achievement'",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX16",
+          "term": "hasAchievement",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀hasAchievement.Achievement",
+          "status": "tp",
+          "reason": "matched pred AX52",
+          "pred_match": {
+            "id": "AX52",
+            "dl": "⊤ ⊑ ∀has achievement.Achievement",
+            "axiom_type": "Range",
+            "term": "has achievement"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX17",
+          "term": "hasCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃hasCharacter.⊤ ⊑ Game",
+          "status": "skip",
+          "reason": "subject 'hasCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX18",
+          "term": "hasCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "hasCharacter ≡ isCharacterInGame⁻",
+          "status": "skip",
+          "reason": "subject 'hasCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX19",
+          "term": "hasCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀hasCharacter.Character",
+          "status": "skip",
+          "reason": "subject 'hasCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX20",
+          "term": "hasFeature",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃hasFeature.⊤ ⊑ Item",
+          "status": "skip",
+          "reason": "subject 'hasFeature' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX21",
+          "term": "hasFeature",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀hasFeature.Feature",
+          "status": "skip",
+          "reason": "subject 'hasFeature' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX22",
+          "term": "hasGameGenre",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃hasGameGenre.⊤ ⊑ Game",
+          "status": "mismatch",
+          "reason": "pred AX61 differs: class 'Game' not aligned to 'Game Session'",
+          "pred_match": {
+            "id": "AX61",
+            "dl": "∃has game.⊤ ⊑ Game Session",
+            "axiom_type": "Domain",
+            "term": "has game"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX23",
+          "term": "hasGameGenre",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀hasGameGenre.Genre",
+          "status": "mismatch",
+          "reason": "pred AX62 differs: class 'Genre' not aligned to 'Game'",
+          "pred_match": {
+            "id": "AX62",
+            "dl": "⊤ ⊑ ∀has game.Game",
+            "axiom_type": "Range",
+            "term": "has game"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX24",
+          "term": "hasItem",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃hasItem.⊤ ⊑ Game",
+          "status": "tp",
+          "reason": "matched pred AX68",
+          "pred_match": {
+            "id": "AX68",
+            "dl": "∃has item.⊤ ⊑ Game",
+            "axiom_type": "Domain",
+            "term": "has item"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX25",
+          "term": "hasItem",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀hasItem.Item",
+          "status": "tp",
+          "reason": "matched pred AX69",
+          "pred_match": {
+            "id": "AX69",
+            "dl": "⊤ ⊑ ∀has item.Item",
+            "axiom_type": "Range",
+            "term": "has item"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX26",
+          "term": "hasLeaderboard",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃hasLeaderboard.⊤ ⊑ Game",
+          "status": "skip",
+          "reason": "subject 'hasLeaderboard' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX27",
+          "term": "hasLeaderboard",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "hasLeaderboard ≡ isLeaderboardInGame⁻",
+          "status": "skip",
+          "reason": "subject 'hasLeaderboard' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX28",
+          "term": "hasLeaderboard",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀hasLeaderboard.Leaderboard",
+          "status": "skip",
+          "reason": "subject 'hasLeaderboard' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX29",
+          "term": "hasPlayingArea",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃hasPlayingArea.⊤ ⊑ Game",
+          "status": "tp",
+          "reason": "matched pred AX74",
+          "pred_match": {
+            "id": "AX74",
+            "dl": "∃has playing area.⊤ ⊑ Game",
+            "axiom_type": "Domain",
+            "term": "has playing area"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX30",
+          "term": "hasPlayingArea",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀hasPlayingArea.PlayingArea",
+          "status": "tp",
+          "reason": "matched pred AX75",
+          "pred_match": {
+            "id": "AX75",
+            "dl": "⊤ ⊑ ∀has playing area.Playing Area",
+            "axiom_type": "Range",
+            "term": "has playing area"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX31",
+          "term": "involvesCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃involvesCharacter.⊤ ⊑ Session",
+          "status": "skip",
+          "reason": "subject 'involvesCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX32",
+          "term": "involvesCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "involvesCharacter ≡ isCharacterInSession⁻",
+          "status": "skip",
+          "reason": "subject 'involvesCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX33",
+          "term": "involvesCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀involvesCharacter.Character",
+          "status": "skip",
+          "reason": "subject 'involvesCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX34",
+          "term": "involvesPlayer",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃involvesPlayer.⊤ ⊑ Session",
+          "status": "skip",
+          "reason": "subject 'involvesPlayer' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX35",
+          "term": "involvesPlayer",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "involvesPlayer ≡ isPlayerInSession⁻",
+          "status": "skip",
+          "reason": "subject 'involvesPlayer' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX36",
+          "term": "involvesPlayer",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀involvesPlayer.Player",
+          "status": "skip",
+          "reason": "subject 'involvesPlayer' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX37",
+          "term": "isAchievementInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃isAchievementInGame.⊤ ⊑ Achievement",
+          "status": "mismatch",
+          "reason": "pred AX45 differs: class 'Achievement' not aligned to 'Game'",
+          "pred_match": {
+            "id": "AX45",
+            "dl": "∃game has achievement.⊤ ⊑ Game",
+            "axiom_type": "Domain",
+            "term": "game has achievement"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX38",
+          "term": "isAchievementInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "isAchievementInGame ≡ hasAchievement⁻",
+          "status": "fn",
+          "reason": "pred has no InverseOf axiom on 'game has achievement'",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX39",
+          "term": "isAchievementInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isAchievementInGame.Game",
+          "status": "mismatch",
+          "reason": "pred AX46 differs: class 'Game' not aligned to 'Achievement'",
+          "pred_match": {
+            "id": "AX46",
+            "dl": "⊤ ⊑ ∀game has achievement.Achievement",
+            "axiom_type": "Range",
+            "term": "game has achievement"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX40",
+          "term": "isCharacterInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃isCharacterInGame.⊤ ⊑ Character",
+          "status": "skip",
+          "reason": "subject 'isCharacterInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX41",
+          "term": "isCharacterInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "isCharacterInGame ≡ hasCharacter⁻",
+          "status": "skip",
+          "reason": "subject 'isCharacterInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX42",
+          "term": "isCharacterInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isCharacterInGame.Game",
+          "status": "skip",
+          "reason": "subject 'isCharacterInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX43",
+          "term": "isCharacterInSession",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃isCharacterInSession.⊤ ⊑ Character",
+          "status": "skip",
+          "reason": "subject 'isCharacterInSession' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX44",
+          "term": "isCharacterInSession",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "isCharacterInSession ≡ involvesCharacter⁻",
+          "status": "skip",
+          "reason": "subject 'isCharacterInSession' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX45",
+          "term": "isCharacterInSession",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isCharacterInSession.Session",
+          "status": "skip",
+          "reason": "subject 'isCharacterInSession' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX46",
+          "term": "isEventAssociatedToPlayer",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isEventAssociatedToPlayer.Player",
+          "status": "skip",
+          "reason": "subject 'isEventAssociatedToPlayer' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX47",
+          "term": "isFriendWithPlayer",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Characteristics",
+          "dl": "Symmetric(isFriendWithPlayer)",
+          "status": "skip",
+          "reason": "subject 'isFriendWithPlayer' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX48",
+          "term": "isFriendWithPlayer",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃isFriendWithPlayer.⊤ ⊑ Player",
+          "status": "skip",
+          "reason": "subject 'isFriendWithPlayer' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX49",
+          "term": "isFriendWithPlayer",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player",
+          "status": "skip",
+          "reason": "subject 'isFriendWithPlayer' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX50",
+          "term": "isLeaderboardInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃isLeaderboardInGame.⊤ ⊑ Leaderboard",
+          "status": "skip",
+          "reason": "subject 'isLeaderboardInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX51",
+          "term": "isLeaderboardInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "isLeaderboardInGame ≡ hasLeaderboard⁻",
+          "status": "skip",
+          "reason": "subject 'isLeaderboardInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX52",
+          "term": "isLeaderboardInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isLeaderboardInGame.Game",
+          "status": "skip",
+          "reason": "subject 'isLeaderboardInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX53",
+          "term": "isPlayerInSession",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃isPlayerInSession.⊤ ⊑ Player",
+          "status": "skip",
+          "reason": "subject 'isPlayerInSession' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX54",
+          "term": "isPlayerInSession",
+          "term_type": "ObjectProperty",
+          "axiom_type": "InverseOf",
+          "dl": "isPlayerInSession ≡ involvesPlayer⁻",
+          "status": "skip",
+          "reason": "subject 'isPlayerInSession' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX55",
+          "term": "isPlayerInSession",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isPlayerInSession.Session",
+          "status": "skip",
+          "reason": "subject 'isPlayerInSession' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX56",
+          "term": "isSessionInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃isSessionInGame.⊤ ⊑ Session",
+          "status": "skip",
+          "reason": "subject 'isSessionInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX57",
+          "term": "isSessionInGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀isSessionInGame.Game",
+          "status": "skip",
+          "reason": "subject 'isSessionInGame' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX58",
+          "term": "livesIn",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃livesIn.⊤ ⊑ Player",
+          "status": "skip",
+          "reason": "subject 'livesIn' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX59",
+          "term": "ownsAchievement",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃ownsAchievement.⊤ ⊑ Player",
+          "status": "mismatch",
+          "reason": "pred AX54 differs: class 'Player' not aligned to 'Achievement'",
+          "pred_match": {
+            "id": "AX54",
+            "dl": "∃has achievement type.⊤ ⊑ Achievement",
+            "axiom_type": "Domain",
+            "term": "has achievement type"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX60",
+          "term": "ownsAchievement",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀ownsAchievement.Achievement",
+          "status": "mismatch",
+          "reason": "pred AX55 differs: class 'Achievement' not aligned to 'Achievement Type'",
+          "pred_match": {
+            "id": "AX55",
+            "dl": "⊤ ⊑ ∀has achievement type.Achievement Type",
+            "axiom_type": "Range",
+            "term": "has achievement type"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX61",
+          "term": "ownsCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃ownsCharacter.⊤ ⊑ Player",
+          "status": "skip",
+          "reason": "subject 'ownsCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX62",
+          "term": "ownsCharacter",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀ownsCharacter.Character",
+          "status": "skip",
+          "reason": "subject 'ownsCharacter' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX63",
+          "term": "ownsItem",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃ownsItem.⊤ ⊑ Character",
+          "status": "mismatch",
+          "reason": "pred AX81 differs: class 'Character' not aligned to 'Player'",
+          "pred_match": {
+            "id": "AX81",
+            "dl": "∃owns item.⊤ ⊑ Player",
+            "axiom_type": "Domain",
+            "term": "owns item"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX64",
+          "term": "ownsItem",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀ownsItem.Item",
+          "status": "tp",
+          "reason": "matched pred AX82",
+          "pred_match": {
+            "id": "AX82",
+            "dl": "⊤ ⊑ ∀owns item.Item",
+            "axiom_type": "Range",
+            "term": "owns item"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX65",
+          "term": "playsGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃playsGame.⊤ ⊑ Player",
+          "status": "tp",
+          "reason": "matched pred AX78",
+          "pred_match": {
+            "id": "AX78",
+            "dl": "∃last played game.⊤ ⊑ Player",
+            "axiom_type": "Domain",
+            "term": "last played game"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX66",
+          "term": "playsGame",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀playsGame.Game",
+          "status": "tp",
+          "reason": "matched pred AX79",
+          "pred_match": {
+            "id": "AX79",
+            "dl": "⊤ ⊑ ∀last played game.Game",
+            "axiom_type": "Range",
+            "term": "last played game"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX67",
+          "term": "purchasesGameOffering",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Domain",
+          "dl": "∃purchasesGameOffering.⊤ ⊑ InAppPurchaseEvent",
+          "status": "tp",
+          "reason": "matched pred AX85",
+          "pred_match": {
+            "id": "AX85",
+            "dl": "∃purchase game.⊤ ⊑ In-App Purchase",
+            "axiom_type": "Domain",
+            "term": "purchase game"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX68",
+          "term": "purchasesGameOffering",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Range",
+          "dl": "⊤ ⊑ ∀purchasesGameOffering.GameProduct",
+          "status": "mismatch",
+          "reason": "pred AX86 differs: class 'GameProduct' not aligned to 'Game'",
+          "pred_match": {
+            "id": "AX86",
+            "dl": "⊤ ⊑ ∀purchase game.Game",
+            "axiom_type": "Range",
+            "term": "purchase game"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX69",
+          "term": "endTime",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Domain",
+          "dl": "∃endTime.⊤ ⊑ Session",
+          "status": "skip",
+          "reason": "subject 'endTime' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX70",
+          "term": "endTime",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Range",
+          "dl": "endTime maps-to datetime'>",
+          "status": "skip",
+          "reason": "subject 'endTime' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX71",
+          "term": "eventTime",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Range",
+          "dl": "eventTime maps-to datetime'>",
+          "status": "skip",
+          "reason": "subject 'eventTime' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX72",
+          "term": "releaseDate",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Domain",
+          "dl": "∃releaseDate.⊤ ⊑ Game",
+          "status": "tp",
+          "reason": "matched pred AX115",
+          "pred_match": {
+            "id": "AX115",
+            "dl": "∃has release date.⊤ ⊑ Game",
+            "axiom_type": "Domain",
+            "term": "has release date"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX73",
+          "term": "releaseDate",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Range",
+          "dl": "releaseDate maps-to datetime'>",
+          "status": "mismatch",
+          "reason": "pred AX116 differs: datatype \"datetime'>\" != \"date'>\"",
+          "pred_match": {
+            "id": "AX116",
+            "dl": "has release date maps-to date'>",
+            "axiom_type": "Range",
+            "term": "has release date"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX74",
+          "term": "startTime",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Domain",
+          "dl": "∃startTime.⊤ ⊑ Session",
+          "status": "skip",
+          "reason": "subject 'startTime' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX75",
+          "term": "startTime",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Range",
+          "dl": "startTime maps-to datetime'>",
+          "status": "skip",
+          "reason": "subject 'startTime' not in alignment table",
+          "pred_match": null
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX76",
+          "term": "username",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Domain",
+          "dl": "∃username.⊤ ⊑ Player",
+          "status": "tp",
+          "reason": "matched pred AX119",
+          "pred_match": {
+            "id": "AX119",
+            "dl": "∃has username.⊤ ⊑ Player",
+            "axiom_type": "Domain",
+            "term": "has username"
+          }
+        },
+        {
+          "side": "gold",
+          "axiom_id": "AX77",
+          "term": "username",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Range",
+          "dl": "username maps-to xsd:string",
+          "status": "tp",
+          "reason": "matched pred AX120",
+          "pred_match": {
+            "id": "AX120",
+            "dl": "has username maps-to xsd:string",
+            "axiom_type": "Range",
+            "term": "has username"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX2",
+          "term": "Achievement",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: Achievement (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'Achievement' not matched by any gold axiom on 'Achievement'",
+          "pred_match": {
+            "id": "AX2",
+            "dl": "Declaration: Achievement (Class)",
+            "axiom_type": "Declaration",
+            "term": "Achievement"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX4",
+          "term": "Game",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: Game (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'Game' not matched by any gold axiom on 'Game'",
+          "pred_match": {
+            "id": "AX4",
+            "dl": "Declaration: Game (Class)",
+            "axiom_type": "Declaration",
+            "term": "Game"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX5",
+          "term": "Game Completion",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: Game Completion (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'Game Completion' not matched by any gold axiom on 'Completion'",
+          "pred_match": {
+            "id": "AX5",
+            "dl": "Declaration: Game Completion (Class)",
+            "axiom_type": "Declaration",
+            "term": "Game Completion"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX6",
+          "term": "Game Session",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: Game Session (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'Game Session' not matched by any gold axiom on 'Session'",
+          "pred_match": {
+            "id": "AX6",
+            "dl": "Declaration: Game Session (Class)",
+            "axiom_type": "Declaration",
+            "term": "Game Session"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX7",
+          "term": "In-App Purchase",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: In-App Purchase (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'In-App Purchase' not matched by any gold axiom on 'in-app purchase event'",
+          "pred_match": {
+            "id": "AX7",
+            "dl": "Declaration: In-App Purchase (Class)",
+            "axiom_type": "Declaration",
+            "term": "In-App Purchase"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX8",
+          "term": "Item",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: Item (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'Item' not matched by any gold axiom on 'Item'",
+          "pred_match": {
+            "id": "AX8",
+            "dl": "Declaration: Item (Class)",
+            "axiom_type": "Declaration",
+            "term": "Item"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX10",
+          "term": "Player",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: Player (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'Player' not matched by any gold axiom on 'Player'",
+          "pred_match": {
+            "id": "AX10",
+            "dl": "Declaration: Player (Class)",
+            "axiom_type": "Declaration",
+            "term": "Player"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX15",
+          "term": "Playing Area",
+          "term_type": "Class",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: Playing Area (Class)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'Playing Area' not matched by any gold axiom on 'playing area'",
+          "pred_match": {
+            "id": "AX15",
+            "dl": "Declaration: Playing Area (Class)",
+            "axiom_type": "Declaration",
+            "term": "Playing Area"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX44",
+          "term": "game has achievement",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: game has achievement (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'game has achievement' not matched by any gold axiom on 'is achievement in game'",
+          "pred_match": {
+            "id": "AX44",
+            "dl": "Declaration: game has achievement (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "game has achievement"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX50",
+          "term": "has achievement",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: has achievement (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'has achievement' not matched by any gold axiom on 'has achievement'",
+          "pred_match": {
+            "id": "AX50",
+            "dl": "Declaration: has achievement (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "has achievement"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX53",
+          "term": "has achievement type",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: has achievement type (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'has achievement type' not matched by any gold axiom on 'owns achievement'",
+          "pred_match": {
+            "id": "AX53",
+            "dl": "Declaration: has achievement type (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "has achievement type"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX59",
+          "term": "has game",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Characteristics",
+          "dl": "Functional(has game)",
+          "status": "fp",
+          "reason": "pred Characteristics axiom on 'has game' not matched by any gold axiom on 'has game genre'",
+          "pred_match": {
+            "id": "AX59",
+            "dl": "Functional(has game)",
+            "axiom_type": "Characteristics",
+            "term": "has game"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX60",
+          "term": "has game",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: has game (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'has game' not matched by any gold axiom on 'has game genre'",
+          "pred_match": {
+            "id": "AX60",
+            "dl": "Declaration: has game (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "has game"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX67",
+          "term": "has item",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: has item (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'has item' not matched by any gold axiom on 'has item'",
+          "pred_match": {
+            "id": "AX67",
+            "dl": "Declaration: has item (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "has item"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX73",
+          "term": "has playing area",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: has playing area (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'has playing area' not matched by any gold axiom on 'has playing area'",
+          "pred_match": {
+            "id": "AX73",
+            "dl": "Declaration: has playing area (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "has playing area"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX76",
+          "term": "last played game",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Characteristics",
+          "dl": "Functional(last played game)",
+          "status": "fp",
+          "reason": "pred Characteristics axiom on 'last played game' not matched by any gold axiom on 'plays game'",
+          "pred_match": {
+            "id": "AX76",
+            "dl": "Functional(last played game)",
+            "axiom_type": "Characteristics",
+            "term": "last played game"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX77",
+          "term": "last played game",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: last played game (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'last played game' not matched by any gold axiom on 'plays game'",
+          "pred_match": {
+            "id": "AX77",
+            "dl": "Declaration: last played game (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "last played game"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX80",
+          "term": "owns item",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: owns item (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'owns item' not matched by any gold axiom on 'owns item'",
+          "pred_match": {
+            "id": "AX80",
+            "dl": "Declaration: owns item (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "owns item"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX83",
+          "term": "purchase game",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Characteristics",
+          "dl": "Functional(purchase game)",
+          "status": "fp",
+          "reason": "pred Characteristics axiom on 'purchase game' not matched by any gold axiom on 'purchases game offering'",
+          "pred_match": {
+            "id": "AX83",
+            "dl": "Functional(purchase game)",
+            "axiom_type": "Characteristics",
+            "term": "purchase game"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX84",
+          "term": "purchase game",
+          "term_type": "ObjectProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: purchase game (ObjectProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'purchase game' not matched by any gold axiom on 'purchases game offering'",
+          "pred_match": {
+            "id": "AX84",
+            "dl": "Declaration: purchase game (ObjectProperty)",
+            "axiom_type": "Declaration",
+            "term": "purchase game"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX114",
+          "term": "has release date",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: has release date (DatatypeProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'has release date' not matched by any gold axiom on 'release date'",
+          "pred_match": {
+            "id": "AX114",
+            "dl": "Declaration: has release date (DatatypeProperty)",
+            "axiom_type": "Declaration",
+            "term": "has release date"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX117",
+          "term": "has username",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Characteristics",
+          "dl": "Functional(has username)",
+          "status": "fp",
+          "reason": "pred Characteristics axiom on 'has username' not matched by any gold axiom on 'username'",
+          "pred_match": {
+            "id": "AX117",
+            "dl": "Functional(has username)",
+            "axiom_type": "Characteristics",
+            "term": "has username"
+          }
+        },
+        {
+          "side": "pred",
+          "axiom_id": "AX118",
+          "term": "has username",
+          "term_type": "DatatypeProperty",
+          "axiom_type": "Declaration",
+          "dl": "Declaration: has username (DatatypeProperty)",
+          "status": "fp",
+          "reason": "pred Declaration axiom on 'has username' not matched by any gold axiom on 'username'",
+          "pred_match": {
+            "id": "AX118",
+            "dl": "Declaration: has username (DatatypeProperty)",
+            "axiom_type": "Declaration",
+            "term": "has username"
+          }
+        }
+      ],
+      "counts_overall": {
+        "tp": 12,
+        "fn": 3,
+        "fp": 23,
+        "mismatch": 10,
+        "skip": 52
+      },
+      "counts_by_term": {
+        "Class": {
+          "tp": 0,
+          "fn": 1,
+          "fp": 8,
+          "mismatch": 0,
+          "skip": 12
+        },
+        "ObjectProperty": {
+          "tp": 9,
+          "fn": 2,
+          "fp": 12,
+          "mismatch": 9,
+          "skip": 35
+        },
+        "DatatypeProperty": {
+          "tp": 3,
+          "fn": 0,
+          "fp": 3,
+          "mismatch": 1,
+          "skip": 5
+        }
+      },
+      "counts_by_combo": {
+        "Class|SubClassOf": {
+          "tp": 0,
+          "fn": 1,
+          "fp": 0,
+          "mismatch": 0,
+          "skip": 12
+        },
+        "ObjectProperty|Domain": {
+          "tp": 4,
+          "fn": 0,
+          "fp": 0,
+          "mismatch": 5,
+          "skip": 13
+        },
+        "ObjectProperty|InverseOf": {
+          "tp": 0,
+          "fn": 2,
+          "fp": 0,
+          "mismatch": 0,
+          "skip": 8
+        },
+        "ObjectProperty|Range": {
+          "tp": 5,
+          "fn": 0,
+          "fp": 0,
+          "mismatch": 4,
+          "skip": 13
+        },
+        "ObjectProperty|Characteristics": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 3,
+          "mismatch": 0,
+          "skip": 1
+        },
+        "DatatypeProperty|Domain": {
+          "tp": 2,
+          "fn": 0,
+          "fp": 0,
+          "mismatch": 0,
+          "skip": 2
+        },
+        "DatatypeProperty|Range": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0,
+          "mismatch": 1,
+          "skip": 3
+        },
+        "Class|Declaration": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 8,
+          "mismatch": 0,
+          "skip": 0
+        },
+        "ObjectProperty|Declaration": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 9,
+          "mismatch": 0,
+          "skip": 0
+        },
+        "DatatypeProperty|Declaration": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 2,
+          "mismatch": 0,
+          "skip": 0
+        },
+        "DatatypeProperty|Characteristics": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1,
+          "mismatch": 0,
+          "skip": 0
+        }
+      }
+    },
+    "layer4": {
+      "per_term": {
+        "Class": {
+          "tp": 0,
+          "fp": 15,
+          "fp_layer3": 8,
+          "fp_unaligned": 7,
+          "fn": 13,
+          "fn_layer3": 1,
+          "fn_unaligned": 12,
+          "mismatch": 0,
+          "skip": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "ObjectProperty": {
+          "tp": 9,
+          "fp": 83,
+          "fp_layer3": 21,
+          "fp_unaligned": 62,
+          "fn": 46,
+          "fn_layer3": 11,
+          "fn_unaligned": 35,
+          "mismatch": 9,
+          "skip": 35,
+          "precision": 0.09782608695652174,
+          "recall": 0.16363636363636364,
+          "f1": 0.12244897959183675
+        },
+        "DatatypeProperty": {
+          "tp": 3,
+          "fp": 29,
+          "fp_layer3": 4,
+          "fp_unaligned": 25,
+          "fn": 6,
+          "fn_layer3": 1,
+          "fn_unaligned": 5,
+          "mismatch": 1,
+          "skip": 5,
+          "precision": 0.09375,
+          "recall": 0.3333333333333333,
+          "f1": 0.14634146341463417
+        }
+      },
+      "grand": {
+        "tp": 12,
+        "fp": 127,
+        "fn": 65,
+        "precision": 0.08633093525179857,
+        "recall": 0.15584415584415584,
+        "f1": 0.1111111111111111
+      },
+      "unaligned_lists": {
+        "Class": {
+          "gold": [
+            {
+              "id": "AX1",
+              "term": "Collection",
+              "axiom_type": "SubClassOf",
+              "dl": "Collection ⊑ Achievement"
+            },
+            {
+              "id": "AX3",
+              "term": "Curiosity",
+              "axiom_type": "SubClassOf",
+              "dl": "Curiosity ⊑ Achievement"
+            },
+            {
+              "id": "AX4",
+              "term": "Fandom",
+              "axiom_type": "SubClassOf",
+              "dl": "Fandom ⊑ Achievement"
+            },
+            {
+              "id": "AX5",
+              "term": "GameProduct",
+              "axiom_type": "SubClassOf",
+              "dl": "GameProduct ⊑ (Achievement ⊔ Character ⊔ Game ⊔ Item ⊔ PlayingArea)"
+            },
+            {
+              "id": "AX6",
+              "term": "HardMode",
+              "axiom_type": "SubClassOf",
+              "dl": "HardMode ⊑ Achievement"
+            },
+            {
+              "id": "AX7",
+              "term": "Loyalty",
+              "axiom_type": "SubClassOf",
+              "dl": "Loyalty ⊑ Achievement"
+            },
+            {
+              "id": "AX8",
+              "term": "Luck",
+              "axiom_type": "SubClassOf",
+              "dl": "Luck ⊑ Achievement"
+            },
+            {
+              "id": "AX9",
+              "term": "Paragon",
+              "axiom_type": "SubClassOf",
+              "dl": "Paragon ⊑ Achievement"
+            },
+            {
+              "id": "AX10",
+              "term": "SpecialPlayStyle",
+              "axiom_type": "SubClassOf",
+              "dl": "SpecialPlayStyle ⊑ Achievement"
+            },
+            {
+              "id": "AX11",
+              "term": "Tutorial",
+              "axiom_type": "SubClassOf",
+              "dl": "Tutorial ⊑ Achievement"
+            },
+            {
+              "id": "AX12",
+              "term": "Veteran",
+              "axiom_type": "SubClassOf",
+              "dl": "Veteran ⊑ Achievement"
+            },
+            {
+              "id": "AX13",
+              "term": "Virtuosity",
+              "axiom_type": "SubClassOf",
+              "dl": "Virtuosity ⊑ Achievement"
+            }
+          ],
+          "pred": [
+            {
+              "id": "AX1",
+              "term": "Ability",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: Ability (Class)"
+            },
+            {
+              "id": "AX3",
+              "term": "Achievement Type",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: Achievement Type (Class)"
+            },
+            {
+              "id": "AX9",
+              "term": "Item Usage",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: Item Usage (Class)"
+            },
+            {
+              "id": "AX11",
+              "term": "Player Equipment",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: Player Equipment (Class)"
+            },
+            {
+              "id": "AX12",
+              "term": "Player Game Stat",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: Player Game Stat (Class)"
+            },
+            {
+              "id": "AX13",
+              "term": "Player Without Purchase",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: Player Without Purchase (Class)"
+            },
+            {
+              "id": "AX14",
+              "term": "Player Without Purchase",
+              "axiom_type": "EquivalentClasses",
+              "dl": "Player Without Purchase ≡ (Player ⊓ ¬∃has in-app purchase.In-App Purchase)"
+            }
+          ]
+        },
+        "ObjectProperty": {
+          "gold": [
+            {
+              "id": "AX17",
+              "term": "hasCharacter",
+              "axiom_type": "Domain",
+              "dl": "∃hasCharacter.⊤ ⊑ Game"
+            },
+            {
+              "id": "AX18",
+              "term": "hasCharacter",
+              "axiom_type": "InverseOf",
+              "dl": "hasCharacter ≡ isCharacterInGame⁻"
+            },
+            {
+              "id": "AX19",
+              "term": "hasCharacter",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀hasCharacter.Character"
+            },
+            {
+              "id": "AX20",
+              "term": "hasFeature",
+              "axiom_type": "Domain",
+              "dl": "∃hasFeature.⊤ ⊑ Item"
+            },
+            {
+              "id": "AX21",
+              "term": "hasFeature",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀hasFeature.Feature"
+            },
+            {
+              "id": "AX26",
+              "term": "hasLeaderboard",
+              "axiom_type": "Domain",
+              "dl": "∃hasLeaderboard.⊤ ⊑ Game"
+            },
+            {
+              "id": "AX27",
+              "term": "hasLeaderboard",
+              "axiom_type": "InverseOf",
+              "dl": "hasLeaderboard ≡ isLeaderboardInGame⁻"
+            },
+            {
+              "id": "AX28",
+              "term": "hasLeaderboard",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀hasLeaderboard.Leaderboard"
+            },
+            {
+              "id": "AX31",
+              "term": "involvesCharacter",
+              "axiom_type": "Domain",
+              "dl": "∃involvesCharacter.⊤ ⊑ Session"
+            },
+            {
+              "id": "AX32",
+              "term": "involvesCharacter",
+              "axiom_type": "InverseOf",
+              "dl": "involvesCharacter ≡ isCharacterInSession⁻"
+            },
+            {
+              "id": "AX33",
+              "term": "involvesCharacter",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀involvesCharacter.Character"
+            },
+            {
+              "id": "AX34",
+              "term": "involvesPlayer",
+              "axiom_type": "Domain",
+              "dl": "∃involvesPlayer.⊤ ⊑ Session"
+            },
+            {
+              "id": "AX35",
+              "term": "involvesPlayer",
+              "axiom_type": "InverseOf",
+              "dl": "involvesPlayer ≡ isPlayerInSession⁻"
+            },
+            {
+              "id": "AX36",
+              "term": "involvesPlayer",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀involvesPlayer.Player"
+            },
+            {
+              "id": "AX40",
+              "term": "isCharacterInGame",
+              "axiom_type": "Domain",
+              "dl": "∃isCharacterInGame.⊤ ⊑ Character"
+            },
+            {
+              "id": "AX41",
+              "term": "isCharacterInGame",
+              "axiom_type": "InverseOf",
+              "dl": "isCharacterInGame ≡ hasCharacter⁻"
+            },
+            {
+              "id": "AX42",
+              "term": "isCharacterInGame",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀isCharacterInGame.Game"
+            },
+            {
+              "id": "AX43",
+              "term": "isCharacterInSession",
+              "axiom_type": "Domain",
+              "dl": "∃isCharacterInSession.⊤ ⊑ Character"
+            },
+            {
+              "id": "AX44",
+              "term": "isCharacterInSession",
+              "axiom_type": "InverseOf",
+              "dl": "isCharacterInSession ≡ involvesCharacter⁻"
+            },
+            {
+              "id": "AX45",
+              "term": "isCharacterInSession",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀isCharacterInSession.Session"
+            },
+            {
+              "id": "AX46",
+              "term": "isEventAssociatedToPlayer",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀isEventAssociatedToPlayer.Player"
+            },
+            {
+              "id": "AX47",
+              "term": "isFriendWithPlayer",
+              "axiom_type": "Characteristics",
+              "dl": "Symmetric(isFriendWithPlayer)"
+            },
+            {
+              "id": "AX48",
+              "term": "isFriendWithPlayer",
+              "axiom_type": "Domain",
+              "dl": "∃isFriendWithPlayer.⊤ ⊑ Player"
+            },
+            {
+              "id": "AX49",
+              "term": "isFriendWithPlayer",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player"
+            },
+            {
+              "id": "AX50",
+              "term": "isLeaderboardInGame",
+              "axiom_type": "Domain",
+              "dl": "∃isLeaderboardInGame.⊤ ⊑ Leaderboard"
+            },
+            {
+              "id": "AX51",
+              "term": "isLeaderboardInGame",
+              "axiom_type": "InverseOf",
+              "dl": "isLeaderboardInGame ≡ hasLeaderboard⁻"
+            },
+            {
+              "id": "AX52",
+              "term": "isLeaderboardInGame",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀isLeaderboardInGame.Game"
+            },
+            {
+              "id": "AX53",
+              "term": "isPlayerInSession",
+              "axiom_type": "Domain",
+              "dl": "∃isPlayerInSession.⊤ ⊑ Player"
+            },
+            {
+              "id": "AX54",
+              "term": "isPlayerInSession",
+              "axiom_type": "InverseOf",
+              "dl": "isPlayerInSession ≡ involvesPlayer⁻"
+            },
+            {
+              "id": "AX55",
+              "term": "isPlayerInSession",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀isPlayerInSession.Session"
+            },
+            {
+              "id": "AX56",
+              "term": "isSessionInGame",
+              "axiom_type": "Domain",
+              "dl": "∃isSessionInGame.⊤ ⊑ Session"
+            },
+            {
+              "id": "AX57",
+              "term": "isSessionInGame",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀isSessionInGame.Game"
+            },
+            {
+              "id": "AX58",
+              "term": "livesIn",
+              "axiom_type": "Domain",
+              "dl": "∃livesIn.⊤ ⊑ Player"
+            },
+            {
+              "id": "AX61",
+              "term": "ownsCharacter",
+              "axiom_type": "Domain",
+              "dl": "∃ownsCharacter.⊤ ⊑ Player"
+            },
+            {
+              "id": "AX62",
+              "term": "ownsCharacter",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀ownsCharacter.Character"
+            }
+          ],
+          "pred": [
+            {
+              "id": "AX16",
+              "term": "completion for game",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(completion for game)"
+            },
+            {
+              "id": "AX17",
+              "term": "completion for game",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: completion for game (ObjectProperty)"
+            },
+            {
+              "id": "AX18",
+              "term": "completion for game",
+              "axiom_type": "Domain",
+              "dl": "∃completion for game.⊤ ⊑ Game Completion"
+            },
+            {
+              "id": "AX19",
+              "term": "completion for game",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀completion for game.Game"
+            },
+            {
+              "id": "AX20",
+              "term": "completion for player",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(completion for player)"
+            },
+            {
+              "id": "AX21",
+              "term": "completion for player",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: completion for player (ObjectProperty)"
+            },
+            {
+              "id": "AX22",
+              "term": "completion for player",
+              "axiom_type": "Domain",
+              "dl": "∃completion for player.⊤ ⊑ Game Completion"
+            },
+            {
+              "id": "AX23",
+              "term": "completion for player",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀completion for player.Player"
+            },
+            {
+              "id": "AX24",
+              "term": "equipment game",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(equipment game)"
+            },
+            {
+              "id": "AX25",
+              "term": "equipment game",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: equipment game (ObjectProperty)"
+            },
+            {
+              "id": "AX26",
+              "term": "equipment game",
+              "axiom_type": "Domain",
+              "dl": "∃equipment game.⊤ ⊑ Player Equipment"
+            },
+            {
+              "id": "AX27",
+              "term": "equipment game",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀equipment game.Game"
+            },
+            {
+              "id": "AX28",
+              "term": "equipment item",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(equipment item)"
+            },
+            {
+              "id": "AX29",
+              "term": "equipment item",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: equipment item (ObjectProperty)"
+            },
+            {
+              "id": "AX30",
+              "term": "equipment item",
+              "axiom_type": "Domain",
+              "dl": "∃equipment item.⊤ ⊑ Player Equipment"
+            },
+            {
+              "id": "AX31",
+              "term": "equipment item",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀equipment item.Item"
+            },
+            {
+              "id": "AX32",
+              "term": "equipment player",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(equipment player)"
+            },
+            {
+              "id": "AX33",
+              "term": "equipment player",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: equipment player (ObjectProperty)"
+            },
+            {
+              "id": "AX34",
+              "term": "equipment player",
+              "axiom_type": "Domain",
+              "dl": "∃equipment player.⊤ ⊑ Player Equipment"
+            },
+            {
+              "id": "AX35",
+              "term": "equipment player",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀equipment player.Player"
+            },
+            {
+              "id": "AX36",
+              "term": "for game",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(for game)"
+            },
+            {
+              "id": "AX37",
+              "term": "for game",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: for game (ObjectProperty)"
+            },
+            {
+              "id": "AX38",
+              "term": "for game",
+              "axiom_type": "Domain",
+              "dl": "∃for game.⊤ ⊑ Player Game Stat"
+            },
+            {
+              "id": "AX39",
+              "term": "for game",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀for game.Game"
+            },
+            {
+              "id": "AX40",
+              "term": "for player",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(for player)"
+            },
+            {
+              "id": "AX41",
+              "term": "for player",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: for player (ObjectProperty)"
+            },
+            {
+              "id": "AX42",
+              "term": "for player",
+              "axiom_type": "Domain",
+              "dl": "∃for player.⊤ ⊑ Player Game Stat"
+            },
+            {
+              "id": "AX43",
+              "term": "for player",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀for player.Player"
+            },
+            {
+              "id": "AX47",
+              "term": "has ability",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: has ability (ObjectProperty)"
+            },
+            {
+              "id": "AX48",
+              "term": "has ability",
+              "axiom_type": "Domain",
+              "dl": "∃has ability.⊤ ⊑ Item"
+            },
+            {
+              "id": "AX49",
+              "term": "has ability",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀has ability.Ability"
+            },
+            {
+              "id": "AX56",
+              "term": "has friend",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: has friend (ObjectProperty)"
+            },
+            {
+              "id": "AX57",
+              "term": "has friend",
+              "axiom_type": "Domain",
+              "dl": "∃has friend.⊤ ⊑ Player"
+            },
+            {
+              "id": "AX58",
+              "term": "has friend",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀has friend.Player"
+            },
+            {
+              "id": "AX63",
+              "term": "has in-app purchase",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: has in-app purchase (ObjectProperty)"
+            },
+            {
+              "id": "AX64",
+              "term": "has in-app purchase",
+              "axiom_type": "Domain",
+              "dl": "∃has in-app purchase.⊤ ⊑ Player"
+            },
+            {
+              "id": "AX65",
+              "term": "has in-app purchase",
+              "axiom_type": "InverseOf",
+              "dl": "has in-app purchase ≡ purchase player⁻"
+            },
+            {
+              "id": "AX66",
+              "term": "has in-app purchase",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀has in-app purchase.In-App Purchase"
+            },
+            {
+              "id": "AX70",
+              "term": "has participant",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: has participant (ObjectProperty)"
+            },
+            {
+              "id": "AX71",
+              "term": "has participant",
+              "axiom_type": "Domain",
+              "dl": "∃has participant.⊤ ⊑ Game Session"
+            },
+            {
+              "id": "AX72",
+              "term": "has participant",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀has participant.Player"
+            },
+            {
+              "id": "AX87",
+              "term": "purchase item",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(purchase item)"
+            },
+            {
+              "id": "AX88",
+              "term": "purchase item",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: purchase item (ObjectProperty)"
+            },
+            {
+              "id": "AX89",
+              "term": "purchase item",
+              "axiom_type": "Domain",
+              "dl": "∃purchase item.⊤ ⊑ In-App Purchase"
+            },
+            {
+              "id": "AX90",
+              "term": "purchase item",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀purchase item.Item"
+            },
+            {
+              "id": "AX91",
+              "term": "purchase player",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(purchase player)"
+            },
+            {
+              "id": "AX92",
+              "term": "purchase player",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: purchase player (ObjectProperty)"
+            },
+            {
+              "id": "AX93",
+              "term": "purchase player",
+              "axiom_type": "Domain",
+              "dl": "∃purchase player.⊤ ⊑ In-App Purchase"
+            },
+            {
+              "id": "AX94",
+              "term": "purchase player",
+              "axiom_type": "InverseOf",
+              "dl": "purchase player ≡ has in-app purchase⁻"
+            },
+            {
+              "id": "AX95",
+              "term": "purchase player",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀purchase player.Player"
+            },
+            {
+              "id": "AX96",
+              "term": "usage game",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(usage game)"
+            },
+            {
+              "id": "AX97",
+              "term": "usage game",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: usage game (ObjectProperty)"
+            },
+            {
+              "id": "AX98",
+              "term": "usage game",
+              "axiom_type": "Domain",
+              "dl": "∃usage game.⊤ ⊑ Item Usage"
+            },
+            {
+              "id": "AX99",
+              "term": "usage game",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀usage game.Game"
+            },
+            {
+              "id": "AX100",
+              "term": "usage item",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(usage item)"
+            },
+            {
+              "id": "AX101",
+              "term": "usage item",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: usage item (ObjectProperty)"
+            },
+            {
+              "id": "AX102",
+              "term": "usage item",
+              "axiom_type": "Domain",
+              "dl": "∃usage item.⊤ ⊑ Item Usage"
+            },
+            {
+              "id": "AX103",
+              "term": "usage item",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀usage item.Item"
+            },
+            {
+              "id": "AX104",
+              "term": "usage player",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(usage player)"
+            },
+            {
+              "id": "AX105",
+              "term": "usage player",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: usage player (ObjectProperty)"
+            },
+            {
+              "id": "AX106",
+              "term": "usage player",
+              "axiom_type": "Domain",
+              "dl": "∃usage player.⊤ ⊑ Item Usage"
+            },
+            {
+              "id": "AX107",
+              "term": "usage player",
+              "axiom_type": "Range",
+              "dl": "⊤ ⊑ ∀usage player.Player"
+            }
+          ]
+        },
+        "DatatypeProperty": {
+          "gold": [
+            {
+              "id": "AX69",
+              "term": "endTime",
+              "axiom_type": "Domain",
+              "dl": "∃endTime.⊤ ⊑ Session"
+            },
+            {
+              "id": "AX70",
+              "term": "endTime",
+              "axiom_type": "Range",
+              "dl": "endTime maps-to datetime'>"
+            },
+            {
+              "id": "AX71",
+              "term": "eventTime",
+              "axiom_type": "Range",
+              "dl": "eventTime maps-to datetime'>"
+            },
+            {
+              "id": "AX74",
+              "term": "startTime",
+              "axiom_type": "Domain",
+              "dl": "∃startTime.⊤ ⊑ Session"
+            },
+            {
+              "id": "AX75",
+              "term": "startTime",
+              "axiom_type": "Range",
+              "dl": "startTime maps-to datetime'>"
+            }
+          ],
+          "pred": [
+            {
+              "id": "AX108",
+              "term": "has genre",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: has genre (DatatypeProperty)"
+            },
+            {
+              "id": "AX109",
+              "term": "has genre",
+              "axiom_type": "Domain",
+              "dl": "∃has genre.⊤ ⊑ Game"
+            },
+            {
+              "id": "AX110",
+              "term": "has genre",
+              "axiom_type": "Range",
+              "dl": "has genre maps-to xsd:string"
+            },
+            {
+              "id": "AX111",
+              "term": "has location",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: has location (DatatypeProperty)"
+            },
+            {
+              "id": "AX112",
+              "term": "has location",
+              "axiom_type": "Domain",
+              "dl": "∃has location.⊤ ⊑ Player"
+            },
+            {
+              "id": "AX113",
+              "term": "has location",
+              "axiom_type": "Range",
+              "dl": "has location maps-to xsd:string"
+            },
+            {
+              "id": "AX121",
+              "term": "hours played",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: hours played (DatatypeProperty)"
+            },
+            {
+              "id": "AX122",
+              "term": "hours played",
+              "axiom_type": "Domain",
+              "dl": "∃hours played.⊤ ⊑ Game Session"
+            },
+            {
+              "id": "AX123",
+              "term": "hours played",
+              "axiom_type": "Range",
+              "dl": "hours played maps-to xsd:float"
+            },
+            {
+              "id": "AX124",
+              "term": "kill count",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(kill count)"
+            },
+            {
+              "id": "AX125",
+              "term": "kill count",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: kill count (DatatypeProperty)"
+            },
+            {
+              "id": "AX126",
+              "term": "kill count",
+              "axiom_type": "Domain",
+              "dl": "∃kill count.⊤ ⊑ Player Game Stat"
+            },
+            {
+              "id": "AX127",
+              "term": "kill count",
+              "axiom_type": "Range",
+              "dl": "kill count maps-to xsd:integer"
+            },
+            {
+              "id": "AX128",
+              "term": "purchase amount",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(purchase amount)"
+            },
+            {
+              "id": "AX129",
+              "term": "purchase amount",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: purchase amount (DatatypeProperty)"
+            },
+            {
+              "id": "AX130",
+              "term": "purchase amount",
+              "axiom_type": "Domain",
+              "dl": "∃purchase amount.⊤ ⊑ In-App Purchase"
+            },
+            {
+              "id": "AX131",
+              "term": "purchase amount",
+              "axiom_type": "Range",
+              "dl": "purchase amount maps-to xsd:float"
+            },
+            {
+              "id": "AX132",
+              "term": "purchase date",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(purchase date)"
+            },
+            {
+              "id": "AX133",
+              "term": "purchase date",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: purchase date (DatatypeProperty)"
+            },
+            {
+              "id": "AX134",
+              "term": "purchase date",
+              "axiom_type": "Domain",
+              "dl": "∃purchase date.⊤ ⊑ In-App Purchase"
+            },
+            {
+              "id": "AX135",
+              "term": "purchase date",
+              "axiom_type": "Range",
+              "dl": "purchase date maps-to datetime'>"
+            },
+            {
+              "id": "AX136",
+              "term": "session start date time",
+              "axiom_type": "Characteristics",
+              "dl": "Functional(session start date time)"
+            },
+            {
+              "id": "AX137",
+              "term": "session start date time",
+              "axiom_type": "Declaration",
+              "dl": "Declaration: session start date time (DatatypeProperty)"
+            },
+            {
+              "id": "AX138",
+              "term": "session start date time",
+              "axiom_type": "Domain",
+              "dl": "∃session start date time.⊤ ⊑ Game Session"
+            },
+            {
+              "id": "AX139",
+              "term": "session start date time",
+              "axiom_type": "Range",
+              "dl": "session start date time maps-to datetime'>"
+            }
+          ]
+        }
+      }
+    },
+    "alignments": {
+      "class": {
+        "Achievement": "Achievement",
+        "Completion": "Game Completion",
+        "Game": "Game",
+        "Item": "Item",
+        "Player": "Player",
+        "Session": "Game Session",
+        "in-app purchase event": "In-App Purchase",
+        "playing area": "Playing Area"
+      },
+      "property": {
+        "release date": "has release date",
+        "username": "has username",
+        "has achievement": "has achievement",
+        "has game genre": "has game",
+        "has item": "has item",
+        "has playing area": "has playing area",
+        "is achievement in game": "game has achievement",
+        "owns achievement": "has achievement type",
+        "owns item": "owns item",
+        "plays game": "last played game",
+        "purchases game offering": "purchase game"
+      }
+    },
+    "cq_coverage": {
+      "per_cq": {
+        "CQ01": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 2,
+          "rate": 1.0,
+          "fully_covered": true,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX76",
+            "AX77"
+          ],
+          "tp_axiom_ids": [
+            "AX76",
+            "AX77"
+          ],
+          "missing_axiom_ids": [],
+          "missing_axioms": []
+        },
+        "CQ02": {
+          "question": "",
+          "n_axioms": 3,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX50",
+              "dl": "∃isLeaderboardInGame.⊤ ⊑ Leaderboard",
+              "status": "skip"
+            },
+            {
+              "id": "AX51",
+              "dl": "isLeaderboardInGame ≡ hasLeaderboard⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX52",
+              "dl": "⊤ ⊑ ∀isLeaderboardInGame.Game",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ03": {
+          "question": "",
+          "n_axioms": 5,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52",
+            "AX68",
+            "AX69"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52",
+            "AX68",
+            "AX69"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX50",
+              "dl": "∃isLeaderboardInGame.⊤ ⊑ Leaderboard",
+              "status": "skip"
+            },
+            {
+              "id": "AX51",
+              "dl": "isLeaderboardInGame ≡ hasLeaderboard⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX52",
+              "dl": "⊤ ⊑ ∀isLeaderboardInGame.Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX68",
+              "dl": "⊤ ⊑ ∀purchasesGameOffering.GameProduct",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX69",
+              "dl": "∃endTime.⊤ ⊑ Session",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ05": {
+          "question": "",
+          "n_axioms": 5,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52",
+            "AX62",
+            "AX63"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52",
+            "AX62",
+            "AX63"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX50",
+              "dl": "∃isLeaderboardInGame.⊤ ⊑ Leaderboard",
+              "status": "skip"
+            },
+            {
+              "id": "AX51",
+              "dl": "isLeaderboardInGame ≡ hasLeaderboard⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX52",
+              "dl": "⊤ ⊑ ∀isLeaderboardInGame.Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX62",
+              "dl": "⊤ ⊑ ∀ownsCharacter.Character",
+              "status": "skip"
+            },
+            {
+              "id": "AX63",
+              "dl": "∃ownsItem.⊤ ⊑ Character",
+              "status": "mismatch"
+            }
+          ]
+        },
+        "CQ07": {
+          "question": "",
+          "n_axioms": 5,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52",
+            "AX62",
+            "AX63"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX50",
+            "AX51",
+            "AX52",
+            "AX62",
+            "AX63"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX50",
+              "dl": "∃isLeaderboardInGame.⊤ ⊑ Leaderboard",
+              "status": "skip"
+            },
+            {
+              "id": "AX51",
+              "dl": "isLeaderboardInGame ≡ hasLeaderboard⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX52",
+              "dl": "⊤ ⊑ ∀isLeaderboardInGame.Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX62",
+              "dl": "⊤ ⊑ ∀ownsCharacter.Character",
+              "status": "skip"
+            },
+            {
+              "id": "AX63",
+              "dl": "∃ownsItem.⊤ ⊑ Character",
+              "status": "mismatch"
+            }
+          ]
+        },
+        "CQ08": {
+          "question": "",
+          "n_axioms": 3,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX17",
+            "AX18",
+            "AX19"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX17",
+            "AX18",
+            "AX19"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX17",
+              "dl": "∃hasCharacter.⊤ ⊑ Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX18",
+              "dl": "hasCharacter ≡ isCharacterInGame⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX19",
+              "dl": "⊤ ⊑ ∀hasCharacter.Character",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ09": {
+          "question": "",
+          "n_axioms": 6,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX14",
+            "AX15",
+            "AX59",
+            "AX60",
+            "AX74",
+            "AX75"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX14",
+            "AX15",
+            "AX59",
+            "AX60",
+            "AX74",
+            "AX75"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX14",
+              "dl": "∃hasAchievement.⊤ ⊑ Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX15",
+              "dl": "hasAchievement ≡ isAchievementInGame⁻",
+              "status": "fn"
+            },
+            {
+              "id": "AX59",
+              "dl": "∃ownsAchievement.⊤ ⊑ Player",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX60",
+              "dl": "⊤ ⊑ ∀ownsAchievement.Achievement",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX74",
+              "dl": "∃startTime.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX75",
+              "dl": "startTime maps-to datetime'>",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ10": {
+          "question": "",
+          "n_axioms": 15,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX1",
+            "AX2",
+            "AX3",
+            "AX4",
+            "AX6",
+            "AX7",
+            "AX8",
+            "AX9",
+            "AX10",
+            "AX11",
+            "AX12",
+            "AX13",
+            "AX17",
+            "AX18",
+            "AX19"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX1",
+            "AX2",
+            "AX3",
+            "AX4",
+            "AX6",
+            "AX7",
+            "AX8",
+            "AX9",
+            "AX10",
+            "AX11",
+            "AX12",
+            "AX13",
+            "AX17",
+            "AX18",
+            "AX19"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX1",
+              "dl": "Collection ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX2",
+              "dl": "Completion ⊑ Achievement",
+              "status": "fn"
+            },
+            {
+              "id": "AX3",
+              "dl": "Curiosity ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX4",
+              "dl": "Fandom ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX6",
+              "dl": "HardMode ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX7",
+              "dl": "Loyalty ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX8",
+              "dl": "Luck ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX9",
+              "dl": "Paragon ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX10",
+              "dl": "SpecialPlayStyle ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX11",
+              "dl": "Tutorial ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX12",
+              "dl": "Veteran ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX13",
+              "dl": "Virtuosity ⊑ Achievement",
+              "status": "skip"
+            },
+            {
+              "id": "AX17",
+              "dl": "∃hasCharacter.⊤ ⊑ Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX18",
+              "dl": "hasCharacter ≡ isCharacterInGame⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX19",
+              "dl": "⊤ ⊑ ∀hasCharacter.Character",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ11": {
+          "question": "",
+          "n_axioms": 3,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX17",
+            "AX18",
+            "AX19"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX17",
+            "AX18",
+            "AX19"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX17",
+              "dl": "∃hasCharacter.⊤ ⊑ Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX18",
+              "dl": "hasCharacter ≡ isCharacterInGame⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX19",
+              "dl": "⊤ ⊑ ∀hasCharacter.Character",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ12": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 1,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX25",
+            "AX26"
+          ],
+          "tp_axiom_ids": [
+            "AX25"
+          ],
+          "missing_axiom_ids": [
+            "AX26"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX26",
+              "dl": "∃hasLeaderboard.⊤ ⊑ Game",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ13": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX27",
+            "AX28"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX27",
+            "AX28"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX27",
+              "dl": "hasLeaderboard ≡ isLeaderboardInGame⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX28",
+              "dl": "⊤ ⊑ ∀hasLeaderboard.Leaderboard",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ15": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 1,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX72",
+            "AX73"
+          ],
+          "tp_axiom_ids": [
+            "AX72"
+          ],
+          "missing_axiom_ids": [
+            "AX73"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX73",
+              "dl": "releaseDate maps-to datetime'>",
+              "status": "mismatch"
+            }
+          ]
+        },
+        "CQ17": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 1,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX25",
+            "AX26"
+          ],
+          "tp_axiom_ids": [
+            "AX25"
+          ],
+          "missing_axiom_ids": [
+            "AX26"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX26",
+              "dl": "∃hasLeaderboard.⊤ ⊑ Game",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ19": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 1,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX23",
+            "AX24"
+          ],
+          "tp_axiom_ids": [
+            "AX24"
+          ],
+          "missing_axiom_ids": [
+            "AX23"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX23",
+              "dl": "⊤ ⊑ ∀hasGameGenre.Genre",
+              "status": "mismatch"
+            }
+          ]
+        },
+        "CQ22": {
+          "question": "",
+          "n_axioms": 6,
+          "n_tp": 2,
+          "rate": 0.3333333333333333,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX29",
+            "AX30",
+            "AX31",
+            "AX53",
+            "AX54",
+            "AX55"
+          ],
+          "tp_axiom_ids": [
+            "AX29",
+            "AX30"
+          ],
+          "missing_axiom_ids": [
+            "AX31",
+            "AX53",
+            "AX54",
+            "AX55"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX31",
+              "dl": "∃involvesCharacter.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX53",
+              "dl": "∃isPlayerInSession.⊤ ⊑ Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX54",
+              "dl": "isPlayerInSession ≡ involvesPlayer⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX55",
+              "dl": "⊤ ⊑ ∀isPlayerInSession.Session",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ24": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX62",
+            "AX63"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX62",
+            "AX63"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX62",
+              "dl": "⊤ ⊑ ∀ownsCharacter.Character",
+              "status": "skip"
+            },
+            {
+              "id": "AX63",
+              "dl": "∃ownsItem.⊤ ⊑ Character",
+              "status": "mismatch"
+            }
+          ]
+        },
+        "CQ25": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX68",
+            "AX69"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX68",
+            "AX69"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX68",
+              "dl": "⊤ ⊑ ∀purchasesGameOffering.GameProduct",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX69",
+              "dl": "∃endTime.⊤ ⊑ Session",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ26": {
+          "question": "",
+          "n_axioms": 19,
+          "n_tp": 4,
+          "rate": 0.21052631578947367,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX20",
+            "AX21",
+            "AX22",
+            "AX34",
+            "AX35",
+            "AX36",
+            "AX37",
+            "AX38",
+            "AX39",
+            "AX46",
+            "AX47",
+            "AX48",
+            "AX56",
+            "AX57",
+            "AX58",
+            "AX64",
+            "AX65",
+            "AX66",
+            "AX67"
+          ],
+          "tp_axiom_ids": [
+            "AX64",
+            "AX65",
+            "AX66",
+            "AX67"
+          ],
+          "missing_axiom_ids": [
+            "AX20",
+            "AX21",
+            "AX22",
+            "AX34",
+            "AX35",
+            "AX36",
+            "AX37",
+            "AX38",
+            "AX39",
+            "AX46",
+            "AX47",
+            "AX48",
+            "AX56",
+            "AX57",
+            "AX58"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX20",
+              "dl": "∃hasFeature.⊤ ⊑ Item",
+              "status": "skip"
+            },
+            {
+              "id": "AX21",
+              "dl": "⊤ ⊑ ∀hasFeature.Feature",
+              "status": "skip"
+            },
+            {
+              "id": "AX22",
+              "dl": "∃hasGameGenre.⊤ ⊑ Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX34",
+              "dl": "∃involvesPlayer.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX35",
+              "dl": "involvesPlayer ≡ isPlayerInSession⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX36",
+              "dl": "⊤ ⊑ ∀involvesPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX37",
+              "dl": "∃isAchievementInGame.⊤ ⊑ Achievement",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX38",
+              "dl": "isAchievementInGame ≡ hasAchievement⁻",
+              "status": "fn"
+            },
+            {
+              "id": "AX39",
+              "dl": "⊤ ⊑ ∀isAchievementInGame.Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX46",
+              "dl": "⊤ ⊑ ∀isEventAssociatedToPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX47",
+              "dl": "Symmetric(isFriendWithPlayer)",
+              "status": "skip"
+            },
+            {
+              "id": "AX48",
+              "dl": "∃isFriendWithPlayer.⊤ ⊑ Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX56",
+              "dl": "∃isSessionInGame.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX57",
+              "dl": "⊤ ⊑ ∀isSessionInGame.Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX58",
+              "dl": "∃livesIn.⊤ ⊑ Player",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ27": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX62",
+            "AX63"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX62",
+            "AX63"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX62",
+              "dl": "⊤ ⊑ ∀ownsCharacter.Character",
+              "status": "skip"
+            },
+            {
+              "id": "AX63",
+              "dl": "∃ownsItem.⊤ ⊑ Character",
+              "status": "mismatch"
+            }
+          ]
+        },
+        "CQ29": {
+          "question": "",
+          "n_axioms": 14,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX14",
+            "AX15",
+            "AX37",
+            "AX38",
+            "AX39",
+            "AX56",
+            "AX57",
+            "AX58",
+            "AX59",
+            "AX60",
+            "AX68",
+            "AX69",
+            "AX74",
+            "AX75"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX14",
+            "AX15",
+            "AX37",
+            "AX38",
+            "AX39",
+            "AX56",
+            "AX57",
+            "AX58",
+            "AX59",
+            "AX60",
+            "AX68",
+            "AX69",
+            "AX74",
+            "AX75"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX14",
+              "dl": "∃hasAchievement.⊤ ⊑ Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX15",
+              "dl": "hasAchievement ≡ isAchievementInGame⁻",
+              "status": "fn"
+            },
+            {
+              "id": "AX37",
+              "dl": "∃isAchievementInGame.⊤ ⊑ Achievement",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX38",
+              "dl": "isAchievementInGame ≡ hasAchievement⁻",
+              "status": "fn"
+            },
+            {
+              "id": "AX39",
+              "dl": "⊤ ⊑ ∀isAchievementInGame.Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX56",
+              "dl": "∃isSessionInGame.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX57",
+              "dl": "⊤ ⊑ ∀isSessionInGame.Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX58",
+              "dl": "∃livesIn.⊤ ⊑ Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX59",
+              "dl": "∃ownsAchievement.⊤ ⊑ Player",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX60",
+              "dl": "⊤ ⊑ ∀ownsAchievement.Achievement",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX68",
+              "dl": "⊤ ⊑ ∀purchasesGameOffering.GameProduct",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX69",
+              "dl": "∃endTime.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX74",
+              "dl": "∃startTime.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX75",
+              "dl": "startTime maps-to datetime'>",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ35": {
+          "question": "",
+          "n_axioms": 8,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX17",
+            "AX40",
+            "AX41",
+            "AX42",
+            "AX62",
+            "AX63",
+            "AX68",
+            "AX69"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX17",
+            "AX40",
+            "AX41",
+            "AX42",
+            "AX62",
+            "AX63",
+            "AX68",
+            "AX69"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX17",
+              "dl": "∃hasCharacter.⊤ ⊑ Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX40",
+              "dl": "∃isCharacterInGame.⊤ ⊑ Character",
+              "status": "skip"
+            },
+            {
+              "id": "AX41",
+              "dl": "isCharacterInGame ≡ hasCharacter⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX42",
+              "dl": "⊤ ⊑ ∀isCharacterInGame.Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX62",
+              "dl": "⊤ ⊑ ∀ownsCharacter.Character",
+              "status": "skip"
+            },
+            {
+              "id": "AX63",
+              "dl": "∃ownsItem.⊤ ⊑ Character",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX68",
+              "dl": "⊤ ⊑ ∀purchasesGameOffering.GameProduct",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX69",
+              "dl": "∃endTime.⊤ ⊑ Session",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ52": {
+          "question": "",
+          "n_axioms": 15,
+          "n_tp": 4,
+          "rate": 0.26666666666666666,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX20",
+            "AX21",
+            "AX22",
+            "AX27",
+            "AX28",
+            "AX34",
+            "AX35",
+            "AX36",
+            "AX46",
+            "AX47",
+            "AX48",
+            "AX64",
+            "AX65",
+            "AX66",
+            "AX67"
+          ],
+          "tp_axiom_ids": [
+            "AX64",
+            "AX65",
+            "AX66",
+            "AX67"
+          ],
+          "missing_axiom_ids": [
+            "AX20",
+            "AX21",
+            "AX22",
+            "AX27",
+            "AX28",
+            "AX34",
+            "AX35",
+            "AX36",
+            "AX46",
+            "AX47",
+            "AX48"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX20",
+              "dl": "∃hasFeature.⊤ ⊑ Item",
+              "status": "skip"
+            },
+            {
+              "id": "AX21",
+              "dl": "⊤ ⊑ ∀hasFeature.Feature",
+              "status": "skip"
+            },
+            {
+              "id": "AX22",
+              "dl": "∃hasGameGenre.⊤ ⊑ Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX27",
+              "dl": "hasLeaderboard ≡ isLeaderboardInGame⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX28",
+              "dl": "⊤ ⊑ ∀hasLeaderboard.Leaderboard",
+              "status": "skip"
+            },
+            {
+              "id": "AX34",
+              "dl": "∃involvesPlayer.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX35",
+              "dl": "involvesPlayer ≡ isPlayerInSession⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX36",
+              "dl": "⊤ ⊑ ∀involvesPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX46",
+              "dl": "⊤ ⊑ ∀isEventAssociatedToPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX47",
+              "dl": "Symmetric(isFriendWithPlayer)",
+              "status": "skip"
+            },
+            {
+              "id": "AX48",
+              "dl": "∃isFriendWithPlayer.⊤ ⊑ Player",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ55": {
+          "question": "",
+          "n_axioms": 14,
+          "n_tp": 4,
+          "rate": 0.2857142857142857,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX20",
+            "AX21",
+            "AX22",
+            "AX27",
+            "AX28",
+            "AX43",
+            "AX44",
+            "AX45",
+            "AX64",
+            "AX65",
+            "AX66",
+            "AX67",
+            "AX68",
+            "AX69"
+          ],
+          "tp_axiom_ids": [
+            "AX64",
+            "AX65",
+            "AX66",
+            "AX67"
+          ],
+          "missing_axiom_ids": [
+            "AX20",
+            "AX21",
+            "AX22",
+            "AX27",
+            "AX28",
+            "AX43",
+            "AX44",
+            "AX45",
+            "AX68",
+            "AX69"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX20",
+              "dl": "∃hasFeature.⊤ ⊑ Item",
+              "status": "skip"
+            },
+            {
+              "id": "AX21",
+              "dl": "⊤ ⊑ ∀hasFeature.Feature",
+              "status": "skip"
+            },
+            {
+              "id": "AX22",
+              "dl": "∃hasGameGenre.⊤ ⊑ Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX27",
+              "dl": "hasLeaderboard ≡ isLeaderboardInGame⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX28",
+              "dl": "⊤ ⊑ ∀hasLeaderboard.Leaderboard",
+              "status": "skip"
+            },
+            {
+              "id": "AX43",
+              "dl": "∃isCharacterInSession.⊤ ⊑ Character",
+              "status": "skip"
+            },
+            {
+              "id": "AX44",
+              "dl": "isCharacterInSession ≡ involvesCharacter⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX45",
+              "dl": "⊤ ⊑ ∀isCharacterInSession.Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX68",
+              "dl": "⊤ ⊑ ∀purchasesGameOffering.GameProduct",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX69",
+              "dl": "∃endTime.⊤ ⊑ Session",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ56": {
+          "question": "",
+          "n_axioms": 4,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX5",
+            "AX49",
+            "AX70",
+            "AX71"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX5",
+            "AX49",
+            "AX70",
+            "AX71"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX5",
+              "dl": "GameProduct ⊑ (Achievement ⊔ Character ⊔ Game ⊔ Item ⊔ PlayingArea)",
+              "status": "skip"
+            },
+            {
+              "id": "AX49",
+              "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX70",
+              "dl": "endTime maps-to datetime'>",
+              "status": "skip"
+            },
+            {
+              "id": "AX71",
+              "dl": "eventTime maps-to datetime'>",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ57": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 1,
+          "rate": 0.5,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX16",
+            "AX49"
+          ],
+          "tp_axiom_ids": [
+            "AX16"
+          ],
+          "missing_axiom_ids": [
+            "AX49"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX49",
+              "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ62": {
+          "question": "",
+          "n_axioms": 1,
+          "n_tp": 1,
+          "rate": 1.0,
+          "fully_covered": true,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX16"
+          ],
+          "tp_axiom_ids": [
+            "AX16"
+          ],
+          "missing_axiom_ids": [],
+          "missing_axioms": []
+        },
+        "CQ63": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX49",
+            "AX61"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX49",
+            "AX61"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX49",
+              "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX61",
+              "dl": "∃ownsCharacter.⊤ ⊑ Player",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ64": {
+          "question": "",
+          "n_axioms": 14,
+          "n_tp": 1,
+          "rate": 0.07142857142857142,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "axiom_ids": [
+            "AX14",
+            "AX15",
+            "AX16",
+            "AX37",
+            "AX38",
+            "AX39",
+            "AX49",
+            "AX56",
+            "AX57",
+            "AX58",
+            "AX59",
+            "AX60",
+            "AX74",
+            "AX75"
+          ],
+          "tp_axiom_ids": [
+            "AX16"
+          ],
+          "missing_axiom_ids": [
+            "AX14",
+            "AX15",
+            "AX37",
+            "AX38",
+            "AX39",
+            "AX49",
+            "AX56",
+            "AX57",
+            "AX58",
+            "AX59",
+            "AX60",
+            "AX74",
+            "AX75"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX14",
+              "dl": "∃hasAchievement.⊤ ⊑ Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX15",
+              "dl": "hasAchievement ≡ isAchievementInGame⁻",
+              "status": "fn"
+            },
+            {
+              "id": "AX37",
+              "dl": "∃isAchievementInGame.⊤ ⊑ Achievement",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX38",
+              "dl": "isAchievementInGame ≡ hasAchievement⁻",
+              "status": "fn"
+            },
+            {
+              "id": "AX39",
+              "dl": "⊤ ⊑ ∀isAchievementInGame.Game",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX49",
+              "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX56",
+              "dl": "∃isSessionInGame.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX57",
+              "dl": "⊤ ⊑ ∀isSessionInGame.Game",
+              "status": "skip"
+            },
+            {
+              "id": "AX58",
+              "dl": "∃livesIn.⊤ ⊑ Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX59",
+              "dl": "∃ownsAchievement.⊤ ⊑ Player",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX60",
+              "dl": "⊤ ⊑ ∀ownsAchievement.Achievement",
+              "status": "mismatch"
+            },
+            {
+              "id": "AX74",
+              "dl": "∃startTime.⊤ ⊑ Session",
+              "status": "skip"
+            },
+            {
+              "id": "AX75",
+              "dl": "startTime maps-to datetime'>",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ65": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX49",
+            "AX61"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX49",
+            "AX61"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX49",
+              "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX61",
+              "dl": "∃ownsCharacter.⊤ ⊑ Player",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQ66": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX49",
+            "AX61"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX49",
+            "AX61"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX49",
+              "dl": "⊤ ⊑ ∀isFriendWithPlayer.Player",
+              "status": "skip"
+            },
+            {
+              "id": "AX61",
+              "dl": "∃ownsCharacter.⊤ ⊑ Player",
+              "status": "skip"
+            }
+          ]
+        },
+        "CQNew1": {
+          "question": "",
+          "n_axioms": 2,
+          "n_tp": 0,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "axiom_ids": [
+            "AX32",
+            "AX33"
+          ],
+          "tp_axiom_ids": [],
+          "missing_axiom_ids": [
+            "AX32",
+            "AX33"
+          ],
+          "missing_axioms": [
+            {
+              "id": "AX32",
+              "dl": "involvesCharacter ≡ isCharacterInSession⁻",
+              "status": "skip"
+            },
+            {
+              "id": "AX33",
+              "dl": "⊤ ⊑ ∀involvesCharacter.Character",
+              "status": "skip"
+            }
+          ]
+        }
+      },
+      "n_total": 31,
+      "n_fully_covered": 2,
+      "n_any_covered": 12,
+      "fully_coverage": 0.06451612903225806,
+      "any_coverage": 0.3870967741935484,
+      "average_rate": 0.1828280378365268
+    }
+  }
+}

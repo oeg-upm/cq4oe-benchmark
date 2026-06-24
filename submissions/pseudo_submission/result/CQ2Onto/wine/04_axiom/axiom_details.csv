@@ -1,0 +1,151 @@
+id,source,term_type,axiom_type,term,dl,status,note
+AX1-gold,gold,Class,Declaration,Bordeaux,Declaration: Bordeaux (Class),TP,matched pred AX5
+AX1-pred,pred,Class,Declaration,Bordeaux Wine,Declaration: Bordeaux Wine (Class),-,-
+AX3-gold,gold,Class,Declaration,RedBordeaux,Declaration: RedBordeaux (Class),TP,matched pred AX3
+AX3-pred,pred,Class,Declaration,Bordeaux Grapes,Declaration: Bordeaux Grapes (Class),-,-
+AX4-gold,gold,Class,EquivalentClasses,RedBordeaux,RedBordeaux ≡ (Bordeaux ⊓ RedWine),Mismatch,pred AX4 differs: expr_type ObjectIntersectionOf vs ObjectUnionOf
+AX4-pred,pred,Class,EquivalentClasses,Bordeaux Grapes,Bordeaux Grapes ≡ (Cabernet Sauvignon ⊔ Merlot ⊔ Cabernet Franc),-,-
+AX6-gold,gold,Class,Declaration,RedWine,Declaration: RedWine (Class),Skip,subject 'RedWine' not in alignment table
+AX6-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX7-gold,gold,Class,EquivalentClasses,RedWine,RedWine ≡ (wine ⊓ ∃hasColor.{Red}),Skip,subject 'RedWine' not in alignment table
+AX7-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX8-gold,gold,Class,Declaration,Region,Declaration: Region (Class),TP,matched pred AX21
+AX8-pred,pred,Class,Declaration,Region,Declaration: Region (Class),-,-
+AX9-gold,gold,Class,Declaration,Vintage,Declaration: Vintage (Class),TP,matched pred AX23
+AX9-pred,pred,Class,Declaration,Vintage,Declaration: Vintage (Class),-,-
+AX10-gold,gold,Class,SubClassOf,Vintage,Vintage ⊑ =1 hasVintageYear.⊤,FN,pred has no SubClassOf axiom on 'Vintage'
+AX10-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX11-gold,gold,Class,Declaration,VintageYear,Declaration: VintageYear (Class),TP,matched pred AX24
+AX11-pred,pred,Class,Declaration,Vintage Quality,Declaration: Vintage Quality (Class),-,-
+AX12-gold,gold,Class,Declaration,WhiteBordeaux,Declaration: WhiteBordeaux (Class),Skip,subject 'WhiteBordeaux' not in alignment table
+AX12-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX13-gold,gold,Class,EquivalentClasses,WhiteBordeaux,WhiteBordeaux ≡ (Bordeaux ⊓ WhiteWine),Skip,subject 'WhiteBordeaux' not in alignment table
+AX13-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX15-gold,gold,Class,Declaration,WhiteWine,Declaration: WhiteWine (Class),TP,matched pred AX25
+AX15-pred,pred,Class,Declaration,White Wine Color,Declaration: White Wine Color (Class),-,-
+AX16-gold,gold,Class,EquivalentClasses,WhiteWine,WhiteWine ≡ (wine ⊓ ∃hasColor.{White}),FN,pred has no EquivalentClasses axiom on 'White Wine Color'
+AX16-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX17-gold,gold,Class,Declaration,WineBody,Declaration: WineBody (Class),TP,matched pred AX1
+AX17-pred,pred,Class,Declaration,Body,Declaration: Body (Class),-,-
+AX19-gold,gold,Class,SubClassOf,WineBody,WineBody ⊑ WineTaste,TP,matched pred AX2
+AX19-pred,pred,Class,SubClassOf,Body,Body ⊑ Wine Characteristic,-,-
+AX20-gold,gold,Class,Declaration,WineColor,Declaration: WineColor (Class),TP,matched pred AX19
+AX20-pred,pred,Class,Declaration,Red Wine Color,Declaration: Red Wine Color (Class),-,-
+AX22-gold,gold,Class,SubClassOf,WineColor,WineColor ⊑ WineDescriptor,Mismatch,pred AX20 differs: class 'WineDescriptor' not aligned to 'Wine Characteristic'
+AX22-pred,pred,Class,SubClassOf,Red Wine Color,Red Wine Color ⊑ Wine Characteristic,-,-
+AX23-gold,gold,Class,Declaration,WineDescriptor,Declaration: WineDescriptor (Class),Skip,subject 'WineDescriptor' not in alignment table
+AX23-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX24-gold,gold,Class,EquivalentClasses,WineDescriptor,WineDescriptor ≡ (WineColor ⊔ WineTaste),Skip,subject 'WineDescriptor' not in alignment table
+AX24-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX25-gold,gold,Class,Declaration,WineFlavor,Declaration: WineFlavor (Class),Skip,subject 'WineFlavor' not in alignment table
+AX25-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX27-gold,gold,Class,SubClassOf,WineFlavor,WineFlavor ⊑ WineTaste,Skip,subject 'WineFlavor' not in alignment table
+AX27-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX28-gold,gold,Class,Declaration,WineGrape,Declaration: WineGrape (Class),TP,matched pred AX15
+AX28-pred,pred,Class,Declaration,Grape Variety,Declaration: Grape Variety (Class),-,-
+AX29-gold,gold,Class,Declaration,WineSugar,Declaration: WineSugar (Class),Skip,subject 'WineSugar' not in alignment table
+AX29-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX31-gold,gold,Class,SubClassOf,WineSugar,WineSugar ⊑ WineTaste,Skip,subject 'WineSugar' not in alignment table
+AX31-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX32-gold,gold,Class,Declaration,WineTaste,Declaration: WineTaste (Class),TP,matched pred AX28
+AX32-pred,pred,Class,Declaration,Wine Characteristic,Declaration: Wine Characteristic (Class),-,-
+AX33-gold,gold,Class,SubClassOf,WineTaste,WineTaste ⊑ WineDescriptor,FN,pred has no SubClassOf axiom on 'Wine Characteristic'
+AX33-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX34-gold,gold,Class,Declaration,Zinfandel,Declaration: Zinfandel (Class),Skip,subject 'Zinfandel' not in alignment table
+AX34-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX40-gold,gold,Class,Declaration,wine,Declaration: wine (Class),TP,matched pred AX27
+AX40-pred,pred,Class,Declaration,Wine,Declaration: Wine (Class),-,-
+AX41-gold,gold,Class,SubClassOf,wine,wine ⊑ ∃locatedIn.Region,FN,pred has no SubClassOf axiom on 'Wine'
+AX41-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX42-gold,gold,Class,SubClassOf,wine,wine ⊑ ≥1 madeFromGrape.⊤,FN,pred has no SubClassOf axiom on 'Wine'
+AX42-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX43-gold,gold,Class,SubClassOf,wine,wine ⊑ =1 hasBody.⊤,FN,pred has no SubClassOf axiom on 'Wine'
+AX43-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX44-gold,gold,Class,SubClassOf,wine,wine ⊑ =1 hasColor.⊤,FN,pred has no SubClassOf axiom on 'Wine'
+AX44-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX45-gold,gold,Class,SubClassOf,wine,wine ⊑ =1 hasFlavor.⊤,FN,pred has no SubClassOf axiom on 'Wine'
+AX45-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX46-gold,gold,Class,SubClassOf,wine,wine ⊑ =1 hasSugar.⊤,FN,pred has no SubClassOf axiom on 'Wine'
+AX46-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX47-gold,gold,ObjectProperty,Characteristics,hasBody,Functional(hasBody),Skip,subject 'hasBody' not in alignment table
+AX47-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX48-gold,gold,ObjectProperty,Declaration,hasBody,Declaration: hasBody (ObjectProperty),Skip,subject 'hasBody' not in alignment table
+AX48-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX49-gold,gold,ObjectProperty,Range,hasBody,⊤ ⊑ ∀hasBody.WineBody,Skip,subject 'hasBody' not in alignment table
+AX49-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX50-gold,gold,ObjectProperty,SubPropertyOf,hasBody,hasBody ⊑ hasWineDescriptor,Skip,subject 'hasBody' not in alignment table
+AX50-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX51-gold,gold,ObjectProperty,Characteristics,hasColor,Functional(hasColor),Skip,subject 'hasColor' not in alignment table
+AX51-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX52-gold,gold,ObjectProperty,Declaration,hasColor,Declaration: hasColor (ObjectProperty),Skip,subject 'hasColor' not in alignment table
+AX52-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX53-gold,gold,ObjectProperty,Domain,hasColor,∃hasColor.⊤ ⊑ wine,Skip,subject 'hasColor' not in alignment table
+AX53-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX54-gold,gold,ObjectProperty,Range,hasColor,⊤ ⊑ ∀hasColor.WineColor,Skip,subject 'hasColor' not in alignment table
+AX54-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX55-gold,gold,ObjectProperty,SubPropertyOf,hasColor,hasColor ⊑ hasWineDescriptor,Skip,subject 'hasColor' not in alignment table
+AX55-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX56-gold,gold,ObjectProperty,Characteristics,hasFlavor,Functional(hasFlavor),Skip,subject 'hasFlavor' not in alignment table
+AX56-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX57-gold,gold,ObjectProperty,Declaration,hasFlavor,Declaration: hasFlavor (ObjectProperty),Skip,subject 'hasFlavor' not in alignment table
+AX57-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX58-gold,gold,ObjectProperty,Range,hasFlavor,⊤ ⊑ ∀hasFlavor.WineFlavor,Skip,subject 'hasFlavor' not in alignment table
+AX58-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX59-gold,gold,ObjectProperty,SubPropertyOf,hasFlavor,hasFlavor ⊑ hasWineDescriptor,Skip,subject 'hasFlavor' not in alignment table
+AX59-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX60-gold,gold,ObjectProperty,Characteristics,hasSugar,Functional(hasSugar),Skip,subject 'hasSugar' not in alignment table
+AX60-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX61-gold,gold,ObjectProperty,Declaration,hasSugar,Declaration: hasSugar (ObjectProperty),Skip,subject 'hasSugar' not in alignment table
+AX61-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX62-gold,gold,ObjectProperty,Range,hasSugar,⊤ ⊑ ∀hasSugar.WineSugar,Skip,subject 'hasSugar' not in alignment table
+AX62-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX63-gold,gold,ObjectProperty,SubPropertyOf,hasSugar,hasSugar ⊑ hasWineDescriptor,Skip,subject 'hasSugar' not in alignment table
+AX63-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX64-gold,gold,ObjectProperty,Characteristics,hasVintageYear,Functional(hasVintageYear),FN,pred has no Characteristics axiom on 'has vintage'
+AX64-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX65-gold,gold,ObjectProperty,Declaration,hasVintageYear,Declaration: hasVintageYear (ObjectProperty),TP,matched pred AX33
+AX65-pred,pred,ObjectProperty,Declaration,has vintage,Declaration: has vintage (ObjectProperty),-,-
+AX66-gold,gold,ObjectProperty,Domain,hasVintageYear,∃hasVintageYear.⊤ ⊑ Vintage,Mismatch,pred AX34 differs: class 'Vintage' not aligned to 'Wine'
+AX66-pred,pred,ObjectProperty,Domain,has vintage,∃has vintage.⊤ ⊑ Wine,-,-
+AX67-gold,gold,ObjectProperty,Range,hasVintageYear,⊤ ⊑ ∀hasVintageYear.VintageYear,Mismatch,pred AX36 differs: class 'VintageYear' not aligned to 'Vintage'
+AX67-pred,pred,ObjectProperty,Range,has vintage,⊤ ⊑ ∀has vintage.Vintage,-,-
+AX68-gold,gold,ObjectProperty,Declaration,hasWineDescriptor,Declaration: hasWineDescriptor (ObjectProperty),TP,matched pred AX43
+AX68-pred,pred,ObjectProperty,Declaration,has wine characteristic,Declaration: has wine characteristic (ObjectProperty),-,-
+AX69-gold,gold,ObjectProperty,Domain,hasWineDescriptor,∃hasWineDescriptor.⊤ ⊑ wine,TP,matched pred AX44
+AX69-pred,pred,ObjectProperty,Domain,has wine characteristic,∃has wine characteristic.⊤ ⊑ Wine,-,-
+AX70-gold,gold,ObjectProperty,Range,hasWineDescriptor,⊤ ⊑ ∀hasWineDescriptor.WineDescriptor,Mismatch,pred AX45 differs: class 'WineDescriptor' not aligned to 'Wine Characteristic'
+AX70-pred,pred,ObjectProperty,Range,has wine characteristic,⊤ ⊑ ∀has wine characteristic.Wine Characteristic,-,-
+AX71-gold,gold,ObjectProperty,Characteristics,locatedIn,Transitive(locatedIn),Skip,subject 'locatedIn' not in alignment table
+AX71-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX72-gold,gold,ObjectProperty,Declaration,locatedIn,Declaration: locatedIn (ObjectProperty),Skip,subject 'locatedIn' not in alignment table
+AX72-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX73-gold,gold,ObjectProperty,Domain,locatedIn,∃locatedIn.⊤ ⊑ ⊤,Skip,subject 'locatedIn' not in alignment table
+AX73-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX74-gold,gold,ObjectProperty,Range,locatedIn,⊤ ⊑ ∀locatedIn.Region,Skip,subject 'locatedIn' not in alignment table
+AX74-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX75-gold,gold,ObjectProperty,Declaration,madeFromGrape,Declaration: madeFromGrape (ObjectProperty),Skip,subject 'madeFromGrape' not in alignment table
+AX75-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX76-gold,gold,ObjectProperty,Domain,madeFromGrape,∃madeFromGrape.⊤ ⊑ wine,Skip,subject 'madeFromGrape' not in alignment table
+AX76-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX77-gold,gold,ObjectProperty,Range,madeFromGrape,⊤ ⊑ ∀madeFromGrape.WineGrape,Skip,subject 'madeFromGrape' not in alignment table
+AX77-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX78-gold,gold,DatatypeProperty,Declaration,yearValue,Declaration: yearValue (DatatypeProperty),Skip,subject 'yearValue' not in alignment table
+AX78-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX79-gold,gold,DatatypeProperty,Domain,yearValue,∃yearValue.⊤ ⊑ VintageYear,Skip,subject 'yearValue' not in alignment table
+AX79-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX80-gold,gold,DatatypeProperty,Range,yearValue,yearValue maps-to xsd:integer,Skip,subject 'yearValue' not in alignment table
+AX80-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX6-pred,pred,Class,SubClassOf,Bordeaux Wine,Bordeaux Wine ⊑ Wine,FP,pred SubClassOf axiom on 'Bordeaux Wine' not matched by any gold axiom on 'Bordeaux'
+AX6-gold,gold,-,-,-,(no gold counterpart),-,-
+AX7-pred,pred,Class,SubClassOf,Bordeaux Wine,Bordeaux Wine ⊑ ∃has wine characteristic.Red Wine Color,FP,pred SubClassOf axiom on 'Bordeaux Wine' not matched by any gold axiom on 'Bordeaux'
+AX7-gold,gold,-,-,-,(no gold counterpart),-,-
+AX8-pred,pred,Class,SubClassOf,Bordeaux Wine,Bordeaux Wine ⊑ ∃has wine characteristic.Bordeaux Grapes,FP,pred SubClassOf axiom on 'Bordeaux Wine' not matched by any gold axiom on 'Bordeaux'
+AX8-gold,gold,-,-,-,(no gold counterpart),-,-
+AX16-pred,pred,Class,SubClassOf,Grape Variety,Grape Variety ⊑ Wine Characteristic,FP,pred SubClassOf axiom on 'Grape Variety' not matched by any gold axiom on 'WineGrape'
+AX16-gold,gold,-,-,-,(no gold counterpart),-,-
+AX22-pred,pred,Class,SubClassOf,Region,Region ⊑ Wine Characteristic,FP,pred SubClassOf axiom on 'Region' not matched by any gold axiom on 'Region'
+AX22-gold,gold,-,-,-,(no gold counterpart),-,-
+AX26-pred,pred,Class,SubClassOf,White Wine Color,White Wine Color ⊑ Wine Characteristic,FP,pred SubClassOf axiom on 'White Wine Color' not matched by any gold axiom on 'WhiteWine'
+AX26-gold,gold,-,-,-,(no gold counterpart),-,-
+AX35-pred,pred,ObjectProperty,InverseOf,has vintage,has vintage ≡ from wine⁻,FP,pred InverseOf axiom on 'has vintage' not matched by any gold axiom on 'hasVintageYear'
+AX35-gold,gold,-,-,-,(no gold counterpart),-,-

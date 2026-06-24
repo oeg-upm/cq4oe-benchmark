@@ -1,0 +1,406 @@
+[
+  {
+    "id": 1,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has fabrication number",
+    "pred_predicate": "fabrication number",
+    "gold_predicate_norm": "hasfabricationnumber",
+    "pred_predicate_norm": "fabricationnumber",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": [
+      "xsd:http://www.w3.org/2000/01/rdf-schema#literal"
+    ],
+    "pred_range": [
+      "xsd:string"
+    ],
+    "gold_range_norm": [
+      "literal"
+    ],
+    "pred_range_norm": [
+      "xsdstring"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 2,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has firmware version",
+    "pred_predicate": "firmware version",
+    "gold_predicate_norm": "hasfirmwareversion",
+    "pred_predicate_norm": "firmwareversion",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": [
+      "xsd:http://www.w3.org/2000/01/rdf-schema#literal"
+    ],
+    "pred_range": [
+      "xsd:string"
+    ],
+    "gold_range_norm": [
+      "literal"
+    ],
+    "pred_range_norm": [
+      "xsdstring"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 3,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has hardware version",
+    "pred_predicate": "hardware version",
+    "gold_predicate_norm": "hashardwareversion",
+    "pred_predicate_norm": "hardwareversion",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": [
+      "xsd:http://www.w3.org/2000/01/rdf-schema#literal"
+    ],
+    "pred_range": [
+      "xsd:string"
+    ],
+    "gold_range_norm": [
+      "literal"
+    ],
+    "pred_range_norm": [
+      "xsdstring"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 4,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has manufacturer",
+    "pred_predicate": "manufacturer",
+    "gold_predicate_norm": "hasmanufacturer",
+    "pred_predicate_norm": "manufacturer",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "xsd:string"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "xsdstring"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 5,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has model",
+    "pred_predicate": "model",
+    "gold_predicate_norm": "hasmodel",
+    "pred_predicate_norm": "model",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "xsd:string"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "xsdstring"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 6,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has start timestamp",
+    "pred_predicate": "start timestamp",
+    "gold_predicate_norm": "hasstarttimestamp",
+    "pred_predicate_norm": "starttimestamp",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Tariff"
+    ],
+    "pred_domain": [
+      "Tariff"
+    ],
+    "gold_domain_norm": [
+      "tariff"
+    ],
+    "pred_domain_norm": [
+      "tariff"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "xsd:dateTime"
+    ],
+    "pred_range": [
+      "xsd:dateTime"
+    ],
+    "gold_range_norm": [
+      "xsddatetime"
+    ],
+    "pred_range_norm": [
+      "xsddatetime"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": true,
+    "note": ""
+  },
+  {
+    "id": 7,
+    "property_type": "DatatypeProperty",
+    "gold_predicate": "has version",
+    "pred_predicate": "version",
+    "gold_predicate_norm": "hasversion",
+    "pred_predicate_norm": "version",
+    "gold_type": "DatatypeProperty",
+    "pred_type": "DatatypeProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": [
+      "xsd:http://www.w3.org/2000/01/rdf-schema#literal"
+    ],
+    "pred_range": [
+      "xsd:string"
+    ],
+    "gold_range_norm": [
+      "literal"
+    ],
+    "pred_range_norm": [
+      "xsdstring"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 8,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has billing period",
+    "pred_predicate": "has billing period",
+    "gold_predicate_norm": "hasbillingperiod",
+    "pred_predicate_norm": "hasbillingperiod",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Tariff"
+    ],
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": [
+      "tariff"
+    ],
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "Temporal duration"
+    ],
+    "pred_range": [
+      "Billing period"
+    ],
+    "gold_range_norm": [
+      "temporalduration"
+    ],
+    "pred_range_norm": [
+      "billingperiod"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 9,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has measurement",
+    "pred_predicate": "is measurement of",
+    "gold_predicate_norm": "hasmeasurement",
+    "pred_predicate_norm": "ismeasurementof",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water measurement"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeasurement"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "Water meter"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "watermeter"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 10,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "has property",
+    "pred_predicate": "has physical property",
+    "gold_predicate_norm": "hasproperty",
+    "pred_predicate_norm": "hasphysicalproperty",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "water"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "Physical property"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "physicalproperty"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 11,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "is measured by device",
+    "pred_predicate": "is measured property of",
+    "gold_predicate_norm": "ismeasuredbydevice",
+    "pred_predicate_norm": "ismeasuredpropertyof",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Physical property"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "physicalproperty"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "Water measurement"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "watermeasurement"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 12,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "makes measurement",
+    "pred_predicate": "provides measurement",
+    "gold_predicate_norm": "makesmeasurement",
+    "pred_predicate_norm": "providesmeasurement",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Water meter"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "watermeter"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "Water measurement"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "watermeasurement"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  }
+]
