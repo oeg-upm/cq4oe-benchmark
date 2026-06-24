@@ -1,0 +1,11 @@
+Gold_term,Pre_term,Method,Score
+Asset,Asset,hard_match,1.0
+ConflictTerm,Conflict Resolution Strategy,top3_avg(jaro_winkler+semantic+sequence_match),0.6646903854856919
+Constraint,Constraint,hard_match,1.0
+Duty,Duty,hard_match,1.0
+LogicalConstraint,or constraint,top3_avg(jaro_winkler+semantic+sequence_match),0.7606153356551134
+Party,Party,hard_match,1.0
+Permission,Permission,hard_match,1.0
+Policy,Policy,hard_match,1.0
+Prohibition,Prohibition,hard_match,1.0
+Rule,Role,top3_avg(jaro_winkler+levenshtein+sequence_match),0.7833333333333333

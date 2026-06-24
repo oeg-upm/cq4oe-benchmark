@@ -1,0 +1,23 @@
+cq_id,question,n_gold_classes,n_gold_properties,n_covered_classes,n_covered_properties,coverage,missing_classes,missing_properties
+CQ01,What is the username of the player?,1,1,1,1,1.0000,,
+CQ02,Who are the friends of the player?,1,1,1,1,1.0000,,
+CQ03,Who are the friends that play other games as well with this player?,2,2,2,2,1.0000,,
+CQ05,What are the achievements of my friends?,2,2,1,0,0.2500,player,isfriendwithplayer; ownsachievement
+CQ07,What are the achievements your friend has received?,2,2,1,0,0.2500,player,isfriendwithplayer; ownsachievement
+CQ08,What achievements does a game have?,2,1,2,1,1.0000,,
+CQ10,What are the types of achievements in this game?,2,1,2,1,1.0000,,
+CQ11,What are the types of achievements a game can have?,2,1,2,1,1.0000,,
+CQ12,What is the genre of the game?,2,1,2,1,1.0000,,
+CQ13,What items exist in a game?,2,1,2,0,0.6667,,hasitem
+CQ15,What is the release date of the game?,1,1,1,1,1.0000,,
+CQ17,List all games of a certain Genre?,2,1,2,1,1.0000,,
+CQ24,What achievements has a player obtained?,2,1,2,0,0.6667,,ownsachievement
+CQ25,What games has the player played?,2,1,2,0,0.6667,,playsgame
+CQ26,What items does the player have?,2,1,2,0,0.6667,,ownsitem
+CQ55,What are the games where a player can use this item?,3,3,3,0,0.5000,,hasitem; ownsitem; playsgame
+CQ56,How many players have made in app purchases?,2,2,2,0,0.5000,,iseventassociatedtoplayer; purchasesgameoffering
+CQ62,What time are most of the in app purchases done?,1,1,1,0,0.5000,,eventtime
+CQ63,Where do the most paying customers live?,2,2,0,1,0.2500,inapppurchaseevent; player,iseventassociatedtoplayer
+CQ65,Where do the players live who have not made any IAP?,1,2,1,1,0.6667,,iseventassociatedtoplayer
+CQ66,Where do the players who have done the most IAP live?,2,2,2,1,0.7500,,iseventassociatedtoplayer
+CQNew1,What playing areas does a game have?,2,1,0,0,0.0000,game; playingarea,hasplayingarea

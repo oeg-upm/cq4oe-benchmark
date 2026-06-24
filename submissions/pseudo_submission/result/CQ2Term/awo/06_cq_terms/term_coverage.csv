@@ -1,0 +1,9 @@
+term,role,cq_ids,aligned,aligned_to
+animal,class,CQ1; CQ14; CQ2; CQ6; CQ7,true,animal
+carnivore,class,CQ14,true,carnivore
+herbivore,class,CQ2; CQ3,true,herbivore
+lion,class,CQ4,true,lion
+omnivore,class,CQ3,true,omnivore
+plant,class,CQ14; CQ4; CQ6,true,plant
+plantparts,class,CQ14; CQ3; CQ4,true,plantpart
+eats,property,CQ1; CQ14; CQ3; CQ4; CQ6; CQ7,true,eats

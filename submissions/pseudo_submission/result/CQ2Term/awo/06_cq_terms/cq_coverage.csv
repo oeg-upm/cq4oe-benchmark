@@ -1,0 +1,8 @@
+cq_id,question,n_gold_classes,n_gold_properties,n_covered_classes,n_covered_properties,coverage,missing_classes,missing_properties
+CQ1,Which animal eats which other animal?,1,1,1,1,1.0000,,
+CQ2,Is [this animal] a herbivore?,2,0,2,0,1.0000,,
+CQ3,Which plant parts does [this omnivorous or herbivorourus animal] eat?,3,1,3,1,1.0000,,
+CQ4,Does a lion eat plants or plant parts?,3,1,3,1,1.0000,,
+CQ6,Which plants eat animals?,2,1,2,1,1.0000,,
+CQ7,Which animals eat [these animals]?,1,1,1,1,1.0000,,
+CQ14,Are there animals that are carnivore but still eat some plants or parts of plants?,4,1,4,1,1.0000,,

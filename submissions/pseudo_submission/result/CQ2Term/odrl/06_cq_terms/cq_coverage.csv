@@ -1,0 +1,20 @@
+cq_id,question,n_gold_classes,n_gold_properties,n_covered_classes,n_covered_properties,coverage,missing_classes,missing_properties
+CQ03,Shall the permissions 'Aggregation' and 'Disaggregation' be of the type Transfer Rights?,2,2,1,0,0.2500,action,hasaction; haspermission
+CQ06,Expressing the various roles of contract parties within the Permission/Duty element.,3,3,2,0,0.3333,party,assignee; assigner; function
+CQ10,How are rights and duties supported for all contract parties?,2,1,2,1,1.0000,,
+CQ13,Shall ODRLv2 allow for nested constraints?,2,1,1,0,0.3333,logicalconstraint,hasconstraint
+CQ26,How to express Condition via Constraints?,2,1,1,0,0.3333,logicalconstraint,hasconstraint
+CQ13,Shall ODRLv2 allow for nested constraints?,2,1,1,0,0.3333,logicalconstraint,hasconstraint
+CQ14,"How do we express 'and', 'or', 'xor' constraints?",2,5,2,0,0.2857,,and; hasconstraint; onlyone; operand; or
+CQ21,How to express constraints on requirements?,2,3,1,1,0.4000,duty,hasoperator; obligation
+CQ24,How to express exclusive permissions?,3,3,1,0,0.1667,action; constraint,hasaction; hasconstraint; haspermission
+CQ26,How to express Condition via Constraints?,2,1,1,0,0.3333,logicalconstraint,hasconstraint
+CQ30,What do we lose if containers are no longer part of ODRL?,2,4,0,1,0.1667,asset; assetcollection,relation; scope; target
+CQ31,Do we need 'Sequencing' as part of the REL?,2,2,0,0,0.0000,duty; rule,andsequence; consequence
+CQ33,Can the new data model express inheritance?,1,2,0,0,0.0000,policy,inheritrelation; inheritsfrom
+CQNew CQ1,Which policy is directly linked to a given asset?,2,1,0,0,0.0000,asset; policy,targetpolicy
+CQNew CQ2,What conflict resolution strategy is specified by a policy?,3,1,0,0,0.0000,conflict strategy preference; policy; rule,handlepolicyconflicts
+CQNew CQ3,What duty is specified as a remedy for the violation of a prohibition?,2,1,0,0,0.0000,prohibition; rule,remedy
+CQNew CQ4,Which rule is activated upon the failure of another rule?,1,1,0,0,0.0000,rule,failure
+CQNew CQ5,What duty is specified as a consequence of another duty?,1,1,0,0,0.0000,duty,consequence
+CQNew CQ6,What operator is used in the constraints of a prohibition?,3,2,0,0,0.0000,constraint; operator; prohibition,hasoperator; hasprohibition

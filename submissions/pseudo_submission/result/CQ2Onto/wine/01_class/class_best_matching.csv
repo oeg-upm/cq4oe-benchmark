@@ -1,0 +1,12 @@
+Gold_term,Pre_term,Method,Score
+Bordeaux,Bordeaux Wine,top3_avg(jaro_winkler+semantic+sequence_match),0.8592233207490709
+RedBordeaux,Bordeaux Grapes,top3_avg(jaro_winkler+semantic+sequence_match),0.6840710837294014
+Region,Region,hard_match,1.0
+Vintage,Vintage,hard_match,1.0
+VintageYear,Vintage Quality,top3_avg(jaro_winkler+semantic+sequence_match),0.778345625887931
+WhiteWine,White Wine Color,top3_avg(jaro_winkler+semantic+sequence_match),0.8543384782275799
+WineBody,Body,top3_avg(levenshtein+semantic+sequence_match),0.6559068693055047
+WineColor,Red Wine Color,top3_avg(jaro_winkler+semantic+sequence_match),0.882321830254173
+WineGrape,Grape Variety,top3_avg(jaro_winkler+semantic+sequence_match),0.6292857644419191
+WineTaste,Wine Characteristic,top3_avg(jaro_winkler+semantic+sequence_match),0.7138804106064786
+wine,Wine,hard_match,1.0

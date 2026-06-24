@@ -1,0 +1,57 @@
+gold_term,pred_term,top_methods_used,scores_by_method,is_hard_match,agg_score,selected,reason
+CarnivorousPlant,Carnivorous Plant,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0,True,selected
+animal,Animal,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0,True,selected
+carnivore,Carnivore,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0,True,selected
+herbivore,Herbivore,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0,True,selected
+lion,Lion,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0,True,selected
+plant,Plant,hard_match,hard_match=1.0000; jaro_winkler=1.0000; levenshtein=1.0000; semantic=1.0000; sequence_match=1.0000,True,1.0,True,selected
+PlantParts,Plant Part,jaro_winkler+sequence_match+semantic,jaro_winkler=0.9800; levenshtein=0.9000; semantic=0.9272; sequence_match=0.9474,False,0.9515,True,selected
+plant,Plant Part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.9111; levenshtein=0.5556; semantic=0.7975; sequence_match=0.7143,False,0.8076,False,gold already mapped to 'Plant'
+PlantParts,Plant,jaro_winkler+semantic+sequence_match,jaro_winkler=0.9000; levenshtein=0.5000; semantic=0.7596; sequence_match=0.6667,False,0.7754,False,gold already mapped to 'Plant Part'
+CarnivorousPlant,Carnivore,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8778; levenshtein=0.5000; semantic=0.7688; sequence_match=0.6400,False,0.7622,False,gold already mapped to 'Carnivorous Plant'
+carnivore,Carnivorous Plant,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8778; levenshtein=0.5000; semantic=0.7688; sequence_match=0.6400,False,0.7622,False,gold already mapped to 'Carnivore'
+Omnivore,Carnivore,jaro_winkler+semantic+sequence_match,jaro_winkler=0.8056; levenshtein=0.6667; semantic=0.7692; sequence_match=0.7059,False,0.7602,False,pred already taken by 'carnivore' (higher averaged score)
+carnivore,Herbivore,semantic+jaro_winkler+levenshtein,jaro_winkler=0.7778; levenshtein=0.6667; semantic=0.8348; sequence_match=0.6667,False,0.7597,False,gold already mapped to 'Carnivore'
+herbivore,Carnivore,semantic+jaro_winkler+levenshtein,jaro_winkler=0.7778; levenshtein=0.6667; semantic=0.8348; sequence_match=0.6667,False,0.7597,False,gold already mapped to 'Herbivore'
+Omnivore,Herbivore,jaro_winkler+semantic+sequence_match,jaro_winkler=0.7269; levenshtein=0.5556; semantic=0.6737; sequence_match=0.5882,False,0.6629,False,pred already taken by 'herbivore' (higher averaged score)
+CarnivorousPlant,Plant,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5083; levenshtein=0.3125; semantic=0.8042; sequence_match=0.4762,False,0.5962,False,top-3 avg score 0.5962 < final_threshold 0.6
+plant,Carnivorous Plant,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5083; levenshtein=0.3125; semantic=0.8042; sequence_match=0.4762,False,0.5962,False,top-3 avg score 0.5962 < final_threshold 0.6
+CarnivorousPlant,Herbivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.6227; levenshtein=0.3125; semantic=0.7284; sequence_match=0.4000,False,0.5837,False,top-3 avg score 0.5837 < final_threshold 0.6
+herbivore,Carnivorous Plant,semantic+jaro_winkler+sequence_match,jaro_winkler=0.6227; levenshtein=0.3125; semantic=0.7284; sequence_match=0.4000,False,0.5837,False,top-3 avg score 0.5837 < final_threshold 0.6
+Omnivore,Carnivorous Plant,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6528; levenshtein=0.3125; semantic=0.6521; sequence_match=0.4167,False,0.5738,False,top-3 avg score 0.5738 < final_threshold 0.6
+lion,Plant,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6333; levenshtein=0.2000; semantic=0.6275; sequence_match=0.4444,False,0.5684,False,top-3 avg score 0.5684 < final_threshold 0.6
+plant,Lion,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6333; levenshtein=0.2000; semantic=0.6275; sequence_match=0.4444,False,0.5684,False,top-3 avg score 0.5684 < final_threshold 0.6
+animal,Carnivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.6111; levenshtein=0.3333; semantic=0.6886; sequence_match=0.4000,False,0.5666,False,top-3 avg score 0.5666 < final_threshold 0.6
+carnivore,Animal,semantic+jaro_winkler+sequence_match,jaro_winkler=0.6111; levenshtein=0.3333; semantic=0.6886; sequence_match=0.4000,False,0.5666,False,top-3 avg score 0.5666 < final_threshold 0.6
+CarnivorousPlant,Plant Part,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5694; levenshtein=0.2500; semantic=0.6558; sequence_match=0.4000,False,0.5417,False,top-3 avg score 0.5417 < final_threshold 0.6
+animal,Plant,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5778; levenshtein=0.0000; semantic=0.6698; sequence_match=0.3636,False,0.5371,False,top-3 avg score 0.5371 < final_threshold 0.6
+plant,Animal,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5778; levenshtein=0.0000; semantic=0.6698; sequence_match=0.3636,False,0.5371,False,top-3 avg score 0.5371 < final_threshold 0.6
+PlantParts,Carnivorous Plant,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5696; levenshtein=0.1875; semantic=0.6443; sequence_match=0.3846,False,0.5328,False,top-3 avg score 0.5328 < final_threshold 0.6
+animal,Plant Part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6111; levenshtein=0.3333; semantic=0.5478; sequence_match=0.4000,False,0.5196,False,top-3 avg score 0.5196 < final_threshold 0.6
+CarnivorousPlant,Animal,jaro_winkler+semantic+sequence_match,jaro_winkler=0.6389; levenshtein=0.2500; semantic=0.5540; sequence_match=0.3636,False,0.5189,False,top-3 avg score 0.5189 < final_threshold 0.6
+Omnivore,Lion,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5972; levenshtein=0.2500; semantic=0.5741; sequence_match=0.3333,False,0.5016,False,top-3 avg score 0.5016 < final_threshold 0.6
+PlantParts,Animal,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5222; levenshtein=0.3000; semantic=0.5707; sequence_match=0.3750,False,0.4893,False,top-3 avg score 0.4893 < final_threshold 0.6
+animal,Carnivorous Plant,jaro_winkler+semantic+levenshtein,jaro_winkler=0.6389; levenshtein=0.2500; semantic=0.5540; sequence_match=0.1818,False,0.481,False,top-3 avg score 0.4810 < final_threshold 0.6
+carnivore,Plant,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5407; levenshtein=0.1111; semantic=0.6075; sequence_match=0.2857,False,0.478,False,top-3 avg score 0.4780 < final_threshold 0.6
+plant,Carnivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5407; levenshtein=0.1111; semantic=0.6075; sequence_match=0.2857,False,0.478,False,top-3 avg score 0.4780 < final_threshold 0.6
+lion,Plant Part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5741; levenshtein=0.1111; semantic=0.5173; sequence_match=0.3077,False,0.4664,False,top-3 avg score 0.4664 < final_threshold 0.6
+Omnivore,Animal,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5139; levenshtein=0.2500; semantic=0.5897; sequence_match=0.2857,False,0.4631,False,top-3 avg score 0.4631 < final_threshold 0.6
+animal,Lion,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4444; levenshtein=0.1667; semantic=0.7439; sequence_match=0.2000,False,0.4628,False,top-3 avg score 0.4628 < final_threshold 0.6
+lion,Animal,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4444; levenshtein=0.1667; semantic=0.7439; sequence_match=0.2000,False,0.4628,False,top-3 avg score 0.4628 < final_threshold 0.6
+PlantParts,Lion,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5667; levenshtein=0.1000; semantic=0.5327; sequence_match=0.2857,False,0.4617,False,top-3 avg score 0.4617 < final_threshold 0.6
+herbivore,Lion,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4537; levenshtein=0.2222; semantic=0.6222; sequence_match=0.3077,False,0.4612,False,top-3 avg score 0.4612 < final_threshold 0.6
+lion,Herbivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4537; levenshtein=0.2222; semantic=0.6222; sequence_match=0.3077,False,0.4612,False,top-3 avg score 0.4612 < final_threshold 0.6
+lion,Carnivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4074; levenshtein=0.2222; semantic=0.6544; sequence_match=0.3077,False,0.4565,False,top-3 avg score 0.4565 < final_threshold 0.6
+PlantParts,Carnivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.5444; levenshtein=0.2000; semantic=0.5635; sequence_match=0.2105,False,0.4395,False,top-3 avg score 0.4395 < final_threshold 0.6
+carnivore,Plant Part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5556; levenshtein=0.2222; semantic=0.5192; sequence_match=0.2222,False,0.4323,False,top-3 avg score 0.4323 < final_threshold 0.6
+carnivore,Lion,semantic+jaro_winkler+levenshtein,jaro_winkler=0.4074; levenshtein=0.2222; semantic=0.6544; sequence_match=0.1538,False,0.428,False,top-3 avg score 0.4280 < final_threshold 0.6
+lion,Carnivorous Plant,jaro_winkler+semantic+sequence_match,jaro_winkler=0.5347; levenshtein=0.1875; semantic=0.5218; sequence_match=0.2000,False,0.4188,False,top-3 avg score 0.4188 < final_threshold 0.6
+CarnivorousPlant,Lion,jaro_winkler+semantic+levenshtein,jaro_winkler=0.5347; levenshtein=0.1875; semantic=0.5218; sequence_match=0.1000,False,0.4147,False,top-3 avg score 0.4147 < final_threshold 0.6
+animal,Herbivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4259; levenshtein=0.1111; semantic=0.6577; sequence_match=0.1333,False,0.4057,False,top-3 avg score 0.4057 < final_threshold 0.6
+herbivore,Animal,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4259; levenshtein=0.1111; semantic=0.6577; sequence_match=0.1333,False,0.4057,False,top-3 avg score 0.4057 < final_threshold 0.6
+Omnivore,Plant Part,jaro_winkler+semantic+sequence_match,jaro_winkler=0.4907; levenshtein=0.2222; semantic=0.4400; sequence_match=0.2353,False,0.3887,False,top-3 avg score 0.3887 < final_threshold 0.6
+PlantParts,Herbivore,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4037; levenshtein=0.1000; semantic=0.6105; sequence_match=0.1053,False,0.3732,False,top-3 avg score 0.3732 < final_threshold 0.6
+Omnivore,Plant,semantic+jaro_winkler+sequence_match,jaro_winkler=0.4417; levenshtein=0.0000; semantic=0.5210; sequence_match=0.1538,False,0.3722,False,top-3 avg score 0.3722 < final_threshold 0.6
+herbivore,Plant Part,semantic+jaro_winkler+levenshtein,jaro_winkler=0.4074; levenshtein=0.1111; semantic=0.5905; sequence_match=0.1111,False,0.3697,False,top-3 avg score 0.3697 < final_threshold 0.6
+herbivore,Plant,semantic+sequence_match+levenshtein,jaro_winkler=0.0000; levenshtein=0.0000; semantic=0.6824; sequence_match=0.0000,False,0.2275,False,top-3 avg score 0.2275 < final_threshold 0.6
+plant,Herbivore,semantic+sequence_match+levenshtein,jaro_winkler=0.0000; levenshtein=0.0000; semantic=0.6824; sequence_match=0.0000,False,0.2275,False,top-3 avg score 0.2275 < final_threshold 0.6

@@ -1,0 +1,8 @@
+Gold_term,Pre_term,Method,Score
+animal,animal,hard_match,1.0000
+carnivore,carnivore,hard_match,1.0000
+herbivore,herbivore,hard_match,1.0000
+lion,lion,hard_match,1.0000
+omnivore,omnivore,hard_match,1.0000
+plant,plant,hard_match,1.0000
+plantparts,plantpart,top3_avg(jaro_winkler+sequence_match+semantic),0.9512

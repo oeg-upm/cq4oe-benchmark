@@ -1,0 +1,14 @@
+side,dimension,sub,sup,status,raw_pred_sub,raw_pred_sup
+gold,class,Collection,Achievement,FN,,
+gold,class,Completion,Achievement,FN,,
+gold,class,Curiosity,Achievement,FN,,
+gold,class,Fandom,Achievement,FN,,
+gold,class,HardMode,Achievement,FN,,
+gold,class,Loyalty,Achievement,FN,,
+gold,class,Luck,Achievement,FN,,
+gold,class,Paragon,Achievement,FN,,
+gold,class,SpecialPlayStyle,Achievement,FN,,
+gold,class,Tutorial,Achievement,FN,,
+gold,class,Veteran,Achievement,FN,,
+gold,class,Virtuosity,Achievement,FN,,
+pred,class,,,untranslated,PlayerWithoutPurchase,Player

@@ -1,0 +1,2420 @@
+{
+  "config": {
+    "gold_owl": "00_gold_standard/water/ontology/sub_water.owl",
+    "pred_owl": "01_predictions/challenge/pseudo_submission/ontology/water_ontology.owl",
+    "class_csv": "03_evaluation_results/challenge/pseudo_submission/water/01_class/class_best_matching.csv",
+    "property_csv": "03_evaluation_results/challenge/pseudo_submission/water/02_property/property_best_matching.csv",
+    "reasoner": "HermiT"
+  },
+  "results": [
+    {
+      "id": "gold_closure",
+      "n_class_pairs": 13,
+      "n_property_pairs": 0,
+      "class_pairs": [
+        {
+          "sub": "AcceptabilityProperty",
+          "sup": "WaterProperty"
+        },
+        {
+          "sub": "Actuator",
+          "sup": "Device"
+        },
+        {
+          "sub": "ChemicalProperty",
+          "sup": "WaterProperty"
+        },
+        {
+          "sub": "Meter",
+          "sup": "Device"
+        },
+        {
+          "sub": "Meter",
+          "sup": "Sensor"
+        },
+        {
+          "sub": "Point",
+          "sup": "Geometry"
+        },
+        {
+          "sub": "Sensor",
+          "sup": "Device"
+        },
+        {
+          "sub": "TimeBasedTariff",
+          "sup": "Tariff"
+        },
+        {
+          "sub": "Water",
+          "sup": "FeatureOfInterest"
+        },
+        {
+          "sub": "WaterAsset",
+          "sup": "FeatureOfInterest"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Device"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Meter"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Sensor"
+        }
+      ],
+      "property_pairs": []
+    },
+    {
+      "id": "pred_closure",
+      "n_class_pairs": 12,
+      "n_property_pairs": 1,
+      "class_pairs": [
+        {
+          "sub": "Actuator",
+          "sup": "Asset"
+        },
+        {
+          "sub": "ChemicalProperty",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "Conductivity",
+          "sup": "ChemicalProperty"
+        },
+        {
+          "sub": "Conductivity",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "PH",
+          "sup": "ChemicalProperty"
+        },
+        {
+          "sub": "PH",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "Pressure",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "Sensor",
+          "sup": "Asset"
+        },
+        {
+          "sub": "Temperature",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "Turbidity",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Asset"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Sensor"
+        }
+      ],
+      "property_pairs": [
+        {
+          "sub": "hasChemicalProperty",
+          "sup": "hasPhysicalProperty"
+        }
+      ]
+    },
+    {
+      "id": "translation",
+      "n_class_translated": 6,
+      "n_property_translated": 0,
+      "n_class_untranslated": 6,
+      "n_property_untranslated": 1,
+      "class_translated": [
+        {
+          "sub": "Actuator",
+          "sup": "WaterAsset"
+        },
+        {
+          "sub": "ChemicalProperty",
+          "sup": "WaterProperty"
+        },
+        {
+          "sub": "Sensor",
+          "sup": "WaterAsset"
+        },
+        {
+          "sub": "TemporalDuration",
+          "sup": "WaterProperty"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Sensor"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "WaterAsset"
+        }
+      ],
+      "property_translated": [],
+      "class_untranslated": [
+        {
+          "sub": "Conductivity",
+          "sup": "ChemicalProperty"
+        },
+        {
+          "sub": "Conductivity",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "PH",
+          "sup": "ChemicalProperty"
+        },
+        {
+          "sub": "PH",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "Pressure",
+          "sup": "PhysicalProperty"
+        },
+        {
+          "sub": "Turbidity",
+          "sup": "PhysicalProperty"
+        }
+      ],
+      "property_untranslated": [
+        {
+          "sub": "hasChemicalProperty",
+          "sup": "hasPhysicalProperty"
+        }
+      ]
+    },
+    {
+      "id": "class_metrics",
+      "tp": 2,
+      "fp": 10,
+      "fn": 11,
+      "precision": 0.1667,
+      "recall": 0.1538,
+      "f1": 0.16,
+      "tp_pairs": [
+        {
+          "sub": "ChemicalProperty",
+          "sup": "WaterProperty"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Sensor"
+        }
+      ],
+      "fp_pairs": [
+        {
+          "sub": "Actuator",
+          "sup": "WaterAsset"
+        },
+        {
+          "sub": "Sensor",
+          "sup": "WaterAsset"
+        },
+        {
+          "sub": "TemporalDuration",
+          "sup": "WaterProperty"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "WaterAsset"
+        }
+      ],
+      "fn_pairs": [
+        {
+          "sub": "AcceptabilityProperty",
+          "sup": "WaterProperty"
+        },
+        {
+          "sub": "Actuator",
+          "sup": "Device"
+        },
+        {
+          "sub": "Meter",
+          "sup": "Device"
+        },
+        {
+          "sub": "Meter",
+          "sup": "Sensor"
+        },
+        {
+          "sub": "Point",
+          "sup": "Geometry"
+        },
+        {
+          "sub": "Sensor",
+          "sup": "Device"
+        },
+        {
+          "sub": "TimeBasedTariff",
+          "sup": "Tariff"
+        },
+        {
+          "sub": "Water",
+          "sup": "FeatureOfInterest"
+        },
+        {
+          "sub": "WaterAsset",
+          "sup": "FeatureOfInterest"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Device"
+        },
+        {
+          "sub": "WaterMeter",
+          "sup": "Meter"
+        }
+      ]
+    },
+    {
+      "id": "property_metrics",
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp_pairs": [],
+      "fp_pairs": [],
+      "fn_pairs": []
+    },
+    {
+      "id": "combined_metrics",
+      "tp": 2,
+      "fp": 11,
+      "fn": 11,
+      "precision": 0.1538,
+      "recall": 0.1538,
+      "f1": 0.1538
+    },
+    {
+      "id": "cq_coverage_closure",
+      "n_total": 21,
+      "n_fully_covered": 0,
+      "n_any_covered": 5,
+      "fully_coverage": 0.0,
+      "any_coverage": 0.2381,
+      "average_rate": 0.0486,
+      "n_covered": 5,
+      "coverage": 0.2381,
+      "per_cq": [
+        {
+          "id": "CQ01",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "WaterAsset",
+              "sup": "FeatureOfInterest"
+            }
+          ],
+          "source_axioms": [
+            "AX14"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "WaterAsset",
+              "sup": "FeatureOfInterest",
+              "axioms": [
+                "AX14"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterAsset ⊑ FeatureOfInterest",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterAsset",
+              "sup": "FeatureOfInterest"
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 1
+        },
+        {
+          "id": "CQ04",
+          "question": "",
+          "n_relevant": 4,
+          "n_matched": 0,
+          "n_missing": 4,
+          "rate": 0.1,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Actuator",
+              "sup": "Device"
+            },
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "Sensor",
+              "sup": "Device"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX10",
+            "AX15",
+            "AX3",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Actuator",
+              "sup": "Device",
+              "axioms": [
+                "AX3"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "Sensor",
+              "sup": "Device",
+              "axioms": [
+                "AX10"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX3",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Actuator ⊑ Device",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Actuator",
+              "sup": "Device"
+            },
+            {
+              "axiom_id": "AX5",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Device ⊑ ∀makesMeasurement.Measurement",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX6",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "FeatureOfInterest ⊑ ∀hasMeasurement.Measurement",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX10",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Sensor ⊑ Device",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Sensor",
+              "sup": "Device"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX22",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃featureIsMeasuredByDevice.⊤ ⊑ FeatureOfInterest",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX23",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀featureIsMeasuredByDevice.Device",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX43",
+              "axiom_type": "Range",
+              "axiom_dl": "hasVersion maps-to ⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 1,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 10
+        },
+        {
+          "id": "CQ05",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Actuator",
+              "sup": "Device"
+            }
+          ],
+          "source_axioms": [
+            "AX3"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Actuator",
+              "sup": "Device",
+              "axioms": [
+                "AX3"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX2",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(Actuator, Sensor)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX3",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Actuator ⊑ Device",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Actuator",
+              "sup": "Device"
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 2
+        },
+        {
+          "id": "CQ06",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.1111111111111111,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Sensor",
+              "sup": "Device"
+            }
+          ],
+          "source_axioms": [
+            "AX10"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Sensor",
+              "sup": "Device",
+              "axioms": [
+                "AX10"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX2",
+              "axiom_type": "DisjointClasses",
+              "axiom_dl": "DisjointClasses(Actuator, Sensor)",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX5",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Device ⊑ ∀makesMeasurement.Measurement",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX6",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "FeatureOfInterest ⊑ ∀hasMeasurement.Measurement",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX7",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Measurement ⊑ ∀hasTimestamp.datetime'>",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX10",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Sensor ⊑ Device",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Sensor",
+              "sup": "Device"
+            },
+            {
+              "axiom_id": "AX22",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃featureIsMeasuredByDevice.⊤ ⊑ FeatureOfInterest",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX23",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀featureIsMeasuredByDevice.Device",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX43",
+              "axiom_type": "Range",
+              "axiom_dl": "hasVersion maps-to ⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 1,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 9
+        },
+        {
+          "id": "CQ08",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX16",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ ≤1 hasFabricationNumber.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX30",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasPeriod.TemporalDuration",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 4
+        },
+        {
+          "id": "CQ09",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 2
+        },
+        {
+          "id": "CQ10",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX19",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ ≤1 hasVersion.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX40",
+              "axiom_type": "Range",
+              "axiom_dl": "hasHardwareVersion maps-to ⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 4
+        },
+        {
+          "id": "CQ11",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX18",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ ≤1 hasHardwareVersion.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX32",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasPhenomenonTime.TemporalEntity",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 4
+        },
+        {
+          "id": "CQ12",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX17",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ ≤1 hasFirmwareVersion.⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX31",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasPhenomenonTime.⊤ ⊑ Measurement",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 4
+        },
+        {
+          "id": "CQ18",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 2
+        },
+        {
+          "id": "CQ19",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 2
+        },
+        {
+          "id": "CQ20",
+          "question": "",
+          "n_relevant": 3,
+          "n_matched": 0,
+          "n_missing": 3,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "Point",
+              "sup": "Geometry"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8",
+            "AX9"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "Point",
+              "sup": "Geometry",
+              "axioms": [
+                "AX9"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX9",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Point ⊑ Geometry",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Point",
+              "sup": "Geometry"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 3
+        },
+        {
+          "id": "CQ25",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.14285714285714285,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15",
+            "AX8"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor",
+              "axioms": [
+                "AX8"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX5",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Device ⊑ ∀makesMeasurement.Measurement",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX7",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Measurement ⊑ ∀hasTimestamp.datetime'>",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX8",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Meter ⊑ Sensor",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Meter",
+              "sup": "Sensor"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX36",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasBillingDate.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX37",
+              "axiom_type": "Range",
+              "axiom_dl": "hasBillingDate maps-to datetime'>",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 1,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 7
+        },
+        {
+          "id": "CQ33",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "AcceptabilityProperty",
+              "sup": "WaterProperty"
+            },
+            {
+              "kind": "class",
+              "sub": "Water",
+              "sup": "FeatureOfInterest"
+            }
+          ],
+          "source_axioms": [
+            "AX1",
+            "AX12"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "AcceptabilityProperty",
+              "sup": "WaterProperty",
+              "axioms": [
+                "AX1"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "Water",
+              "sup": "FeatureOfInterest",
+              "axioms": [
+                "AX12"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX1",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "AcceptabilityProperty ⊑ WaterProperty",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "AcceptabilityProperty",
+              "sup": "WaterProperty"
+            },
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Water ⊑ FeatureOfInterest",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Water",
+              "sup": "FeatureOfInterest"
+            },
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Water ⊑ ∀hasProperty.WaterProperty",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 3
+        },
+        {
+          "id": "CQ34",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 1,
+          "n_missing": 1,
+          "rate": 0.3333333333333333,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [
+            [
+              "ChemicalProperty",
+              "WaterProperty"
+            ]
+          ],
+          "matched_entailments": [
+            {
+              "kind": "class",
+              "sub": "ChemicalProperty",
+              "sup": "WaterProperty"
+            }
+          ],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "Water",
+              "sup": "FeatureOfInterest"
+            }
+          ],
+          "source_axioms": [
+            "AX12",
+            "AX4"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "ChemicalProperty",
+              "sup": "WaterProperty",
+              "axioms": [
+                "AX4"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "Water",
+              "sup": "FeatureOfInterest",
+              "axioms": [
+                "AX12"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX12",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Water ⊑ FeatureOfInterest",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "Water",
+              "sup": "FeatureOfInterest"
+            },
+            {
+              "axiom_id": "AX13",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Water ⊑ ∀hasProperty.WaterProperty",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 1,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [
+            {
+              "axiom_id": "AX4",
+              "axiom_type": "SubClassOf",
+              "mode": "direct_asserted",
+              "kind": "class",
+              "sub": "ChemicalProperty",
+              "sup": "WaterProperty"
+            }
+          ],
+          "n_closure_confirmed": 1,
+          "n_axioms_total": 3
+        },
+        {
+          "id": "CQ37",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.3333333333333333,
+          "fully_covered": false,
+          "any_covered": true,
+          "covered": true,
+          "source": "strict-only",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "WaterAsset",
+              "sup": "FeatureOfInterest"
+            }
+          ],
+          "source_axioms": [
+            "AX14"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "WaterAsset",
+              "sup": "FeatureOfInterest",
+              "axioms": [
+                "AX14"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX14",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterAsset ⊑ FeatureOfInterest",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterAsset",
+              "sup": "FeatureOfInterest"
+            },
+            {
+              "axiom_id": "AX33",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "isKPIOf ≡ hasKPI⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 1,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 3
+        },
+        {
+          "id": "CQ38",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "TimeBasedTariff",
+              "sup": "Tariff"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX11",
+            "AX15"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "TimeBasedTariff",
+              "sup": "Tariff",
+              "axioms": [
+                "AX11"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX7",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "Measurement ⊑ ∀hasTimestamp.datetime'>",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX11",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "TimeBasedTariff ⊑ Tariff",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "TimeBasedTariff",
+              "sup": "Tariff"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX20",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃appliesTo.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX21",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀appliesTo.WaterMeter",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX38",
+              "axiom_type": "Range",
+              "axiom_dl": "hasFabricationNumber maps-to ⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX39",
+              "axiom_type": "Range",
+              "axiom_dl": "hasFirmwareVersion maps-to ⊤",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 7
+        },
+        {
+          "id": "CQ39",
+          "question": "",
+          "n_relevant": 2,
+          "n_matched": 0,
+          "n_missing": 2,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "TimeBasedTariff",
+              "sup": "Tariff"
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX11",
+            "AX15"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "TimeBasedTariff",
+              "sup": "Tariff",
+              "axioms": [
+                "AX11"
+              ]
+            },
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX11",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "TimeBasedTariff ⊑ Tariff",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "TimeBasedTariff",
+              "sup": "Tariff"
+            },
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX20",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃appliesTo.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX21",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀appliesTo.WaterMeter",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX28",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "hasKPI ≡ isKPIOf⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX29",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasPeriod.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 6
+        },
+        {
+          "id": "CQ40",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX20",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃appliesTo.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX21",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀appliesTo.WaterMeter",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX34",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "makesMeasurement ≡ measurementMadeBy⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX35",
+              "axiom_type": "InverseOf",
+              "axiom_dl": "measurementMadeBy ≡ makesMeasurement⁻",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 5
+        },
+        {
+          "id": "CQ42",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX20",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃appliesTo.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX21",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀appliesTo.WaterMeter",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX24",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasBillingPeriod.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX25",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasBillingPeriod.TemporalDuration",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 5
+        },
+        {
+          "id": "CQ43",
+          "question": "",
+          "n_relevant": 1,
+          "n_matched": 0,
+          "n_missing": 1,
+          "rate": 0.0,
+          "fully_covered": false,
+          "any_covered": false,
+          "covered": false,
+          "source": "none",
+          "matched_examples": [],
+          "matched_entailments": [],
+          "missing_entailments": [
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            }
+          ],
+          "source_axioms": [
+            "AX15"
+          ],
+          "pair_axiom_records": [
+            {
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter",
+              "axioms": [
+                "AX15"
+              ]
+            }
+          ],
+          "axiom_rescue": [
+            {
+              "axiom_id": "AX15",
+              "axiom_type": "SubClassOf",
+              "axiom_dl": "WaterMeter ⊑ Meter",
+              "eligible": true,
+              "rescued": false,
+              "mode": "uncovered",
+              "n_pairs_total": 1,
+              "n_pairs_matched": 0,
+              "kind": "class",
+              "sub": "WaterMeter",
+              "sup": "Meter"
+            },
+            {
+              "axiom_id": "AX20",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃appliesTo.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX21",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀appliesTo.WaterMeter",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX24",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasBillingPeriod.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX25",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasBillingPeriod.TemporalDuration",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX26",
+              "axiom_type": "Domain",
+              "axiom_dl": "∃hasDuration.⊤ ⊑ Tariff",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            },
+            {
+              "axiom_id": "AX27",
+              "axiom_type": "Range",
+              "axiom_dl": "⊤ ⊑ ∀hasDuration.TemporalDuration",
+              "eligible": false,
+              "rescued": false,
+              "mode": "not_eligible",
+              "n_pairs_total": 0,
+              "n_pairs_matched": 0
+            }
+          ],
+          "n_strict_tp": 0,
+          "n_closure_rescued": 0,
+          "axiom_confirm": [],
+          "n_closure_confirmed": 0,
+          "n_axioms_total": 7
+        }
+      ]
+    }
+  ]
+}
