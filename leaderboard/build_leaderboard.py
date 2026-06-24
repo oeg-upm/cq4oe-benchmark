@@ -44,6 +44,11 @@ import csv
 import json
 from pathlib import Path
 
+try:
+    import yaml  # PyYAML, used only for the provenance file
+except ImportError:  # pragma: no cover
+    yaml = None
+
 METHODS = ["hard_match", "sequence_match", "levenshtein", "jaro_winkler", "semantic"]
 
 # Domain order matches paper Table 1: Small (Wine, AWO) → Medium (ODRL, SAREF4WATR)
@@ -425,46 +430,154 @@ LAYER_FILES = [
 ]
 
 
-def _onto_config(dataset_dir: Path) -> dict | None:
-    """Merge cli_args from all CQ2Onto layer JSONs (prefix keys by layer).
+def _canon_value(key: str, v):
+    """Canonicalise one config value so equivalent settings from different
+    sources (legacy report-derived, freshly exported cli_args) compare equal.
 
-    Only metric-affecting parameters are kept. Path arguments and output
-    sink flags differ run-to-run and would prevent identical-setting runs
-    from grouping together.
+    This is the heart of the "leaderboard defines the grouping fingerprint"
+    approach: we never trust the raw exported type. Booleans written as
+    "no"/"false"/0, numbers written as 1 vs 1.0, and method lists in different
+    orders all collapse to a single canonical form here. Returning None means
+    "drop this key" (it carries no grouping signal).
     """
-    # Whitelist of cli arg names that actually affect the metric values.
-    # Anything not in this set is dropped from the grouping key.
+    if v is None:
+        return None
+
+    # Bare key (strip the "layer." prefix) decides the coercion.
+    bare = key.split(".", 1)[-1]
+
+    BOOL_KEYS = {"no_layer2", "literal_relax"}
+    FLOAT_KEYS = {
+        "final_threshold", "threshold",
+        "hard_threshold", "lexical_threshold", "semantic_threshold",
+    }
+    INT_KEYS = {"top_n"}
+
+    if bare in BOOL_KEYS:
+        if isinstance(v, bool):
+            return v
+        s = str(v).strip().lower()
+        if s in ("true", "yes", "relax", "1", "on"):
+            return True
+        if s in ("false", "no", "none", "0", "off", ""):
+            return False
+        return bool(v)
+
+    if bare in FLOAT_KEYS:
+        try:
+            return float(v)
+        except (TypeError, ValueError):
+            return None
+
+    if bare in INT_KEYS:
+        try:
+            return int(v)
+        except (TypeError, ValueError):
+            return None
+
+    if bare == "methods":
+        # Accept "a,b,c" or ["a","b","c"]; canonicalise to a sorted, trimmed,
+        # de-duplicated comma string so ordering never splits groups.
+        if isinstance(v, (list, tuple)):
+            items = [str(x).strip() for x in v]
+        else:
+            items = [s.strip() for s in str(v).split(",")]
+        items = sorted({s for s in items if s})
+        return ",".join(items)
+
+    # Everything else (e.g. model_id): trimmed string identity.
+    return str(v).strip()
+
+
+def _onto_config(dataset_dir: Path) -> dict | None:
+    """Build the grouping fingerprint for one CQ2Onto run.
+
+    The fingerprint is defined BY THE LEADERBOARD, not by whatever the eval
+    scripts happen to export. We read candidate values from each layer's
+    cli_args (or the legacy report-derived fallback), keep only whitelisted
+    metric-affecting keys, and run every value through `_canon_value` so that
+    equivalent settings from different data generations collapse together.
+
+    reasoner is intentionally NOT a grouping key: every run uses HermiT, so it
+    carries no discriminating signal.
+    """
+    # Whitelist of metric-affecting parameters. Anything else is dropped.
     GROUPING_KEYS = {
         "final_threshold", "top_n",
         "hard_threshold", "lexical_threshold", "semantic_threshold",
         "threshold", "literal_relax", "no_layer2",
         "model_id", "methods",
-        "reasoner",
     }
-    cfg: dict = {}
+
+    # Map the concept/property scripts' runtime `thresholds` block (the values
+    # ACTUALLY used at run time, faithfully written to JSON) onto our grouping
+    # keys. This is the authoritative source for alignment thresholds: when a
+    # maintainer changes a concept threshold during verification and re-runs,
+    # the new value lands here, whereas cli_args may still echo a stale default
+    # or be empty on legacy runs. So `thresholds` OVERRIDES cli_args.
+    THRESHOLDS_MAP = {
+        "hard_match": "hard_threshold",
+        "lexical":    "lexical_threshold",
+        "semantic":   "semantic_threshold",
+        # `synonym` is not a grouping key (synonym method is fixed at 1.0).
+    }
+
+    # Collect raw (layer-prefixed) candidate values from all sources first,
+    # then canonicalise in one pass so the output is source-independent.
+    raw: dict = {}
     has_any = False
     for layer, fname in LAYER_FILES:
         data = _load_json(dataset_dir / fname)
         if not data:
             continue
-        cli_args = data.get("config", {}).get("cli_args")
+        conf = data.get("config", {})
+        cli_args = conf.get("cli_args")
         if cli_args:
             has_any = True
             for k, v in cli_args.items():
-                if k not in GROUPING_KEYS:
-                    continue
-                cfg[f"{layer}.{k}"] = v
+                if k in GROUPING_KEYS:
+                    raw[f"{layer}.{k}"] = v
         else:
-            # Legacy fallback: axiom JSON may have layer2_threshold/skipped
+            # Legacy fallback: axiom JSON may carry layer2_threshold/skipped
+            # under config instead of an exported cli_args block.
             if layer == "axiom":
-                old = data.get("config", {})
+                old = conf
                 if "layer2_threshold" in old:
-                    cfg["axiom.threshold"] = old["layer2_threshold"]
+                    raw["axiom.threshold"] = old["layer2_threshold"]
                 if "layer2_skipped" in old:
-                    cfg["axiom.no_layer2"] = old["layer2_skipped"]
-                if cfg:
+                    raw["axiom.no_layer2"] = old["layer2_skipped"]
+                if raw:
                     has_any = True
-    return cfg if has_any else None
+
+        # Alignment-layer runtime thresholds: authoritative, override cli_args.
+        if layer in ("concept", "property"):
+            thr = conf.get("thresholds")
+            if isinstance(thr, dict):
+                for src_key, dest_key in THRESHOLDS_MAP.items():
+                    if src_key in thr and thr[src_key] is not None:
+                        raw[f"{layer}.{dest_key}"] = thr[src_key]
+                        has_any = True
+            # Some layers (esp. property) record final_threshold / top_n /
+            # model_id / methods at the config top level rather than in
+            # cli_args. Pull whitelisted ones in (cli_args still wins if both
+            # exist, since this runs after the cli_args loop).
+            for tk in ("final_threshold", "top_n", "model_id", "methods"):
+                if tk in conf and conf[tk] is not None:
+                    key = f"{layer}.{tk}"
+                    if key not in raw:
+                        raw[key] = conf[tk]
+                        has_any = True
+
+    if not has_any:
+        return None
+
+    # Canonicalise; drop keys whose canonical value is None (no signal).
+    cfg: dict = {}
+    for k, v in raw.items():
+        cv = _canon_value(k, v)
+        if cv is not None:
+            cfg[k] = cv
+    return cfg or None
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -579,6 +692,194 @@ def _term_config(dataset_dir: Path) -> dict | None:
         if k in cfg:
             fallback[f"cq_terms.{k}"] = cfg[k]
     return fallback or None
+
+
+# ─────────────────────────────────────────────────────────────────
+# Provenance (reproduced / verified badges)
+# ─────────────────────────────────────────────────────────────────
+
+def load_provenance(path: Path | None) -> dict:
+    """Load the maintainer-curated provenance YAML.
+
+    Returns a dict with two lookup tables:
+        {
+          "cq2onto": { (mode, model): {"reproduced": {...}, "verified": {...}} },
+          "cq2term": { model:         {"reproduced": {...}, "verified": {...}} },
+        }
+    A missing file, empty file, or absent PyYAML yields empty tables, so the
+    build still succeeds (every run is then treated as an unbadged community
+    submission).
+    """
+    empty = {"cq2onto": {}, "cq2term": {}}
+    if not path or not path.exists():
+        return empty
+    if yaml is None:
+        print("[build_leaderboard] WARNING: PyYAML not installed; "
+              "provenance badges disabled.")
+        return empty
+    try:
+        doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError as e:  # type: ignore[union-attr]
+        print(f"[build_leaderboard] WARNING: could not parse {path}: {e}")
+        return empty
+
+    def _status(entry: dict) -> dict:
+        out = {}
+        for badge in ("reproduced", "verified"):
+            block = entry.get(badge)
+            if block:  # presence (truthy) toggles the badge
+                # Carry the metadata through verbatim for the tooltip, but
+                # keep only JSON-serialisable scalars/lists.
+                out[badge] = block if isinstance(block, dict) else {}
+        return out
+
+    def _rule(entry: dict) -> dict | None:
+        """Build a matching rule: status payload + optional config constraint.
+
+        `config:` (a dict of layer.key=value) restricts the entry to runs whose
+        own config is a superset of it. Absent → matches every config for that
+        mode+model (legacy behaviour).
+        """
+        st = _status(entry)
+        if not st:
+            return None
+        cfg = entry.get("config")
+        if cfg is not None and not isinstance(cfg, dict):
+            cfg = None
+        return {"status": st, "config": cfg}
+
+    # Tables map key → LIST of rules (multiple entries may share a mode+model
+    # but differ in config). attach_status picks the most specific match.
+    onto: dict = {}
+    for entry in (doc.get("cq2onto") or []):
+        if not isinstance(entry, dict):
+            continue
+        model = entry.get("model")
+        if not model:
+            continue
+        rule = _rule(entry)
+        if rule:
+            onto.setdefault((entry.get("mode"), model), []).append(rule)
+
+    term: dict = {}
+    for entry in (doc.get("cq2term") or []):
+        if not isinstance(entry, dict):
+            continue
+        model = entry.get("model")
+        if not model:
+            continue
+        rule = _rule(entry)
+        if rule:
+            term.setdefault(model, []).append(rule)
+
+    return {"cq2onto": onto, "cq2term": term}
+
+
+def _config_matches(rule_cfg: dict | None, run_cfg: dict | None) -> bool:
+    """True if the run's config satisfies the rule's config constraint.
+
+    No constraint (None/empty) matches anything. Otherwise every key in the
+    rule must be present in the run with an equal value (run config ⊇ rule).
+    Both sides are passed through `_canon_value` so a maintainer can write the
+    constraint in any equivalent form (e.g. no_layer2: "no" vs false) and it
+    still matches the canonicalised run config.
+    """
+    if not rule_cfg:
+        return True
+    if not isinstance(run_cfg, dict):
+        return False
+    for k, v in rule_cfg.items():
+        if _canon_value(k, run_cfg.get(k)) != _canon_value(k, v):
+            return False
+    return True
+
+
+def _is_verified(run: dict) -> bool:
+    st = run.get("status")
+    return bool(st and st.get("verified"))
+
+
+# The final alignment thresholds for the class (concept) and property layers.
+# For a VERIFIED run these were hand-tuned by a maintainer purely to obtain a
+# correct alignment, so they are a correction knob, not an experimental
+# condition — they must NOT partition verified runs into separate groups.
+#
+# Per the maintainers' rule, ONLY the final alignment thresholds are stripped
+# (concept.final_threshold = 0.6, property.final_threshold = 0.7). The
+# per-method sub-thresholds (hard/lexical/semantic) are NOT a target of manual
+# correction and stay in the fingerprint. Triple/axiom thresholds also stay.
+ALIGNMENT_THRESHOLD_KEYS = {
+    "concept.final_threshold",
+    "property.final_threshold",
+}
+
+
+def strip_alignment_thresholds_for_verified(runs: list[dict]) -> int:
+    """Drop class/property alignment thresholds from VERIFIED runs' configs.
+
+    Verified runs had their alignment hand-corrected, so the threshold values
+    no longer describe an experimental condition — keeping them would scatter
+    otherwise-comparable verified runs into singleton groups. Removing them
+    lets verified runs that share all OTHER settings (model_id, methods,
+    no_layer2, triple/axiom thresholds, …) group and rank together.
+
+    Automatic (non-verified) runs are left untouched: for them the thresholds
+    ARE the experimental condition and must keep partitioning groups.
+
+    Returns the number of runs modified.
+    """
+    n = 0
+    for r in runs:
+        if not _is_verified(r):
+            continue
+        cfg = r.get("config")
+        if not isinstance(cfg, dict):
+            continue
+        stripped = {k: v for k, v in cfg.items() if k not in ALIGNMENT_THRESHOLD_KEYS}
+        if len(stripped) != len(cfg):
+            r["config"] = stripped or None
+            n += 1
+    return n
+
+
+def attach_status(runs: list[dict], table: dict, benchmark: str) -> None:
+    """Attach a `status` block to each run record from the provenance table.
+
+    Matching:
+      * cq2onto keyed on (mode, model); cq2term on model alone.
+      * Among rules sharing that key, only those whose `config` constraint is
+        satisfied by the run apply. The most specific match (largest config
+        constraint) wins, so a config-scoped entry overrides a bare one.
+      * `verified` is dataset-scoped: if its block lists `datasets`, the badge
+        only applies to runs whose dataset is in that list. Runs outside the
+        list keep `reproduced` (if any) but drop `verified`.
+
+    Runs with no applicable rule get `status: None`.
+    """
+    for r in runs:
+        key = (r.get("mode"), r.get("model")) if benchmark == "cq2onto" else r.get("model")
+        rules = table.get(key) or []
+        run_cfg = r.get("config")
+
+        # Candidate rules whose config constraint the run satisfies, sorted so
+        # the most specific (largest constraint) is considered authoritative.
+        candidates = [rule for rule in rules if _config_matches(rule.get("config"), run_cfg)]
+        candidates.sort(key=lambda rule: len(rule.get("config") or {}), reverse=True)
+
+        if not candidates:
+            r["status"] = None
+            continue
+
+        status = dict(candidates[0]["status"])  # shallow copy of {reproduced?, verified?}
+
+        # Dataset-scope the verified badge.
+        ver = status.get("verified")
+        if ver is not None:
+            datasets = ver.get("datasets") if isinstance(ver, dict) else None
+            if isinstance(datasets, list) and r.get("dataset") not in datasets:
+                status = {k: v for k, v in status.items() if k != "verified"}
+
+        r["status"] = status or None
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -1062,6 +1363,10 @@ def main():
                         "Keys are prefixed automatically.")
     p.add_argument("--assume_config_term", default=None,
                    help="Same for CQ2Term legacy runs.")
+    p.add_argument("--provenance", default="provenance.yaml",
+                   help="Maintainer-curated YAML with reproduced/verified "
+                        "badges. Missing file = no badges (all runs treated "
+                        "as community submissions).")
     args = p.parse_args()
 
     onto_root = Path(args.cq2onto_root)
@@ -1072,6 +1377,25 @@ def main():
 
     onto_runs = collect_onto(onto_root, assumed_onto) if onto_root.exists() else []
     term_runs = collect_term(term_root, assumed_term) if term_root.exists() else []
+
+    # Attach reproduced/verified provenance badges.
+    provenance = load_provenance(Path(args.provenance) if args.provenance else None)
+    attach_status(onto_runs, provenance["cq2onto"], "cq2onto")
+    attach_status(term_runs, provenance["cq2term"], "cq2term")
+    n_onto_badged = sum(1 for r in onto_runs if r.get("status"))
+    n_term_badged = sum(1 for r in term_runs if r.get("status"))
+    print(f"[build_leaderboard] Provenance badges: "
+          f"{n_onto_badged} CQ2Onto runs, {n_term_badged} CQ2Term runs")
+
+    # Verified runs had their class/property alignment hand-corrected, so the
+    # final alignment thresholds are a correction knob rather than an
+    # experimental condition. Strip them from the grouping fingerprint (only
+    # for verified runs) so comparable verified runs rank together instead of
+    # scattering into singleton groups. Automatic runs keep every threshold.
+    n_onto_stripped = strip_alignment_thresholds_for_verified(onto_runs)
+    n_term_stripped = strip_alignment_thresholds_for_verified(term_runs)
+    print(f"[build_leaderboard] Stripped alignment thresholds from "
+          f"{n_onto_stripped} CQ2Onto + {n_term_stripped} CQ2Term verified runs")
 
     print(f"[build_leaderboard] CQ2Term runs: {len(term_runs)}")
     print(f"[build_leaderboard] CQ2Onto runs: {len(onto_runs)}")

@@ -190,7 +190,7 @@ CQ2Onto/
 ├── competency_question/
 ├── prompts/
 └── scripts/{concept,property,triple,axioms,hierarchy}/...
-   + scripts/run_all_evaluation_agent_datsets.py
+   + scripts/run_all_evaluation_agent_datasets.py
 ```
 
 The three-level path `01_predictions/<mode>/<model>/ontology/` is required. With one mode and one model, still create both layers (e.g. `01_predictions/mymodel/mymethod/ontology/`).
@@ -232,7 +232,7 @@ The `<mode>` layer must match one of the names in `MODES` at the top of the runn
 
 ### 4.4 Configure the runner
 
-Edit the top of `scripts/run_all_evaluation_agent_datsets.py`.
+Edit the top of `scripts/run_all_evaluation_agent_datasets.py`.
 
 ```python
 PYTHON  = "/path/to/your/python"
@@ -246,8 +246,9 @@ Tunable arguments (edit inline in the `run([...])` blocks).
 | `--top_n` | `3` | Number of top non-hard methods averaged into the aggregated score s(tg, tp). `5` averages all, `1` keeps the single best. |
 | `--final_threshold` | `0.6` class, `0.7` property | Cutoff for accepted candidate pairs. Higher means stricter, more precision, less recall. |
 | `--hard_threshold`, `--lexical_threshold`, `--semantic_threshold` | `1.0`, `0.8`, `0.6` | Cutoffs for the standalone per-method P/R/F1 reports. |
-| `--threshold` (triple) | `0.6` | Cosine cutoff for the Layer 2 embedding fallback in `eval_triple.py`. |
+| `--threshold` (triple, axiom) | `0.6` | Cosine cutoff for the Layer 2 embedding step. Both the triple and axiom evaluations have a Layer 2 (semantic embedding match); this sets its threshold in each. |
 | `--literal_relax` | `no` | `yes` lets a generic gold literal match any concrete pred datatype. |
+| `--no_layer2`| off by default, so Layer 2 is evaluated | Both the triple and axiom layers evaluate their Layer 2 (the embedding match) by default. This optional flag exists only for the triple and axiom layer and skips its Layer 2 when passed. |
 
 The shipped runner matches the paper baseline. Changing any value here puts the resulting runs in a new configuration group on the leaderboard.
 
@@ -258,7 +259,7 @@ Standard call.
 
 ```bash
 cd CQ2Onto
-python -u scripts/run_all_evaluation_agent_datsets.py
+python -u scripts/run_all_evaluation_agent_datasets.py
 ```
 
 Five targets run in order. Class, Property, Triple, TBox Axioms, Hierarchy Closure. A successful run finishes by refreshing the leaderboard.
@@ -275,13 +276,13 @@ Examples.
 
 ```bash
 # Only my own model
-python -u scripts/run_all_evaluation_agent_datsets.py --modes mymodel
+python -u scripts/run_all_evaluation_agent_datasets.py --modes mymodel
 
 # Only term-level layers (fastest, no Java needed)
-python -u scripts/run_all_evaluation_agent_datsets.py --layers concept,property
+python -u scripts/run_all_evaluation_agent_datasets.py --layers concept,property
 
 # Re-run only axioms after a config change
-python -u scripts/run_all_evaluation_agent_datsets.py --layers axioms --no_leaderboard
+python -u scripts/run_all_evaluation_agent_datasets.py --layers axioms --no_leaderboard
 ```
 
 Downstream layers need the alignment CSVs from concept and property. The runner refuses with a clear error if the pre-alignment files are missing.
@@ -294,12 +295,12 @@ Drop only one prediction file. The other five datasets are skipped with `SKIP <d
 mkdir -p CQ2Onto/01_predictions/mymodel/my_run/ontology
 cp wine_my_run.owl CQ2Onto/01_predictions/mymodel/my_run/ontology/
 cd CQ2Onto
-python -u scripts/run_all_evaluation_agent_datsets.py --modes mymodel
+python -u scripts/run_all_evaluation_agent_datasets.py --modes mymodel
 ```
 
 ### 4.7 Inspect and fix alignments before running downstream layers
 
-The Class and Property layers produce two CSVs (`class_best_matching.csv` and `property_best_matching.csv`) that downstream layers read. The automatic alignment can be wrong (LLM picked a near-synonym, two pred classes equally close, etc.) and the mistake then propagates into Triple, Axioms, and Hierarchy.
+The Class and Property layers produce two CSVs (`class_best_matching.csv` and `property_best_matching.csv`) that downstream layers read. The automatic alignment can be wrong (LLM picked a near-synonym, two pred classes equally close, etc.), and the mistake then propagates into Triple, Axioms, and Hierarchy.
 
 There are two ways to inspect alignments before downstream layers commit to them.
 
@@ -319,17 +320,17 @@ python scripts/concept/eval_concept.py \
 
 Open the trace, decide whether `--top_n`, `--final_threshold`, or the per-method thresholds need adjustment, then move on to the staged run.
 
-**Option B. Staged run with hand edits.** Run the full pipeline in two phases. Edit the produced `best_matching.csv` between phases.
+**Option B. Staged run with human verified edits.** Run the full pipeline in two phases. Edit the produced `best_matching.csv` between phases.
 
 1. Run only the first two layers.
    ```bash
-   python scripts/run_all_evaluation_agent_datsets.py --modes mymodel --layers concept,property
+   python scripts/run_all_evaluation_agent_datasets.py --modes mymodel --layers concept,property
    ```
 2. Open `03_evaluation_results/<mode>/<model>/<dataset>/01_class/class_best_matching.csv` and the property equivalent. Use the trace files next to them (`*_alignment_trace.csv` and `*_alignment_trace.json`) to see candidate pairs, all five method scores, and the selection reason.
 3. Edit the `*_best_matching.csv` by hand. Replace a wrong `Pre_term`, or delete a row when no real match exists.
-4. Run the rest. Downstream layers read your edited CSVs.
+4. Run the rest. Downstream layers read your edited CSVs
    ```bash
-   python scripts/run_all_evaluation_agent_datsets.py --modes mymodel --layers triple,atomic,axioms,hierarchy
+   python scripts/run_all_evaluation_agent_datasets.py --modes mymodel --layers triple, atomic axioms, hierarchy
    ```
 5. The leaderboard refresh happens automatically at the end of step 4.
 
@@ -371,10 +372,19 @@ Different runs do not overwrite previous results.
 
 ## 5. Read the gold standards directly
 
-- **CQ2Term.** `CQ2Term/00_gold_standard/<domain>/cq_to_terms_<domain>.json`. Required classes and properties per CQ.
-- **CQ2Onto.** `CQ2Onto/00_gold_standard/<domain>/ontology/sub_<domain>.owl` is the CQ-aligned sub-ontology. The matching `axioms/<domain>_axiom_gold.json` lists TBox axioms with CQ provenance.
+- **CQ2Term.** Under `CQ2Term/00_gold_standard/<domain>/`:
+  - `cq_to_terms_<domain>.json`. The classes and properties each CQ requires (the gold used for scoring).
+  - `term_to_cqs_<domain>.json`. The reverse mapping: for each term, the CQs that require it.
+- **CQ2Onto.** Under `CQ2Onto/00_gold_standard/<domain>/`:
+  - `ontology/sub_<domain>.owl`. The CQ-aligned sub-ontology (the gold ontology).
+  - `axioms/<domain>_axiom_gold.json`. The gold TBox axioms used for scoring, each tagged with the CQ it comes from.
+  - `axioms/<domain>_axiom_gold.xlsx`. A human-readable Excel view of the same gold axioms, with two sheets: one listing each axiom and the CQs it maps to, and one listing each CQ and the axioms it triggers. For reading only; scoring uses the JSON.
+  - `axioms/sub_<domain>_atomic_tbox.{json,txt,xlsx}`. The full set of atomic TBox axioms extracted from the sub-ontology, in machine-readable (json), plain-text (txt), and spreadsheet (xlsx) form. Reference material; not read by the evaluation.
 
 ---
+
+
+
 
 ## 6. Metrics
 
@@ -399,19 +409,16 @@ Each layer reports **TP, FP, FN, P, R, F1**. F1 is the headline. Low P with high
 
 ### 7.1 Files
 
-All files live in `leaderboard/` at the repo root, side by side. No subfolder.
+All files live in `leaderboard/` at the repo root. The two you interact with are:
 
-- `leaderboard.html`. Interface.
-- `leaderboard_data.js`. Data, regenerated by `build_leaderboard.py`.
-- `leaderboard.md`. Top 10 per task.
-- `cqs.html` + `cqs_data.js`. CQ browser.
-- `index.html`. Landing page.
-- `build_leaderboard.py`. Generator script.
-- `backfill_legacy_cli_args.py`. One-off migration utility (see 7.6).
+- `build_leaderboard.py`. Generator script. Reads the result JSONs and `provenance.yaml`, writes `leaderboard_data.js`.
+- `provenance.yaml`. Hand-maintained record of which runs have been reproduced and verified (see 7.5). The only file here you edit by hand.
+
+The rest (`leaderboard.html`, `leaderboard_data.js`, `index.html`, `cqs.html`, `leaderboard.md`) are generated or static pages that are not normally touched.
 
 ### 7.2 Refresh
 
-The runners call `build_leaderboard.py` at the end of a successful run, so the standard workflow needs no extra step.
+The runners call `build_leaderboard.py` at the end of a successful run, so the standard workflow needs no extra step. The scores come from the result JSONs under `03_evaluation_results/`. The Reproduced and Verified badges come from `provenance.yaml`. The script merges the two and writes `leaderboard_data.js`.
 
 Manual refresh.
 
@@ -421,58 +428,60 @@ python build_leaderboard.py \
   --cq2term_root ../CQ2Term/03_evaluation_results \
   --cq2onto_root ../CQ2Onto/03_evaluation_results \
   --html_data    leaderboard_data.js \
-  --markdown_out leaderboard.md
+  --markdown_out leaderboard.md \
+  --provenance   provenance.yaml
 ```
+
+`--provenance` defaults to `provenance.yaml` in the current directory, so it can be omitted when you run from inside `leaderboard/`. If the file is not found the leaderboard is still built, but with **no badges and nothing ranked**. Pass the path explicitly in any script that runs from another directory.
 
 ### 7.3 View
 
-```bash
-cd leaderboard
-python3 -m http.server 8000
-# http://127.0.0.1:8000/leaderboard.html
+The leaderboard is published online via GitHub Pages (link in the README).
+
+### 7.4 Configuration grouping
+
+Two runs are ranked against each other only when they share the same settings, so that comparisons stay fair. The settings that matter are the alignment thresholds, `top_n`, `--threshold`, `--literal_relax`, `no_layer2`, `model_id`, and `methods`. Changing any of them puts a run in a new group. Paths and the reasoner (always HermiT) are ignored, and equivalent values (`1` vs `1.0`, `no` vs `false`, or a reordered `methods` list) count as the same.
+
+One exception: a run marked **Verified** (see 7.5) had its alignment corrected by hand, so its class/property alignment threshold is no longer treated as a grouping setting. This lets verified runs be compared together even if a maintainer tuned that threshold differently for each.
+
+
+### 7.5 Provenance badges (Reproduced / Verified)
+
+The leaderboard shows two badges in the **Status** column. They record human review and are loaded entirely from the hand-maintained file `leaderboard/provenance.yaml`, independent of the evaluation scores.
+
+- **Reproduced.** A maintainer invoked the model and obtained a prediction equivalent to what was submitted. Confirms the result is a real model output.
+- **Verified.** A maintainer inspected the alignment (`class_best_matching.csv` / `property_best_matching.csv`), corrected it where the automatic matching was wrong, and re-ran the downstream layers. Confirms the metrics rest on a sound alignment.
+
+**Ranking.** Only runs with both badges are ranked. All others remain visible below the divider without a rank. A run with no entry in `provenance.yaml` is treated as an unreviewed community submission (no badge, not ranked).
+
+**The scores are never edited here.** `provenance.yaml` contains no metrics, only who reviewed what, and when. Scores always come from the result JSONs and are averaged by the script. This keeps evaluation results machine-generated while human review is recorded separately in one auditable file.
+
+#### How to add a badge
+
+After reproducing or verifying a run, add an entry to `leaderboard/provenance.yaml`. CQ2Onto is keyed by `mode` plus `model`, while CQ2Term is keyed by `model` alone.
+
+```yaml
+cq2onto:
+  - mode: agent
+    model: my_model            # must match the folder name under 01_predictions/<mode>/
+    reproduced:
+      by: "Name from Maintenance"
+      date: "2026-06-08"
+    verified:
+      by: "Name from Maintenance"
+      date: "2026-06-08"
+      datasets: [wine, awo]    # only the domains you actually verified
+
+cq2term:
+  - model: my_model
+    reproduced: { by: "Name from Maintenance", date: "2026-06-08" }
+    verified:   { by: "Name from Maintenance", date: "2026-06-08", datasets: [wine, awo] }
 ```
 
-For online hosting, commit the contents of `leaderboard/` and enable GitHub Pages.
+How this works.
 
-### 7.4 What you see
+- **Writing a block turns a badge on.** A `reproduced:` block gives a model the R badge, and a `verified:` block gives it the V badge. `by`, `date`, and `notes` are optional hover metadata and do not affect the badge.
+- **`datasets:` controls the Overall badge.** Inside `verified:`, list the domains you verified by hand. The Overall row gets a V badge only when all evaluated domains are listed. If only some are listed, those per-domain rows get V, but the Overall row does not.
+- **`config:` is optional.** It ties a badge to a specific configuration group. If omitted (the normal case), the badge applies to the model regardless of settings. Use it only when the same model has multiple configurations that should be badged separately.
 
-Three nav layers.
-
-- **Task.** CQ2Term (99 CQs) or CQ2Onto (118 CQs).
-- **Target.** Term Recovery for CQ2Term. For CQ2Onto, five targets (Term Recovery, Property Characteristics, Triple, TBox Axioms, Hierarchy Closure).
-- **Domain.** Overall or one of Wine, AWO, ODRL, Water, VGO, SWO.
-
-Table controls. Click a header to sort. ▶ on F1 columns splits into P, R, F1. ⋮ on aggregated Term Recovery splits into the five methods. Hover a cell for TP, FP, FN. Partial runs show `n/6 ⚠` in the Domain Coverage column.
-
-### 7.5 Configuration grouping
-
-Runs are grouped by the `config.cli_args` block in each result JSON. Same CLI args means same group, regardless of model. Any change (`--threshold`, `--literal_relax`, similarity method order, etc.) puts a run in a new group.
-
-| Change between two runs | Effect |
-|---|---|
-| identical CLI args | same group |
-| different `--literal_relax` | new group |
-| different `--threshold` | new group |
-| different similarity method order | new group |
-
-The strict rule guarantees that two runs ranked against each other are reproducible against each other.
-
-### 7.6 Backfilling legacy runs
-
-Runs evaluated before the eval scripts were patched do not have a `config.cli_args` block in their result JSONs. Those runs end up in an "Unknown configuration" group and cannot be ranked against fresh runs.
-
-The one-off migration utility writes the paper-baseline `cli_args` block into legacy JSONs, so they group with patched runs that share the same parameters.
-
-```bash
-cd leaderboard
-
-# Preview without writing files
-python backfill_legacy_cli_args.py ../CQ2Onto/03_evaluation_results --dry-run
-
-# Apply the fix
-python backfill_legacy_cli_args.py ../CQ2Onto/03_evaluation_results
-```
-
-The script is idempotent. JSONs that already have a `cli_args` block are skipped. Edit the `BASELINE` dict at the top of the script if your old runs used different defaults.
-
-After backfill, regenerate the leaderboard. The legacy and fresh runs now share one configuration group.
+Save the file and refresh the leaderboard (7.2) to display the badges.

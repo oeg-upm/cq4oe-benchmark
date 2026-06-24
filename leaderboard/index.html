@@ -86,6 +86,13 @@
     font-size: 15px;
     margin-bottom: 24px;
   }
+  .card p.section-lead .lb-badge { cursor: default; vertical-align: middle; margin: 0 1px; }
+  #lb-frame {
+    width: 100%; border: 1px solid #e2e8f0; border-radius: 10px;
+    background: #fff; display: block; margin-top: 4px;
+    height: 600px; max-height: 820px;
+  }
+  .lb-footer-link { display: inline-block; margin-top: 12px; }
 
   /* Tasks grid */
   .grid {
@@ -247,11 +254,36 @@
     white-space: nowrap;
   }
   table.lb-table th:nth-child(-n+3), table.lb-table td:nth-child(-n+3) { text-align: left; }
+  /* Keep Rank / Mode / Model / Status tightly packed on the left at their
+     content width; let the metric columns on the right absorb the slack. */
+  table.lb-table td.lb-rank, table.lb-table td.lb-mode-cell,
+  table.lb-table td.lb-model-cell, table.lb-table td.lb-status,
+  table.lb-table th.lb-model-col, table.lb-table th.lb-status-col {
+    width: 1%; white-space: nowrap;
+  }
+  table.lb-table th.lb-status-col, table.lb-table td.lb-status { padding-left: 12px; padding-right: 12px; }
   table.lb-table th { color: #475569; font-weight: 600; font-size: 12px; }
+  table.lb-table th.lb-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+  table.lb-table th.lb-sortable:hover { color: #1e293b; }
   table.lb-table tbody tr:last-child td { border-bottom: none; }
   table.lb-table tbody tr:hover { background: #fafbfc; }
   table.lb-table td.lb-rank { color: #94a3b8; font-variant-numeric: tabular-nums; }
   table.lb-table td.lb-mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  table.lb-table td.lb-status { text-align: center; white-space: nowrap; }
+  table.lb-table th.lb-status-col { text-align: center; }
+  .lb-badge {
+    display: inline-block; width: 17px; height: 17px; line-height: 17px;
+    margin: 0 1px; border-radius: 50%; font-size: 11px; font-weight: 700;
+    text-align: center; cursor: help; border: 1px solid transparent;
+  }
+  .lb-badge-rep { background: #e7f3ff; color: #1257a8; border-color: #b6d8fb; }
+  .lb-badge-ver { background: #e6f7ed; color: #1b7a43; border-color: #b3e6c9; }
+  .lb-badge-none { color: #bbb; }
+  .lb-status-legend {
+    display: block; margin-top: 8px; font-size: 12px; color: #64748b;
+    line-height: 1.7; font-style: normal;
+  }
+  .lb-status-legend .lb-badge { margin: 0 2px 0 0; vertical-align: middle; cursor: default; }
   a.lb-model-link { color: #2563eb; text-decoration: none; }
   a.lb-model-link:hover { text-decoration: underline; }
   .lb-table th.headline, .lb-table td.headline { font-weight: 700; }
@@ -308,28 +340,12 @@
 <section class="card" id="leaderboard">
   <h2>Leaderboard</h2>
   <p class="section-lead">
-    Top 10 per evaluation target, grouped by configuration so only identical settings are ranked together. Pick a task, target, and domain. In the Overall view, the Domains column (e.g. 6/6) shows how many of the six benchmark domains a model was evaluated on; anything below full coverage is flagged with ⚠ and is not directly comparable.
+    Pick a task, target, and domain inside the board below. Runs are grouped by configuration so only identical settings are ranked together. The <strong>Status</strong> column shows maintainer review: <span class="lb-badge lb-badge-rep">R</span> <em>Reproduced</em> means we re-ran the model and got the same kind of output, and <span class="lb-badge lb-badge-ver">V</span> <em>Verified</em> means we also checked and corrected the alignment by hand before scoring. Only runs with both are ranked.
   </p>
 
-  <div class="lb-controls">
-    <div class="lb-nav">
-      <span class="lb-nav-label">Task:</span>
-      <div id="lb-task-nav"></div>
-    </div>
-    <div class="lb-nav">
-      <span class="lb-nav-label">Target:</span>
-      <div id="lb-target-nav"></div>
-    </div>
-    <div class="lb-nav">
-      <span class="lb-nav-label">Domain:</span>
-      <div id="lb-domain-nav"></div>
-    </div>
-  </div>
+  <iframe id="lb-frame" src="leaderboard.html?embed=1" title="CQ4OE leaderboard" loading="lazy"></iframe>
 
-  <p id="lb-desc" class="lb-desc"></p>
-  <div id="lb-content"></div>
-
-  <a id="lb-full-link" class="lb-footer-link" href="leaderboard.html">View full leaderboard (all columns, per-method breakdowns) →</a>
+  <a class="lb-footer-link" href="leaderboard.html" target="_blank" rel="noopener">Open the full leaderboard in a new tab →</a>
 </section>
 
 <section class="card">
@@ -418,389 +434,35 @@
   for citation and contribution details.
 </footer>
 
-<script src="leaderboard_data.js"></script>
+
 <script>
-// ── Embedded mini leaderboard (Top 10, headline metrics only) ───────────
-// Reuses LEADERBOARD_DATA. Full version with all columns lives in leaderboard.html.
+// Size the embedded leaderboard to its content, capped at a maximum.
+// Below the cap the frame shrinks to fit (no blank space); above it the
+// frame stays at the cap and the board scrolls inside.
 (function () {
-  if (typeof LEADERBOARD_DATA === "undefined") return;
-
-  // Column kinds: prf1 (PRF1 obj), agg (term-recovery aggregated F1), cq (coverage)
-  const TASKS = {
-    cq2term: {
-      term_recovery: {
-        label: "Term Recovery", accent: "term",
-        desc: "Recovery of the classes and properties each CQ requires. Ranked by per-CQ mean coverage.",
-        defaultSort: "cq__mean",
-        cols: [
-          { kind: "agg", id: "class",    label: "Class F1",    subKey: "class" },
-          { kind: "agg", id: "property", label: "Property F1", subKey: "property" },
-          { kind: "cq",  id: "cq",       label: "CQ-Mean", sub: "mean", headline: true },
-        ],
-      },
-    },
-    cq2onto: {
-      term_recovery: {
-        label: "Term Recovery", accent: "term",
-        desc: "Recovery of all classes and properties in the predicted ontology. Ranked by Property F1.",
-        defaultSort: "property__f1",
-        cols: [
-          { kind: "agg", id: "class",    label: "Class F1",    subKey: "class" },
-          { kind: "agg", id: "property", label: "Property F1", subKey: "property", headline: true },
-        ],
-      },
-      property_chars: {
-        label: "Property Characteristics", accent: "prop",
-        desc: "Recovery of OWL property flags (functional, inverse, transitive, …). Ranked by F1-AC.",
-        defaultSort: "ac__f1",
-        cols: [
-          { kind: "prf1", id: "ac", label: "F1-AC", headline: true },
-          { kind: "prf1", id: "g",  label: "F1-G" },
-        ],
-      },
-      triple: {
-        label: "Triple (domain/range)", accent: "triple",
-        desc: "Recovery of (subject, predicate, object) triples from rdfs domain/range. Ranked by F1-AC.",
-        defaultSort: "ac__f1",
-        cols: [
-          { kind: "prf1", id: "ac",     label: "F1-AC", headline: true },
-          { kind: "prf1", id: "g",      label: "F1-G" },
-          { kind: "prf1", id: "cosine", label: "Cosine" },
-        ],
-      },
-      axiom: {
-        label: "TBox Axioms", accent: "axiom",
-        desc: "Strict structural matching of TBox axioms after alignment. Ranked by Axiom-Mean.",
-        defaultSort: "cq__mean",
-        cols: [
-          { kind: "cq",   id: "cq", label: "Axiom-Mean", sub: "mean", headline: true },
-          { kind: "prf1", id: "ac", label: "F1-AC" },
-        ],
-      },
-      hierarchy: {
-        label: "Hierarchy Closure", accent: "hierarchy",
-        desc: "Reasoner-based recovery of subClassOf / subPropertyOf entailments. Ranked by Closure-Mean.",
-        defaultSort: "cq__mean",
-        cols: [
-          { kind: "cq",   id: "cq", label: "Closure-Mean", sub: "mean", headline: true },
-          { kind: "cq",   id: "cq", label: "Closure-Any",  sub: "any" },
-        ],
-      },
-    },
-  };
-
-  const TASK_ORDER = {
-    cq2term: ["term_recovery"],
-    cq2onto: ["term_recovery", "property_chars", "triple", "axiom", "hierarchy"],
-  };
-  const BENCHMARK_LABELS = { cq2term: "CQ2Term", cq2onto: "CQ2Onto" };
-  const TOP_N = 10;
-
-  const state = { benchmark: "cq2onto", task: "term_recovery", domain: "overall", sort: { col: null, dir: "desc" } };
-
-  const fmtPct = v => (v === null || v === undefined) ? "—" : v.toFixed(1) + "%";
-
-  // Model display names + vendor homepages (display-only; raw data untouched).
-  const VENDOR_HOME = {
-    deepseek: "https://www.deepseek.com/en/",
-    qwen:     "https://qwenlm.github.io/",
-    google:   "https://deepmind.google/models/gemma/",
-    gemma:    "https://deepmind.google/models/gemma/",
-  };
-  const PLACEHOLDER_MODELS = new Set(["mymethod", "mymodel"]);
-  function prettyModelName(raw) {
-    if (!raw) return "";
-    if (PLACEHOLDER_MODELS.has(raw)) return raw;
-    let s = raw;
-    const us = s.indexOf("_");
-    if (us !== -1) s = s.slice(us + 1);
-    const SPECIAL = { it: "it", a3b: "A3B", a4b: "A4B" };
-    return s.split("-").map(tok => {
-      const low = tok.toLowerCase();
-      if (SPECIAL[low]) return SPECIAL[low];
-      if (/^\d+(\.\d+)?b$/.test(low)) return low.toUpperCase();
-      if (/^v\d/.test(low)) return "V" + tok.slice(1);
-      if (low.startsWith("deepseek")) return "DeepSeek" + tok.slice(8);
-      if (low.startsWith("qwen"))     return "Qwen" + tok.slice(4);
-      if (low.startsWith("gemma"))    return "Gemma" + tok.slice(5);
-      if (low === "flash") return "Flash";
-      if (low === "plus")  return "Plus";
-      if (low === "pro")   return "Pro";
-      return tok.charAt(0).toUpperCase() + tok.slice(1);
-    }).join("-");
-  }
-  function modelLink(raw) {
-    if (!raw || PLACEHOLDER_MODELS.has(raw)) return null;
-    const low = raw.toLowerCase();
-    for (const v in VENDOR_HOME) if (low.startsWith(v + "_") || low.startsWith(v)) return VENDOR_HOME[v];
-    return null;
-  }
-  function modelCellHTML(raw) {
-    const name = prettyModelName(raw), href = modelLink(raw);
-    return href
-      ? `<a class="lb-model-link" href="${href}" target="_blank" rel="noopener" title="${raw}">${name}</a>`
-      : `<span title="${raw}">${name}</span>`;
-  }
-
-  // OntoCatalogue links
-  const CATALOG_BASE = "https://oeg-upm.github.io/cq4oe-benchmark/OntoCatalogue/html";
-  const TASK_CATALOG = { cq2term: CATALOG_BASE + "/CQ2Term.html", cq2onto: CATALOG_BASE + "/CQ2Onto.html" };
-  const TARGET_CATALOG = {
-    term:      CATALOG_BASE + "/ClassProperty.html",
-    prop:      CATALOG_BASE + "/PropertyCharacteristics.html",
-    triple:    CATALOG_BASE + "/Triple.html",
-    axiom:     CATALOG_BASE + "/Axiom.html",
-    hierarchy: CATALOG_BASE + "/HierarchyClosure.html",
-  };
-
-  // Generation-strategy (mode) display names + definitions (raw data untouched).
-  const MODE_INFO = {
-    normal:  { label: "Zero-shot",   def: "Zero-shot: the full CQ set is fed to the model in a single pass." },
-    cqbycq:  { label: "Iterative",   def: "Iterative: CQs are fed to the model sequentially, one at a time." },
-    agent:   { label: "Multi-agent", def: "Multi-agent: the initial ontology is refined with RDFLib, HermiT and OOPS! for up to three iterations with backtracking." },
-    mymodel: { label: "mymodel",     def: "Your submission." },
-  };
-  function modeCellHTML(raw) {
-    const m = MODE_INFO[raw];
-    const label = m ? m.label : (raw || "—");
-    const def = m ? m.def : (raw || "");
-    return `<span title="${def} (raw: ${raw})">${label}</span>`;
-  }
-
-  // ── Data access ──
-  function scopeOf(run) {
-    if (state.benchmark === "cq2term") return run.term_recovery;
-    return run[state.task];
-  }
-  function getMetric(run, col) {
-    const scope = scopeOf(run);
-    if (!scope) return null;
-    if (col.kind === "prf1") return scope[col.id] || null;
-    if (col.kind === "cq")   return scope[col.id] || null;
-    if (col.kind === "agg") {
-      if (state.benchmark === "cq2onto") {
-        const sub = scope[col.subKey];
-        return sub ? sub.aggregated : null;
-      }
-      return scope[col.subKey] || null;
-    }
-    return null;
-  }
-
-  // ── Aggregate across domains (Overall) ──
-  function avgMetric(recs, getter) {
-    const vals = recs.map(getter).filter(v => v && v.f1 !== null && v.f1 !== undefined);
-    if (!vals.length) return null;
-    const mean = arr => arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : null;
-    return {
-      p:  mean(vals.map(v=>v.p).filter(v=>v!=null)),
-      r:  mean(vals.map(v=>v.r).filter(v=>v!=null)),
-      f1: mean(vals.map(v=>v.f1).filter(v=>v!=null)),
-    };
-  }
-  function avgCQ(recs, getter) {
-    const vals = recs.map(getter).filter(v => v);
-    if (!vals.length) return null;
-    const mean = k => vals.reduce((s,v)=>s+(v[k]||0),0)/vals.length;
-    return { any: mean("any"), mean: mean("mean"), full: mean("full") };
-  }
-  function aggregateOverall(runs) {
-    const map = new Map();
-    runs.forEach(r => {
-      const k = (r.mode || "") + "||" + r.model;
-      if (!map.has(k)) map.set(k, []);
-      map.get(k).push(r);
-    });
-    const out = [];
-    for (const [, recs] of map) {
-      const s = recs[0];
-      const avg = { mode: s.mode, model: s.model, n_datasets: recs.length };
-      // term recovery
-      if (state.benchmark === "cq2term") {
-        avg.term_recovery = {
-          class:    avgMetric(recs, r => (r.term_recovery||{}).class),
-          property: avgMetric(recs, r => (r.term_recovery||{}).property),
-          cq:       avgCQ(recs, r => (r.term_recovery||{}).cq),
-        };
-      } else {
-        avg.term_recovery = {
-          class:    { aggregated: avgMetric(recs, r => ((r.term_recovery||{}).class||{}).aggregated) },
-          property: { aggregated: avgMetric(recs, r => ((r.term_recovery||{}).property||{}).aggregated) },
-        };
-        ["property_chars","triple","axiom","hierarchy"].forEach(name => {
-          const scopes = recs.map(r => r[name]).filter(Boolean);
-          if (!scopes.length) { avg[name] = null; return; }
-          const o = {}; const keys = new Set();
-          scopes.forEach(sc => Object.keys(sc).forEach(k => keys.add(k)));
-          keys.forEach(k => {
-            const sample = scopes.find(sc => sc[k]);
-            if (!sample) { o[k] = null; return; }
-            if (sample[k].f1 !== undefined)        o[k] = avgMetric(recs, r => (r[name]||{})[k]);
-            else if (sample[k].mean !== undefined) o[k] = avgCQ(recs, r => (r[name]||{})[k]);
-            else o[k] = sample[k];
-          });
-          avg[name] = o;
-        });
-      }
-      out.push(avg);
-    }
-    return out;
-  }
-
-  // ── Sort ──
-  function getSortValue(run, sortCol) {
-    if (sortCol === "n_datasets") return run.n_datasets ?? null;
-    const [id, sub] = sortCol.split("__");
-    const cols = TASKS[state.benchmark][state.task].cols;
-    const col = cols.find(c =>
-      c.id === id && (
-        (c.kind === "prf1" && ["p","r","f1"].includes(sub)) ||
-        (c.kind === "cq"   && c.sub === sub) ||
-        (c.kind === "agg"  && sub === "f1")
-      )
-    );
-    if (!col) return null;
-    const m = getMetric(run, col);
-    return m ? (m[sub] ?? null) : null;
-  }
-  function sortRuns(runs, sortCol, dir, coveragePrimary) {
-    return runs.slice().sort((a, b) => {
-      if (coveragePrimary && sortCol !== "n_datasets") {
-        const ca = a.n_datasets ?? 0, cb = b.n_datasets ?? 0;
-        if (ca !== cb) return cb - ca;
-      }
-      const x = getSortValue(a, sortCol), y = getSortValue(b, sortCol);
-      if (x === null || x === undefined) return 1;
-      if (y === null || y === undefined) return -1;
-      return dir === "desc" ? y - x : x - y;
-    });
-  }
-
-  // ── Nav ──
-  function navBtn(container, label, active, onClick, opts) {
-    opts = opts || {};
-    const b = document.createElement("div");
-    b.className = "lb-btn" + (opts.extra ? " " + opts.extra : "") + (active ? " active" : "");
-    if (opts.accent) b.dataset.accent = opts.accent;
-    b.textContent = label;
-    b.addEventListener("click", onClick);
-    container.appendChild(b);
-  }
-  function resetSort() {
-    state.sort = { col: TASKS[state.benchmark][state.task].defaultSort, dir: "desc" };
-    state.domain = "overall";
-  }
-  function renderNav() {
-    const tnav = document.getElementById("lb-task-nav"); tnav.innerHTML = "";
-    ["cq2term","cq2onto"].forEach(bm => navBtn(tnav, BENCHMARK_LABELS[bm], state.benchmark===bm, () => {
-      if (state.benchmark===bm) return;
-      state.benchmark = bm; state.task = TASK_ORDER[bm][0]; resetSort(); render();
-    }));
-    const gnav = document.getElementById("lb-target-nav"); gnav.innerHTML = "";
-    TASK_ORDER[state.benchmark].forEach(tk => {
-      const def = TASKS[state.benchmark][tk];
-      navBtn(gnav, def.label, state.task===tk, () => {
-        if (state.task===tk) return;
-        state.task = tk; resetSort(); render();
-      }, { extra: "target", accent: def.accent });
-    });
-    const dnav = document.getElementById("lb-domain-nav"); dnav.innerHTML = "";
-    const datasets = LEADERBOARD_DATA[state.benchmark].datasets;
-    [["overall","Overall"]].concat(datasets.map(d => [d, d.toUpperCase()])).forEach(([k,lbl]) =>
-      navBtn(dnav, lbl, state.domain===k, () => { if (state.domain===k) return; state.domain = k; render(); }, { extra: "domain" }));
-    const def = TASKS[state.benchmark][state.task];
-    const bmLabel = state.benchmark === "cq2term" ? "CQ2Term" : "CQ2Onto";
-    const taskUrl = TASK_CATALOG[state.benchmark], targetUrl = TARGET_CATALOG[def.accent];
-    let descHTML = def.desc;
-    const links = [];
-    if (taskUrl) links.push(`<a class="lb-catalog-link" href="${taskUrl}" target="_blank" rel="noopener">${bmLabel} task ↗</a>`);
-    if (targetUrl) links.push(`<a class="lb-catalog-link" href="${targetUrl}" target="_blank" rel="noopener">${def.label} metrics ↗</a>`);
-    if (links.length) descHTML += `<span class="lb-catalog-links">Catalogue: ${links.join(" · ")}</span>`;
-    document.getElementById("lb-desc").innerHTML = descHTML;
-    const full = document.getElementById("lb-full-link");
-    full.href = `leaderboard.html#${state.benchmark}/${state.task}`;
-  }
-
-  // ── Render tables ──
-  function render() {
-    if (!state.sort.col) state.sort.col = TASKS[state.benchmark][state.task].defaultSort;
-    renderNav();
-    const def = TASKS[state.benchmark][state.task];
-    const cols = def.cols;
-    const bData = LEADERBOARD_DATA[state.benchmark];
-    const content = document.getElementById("lb-content");
-    content.innerHTML = "";
-    if (!bData.groups || !bData.groups.length) {
-      content.innerHTML = `<div class="lb-empty">No runs found.</div>`; return;
-    }
-    const showOverall = state.domain === "overall";
-    const totalDatasets = bData.datasets.length;
-    const showMode = state.benchmark === "cq2onto";
-
-    bData.groups.forEach((group, gIdx) => {
-      let rows = group.runs.filter(r => showOverall || r.dataset === state.domain);
-      rows = showOverall ? aggregateOverall(rows) : rows.map(r => Object.assign({}, r, { n_datasets: 1 }));
-      rows = rows.filter(r => cols.some(c => {
-        const m = getMetric(r, c);
-        if (!m) return false;
-        if (c.kind === "cq") return m[c.sub] !== null && m[c.sub] !== undefined;
-        return m.f1 !== null && m.f1 !== undefined;
-      }));
-      if (!rows.length) return;
-
-      const sorted = sortRuns(rows, state.sort.col, state.sort.dir, showOverall).slice(0, TOP_N);
-
-      const wrap = document.createElement("div");
-      wrap.className = "lb-table-wrap";
-      wrap.dataset.accent = def.accent;
-      if (bData.groups.length > 1) {
-        const cfg = document.createElement("div");
-        cfg.className = "lb-config";
-        cfg.textContent = `Configuration group ${gIdx + 1} · ${group.runs.length} runs`;
-        wrap.appendChild(cfg);
-      }
-
-      const table = document.createElement("table");
-      table.className = "lb-table";
-      // header
-      let head = `<thead><tr><th>Rank</th>${showMode ? "<th>Mode</th>" : ""}<th>Model</th>`;
-      cols.forEach(c => {
-        const hl = c.headline ? " headline" : "";
-        head += `<th class="${hl.trim()}">${c.label}</th>`;
-      });
-      if (showOverall) head += `<th title="Number of benchmark domains this model was evaluated on (e.g. 6/6 means all six). Models below full coverage are flagged with ⚠ and not directly comparable.">Domains</th>`;
-      head += `</tr></thead>`;
-      // body
-      let body = "<tbody>";
-      sorted.forEach((run, i) => {
-        const modeCell = showMode ? `<td class="lb-mono">${modeCellHTML(run.mode)}</td>` : "";
-        body += `<tr><td class="lb-rank">${i+1}</td>${modeCell}<td class="lb-mono">${modelCellHTML(run.model)}</td>`;
-        cols.forEach(c => {
-          const hl = c.headline ? " headline" : "";
-          const m = getMetric(run, c);
-          let txt;
-          if (c.kind === "cq") txt = fmtPct(m && m[c.sub]);
-          else txt = fmtPct(m && m.f1);
-          body += `<td class="${hl.trim()}">${txt}</td>`;
-        });
-        if (showOverall) {
-          const partial = run.n_datasets < totalDatasets;
-          body += `<td>${run.n_datasets}/${totalDatasets}${partial ? " ⚠" : ""}</td>`;
-        }
-        body += `</tr>`;
-      });
-      body += "</tbody>";
-      table.innerHTML = head + body;
-      wrap.appendChild(table);
-      content.appendChild(wrap);
-    });
-
-    if (!content.children.length) {
-      content.innerHTML = `<div class="lb-empty">No data in this domain for this target.</div>`;
+  const frame = document.getElementById("lb-frame");
+  if (!frame) return;
+  const MAX_H = 820;   // keep in sync with #lb-frame max-height
+  function resize() {
+    try {
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      const h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+      if (h > 0) frame.style.height = Math.min(h + 24, MAX_H) + "px";
+    } catch (e) {
+      // Cross-origin or not ready: keep the CSS fallback height.
     }
   }
-
-  render();
+  frame.addEventListener("load", () => {
+    resize();
+    // Re-measure as the user switches task/target/domain inside the board.
+    try {
+      const win = frame.contentWindow;
+      const doc = frame.contentDocument || win.document;
+      const mo = new win.MutationObserver(() => resize());
+      mo.observe(doc.body, { childList: true, subtree: true });
+    } catch (e) {}
+  });
+  window.addEventListener("resize", resize);
 })();
 </script>
 

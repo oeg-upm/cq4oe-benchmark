@@ -13,11 +13,18 @@
     background: #fafafa;
   }
   h1 { margin: 0 0 4px; font-size: 26px; }
+  /* Embedded mode (loaded inside index.html via ?embed=1): hide the page
+     chrome so only the controls and the board show. */
+  body.embed { padding: 12px 16px 24px; background: transparent; }
+  body.embed .topbar-mini,
+  body.embed > h1,
+  body.embed > p.intro { display: none; }
   h2 { font-size: 17px; margin: 20px 0 6px; color: #333; }
   p.intro {
-    color: #555; max-width: 920px; line-height: 1.55;
+    color: #555; max-width: 920px; line-height: 1.7;
     margin: 8px 0 18px; font-size: 14px;
   }
+  p.intro .badge { cursor: default; vertical-align: middle; }
   p.task-desc {
     color: #666; font-size: 13px; line-height: 1.5;
     margin: 10px 0 14px; max-width: 920px;
@@ -33,6 +40,11 @@
     color: #1a73e8; text-decoration: none; font-weight: 500;
   }
   p.task-desc .catalog-link:hover { text-decoration: underline; }
+  p.task-desc .status-legend {
+    display: block; margin-top: 8px; font-style: normal;
+    font-size: 12.5px; color: #666; line-height: 1.9;
+  }
+  p.task-desc .status-legend .badge { cursor: default; margin: 0 3px 0 0; }
 
   /* Top home link */
   .topbar-mini {
@@ -46,6 +58,31 @@
     transition: background 0.15s;
   }
   .topbar-mini a:hover { background: #e2e8f0; }
+
+  /* Provenance badges (reproduced / verified) */
+  table td.status-cell { white-space: nowrap; text-align: center; padding: 7px 12px; }
+  table th.status-col { text-align: center; padding: 7px 12px; }
+  .badge {
+    display: inline-block; padding: 1px 7px; margin: 0 2px;
+    border-radius: 10px; font-size: 11px; font-weight: 600;
+    line-height: 1.5; cursor: help; border: 1px solid transparent;
+  }
+  .badge-reproduced {
+    background: #e7f3ff; color: #1257a8; border-color: #b6d8fb;
+  }
+  .badge-verified {
+    background: #e6f7ed; color: #1b7a43; border-color: #b3e6c9;
+  }
+  .badge-none { color: #bbb; font-size: 12px; }
+
+  /* Ranked / unranked separation */
+  tr.rank-divider-row td.rank-divider {
+    background: #f3f4f6; color: #6b7280; font-size: 11.5px;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    padding: 5px 10px; border-top: 2px solid #d1d5db;
+  }
+  tr.unranked-row { opacity: 0.72; }
+  tr.unranked-row td.rank { color: #bbb; }
 
   /* Control panel: Task / Target / Domain button rows */
   .controls {
@@ -125,6 +162,8 @@
     border-bottom: 1px solid #eee; white-space: nowrap;
   }
   th:nth-child(-n+3), td:nth-child(-n+3) { text-align: left; }
+  /* Model column absorbs slack so Status sits next to the model name. */
+  td.mono.model-cell, th.model-col { width: 100%; }
   th.sortable {
     cursor: pointer; user-select: none; position: relative;
   }
@@ -196,6 +235,13 @@
 </style>
 </head>
 <body>
+<script>
+  // When embedded in the landing page (leaderboard.html?embed=1), drop the
+  // page chrome (back link, title, intro) so only the board shows.
+  if (new URLSearchParams(location.search).get("embed") === "1") {
+    document.body.classList.add("embed");
+  }
+</script>
 
 <div class="topbar-mini">
   <a href="index.html">← Home</a>
@@ -203,7 +249,7 @@
 
 <h1>CQ4OE Benchmark Leaderboard</h1>
 <p class="intro">
-CQ4OE leaderboard for LLM-based ontology generation from competency questions. Runs are grouped by evaluation configuration so only identical settings are ranked against each other.
+CQ4OE leaderboard for LLM-based ontology generation from competency questions. Runs are grouped by evaluation configuration so only identical settings are ranked against each other. The <strong>Status</strong> column tells you who has checked a run. <span class="badge badge-reproduced">Reproduced</span>: we ran the model ourselves and got the same kind of output. <span class="badge badge-verified">Verified</span>: we also went through the alignment by hand and corrected any mistakes before scoring. Unchecked runs still appear, but only runs with both badges get a rank.
 </p>
 
 <div class="controls">
@@ -507,6 +553,61 @@ function modeCellHTML(raw) {
   return `<span title="${modeTitle(raw)} (raw: ${raw})">${prettyMode(raw)}</span>`;
 }
 
+// ─────────────────────────────────────────────────────────────
+// Provenance badges (reproduced / verified).
+// run.status is either null (community submission, no badge) or an object
+// with optional `reproduced` and/or `verified` blocks of free-form metadata.
+// ─────────────────────────────────────────────────────────────
+function escapeAttr(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;")
+                  .replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function badgeTooltip(label, block) {
+  let tip = label;
+  if (block && typeof block === "object") {
+    const parts = [];
+    for (const k in block) {
+      let v = block[k];
+      if (Array.isArray(v)) v = v.join(", ");
+      parts.push(`${k}: ${v}`);
+    }
+    if (parts.length) tip += " — " + parts.join("; ");
+  }
+  return escapeAttr(tip);
+}
+// Aggregated status across the dataset rows of one (mode, model). A badge
+// survives only if present on EVERY contributing row (metadata taken from the
+// first row that carries it, for the tooltip).
+function aggregateStatus(recs) {
+  if (!recs || !recs.length) return null;
+  const out = {};
+  ["reproduced", "verified"].forEach(badge => {
+    const all = recs.every(r => r.status && r.status[badge]);
+    if (all) {
+      const src = recs.find(r => r.status && r.status[badge]);
+      out[badge] = src.status[badge];
+    }
+  });
+  return (out.reproduced || out.verified) ? out : null;
+}
+// A run is rankable only when BOTH badges hold.
+function isFullyBadged(run) {
+  return !!(run.status && run.status.reproduced && run.status.verified);
+}
+function statusCellHTML(status) {
+  if (!status || (!status.reproduced && !status.verified)) {
+    return `<span class="badge-none" title="Community submission — not yet reproduced or verified by maintainers.">—</span>`;
+  }
+  let html = "";
+  if (status.reproduced) {
+    html += `<span class="badge badge-reproduced" title="${badgeTooltip("Reproduced: a maintainer re-ran the model and obtained a structurally equivalent prediction.", status.reproduced)}">Reproduced</span>`;
+  }
+  if (status.verified) {
+    html += `<span class="badge badge-verified" title="${badgeTooltip("Verified: a maintainer inspected and corrected the alignment pairings before metrics were computed.", status.verified)}">Verified</span>`;
+  }
+  return html;
+}
+
 function tooltipPRF1(m) {
   if (!m) return "";
   const p  = m.p  === null || m.p  === undefined ? "—" : m.p.toFixed(1) + "%";
@@ -609,6 +710,11 @@ function aggregateOverall(runs) {
       model: sample.model,
       dataset: "overall",
       n_datasets: recs.length,
+      // Aggregated status: a badge holds for the overall row only if it holds
+      // for EVERY dataset row that feeds the average. So `verified` survives
+      // only when all aggregated datasets were verified; a partial-coverage
+      // verification does not earn the overall badge.
+      status: aggregateStatus(recs),
     };
     // Average each nested PRF1 / CQ block
     function avgMetric(getter) {
@@ -791,7 +897,8 @@ function buildHeader(table, cols, showOverall, totalDatasets) {
   const showMode = (state.benchmark === "cq2onto");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
-  tr.innerHTML = `<th>Rank</th>` + (showMode ? `<th>Mode</th>` : ``) + `<th>Model</th>`;
+  tr.innerHTML = `<th>Rank</th>` + (showMode ? `<th>Mode</th>` : ``) + `<th class="model-col">Model</th>` +
+    `<th class="status-col" title="Provenance. Reproduced: a maintainer re-ran the model and got a structurally equivalent prediction. Verified: a maintainer checked and corrected the alignment pairings before metrics were computed. Unbadged runs are community submissions.">Status</th>`;
 
   cols.forEach(col => {
     if (col.kind === "prf1") {
@@ -872,13 +979,20 @@ function buildHeader(table, cols, showOverall, totalDatasets) {
   table.appendChild(thead);
 }
 
-function buildRows(table, runs, cols, showOverall, totalDatasets) {
+function buildRows(table, runs, cols, showOverall, totalDatasets, opts) {
+  const ranked = !opts || opts.ranked !== false;
+  const startRank = (opts && opts.startRank) || 1;
   const showMode = (state.benchmark === "cq2onto");
   const tbody = document.createElement("tbody");
   runs.forEach((run, idx) => {
     const tr = document.createElement("tr");
+    if (!ranked) tr.className = "unranked-row";
+    const rankCell = ranked
+      ? `<td class="rank">${startRank + idx}</td>`
+      : `<td class="rank" title="Not ranked — needs both Reproduced and Verified badges.">—</td>`;
     const modeCell = showMode ? `<td class="mono">${modeCellHTML(run.mode)}</td>` : ``;
-    tr.innerHTML = `<td class="rank">${idx + 1}</td>${modeCell}<td class="mono">${modelCellHTML(run.model)}</td>`;
+    tr.innerHTML = `${rankCell}${modeCell}<td class="mono model-cell">${modelCellHTML(run.model)}</td>` +
+      `<td class="status-cell">${statusCellHTML(run.status)}</td>`;
 
     cols.forEach(col => {
       const cls = col.cls + (col.headline ? " headline" : "");
@@ -944,6 +1058,30 @@ function buildRows(table, runs, cols, showOverall, totalDatasets) {
 
     tbody.appendChild(tr);
   });
+  table.appendChild(tbody);
+}
+
+// A full-width divider between the ranked block and the unranked block.
+function buildSeparatorRow(table, cols, showOverall) {
+  const showMode = (state.benchmark === "cq2onto");
+  // Count columns: rank + (mode?) + model + status + metric cols + (domains?)
+  let span = 1 + (showMode ? 1 : 0) + 1 + 1;
+  cols.forEach(col => {
+    if (col.kind === "prf1") span += state.expandedPRF1.has(col.id) ? 3 : 1;
+    else if (col.kind === "agg_method") {
+      span += state.expandedPRF1.has(col.id) ? 3 : 1;
+      if (state.expandedMethod.has(col.id)) {
+        const per = state.expandedPRF1.has(col.id) ? 3 : 1;
+        span += LEADERBOARD_DATA.methods.length * per;
+      }
+    } else span += 1;
+  });
+  if (showOverall) span += 1;
+  const tbody = document.createElement("tbody");
+  const tr = document.createElement("tr");
+  tr.className = "rank-divider-row";
+  tr.innerHTML = `<td colspan="${span}" class="rank-divider">Not ranked — missing Reproduced and/or Verified</td>`;
+  tbody.appendChild(tr);
   table.appendChild(tbody);
 }
 
@@ -1126,10 +1264,20 @@ function render() {
       return;
     }
 
-    const sorted = sortRuns(rows, state.sort.col, state.sort.dir, showOverall);
+    // Ranking rule: only fully-badged runs (reproduced AND verified) are
+    // ranked. Everything else still shows but sits below, unranked.
+    const rankable = rows.filter(isFullyBadged);
+    const unranked = rows.filter(r => !isFullyBadged(r));
+    const sortedRankable = sortRuns(rankable, state.sort.col, state.sort.dir, showOverall);
+    const sortedUnranked = sortRuns(unranked, state.sort.col, state.sort.dir, showOverall);
+
     const table = document.createElement("table");
     buildHeader(table, cols, showOverall, totalDatasets);
-    buildRows(table, sorted, cols, showOverall, totalDatasets);
+    buildRows(table, sortedRankable, cols, showOverall, totalDatasets, { ranked: true, startRank: 1 });
+    if (sortedUnranked.length) {
+      buildSeparatorRow(table, cols, showOverall);
+      buildRows(table, sortedUnranked, cols, showOverall, totalDatasets, { ranked: false });
+    }
     wrap.appendChild(table);
 
     // Wire sort headers
