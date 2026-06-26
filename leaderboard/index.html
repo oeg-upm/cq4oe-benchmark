@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CQ4OE Benchmark</title>
 <style>
+  html { scroll-behavior: smooth; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -87,11 +88,28 @@
     margin-bottom: 24px;
   }
   .card p.section-lead .lb-badge { cursor: default; vertical-align: middle; margin: 0 1px; }
-  #lb-frame {
-    width: 100%; border: 1px solid #e2e8f0; border-radius: 10px;
-    background: #fff; display: block; margin-top: 4px;
-    height: 600px; max-height: 820px;
+  .nav-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 8px; }
+  @media (max-width: 860px) { .nav-cards { grid-template-columns: 1fr; } }
+  a.nav-card {
+    display: block; text-decoration: none; border: 1px solid #e2e8f0;
+    border-radius: 12px; padding: 20px 22px; background: #fff;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
   }
+  a.nav-card:hover {
+    border-color: #2563eb; box-shadow: 0 4px 14px rgba(37,99,235,.10);
+    transform: translateY(-1px);
+  }
+  .nav-card-title { color: #2563eb; font-weight: 700; font-size: 18px; margin-bottom: 6px; }
+  .nav-card-desc { color: #475569; font-size: 14px; line-height: 1.5; }
+  .cite-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0 0 14px; font-size: 14px; color: #475569; }
+  .cite-meta a { color: #2563eb; text-decoration: none; }
+  .cite-meta a:hover { text-decoration: underline; }
+  pre.bibtex {
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 14px 16px; overflow-x: auto; margin: 0;
+    font-size: 12.5px; line-height: 1.5; color: #334155;
+  }
+  pre.bibtex code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre; }
   .lb-footer-link { display: inline-block; margin-top: 12px; }
 
   /* Tasks grid */
@@ -132,48 +150,6 @@
   }
 
   /* Source ontology card (non-link wrapper with 2 buttons) */
-  .source-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 22px 26px;
-    display: flex; flex-direction: column;
-  }
-  .source-card .title {
-    font-size: 16px; font-weight: 600; color: #0f172a;
-    line-height: 1.35;
-  }
-  .source-card .btn-row {
-    display: flex; gap: 6px; margin-top: 14px;
-  }
-  .source-card .src-btn {
-    flex: 1;
-    text-align: center;
-    padding: 7px 6px;
-    font-size: 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    border: 1px solid #cbd5e1;
-    color: #334155;
-    background: #fff;
-    white-space: nowrap;
-    transition: all 0.15s;
-  }
-  .source-card .src-btn:hover {
-    border-color: #93c5fd;
-    background: #f0f7ff;
-    color: #1d4ed8;
-  }
-  .source-card .src-btn.primary {
-    background: #2563eb;
-    color: #fff;
-    border-color: #2563eb;
-  }
-  .source-card .src-btn.primary:hover {
-    background: #1d4ed8;
-    border-color: #1d4ed8;
-    color: #fff;
-  }
 
   /* Footer */
   footer {
@@ -337,78 +313,53 @@
   </div>
 </section>
 
-<section class="card" id="leaderboard">
-  <h2>Leaderboard</h2>
+<section class="card" id="explore">
+  <h2>Explore the benchmark</h2>
   <p class="section-lead">
-    Pick a task, target, and domain inside the board below. Runs are grouped by configuration so only identical settings are ranked together. The <strong>Status</strong> column shows maintainer review: <span class="lb-badge lb-badge-rep">R</span> <em>Reproduced</em> means we re-ran the model and got the same kind of output, and <span class="lb-badge lb-badge-ver">V</span> <em>Verified</em> means we also checked and corrected the alignment by hand before scoring. Only runs with both are ranked.
+    Three ways in. See how models score on the leaderboard, read the formal task, dimension, and metric definitions in the catalogue, or browse the six source ontologies and their competency questions.
   </p>
 
-  <iframe id="lb-frame" src="leaderboard.html?embed=1" title="CQ4OE leaderboard" loading="lazy"></iframe>
-
-  <a class="lb-footer-link" href="leaderboard.html" target="_blank" rel="noopener">Open the full leaderboard in a new tab →</a>
+  <div class="nav-cards">
+    <a class="nav-card" href="leaderboard.html">
+      <div class="nav-card-title">Leaderboard →</div>
+      <div class="nav-card-desc">Model scores across both tasks and all six domains, grouped by configuration, with Reproduced and Verified status badges.</div>
+    </a>
+    <a class="nav-card" href="OntoCatalogue/html/catalog.html">
+      <div class="nav-card-title">CQ4OE Catalogue →</div>
+      <div class="nav-card-desc">The tasks, evaluation dimensions, and atomic metrics that define the benchmark, each with a persistent identifier and detail page.</div>
+    </a>
+    <a class="nav-card" href="cqs.html">
+      <div class="nav-card-title">Source Ontologies →</div>
+      <div class="nav-card-desc">The six gold-standard domain ontologies and the competency questions behind them, with links to each CQ-aligned and original ontology.</div>
+    </a>
+  </div>
 </section>
 
-<section class="card">
-  <h2>Source Ontologies</h2>
+<section class="card" id="cite">
+  <h2>Cite this benchmark</h2>
   <p class="section-lead">
-  Six domain ontologies across three scales (small, medium, large), spanning taxonomies, semantics, and domain-specific vocabularies of varying complexity.
+    CQ4OE is developed by <strong>Jiayi Li</strong>, <strong>Ziyuan Wang</strong>, <strong>Daniel Garijo</strong>, and <strong>María Poveda-Villalón</strong> at the Ontology Engineering Group, Universidad Politécnica de Madrid. If you use it in your research, please cite the archived release.
   </p>
-  <div class="grid grid-three">
-    <div class="source-card">
-      <div class="title">WINE wine ontology</div>
-      <div class="btn-row">
-        <a class="src-btn primary" href="cqs.html#wine">View CQs</a>
-        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/wine/ontology/sub_wine.owl" target="_blank" rel="noopener">CQ-aligned</a>
-        <a class="src-btn" href="https://github.com/UCDavisLibrary/wine-ontology" target="_blank" rel="noopener">Source</a>
-      </div>
-    </div>
-    <div class="source-card">
-      <div class="title">AWO african wildlife ontology</div>
-      <div class="btn-row">
-        <a class="src-btn primary" href="cqs.html#awo">View CQs</a>
-        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/tree/main/CQ2Onto/00_gold_standard/awo/ontology" target="_blank" rel="noopener">CQ-aligned</a>
-        <a class="src-btn" href="https://people.cs.uct.ac.za/~mkeet/OEbook/ontologies/AfricanWildlifeOntology1.owl" target="_blank" rel="noopener">Source</a>
-      </div>
-    </div>
-    <div class="source-card">
-      <div class="title">ODRL open digital rights language</div>
-      <div class="btn-row">
-        <a class="src-btn primary" href="cqs.html#odrl">View CQs</a>
-        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/odrl/ontology/sub_odrl.owl" target="_blank" rel="noopener">CQ-aligned</a>
-        <a class="src-btn" href="https://www.w3.org/ns/odrl/2/" target="_blank" rel="noopener">Source</a>
-      </div>
-    </div>
-    <div class="source-card">
-      <div class="title">WATER saref4watr ontology</div>
-      <div class="btn-row">
-        <a class="src-btn primary" href="cqs.html#water">View CQs</a>
-        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/water/ontology/sub_water.owl" target="_blank" rel="noopener">CQ-aligned</a>
-        <a class="src-btn" href="https://saref.etsi.org/saref4watr/v1.1.1/" target="_blank" rel="noopener">Source</a>
-      </div>
-    </div>
-    <div class="source-card">
-      <div class="title">VGO video game ontology</div>
-      <div class="btn-row">
-        <a class="src-btn primary" href="cqs.html#vgo">View CQs</a>
-        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/vgo/ontology/sub_vgo.owl" target="_blank" rel="noopener">CQ-aligned</a>
-        <a class="src-btn" href="https://vocab.linkeddata.es/vgo/" target="_blank" rel="noopener">Source</a>
-      </div>
-    </div>
-    <div class="source-card">
-      <div class="title">SWO software ontology</div>
-      <div class="btn-row">
-        <a class="src-btn primary" href="cqs.html#swo">View CQs</a>
-        <a class="src-btn" href="https://github.com/oeg-upm/cq4oe-benchmark/blob/main/CQ2Onto/00_gold_standard/swo/ontology/sub_swo.owl" target="_blank" rel="noopener">CQ-aligned</a>
-        <a class="src-btn" href="https://obofoundry.org/ontology/swo.html" target="_blank" rel="noopener">Source</a>
-      </div>
-    </div>
+  <div class="cite-meta">
+    <span>DOI: <a href="https://doi.org/10.5281/zenodo.20080309" target="_blank" rel="noopener">10.5281/zenodo.20080309</a></span>
+    <span>Dataset: <a href="https://doi.org/10.57967/hf/8712" target="_blank" rel="noopener">HuggingFace</a></span>
+    <span>License: Apache-2.0</span>
   </div>
+  <pre class="bibtex"><code>@software{cq4oe2026,
+  title  = {CQ4OE: A benchmark for assessing LLM-assisted ontology
+            generation from competency questions},
+  author = {Li, Jiayi and Wang, Ziyuan and Garijo, Daniel and
+            Poveda-Villal\'on, Mar\'ia},
+  year   = {2026},
+  doi    = {10.5281/zenodo.20080309},
+  url    = {https://doi.org/10.5281/zenodo.20080309}
+}</code></pre>
 </section>
 
 <section class="card">
   <h2>Acknowledgements</h2>
   <p class="section-lead">
-    This work was supported by the grant
+    CQ4OE is maintained by the <a href="https://oeg.fi.upm.es" target="_blank" rel="noopener">Ontology Engineering Group (OEG)</a> at Universidad Politécnica de Madrid. This work was supported by the grant
     <a href="https://w3id.org/soel" target="_blank">SOEL (Supporting Ontology Engineering with Large Language Models)</a>,
     PID2023-152703NA-I00, funded by MCIN/AEI/10.13039/501100011033 and by ERDF/UE.
   </p>
@@ -435,36 +386,6 @@
 </footer>
 
 
-<script>
-// Size the embedded leaderboard to its content, capped at a maximum.
-// Below the cap the frame shrinks to fit (no blank space); above it the
-// frame stays at the cap and the board scrolls inside.
-(function () {
-  const frame = document.getElementById("lb-frame");
-  if (!frame) return;
-  const MAX_H = 820;   // keep in sync with #lb-frame max-height
-  function resize() {
-    try {
-      const doc = frame.contentDocument || frame.contentWindow.document;
-      const h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
-      if (h > 0) frame.style.height = Math.min(h + 24, MAX_H) + "px";
-    } catch (e) {
-      // Cross-origin or not ready: keep the CSS fallback height.
-    }
-  }
-  frame.addEventListener("load", () => {
-    resize();
-    // Re-measure as the user switches task/target/domain inside the board.
-    try {
-      const win = frame.contentWindow;
-      const doc = frame.contentDocument || win.document;
-      const mo = new win.MutationObserver(() => resize());
-      mo.observe(doc.body, { childList: true, subtree: true });
-    } catch (e) {}
-  });
-  window.addEventListener("resize", resize);
-})();
-</script>
 
 </body>
 </html>
