@@ -27,7 +27,7 @@ repository-code: "https://github.com/oeg-upm/cq4oe-benchmark"
 url: "https://github.com/oeg-upm/cq4oe-benchmark"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.19052003"
+    value: "10.5281/zenodo.20080309"
     description: "Zenodo archive of the CQ4OE benchmark"
   - type: doi
     value: "10.57967/hf/8712"
@@ -51,3 +51,22 @@ keywords:
   - semantic web
   - ontology engineering
 license: Apache-2.0
+preferred-citation:
+  type: software
+  title: "CQ4OE: A benchmark for assessing LLM-assisted ontology generation from competency questions"
+  authors:
+    - given-names: Jiayi
+      family-names: Li
+      orcid: "https://orcid.org/0009-0001-9475-8159"
+    - given-names: Ziyuan
+      family-names: Wang
+      orcid: "https://orcid.org/0009-0000-6228-4713"
+    - given-names: Daniel
+      family-names: Garijo
+      orcid: "https://orcid.org/0000-0003-0454-7145"
+    - given-names: María
+      family-names: Poveda-Villalón
+      orcid: "https://orcid.org/0000-0003-3587-0367"
+  year: 2026
+  doi: "10.5281/zenodo.20080309"
+  url: "https://doi.org/10.5281/zenodo.20080309"

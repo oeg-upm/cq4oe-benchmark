@@ -36,7 +36,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/oeg-upm/cq4oe-benchmark"
+Documentation = "https://github.com/oeg-upm/cq4oe-benchmark"
 Repository = "https://github.com/oeg-upm/cq4oe-benchmark"
 
 [tool.poetry]
