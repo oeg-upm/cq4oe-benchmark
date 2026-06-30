@@ -1,0 +1,7 @@
+Gold_term,Pre_term,Method,Score
+redwine,redwine,hard_match,1.0000
+vintage,vintage,hard_match,1.0000
+vintageyear,vintageyear,hard_match,1.0000
+whitewine,whitewine,hard_match,1.0000
+wine,wine,hard_match,1.0000
+winegrape,grape,top3_avg(semantic+sequence_match+levenshtein),0.7305

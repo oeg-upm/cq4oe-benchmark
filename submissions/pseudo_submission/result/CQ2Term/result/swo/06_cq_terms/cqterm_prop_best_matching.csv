@@ -1,0 +1,15 @@
+Gold_term,Pre_term,Method,Score
+has documentation,haslocation,top3_avg(jaro_winkler+sequence_match+levenshtein),0.7368
+has format specification,hasformat,top3_avg(jaro_winkler+semantic+sequence_match),0.7554
+has input,hasinput,hard_match,1.0000
+has interface,hasinputformat,top3_avg(jaro_winkler+sequence_match+semantic),0.6873
+has output,hasoutputformat,top3_avg(jaro_winkler+semantic+sequence_match),0.8227
+has release date,hasreleasedate,hard_match,1.0000
+has specified data input,hasmodification,top3_avg(jaro_winkler+sequence_match+semantic),0.6445
+has specified data output,hasdataexport,top3_avg(jaro_winkler+semantic+sequence_match),0.6752
+has support url,hasurl,top3_avg(jaro_winkler+sequence_match+semantic),0.6675
+has version,hasversion,hard_match,1.0000
+has website homepage,hashomepage,top3_avg(jaro_winkler+sequence_match+semantic),0.7699
+is developed by,developedby,top3_avg(jaro_winkler+semantic+sequence_match),0.9282
+uses platform,usesdata,top3_avg(jaro_winkler+semantic+sequence_match),0.6959
+uses software,hassoftwaretype,top3_avg(jaro_winkler+semantic+sequence_match),0.7181
