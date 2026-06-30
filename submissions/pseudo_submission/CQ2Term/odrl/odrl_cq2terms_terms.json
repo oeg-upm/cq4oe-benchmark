@@ -1,0 +1,219 @@
+[
+  {
+    "id": "CQ03",
+    "value": "Shall the permissions 'Aggregation' and 'Disaggregation' be of the type Transfer Rights?",
+    "class": [
+      "Permission",
+      "TransferRight",
+      "Aggregation",
+      "Disaggregation"
+    ],
+    "property": [
+      "hasType"
+    ]
+  },
+  {
+    "id": "CQ06",
+    "value": "Expressing the various roles of contract parties within the Permission/Duty element.",
+    "class": [
+      "ContractParty",
+      "Role",
+      "Permission",
+      "Duty"
+    ],
+    "property": [
+      "playsRole",
+      "appliesTo"
+    ]
+  },
+  {
+    "id": "CQ10",
+    "value": "How are rights and duties supported for all contract parties?",
+    "class": [
+      "Contract",
+      "Party",
+      "Right",
+      "Duty"
+    ],
+    "property": [
+      "supports",
+      "hasParty",
+      "hasRight",
+      "hasDuty"
+    ]
+  },
+  {
+    "id": "CQ13",
+    "value": "Shall ODRLv2 allow for nested constraints?",
+    "class": [
+      "Constraint"
+    ],
+    "property": [
+      "nests"
+    ]
+  },
+  {
+    "id": "CQ26",
+    "value": "How to express Condition via Constraints?",
+    "class": [
+      "Condition",
+      "Constraint"
+    ],
+    "property": []
+  },
+  {
+    "id": "CQ13",
+    "value": "Shall ODRLv2 allow for nested constraints?",
+    "class": [
+      "Policy",
+      "Constraint"
+    ],
+    "property": [
+      "hasSubConstraint"
+    ]
+  },
+  {
+    "id": "CQ14",
+    "value": "How do we express 'and', 'or', 'xor' constraints?",
+    "class": [
+      "Constraint",
+      "AndConstraint",
+      "OrConstraint",
+      "XorConstraint"
+    ],
+    "property": []
+  },
+  {
+    "id": "CQ21",
+    "value": "How to express constraints on requirements?",
+    "class": [
+      "Constraint",
+      "Requirement"
+    ],
+    "property": [
+      "hasConstraint"
+    ]
+  },
+  {
+    "id": "CQ24",
+    "value": "How to express exclusive permissions?",
+    "class": [
+      "Permission"
+    ],
+    "property": [
+      "isExclusive"
+    ]
+  },
+  {
+    "id": "CQ26",
+    "value": "How to express Condition via Constraints?",
+    "class": [
+      "Condition",
+      "Constraint"
+    ],
+    "property": [
+      "expressedVia"
+    ]
+  },
+  {
+    "id": "CQ30",
+    "value": "What do we lose if containers are no longer part of ODRL?",
+    "class": [
+      "Container",
+      "ODRL"
+    ],
+    "property": [
+      "isPartOf"
+    ]
+  },
+  {
+    "id": "CQ31",
+    "value": "Do we need 'Sequencing' as part of the REL?",
+    "class": [
+      "Sequencing",
+      "REL"
+    ],
+    "property": [
+      "hasPart"
+    ]
+  },
+  {
+    "id": "CQ33",
+    "value": "Can the new data model express inheritance?",
+    "class": [
+      "DataModel"
+    ],
+    "property": [
+      "supportsInheritance"
+    ]
+  },
+  {
+    "id": "New CQ1",
+    "value": "Which policy is directly linked to a given asset?",
+    "class": [
+      "Policy",
+      "Asset"
+    ],
+    "property": [
+      "directlyLinkedTo"
+    ]
+  },
+  {
+    "id": "New CQ2",
+    "value": "What conflict resolution strategy is specified by a policy?",
+    "class": [
+      "ConflictResolutionStrategy",
+      "Policy"
+    ],
+    "property": [
+      "specifies"
+    ]
+  },
+  {
+    "id": "New CQ3",
+    "value": "What duty is specified as a remedy for the violation of a prohibition?",
+    "class": [
+      "Duty",
+      "Remedy",
+      "Violation",
+      "Prohibition"
+    ],
+    "property": [
+      "remedies",
+      "violationOf"
+    ]
+  },
+  {
+    "id": "New CQ4",
+    "value": "Which rule is activated upon the failure of another rule?",
+    "class": [
+      "Rule"
+    ],
+    "property": [
+      "isActivatedUponFailure"
+    ]
+  },
+  {
+    "id": "New CQ5",
+    "value": "What duty is specified as a consequence of another duty?",
+    "class": [
+      "Duty"
+    ],
+    "property": [
+      "isConsequenceOf"
+    ]
+  },
+  {
+    "id": "New CQ6",
+    "value": "What operator is used in the constraints of a prohibition?",
+    "class": [
+      "Prohibition",
+      "Constraint",
+      "Operator"
+    ],
+    "property": [
+      "hasConstraint",
+      "hasOperator"
+    ]
+  }
+]
