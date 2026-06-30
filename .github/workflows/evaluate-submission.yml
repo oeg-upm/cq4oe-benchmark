@@ -101,7 +101,7 @@ jobs:
         env:
           CQ4OE_PYTHON: python
         working-directory: CQ2Onto
-        run: python -u scripts/run_all_evaluation_agent_datsets.py --modes challenge --no_leaderboard
+        run: python -u scripts/run_all_evaluation_agent_datasets.py --modes challenge --no_leaderboard
 
       # ---- STEP 4: collect results ----
       - name: Collect results into submissions/<name>/result/
