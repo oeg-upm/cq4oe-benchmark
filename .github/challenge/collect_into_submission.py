@@ -2,16 +2,24 @@
 """
 collect_into_submission.py
 
-For each TASK listed in metadata.yml, writes two folders into the submission:
+For each TASK listed in metadata.yml, writes everything the Action produces into
+a SINGLE top-level folder, submissions/<name>/result/:
 
     submissions/<name>/
-        report/                         <- markdown reports (from 04_summary)
-            CQ2Onto/<domain>_report.md
-            CQ2Term/<domain>_report.md
-            SUMMARY.md                  <- headline F1s + links (used for PR comment)
-        result/                         <- numeric files (mirror of 03_evaluation_results)
-            CQ2Onto/<domain>/<layer>/*.json,*.csv
-            CQ2Term/<domain>/06_cq_terms/*.json,*.csv
+        result/                              <- the one output folder
+            CQ2Onto/
+                result/                      <- numeric files (mirror of 03_evaluation_results)
+                    <domain>/<layer>/*.json,*.csv
+                report/                      <- markdown reports (from 04_summary)
+                    <domain>_report.md
+            CQ2Term/
+                result/
+                    <domain>/06_cq_terms/*.json,*.csv
+                report/
+                    <domain>_report.md
+            summary.md                       <- headline F1s + links (used for PR comment)
+            result_data.js                   <- written later by make_result_data.py
+            leaderboard.md                   <- written later by make_result_data.py
 
 Sources produced by the runners:
     CQ2Term : 04_summary/<name>/...           03_evaluation_results/<name>/...
@@ -58,39 +66,39 @@ def main():
     meta = yaml.safe_load((sub / "metadata.yml").read_text())
     tasks = [t for t in (meta.get("tasks") or []) if t in TASKS]
 
-    report_dir = sub / "report"
-    result_dir = sub / "result"
-    for d in (report_dir, result_dir):
-        if d.exists():
-            shutil.rmtree(d)
-        d.mkdir(parents=True, exist_ok=True)
+    # Single top-level output folder. Wipe and recreate so stale runs don't linger.
+    out_root = sub / "result"
+    if out_root.exists():
+        shutil.rmtree(out_root)
+    out_root.mkdir(parents=True, exist_ok=True)
 
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    lines = [f"# Evaluation results — {name}", "",
-             f"_Generated {stamp}_" + (f" · commit `{args.commit[:7]}`" if args.commit else ""), ""]
+    # summary.md has no title heading (by request); it opens with the provenance line.
+    lines = [f"_Generated {stamp}_" + (f" · commit `{args.commit[:7]}`" if args.commit else ""), ""]
 
     for task in tasks:
-        sub_name = TASKS[task]
+        sub_name = TASKS[task]                       # "CQ2Onto" / "CQ2Term"
         summary_root, res_root = roots_for(task, root, name, args.onto_mode)
+        task_out = out_root / sub_name               # result/<Task>/
 
-        # ---- report/<Task>/<domain>_report.md  (markdown) ----
-        rep_out = report_dir / sub_name
+        # ---- result/<Task>/report/<domain>_report.md  (markdown) ----
+        rep_out = task_out / "report"
         rep_out.mkdir(parents=True, exist_ok=True)
         reports = sorted(summary_root.glob("*_report.md")) if summary_root.exists() else []
         for rep in reports:
             shutil.copy2(rep, rep_out / rep.name)
 
-        # ---- result/<Task>/  (full numeric tree, mirror of 03_evaluation_results/<name>) ----
+        # ---- result/<Task>/result/  (numeric tree, mirror of 03_evaluation_results/<name>) ----
         if res_root.exists():
-            shutil.copytree(res_root, result_dir / sub_name, dirs_exist_ok=True)
+            shutil.copytree(res_root, task_out / "result", dirs_exist_ok=True)
 
-        # ---- SUMMARY ----
+        # ---- summary.md section ----
         lines.append(f"## {sub_name}"); lines.append("")
         if not reports:
             lines.append("_No report produced (task may have failed; check the run log)._"); lines.append(""); continue
         for rep in reports:
             dom = rep.name.replace("_report.md", "")
-            link = f"report/{sub_name}/{rep.name}"
+            link = f"{sub_name}/report/{rep.name}"     # relative to result/summary.md
             if task == "cq2term":
                 cf, pf = cq2term_f1(res_root / dom)
                 cs = f"{cf:.3f}" if cf is not None else "?"
@@ -102,10 +110,11 @@ def main():
                 lines.append(f"- **{dom}** — class F1 {cs} (full layers in report)  ([{rep.name}]({link}))")
         lines.append("")
 
-    (report_dir / "SUMMARY.md").write_text("\n".join(lines))
-    n_md = sum(1 for _ in report_dir.rglob("*_report.md"))
-    n_num = sum(1 for _ in result_dir.rglob("*") if _.is_file())
-    print(f"report/: {n_md} markdown file(s); result/: {n_num} numeric file(s); tasks {tasks}")
+    (out_root / "summary.md").write_text("\n".join(lines))
+    n_md = sum(1 for _ in out_root.rglob("*_report.md"))
+    n_num = sum(1 for _ in out_root.rglob("*")
+                if _.is_file() and _.name not in {"summary.md"} and "/report/" not in _.as_posix())
+    print(f"result/: {n_md} markdown report(s); {n_num} numeric file(s); tasks {tasks}")
 
 if __name__ == "__main__":
     main()

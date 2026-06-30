@@ -1,9 +1,0 @@
-Gold_term,Pre_term,Method,Score
-Achievement,Achievement,hard_match,1.0
-Completion,Game Completion,top3_avg(jaro_winkler+semantic+sequence_match),0.8008363373695859
-Game,Game,hard_match,1.0
-Item,Item,hard_match,1.0
-Player,Player,hard_match,1.0
-Session,Game Session,top3_avg(jaro_winkler+semantic+sequence_match),0.815424855366643
-in-app purchase event,In-App Purchase,top3_avg(jaro_winkler+semantic+sequence_match),0.8869043760259804
-playing area,Playing Area,hard_match,1.0

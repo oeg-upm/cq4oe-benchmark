@@ -22,6 +22,11 @@ VALID_TASKS = {"cq2term", "cq2onto"}
 OWL_EXTS = {".owl", ".rdf", ".xml", ".ttl", ".turtle"}
 SUB = "submissions/"
 
+# Folders under submissions/ that are NOT entries and must never be evaluated.
+# example-submission is the reference template shipped with the repo; the Action
+# only ever runs over a freshly pulled participant folder.
+IGNORE_NAMES = {"example-submission"}
+
 
 def fail(msg):
     print(f"::error::{msg}")
@@ -44,11 +49,12 @@ def main():
     if outside:
         fail("PR changes files outside submissions/: " + ", ".join(outside[:20]))
 
-    # 2. exactly one submission folder
+    # 2. exactly one submission folder (the example template is never an entry)
     names = {c.split("/")[1] for c in changed if len(c.split("/")) > 2}
-    names = {n for n in names if n and n != "README.md"}
+    names = {n for n in names if n and n != "README.md" and n not in IGNORE_NAMES}
     if len(names) != 1:
-        fail(f"A PR must touch exactly one submissions/<name>/ folder; found {sorted(names)}.")
+        fail(f"A PR must touch exactly one submissions/<name>/ folder "
+             f"(excluding {sorted(IGNORE_NAMES)}); found {sorted(names)}.")
     name = next(iter(names))
     sub = root / SUB / name
 
