@@ -2214,15 +2214,6 @@
           "recall": 0.75,
           "f1": 0.3478260869565218
         },
-        "Class": {
-          "gold_count": 19,
-          "pred_count": 27,
-          "matched": 5,
-          "match_rate": 0.18518518518518517,
-          "precision": 0.18518518518518517,
-          "recall": 0.2631578947368421,
-          "f1": 0.21739130434782608
-        },
         "DatatypeProperty": {
           "gold_count": 8,
           "pred_count": 56,
@@ -2231,6 +2222,15 @@
           "precision": 0.14285714285714285,
           "recall": 1.0,
           "f1": 0.25
+        },
+        "Class": {
+          "gold_count": 19,
+          "pred_count": 27,
+          "matched": 5,
+          "match_rate": 0.18518518518518517,
+          "precision": 0.18518518518518517,
+          "recall": 0.2631578947368421,
+          "f1": 0.21739130434782608
         }
       },
       "buckets": {

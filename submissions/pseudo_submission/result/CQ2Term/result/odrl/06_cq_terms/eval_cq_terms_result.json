@@ -46,16 +46,16 @@
         "n_pred": 29,
         "tp_pairs": [
           {
-            "gold": "rule",
-            "pred": "rule"
+            "gold": "permission",
+            "pred": "permission"
           },
           {
             "gold": "action",
             "pred": "condition"
           },
           {
-            "gold": "duty",
-            "pred": "duty"
+            "gold": "rule",
+            "pred": "rule"
           },
           {
             "gold": "constraint",
@@ -66,12 +66,16 @@
             "pred": "prohibition"
           },
           {
-            "gold": "conflict strategy preference",
-            "pred": "conflictresolutionstrategy"
-          },
-          {
             "gold": "logicalconstraint",
             "pred": "orconstraint"
+          },
+          {
+            "gold": "policy",
+            "pred": "policy"
+          },
+          {
+            "gold": "asset",
+            "pred": "asset"
           },
           {
             "gold": "party",
@@ -82,39 +86,35 @@
             "pred": "operator"
           },
           {
-            "gold": "permission",
-            "pred": "permission"
+            "gold": "duty",
+            "pred": "duty"
           },
           {
-            "gold": "asset",
-            "pred": "asset"
-          },
-          {
-            "gold": "policy",
-            "pred": "policy"
+            "gold": "conflict strategy preference",
+            "pred": "conflictresolutionstrategy"
           }
         ],
         "fn_terms": [
           "assetcollection"
         ],
         "fp_terms": [
-          "requirement",
-          "contractparty",
-          "sequencing",
-          "container",
-          "violation",
-          "aggregation",
-          "role",
-          "disaggregation",
-          "xorconstraint",
-          "odrl",
-          "remedy",
-          "datamodel",
           "contract",
-          "transferright",
-          "right",
           "andconstraint",
-          "rel"
+          "requirement",
+          "xorconstraint",
+          "remedy",
+          "sequencing",
+          "violation",
+          "container",
+          "role",
+          "datamodel",
+          "aggregation",
+          "disaggregation",
+          "right",
+          "rel",
+          "transferright",
+          "contractparty",
+          "odrl"
         ]
       },
       "property_only": {
@@ -128,12 +128,8 @@
         "n_pred": 22,
         "tp_pairs": [
           {
-            "gold": "hasoperator",
-            "pred": "hasoperator"
-          },
-          {
-            "gold": "partof",
-            "pred": "ispartof"
+            "gold": "scope",
+            "pred": "hastype"
           },
           {
             "gold": "obligation",
@@ -148,57 +144,61 @@
             "pred": "haspart"
           },
           {
-            "gold": "hasduty",
-            "pred": "hasduty"
+            "gold": "hasprohibition",
+            "pred": "hasparty"
           },
           {
             "gold": "consequence",
             "pred": "isconsequenceof"
           },
           {
-            "gold": "hasprohibition",
-            "pred": "hasparty"
+            "gold": "hasduty",
+            "pred": "hasduty"
           },
           {
-            "gold": "scope",
-            "pred": "hastype"
+            "gold": "hasoperator",
+            "pred": "hasoperator"
           },
           {
             "gold": "hasconstraint",
             "pred": "hasconstraint"
+          },
+          {
+            "gold": "partof",
+            "pred": "ispartof"
           }
         ],
         "fn_terms": [
-          "or",
-          "inheritrelation",
-          "relation",
-          "failure",
-          "operand",
-          "handlepolicyconflicts",
           "inheritsfrom",
+          "operand",
+          "inheritrelation",
           "onlyone",
-          "assignee",
-          "haspermission",
-          "target",
           "andsequence",
-          "targetpolicy",
+          "target",
+          "haspermission",
           "assigner",
+          "handlepolicyconflicts",
+          "targetpolicy",
+          "relation",
+          "or",
+          "function",
+          "failure",
           "and",
-          "function"
+          "assignee"
         ],
         "fp_terms": [
-          "isactivateduponfailure",
-          "isexclusive",
           "directlylinkedto",
-          "hasright",
-          "supports",
-          "playsrole",
+          "isactivateduponfailure",
+          "specifies",
           "nests",
+          "hasright",
+          "appliesto",
+          "playsrole",
+          "hassubconstraint",
           "supportsinheritance",
           "expressedvia",
-          "appliesto",
-          "specifies",
-          "hassubconstraint"
+          "supports",
+          "isexclusive"
         ]
       },
       "combined": {

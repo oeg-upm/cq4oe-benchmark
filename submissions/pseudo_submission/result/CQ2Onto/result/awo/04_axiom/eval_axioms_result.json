@@ -852,15 +852,6 @@
       "model": "embeddinggemma",
       "threshold": 0.6,
       "per_term_type": {
-        "ObjectProperty": {
-          "gold_count": 10,
-          "pred_count": 9,
-          "matched": 1,
-          "match_rate": 0.1,
-          "precision": 0.1111111111111111,
-          "recall": 0.1,
-          "f1": 0.10526315789473685
-        },
         "Class": {
           "gold_count": 15,
           "pred_count": 15,
@@ -869,6 +860,15 @@
           "precision": 0.5333333333333333,
           "recall": 0.5333333333333333,
           "f1": 0.5333333333333333
+        },
+        "ObjectProperty": {
+          "gold_count": 10,
+          "pred_count": 9,
+          "matched": 1,
+          "match_rate": 0.1,
+          "precision": 0.1111111111111111,
+          "recall": 0.1,
+          "f1": 0.10526315789473685
         }
       },
       "buckets": {
