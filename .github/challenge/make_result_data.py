@@ -4,7 +4,7 @@ make_result_data.py
 
 Runs leaderboard/build_leaderboard.py scoped to ONE submission and writes
     submissions/<name>/result/result_data.js   (same format as leaderboard_data.js)
-    submissions/<name>/report/leaderboard.md    (the aggregate markdown, as a bonus)
+    submissions/<name>/result/leaderboard.md    (the aggregate markdown, as a bonus)
 
 build_leaderboard.py discovers runs by rglob and needs the <mode>/<model>/<dataset>
 directory depth, which the flattened result/ folder does not have. So we build a
@@ -44,7 +44,7 @@ def main():
             shutil.copytree(src, term_root / name)
 
     out_js = sub / "result" / "result_data.js"
-    out_md = sub / "report" / "leaderboard.md"
+    out_md = sub / "result" / "leaderboard.md"
     out_js.parent.mkdir(parents=True, exist_ok=True)
     out_md.parent.mkdir(parents=True, exist_ok=True)
 

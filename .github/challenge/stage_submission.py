@@ -13,7 +13,7 @@ into the exact paths the CQ4OE runners discover:
     CQ2Term :  CQ2Term/01_predictions/<name>/<domain>_cq2terms_terms.json
 
 "challenge" must be present in MODES at the top of
-CQ2Onto/scripts/run_all_evaluation_agent_datsets.py.
+CQ2Onto/scripts/run_all_evaluation_agent_datasets.py.
 """
 import argparse, shutil, sys
 from pathlib import Path

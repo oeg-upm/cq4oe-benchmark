@@ -1,8 +1,0 @@
-Gold_term,Pre_term,Method,Score
-achievement,achievement,hard_match,1.0000
-game,game,hard_match,1.0000
-genre,genre,hard_match,1.0000
-inapppurchaseevent,inapppurchase,top3_avg(jaro_winkler+semantic+sequence_match),0.8883
-item,item,hard_match,1.0000
-player,player,hard_match,1.0000
-playingarea,playingarea,hard_match,1.0000

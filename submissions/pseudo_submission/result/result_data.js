@@ -165,7 +165,8 @@ const LEADERBOARD_DATA = {
               },
               "agg_top3_class": 0.5758387755102042,
               "agg_top3_property": 1.0
-            }
+            },
+            "status": null
           }
         ]
       },
@@ -333,7 +334,8 @@ const LEADERBOARD_DATA = {
               },
               "agg_top3_class": 0.45267400530503976,
               "agg_top3_property": 0.43739143356643356
-            }
+            },
+            "status": null
           }
         ]
       },
@@ -501,7 +503,8 @@ const LEADERBOARD_DATA = {
               },
               "agg_top3_class": 0.42457611111111127,
               "agg_top3_property": 0.4550468954248365
-            }
+            },
+            "status": null
           }
         ]
       },
@@ -669,7 +672,8 @@ const LEADERBOARD_DATA = {
               },
               "agg_top3_class": 0.5013558441558442,
               "agg_top3_property": 0.4797689285714287
-            }
+            },
+            "status": null
           }
         ]
       },
@@ -837,7 +841,8 @@ const LEADERBOARD_DATA = {
               },
               "agg_top3_class": 0.4739291228070176,
               "agg_top3_property": 0.4967685999999998
-            }
+            },
+            "status": null
           }
         ]
       },
@@ -1005,7 +1010,8 @@ const LEADERBOARD_DATA = {
               },
               "agg_top3_class": 0.5155515151515153,
               "agg_top3_property": 0.5235657142857145
-            }
+            },
+            "status": null
           }
         ]
       }
@@ -1163,7 +1169,8 @@ const LEADERBOARD_DATA = {
           },
           "agg_top3_class": 0.42457611111111127,
           "agg_top3_property": 0.4550468954248365
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2term",
@@ -1306,7 +1313,8 @@ const LEADERBOARD_DATA = {
           },
           "agg_top3_class": 0.45267400530503976,
           "agg_top3_property": 0.43739143356643356
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2term",
@@ -1449,7 +1457,8 @@ const LEADERBOARD_DATA = {
           },
           "agg_top3_class": 0.5758387755102042,
           "agg_top3_property": 1.0
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2term",
@@ -1592,7 +1601,8 @@ const LEADERBOARD_DATA = {
           },
           "agg_top3_class": 0.4739291228070176,
           "agg_top3_property": 0.4967685999999998
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2term",
@@ -1735,7 +1745,8 @@ const LEADERBOARD_DATA = {
           },
           "agg_top3_class": 0.5155515151515153,
           "agg_top3_property": 0.5235657142857145
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2term",
@@ -1878,33 +1889,34 @@ const LEADERBOARD_DATA = {
           },
           "agg_top3_class": 0.5013558441558442,
           "agg_top3_property": 0.4797689285714287
-        }
+        },
+        "status": null
       }
     ]
   },
   "cq2onto": {
     "groups": [
       {
-        "label": "axiom.literal_relax=no, axiom.no_layer2=True, axiom.threshold=0.6, concept.final_threshold=0.6, concept.hard_threshold=1.0, concept.lexical_threshold=0.8, concept.methods=hard_match,sequence_match,levenshtein,jaro_winkler,semantic, concept.model_id=embeddinggemma, concept.semantic_threshold=0.6, concept.top_n=3, property.final_threshold=0.7, property.hard_threshold=1.0, property.lexical_threshold=0.8, property.methods=hard_match,sequence_match,levenshtein,jaro_winkler,semantic, property.model_id=embeddinggemma, property.semantic_threshold=0.6, property.top_n=3, triple.literal_relax=no, triple.model_id=embeddinggemma, triple.threshold=0.6",
+        "label": "axiom.literal_relax=False, axiom.no_layer2=False, axiom.threshold=0.6, concept.final_threshold=0.6, concept.hard_threshold=1.0, concept.lexical_threshold=0.8, concept.methods=hard_match,jaro_winkler,levenshtein,semantic,sequence_match, concept.model_id=embeddinggemma, concept.semantic_threshold=0.6, concept.top_n=3, property.final_threshold=0.7, property.hard_threshold=1.0, property.lexical_threshold=0.8, property.methods=hard_match,jaro_winkler,levenshtein,semantic,sequence_match, property.model_id=embeddinggemma, property.semantic_threshold=0.6, property.top_n=3, triple.literal_relax=False, triple.model_id=embeddinggemma, triple.threshold=0.6",
         "config": {
-          "axiom.literal_relax": "no",
-          "axiom.no_layer2": true,
+          "axiom.literal_relax": false,
+          "axiom.no_layer2": false,
           "axiom.threshold": 0.6,
           "concept.final_threshold": 0.6,
           "concept.hard_threshold": 1.0,
           "concept.lexical_threshold": 0.8,
-          "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "concept.model_id": "embeddinggemma",
           "concept.semantic_threshold": 0.6,
           "concept.top_n": 3,
           "property.final_threshold": 0.7,
           "property.hard_threshold": 1.0,
           "property.lexical_threshold": 0.8,
-          "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "property.model_id": "embeddinggemma",
           "property.semantic_threshold": 0.6,
           "property.top_n": 3,
-          "triple.literal_relax": "no",
+          "triple.literal_relax": false,
           "triple.model_id": "embeddinggemma",
           "triple.threshold": 0.6
         },
@@ -1916,14 +1928,14 @@ const LEADERBOARD_DATA = {
             "dataset": "swo",
             "config": {
               "concept.model_id": "embeddinggemma",
-              "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "concept.top_n": 3,
               "concept.final_threshold": 0.6,
               "concept.semantic_threshold": 0.6,
               "concept.lexical_threshold": 0.8,
               "concept.hard_threshold": 1.0,
               "property.model_id": "embeddinggemma",
-              "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "property.top_n": 3,
               "property.final_threshold": 0.7,
               "property.hard_threshold": 1.0,
@@ -1931,10 +1943,10 @@ const LEADERBOARD_DATA = {
               "property.semantic_threshold": 0.6,
               "triple.model_id": "embeddinggemma",
               "triple.threshold": 0.6,
-              "triple.literal_relax": "no",
+              "triple.literal_relax": false,
               "axiom.threshold": 0.6,
-              "axiom.no_layer2": true,
-              "axiom.literal_relax": "no"
+              "axiom.no_layer2": false,
+              "axiom.literal_relax": false
             },
             "term_recovery": {
               "class": {
@@ -2105,7 +2117,14 @@ const LEADERBOARD_DATA = {
                 "fp": 135,
                 "fn": 66
               },
-              "cosine": null,
+              "cosine": {
+                "p": 46.45161290322581,
+                "r": 83.72093023255815,
+                "f1": 59.75103734439834,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
               "cq": {
                 "any": 71.42857142857143,
                 "mean": 20.657999999999998,
@@ -2126,7 +2145,8 @@ const LEADERBOARD_DATA = {
                 "mean": 20.66,
                 "full": 0.0
               }
-            }
+            },
+            "status": null
           },
           {
             "benchmark": "cq2onto",
@@ -2135,14 +2155,14 @@ const LEADERBOARD_DATA = {
             "dataset": "odrl",
             "config": {
               "concept.model_id": "embeddinggemma",
-              "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "concept.top_n": 3,
               "concept.final_threshold": 0.6,
               "concept.semantic_threshold": 0.6,
               "concept.lexical_threshold": 0.8,
               "concept.hard_threshold": 1.0,
               "property.model_id": "embeddinggemma",
-              "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "property.top_n": 3,
               "property.final_threshold": 0.7,
               "property.hard_threshold": 1.0,
@@ -2150,10 +2170,10 @@ const LEADERBOARD_DATA = {
               "property.semantic_threshold": 0.6,
               "triple.model_id": "embeddinggemma",
               "triple.threshold": 0.6,
-              "triple.literal_relax": "no",
+              "triple.literal_relax": false,
               "axiom.threshold": 0.6,
-              "axiom.no_layer2": true,
-              "axiom.literal_relax": "no"
+              "axiom.no_layer2": false,
+              "axiom.literal_relax": false
             },
             "term_recovery": {
               "class": {
@@ -2324,7 +2344,14 @@ const LEADERBOARD_DATA = {
                 "fp": 101,
                 "fn": 58
               },
-              "cosine": null,
+              "cosine": {
+                "p": 39.80582524271845,
+                "r": 68.33333333333333,
+                "f1": 50.306748466257666,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
               "cq": {
                 "any": 16.666666666666668,
                 "mean": 6.388888888888888,
@@ -2345,7 +2372,8 @@ const LEADERBOARD_DATA = {
                 "mean": 6.39,
                 "full": 0.0
               }
-            }
+            },
+            "status": null
           },
           {
             "benchmark": "cq2onto",
@@ -2354,14 +2382,14 @@ const LEADERBOARD_DATA = {
             "dataset": "awo",
             "config": {
               "concept.model_id": "embeddinggemma",
-              "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "concept.top_n": 3,
               "concept.final_threshold": 0.6,
               "concept.semantic_threshold": 0.6,
               "concept.lexical_threshold": 0.8,
               "concept.hard_threshold": 1.0,
               "property.model_id": "embeddinggemma",
-              "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "property.top_n": 3,
               "property.final_threshold": 0.7,
               "property.hard_threshold": 1.0,
@@ -2369,10 +2397,10 @@ const LEADERBOARD_DATA = {
               "property.semantic_threshold": 0.6,
               "triple.model_id": "embeddinggemma",
               "triple.threshold": 0.6,
-              "triple.literal_relax": "no",
+              "triple.literal_relax": false,
               "axiom.threshold": 0.6,
-              "axiom.no_layer2": true,
-              "axiom.literal_relax": "no"
+              "axiom.no_layer2": false,
+              "axiom.literal_relax": false
             },
             "term_recovery": {
               "class": {
@@ -2543,7 +2571,14 @@ const LEADERBOARD_DATA = {
                 "fp": 20,
                 "fn": 21
               },
-              "cosine": null,
+              "cosine": {
+                "p": 62.5,
+                "r": 60.0,
+                "f1": 61.22448979591836,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
               "cq": {
                 "any": 100.0,
                 "mean": 32.57714285714286,
@@ -2564,7 +2599,8 @@ const LEADERBOARD_DATA = {
                 "mean": 32.58,
                 "full": 0.0
               }
-            }
+            },
+            "status": null
           },
           {
             "benchmark": "cq2onto",
@@ -2573,14 +2609,14 @@ const LEADERBOARD_DATA = {
             "dataset": "water",
             "config": {
               "concept.model_id": "embeddinggemma",
-              "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "concept.top_n": 3,
               "concept.final_threshold": 0.6,
               "concept.semantic_threshold": 0.6,
               "concept.lexical_threshold": 0.8,
               "concept.hard_threshold": 1.0,
               "property.model_id": "embeddinggemma",
-              "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "property.top_n": 3,
               "property.final_threshold": 0.7,
               "property.hard_threshold": 1.0,
@@ -2588,10 +2624,10 @@ const LEADERBOARD_DATA = {
               "property.semantic_threshold": 0.6,
               "triple.model_id": "embeddinggemma",
               "triple.threshold": 0.6,
-              "triple.literal_relax": "no",
+              "triple.literal_relax": false,
               "axiom.threshold": 0.6,
-              "axiom.no_layer2": true,
-              "axiom.literal_relax": "no"
+              "axiom.no_layer2": false,
+              "axiom.literal_relax": false
             },
             "term_recovery": {
               "class": {
@@ -2762,7 +2798,14 @@ const LEADERBOARD_DATA = {
                 "fp": 133,
                 "fn": 40
               },
-              "cosine": null,
+              "cosine": {
+                "p": 27.941176470588236,
+                "r": 88.37209302325581,
+                "f1": 42.45810055865922,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
               "cq": {
                 "any": 23.80952380952381,
                 "mean": 4.86,
@@ -2783,7 +2826,8 @@ const LEADERBOARD_DATA = {
                 "mean": 4.859999999999999,
                 "full": 0.0
               }
-            }
+            },
+            "status": null
           },
           {
             "benchmark": "cq2onto",
@@ -2792,14 +2836,14 @@ const LEADERBOARD_DATA = {
             "dataset": "wine",
             "config": {
               "concept.model_id": "embeddinggemma",
-              "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "concept.top_n": 3,
               "concept.final_threshold": 0.6,
               "concept.semantic_threshold": 0.6,
               "concept.lexical_threshold": 0.8,
               "concept.hard_threshold": 1.0,
               "property.model_id": "embeddinggemma",
-              "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "property.top_n": 3,
               "property.final_threshold": 0.7,
               "property.hard_threshold": 1.0,
@@ -2807,10 +2851,10 @@ const LEADERBOARD_DATA = {
               "property.semantic_threshold": 0.6,
               "triple.model_id": "embeddinggemma",
               "triple.threshold": 0.6,
-              "triple.literal_relax": "no",
+              "triple.literal_relax": false,
               "axiom.threshold": 0.6,
-              "axiom.no_layer2": true,
-              "axiom.literal_relax": "no"
+              "axiom.no_layer2": false,
+              "axiom.literal_relax": false
             },
             "term_recovery": {
               "class": {
@@ -2981,7 +3025,14 @@ const LEADERBOARD_DATA = {
                 "fp": 34,
                 "fn": 53
               },
-              "cosine": null,
+              "cosine": {
+                "p": 85.71428571428571,
+                "r": 61.76470588235294,
+                "f1": 71.7948717948718,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
               "cq": {
                 "any": 100.0,
                 "mean": 25.182000000000002,
@@ -3002,7 +3053,8 @@ const LEADERBOARD_DATA = {
                 "mean": 25.180000000000003,
                 "full": 0.0
               }
-            }
+            },
+            "status": null
           },
           {
             "benchmark": "cq2onto",
@@ -3011,14 +3063,14 @@ const LEADERBOARD_DATA = {
             "dataset": "vgo",
             "config": {
               "concept.model_id": "embeddinggemma",
-              "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "concept.top_n": 3,
               "concept.final_threshold": 0.6,
               "concept.semantic_threshold": 0.6,
               "concept.lexical_threshold": 0.8,
               "concept.hard_threshold": 1.0,
               "property.model_id": "embeddinggemma",
-              "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+              "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
               "property.top_n": 3,
               "property.final_threshold": 0.7,
               "property.hard_threshold": 1.0,
@@ -3026,10 +3078,10 @@ const LEADERBOARD_DATA = {
               "property.semantic_threshold": 0.6,
               "triple.model_id": "embeddinggemma",
               "triple.threshold": 0.6,
-              "triple.literal_relax": "no",
+              "triple.literal_relax": false,
               "axiom.threshold": 0.6,
-              "axiom.no_layer2": true,
-              "axiom.literal_relax": "no"
+              "axiom.no_layer2": false,
+              "axiom.literal_relax": false
             },
             "term_recovery": {
               "class": {
@@ -3200,7 +3252,14 @@ const LEADERBOARD_DATA = {
                 "fp": 127,
                 "fn": 65
               },
-              "cosine": null,
+              "cosine": {
+                "p": 36.69064748201439,
+                "r": 66.23376623376623,
+                "f1": 47.22222222222222,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
               "cq": {
                 "any": 38.70967741935484,
                 "mean": 18.28258064516129,
@@ -3221,7 +3280,8 @@ const LEADERBOARD_DATA = {
                 "mean": 18.279999999999998,
                 "full": 6.45
               }
-            }
+            },
+            "status": null
           }
         ]
       }
@@ -3248,14 +3308,14 @@ const LEADERBOARD_DATA = {
         "dataset": "swo",
         "config": {
           "concept.model_id": "embeddinggemma",
-          "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "concept.top_n": 3,
           "concept.final_threshold": 0.6,
           "concept.semantic_threshold": 0.6,
           "concept.lexical_threshold": 0.8,
           "concept.hard_threshold": 1.0,
           "property.model_id": "embeddinggemma",
-          "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "property.top_n": 3,
           "property.final_threshold": 0.7,
           "property.hard_threshold": 1.0,
@@ -3263,10 +3323,10 @@ const LEADERBOARD_DATA = {
           "property.semantic_threshold": 0.6,
           "triple.model_id": "embeddinggemma",
           "triple.threshold": 0.6,
-          "triple.literal_relax": "no",
+          "triple.literal_relax": false,
           "axiom.threshold": 0.6,
-          "axiom.no_layer2": true,
-          "axiom.literal_relax": "no"
+          "axiom.no_layer2": false,
+          "axiom.literal_relax": false
         },
         "term_recovery": {
           "class": {
@@ -3437,7 +3497,14 @@ const LEADERBOARD_DATA = {
             "fp": 135,
             "fn": 66
           },
-          "cosine": null,
+          "cosine": {
+            "p": 46.45161290322581,
+            "r": 83.72093023255815,
+            "f1": 59.75103734439834,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
           "cq": {
             "any": 71.42857142857143,
             "mean": 20.657999999999998,
@@ -3458,7 +3525,8 @@ const LEADERBOARD_DATA = {
             "mean": 20.66,
             "full": 0.0
           }
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2onto",
@@ -3467,14 +3535,14 @@ const LEADERBOARD_DATA = {
         "dataset": "odrl",
         "config": {
           "concept.model_id": "embeddinggemma",
-          "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "concept.top_n": 3,
           "concept.final_threshold": 0.6,
           "concept.semantic_threshold": 0.6,
           "concept.lexical_threshold": 0.8,
           "concept.hard_threshold": 1.0,
           "property.model_id": "embeddinggemma",
-          "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "property.top_n": 3,
           "property.final_threshold": 0.7,
           "property.hard_threshold": 1.0,
@@ -3482,10 +3550,10 @@ const LEADERBOARD_DATA = {
           "property.semantic_threshold": 0.6,
           "triple.model_id": "embeddinggemma",
           "triple.threshold": 0.6,
-          "triple.literal_relax": "no",
+          "triple.literal_relax": false,
           "axiom.threshold": 0.6,
-          "axiom.no_layer2": true,
-          "axiom.literal_relax": "no"
+          "axiom.no_layer2": false,
+          "axiom.literal_relax": false
         },
         "term_recovery": {
           "class": {
@@ -3656,7 +3724,14 @@ const LEADERBOARD_DATA = {
             "fp": 101,
             "fn": 58
           },
-          "cosine": null,
+          "cosine": {
+            "p": 39.80582524271845,
+            "r": 68.33333333333333,
+            "f1": 50.306748466257666,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
           "cq": {
             "any": 16.666666666666668,
             "mean": 6.388888888888888,
@@ -3677,7 +3752,8 @@ const LEADERBOARD_DATA = {
             "mean": 6.39,
             "full": 0.0
           }
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2onto",
@@ -3686,14 +3762,14 @@ const LEADERBOARD_DATA = {
         "dataset": "awo",
         "config": {
           "concept.model_id": "embeddinggemma",
-          "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "concept.top_n": 3,
           "concept.final_threshold": 0.6,
           "concept.semantic_threshold": 0.6,
           "concept.lexical_threshold": 0.8,
           "concept.hard_threshold": 1.0,
           "property.model_id": "embeddinggemma",
-          "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "property.top_n": 3,
           "property.final_threshold": 0.7,
           "property.hard_threshold": 1.0,
@@ -3701,10 +3777,10 @@ const LEADERBOARD_DATA = {
           "property.semantic_threshold": 0.6,
           "triple.model_id": "embeddinggemma",
           "triple.threshold": 0.6,
-          "triple.literal_relax": "no",
+          "triple.literal_relax": false,
           "axiom.threshold": 0.6,
-          "axiom.no_layer2": true,
-          "axiom.literal_relax": "no"
+          "axiom.no_layer2": false,
+          "axiom.literal_relax": false
         },
         "term_recovery": {
           "class": {
@@ -3875,7 +3951,14 @@ const LEADERBOARD_DATA = {
             "fp": 20,
             "fn": 21
           },
-          "cosine": null,
+          "cosine": {
+            "p": 62.5,
+            "r": 60.0,
+            "f1": 61.22448979591836,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
           "cq": {
             "any": 100.0,
             "mean": 32.57714285714286,
@@ -3896,7 +3979,8 @@ const LEADERBOARD_DATA = {
             "mean": 32.58,
             "full": 0.0
           }
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2onto",
@@ -3905,14 +3989,14 @@ const LEADERBOARD_DATA = {
         "dataset": "water",
         "config": {
           "concept.model_id": "embeddinggemma",
-          "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "concept.top_n": 3,
           "concept.final_threshold": 0.6,
           "concept.semantic_threshold": 0.6,
           "concept.lexical_threshold": 0.8,
           "concept.hard_threshold": 1.0,
           "property.model_id": "embeddinggemma",
-          "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "property.top_n": 3,
           "property.final_threshold": 0.7,
           "property.hard_threshold": 1.0,
@@ -3920,10 +4004,10 @@ const LEADERBOARD_DATA = {
           "property.semantic_threshold": 0.6,
           "triple.model_id": "embeddinggemma",
           "triple.threshold": 0.6,
-          "triple.literal_relax": "no",
+          "triple.literal_relax": false,
           "axiom.threshold": 0.6,
-          "axiom.no_layer2": true,
-          "axiom.literal_relax": "no"
+          "axiom.no_layer2": false,
+          "axiom.literal_relax": false
         },
         "term_recovery": {
           "class": {
@@ -4094,7 +4178,14 @@ const LEADERBOARD_DATA = {
             "fp": 133,
             "fn": 40
           },
-          "cosine": null,
+          "cosine": {
+            "p": 27.941176470588236,
+            "r": 88.37209302325581,
+            "f1": 42.45810055865922,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
           "cq": {
             "any": 23.80952380952381,
             "mean": 4.86,
@@ -4115,7 +4206,8 @@ const LEADERBOARD_DATA = {
             "mean": 4.859999999999999,
             "full": 0.0
           }
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2onto",
@@ -4124,14 +4216,14 @@ const LEADERBOARD_DATA = {
         "dataset": "wine",
         "config": {
           "concept.model_id": "embeddinggemma",
-          "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "concept.top_n": 3,
           "concept.final_threshold": 0.6,
           "concept.semantic_threshold": 0.6,
           "concept.lexical_threshold": 0.8,
           "concept.hard_threshold": 1.0,
           "property.model_id": "embeddinggemma",
-          "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "property.top_n": 3,
           "property.final_threshold": 0.7,
           "property.hard_threshold": 1.0,
@@ -4139,10 +4231,10 @@ const LEADERBOARD_DATA = {
           "property.semantic_threshold": 0.6,
           "triple.model_id": "embeddinggemma",
           "triple.threshold": 0.6,
-          "triple.literal_relax": "no",
+          "triple.literal_relax": false,
           "axiom.threshold": 0.6,
-          "axiom.no_layer2": true,
-          "axiom.literal_relax": "no"
+          "axiom.no_layer2": false,
+          "axiom.literal_relax": false
         },
         "term_recovery": {
           "class": {
@@ -4313,7 +4405,14 @@ const LEADERBOARD_DATA = {
             "fp": 34,
             "fn": 53
           },
-          "cosine": null,
+          "cosine": {
+            "p": 85.71428571428571,
+            "r": 61.76470588235294,
+            "f1": 71.7948717948718,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
           "cq": {
             "any": 100.0,
             "mean": 25.182000000000002,
@@ -4334,7 +4433,8 @@ const LEADERBOARD_DATA = {
             "mean": 25.180000000000003,
             "full": 0.0
           }
-        }
+        },
+        "status": null
       },
       {
         "benchmark": "cq2onto",
@@ -4343,14 +4443,14 @@ const LEADERBOARD_DATA = {
         "dataset": "vgo",
         "config": {
           "concept.model_id": "embeddinggemma",
-          "concept.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "concept.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "concept.top_n": 3,
           "concept.final_threshold": 0.6,
           "concept.semantic_threshold": 0.6,
           "concept.lexical_threshold": 0.8,
           "concept.hard_threshold": 1.0,
           "property.model_id": "embeddinggemma",
-          "property.methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+          "property.methods": "hard_match,jaro_winkler,levenshtein,semantic,sequence_match",
           "property.top_n": 3,
           "property.final_threshold": 0.7,
           "property.hard_threshold": 1.0,
@@ -4358,10 +4458,10 @@ const LEADERBOARD_DATA = {
           "property.semantic_threshold": 0.6,
           "triple.model_id": "embeddinggemma",
           "triple.threshold": 0.6,
-          "triple.literal_relax": "no",
+          "triple.literal_relax": false,
           "axiom.threshold": 0.6,
-          "axiom.no_layer2": true,
-          "axiom.literal_relax": "no"
+          "axiom.no_layer2": false,
+          "axiom.literal_relax": false
         },
         "term_recovery": {
           "class": {
@@ -4532,7 +4632,14 @@ const LEADERBOARD_DATA = {
             "fp": 127,
             "fn": 65
           },
-          "cosine": null,
+          "cosine": {
+            "p": 36.69064748201439,
+            "r": 66.23376623376623,
+            "f1": 47.22222222222222,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
           "cq": {
             "any": 38.70967741935484,
             "mean": 18.28258064516129,
@@ -4553,7 +4660,8 @@ const LEADERBOARD_DATA = {
             "mean": 18.279999999999998,
             "full": 6.45
           }
-        }
+        },
+        "status": null
       }
     ]
   },

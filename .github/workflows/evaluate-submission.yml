@@ -6,7 +6,8 @@ name: Evaluate challenge submission
 #   1. detect which submission changed
 #   2. validate it against the submission guideline (metadata + files + formats)
 #   3. run the evaluation over the submitted results
-#   4. produce submissions/<name>/result/ (+ SUMMARY.md) and:
+#   4. produce submissions/<name>/result/ (containing per-task result/ + report/,
+#      result_data.js, leaderboard.md, and summary.md) and:
 #        - upload it as an artifact (always; this is how fork-PR results travel)
 #        - for SAME-REPO PRs only, also commit it back onto the PR branch
 #
@@ -100,10 +101,10 @@ jobs:
         env:
           CQ4OE_PYTHON: python
         working-directory: CQ2Onto
-        run: python -u scripts/run_all_evaluation_agent_datsets.py --modes challenge --no_leaderboard
+        run: python -u scripts/run_all_evaluation_agent_datasets.py --modes challenge --no_leaderboard
 
       # ---- STEP 4: collect results ----
-      - name: Collect results into submissions/<name>/report/ and result/
+      - name: Collect results into submissions/<name>/result/
         if: always() && steps.validate.outputs.name != ''
         env:
           NAME: ${{ steps.validate.outputs.name }}
@@ -128,7 +129,7 @@ jobs:
           mkdir -p result_meta
           echo "${{ github.event.pull_request.number }}" > result_meta/pr_number.txt
           echo "$NAME" > result_meta/name.txt
-          cp "submissions/$NAME/report/SUMMARY.md" result_meta/SUMMARY.md || echo "no summary" > result_meta/SUMMARY.md
+          cp "submissions/$NAME/result/summary.md" result_meta/SUMMARY.md || echo "no summary" > result_meta/SUMMARY.md
 
       - name: Upload results artifact
         if: always()
@@ -137,7 +138,6 @@ jobs:
           name: cq4oe-results
           path: |
             result_meta/**
-            submissions/${{ steps.validate.outputs.name }}/report/**
             submissions/${{ steps.validate.outputs.name }}/result/**
           if-no-files-found: ignore
 
@@ -149,6 +149,6 @@ jobs:
         run: |
           git config user.name  "cq4oe-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add "submissions/$NAME/report" "submissions/$NAME/result"
+          git add "submissions/$NAME/result"
           git commit -m "Add evaluation results for $NAME [skip ci]" || { echo "no changes"; exit 0; }
           git push origin HEAD:"${{ github.event.pull_request.head.ref }}"

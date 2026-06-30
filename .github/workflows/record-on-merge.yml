@@ -32,14 +32,17 @@ jobs:
 
       - name: Which submissions changed in this push
         run: |
+          # example-submission is the reference template, never an entry to evaluate.
           git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
-            | grep '^submissions/' | cut -d/ -f2 | sort -u > names.txt || true
-          # ignore folders whose ONLY change was the result/ output
+            | grep '^submissions/' | cut -d/ -f2 | sort -u \
+            | grep -vx 'example-submission' > names.txt || true
+          # ignore folders whose ONLY change was the result/ output (the Action's own
+          # commit-back), so recording results does not re-trigger evaluation.
           : > to_eval.txt
           while read -r n; do
             [ -z "$n" ] && continue
             changed=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
-                       | grep "^submissions/$n/" | grep -vE "^submissions/$n/(report|result)/" | head -1)
+                       | grep "^submissions/$n/" | grep -vE "^submissions/$n/result/" | head -1)
             [ -n "$changed" ] && echo "$n" >> to_eval.txt
           done < names.txt
           echo "----- to evaluate -----"; cat to_eval.txt
@@ -75,7 +78,7 @@ jobs:
               ( cd CQ2Term && python -u scripts/run_all_cq2term.py --models "$name" --no_leaderboard ) || true
             fi
             if grep -q '^RUN_CQ2ONTO=1' stage.out; then
-              ( cd CQ2Onto && python -u scripts/run_all_evaluation_agent_datsets.py --modes challenge --no_leaderboard ) || true
+              ( cd CQ2Onto && python -u scripts/run_all_evaluation_agent_datasets.py --modes challenge --no_leaderboard ) || true
             fi
             python .github/challenge/collect_into_submission.py --name "$name" --onto-mode challenge --commit "${{ github.sha }}"
             python .github/challenge/make_result_data.py --name "$name" --onto-mode challenge
@@ -85,6 +88,6 @@ jobs:
         run: |
           git config user.name  "cq4oe-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add submissions/*/report submissions/*/result
+          git add submissions/*/result
           git commit -m "Record evaluation results for merged submission(s) [skip ci]" || echo "nothing to commit"
           git push || echo "nothing to push"
