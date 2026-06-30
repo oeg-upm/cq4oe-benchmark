@@ -1,0 +1,4 @@
+Gold_term,Pre_term,Method,Score
+hasbody,hasbody,hard_match,1.0000
+hasvintageyear,hasvintageyear,hard_match,1.0000
+madefromgrape,madefrom,top3_avg(jaro_winkler+sequence_match+semantic),0.7966

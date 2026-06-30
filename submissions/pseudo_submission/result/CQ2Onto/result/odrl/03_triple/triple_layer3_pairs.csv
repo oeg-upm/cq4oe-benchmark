@@ -1,0 +1,3 @@
+PropertyType,GoldPredicate,PredPredicate,GoldPredicateNorm,PredPredicateNorm,GoldType,PredType,TypeVerdict,GoldDomain,PredDomain,GoldDomainNorm,PredDomainNorm,DomainStatus,GoldRange,PredRange,GoldRangeNorm,PredRangeNorm,RangeStatus,FullMatch,Note
+ObjectProperty,consequence,has consequence duty,consequence,hasconsequenceduty,ObjectProperty,ObjectProperty,tp,Duty,Duty,duty,duty,tp,Duty,Duty,duty,duty,tp,YES,
+ObjectProperty,constraint,has constraint,constraint,hasconstraint,ObjectProperty,ObjectProperty,tp,,Deontic Element,,deonticelement,fp,,Constraint,,constraint,fp,NO,

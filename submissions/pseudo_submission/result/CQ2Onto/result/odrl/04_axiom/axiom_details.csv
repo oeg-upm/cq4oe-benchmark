@@ -1,0 +1,149 @@
+id,source,term_type,axiom_type,term,dl,status,note
+AX1-gold,gold,Class,SubClassOf,AssetCollection,AssetCollection ⊑ Asset,Skip,subject 'AssetCollection' not in alignment table
+AX1-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX2-gold,gold,Class,DisjointClasses,Duty,"DisjointClasses(Duty, Permission)",FN,pred has no DisjointClasses axiom on 'Duty'
+AX2-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX3-gold,gold,Class,DisjointClasses,Duty,"DisjointClasses(Duty, Prohibition)",FN,pred has no DisjointClasses axiom on 'Duty'
+AX3-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX4-gold,gold,Class,SubClassOf,Duty,Duty ⊑ Rule,Mismatch,pred AX14 differs: class 'Rule' not aligned to 'Deontic Element'
+AX4-pred,pred,Class,SubClassOf,Duty,Duty ⊑ Deontic Element,-,-
+AX5-gold,gold,Class,DisjointClasses,Permission,"DisjointClasses(Permission, Prohibition)",FN,pred has no DisjointClasses axiom on 'Permission'
+AX5-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX6-gold,gold,Class,SubClassOf,Permission,Permission ⊑ Rule,Mismatch,pred AX24 differs: class 'Rule' not aligned to 'Deontic Element'
+AX6-pred,pred,Class,SubClassOf,Permission,Permission ⊑ Deontic Element,-,-
+AX7-gold,gold,Class,SubClassOf,Prohibition,Prohibition ⊑ Rule,Mismatch,pred AX28 differs: class 'Rule' not aligned to 'Deontic Element'
+AX7-pred,pred,Class,SubClassOf,Prohibition,Prohibition ⊑ Deontic Element,-,-
+AX8-gold,gold,ObjectProperty,Domain,action,∃action.⊤ ⊑ (Policy ⊔ Rule),Skip,subject 'action' not in alignment table
+AX8-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX9-gold,gold,ObjectProperty,Range,action,⊤ ⊑ ∀action.Action,Skip,subject 'action' not in alignment table
+AX9-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX10-gold,gold,ObjectProperty,SubPropertyOf,and,and ⊑ operand,Skip,subject 'and' not in alignment table
+AX10-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX11-gold,gold,ObjectProperty,SubPropertyOf,andSequence,andSequence ⊑ operand,Skip,subject 'andSequence' not in alignment table
+AX11-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX12-gold,gold,ObjectProperty,Domain,assignee,∃assignee.⊤ ⊑ (Policy ⊔ Rule),Skip,subject 'assignee' not in alignment table
+AX12-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX13-gold,gold,ObjectProperty,Range,assignee,⊤ ⊑ ∀assignee.Party,Skip,subject 'assignee' not in alignment table
+AX13-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX14-gold,gold,ObjectProperty,SubPropertyOf,assignee,assignee ⊑ function,Skip,subject 'assignee' not in alignment table
+AX14-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX15-gold,gold,ObjectProperty,Domain,assigner,∃assigner.⊤ ⊑ (Policy ⊔ Rule),Skip,subject 'assigner' not in alignment table
+AX15-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX16-gold,gold,ObjectProperty,Range,assigner,⊤ ⊑ ∀assigner.Party,Skip,subject 'assigner' not in alignment table
+AX16-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX17-gold,gold,ObjectProperty,SubPropertyOf,assigner,assigner ⊑ function,Skip,subject 'assigner' not in alignment table
+AX17-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX18-gold,gold,ObjectProperty,Domain,conflict,∃conflict.⊤ ⊑ Policy,Skip,subject 'conflict' not in alignment table
+AX18-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX19-gold,gold,ObjectProperty,Range,conflict,⊤ ⊑ ∀conflict.ConflictTerm,Skip,subject 'conflict' not in alignment table
+AX19-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX20-gold,gold,ObjectProperty,Domain,consequence,∃consequence.⊤ ⊑ Duty,TP,matched pred AX60
+AX20-pred,pred,ObjectProperty,Domain,has consequence duty,∃has consequence duty.⊤ ⊑ Duty,-,-
+AX21-gold,gold,ObjectProperty,Range,consequence,⊤ ⊑ ∀consequence.Duty,TP,matched pred AX61
+AX21-pred,pred,ObjectProperty,Range,has consequence duty,⊤ ⊑ ∀has consequence duty.Duty,-,-
+AX22-gold,gold,ObjectProperty,SubPropertyOf,consequence,consequence ⊑ failure,FN,pred has no SubPropertyOf axiom on 'has consequence duty'
+AX22-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX23-gold,gold,ObjectProperty,Domain,constraint,∃constraint.⊤ ⊑ (Policy ⊔ Rule),Mismatch,pred AX63 differs: expr_type ObjectUnionOf vs Class
+AX23-pred,pred,ObjectProperty,Domain,has constraint,∃has constraint.⊤ ⊑ Deontic Element,-,-
+AX24-gold,gold,ObjectProperty,Range,constraint,⊤ ⊑ ∀constraint.(Constraint ⊔ LogicalConstraint),Mismatch,pred AX64 differs: expr_type ObjectUnionOf vs Class
+AX24-pred,pred,ObjectProperty,Range,has constraint,⊤ ⊑ ∀has constraint.Constraint,-,-
+AX25-gold,gold,ObjectProperty,SubPropertyOf,contractedParty,contractedParty ⊑ function,Skip,subject 'contractedParty' not in alignment table
+AX25-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX26-gold,gold,ObjectProperty,Domain,duty,∃duty.⊤ ⊑ Permission,Skip,subject 'duty' not in alignment table
+AX26-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX27-gold,gold,ObjectProperty,Range,duty,⊤ ⊑ ∀duty.Duty,Skip,subject 'duty' not in alignment table
+AX27-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX28-gold,gold,ObjectProperty,Domain,failure,∃failure.⊤ ⊑ Rule,Skip,subject 'failure' not in alignment table
+AX28-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX29-gold,gold,ObjectProperty,Range,failure,⊤ ⊑ ∀failure.Rule,Skip,subject 'failure' not in alignment table
+AX29-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX30-gold,gold,ObjectProperty,Domain,function,∃function.⊤ ⊑ (Policy ⊔ Rule),Skip,subject 'function' not in alignment table
+AX30-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX31-gold,gold,ObjectProperty,Range,function,⊤ ⊑ ∀function.Party,Skip,subject 'function' not in alignment table
+AX31-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX32-gold,gold,ObjectProperty,Domain,hasPolicy,∃hasPolicy.⊤ ⊑ Asset,Skip,subject 'hasPolicy' not in alignment table
+AX32-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX33-gold,gold,ObjectProperty,Range,hasPolicy,⊤ ⊑ ∀hasPolicy.Policy,Skip,subject 'hasPolicy' not in alignment table
+AX33-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX34-gold,gold,ObjectProperty,Domain,implies,∃implies.⊤ ⊑ Action,Skip,subject 'implies' not in alignment table
+AX34-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX35-gold,gold,ObjectProperty,Range,implies,⊤ ⊑ ∀implies.Action,Skip,subject 'implies' not in alignment table
+AX35-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX36-gold,gold,ObjectProperty,Domain,inheritFrom,∃inheritFrom.⊤ ⊑ Policy,Skip,subject 'inheritFrom' not in alignment table
+AX36-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX37-gold,gold,ObjectProperty,Range,inheritFrom,⊤ ⊑ ∀inheritFrom.Policy,Skip,subject 'inheritFrom' not in alignment table
+AX37-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX38-gold,gold,ObjectProperty,Domain,leftOperand,∃leftOperand.⊤ ⊑ Constraint,Skip,subject 'leftOperand' not in alignment table
+AX38-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX39-gold,gold,ObjectProperty,Range,leftOperand,⊤ ⊑ ∀leftOperand.LeftOperand,Skip,subject 'leftOperand' not in alignment table
+AX39-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX40-gold,gold,ObjectProperty,Domain,obligation,∃obligation.⊤ ⊑ Policy,Skip,subject 'obligation' not in alignment table
+AX40-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX41-gold,gold,ObjectProperty,Range,obligation,⊤ ⊑ ∀obligation.Duty,Skip,subject 'obligation' not in alignment table
+AX41-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX42-gold,gold,ObjectProperty,Domain,operand,∃operand.⊤ ⊑ LogicalConstraint,Skip,subject 'operand' not in alignment table
+AX42-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX43-gold,gold,ObjectProperty,Domain,operator,∃operator.⊤ ⊑ Constraint,Skip,subject 'operator' not in alignment table
+AX43-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX44-gold,gold,ObjectProperty,Range,operator,⊤ ⊑ ∀operator.Operator,Skip,subject 'operator' not in alignment table
+AX44-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX45-gold,gold,ObjectProperty,SubPropertyOf,or,or ⊑ operand,Skip,subject 'or' not in alignment table
+AX45-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX46-gold,gold,ObjectProperty,Domain,partOf,∃partOf.⊤ ⊑ (Asset ⊔ Party),Skip,subject 'partOf' not in alignment table
+AX46-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX47-gold,gold,ObjectProperty,Range,partOf,⊤ ⊑ ∀partOf.(AssetCollection),Skip,subject 'partOf' not in alignment table
+AX47-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX48-gold,gold,ObjectProperty,Domain,permission,∃permission.⊤ ⊑ Policy,Skip,subject 'permission' not in alignment table
+AX48-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX49-gold,gold,ObjectProperty,Range,permission,⊤ ⊑ ∀permission.Permission,Skip,subject 'permission' not in alignment table
+AX49-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX50-gold,gold,ObjectProperty,Domain,prohibition,∃prohibition.⊤ ⊑ Policy,Skip,subject 'prohibition' not in alignment table
+AX50-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX51-gold,gold,ObjectProperty,Range,prohibition,⊤ ⊑ ∀prohibition.Prohibition,Skip,subject 'prohibition' not in alignment table
+AX51-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX52-gold,gold,ObjectProperty,Domain,relation,∃relation.⊤ ⊑ (Policy ⊔ Rule),Skip,subject 'relation' not in alignment table
+AX52-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX53-gold,gold,ObjectProperty,Range,relation,⊤ ⊑ ∀relation.Asset,Skip,subject 'relation' not in alignment table
+AX53-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX54-gold,gold,ObjectProperty,Domain,remedy,∃remedy.⊤ ⊑ Prohibition,Skip,subject 'remedy' not in alignment table
+AX54-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX55-gold,gold,ObjectProperty,Range,remedy,⊤ ⊑ ∀remedy.Duty,Skip,subject 'remedy' not in alignment table
+AX55-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX56-gold,gold,ObjectProperty,SubPropertyOf,remedy,remedy ⊑ failure,Skip,subject 'remedy' not in alignment table
+AX56-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX57-gold,gold,ObjectProperty,Domain,target,∃target.⊤ ⊑ (Policy ⊔ Rule),Skip,subject 'target' not in alignment table
+AX57-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX58-gold,gold,ObjectProperty,Range,target,⊤ ⊑ ∀target.Asset,Skip,subject 'target' not in alignment table
+AX58-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX59-gold,gold,ObjectProperty,SubPropertyOf,target,target ⊑ relation,Skip,subject 'target' not in alignment table
+AX59-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX60-gold,gold,ObjectProperty,SubPropertyOf,xone,xone ⊑ operand,Skip,subject 'xone' not in alignment table
+AX60-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX3-pred,pred,Class,Declaration,Asset,Declaration: Asset (Class),FP,pred Declaration axiom on 'Asset' not matched by any gold axiom on 'Asset'
+AX3-gold,gold,-,-,-,(no gold counterpart),-,-
+AX4-pred,pred,Class,Declaration,Conflict Resolution Strategy,Declaration: Conflict Resolution Strategy (Class),FP,pred Declaration axiom on 'Conflict Resolution Strategy' not matched by any gold axiom on 'ConflictTerm'
+AX4-gold,gold,-,-,-,(no gold counterpart),-,-
+AX5-pred,pred,Class,Declaration,Constraint,Declaration: Constraint (Class),FP,pred Declaration axiom on 'Constraint' not matched by any gold axiom on 'Constraint'
+AX5-gold,gold,-,-,-,(no gold counterpart),-,-
+AX13-pred,pred,Class,Declaration,Duty,Declaration: Duty (Class),FP,pred Declaration axiom on 'Duty' not matched by any gold axiom on 'Duty'
+AX13-gold,gold,-,-,-,(no gold counterpart),-,-
+AX22-pred,pred,Class,Declaration,Party,Declaration: Party (Class),FP,pred Declaration axiom on 'Party' not matched by any gold axiom on 'Party'
+AX22-gold,gold,-,-,-,(no gold counterpart),-,-
+AX23-pred,pred,Class,Declaration,Permission,Declaration: Permission (Class),FP,pred Declaration axiom on 'Permission' not matched by any gold axiom on 'Permission'
+AX23-gold,gold,-,-,-,(no gold counterpart),-,-
+AX25-pred,pred,Class,Declaration,Policy,Declaration: Policy (Class),FP,pred Declaration axiom on 'Policy' not matched by any gold axiom on 'Policy'
+AX25-gold,gold,-,-,-,(no gold counterpart),-,-
+AX26-pred,pred,Class,SubClassOf,Policy,Policy ⊑ Container,FP,pred SubClassOf axiom on 'Policy' not matched by any gold axiom on 'Policy'
+AX26-gold,gold,-,-,-,(no gold counterpart),-,-
+AX27-pred,pred,Class,Declaration,Prohibition,Declaration: Prohibition (Class),FP,pred Declaration axiom on 'Prohibition' not matched by any gold axiom on 'Prohibition'
+AX27-gold,gold,-,-,-,(no gold counterpart),-,-
+AX29-pred,pred,Class,Declaration,Role,Declaration: Role (Class),FP,pred Declaration axiom on 'Role' not matched by any gold axiom on 'Rule'
+AX29-gold,gold,-,-,-,(no gold counterpart),-,-
+AX37-pred,pred,Class,Declaration,or constraint,Declaration: or constraint (Class),FP,pred Declaration axiom on 'or constraint' not matched by any gold axiom on 'LogicalConstraint'
+AX37-gold,gold,-,-,-,(no gold counterpart),-,-
+AX38-pred,pred,Class,SubClassOf,or constraint,or constraint ⊑ Constraint,FP,pred SubClassOf axiom on 'or constraint' not matched by any gold axiom on 'LogicalConstraint'
+AX38-gold,gold,-,-,-,(no gold counterpart),-,-
+AX59-pred,pred,ObjectProperty,Declaration,has consequence duty,Declaration: has consequence duty (ObjectProperty),FP,pred Declaration axiom on 'has consequence duty' not matched by any gold axiom on 'consequence'
+AX59-gold,gold,-,-,-,(no gold counterpart),-,-
+AX62-pred,pred,ObjectProperty,Declaration,has constraint,Declaration: has constraint (ObjectProperty),FP,pred Declaration axiom on 'has constraint' not matched by any gold axiom on 'constraint'
+AX62-gold,gold,-,-,-,(no gold counterpart),-,-

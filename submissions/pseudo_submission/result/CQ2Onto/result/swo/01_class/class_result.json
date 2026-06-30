@@ -1,0 +1,93 @@
+{
+    "config": {
+        "class_counts": {
+            "gold_class_count": 30,
+            "pred_class_count": 18
+        },
+        "matching_rule": {
+            "type": "normalized one-to-one global greedy matching",
+            "description": "All matching methods use normalized terms internally. Hard and lexical methods use normalize_key, where spaces are removed. Semantic and synonym methods use normalize_text, where word spaces are preserved. Each gold can match at most one pred. Each pred can match at most one gold. Pred terms are removed from the pool once matched. Only pairs above the method-specific threshold are considered."
+        },
+        "thresholds": {
+            "hard_match": 1.0,
+            "lexical": 0.8,
+            "semantic": 0.6,
+            "synonym": 1.0
+        },
+        "cli_args": {
+            "model_id": "embeddinggemma",
+            "methods": "hard_match,sequence_match,levenshtein,jaro_winkler,semantic",
+            "generate_onto_file_path": "01_predictions/challenge/pseudo_submission/ontology/swo_ontology.owl",
+            "ground_onto_file_path": "00_gold_standard/swo/ontology/sub_swo.owl",
+            "save_file_path": "03_evaluation_results/challenge/pseudo_submission/swo/01_class/class_result.json",
+            "save_pairings_path": null,
+            "save_tp_gold_to_pred_path": null,
+            "save_tp_pred_to_gold_path": null,
+            "save_best_class_map": null,
+            "save_matching_csv": null,
+            "save_best_matching_csv": "03_evaluation_results/challenge/pseudo_submission/swo/01_class/class_best_matching.csv",
+            "top_n": 3,
+            "final_threshold": 0.6,
+            "save_alignment_trace_csv": "03_evaluation_results/challenge/pseudo_submission/swo/01_class/class_alignment_trace.csv",
+            "save_alignment_trace_json": "03_evaluation_results/challenge/pseudo_submission/swo/01_class/class_alignment_trace.json",
+            "save_report_md": "04_summary/challenge/pseudo_submission/swo_report.md",
+            "semantic_threshold": 0.6,
+            "lexical_threshold": 0.8,
+            "hard_threshold": 1.0
+        }
+    },
+    "results": [
+        {
+            "id": "hard_match",
+            "coverage": 0.06666666666666667,
+            "precision": 0.1111111111111111,
+            "recall": 0.06666666666666667,
+            "f1": 0.08333333333333334
+        },
+        {
+            "id": "sequence_match",
+            "coverage": 0.13333333333333333,
+            "precision": 0.2222222222222222,
+            "recall": 0.13333333333333333,
+            "f1": 0.16666666666666669
+        },
+        {
+            "id": "levenshtein",
+            "coverage": 0.1,
+            "precision": 0.16666666666666666,
+            "recall": 0.1,
+            "f1": 0.125
+        },
+        {
+            "id": "jaro_winkler",
+            "coverage": 0.23333333333333334,
+            "precision": 0.3888888888888889,
+            "recall": 0.23333333333333334,
+            "f1": 0.2916666666666667
+        },
+        {
+            "id": "semantic_embeddinggemma",
+            "coverage": 0.43333333333333335,
+            "precision": 0.7222222222222222,
+            "recall": 0.43333333333333335,
+            "f1": 0.5416666666666666
+        },
+        {
+            "id": "aggregated_overall",
+            "tp": 10,
+            "fp": 8,
+            "fn": 20,
+            "precision": 0.5555555555555556,
+            "recall": 0.3333333333333333,
+            "f1": 0.4166666666666667,
+            "mean_agg_score": 0.8070034704059287,
+            "n_pairs": 10,
+            "n_hard_matches": 2,
+            "n_top3_avg": 8,
+            "gold_total": 30,
+            "pred_total": 18,
+            "top_n": 3,
+            "final_threshold": 0.6
+        }
+    ]
+}

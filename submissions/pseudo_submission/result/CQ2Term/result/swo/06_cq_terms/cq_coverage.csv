@@ -1,0 +1,27 @@
+cq_id,question,n_gold_classes,n_gold_properties,n_covered_classes,n_covered_properties,coverage,missing_classes,missing_properties
+CQ04,Which of the named and published algorithms does this tool use?,1,1,1,0,0.5000,,implements
+CQ05,Are there any modifications to the algorithm the tool uses?,1,1,1,0,0.5000,,implements
+CQ06,Does this software provide XML editing?,3,1,2,0,0.5000,xml,uses software
+CQ07,"What type of software (API, Desktop application etc) is it?",3,1,1,0,0.2500,application programming interface; desktop graphical user interface,has interface
+CQ11,Is this software available as a web service?,2,1,2,0,0.6667,,has interface
+CQ15,Which software tool created this data?,2,1,0,0,0.0000,data item; software,has specified data output
+CQ16,What software can I use my data with to support my task?,3,2,2,0,0.4000,data item,has specified data input; is software for
+CQ17,What are the input and output formats for this software?,2,3,2,0,0.4000,,has format specification; has specified data input; has specified data output
+CQ19,What software can read a .cel file?,3,1,1,0,0.2500,cel ascii format; cel binary format,has specified data input
+CQ21,What is the valid input for this software?,1,1,1,1,1.0000,,
+CQ22,"Can this software export from its proprietary data format to an open format such as csv, txt?",3,2,2,0,0.4000,data item,has output; has specified data output
+CQ23,Can software A work with data that are output from software B?,2,4,1,0,0.1667,data item,has output; has specified data input; has specified data output; uses software
+CQ26,"What open source, maintained software can I use to process these in this format?",3,2,2,0,0.4000,open source software license,has license; has specified data input
+CQ29,"Given input x, what are the data exports for this version?",4,5,1,2,0.3333,data; format; software,has input; has output; has specified data input
+CQ30,Where can I get the software?,1,2,1,0,0.3333,,has download location; has website homepage
+CQ36,Who developed it?,2,1,0,1,0.3333,software; software developer role,
+CQ37,What is the homepage of the software?,1,1,1,1,1.0000,,
+CQ38,Can we collaborate with developers of software x?,1,1,1,0,0.5000,,is developed by
+CQ40,Which URL can I get it from?,1,1,0,1,0.5000,software,
+CQ54,What is the version of this software?,2,1,1,1,0.6667,version,
+CQ57,When was the 1.0 version released?,2,2,1,1,0.5000,software,has version
+CQ60,Is it open source or not?,2,1,1,0,0.3333,open source software license,has license
+CQ65,Is it FOSS?,2,1,2,0,0.6667,,has license
+CQ68,Is it free or not?,3,0,0,0,0.0000,free; not free; software,
+CQ73,Where is the documentation?,1,2,0,1,0.3333,software,has website homepage
+CQ85,What platform does the software run on?,2,1,2,0,0.6667,,uses platform

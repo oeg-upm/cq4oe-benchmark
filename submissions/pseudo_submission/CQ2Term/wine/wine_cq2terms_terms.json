@@ -1,0 +1,61 @@
+[
+  {
+    "id": "CQ1",
+    "value": "Which wine characteristics should I consider when choosing a wine?",
+    "class": [
+      "Wine",
+      "Characteristic"
+    ],
+    "property": [
+      "hasCharacteristic"
+    ]
+  },
+  {
+    "id": "CQ2",
+    "value": "Is Bordeaux a red or white wine?",
+    "class": [
+      "Wine",
+      "RedWine",
+      "WhiteWine"
+    ],
+    "property": []
+  },
+  {
+    "id": "CQ6",
+    "value": "Does a bouquet or body of a specific wine change with vintage year?",
+    "class": [
+      "Wine",
+      "Bouquet",
+      "Body",
+      "VintageYear"
+    ],
+    "property": [
+      "hasBouquet",
+      "hasBody",
+      "hasVintageYear"
+    ]
+  },
+  {
+    "id": "CQ7",
+    "value": "What were good vintages for Napa Zinfandel?",
+    "class": [
+      "Wine",
+      "Vintage"
+    ],
+    "property": [
+      "hasVintage",
+      "isGoodVintage"
+    ]
+  },
+  {
+    "id": "CQnew1",
+    "value": "What grapes are used to make Bordeaux wine?",
+    "class": [
+      "Grape",
+      "Wine"
+    ],
+    "property": [
+      "madeFrom"
+    ]
+  }
+]

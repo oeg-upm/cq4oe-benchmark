@@ -1,0 +1,252 @@
+[
+  {
+    "id": "CQ01",
+    "value": "What is the username of the player?",
+    "class": [
+      "Player"
+    ],
+    "property": [
+      "hasUsername"
+    ]
+  },
+  {
+    "id": "CQ02",
+    "value": "Who are the friends of the player?",
+    "class": [
+      "Player"
+    ],
+    "property": [
+      "hasFriend"
+    ]
+  },
+  {
+    "id": "CQ03",
+    "value": "Who are the friends that play other games as well with this player?",
+    "class": [
+      "Player",
+      "Friend",
+      "Game"
+    ],
+    "property": [
+      "hasFriend",
+      "playsGame"
+    ]
+  },
+  {
+    "id": "CQ05",
+    "value": "What are the achievements of my friends?",
+    "class": [
+      "Friend",
+      "Achievement"
+    ],
+    "property": [
+      "hasAchievement"
+    ]
+  },
+  {
+    "id": "CQ07",
+    "value": "What are the achievements your friend has received?",
+    "class": [
+      "Friend",
+      "Achievement"
+    ],
+    "property": [
+      "hasAchievement"
+    ]
+  },
+  {
+    "id": "CQ08",
+    "value": "What achievements does a game have?",
+    "class": [
+      "Achievement",
+      "Game"
+    ],
+    "property": [
+      "hasAchievement"
+    ]
+  },
+  {
+    "id": "CQ10",
+    "value": "What are the types of achievements in this game?",
+    "class": [
+      "Achievement",
+      "AchievementType",
+      "Game"
+    ],
+    "property": [
+      "hasAchievement",
+      "hasType"
+    ]
+  },
+  {
+    "id": "CQ11",
+    "value": "What are the types of achievements a game can have?",
+    "class": [
+      "Game",
+      "Achievement",
+      "AchievementType"
+    ],
+    "property": [
+      "hasAchievement",
+      "hasAchievementType"
+    ]
+  },
+  {
+    "id": "CQ12",
+    "value": "What is the genre of the game?",
+    "class": [
+      "Game",
+      "Genre"
+    ],
+    "property": [
+      "hasGenre"
+    ]
+  },
+  {
+    "id": "CQ13",
+    "value": "What items exist in a game?",
+    "class": [
+      "Item",
+      "Game"
+    ],
+    "property": [
+      "existsIn"
+    ]
+  },
+  {
+    "id": "CQ15",
+    "value": "What is the release date of the game?",
+    "class": [
+      "Game"
+    ],
+    "property": [
+      "hasReleaseDate"
+    ]
+  },
+  {
+    "id": "CQ17",
+    "value": "List all games of a certain Genre?",
+    "class": [
+      "Game",
+      "Genre"
+    ],
+    "property": [
+      "hasGenre"
+    ]
+  },
+  {
+    "id": "CQ24",
+    "value": "What achievements has a player obtained?",
+    "class": [
+      "Player",
+      "Achievement"
+    ],
+    "property": [
+      "obtains"
+    ]
+  },
+  {
+    "id": "CQ25",
+    "value": "What games has the player played?",
+    "class": [
+      "Game",
+      "Player"
+    ],
+    "property": [
+      "plays"
+    ]
+  },
+  {
+    "id": "CQ26",
+    "value": "What items does the player have?",
+    "class": [
+      "Player",
+      "Item"
+    ],
+    "property": [
+      "hasItem"
+    ]
+  },
+  {
+    "id": "CQ55",
+    "value": "What are the games where a player can use this item?",
+    "class": [
+      "Game",
+      "Player",
+      "Item"
+    ],
+    "property": [
+      "canUse"
+    ]
+  },
+  {
+    "id": "CQ56",
+    "value": "How many players have made in app purchases?",
+    "class": [
+      "Player",
+      "InAppPurchase"
+    ],
+    "property": [
+      "makesInAppPurchase"
+    ]
+  },
+  {
+    "id": "CQ62",
+    "value": "What time are most of the in app purchases done?",
+    "class": [
+      "InAppPurchase"
+    ],
+    "property": [
+      "doneAt"
+    ]
+  },
+  {
+    "id": "CQ63",
+    "value": "Where do the most paying customers live?",
+    "class": [
+      "Customer",
+      "Location"
+    ],
+    "property": [
+      "livesIn",
+      "hasTotalPayments"
+    ]
+  },
+  {
+    "id": "CQ65",
+    "value": "Where do the players live who have not made any IAP?",
+    "class": [
+      "Player",
+      "InAppPurchase",
+      "Location"
+    ],
+    "property": [
+      "makes",
+      "livesIn"
+    ]
+  },
+  {
+    "id": "CQ66",
+    "value": "Where do the players who have done the most IAP live?",
+    "class": [
+      "Player",
+      "InAppPurchase",
+      "Location"
+    ],
+    "property": [
+      "livesIn",
+      "purchases"
+    ]
+  },
+  {
+    "id": "New CQ1",
+    "value": "What playing areas does a game have?",
+    "class": [
+      "Game",
+      "PlayingArea"
+    ],
+    "property": [
+      "hasPlayingArea"
+    ]
+  }
+]

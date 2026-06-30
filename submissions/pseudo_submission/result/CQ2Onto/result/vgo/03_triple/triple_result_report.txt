@@ -1,0 +1,244 @@
+========================================================================
+THREE-LAYER PROPERTY-AXIOM EVALUATION REPORT
+========================================================================
+
+LAYER 1 — Triple Statistics
+────────────────────────────────────────────────────────────────────────
+  Property counts by axiom shape, per property type.
+    full         = both rdfs:domain and rdfs:range declared
+    domain_only  = only rdfs:domain declared
+    range_only   = only rdfs:range declared
+    undefined    = neither declared
+
+                        Full   Dom-only   Rng-only   Undef   Total
+  Gold:
+    ObjectProperty        21          1          1       0      23
+    DatatypeProperty       4          0          1       0       5
+    TOTAL                  ─          ─          ─       ─      28
+
+  Pred:
+    ObjectProperty        25          0          0       0      25
+    DatatypeProperty       9          0          0       0       9
+    TOTAL                  ─          ─          ─       ─      34
+
+LAYER 2 — Semantic Overview
+────────────────────────────────────────────────────────────────────────
+  Each property is represented as a normalized text string derived from its axioms.
+  string and embedded; one-to-one greedy match by cosine.
+  Threshold: 0.6    Model: embeddinggemma
+
+  Standard precision/recall definitions are used.
+                               P       R      F1      TP      FP      FN   gold   pred
+  Overall                  0.588   0.714   0.645      20      14       8     28     34
+  ObjectProperty           0.600   0.652   0.625      15      10       8     23     25
+  DatatypeProperty         0.556   1.000   0.714       5       4       0      5      9
+
+  ObjectProperty aligned pairs (showing up to 10):
+    [1.000]  gold:'game has item item'
+            pred:'game has item item'
+    [1.000]  gold:'game has playing area playing area'
+            pred:'game has playing area playing area'
+    [0.982]  gold:'game has achievement achievement'
+            pred:'game game has achievement achievement'
+    [0.917]  gold:'player is friend with player player'
+            pred:'player has friend player'
+    [0.881]  gold:'character owns item item'
+            pred:'player owns item item'
+    [0.856]  gold:'player owns achievement achievement'
+            pred:'player has achievement achievement'
+    [0.838]  gold:'session is session in game game'
+            pred:'game session has game game'
+    [0.834]  gold:'in app purchase event purchases game offering game product'
+            pred:'in app purchase purchase game game'
+    [0.790]  gold:'session involves player player'
+            pred:'game session has participant player'
+    [0.745]  gold:'player plays game game'
+            pred:'player last played game game'
+    ... 5 more
+
+  DatatypeProperty aligned pairs (showing up to 10):
+    [0.949]  gold:'player username xsd string'
+            pred:'player has username xsd string'
+    [0.914]  gold:'game release date xsd date time'
+            pred:'game has release date xsd date'
+    [0.884]  gold:'session start time xsd date time'
+            pred:'game session session start date time xsd date time'
+    [0.628]  gold:'session end time xsd date time'
+            pred:'game session hours played xsd decimal'
+    [0.602]  gold:'event time xsd date time'
+            pred:'in app purchase purchase date xsd date time'
+
+LAYER 3 — Strict Alignment (via best-matching tables)
+────────────────────────────────────────────────────────────────────────
+  11 property pairs from property_best_matching.csv.
+  Domain evaluated via class_best_matching.csv;
+  Range evaluated via class_best_matching.csv (ObjectProperty)
+  or normalized XSD equality (DatatypeProperty).
+
+  Evaluation criteria:
+    skip      — gold None and pred None (nothing declared on either side)
+    TP        — both declared and set-equal under the alignment table
+    FP        — pred declared but gold did not
+    FN        — gold declared but pred did not
+    mismatch  — both declared but they disagree under the alignment table
+                (mismatch contributes to both FP and FN)
+
+  Metric formula (mismatch counts as both FP and FN):
+    FP_total = fp + mismatch       (pred-side errors)
+    FN_total = fn + mismatch       (gold-side gaps)
+    P  = TP / (TP + FP_total)
+    R  = TP / (TP + FN_total)
+
+  [ObjectProperty]  9 aligned pair(s)
+    Type     P=1.000  R=1.000  F1=1.000  (TP=9, FP=0, FN=0; FP and FN include mismatch=0; skip=0)
+    Domain   P=0.444  R=0.444  F1=0.444  (TP=4, FP=5, FN=5; FP and FN include mismatch=5; skip=0)
+    Range    P=0.556  R=0.556  F1=0.556  (TP=5, FP=4, FN=4; FP and FN include mismatch=4; skip=0)
+    Overall  P=0.500  R=0.500  F1=0.500  (TP=9, FP=9, FN=9; type + domain + range judgments combined)
+
+    Per-pair detail:
+      gold:has achievement  ↔  pred:has achievement
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Game']  pred=['Player']  → MISMATCH
+        range   gold=['Achievement']   pred=['Achievement']   → TP
+      gold:has game genre  ↔  pred:has game
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Game']  pred=['Game Session']  → MISMATCH
+        range   gold=['Genre']   pred=['Game']   → MISMATCH
+      gold:has item  ↔  pred:has item
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Game']  pred=['Game']  → TP
+        range   gold=['Item']   pred=['Item']   → TP
+      gold:has playing area  ↔  pred:has playing area
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Game']  pred=['Game']  → TP
+        range   gold=['playing area']   pred=['Playing Area']   → TP
+      gold:is achievement in game  ↔  pred:game has achievement
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Achievement']  pred=['Game']  → MISMATCH
+        range   gold=['Game']   pred=['Achievement']   → MISMATCH
+      gold:owns achievement  ↔  pred:has achievement type
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Player']  pred=['Achievement']  → MISMATCH
+        range   gold=['Achievement']   pred=['Achievement Type']   → MISMATCH
+      gold:owns item  ↔  pred:owns item
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Character']  pred=['Player']  → MISMATCH
+        range   gold=['Item']   pred=['Item']   → TP
+      gold:plays game  ↔  pred:last played game
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['Player']  pred=['Player']  → TP
+        range   gold=['Game']   pred=['Game']   → TP
+      gold:purchases game offering  ↔  pred:purchase game
+        type    gold=ObjectProperty  pred=ObjectProperty  → TP
+        domain  gold=['in-app purchase event']  pred=['In-App Purchase']  → TP
+        range   gold=['game product']   pred=['Game']   → MISMATCH
+
+    Fully aligned triples (domain TP and range TP) — 3:
+      gold: ['Game'] -[has item]-> ['Item']
+      pred: ['Game'] -[has item]-> ['Item']
+      gold: ['Game'] -[has playing area]-> ['playing area']
+      pred: ['Game'] -[has playing area]-> ['Playing Area']
+      gold: ['Player'] -[plays game]-> ['Game']
+      pred: ['Player'] -[last played game]-> ['Game']
+
+  [DatatypeProperty]  2 aligned pair(s)
+    Type     P=1.000  R=1.000  F1=1.000  (TP=2, FP=0, FN=0; FP and FN include mismatch=0; skip=0)
+    Domain   P=1.000  R=1.000  F1=1.000  (TP=2, FP=0, FN=0; FP and FN include mismatch=0; skip=0)
+    Range    P=0.500  R=0.500  F1=0.500  (TP=1, FP=1, FN=1; FP and FN include mismatch=1; skip=0)
+    Overall  P=0.750  R=0.750  F1=0.750  (TP=3, FP=1, FN=1; type + domain + range judgments combined)
+
+    Per-pair detail:
+      gold:release date  ↔  pred:has release date
+        type    gold=DatatypeProperty  pred=DatatypeProperty  → TP
+        domain  gold=['Game']  pred=['Game']  → TP
+        range   gold=['xsd:dateTime']   pred=['xsd:date']   → MISMATCH
+      gold:username  ↔  pred:has username
+        type    gold=DatatypeProperty  pred=DatatypeProperty  → TP
+        domain  gold=['Player']  pred=['Player']  → TP
+        range   gold=['xsd:string']   pred=['xsd:string']   → TP
+
+    Fully aligned triples (domain TP and range TP) — 1:
+      gold: ['Player'] -[username]-> ['xsd:string']
+      pred: ['Player'] -[has username]-> ['xsd:string']
+
+  [Grand Overall — all property types, domain + range combined]
+    P=0.545  R=0.545  F1=0.545  (TP=12, FP=10, FN=10; FP and FN include mismatch=10)
+
+LAYER 4 — Global Overview
+────────────────────────────────────────────────────────────────────────
+  Layer 3 evaluates only properties already aligned by the upstream
+  step. Layer 4 extends the evaluation to the full ontology:
+    FP_global = Layer-3 FP + every domain/range axiom of every
+                              UNALIGNED pred property
+    FN_global = Layer-3 FN + every domain/range axiom of every
+                              UNALIGNED gold property
+  TP is unchanged. P / R / F1 reflect the whole ontology.
+  (Layer-3 FP/FN already include mismatch — see Layer 3 above.)
+
+  [ObjectProperty]
+    P=0.180  R=0.204  F1=0.192
+    TP = 9
+    FP = 41   (Layer-3 FP: 9  +  unaligned pred axioms: 32)
+    FN = 35   (Layer-3 FN: 9  +  unaligned gold axioms: 26)
+    Unaligned gold properties: 14 (contributing 26 axioms to FN)
+    Unaligned pred properties: 16 (contributing 32 axioms to FP)
+    Gold properties with no aligned pred (full axioms count as FN):
+      - has character: domain=['Game']  range=['Character']  (2 axioms)
+      - has feature: domain=['Item']  range=['Feature']  (2 axioms)
+      - has leaderboard: domain=['Game']  range=['Leaderboard']  (2 axioms)
+      - involves character: domain=['Session']  range=['Character']  (2 axioms)
+      - involves player: domain=['Session']  range=['Player']  (2 axioms)
+      - is character in game: domain=['Character']  range=['Game']  (2 axioms)
+      - is character in session: domain=['Character']  range=['Session']  (2 axioms)
+      - is event associated to player: domain=None  range=['Player']  (1 axiom)
+      - is friend with player: domain=['Player']  range=['Player']  (2 axioms)
+      - is leaderboard in game: domain=['Leaderboard']  range=['Game']  (2 axioms)
+      - is player in session: domain=['Player']  range=['Session']  (2 axioms)
+      - is session in game: domain=['Session']  range=['Game']  (2 axioms)
+      - lives in: domain=['Player']  range=None  (1 axiom)
+      - owns character: domain=['Player']  range=['Character']  (2 axioms)
+    Pred properties with no aligned gold (full axioms count as FP):
+      - has friend: domain=['Player']  range=['Player']  (2 axioms)
+      - has participant: domain=['Game Session']  range=['Player']  (2 axioms)
+      - has ability: domain=['Item']  range=['Ability']  (2 axioms)
+      - for player: domain=['Player Game Stat']  range=['Player']  (2 axioms)
+      - for game: domain=['Player Game Stat']  range=['Game']  (2 axioms)
+      - completion for player: domain=['Game Completion']  range=['Player']  (2 axioms)
+      - completion for game: domain=['Game Completion']  range=['Game']  (2 axioms)
+      - equipment player: domain=['Player Equipment']  range=['Player']  (2 axioms)
+      - equipment game: domain=['Player Equipment']  range=['Game']  (2 axioms)
+      - equipment item: domain=['Player Equipment']  range=['Item']  (2 axioms)
+      - usage player: domain=['Item Usage']  range=['Player']  (2 axioms)
+      - usage item: domain=['Item Usage']  range=['Item']  (2 axioms)
+      - usage game: domain=['Item Usage']  range=['Game']  (2 axioms)
+      - purchase player: domain=['In-App Purchase']  range=['Player']  (2 axioms)
+      - purchase item: domain=['In-App Purchase']  range=['Item']  (2 axioms)
+      - has in-app purchase: domain=['Player']  range=['In-App Purchase']  (2 axioms)
+
+  [DatatypeProperty]
+    P=0.167  R=0.333  F1=0.222
+    TP = 3
+    FP = 15   (Layer-3 FP: 1  +  unaligned pred axioms: 14)
+    FN = 6    (Layer-3 FN: 1  +  unaligned gold axioms: 5)
+    Unaligned gold properties: 3 (contributing 5 axioms to FN)
+    Unaligned pred properties: 7 (contributing 14 axioms to FP)
+    Gold properties with no aligned pred (full axioms count as FN):
+      - end time: domain=['Session']  range=['xsd:dateTime']  (2 axioms)
+      - event time: domain=None  range=['xsd:dateTime']  (1 axiom)
+      - start time: domain=['Session']  range=['xsd:dateTime']  (2 axioms)
+    Pred properties with no aligned gold (full axioms count as FP):
+      - hours played: domain=['Game Session']  range=['xsd:decimal']  (2 axioms)
+      - has genre: domain=['Game']  range=['xsd:string']  (2 axioms)
+      - kill count: domain=['Player Game Stat']  range=['xsd:integer']  (2 axioms)
+      - purchase amount: domain=['In-App Purchase']  range=['xsd:decimal']  (2 axioms)
+      - purchase date: domain=['In-App Purchase']  range=['xsd:dateTime']  (2 axioms)
+      - has location: domain=['Player']  range=['xsd:string']  (2 axioms)
+      - session start date time: domain=['Game Session']  range=['xsd:dateTime']  (2 axioms)
+
+  [Grand Overall — global, all property types]
+    P=0.176  R=0.226  F1=0.198
+    TP = 12
+    FP = 56   (Layer-3 FP: 10  +  unaligned pred axioms: 46)
+    FN = 41   (Layer-3 FN: 10  +  unaligned gold axioms: 31)
+
+========================================================================

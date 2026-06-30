@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "hasVintageYear",
+    "pred_predicate": "has vintage",
+    "gold_predicate_norm": "hasvintageyear",
+    "pred_predicate_norm": "hasvintage",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Vintage"
+    ],
+    "pred_domain": [
+      "Wine"
+    ],
+    "gold_domain_norm": [
+      "vintage"
+    ],
+    "pred_domain_norm": [
+      "wine"
+    ],
+    "domain_verdict": "mismatch",
+    "gold_range": [
+      "VintageYear"
+    ],
+    "pred_range": [
+      "Vintage"
+    ],
+    "gold_range_norm": [
+      "vintageyear"
+    ],
+    "pred_range_norm": [
+      "vintage"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  },
+  {
+    "id": 2,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "hasWineDescriptor",
+    "pred_predicate": "has wine characteristic",
+    "gold_predicate_norm": "haswinedescriptor",
+    "pred_predicate_norm": "haswinecharacteristic",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "wine"
+    ],
+    "pred_domain": [
+      "Wine"
+    ],
+    "gold_domain_norm": [
+      "wine"
+    ],
+    "pred_domain_norm": [
+      "wine"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "WineDescriptor"
+    ],
+    "pred_range": [
+      "Wine Characteristic"
+    ],
+    "gold_range_norm": [
+      "winedescriptor"
+    ],
+    "pred_range_norm": [
+      "winecharacteristic"
+    ],
+    "range_verdict": "mismatch",
+    "is_full_match": false,
+    "note": ""
+  }
+]

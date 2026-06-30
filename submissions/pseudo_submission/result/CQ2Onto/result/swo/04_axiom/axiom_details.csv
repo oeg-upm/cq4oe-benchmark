@@ -1,0 +1,205 @@
+id,source,term_type,axiom_type,term,dl,status,note
+AX1-gold,gold,Class,Declaration,.csv,Declaration: .csv (Class),Skip,subject '.csv' not in alignment table
+AX1-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX2-gold,gold,Class,Declaration,CEL ASCII format,Declaration: CEL ASCII format (Class),Skip,subject 'CEL ASCII format' not in alignment table
+AX2-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX3-gold,gold,Class,Declaration,CEL binary format,Declaration: CEL binary format (Class),TP,matched pred AX13
+AX3-pred,pred,Class,Declaration,open format,Declaration: open format (Class),-,-
+AX4-gold,gold,Class,Declaration,Development status,Declaration: Development status (Class),TP,matched pred AX10
+AX4-pred,pred,Class,Declaration,development activity level,Declaration: development activity level (Class),-,-
+AX5-gold,gold,Class,Declaration,Free,Declaration: Free (Class),Skip,subject 'Free' not in alignment table
+AX5-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX6-gold,gold,Class,SubClassOf,Free,Free ⊑ Purchase cost,Skip,subject 'Free' not in alignment table
+AX6-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX7-gold,gold,Class,Declaration,GIF,Declaration: GIF (Class),Skip,subject 'GIF' not in alignment table
+AX7-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX8-gold,gold,Class,Declaration,Maintained,Declaration: Maintained (Class),Skip,subject 'Maintained' not in alignment table
+AX8-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX9-gold,gold,Class,SubClassOf,Maintained,Maintained ⊑ Development status,Skip,subject 'Maintained' not in alignment table
+AX9-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX10-gold,gold,Class,Declaration,Not Free,Declaration: Not Free (Class),Skip,subject 'Not Free' not in alignment table
+AX10-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX11-gold,gold,Class,SubClassOf,Not Free,Not Free ⊑ Purchase cost,Skip,subject 'Not Free' not in alignment table
+AX11-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX12-gold,gold,Class,Declaration,Open source software license,Declaration: Open source software license (Class),Skip,subject 'Open source software license' not in alignment table
+AX12-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX13-gold,gold,Class,EquivalentClasses,Open source software license,Open source software license ≡ ∃has clause.Source code available,Skip,subject 'Open source software license' not in alignment table
+AX13-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX14-gold,gold,Class,SubClassOf,Open source software license,Open source software license ⊑ licence,Skip,subject 'Open source software license' not in alignment table
+AX14-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX15-gold,gold,Class,SubClassOf,Open source software license,Open source software license ⊑ ∃has clause.Source code available,Skip,subject 'Open source software license' not in alignment table
+AX15-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX16-gold,gold,Class,Declaration,PROcess,Declaration: PROcess (Class),Skip,subject 'PROcess' not in alignment table
+AX16-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX17-gold,gold,Class,Declaration,Purchase cost,Declaration: Purchase cost (Class),Skip,subject 'Purchase cost' not in alignment table
+AX17-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX18-gold,gold,Class,Declaration,Source code available,Declaration: Source code available (Class),Skip,subject 'Source code available' not in alignment table
+AX18-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX19-gold,gold,Class,Declaration,XML,Declaration: XML (Class),Skip,subject 'XML' not in alignment table
+AX19-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX20-gold,gold,Class,SubClassOf,XML,XML ⊑ data format specification,Skip,subject 'XML' not in alignment table
+AX20-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX21-gold,gold,Class,Declaration,algorithm,Declaration: algorithm (Class),TP,matched pred AX1
+AX21-pred,pred,Class,Declaration,Algorithm,Declaration: Algorithm (Class),-,-
+AX22-gold,gold,Class,Declaration,application programming interface,Declaration: application programming interface (Class),Skip,subject 'application programming interface' not in alignment table
+AX22-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX23-gold,gold,Class,SubClassOf,application programming interface,application programming interface ⊑ software interface,Skip,subject 'application programming interface' not in alignment table
+AX23-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX24-gold,gold,Class,Declaration,data format specification,Declaration: data format specification (Class),Skip,subject 'data format specification' not in alignment table
+AX24-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX25-gold,gold,Class,Declaration,data item,Declaration: data item (Class),TP,matched pred AX8
+AX25-pred,pred,Class,Declaration,data,Declaration: data (Class),-,-
+AX26-gold,gold,Class,SubClassOf,data item,data item ⊑ ∃is encoded in.data format specification,FN,pred has no SubClassOf axiom on 'data'
+AX26-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX27-gold,gold,Class,Declaration,desktop graphical user interface,Declaration: desktop graphical user interface (Class),Skip,subject 'desktop graphical user interface' not in alignment table
+AX27-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX28-gold,gold,Class,Declaration,file rendering,Declaration: file rendering (Class),Skip,subject 'file rendering' not in alignment table
+AX28-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX29-gold,gold,Class,Declaration,function,Declaration: function (Class),TP,matched pred AX4
+AX29-pred,pred,Class,Declaration,Modification,Declaration: Modification (Class),-,-
+AX30-gold,gold,Class,Declaration,licence,Declaration: licence (Class),TP,matched pred AX3
+AX30-pred,pred,Class,Declaration,License,Declaration: License (Class),-,-
+AX31-gold,gold,Class,Declaration,plain text file format,Declaration: plain text file format (Class),Skip,subject 'plain text file format' not in alignment table
+AX31-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX32-gold,gold,Class,Declaration,programming language,Declaration: programming language (Class),TP,matched pred AX16
+AX32-pred,pred,Class,Declaration,programming language,Declaration: programming language (Class),-,-
+AX33-gold,gold,Class,Declaration,software,Declaration: software (Class),TP,matched pred AX17
+AX33-pred,pred,Class,Declaration,software type,Declaration: software type (Class),-,-
+AX34-gold,gold,Class,Declaration,software developer organization,Declaration: software developer organization (Class),Skip,subject 'software developer organization' not in alignment table
+AX34-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX35-gold,gold,Class,Declaration,software developer role,Declaration: software developer role (Class),TP,matched pred AX9
+AX35-pred,pred,Class,Declaration,developer,Declaration: developer (Class),-,-
+AX36-gold,gold,Class,Declaration,software interface,Declaration: software interface (Class),Skip,subject 'software interface' not in alignment table
+AX36-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX37-gold,gold,Class,Declaration,text editing,Declaration: text editing (Class),Skip,subject 'text editing' not in alignment table
+AX37-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX38-gold,gold,Class,Declaration,version number,Declaration: version number (Class),TP,matched pred AX19
+AX38-pred,pred,Class,Declaration,version,Declaration: version (Class),-,-
+AX39-gold,gold,Class,Declaration,web service,Declaration: web service (Class),Skip,subject 'web service' not in alignment table
+AX39-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX40-gold,gold,Class,SubClassOf,web service,web service ⊑ software interface,Skip,subject 'web service' not in alignment table
+AX40-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX41-gold,gold,ObjectProperty,Declaration,has clause,Declaration: has clause (ObjectProperty),Skip,subject 'has clause' not in alignment table
+AX41-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX42-gold,gold,ObjectProperty,Declaration,has declared status,Declaration: has declared status (ObjectProperty),Skip,subject 'has declared status' not in alignment table
+AX42-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX43-gold,gold,ObjectProperty,Range,has declared status,⊤ ⊑ ∀has declared status.Development status,Skip,subject 'has declared status' not in alignment table
+AX43-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX44-gold,gold,ObjectProperty,Declaration,has format specification,Declaration: has format specification (ObjectProperty),TP,matched pred AX60
+AX44-pred,pred,ObjectProperty,Declaration,has modification,Declaration: has modification (ObjectProperty),-,-
+AX45-gold,gold,ObjectProperty,Domain,has format specification,∃has format specification.⊤ ⊑ data item,Mismatch,pred AX61 differs: class 'data item' not aligned to 'Algorithm'
+AX45-pred,pred,ObjectProperty,Domain,has modification,∃has modification.⊤ ⊑ Algorithm,-,-
+AX46-gold,gold,ObjectProperty,Range,has format specification,⊤ ⊑ ∀has format specification.data format specification,Mismatch,pred AX62 differs: class 'data format specification' not aligned to 'Modification'
+AX46-pred,pred,ObjectProperty,Range,has modification,⊤ ⊑ ∀has modification.Modification,-,-
+AX47-gold,gold,ObjectProperty,SubPropertyOf,has format specification,has format specification ⊑ is encoded in,FN,pred has no SubPropertyOf axiom on 'has modification'
+AX47-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX48-gold,gold,ObjectProperty,Declaration,has function,Declaration: has function (ObjectProperty),Skip,subject 'has function' not in alignment table
+AX48-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX49-gold,gold,ObjectProperty,Range,has function,⊤ ⊑ ∀has function.function,Skip,subject 'has function' not in alignment table
+AX49-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX50-gold,gold,ObjectProperty,Declaration,has input,Declaration: has input (ObjectProperty),TP,matched pred AX54
+AX50-pred,pred,ObjectProperty,Declaration,has input format,Declaration: has input format (ObjectProperty),-,-
+AX51-gold,gold,ObjectProperty,Declaration,has interface,Declaration: has interface (ObjectProperty),Skip,subject 'has interface' not in alignment table
+AX51-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX52-gold,gold,ObjectProperty,Range,has interface,⊤ ⊑ ∀has interface.software interface,Skip,subject 'has interface' not in alignment table
+AX52-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX53-gold,gold,ObjectProperty,Declaration,has license,Declaration: has license (ObjectProperty),TP,matched pred AX57
+AX53-pred,pred,ObjectProperty,Declaration,has license,Declaration: has license (ObjectProperty),-,-
+AX54-gold,gold,ObjectProperty,Declaration,has output,Declaration: has output (ObjectProperty),TP,matched pred AX63
+AX54-pred,pred,ObjectProperty,Declaration,has output format,Declaration: has output format (ObjectProperty),-,-
+AX55-gold,gold,ObjectProperty,Declaration,has specified data input,Declaration: has specified data input (ObjectProperty),Skip,subject 'has specified data input' not in alignment table
+AX55-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX56-gold,gold,ObjectProperty,Range,has specified data input,⊤ ⊑ ∀has specified data input.data item,Skip,subject 'has specified data input' not in alignment table
+AX56-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX57-gold,gold,ObjectProperty,Declaration,has specified data output,Declaration: has specified data output (ObjectProperty),Skip,subject 'has specified data output' not in alignment table
+AX57-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX58-gold,gold,ObjectProperty,Range,has specified data output,⊤ ⊑ ∀has specified data output.data item,Skip,subject 'has specified data output' not in alignment table
+AX58-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX59-gold,gold,ObjectProperty,Declaration,has version,Declaration: has version (ObjectProperty),TP,matched pred AX47
+AX59-pred,pred,ObjectProperty,Declaration,has export version,Declaration: has export version (ObjectProperty),-,-
+AX60-gold,gold,ObjectProperty,Range,has version,⊤ ⊑ ∀has version.version number,TP,matched pred AX49
+AX60-pred,pred,ObjectProperty,Range,has export version,⊤ ⊑ ∀has export version.version,-,-
+AX61-gold,gold,ObjectProperty,Declaration,implements,Declaration: implements (ObjectProperty),Skip,subject 'implements' not in alignment table
+AX61-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX62-gold,gold,ObjectProperty,Range,implements,⊤ ⊑ ∀implements.algorithm,Skip,subject 'implements' not in alignment table
+AX62-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX63-gold,gold,ObjectProperty,Characteristics,is alternative format of,Symmetric(is alternative format of),Skip,subject 'is alternative format of' not in alignment table
+AX63-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX64-gold,gold,ObjectProperty,Declaration,is alternative format of,Declaration: is alternative format of (ObjectProperty),Skip,subject 'is alternative format of' not in alignment table
+AX64-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX65-gold,gold,ObjectProperty,Domain,is alternative format of,∃is alternative format of.⊤ ⊑ data format specification,Skip,subject 'is alternative format of' not in alignment table
+AX65-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX66-gold,gold,ObjectProperty,Range,is alternative format of,⊤ ⊑ ∀is alternative format of.data format specification,Skip,subject 'is alternative format of' not in alignment table
+AX66-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX67-gold,gold,ObjectProperty,Declaration,is developed by,Declaration: is developed by (ObjectProperty),TP,matched pred AX27
+AX67-pred,pred,ObjectProperty,Declaration,has developer,Declaration: has developer (ObjectProperty),-,-
+AX68-gold,gold,ObjectProperty,Declaration,is encoded in,Declaration: is encoded in (ObjectProperty),Skip,subject 'is encoded in' not in alignment table
+AX68-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX69-gold,gold,ObjectProperty,Declaration,is software for,Declaration: is software for (ObjectProperty),Skip,subject 'is software for' not in alignment table
+AX69-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX70-gold,gold,ObjectProperty,InverseOf,is software for,is software for ≡ uses software⁻,Skip,subject 'is software for' not in alignment table
+AX70-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX71-gold,gold,ObjectProperty,Declaration,uses platform,Declaration: uses platform (ObjectProperty),TP,matched pred AX96
+AX71-pred,pred,ObjectProperty,Declaration,runs on platform,Declaration: runs on platform (ObjectProperty),-,-
+AX72-gold,gold,ObjectProperty,Declaration,uses software,Declaration: uses software (ObjectProperty),TP,matched pred AX71
+AX72-pred,pred,ObjectProperty,Declaration,has software type,Declaration: has software type (ObjectProperty),-,-
+AX73-gold,gold,ObjectProperty,Domain,uses software,∃uses software.⊤ ⊑ ⊤,Mismatch,pred AX72 differs: expr_type Top vs Class
+AX73-pred,pred,ObjectProperty,Domain,has software type,∃has software type.⊤ ⊑ Tool,-,-
+AX74-gold,gold,ObjectProperty,InverseOf,uses software,uses software ≡ is software for⁻,FN,pred has no InverseOf axiom on 'has software type'
+AX74-pred,pred,-,-,-,(no pred axiom on aligned subject),-,-
+AX75-gold,gold,ObjectProperty,Range,uses software,⊤ ⊑ ∀uses software.⊤,Mismatch,pred AX73 differs: expr_type Top vs Class
+AX75-pred,pred,ObjectProperty,Range,has software type,⊤ ⊑ ∀has software type.software type,-,-
+AX76-gold,gold,DatatypeProperty,Declaration,has documentation,Declaration: has documentation (DatatypeProperty),Skip,subject 'has documentation' not in alignment table
+AX76-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX77-gold,gold,DatatypeProperty,Range,has documentation,has documentation maps-to xsd:string,Skip,subject 'has documentation' not in alignment table
+AX77-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX78-gold,gold,DatatypeProperty,Declaration,has download location,Declaration: has download location (DatatypeProperty),Skip,subject 'has download location' not in alignment table
+AX78-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX79-gold,gold,DatatypeProperty,Range,has download location,has download location maps-to xsd:string,Skip,subject 'has download location' not in alignment table
+AX79-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX80-gold,gold,DatatypeProperty,SubPropertyOf,has download location,has download location ⊑ has website homepage,Skip,subject 'has download location' not in alignment table
+AX80-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX81-gold,gold,DatatypeProperty,Declaration,has release date,Declaration: has release date (DatatypeProperty),TP,matched pred AX144
+AX81-pred,pred,DatatypeProperty,Declaration,release date,Declaration: release date (DatatypeProperty),-,-
+AX82-gold,gold,DatatypeProperty,Range,has release date,has release date maps-to xsd:string,Mismatch,"pred AX146 differs: datatype 'xsd:string' != ""date'>"""
+AX82-pred,pred,DatatypeProperty,Range,release date,release date maps-to date'>,-,-
+AX83-gold,gold,DatatypeProperty,Declaration,has support URL,Declaration: has support URL (DatatypeProperty),Skip,subject 'has support URL' not in alignment table
+AX83-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX84-gold,gold,DatatypeProperty,Range,has support URL,has support URL maps-to ⊤,Skip,subject 'has support URL' not in alignment table
+AX84-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX85-gold,gold,DatatypeProperty,Declaration,has website homepage,Declaration: has website homepage (DatatypeProperty),Skip,subject 'has website homepage' not in alignment table
+AX85-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX86-gold,gold,DatatypeProperty,Range,has website homepage,has website homepage maps-to ⊤,Skip,subject 'has website homepage' not in alignment table
+AX86-pred,pred,-,-,-,(subject not in alignment table),-,-
+AX14-pred,pred,Class,SubClassOf,open format,open format ⊑ format,FP,pred SubClassOf axiom on 'open format' not matched by any gold axiom on 'CEL binary format'
+AX14-gold,gold,-,-,-,(no gold counterpart),-,-
+AX28-pred,pred,ObjectProperty,Domain,has developer,∃has developer.⊤ ⊑ Tool,FP,pred Domain axiom on 'has developer' not matched by any gold axiom on 'is developed by'
+AX28-gold,gold,-,-,-,(no gold counterpart),-,-
+AX29-pred,pred,ObjectProperty,Range,has developer,⊤ ⊑ ∀has developer.developer,FP,pred Range axiom on 'has developer' not matched by any gold axiom on 'is developed by'
+AX29-gold,gold,-,-,-,(no gold counterpart),-,-
+AX46-pred,pred,ObjectProperty,Characteristics,has export version,Functional(has export version),FP,pred Characteristics axiom on 'has export version' not matched by any gold axiom on 'has version'
+AX46-gold,gold,-,-,-,(no gold counterpart),-,-
+AX48-pred,pred,ObjectProperty,Domain,has export version,∃has export version.⊤ ⊑ export capability,FP,pred Domain axiom on 'has export version' not matched by any gold axiom on 'has version'
+AX48-gold,gold,-,-,-,(no gold counterpart),-,-
+AX55-pred,pred,ObjectProperty,Domain,has input format,∃has input format.⊤ ⊑ Tool,FP,pred Domain axiom on 'has input format' not matched by any gold axiom on 'has input'
+AX55-gold,gold,-,-,-,(no gold counterpart),-,-
+AX56-pred,pred,ObjectProperty,Range,has input format,⊤ ⊑ ∀has input format.format,FP,pred Range axiom on 'has input format' not matched by any gold axiom on 'has input'
+AX56-gold,gold,-,-,-,(no gold counterpart),-,-
+AX58-pred,pred,ObjectProperty,Domain,has license,∃has license.⊤ ⊑ Tool,FP,pred Domain axiom on 'has license' not matched by any gold axiom on 'has license'
+AX58-gold,gold,-,-,-,(no gold counterpart),-,-
+AX59-pred,pred,ObjectProperty,Range,has license,⊤ ⊑ ∀has license.License,FP,pred Range axiom on 'has license' not matched by any gold axiom on 'has license'
+AX59-gold,gold,-,-,-,(no gold counterpart),-,-
+AX64-pred,pred,ObjectProperty,Domain,has output format,∃has output format.⊤ ⊑ Tool,FP,pred Domain axiom on 'has output format' not matched by any gold axiom on 'has output'
+AX64-gold,gold,-,-,-,(no gold counterpart),-,-
+AX65-pred,pred,ObjectProperty,Range,has output format,⊤ ⊑ ∀has output format.format,FP,pred Range axiom on 'has output format' not matched by any gold axiom on 'has output'
+AX65-gold,gold,-,-,-,(no gold counterpart),-,-
+AX70-pred,pred,ObjectProperty,Characteristics,has software type,Functional(has software type),FP,pred Characteristics axiom on 'has software type' not matched by any gold axiom on 'uses software'
+AX70-gold,gold,-,-,-,(no gold counterpart),-,-
+AX97-pred,pred,ObjectProperty,Domain,runs on platform,∃runs on platform.⊤ ⊑ Tool,FP,pred Domain axiom on 'runs on platform' not matched by any gold axiom on 'uses platform'
+AX97-gold,gold,-,-,-,(no gold counterpart),-,-
+AX98-pred,pred,ObjectProperty,Range,runs on platform,⊤ ⊑ ∀runs on platform.platform,FP,pred Range axiom on 'runs on platform' not matched by any gold axiom on 'uses platform'
+AX98-gold,gold,-,-,-,(no gold counterpart),-,-
+AX143-pred,pred,DatatypeProperty,Characteristics,release date,Functional(release date),FP,pred Characteristics axiom on 'release date' not matched by any gold axiom on 'has release date'
+AX143-gold,gold,-,-,-,(no gold counterpart),-,-
+AX145-pred,pred,DatatypeProperty,Domain,release date,∃release date.⊤ ⊑ version,FP,pred Domain axiom on 'release date' not matched by any gold axiom on 'has release date'
+AX145-gold,gold,-,-,-,(no gold counterpart),-,-

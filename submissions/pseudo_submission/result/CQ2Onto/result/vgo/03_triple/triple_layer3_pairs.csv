@@ -1,0 +1,12 @@
+PropertyType,GoldPredicate,PredPredicate,GoldPredicateNorm,PredPredicateNorm,GoldType,PredType,TypeVerdict,GoldDomain,PredDomain,GoldDomainNorm,PredDomainNorm,DomainStatus,GoldRange,PredRange,GoldRangeNorm,PredRangeNorm,RangeStatus,FullMatch,Note
+DatatypeProperty,release date,has release date,releasedate,hasreleasedate,DatatypeProperty,DatatypeProperty,tp,Game,Game,game,game,tp,xsd:dateTime,xsd:date,xsddatetime,xsddate,mismatch,NO,
+DatatypeProperty,username,has username,username,hasusername,DatatypeProperty,DatatypeProperty,tp,Player,Player,player,player,tp,xsd:string,xsd:string,xsdstring,xsdstring,tp,YES,
+ObjectProperty,has achievement,has achievement,hasachievement,hasachievement,ObjectProperty,ObjectProperty,tp,Game,Player,game,player,mismatch,Achievement,Achievement,achievement,achievement,tp,NO,
+ObjectProperty,has game genre,has game,hasgamegenre,hasgame,ObjectProperty,ObjectProperty,tp,Game,Game Session,game,gamesession,mismatch,Genre,Game,genre,game,mismatch,NO,
+ObjectProperty,has item,has item,hasitem,hasitem,ObjectProperty,ObjectProperty,tp,Game,Game,game,game,tp,Item,Item,item,item,tp,YES,
+ObjectProperty,has playing area,has playing area,hasplayingarea,hasplayingarea,ObjectProperty,ObjectProperty,tp,Game,Game,game,game,tp,playing area,Playing Area,playingarea,playingarea,tp,YES,
+ObjectProperty,is achievement in game,game has achievement,isachievementingame,gamehasachievement,ObjectProperty,ObjectProperty,tp,Achievement,Game,achievement,game,mismatch,Game,Achievement,game,achievement,mismatch,NO,
+ObjectProperty,owns achievement,has achievement type,ownsachievement,hasachievementtype,ObjectProperty,ObjectProperty,tp,Player,Achievement,player,achievement,mismatch,Achievement,Achievement Type,achievement,achievementtype,mismatch,NO,
+ObjectProperty,owns item,owns item,ownsitem,ownsitem,ObjectProperty,ObjectProperty,tp,Character,Player,character,player,mismatch,Item,Item,item,item,tp,NO,
+ObjectProperty,plays game,last played game,playsgame,lastplayedgame,ObjectProperty,ObjectProperty,tp,Player,Player,player,player,tp,Game,Game,game,game,tp,YES,
+ObjectProperty,purchases game offering,purchase game,purchasesgameoffering,purchasegame,ObjectProperty,ObjectProperty,tp,in-app purchase event,In-App Purchase,inapppurchaseevent,inapppurchase,tp,game product,Game,gameproduct,game,mismatch,NO,

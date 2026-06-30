@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "consequence",
+    "pred_predicate": "has consequence duty",
+    "gold_predicate_norm": "consequence",
+    "pred_predicate_norm": "hasconsequenceduty",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": [
+      "Duty"
+    ],
+    "pred_domain": [
+      "Duty"
+    ],
+    "gold_domain_norm": [
+      "duty"
+    ],
+    "pred_domain_norm": [
+      "duty"
+    ],
+    "domain_verdict": "tp",
+    "gold_range": [
+      "Duty"
+    ],
+    "pred_range": [
+      "Duty"
+    ],
+    "gold_range_norm": [
+      "duty"
+    ],
+    "pred_range_norm": [
+      "duty"
+    ],
+    "range_verdict": "tp",
+    "is_full_match": true,
+    "note": ""
+  },
+  {
+    "id": 2,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "constraint",
+    "pred_predicate": "has constraint",
+    "gold_predicate_norm": "constraint",
+    "pred_predicate_norm": "hasconstraint",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Deontic Element"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "deonticelement"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "Constraint"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "constraint"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  }
+]

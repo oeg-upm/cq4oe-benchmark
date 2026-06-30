@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "property_type": "ObjectProperty",
+    "gold_predicate": "eats",
+    "pred_predicate": "eats",
+    "gold_predicate_norm": "eats",
+    "pred_predicate_norm": "eats",
+    "gold_type": "ObjectProperty",
+    "pred_type": "ObjectProperty",
+    "type_verdict": "tp",
+    "gold_domain": null,
+    "pred_domain": [
+      "Animal"
+    ],
+    "gold_domain_norm": null,
+    "pred_domain_norm": [
+      "animal"
+    ],
+    "domain_verdict": "fp",
+    "gold_range": null,
+    "pred_range": [
+      "Animal"
+    ],
+    "gold_range_norm": null,
+    "pred_range_norm": [
+      "animal"
+    ],
+    "range_verdict": "fp",
+    "is_full_match": false,
+    "note": ""
+  }
+]
