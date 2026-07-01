@@ -20,18 +20,8 @@ domains:
   - vgo
   - water
   - wine
+reproducibility:
+  type: "source code" # please select one from ["source code", "api", "none"]
+  entry_point: https://github.com/xxx/xxx # here please provide the link to source code or api 
+  documentation: https://github.com/xxx/xxx/README.md # please provide documentation file for the code. In this document, please provide environment setup, installation instructions, requirements, execution commands, how to configure the secrets, and license 
 
-code:
-  available: true
-  entry_point: "code/run.py"
-  language: "Python 3.10"
-  environment_setup: |
-    python -m venv .venv && source .venv/bin/activate
-    pip install -r code/requirements.txt
-  secrets_required:
-    - "OPENROUTER_API_KEY"
-  run_command: |
-    python code/run.py --tasks cq2onto,cq2term --domains all --out .
-  expected_outputs: |
-    CQ2Onto/<domain>/<domain>_ontology.owl
-    CQ2Term/<domain>/<domain>_cq2terms_terms.json
