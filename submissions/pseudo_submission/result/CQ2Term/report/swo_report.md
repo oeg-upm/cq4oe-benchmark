@@ -120,13 +120,13 @@ Per-CQ accuracy (_does pred mention the right concepts in the right CQ?_) is rep
 
 **Missed gold terms (FN):**
 
-- Classes (5): `not free`, `xml`, `application programming interface`, `desktop graphical user interface`, `free`
-- Properties (4): `has license`, `implements`, `is software for`, `has download location`
+- Classes (5): `not free`, `desktop graphical user interface`, `free`, `xml`, `application programming interface`
+- Properties (4): `implements`, `is software for`, `has license`, `has download location`
 
 **Extra pred terms (FP) — don't translate to any gold term:**
 
-- Classes (12): `developer`, `proprietarydataformat`, `resource`, `softwaretype`, `distributionchannel`, `celfile`, `developedentity`, `input`, `tool`, `modification`, `documentation`, `txt`
-- Properties (20): `workswith`, `reads`, `supportstask`, `isfree`, `hasname`, `availableat`, `ispublished`, `isavailableas`, `uses`, `develops`, `isvalid`, `processes`, `created`, `provides`, `collaborateswith`, `isopensource`, `exportsfrom`, `outputs`, `runson`, `exportsto`
+- Classes (12): `proprietarydataformat`, `txt`, `input`, `tool`, `documentation`, `resource`, `celfile`, `developedentity`, `distributionchannel`, `developer`, `modification`, `softwaretype`
+- Properties (20): `isavailableas`, `isopensource`, `provides`, `isfree`, `hasname`, `uses`, `isvalid`, `created`, `exportsto`, `runson`, `collaborateswith`, `develops`, `outputs`, `ispublished`, `exportsfrom`, `supportstask`, `processes`, `reads`, `workswith`, `availableat`
 
 ### Per-term Coverage Overview
 
