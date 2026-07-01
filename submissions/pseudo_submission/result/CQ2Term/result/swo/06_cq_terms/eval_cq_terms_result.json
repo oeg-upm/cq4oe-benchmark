@@ -46,86 +46,86 @@
         "n_pred": 27,
         "tp_pairs": [
           {
-            "gold": "cel binary format",
-            "pred": "opendataformat"
-          },
-          {
-            "gold": "software developer role",
-            "pred": "softwaretool"
-          },
-          {
-            "gold": "software",
-            "pred": "software"
-          },
-          {
-            "gold": "cel ascii format",
-            "pred": "dataformat"
-          },
-          {
             "gold": ".csv",
             "pred": "csv"
-          },
-          {
-            "gold": "data",
-            "pred": "data"
           },
           {
             "gold": "version",
             "pred": "version"
           },
           {
-            "gold": "task",
-            "pred": "task"
-          },
-          {
-            "gold": "data item",
-            "pred": "dataexport"
-          },
-          {
-            "gold": "algorithm",
-            "pred": "algorithm"
-          },
-          {
-            "gold": "platform",
-            "pred": "platform"
-          },
-          {
-            "gold": "web service",
-            "pred": "webservice"
+            "gold": "software developer role",
+            "pred": "softwaretool"
           },
           {
             "gold": "text editing",
             "pred": "xmlediting"
           },
           {
-            "gold": "open source software license",
-            "pred": "freeopensourcesoftware"
+            "gold": "algorithm",
+            "pred": "algorithm"
+          },
+          {
+            "gold": "task",
+            "pred": "task"
+          },
+          {
+            "gold": "web service",
+            "pred": "webservice"
+          },
+          {
+            "gold": "software",
+            "pred": "software"
           },
           {
             "gold": "format",
             "pred": "format"
+          },
+          {
+            "gold": "data",
+            "pred": "data"
+          },
+          {
+            "gold": "data item",
+            "pred": "dataexport"
+          },
+          {
+            "gold": "cel binary format",
+            "pred": "opendataformat"
+          },
+          {
+            "gold": "cel ascii format",
+            "pred": "dataformat"
+          },
+          {
+            "gold": "platform",
+            "pred": "platform"
+          },
+          {
+            "gold": "open source software license",
+            "pred": "freeopensourcesoftware"
           }
         ],
         "fn_terms": [
-          "not free",
-          "desktop graphical user interface",
-          "free",
+          "application programming interface",
           "xml",
-          "application programming interface"
+          "desktop graphical user interface",
+          "not free",
+          "free"
         ],
         "fp_terms": [
-          "proprietarydataformat",
-          "txt",
-          "input",
-          "tool",
-          "documentation",
-          "resource",
-          "celfile",
-          "developedentity",
-          "distributionchannel",
           "developer",
+          "resource",
+          "tool",
+          "proprietarydataformat",
+          "developedentity",
+          "celfile",
+          "input",
+          "distributionchannel",
+          "documentation",
+          "softwaretype",
           "modification",
-          "softwaretype"
+          "txt"
         ]
       },
       "property_only": {
@@ -139,28 +139,48 @@
         "n_pred": 34,
         "tp_pairs": [
           {
-            "gold": "has input",
-            "pred": "hasinput"
+            "gold": "has specified data output",
+            "pred": "hasdataexport"
+          },
+          {
+            "gold": "has specified data input",
+            "pred": "hasmodification"
+          },
+          {
+            "gold": "has output",
+            "pred": "hasoutputformat"
+          },
+          {
+            "gold": "uses platform",
+            "pred": "usesdata"
           },
           {
             "gold": "has version",
             "pred": "hasversion"
           },
           {
-            "gold": "has release date",
-            "pred": "hasreleasedate"
-          },
-          {
             "gold": "has interface",
             "pred": "hasinputformat"
+          },
+          {
+            "gold": "has input",
+            "pred": "hasinput"
+          },
+          {
+            "gold": "has documentation",
+            "pred": "haslocation"
           },
           {
             "gold": "uses software",
             "pred": "hassoftwaretype"
           },
           {
-            "gold": "has documentation",
-            "pred": "haslocation"
+            "gold": "has support url",
+            "pred": "hasurl"
+          },
+          {
+            "gold": "has format specification",
+            "pred": "hasformat"
           },
           {
             "gold": "has website homepage",
@@ -171,57 +191,37 @@
             "pred": "developedby"
           },
           {
-            "gold": "has support url",
-            "pred": "hasurl"
-          },
-          {
-            "gold": "has specified data input",
-            "pred": "hasmodification"
-          },
-          {
-            "gold": "has specified data output",
-            "pred": "hasdataexport"
-          },
-          {
-            "gold": "has format specification",
-            "pred": "hasformat"
-          },
-          {
-            "gold": "uses platform",
-            "pred": "usesdata"
-          },
-          {
-            "gold": "has output",
-            "pred": "hasoutputformat"
+            "gold": "has release date",
+            "pred": "hasreleasedate"
           }
         ],
         "fn_terms": [
-          "implements",
           "is software for",
-          "has license",
-          "has download location"
+          "has download location",
+          "implements",
+          "has license"
         ],
         "fp_terms": [
-          "isavailableas",
-          "isopensource",
-          "provides",
-          "isfree",
-          "hasname",
-          "uses",
+          "workswith",
           "isvalid",
+          "develops",
+          "exportsfrom",
+          "outputs",
+          "runson",
+          "supportstask",
+          "reads",
+          "isopensource",
+          "uses",
+          "collaborateswith",
           "created",
           "exportsto",
-          "runson",
-          "collaborateswith",
-          "develops",
-          "outputs",
-          "ispublished",
-          "exportsfrom",
-          "supportstask",
+          "provides",
           "processes",
-          "reads",
-          "workswith",
-          "availableat"
+          "hasname",
+          "availableat",
+          "ispublished",
+          "isfree",
+          "isavailableas"
         ]
       },
       "combined": {

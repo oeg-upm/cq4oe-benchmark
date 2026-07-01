@@ -54,57 +54,57 @@
             "pred": "measurement"
           },
           {
-            "gold": "tariff",
-            "pred": "tariff"
-          },
-          {
-            "gold": "water infrastructure",
-            "pred": "waterinfrastructure"
-          },
-          {
             "gold": "device",
             "pred": "device"
           },
           {
-            "gold": "water",
-            "pred": "water"
-          },
-          {
-            "gold": "chemicalproperty",
-            "pred": "chemicalproperty"
+            "gold": "tariff",
+            "pred": "tariff"
           },
           {
             "gold": "actuator",
             "pred": "actuator"
           },
           {
-            "gold": "temporal entity",
-            "pred": "temporalsetting"
+            "gold": "water",
+            "pred": "water"
+          },
+          {
+            "gold": "water infrastructure",
+            "pred": "waterinfrastructure"
           },
           {
             "gold": "water asset",
             "pred": "waterindicator"
           },
           {
+            "gold": "temporal entity",
+            "pred": "temporalsetting"
+          },
+          {
             "gold": "water meter",
             "pred": "watermeter"
+          },
+          {
+            "gold": "chemicalproperty",
+            "pred": "chemicalproperty"
           }
         ],
         "fn_terms": [
-          "city",
-          "meter",
           "key performance indicator",
-          "water property"
+          "water property",
+          "city",
+          "meter"
         ],
         "fp_terms": [
-          "aspect",
+          "asset",
+          "tariffperiod",
+          "waterdistributioninfrastructure",
           "region",
-          "billingdateperiod",
+          "aspect",
           "geolocation",
           "firmware",
-          "waterdistributioninfrastructure",
-          "tariffperiod",
-          "asset"
+          "billingdateperiod"
         ]
       },
       "property_only": {
@@ -118,84 +118,84 @@
         "n_pred": 25,
         "tp_pairs": [
           {
-            "gold": "has start timestamp",
-            "pred": "hasstarttime"
-          },
-          {
-            "gold": "has version",
-            "pred": "hasversion"
-          },
-          {
-            "gold": "has hardware version",
-            "pred": "hashardwareversion"
-          },
-          {
-            "gold": "has period",
-            "pred": "hastariffperiod"
-          },
-          {
-            "gold": "has geometry",
-            "pred": "hasgeolocation"
-          },
-          {
             "gold": "has billing date",
             "pred": "hasbillingdate"
-          },
-          {
-            "gold": "has duration",
-            "pred": "hasduration"
-          },
-          {
-            "gold": "has timestamp",
-            "pred": "hasstartdate"
           },
           {
             "gold": "has measurement",
             "pred": "measures"
           },
           {
-            "gold": "has model",
-            "pred": "hasmodel"
+            "gold": "has geometry",
+            "pred": "hasgeolocation"
           },
           {
-            "gold": "operates at radio frequency",
-            "pred": "hasradiofrequencylevel"
+            "gold": "has timestamp",
+            "pred": "hasstartdate"
           },
           {
-            "gold": "has billing period",
-            "pred": "hasbillingdateperiod"
-          },
-          {
-            "gold": "has property",
-            "pred": "haspower"
+            "gold": "has version",
+            "pred": "hasversion"
           },
           {
             "gold": "has manufacturer",
             "pred": "hasmanufacturer"
           },
           {
+            "gold": "has property",
+            "pred": "haspower"
+          },
+          {
             "gold": "has fabrication number",
             "pred": "hasfabricationnumber"
+          },
+          {
+            "gold": "has start timestamp",
+            "pred": "hasstarttime"
+          },
+          {
+            "gold": "has billing period",
+            "pred": "hasbillingdateperiod"
+          },
+          {
+            "gold": "has duration",
+            "pred": "hasduration"
+          },
+          {
+            "gold": "has hardware version",
+            "pred": "hashardwareversion"
+          },
+          {
+            "gold": "operates at radio frequency",
+            "pred": "hasradiofrequencylevel"
+          },
+          {
+            "gold": "has model",
+            "pred": "hasmodel"
+          },
+          {
+            "gold": "has period",
+            "pred": "hastariffperiod"
           }
         ],
         "fn_terms": [
-          "requires power",
           "makes measurement",
-          "has firmware version",
+          "has key performance indicator",
+          "requires power",
           "applies to",
-          "has key performance indicator"
+          "has firmware version"
         ],
         "fp_terms": [
-          "usestariff",
-          "haschemicalproperty",
-          "usedin",
-          "hastemporalsetting",
           "provides",
-          "uses",
           "hastariff",
           "composes",
-          "hasaspect",
-          "definedfor"
+          "usestariff",
+          "hastemporalsetting",
+          "uses",
+          "usedin",
+          "definedfor",
+          "haschemicalproperty",
+          "hasaspect"
         ]
       },
       "combined": {

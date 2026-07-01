@@ -100,13 +100,13 @@ Per-CQ accuracy (_does pred mention the right concepts in the right CQ?_) is rep
 
 **Missed gold terms (FN):**
 
-- Classes (5): `bordeaux`, `redbordeaux`, `whitebordeaux`, `winedescriptor`, `zinfandel`
+- Classes (5): `zinfandel`, `redbordeaux`, `winedescriptor`, `bordeaux`, `whitebordeaux`
 - Properties (2): `yearvalue`, `haswinedescriptor`
 
 **Extra pred terms (FP) — don't translate to any gold term:**
 
-- Classes (3): `body`, `bouquet`, `characteristic`
-- Properties (4): `isgoodvintage`, `hasbouquet`, `hascharacteristic`, `hasvintage`
+- Classes (3): `body`, `characteristic`, `bouquet`
+- Properties (4): `isgoodvintage`, `hasbouquet`, `hasvintage`, `hascharacteristic`
 
 ### Per-term Coverage Overview
 
