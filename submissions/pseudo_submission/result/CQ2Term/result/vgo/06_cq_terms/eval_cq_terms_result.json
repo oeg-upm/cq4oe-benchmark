@@ -46,40 +46,40 @@
         "n_pred": 11,
         "tp_pairs": [
           {
-            "gold": "playingarea",
-            "pred": "playingarea"
-          },
-          {
             "gold": "player",
             "pred": "player"
-          },
-          {
-            "gold": "achievement",
-            "pred": "achievement"
-          },
-          {
-            "gold": "item",
-            "pred": "item"
           },
           {
             "gold": "game",
             "pred": "game"
           },
           {
-            "gold": "inapppurchaseevent",
-            "pred": "inapppurchase"
+            "gold": "achievement",
+            "pred": "achievement"
+          },
+          {
+            "gold": "playingarea",
+            "pred": "playingarea"
+          },
+          {
+            "gold": "item",
+            "pred": "item"
           },
           {
             "gold": "genre",
             "pred": "genre"
+          },
+          {
+            "gold": "inapppurchaseevent",
+            "pred": "inapppurchase"
           }
         ],
         "fn_terms": [],
         "fp_terms": [
-          "friend",
-          "location",
+          "achievementtype",
           "customer",
-          "achievementtype"
+          "friend",
+          "location"
         ]
       },
       "property_only": {
@@ -97,44 +97,44 @@
             "pred": "hasitem"
           },
           {
-            "gold": "hasgamegenre",
-            "pred": "hasgenre"
-          },
-          {
-            "gold": "releasedate",
-            "pred": "hasreleasedate"
-          },
-          {
-            "gold": "hasachievement",
-            "pred": "hasachievement"
-          },
-          {
-            "gold": "livesin",
-            "pred": "livesin"
-          },
-          {
-            "gold": "playsgame",
-            "pred": "playsgame"
-          },
-          {
-            "gold": "isfriendwithplayer",
-            "pred": "hasfriend"
-          },
-          {
             "gold": "purchasesgameoffering",
             "pred": "purchases"
-          },
-          {
-            "gold": "hasplayingarea",
-            "pred": "hasplayingarea"
           },
           {
             "gold": "username",
             "pred": "hasusername"
           },
           {
+            "gold": "isfriendwithplayer",
+            "pred": "hasfriend"
+          },
+          {
+            "gold": "livesin",
+            "pred": "livesin"
+          },
+          {
+            "gold": "releasedate",
+            "pred": "hasreleasedate"
+          },
+          {
             "gold": "ownsachievement",
             "pred": "hasachievementtype"
+          },
+          {
+            "gold": "hasplayingarea",
+            "pred": "hasplayingarea"
+          },
+          {
+            "gold": "hasgamegenre",
+            "pred": "hasgenre"
+          },
+          {
+            "gold": "playsgame",
+            "pred": "playsgame"
+          },
+          {
+            "gold": "hasachievement",
+            "pred": "hasachievement"
           }
         ],
         "fn_terms": [
@@ -143,15 +143,15 @@
           "ownsitem"
         ],
         "fp_terms": [
-          "hastotalpayments",
-          "obtains",
-          "makes",
-          "plays",
-          "existsin",
           "makesinapppurchase",
-          "doneat",
+          "obtains",
+          "hastotalpayments",
           "hastype",
-          "canuse"
+          "doneat",
+          "existsin",
+          "canuse",
+          "makes",
+          "plays"
         ]
       },
       "combined": {

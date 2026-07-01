@@ -46,32 +46,32 @@
         "n_pred": 7,
         "tp_pairs": [
           {
-            "gold": "herbivore",
-            "pred": "herbivore"
+            "gold": "omnivore",
+            "pred": "omnivore"
           },
           {
-            "gold": "plantparts",
-            "pred": "plantpart"
+            "gold": "plant",
+            "pred": "plant"
           },
           {
             "gold": "carnivore",
             "pred": "carnivore"
           },
           {
-            "gold": "omnivore",
-            "pred": "omnivore"
-          },
-          {
-            "gold": "lion",
-            "pred": "lion"
+            "gold": "herbivore",
+            "pred": "herbivore"
           },
           {
             "gold": "animal",
             "pred": "animal"
           },
           {
-            "gold": "plant",
-            "pred": "plant"
+            "gold": "plantparts",
+            "pred": "plantpart"
+          },
+          {
+            "gold": "lion",
+            "pred": "lion"
           }
         ],
         "fn_terms": [],

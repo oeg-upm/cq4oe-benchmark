@@ -1,4 +1,4 @@
-_Generated 2026-06-30 10:25 UTC_ · commit `0642416`
+_Generated 2026-07-01 10:13 UTC_ · commit `a6212ae`
 
 ## CQ2Onto
 

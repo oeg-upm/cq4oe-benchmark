@@ -2682,15 +2682,6 @@
       "model": "embeddinggemma",
       "threshold": 0.6,
       "per_term_type": {
-        "DatatypeProperty": {
-          "gold_count": 11,
-          "pred_count": 54,
-          "matched": 10,
-          "match_rate": 0.18518518518518517,
-          "precision": 0.18518518518518517,
-          "recall": 0.9090909090909091,
-          "f1": 0.30769230769230765
-        },
         "Class": {
           "gold_count": 40,
           "pred_count": 19,
@@ -2708,6 +2699,15 @@
           "precision": 0.36585365853658536,
           "recall": 0.8571428571428571,
           "f1": 0.5128205128205128
+        },
+        "DatatypeProperty": {
+          "gold_count": 11,
+          "pred_count": 54,
+          "matched": 10,
+          "match_rate": 0.18518518518518517,
+          "precision": 0.18518518518518517,
+          "recall": 0.9090909090909091,
+          "f1": 0.30769230769230765
         }
       },
       "buckets": {

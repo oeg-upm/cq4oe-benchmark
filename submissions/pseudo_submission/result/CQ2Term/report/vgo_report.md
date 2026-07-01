@@ -113,8 +113,8 @@ Per-CQ accuracy (_does pred mention the right concepts in the right CQ?_) is rep
 
 **Extra pred terms (FP) — don't translate to any gold term:**
 
-- Classes (4): `friend`, `location`, `customer`, `achievementtype`
-- Properties (9): `hastotalpayments`, `obtains`, `makes`, `plays`, `existsin`, `makesinapppurchase`, `doneat`, `hastype`, `canuse`
+- Classes (4): `achievementtype`, `customer`, `friend`, `location`
+- Properties (9): `makesinapppurchase`, `obtains`, `hastotalpayments`, `hastype`, `doneat`, `existsin`, `canuse`, `makes`, `plays`
 
 ### Per-term Coverage Overview
 
