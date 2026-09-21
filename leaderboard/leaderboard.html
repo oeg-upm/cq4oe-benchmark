@@ -25,26 +25,40 @@
     margin: 8px 0 18px; font-size: 14px;
   }
   p.intro .badge { cursor: default; vertical-align: middle; }
-  p.task-desc {
+  .task-desc {
     color: #666; font-size: 13px; line-height: 1.5;
     margin: 10px 0 14px; max-width: 920px;
     font-style: italic;
     padding: 8px 12px; background: #f5f6f8; border-left: 3px solid #cfd6e1;
     border-radius: 3px;
   }
-  p.task-desc .catalog-links {
+  .task-desc .catalog-links {
     display: block; margin-top: 8px; font-style: normal;
     font-size: 12.5px; color: #888;
   }
-  p.task-desc .catalog-link {
+  .task-desc .catalog-link {
     color: #1a73e8; text-decoration: none; font-weight: 500;
   }
-  p.task-desc .catalog-link:hover { text-decoration: underline; }
-  p.task-desc .status-legend {
+  .task-desc .catalog-link:hover { text-decoration: underline; }
+  .task-desc .status-legend {
     display: block; margin-top: 8px; font-style: normal;
     font-size: 12.5px; color: #666; line-height: 1.9;
   }
-  p.task-desc .status-legend .badge { cursor: default; margin: 0 3px 0 0; }
+  .task-desc .status-legend .badge { cursor: default; margin: 0 3px 0 0; }
+
+  /* Small explanatory table (settings table in the config panel) */
+  table.info-table {
+    width: auto; min-width: 60%; font-size: 12.5px;
+    margin: 4px 0 8px; background: #fff;
+    border: 1px solid #e5e7eb;
+  }
+  table.info-table th, table.info-table td {
+    text-align: left; white-space: normal;
+    padding: 5px 10px; vertical-align: top;
+    border-bottom: 1px solid #eee;
+  }
+  table.info-table th { background: #f3f4f6; font-weight: 600; color: #374151; }
+  table.info-table td.num, table.info-table th.num { text-align: right; white-space: nowrap; }
 
   /* Top home link */
   .topbar-mini {
@@ -119,6 +133,16 @@
   .nav-btn.domain.active {
     background: #d97706; color: white; border-color: #d97706;
   }
+  /* Gold-standard line shown under the Domain buttons for the selected domain */
+  .domain-info {
+    margin: -2px 0 0 74px;           /* aligns with the buttons (nav-label width + gap) */
+    padding: 2px 0 0;
+    max-width: 920px;
+    font-size: 13px; line-height: 1.6; color: #555;
+  }
+  .domain-info strong { color: #333; }
+  .domain-info a { color: #1a73e8; text-decoration: none; }
+  .domain-info a:hover { text-decoration: underline; }
   /* Target buttons get a colored active state matching the column theme */
   .nav-btn.target.active[data-accent="term"]     { background:#2e7d32; border-color:#2e7d32; }
   .nav-btn.target.active[data-accent="prop"]      { background:#00838f; border-color:#00838f; }
@@ -151,6 +175,66 @@
     color: #888; font-size: 12px;
     white-space: nowrap;
   }
+
+  /* "What does this configuration mean?" toggle + explanation panel */
+  .config-toggle {
+    display: inline-flex; align-items: center; gap: 5px;
+    margin-left: auto;
+    padding: 4px 10px;
+    background: #f1f5f9; border: 1px solid #e2e8f0;
+    border-radius: 6px; color: #334155;
+    font: inherit; font-size: 12px; font-weight: 500;
+    cursor: pointer; user-select: none;
+    transition: background 0.12s;
+  }
+  .config-toggle:hover { background: #e2e8f0; }
+  .config-toggle .chev {
+    display: inline-block; font-size: 10px; color: #64748b;
+    transition: transform 0.15s;
+  }
+  .config-toggle[aria-expanded="true"] .chev { transform: rotate(90deg); }
+  .config-details {
+    display: none;
+    margin: 0 0 16px;
+    padding: 12px 16px 14px;
+    background: #f8fafc; border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 12.5px; line-height: 1.6; color: #334155;
+  }
+  .config-details.open { display: block; }
+  .config-details h4 {
+    margin: 10px 0 6px; font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: 0.04em; color: #64748b;
+  }
+  .config-details h4:first-child { margin-top: 0; }
+  .config-details p { margin: 4px 0 8px; max-width: 920px; }
+  .config-details td.key { font-family: ui-monospace, "SF Mono", Menlo, monospace; white-space: nowrap; }
+  .config-details td.val { font-family: ui-monospace, "SF Mono", Menlo, monospace; white-space: nowrap; color: #1a1a1a; }
+  .config-details .layer-tag {
+    display: inline-block; padding: 0 6px; margin-right: 6px;
+    border-radius: 8px; font-size: 10.5px; font-weight: 600;
+    background: #e0e7ff; color: #3730a3; vertical-align: middle;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .config-details a { color: #1a73e8; text-decoration: none; }
+  .config-details a:hover { text-decoration: underline; }
+  .config-details .note {
+    margin-top: 6px; padding: 6px 10px;
+    background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 3px;
+    color: #78350f;
+  }
+
+  /* Report column: link to the per-run Markdown report */
+  table th.report-col, table td.report-cell {
+    text-align: center; white-space: nowrap; padding: 7px 10px;
+  }
+  a.report-link {
+    display: inline-block; padding: 1px 8px;
+    border-radius: 10px; font-size: 11.5px; font-weight: 600;
+    background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb;
+    text-decoration: none;
+  }
+  a.report-link:hover { background: #e5e7eb; color: #111827; }
 
   /* Tables */
   table {
@@ -265,9 +349,11 @@ CQ4OE leaderboard for LLM-based ontology generation from competency questions. R
     <span class="nav-label">Domain:</span>
     <div id="domain-nav"></div>
   </div>
+  <!-- Filled by domainInfoHTML(): source ontology + gold-standard folder of the selected domain. -->
+  <p id="domain-info" class="domain-info" style="display:none"></p>
 </div>
 
-<p id="task-desc" class="task-desc"></p>
+<div id="task-desc" class="task-desc"></div>
 
 <div id="content"></div>
 
@@ -434,6 +520,7 @@ let state = {
   sort:      { col: null, dir: "desc" },
   expandedPRF1: new Set(),   // column ids whose P/R are shown
   expandedMethod: new Set(), // column ids whose per-method are shown
+  expandedConfig: new Set(), // "<benchmark>/<group index>" whose explanation panel is open
 };
 
 function fmtPct(v) {
@@ -551,6 +638,240 @@ function modeTitle(raw) {
 }
 function modeCellHTML(raw) {
   return `<span title="${modeTitle(raw)} (raw: ${raw})">${prettyMode(raw)}</span>`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// REPORT LINKS
+// Every evaluated run has a Markdown report written by the runners:
+//   CQ2Onto : CQ2Onto/04_summary/<mode>/<model>/<dataset>_report.md
+//   CQ2Term : CQ2Term/04_summary/<model>/<dataset>_report.md
+// Challenge submissions (mode "challenge") keep their reports inside
+// their own submission folder instead:
+//   submissions/<name>/result/<Task>/report/<dataset>_report.md
+//
+// When the page is served over http(s) (GitHub Pages) the link opens the
+// file on GitHub so the Markdown renders. When the page is opened from a
+// local clone (file://) it uses the relative path so it works offline.
+// In the Overall view the link points to the folder holding all of the
+// run's per-domain reports; in a single-domain view it opens that report.
+// ─────────────────────────────────────────────────────────────
+const REPO        = "oeg-upm/cq4oe-benchmark";
+const REPO_BRANCH = "main";
+const IS_LOCAL    = (window.location.protocol === "file:");
+
+// Names of challenge submissions = models that appear under mode "challenge"
+// in the CQ2Onto data. Used to route CQ2Term rows of the same submission to
+// the submissions/ folder as well (CQ2Term runs carry no mode).
+const CHALLENGE_NAMES = new Set(
+  ((LEADERBOARD_DATA.cq2onto || {}).runs || [])
+    .filter(r => r.mode === "challenge").map(r => r.model)
+);
+
+function reportRelPath(run) {
+  const seg = encodeURIComponent;
+  const taskDir = state.benchmark === "cq2onto" ? "CQ2Onto" : "CQ2Term";
+  const file = run.dataset === "overall" ? "" : `${seg(run.dataset)}_report.md`;
+  const isChallenge = (run.mode === "challenge") ||
+                      (state.benchmark === "cq2term" && CHALLENGE_NAMES.has(run.model));
+  if (isChallenge) {
+    return `submissions/${seg(run.model)}/result/${taskDir}/report/${file}`;
+  }
+  if (state.benchmark === "cq2onto") {
+    return `${taskDir}/04_summary/${seg(run.mode || "")}/${seg(run.model)}/${file}`;
+  }
+  return `${taskDir}/04_summary/${seg(run.model)}/${file}`;
+}
+
+function reportHref(run) {
+  const rel = reportRelPath(run);
+  if (IS_LOCAL) return `../${rel}`;                       // leaderboard/ → repo root
+  const kind = run.dataset === "overall" ? "tree" : "blob"; // folder vs file on GitHub
+  return `https://github.com/${REPO}/${kind}/${REPO_BRANCH}/${rel}`;
+}
+
+function reportCellHTML(run) {
+  if (PLACEHOLDER_MODELS.has(run.model)) return `<span class="badge-none">—</span>`;
+  const href = reportHref(run);
+  const isFolder = run.dataset === "overall";
+  const where = IS_LOCAL ? "local clone" : "GitHub";
+  const tip = isFolder
+    ? `Open the folder with this run's per-domain evaluation reports (${where}).\n${reportRelPath(run)}`
+    : `Open the ${run.dataset.toUpperCase()} evaluation report for this run (${where}).\n${reportRelPath(run)}`;
+  const label = isFolder ? "Reports ↗" : "Report ↗";
+  return `<a class="report-link" href="${escapeAttr(href)}" target="_blank" rel="noopener" title="${escapeAttr(tip)}">${label}</a>`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// CONFIGURATION EXPLANATION
+// Each configuration group is keyed by the evaluation settings that affect
+// the metrics (see usage_instructions.md §4.4 and §7.4). The dictionary
+// below explains every key the leaderboard can show; keys are looked up by
+// their bare name (after the "<layer>." prefix). Unknown keys fall back to
+// a generic line so a new setting never breaks the panel.
+// ─────────────────────────────────────────────────────────────
+const LAYER_NAMES = {
+  concept:  "Class alignment",
+  property: "Property alignment",
+  triple:   "Triple (domain/range)",
+  axiom:    "TBox axioms",
+  hierarchy:"Hierarchy closure",
+  cq_terms: "CQ2Term evaluation",
+};
+
+const CONFIG_EXPLAIN = {
+  methods: {
+    label: "Similarity methods",
+    text: "The label-matching methods used to align a predicted term with a gold term: exact match after normalisation (hard_match), difflib sequence ratio (sequence_match), normalised Levenshtein similarity (levenshtein), Jaro-Winkler (jaro_winkler) and cosine similarity of sentence embeddings (semantic). Order does not matter for grouping.",
+  },
+  top_n: {
+    label: "Top-N averaging",
+    text: "How many of the non-hard method scores are averaged into the aggregated score s(gold, pred). With 3 the three highest of the four non-hard scores are averaged (AggregatedTop3); 5 averages everything, 1 keeps only the single best method. An exact hard match always scores 1.",
+  },
+  final_threshold: {
+    label: "Final alignment threshold",
+    text: "Cut-off on the aggregated score for accepting a (gold, pred) pair into the one-to-one alignment. Higher is stricter (more precision, less recall). Defaults are 0.6 for classes and 0.7 for properties (0.6 in CQ2Term).",
+    verifiedNote: "For Verified CQ2Onto runs this value is not part of the grouping key, because the alignment was corrected by hand.",
+  },
+  hard_threshold: {
+    label: "Hard-match threshold",
+    text: "Score a pair must reach under exact matching to count as a hit in the standalone per-method report (1.0 = identical after normalisation).",
+  },
+  lexical_threshold: {
+    label: "Lexical threshold",
+    text: "Cut-off used by the standalone per-method reports for the string-similarity methods (sequence_match, levenshtein, jaro_winkler). Only affects the diagnostic per-method P/R/F1 columns, not the final alignment.",
+  },
+  semantic_threshold: {
+    label: "Semantic threshold",
+    text: "Cut-off used by the standalone per-method report for the embedding (semantic) method. Only affects the diagnostic per-method P/R/F1 column, not the final alignment.",
+  },
+  model_id: {
+    label: "Embedding model",
+    text: "The sentence-embedding model (served through Ollama) that produces the semantic cosine similarity between term labels. Runs with a different embedding model are never ranked together.",
+  },
+  semantic_model: {
+    label: "Embedding model",
+    text: "The sentence-embedding model (served through Ollama) that produces the semantic cosine similarity between term labels. Runs with a different embedding model are never ranked together.",
+  },
+  threshold: {
+    label: "Embedding (Layer 2) threshold",
+    text: "Cosine cut-off for the embedding-based diagnostic match in the triple and axiom layers: a gold item and a predicted item are paired when their textual renderings are at least this similar. It feeds the Cosine columns only; the strict F1 columns use structural matching.",
+  },
+  no_layer2: {
+    label: "Embedding diagnostic skipped",
+    text: "true means the embedding-based Layer 2 diagnostic was not computed for this layer, so its Cosine column is empty; false means it was computed.",
+  },
+  literal_relax: {
+    label: "Relaxed literal matching",
+    text: "When true, a generic gold literal datatype (e.g. rdfs:Literal) matches any concrete predicted XSD datatype in the triple and axiom layers. When false (the paper baseline) datatypes must match after normalisation.",
+  },
+};
+
+// ─────────────────────────────────────────────────────────────
+// GOLD STANDARD DESCRIPTION
+// Six CQ-aligned gold ontologies in three size tiers. Counts are taken from
+// the files under CQ2Onto/00_gold_standard and CQ2Term/00_gold_standard.
+// ─────────────────────────────────────────────────────────────
+const GOLD_INFO = [
+  { key: "wine",  name: "Wine",        tier: "small",  source: "https://github.com/UCDavisLibrary/wine-ontology",
+    cq_onto: 5,  cq_term: 5,  new_cqs: 1, classes: 17, obj: 8,  data: 1,  axioms: 68, term_classes: 11, term_props: 5 },
+  { key: "awo",   name: "AWO",         tier: "small",  source: "https://people.cs.uct.ac.za/~mkeet/OEbook/ontologies/AfricanWildlifeOntology1.owl",
+    cq_onto: 7,  cq_term: 7,  new_cqs: 0, classes: 9,  obj: 5,  data: 0,  axioms: 25, term_classes: 7,  term_props: 1 },
+  { key: "odrl",  name: "ODRL",        tier: "medium", source: "https://www.w3.org/ns/odrl/2/",
+    cq_onto: 18, cq_term: 19, new_cqs: 6, classes: 15, obj: 28, data: 0,  axioms: 60, term_classes: 13, term_props: 26 },
+  { key: "water", name: "SAREF4WATR",  tier: "medium", source: "https://saref.etsi.org/saref4watr/v1.1.1/",
+    cq_onto: 21, cq_term: 20, new_cqs: 0, classes: 20, obj: 14, data: 10, axioms: 43, term_classes: 15, term_props: 21 },
+  { key: "vgo",   name: "VGO",         tier: "large",  source: "https://vocab.linkeddata.es/vgo/",
+    cq_onto: 31, cq_term: 22, new_cqs: 1, classes: 25, obj: 23, data: 5,  axioms: 77, term_classes: 7,  term_props: 14 },
+  { key: "swo",   name: "SWO",         tier: "large",  source: "https://obofoundry.org/ontology/swo.html",
+    cq_onto: 35, cq_term: 26, new_cqs: 0, classes: 30, obj: 18, data: 5,  axioms: 86, term_classes: 20, term_props: 18 },
+];
+
+const GOLD_LINKS = {
+  usage: `https://github.com/${REPO}/blob/${REPO_BRANCH}/usage_instructions.md`,
+};
+
+// Gold-standard folder of one domain for the current benchmark:
+//   CQ2Onto/00_gold_standard/<d>/   (ontology/sub_<d>.owl + axioms/)
+//   CQ2Term/00_gold_standard/<d>/   (cq_to_terms_<d>.json + term_to_cqs_<d>.json)
+// Relative when opened from a local clone, GitHub folder view when served.
+function goldFolderRel(domainKey) {
+  const taskDir = state.benchmark === "cq2onto" ? "CQ2Onto" : "CQ2Term";
+  return `${taskDir}/00_gold_standard/${encodeURIComponent(domainKey)}/`;
+}
+function goldFolderHref(domainKey) {
+  const rel = goldFolderRel(domainKey);
+  return IS_LOCAL ? `../${rel}` : `https://github.com/${REPO}/tree/${REPO_BRANCH}/${rel}`;
+}
+function goldInfoFor(domainKey) {
+  return GOLD_INFO.find(g => g.key === domainKey) || null;
+}
+
+// Text shown directly under the Domain buttons when a domain is selected
+// (empty for Overall). Plain "key: value" form, e.g.
+//   WINE: classes: 17, object properties: 8, data properties: 1, axioms: 68,
+//         source ontology ↗, gold standard folder ↗
+function domainInfoHTML() {
+  const el = document.getElementById("domain-info");
+  if (!el) return;
+  if (state.domain === "overall") {
+    el.innerHTML = "";
+    el.style.display = "none";
+    return;
+  }
+  const g = goldInfoFor(state.domain);
+  const where = IS_LOCAL ? "local clone" : "GitHub";
+  const gold = `<a href="${escapeAttr(goldFolderHref(state.domain))}" target="_blank" rel="noopener" title="Open the gold-standard folder for this domain (${where}).\n${goldFolderRel(state.domain)}">gold standard folder ↗</a>`;
+  const parts = [];
+  if (g) {
+    if (state.benchmark === "cq2onto") {
+      parts.push(`classes: ${g.classes}`, `object properties: ${g.obj}`, `data properties: ${g.data}`, `axioms: ${g.axioms}`);
+    } else {
+      parts.push(`gold classes: ${g.term_classes}`, `gold properties: ${g.term_props}`);
+    }
+    parts.push(`<a href="${escapeAttr(g.source)}" target="_blank" rel="noopener" title="Open the source ontology (${escapeAttr(g.name)}) this gold standard was derived from">source ontology ↗</a>`);
+  }
+  parts.push(gold);
+  el.innerHTML = `<strong>${escapeAttr(state.domain.toUpperCase())}:</strong> ${parts.join(", ")}`;
+  el.style.display = "";
+}
+
+// Build the explanation table for one group's config object.
+function configExplainHTML(config) {
+  if (!config) {
+    return `<p>This group holds runs whose evaluation settings could not be read from their result files, so they are shown together as an "Unknown configuration" and are not compared with any other group.</p>`;
+  }
+  const rows = Object.keys(config).sort().map(k => {
+    const dot = k.indexOf(".");
+    const layer = dot === -1 ? "" : k.slice(0, dot);
+    const bare  = dot === -1 ? k : k.slice(dot + 1);
+    let v = config[k];
+    if (Array.isArray(v)) v = v.join(", ");
+    else if (typeof v === "string" && bare === "methods") v = v.split(",").join(", ");
+    const ex = CONFIG_EXPLAIN[bare] || { label: bare, text: "Evaluation setting recorded by the pipeline. Runs must share this value to be ranked together." };
+    const tag = layer ? `<span class="layer-tag" title="Evaluation layer this setting belongs to">${LAYER_NAMES[layer] || layer}</span>` : "";
+    // The Verified-run exception only concerns the class/property alignment layers.
+    const extra = (ex.verifiedNote && (layer === "concept" || layer === "property")) ? " " + ex.verifiedNote : "";
+    return `<tr><td class="key">${escapeAttr(k)}</td><td class="val">${escapeAttr(String(v))}</td><td>${tag}<strong>${escapeAttr(ex.label)}.</strong> ${escapeAttr(ex.text + extra)}</td></tr>`;
+  }).join("");
+  return `<table class="info-table"><thead><tr><th>Setting</th><th>Value</th><th>Meaning</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+// Full panel for one configuration group.
+function configDetailsHTML(group) {
+  const runs = group.runs || [];
+  const nVerified = runs.filter(r => r.status && r.status.verified).length;
+  const allVerified = runs.length > 0 && nVerified === runs.length;
+  let note = "";
+  if (allVerified && state.benchmark === "cq2onto") {
+    note = `<div class="note">All runs in this group are <strong>Verified</strong>: a maintainer inspected and corrected the class/property alignment before the downstream layers ran. For verified runs the final alignment thresholds (<code>concept.final_threshold</code>, <code>property.final_threshold</code>) are therefore not part of the grouping key — they were a correction knob, not an experimental condition.</div>`;
+  } else if (nVerified > 0 && nVerified < runs.length) {
+    note = `<div class="note">${nVerified} of ${runs.length} runs in this group are Verified. For those, the final alignment thresholds are excluded from the grouping key; unverified runs keep every setting.</div>`;
+  }
+  return `
+    <h4>Evaluation settings for this group</h4>
+    <p>Runs are ranked against each other only when they share exactly these settings, so that comparisons stay fair. Changing any of them puts a run in a new configuration group. Paths and the reasoner (always HermiT) are ignored, and equivalent spellings (<code>1</code> vs <code>1.0</code>, <code>no</code> vs <code>false</code>, a reordered method list) count as the same value. How to change them is described in the <a href="${GOLD_LINKS.usage}" target="_blank" rel="noopener">usage instructions ↗</a>.</p>
+    ${configExplainHTML(group.config)}
+    ${note}`;
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -898,7 +1219,10 @@ function buildHeader(table, cols, showOverall, totalDatasets) {
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   tr.innerHTML = `<th>Rank</th>` + (showMode ? `<th>Mode</th>` : ``) + `<th class="model-col">Model</th>` +
-    `<th class="status-col" title="Provenance. Reproduced: a maintainer re-ran the model and got a structurally equivalent prediction. Verified: a maintainer checked and corrected the alignment pairings before metrics were computed. Unbadged runs are community submissions.">Status</th>`;
+    `<th class="status-col" title="Provenance. Reproduced: a maintainer re-ran the model and got a structurally equivalent prediction. Verified: a maintainer checked and corrected the alignment pairings before metrics were computed. Unbadged runs are community submissions.">Status</th>` +
+    `<th class="report-col" title="${showOverall
+      ? "Folder with the run's per-domain Markdown evaluation reports (all layers), as written by the evaluation pipeline under 04_summary/."
+      : "The run's Markdown evaluation report for this domain (all layers), as written by the evaluation pipeline under 04_summary/."}">Report</th>`;
 
   cols.forEach(col => {
     if (col.kind === "prf1") {
@@ -992,7 +1316,8 @@ function buildRows(table, runs, cols, showOverall, totalDatasets, opts) {
       : `<td class="rank" title="Not ranked — needs both Reproduced and Verified badges.">—</td>`;
     const modeCell = showMode ? `<td class="mono">${modeCellHTML(run.mode)}</td>` : ``;
     tr.innerHTML = `${rankCell}${modeCell}<td class="mono model-cell">${modelCellHTML(run.model)}</td>` +
-      `<td class="status-cell">${statusCellHTML(run.status)}</td>`;
+      `<td class="status-cell">${statusCellHTML(run.status)}</td>` +
+      `<td class="report-cell">${reportCellHTML(run)}</td>`;
 
     cols.forEach(col => {
       const cls = col.cls + (col.headline ? " headline" : "");
@@ -1064,8 +1389,8 @@ function buildRows(table, runs, cols, showOverall, totalDatasets, opts) {
 // A full-width divider between the ranked block and the unranked block.
 function buildSeparatorRow(table, cols, showOverall) {
   const showMode = (state.benchmark === "cq2onto");
-  // Count columns: rank + (mode?) + model + status + metric cols + (domains?)
-  let span = 1 + (showMode ? 1 : 0) + 1 + 1;
+  // Count columns: rank + (mode?) + model + status + report + metric cols + (domains?)
+  let span = 1 + (showMode ? 1 : 0) + 1 + 1 + 1;
   cols.forEach(col => {
     if (col.kind === "prf1") span += state.expandedPRF1.has(col.id) ? 3 : 1;
     else if (col.kind === "agg_method") {
@@ -1168,6 +1493,8 @@ function renderNav() {
       render();
     }, { extraClass: "domain" });
   });
+  // Source ontology + gold-standard folder of the selected domain (hidden on Overall)
+  domainInfoHTML();
 
   // Task description + OntoCatalogue links (task page + this target's dimension page)
   const def = TASKS[state.benchmark][state.task];
@@ -1219,12 +1546,34 @@ function render() {
 
     const header = document.createElement("div");
     header.className = "config-header";
+    const cfgKey = `${state.benchmark}/${gIdx}`;
+    const cfgOpen = state.expandedConfig.has(cfgKey);
     header.innerHTML = `
       <strong>Configuration group ${gIdx + 1}</strong>
       <span class="config-label">${group.label}</span>
       <span class="config-count">${group.runs.length} runs</span>
+      <button type="button" class="config-toggle" aria-expanded="${cfgOpen}" aria-controls="config-details-${gIdx}"
+              title="Show or hide what each of these evaluation settings means">
+        <span class="chev">▶</span> What does this configuration mean?
+      </button>
     `;
     wrap.appendChild(header);
+
+    // Collapsible explanation: the settings in the group label, plus the
+    // gold standard the runs are compared against. Content is built lazily
+    // the first time the panel is opened.
+    const details = document.createElement("div");
+    details.className = "config-details" + (cfgOpen ? " open" : "");
+    details.id = `config-details-${gIdx}`;
+    if (cfgOpen) details.innerHTML = configDetailsHTML(group);
+    wrap.appendChild(details);
+    header.querySelector(".config-toggle").addEventListener("click", () => {
+      const nowOpen = !state.expandedConfig.has(cfgKey);
+      if (nowOpen) state.expandedConfig.add(cfgKey); else state.expandedConfig.delete(cfgKey);
+      if (nowOpen && !details.innerHTML) details.innerHTML = configDetailsHTML(group);
+      details.classList.toggle("open", nowOpen);
+      header.querySelector(".config-toggle").setAttribute("aria-expanded", String(nowOpen));
+    });
 
     // Filter and aggregate
     let rows = filterRuns(group, state.domain);
