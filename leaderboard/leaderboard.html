@@ -25,6 +25,15 @@
     margin: 8px 0 18px; font-size: 14px;
   }
   p.intro .badge { cursor: default; vertical-align: middle; }
+
+  /* Disclaimer: how to read the scores (ontology modelling is not unique) */
+  .disclaimer {
+    max-width: 920px; margin: 0 0 18px;
+    padding: 8px 12px;
+    background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b;
+    border-radius: 4px;
+    color: #78350f; font-size: 13px; line-height: 1.6;
+  }
   .task-desc {
     color: #666; font-size: 13px; line-height: 1.5;
     margin: 10px 0 14px; max-width: 920px;
@@ -334,6 +343,10 @@
 <h1>CQ4OE Benchmark Leaderboard</h1>
 <p class="intro">
 CQ4OE leaderboard for LLM-based ontology generation from competency questions. Runs are grouped by evaluation configuration so only identical settings are ranked against each other. The <strong>Status</strong> column tells you who has checked a run. <span class="badge badge-reproduced">Reproduced</span>: we ran the model ourselves and got the same kind of output. <span class="badge badge-verified">Verified</span>: we also went through the alignment by hand and corrected any mistakes before scoring. Unchecked runs still appear, but only runs with both badges get a rank.
+</p>
+
+<p class="disclaimer" role="note">
+  <strong>⚠ Disclaimer:</strong> ontology modelling is subjective. Two people can build different ontologies from the same CQs, and both can be correct. Our gold standard is one reference, not the only right answer, and our evaluation is not perfect. Use the scores to compare models, not as an absolute measure of quality.
 </p>
 
 <div class="controls">
