@@ -51,7 +51,7 @@
         "CQ2",
         "CQnew1"
       ],
-      "missing_elements": "CQ2 uses Bordeaux as Explicit Class; new1 uses Bordeaux as Explicit Class"
+      "missing_elements": "Bordeaux is named in both CQs."
     },
     {
       "id": "AX3",
@@ -72,9 +72,10 @@
         "term_type": "Class"
       },
       "cq_numbers": [
-        "CQ2"
+        "CQ2",
+        "CQnew1"
       ],
-      "missing_elements": "CQ2 uses RedBordeaux as Explicit Class (is Bordeaux red or white?)"
+      "missing_elements": "RedBordeaux is the red answer of CQ2 and carries the grapes of CQnew1."
     },
     {
       "id": "AX4",
@@ -106,7 +107,7 @@
       "cq_numbers": [
         "CQ2"
       ],
-      "missing_elements": "CQ2: RedBordeaux = Bordeaux ⊓ RedWine answers the red classification"
+      "missing_elements": "Shows that a Bordeaux can be a red wine. This answers the red half of CQ2."
     },
     {
       "id": "AX6",
@@ -129,7 +130,7 @@
       "cq_numbers": [
         "CQ2"
       ],
-      "missing_elements": "CQ2 uses RedWine as Explicit Class"
+      "missing_elements": "RedWine is named in CQ2."
     },
     {
       "id": "AX7",
@@ -162,7 +163,7 @@
       "cq_numbers": [
         "CQ2"
       ],
-      "missing_elements": "CQ2: RedWine defined by hasColor.Red"
+      "missing_elements": "Red or white is decided by hasColor. This axiom defines a red wine by its colour."
     },
     {
       "id": "AX8",
@@ -185,7 +186,7 @@
       "cq_numbers": [
         "CQ7"
       ],
-      "missing_elements": "CQ7 uses Region as Explicit Class (Napa is a Region)"
+      "missing_elements": "Region is where Napa is reached through locatedIn."
     },
     {
       "id": "AX9",
@@ -209,35 +210,7 @@
         "CQ6",
         "CQ7"
       ],
-      "missing_elements": "CQ6 uses Vintage as Explicit Class; CQ7 uses Vintage as Explicit Class"
-    },
-    {
-      "id": "AX10",
-      "term": "Vintage",
-      "term_label": "Vintage",
-      "term_type": "Class",
-      "axiom_type": "SubClassOf",
-      "subject": "Vintage",
-      "subject_label": "Vintage",
-      "object": "=1 hasVintageYear.⊤",
-      "dl": "Vintage ⊑ =1 hasVintageYear.⊤",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "Vintage"
-      },
-      "rhs_struct": {
-        "expr_type": "ObjectExactCardinality",
-        "property": "hasVintageYear",
-        "cardinality": 1,
-        "filler": {
-          "expr_type": "Top"
-        }
-      },
-      "cq_numbers": [
-        "CQ6",
-        "CQ7"
-      ],
-      "missing_elements": "CQ6/CQ7: Vintage must have exactly 1 hasVintageYear"
+      "missing_elements": "Vintage is named in both CQs."
     },
     {
       "id": "AX11",
@@ -261,7 +234,7 @@
         "CQ6",
         "CQ7"
       ],
-      "missing_elements": "CQ6 uses VintageYear as Explicit Class; CQ7 references vintage year"
+      "missing_elements": "VintageYear is the range of hasVintageYear."
     },
     {
       "id": "AX12",
@@ -282,9 +255,10 @@
         "term_type": "Class"
       },
       "cq_numbers": [
-        "CQ2"
+        "CQ2",
+        "CQnew1"
       ],
-      "missing_elements": "CQ2 uses WhiteBordeaux as Explicit Class"
+      "missing_elements": "WhiteBordeaux is the white answer of CQ2 and carries the grapes of CQnew1."
     },
     {
       "id": "AX13",
@@ -316,7 +290,7 @@
       "cq_numbers": [
         "CQ2"
       ],
-      "missing_elements": "CQ2: WhiteBordeaux = Bordeaux ⊓ WhiteWine"
+      "missing_elements": "Shows that a Bordeaux can be a white wine. This answers the white half of CQ2."
     },
     {
       "id": "AX15",
@@ -339,7 +313,7 @@
       "cq_numbers": [
         "CQ2"
       ],
-      "missing_elements": "CQ2 uses WhiteWine as Explicit Class"
+      "missing_elements": "WhiteWine is named in CQ2."
     },
     {
       "id": "AX16",
@@ -372,7 +346,7 @@
       "cq_numbers": [
         "CQ2"
       ],
-      "missing_elements": "CQ2: WhiteWine defined by hasColor.White"
+      "missing_elements": "Red or white is decided by hasColor. This axiom defines a white wine by its colour."
     },
     {
       "id": "AX17",
@@ -393,9 +367,10 @@
         "term_type": "Class"
       },
       "cq_numbers": [
-        "CQ1"
+        "CQ1",
+        "CQ6"
       ],
-      "missing_elements": "CQ1 uses WineBody as Explicit Class"
+      "missing_elements": "WineBody is one of the characteristics and the range of hasBody."
     },
     {
       "id": "AX19",
@@ -418,7 +393,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses WineTaste as Explicit Class; WineBody subClassOf WineTaste"
+      "missing_elements": "Places body under taste in the list of characteristics."
     },
     {
       "id": "AX20",
@@ -441,7 +416,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses WineColor as Explicit Class"
+      "missing_elements": "WineColor is one of the characteristics."
     },
     {
       "id": "AX22",
@@ -464,7 +439,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses WineDescriptor; WineColor subClassOf WineDescriptor"
+      "missing_elements": "Places colour in the list of characteristics."
     },
     {
       "id": "AX23",
@@ -487,7 +462,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses WineDescriptor as Explicit Class"
+      "missing_elements": "WineDescriptor is the general characteristic of a wine."
     },
     {
       "id": "AX24",
@@ -519,7 +494,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1: WineDescriptor = WineColor ⊔ WineTaste"
+      "missing_elements": "Says the characteristics are exactly colour and taste. This closes the list asked by CQ1."
     },
     {
       "id": "AX25",
@@ -543,7 +518,7 @@
         "CQ1",
         "CQ6"
       ],
-      "missing_elements": "CQ1 uses WineFlavor as Explicit Class; CQ6 uses WineFlavor as Explicit Class"
+      "missing_elements": "WineFlavor is one of the characteristics and stands for bouquet in CQ6."
     },
     {
       "id": "AX27",
@@ -564,10 +539,9 @@
         "name": "WineTaste"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ6"
+        "CQ1"
       ],
-      "missing_elements": "CQ1/CQ6 use WineFlavor; WineFlavor subClassOf WineTaste"
+      "missing_elements": "Places flavour under taste in the list of characteristics."
     },
     {
       "id": "AX28",
@@ -590,7 +564,7 @@
       "cq_numbers": [
         "CQnew1"
       ],
-      "missing_elements": "new1 uses WineGrape as Explicit Class"
+      "missing_elements": "WineGrape is the answer of CQnew1."
     },
     {
       "id": "AX29",
@@ -613,7 +587,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses WineSugar as Explicit Class"
+      "missing_elements": "WineSugar is one of the characteristics."
     },
     {
       "id": "AX31",
@@ -636,7 +610,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses WineTaste; WineSugar subClassOf WineTaste"
+      "missing_elements": "Places sugar under taste in the list of characteristics."
     },
     {
       "id": "AX32",
@@ -659,7 +633,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses WineTaste as Explicit Class"
+      "missing_elements": "WineTaste groups body, flavour and sugar."
     },
     {
       "id": "AX33",
@@ -682,7 +656,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1: WineTaste subClassOf WineDescriptor"
+      "missing_elements": "Places taste in the list of characteristics."
     },
     {
       "id": "AX34",
@@ -705,7 +679,7 @@
       "cq_numbers": [
         "CQ7"
       ],
-      "missing_elements": "CQ7 uses Zinfandel as Explicit Class"
+      "missing_elements": "Zinfandel is named in CQ7."
     },
     {
       "id": "AX40",
@@ -727,65 +701,11 @@
       },
       "cq_numbers": [
         "CQ1",
-        "CQ6"
+        "CQ2",
+        "CQ6",
+        "CQnew1"
       ],
-      "missing_elements": "CQ1 uses hasBody as Explicit Property; CQ6 uses hasBody as Explicit Property"
-    },
-    {
-      "id": "AX41",
-      "term": "wine",
-      "term_label": "wine",
-      "term_type": "Class",
-      "axiom_type": "SubClassOf",
-      "subject": "wine",
-      "subject_label": "wine",
-      "object": "∃locatedIn.Region",
-      "dl": "wine ⊑ ∃locatedIn.Region",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "wine"
-      },
-      "rhs_struct": {
-        "expr_type": "ObjectSomeValuesFrom",
-        "property": "locatedIn",
-        "filler": {
-          "expr_type": "Class",
-          "name": "Region"
-        }
-      },
-      "cq_numbers": [
-        "CQ1",
-        "CQ6"
-      ],
-      "missing_elements": "CQ1 uses both hasBody and hasWineDescriptor; hasBody subPropertyOf"
-    },
-    {
-      "id": "AX42",
-      "term": "wine",
-      "term_label": "wine",
-      "term_type": "Class",
-      "axiom_type": "SubClassOf",
-      "subject": "wine",
-      "subject_label": "wine",
-      "object": "≥1 madeFromGrape.⊤",
-      "dl": "wine ⊑ ≥1 madeFromGrape.⊤",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "wine"
-      },
-      "rhs_struct": {
-        "expr_type": "ObjectMinCardinality",
-        "property": "madeFromGrape",
-        "cardinality": 1,
-        "filler": {
-          "expr_type": "Top"
-        }
-      },
-      "cq_numbers": [
-        "CQ1",
-        "CQ6"
-      ],
-      "missing_elements": "Range = WineBody; CQ1 uses WineBody Explicit"
+      "missing_elements": "wine is named in these CQs."
     },
     {
       "id": "AX43",
@@ -813,7 +733,7 @@
         "CQ1",
         "CQ6"
       ],
-      "missing_elements": "Wine has exactly one body"
+      "missing_elements": "Every wine has exactly one body. This marks body as a characteristic to consider."
     },
     {
       "id": "AX44",
@@ -838,10 +758,9 @@
         }
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ2"
+        "CQ1"
       ],
-      "missing_elements": "CQ1 uses hasColor as Explicit Property; CQ2 asks about color"
+      "missing_elements": "Every wine has exactly one colour. This marks colour as a characteristic to consider."
     },
     {
       "id": "AX45",
@@ -866,9 +785,10 @@
         }
       },
       "cq_numbers": [
-        "CQ1"
+        "CQ1",
+        "CQ6"
       ],
-      "missing_elements": "CQ1 uses hasWineDescriptor; hasColor subPropertyOf"
+      "missing_elements": "Every wine has exactly one flavour. This marks flavour as a characteristic to consider."
     },
     {
       "id": "AX46",
@@ -893,10 +813,9 @@
         }
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ2"
+        "CQ1"
       ],
-      "missing_elements": "Domain = wine; CQ1/CQ2 involve wine+color"
+      "missing_elements": "Every wine has exactly one sugar level. This marks sugar as a characteristic to consider."
     },
     {
       "id": "AX47",
@@ -918,9 +837,9 @@
       },
       "cq_numbers": [
         "CQ1",
-        "CQ2"
+        "CQ6"
       ],
-      "missing_elements": "Range = WineColor; CQ1 uses WineColor Explicit"
+      "missing_elements": "Already covered by the exact cardinality on wine."
     },
     {
       "id": "AX48",
@@ -942,9 +861,9 @@
       },
       "cq_numbers": [
         "CQ1",
-        "CQ2"
+        "CQ6"
       ],
-      "missing_elements": "Wine has exactly one color; CQ2 expects one answer"
+      "missing_elements": "hasBody gives the body of a wine."
     },
     {
       "id": "AX49",
@@ -968,7 +887,7 @@
         "CQ1",
         "CQ6"
       ],
-      "missing_elements": "CQ1 uses hasFlavor Explicit; CQ6 uses hasFlavor Explicit"
+      "missing_elements": "The value is a WineBody."
     },
     {
       "id": "AX50",
@@ -989,10 +908,9 @@
         "name": "hasWineDescriptor"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ6"
+        "CQ1"
       ],
-      "missing_elements": "CQ1 uses hasWineDescriptor; hasFlavor subPropertyOf"
+      "missing_elements": "hasWineDescriptor is explicit in CQ1. This axiom makes body one of the descriptors."
     },
     {
       "id": "AX51",
@@ -1014,9 +932,9 @@
       },
       "cq_numbers": [
         "CQ1",
-        "CQ6"
+        "CQ2"
       ],
-      "missing_elements": "Range = WineFlavor; CQ1/CQ6 use WineFlavor"
+      "missing_elements": "Already covered by the exact cardinality on wine."
     },
     {
       "id": "AX52",
@@ -1038,32 +956,9 @@
       },
       "cq_numbers": [
         "CQ1",
-        "CQ6"
+        "CQ2"
       ],
-      "missing_elements": "Wine has exactly one flavor"
-    },
-    {
-      "id": "AX53",
-      "term": "hasColor",
-      "term_label": "hasColor",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Domain",
-      "subject": "hasColor",
-      "subject_label": "hasColor",
-      "object": "wine",
-      "dl": "∃hasColor.⊤ ⊑ wine",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "hasColor"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "wine"
-      },
-      "cq_numbers": [
-        "CQ1"
-      ],
-      "missing_elements": "CQ1 uses hasSugar as Explicit Property"
+      "missing_elements": "hasColor gives the colour of a wine."
     },
     {
       "id": "AX54",
@@ -1084,9 +979,10 @@
         "name": "WineColor"
       },
       "cq_numbers": [
-        "CQ1"
+        "CQ1",
+        "CQ2"
       ],
-      "missing_elements": "CQ1: hasSugar subPropertyOf hasWineDescriptor"
+      "missing_elements": "The value is a WineColor."
     },
     {
       "id": "AX55",
@@ -1109,7 +1005,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "Range = WineSugar; CQ1 uses WineSugar Explicit"
+      "missing_elements": "hasWineDescriptor is explicit in CQ1. This axiom makes colour one of the descriptors."
     },
     {
       "id": "AX56",
@@ -1130,9 +1026,10 @@
         "name": "Functional"
       },
       "cq_numbers": [
-        "CQ1"
+        "CQ1",
+        "CQ6"
       ],
-      "missing_elements": "Wine has exactly one sugar level"
+      "missing_elements": "Already covered by the exact cardinality on wine."
     },
     {
       "id": "AX57",
@@ -1153,10 +1050,10 @@
         "term_type": "ObjectProperty"
       },
       "cq_numbers": [
-        "CQ6",
-        "CQ7"
+        "CQ1",
+        "CQ6"
       ],
-      "missing_elements": "CQ6/CQ7 both use hasVintageYear as Explicit Property"
+      "missing_elements": "hasFlavor gives the flavour or bouquet of a wine."
     },
     {
       "id": "AX58",
@@ -1177,10 +1074,10 @@
         "name": "WineFlavor"
       },
       "cq_numbers": [
-        "CQ6",
-        "CQ7"
+        "CQ1",
+        "CQ6"
       ],
-      "missing_elements": "Domain = Vintage; CQ6/CQ7 use Vintage Explicit"
+      "missing_elements": "The value is a WineFlavor."
     },
     {
       "id": "AX59",
@@ -1201,10 +1098,9 @@
         "name": "hasWineDescriptor"
       },
       "cq_numbers": [
-        "CQ6",
-        "CQ7"
+        "CQ1"
       ],
-      "missing_elements": "Range = VintageYear; CQ6 uses VintageYear Explicit"
+      "missing_elements": "hasWineDescriptor is explicit in CQ1. This axiom makes flavour one of the descriptors."
     },
     {
       "id": "AX60",
@@ -1225,10 +1121,9 @@
         "name": "Functional"
       },
       "cq_numbers": [
-        "CQ6",
-        "CQ7"
+        "CQ1"
       ],
-      "missing_elements": "Vintage has exactly one VintageYear"
+      "missing_elements": "Already covered by the exact cardinality on wine."
     },
     {
       "id": "AX61",
@@ -1251,7 +1146,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "CQ1 uses hasWineDescriptor as Explicit Property"
+      "missing_elements": "hasSugar gives the sugar level of a wine."
     },
     {
       "id": "AX62",
@@ -1274,7 +1169,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "Domain = wine; CQ1 uses wine"
+      "missing_elements": "The value is a WineSugar."
     },
     {
       "id": "AX63",
@@ -1297,7 +1192,7 @@
       "cq_numbers": [
         "CQ1"
       ],
-      "missing_elements": "Range = WineDescriptor; CQ1 uses WineDescriptor Explicit"
+      "missing_elements": "hasWineDescriptor is explicit in CQ1. This axiom makes sugar one of the descriptors."
     },
     {
       "id": "AX64",
@@ -1318,9 +1213,10 @@
         "name": "Functional"
       },
       "cq_numbers": [
+        "CQ6",
         "CQ7"
       ],
-      "missing_elements": "CQ7 uses locatedIn as Explicit Property (Napa region)"
+      "missing_elements": "Functionality is never used."
     },
     {
       "id": "AX65",
@@ -1341,9 +1237,10 @@
         "term_type": "ObjectProperty"
       },
       "cq_numbers": [
+        "CQ6",
         "CQ7"
       ],
-      "missing_elements": "Domain = ⊤; CQ7 triggers locatedIn"
+      "missing_elements": "hasVintageYear gives the year of a vintage."
     },
     {
       "id": "AX66",
@@ -1364,9 +1261,10 @@
         "name": "Vintage"
       },
       "cq_numbers": [
+        "CQ6",
         "CQ7"
       ],
-      "missing_elements": "Range = Region; CQ7 uses Region Explicit"
+      "missing_elements": "Starts from the vintage."
     },
     {
       "id": "AX67",
@@ -1387,9 +1285,10 @@
         "name": "VintageYear"
       },
       "cq_numbers": [
+        "CQ6",
         "CQ7"
       ],
-      "missing_elements": "Transitive: Napa locatedIn California locatedIn US"
+      "missing_elements": "The value is a VintageYear."
     },
     {
       "id": "AX68",
@@ -1410,9 +1309,9 @@
         "term_type": "ObjectProperty"
       },
       "cq_numbers": [
-        "CQnew1"
+        "CQ1"
       ],
-      "missing_elements": "new1 uses madeFromGrape as Explicit Property"
+      "missing_elements": "hasWineDescriptor is explicit in CQ1."
     },
     {
       "id": "AX69",
@@ -1433,9 +1332,9 @@
         "name": "wine"
       },
       "cq_numbers": [
-        "CQnew1"
+        "CQ1"
       ],
-      "missing_elements": "Domain = wine; new1 uses wine Explicit"
+      "missing_elements": "Starts from the wine."
     },
     {
       "id": "AX70",
@@ -1456,9 +1355,9 @@
         "name": "WineDescriptor"
       },
       "cq_numbers": [
-        "CQnew1"
+        "CQ1"
       ],
-      "missing_elements": "Range = WineGrape; new1 uses WineGrape Explicit"
+      "missing_elements": "The characteristic is a WineDescriptor."
     },
     {
       "id": "AX71",
@@ -1479,13 +1378,8 @@
         "name": "Transitive"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ2",
-        "CQ6",
-        "CQ7",
-        "CQnew1"
-      ],
-      "missing_elements": "All 5 CQs use wine"
+        "CQ7"
+      ]
     },
     {
       "id": "AX72",
@@ -1508,29 +1402,7 @@
       "cq_numbers": [
         "CQ7"
       ],
-      "missing_elements": "CQ7: wine locatedIn Region"
-    },
-    {
-      "id": "AX73",
-      "term": "locatedIn",
-      "term_label": "locatedIn",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Domain",
-      "subject": "locatedIn",
-      "subject_label": "locatedIn",
-      "object": "⊤",
-      "dl": "∃locatedIn.⊤ ⊑ ⊤",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "locatedIn"
-      },
-      "rhs_struct": {
-        "expr_type": "Top"
-      },
-      "cq_numbers": [
-        "CQnew1"
-      ],
-      "missing_elements": "new1: wine must have at least 1 madeFromGrape"
+      "missing_elements": "locatedIn links the wine to Napa."
     },
     {
       "id": "AX74",
@@ -1551,10 +1423,9 @@
         "name": "Region"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ6"
+        "CQ7"
       ],
-      "missing_elements": "CQ1 lists body; CQ6 asks about body; wine has exactly 1 body"
+      "missing_elements": "Napa is a Region."
     },
     {
       "id": "AX75",
@@ -1575,10 +1446,9 @@
         "term_type": "ObjectProperty"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ2"
+        "CQnew1"
       ],
-      "missing_elements": "CQ1 lists color; CQ2 asks red/white; wine has exactly 1 color"
+      "missing_elements": "madeFromGrape links a wine to its grapes."
     },
     {
       "id": "AX76",
@@ -1599,10 +1469,9 @@
         "name": "wine"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ6"
+        "CQnew1"
       ],
-      "missing_elements": "CQ1 lists flavor; CQ6 asks about bouquet; wine has exactly 1 flavor"
+      "missing_elements": "Starts from the Bordeaux wine."
     },
     {
       "id": "AX77",
@@ -1623,9 +1492,9 @@
         "name": "WineGrape"
       },
       "cq_numbers": [
-        "CQ1"
+        "CQnew1"
       ],
-      "missing_elements": "CQ1 lists sugar; wine has exactly 1 sugar"
+      "missing_elements": "The grapes are WineGrape instances."
     },
     {
       "id": "AX78",
@@ -1649,7 +1518,7 @@
         "CQ6",
         "CQ7"
       ],
-      "missing_elements": "CQ6/CQ7 both use yearValue as Explicit Property"
+      "missing_elements": "yearValue gives the year as a number."
     },
     {
       "id": "AX79",
@@ -1673,7 +1542,7 @@
         "CQ6",
         "CQ7"
       ],
-      "missing_elements": "Domain = VintageYear; CQ6/CQ7 use VintageYear"
+      "missing_elements": "Starts from the vintage year."
     },
     {
       "id": "AX80",
@@ -1683,21 +1552,20 @@
       "axiom_type": "Range",
       "subject": "yearValue",
       "subject_label": "yearValue",
-      "object": "xsd:integer",
-      "dl": "yearValue maps-to xsd:integer",
+      "object": "xsd:positiveInteger",
+      "dl": "yearValue maps-to xsd:positiveInteger",
       "lhs_struct": {
         "expr_type": "DatatypeProperty",
         "name": "yearValue"
       },
       "rhs_struct": {
         "expr_type": "Datatype",
-        "name": "xsd:integer"
+        "name": "xsd:positiveInteger"
       },
       "cq_numbers": [
         "CQ6",
         "CQ7"
-      ],
-      "missing_elements": "Range = xsd:integer; year values for comparison"
+      ]
     }
   ]
 }
