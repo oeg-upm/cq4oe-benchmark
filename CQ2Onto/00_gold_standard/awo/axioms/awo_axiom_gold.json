@@ -22,6 +22,29 @@
       "term": "CarnivorousPlant",
       "term_label": "CarnivorousPlant",
       "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "CarnivorousPlant",
+      "subject_label": "CarnivorousPlant",
+      "object": "Class",
+      "dl": "Declaration: CarnivorousPlant (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "CarnivorousPlant"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ6"
+      ],
+      "missing_elements": "CarnivorousPlant is the answer of CQ6."
+    },
+    {
+      "id": "AX2",
+      "term": "CarnivorousPlant",
+      "term_label": "CarnivorousPlant",
+      "term_type": "Class",
       "axiom_type": "SubClassOf",
       "subject": "CarnivorousPlant",
       "subject_label": "CarnivorousPlant",
@@ -38,10 +61,10 @@
       "cq_numbers": [
         "CQ6"
       ],
-      "missing_elements": "CQ6 asks 'which plants eat animals'; CarnivorousPlant subClassOf plant"
+      "missing_elements": "CQ6 asks for plants. This axiom makes CarnivorousPlant a plant."
     },
     {
-      "id": "AX2",
+      "id": "AX3",
       "term": "CarnivorousPlant",
       "term_label": "CarnivorousPlant",
       "term_type": "Class",
@@ -65,10 +88,33 @@
       "cq_numbers": [
         "CQ6"
       ],
-      "missing_elements": "CQ6: CarnivorousPlant eats animal — directly answers the question"
+      "missing_elements": "This axiom states that carnivorous plants eat animals."
     },
     {
-      "id": "AX3",
+      "id": "AX4",
+      "term": "Omnivore",
+      "term_label": "Omnivore",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Omnivore",
+      "subject_label": "Omnivore",
+      "object": "Class",
+      "dl": "Declaration: Omnivore (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Omnivore"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ3"
+      ],
+      "missing_elements": "Omnivore is the omnivorous animal of CQ3."
+    },
+    {
+      "id": "AX5",
       "term": "Omnivore",
       "term_label": "Omnivore",
       "term_type": "Class",
@@ -86,12 +132,12 @@
         "name": "carnivore"
       },
       "cq_numbers": [
-        "CQ3"
+        "CQ14"
       ],
-      "missing_elements": "CQ3 asks what omnivorous animals eat; Omnivore defined by eating animal+plant+parts"
+      "missing_elements": "A carnivore that eats both animals and plants would be an Omnivore. This disjointness rules that out."
     },
     {
-      "id": "AX4",
+      "id": "AX6",
       "term": "Omnivore",
       "term_label": "Omnivore",
       "term_type": "Class",
@@ -109,12 +155,13 @@
         "name": "herbivore"
       },
       "cq_numbers": [
+        "CQ2",
         "CQ3"
       ],
-      "missing_elements": "CQ3: Omnivore is an animal"
+      "missing_elements": "Lets CQ2 answer no for an omnivore. CQ3 lists both diets and does not need it."
     },
     {
-      "id": "AX5",
+      "id": "AX7",
       "term": "Omnivore",
       "term_label": "Omnivore",
       "term_type": "Class",
@@ -177,10 +224,10 @@
         "CQ3",
         "CQ14"
       ],
-      "missing_elements": "CQ3 uses Omnivore; CQ14 uses carnivore; they are disjoint — an animal can't be both"
+      "missing_elements": "Defines an omnivore as eating animals and plants or their parts."
     },
     {
-      "id": "AX6",
+      "id": "AX8",
       "term": "Omnivore",
       "term_label": "Omnivore",
       "term_type": "Class",
@@ -198,13 +245,36 @@
         "name": "animal"
       },
       "cq_numbers": [
-        "CQ2",
         "CQ3"
-      ],
-      "missing_elements": "CQ3 uses Omnivore; CQ2 uses herbivore; they are disjoint"
+      ]
     },
     {
-      "id": "AX7",
+      "id": "AX9",
+      "term": "PlantParts",
+      "term_label": "PlantParts",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "PlantParts",
+      "subject_label": "PlantParts",
+      "object": "Class",
+      "dl": "Declaration: PlantParts (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "PlantParts"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ3",
+        "CQ4",
+        "CQ14"
+      ],
+      "missing_elements": "PlantParts is named in these CQs."
+    },
+    {
+      "id": "AX10",
       "term": "PlantParts",
       "term_label": "PlantParts",
       "term_type": "Class",
@@ -230,10 +300,38 @@
         "CQ4",
         "CQ14"
       ],
-      "missing_elements": "CQ3/4/14 all use PlantParts; PlantParts is-proper-part-of plant"
+      "missing_elements": "Links plant parts to the plant they belong to. Through is-proper-part-of ⊑ is-part-of they match ∃is-part-of.plant in the diet definitions."
     },
     {
-      "id": "AX8",
+      "id": "AX12",
+      "term": "animal",
+      "term_label": "animal",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "animal",
+      "subject_label": "animal",
+      "object": "Class",
+      "dl": "Declaration: animal (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "animal"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ1",
+        "CQ2",
+        "CQ4",
+        "CQ6",
+        "CQ7",
+        "CQ14"
+      ],
+      "missing_elements": "animal is named in these CQs."
+    },
+    {
+      "id": "AX13",
       "term": "animal",
       "term_label": "animal",
       "term_type": "Class",
@@ -251,16 +349,36 @@
         "name": "plant"
       },
       "cq_numbers": [
-        "CQ1",
         "CQ4",
-        "CQ6",
-        "CQ7",
         "CQ14"
       ],
-      "missing_elements": "Fundamental axiom: animal and plant are disjoint; all CQs involving animal/plant depend on this"
+      "missing_elements": "A lion only eats herbivores which are animals. Animals are not plants so the lion eats no plants. CQ14 uses the same step for carnivores."
     },
     {
-      "id": "AX9",
+      "id": "AX14",
+      "term": "carnivore",
+      "term_label": "carnivore",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "carnivore",
+      "subject_label": "carnivore",
+      "object": "Class",
+      "dl": "Declaration: carnivore (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "carnivore"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ14"
+      ],
+      "missing_elements": "carnivore is named in CQ14."
+    },
+    {
+      "id": "AX15",
       "term": "carnivore",
       "term_label": "carnivore",
       "term_type": "Class",
@@ -278,12 +396,13 @@
         "name": "herbivore"
       },
       "cq_numbers": [
+        "CQ2",
         "CQ14"
       ],
-      "missing_elements": "CQ14 asks if carnivore can eat plants; carnivore defined as only eating animal/animal-parts"
+      "missing_elements": "Lets CQ2 answer no for a carnivore. Without it a carnivore cannot be shown not to be a herbivore."
     },
     {
-      "id": "AX10",
+      "id": "AX16",
       "term": "carnivore",
       "term_label": "carnivore",
       "term_type": "Class",
@@ -324,10 +443,10 @@
       "cq_numbers": [
         "CQ14"
       ],
-      "missing_elements": "CQ14: carnivore is an animal"
+      "missing_elements": "Defines a carnivore as eating only animals or their parts. CQ14 checks this against eating plants."
     },
     {
-      "id": "AX11",
+      "id": "AX17",
       "term": "carnivore",
       "term_label": "carnivore",
       "term_type": "Class",
@@ -345,13 +464,37 @@
         "name": "animal"
       },
       "cq_numbers": [
-        "CQ2",
         "CQ14"
       ],
-      "missing_elements": "CQ2 uses herbivore; CQ14 uses carnivore; they are disjoint"
+      "missing_elements": "CQ14 asks for animals that are carnivores. This axiom makes every carnivore an animal."
     },
     {
-      "id": "AX12",
+      "id": "AX18",
+      "term": "herbivore",
+      "term_label": "herbivore",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "herbivore",
+      "subject_label": "herbivore",
+      "object": "Class",
+      "dl": "Declaration: herbivore (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "herbivore"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ2",
+        "CQ3",
+        "CQ4"
+      ],
+      "missing_elements": "herbivore is named in CQ2 and CQ3 and is the range of what a lion eats in CQ4."
+    },
+    {
+      "id": "AX19",
       "term": "herbivore",
       "term_label": "herbivore",
       "term_type": "Class",
@@ -390,17 +533,13 @@
         ]
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ3",
-        "CQ4",
-        "CQ6",
-        "CQ7",
-        "CQ14"
+        "CQ2",
+        "CQ3"
       ],
-      "missing_elements": "All CQs using eaten-by/eats; eaten-by is inverse of eats"
+      "missing_elements": "Defines a herbivore by what it eats. CQ2 classifies the animal with it."
     },
     {
-      "id": "AX13",
+      "id": "AX20",
       "term": "herbivore",
       "term_label": "herbivore",
       "term_type": "Class",
@@ -418,17 +557,36 @@
         "name": "animal"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ3",
-        "CQ4",
-        "CQ6",
-        "CQ7",
-        "CQ14"
+        "CQ2",
+        "CQ4"
       ],
-      "missing_elements": "All CQs using eats; eats is inverse of eaten-by"
+      "missing_elements": "CQ2 asks whether an animal is a herbivore. CQ4 needs herbivores to be animals so the disjointness with plant applies."
     },
     {
-      "id": "AX14",
+      "id": "AX21",
+      "term": "lion",
+      "term_label": "lion",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "lion",
+      "subject_label": "lion",
+      "object": "Class",
+      "dl": "Declaration: lion (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "lion"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ4"
+      ],
+      "missing_elements": "lion is named in CQ4."
+    },
+    {
+      "id": "AX22",
       "term": "lion",
       "term_label": "lion",
       "term_type": "Class",
@@ -446,17 +604,11 @@
         "name": "animal"
       },
       "cq_numbers": [
-        "CQ1",
-        "CQ3",
-        "CQ4",
-        "CQ6",
-        "CQ7",
-        "CQ14"
-      ],
-      "missing_elements": "Range of eats: can only eat animal, plant, or parts thereof; all eating CQs depend on this"
+        "CQ4"
+      ]
     },
     {
-      "id": "AX15",
+      "id": "AX23",
       "term": "lion",
       "term_label": "lion",
       "term_type": "Class",
@@ -478,13 +630,65 @@
         }
       },
       "cq_numbers": [
-        "CQ4",
-        "CQ14"
+        "CQ4"
       ],
-      "missing_elements": "CQ4/14 use has-part; inverse of is-part-of"
+      "missing_elements": "A lion only eats herbivores. This is the key step to answer CQ4."
     },
     {
-      "id": "AX16",
+      "id": "AX24",
+      "term": "plant",
+      "term_label": "plant",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "plant",
+      "subject_label": "plant",
+      "object": "Class",
+      "dl": "Declaration: plant (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "plant"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ4",
+        "CQ6",
+        "CQ14"
+      ],
+      "missing_elements": "plant is named in these CQs."
+    },
+    {
+      "id": "AX25",
+      "term": "eaten-by",
+      "term_label": "eaten-by",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "eaten-by",
+      "subject_label": "eaten-by",
+      "object": "ObjectProperty",
+      "dl": "Declaration: eaten-by (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "eaten-by"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ1",
+        "CQ3",
+        "CQ4",
+        "CQ6",
+        "CQ7",
+        "CQ14"
+      ],
+      "missing_elements": "eaten-by is annotated in these CQs as the inverse reading of eats."
+    },
+    {
+      "id": "AX26",
       "term": "eaten-by",
       "term_label": "eaten-by",
       "term_type": "ObjectProperty",
@@ -502,13 +706,46 @@
         "name": "eats"
       },
       "cq_numbers": [
+        "CQ1",
+        "CQ3",
         "CQ4",
+        "CQ6",
+        "CQ7",
         "CQ14"
       ],
-      "missing_elements": "CQ4/14: has-part is transitive — parts of parts are also parts"
+      "missing_elements": "eaten-by is annotated in these CQs. This axiom gives it the meaning of eats read backwards."
     },
     {
-      "id": "AX17",
+      "id": "AX27",
+      "term": "eats",
+      "term_label": "eats",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "eats",
+      "subject_label": "eats",
+      "object": "ObjectProperty",
+      "dl": "Declaration: eats (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "eats"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ1",
+        "CQ2",
+        "CQ3",
+        "CQ4",
+        "CQ6",
+        "CQ7",
+        "CQ14"
+      ],
+      "missing_elements": "eats is the core relation of every CQ. CQ2 uses it through the herbivore definition."
+    },
+    {
+      "id": "AX28",
       "term": "eats",
       "term_label": "eats",
       "term_type": "ObjectProperty",
@@ -526,62 +763,16 @@
         "name": "eaten-by"
       },
       "cq_numbers": [
-        "CQ2",
-        "CQ3"
-      ],
-      "missing_elements": "CQ2 asks 'is animal a herbivore'; herbivore defined by only eating plant/plant-parts"
+        "CQ1",
+        "CQ3",
+        "CQ4",
+        "CQ6",
+        "CQ7",
+        "CQ14"
+      ]
     },
     {
-      "id": "AX18",
-      "term": "eats",
-      "term_label": "eats",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "eats",
-      "subject_label": "eats",
-      "object": "(animal ⊔ plant ⊔ ∃is-part-of.animal ⊔ ∃is-part-of.plant)",
-      "dl": "⊤ ⊑ ∀eats.(animal ⊔ plant ⊔ ∃is-part-of.animal ⊔ ∃is-part-of.plant)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "eats"
-      },
-      "rhs_struct": {
-        "expr_type": "ObjectUnionOf",
-        "operands": [
-          {
-            "expr_type": "Class",
-            "name": "animal"
-          },
-          {
-            "expr_type": "Class",
-            "name": "plant"
-          },
-          {
-            "expr_type": "ObjectSomeValuesFrom",
-            "property": "is-part-of",
-            "filler": {
-              "expr_type": "Class",
-              "name": "animal"
-            }
-          },
-          {
-            "expr_type": "ObjectSomeValuesFrom",
-            "property": "is-part-of",
-            "filler": {
-              "expr_type": "Class",
-              "name": "plant"
-            }
-          }
-        ]
-      },
-      "cq_numbers": [
-        "CQ2",
-        "CQ3"
-      ],
-      "missing_elements": "CQ2/3: herbivore is an animal"
-    },
-    {
-      "id": "AX19",
+      "id": "AX30",
       "term": "has-part",
       "term_label": "has-part",
       "term_type": "ObjectProperty",
@@ -601,11 +792,33 @@
       "cq_numbers": [
         "CQ4",
         "CQ14"
-      ],
-      "missing_elements": "CQ4/14 use is-part-of; inverse of has-part"
+      ]
     },
     {
-      "id": "AX20",
+      "id": "AX31",
+      "term": "has-part",
+      "term_label": "has-part",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has-part",
+      "subject_label": "has-part",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has-part (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has-part"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ4",
+        "CQ14"
+      ]
+    },
+    {
+      "id": "AX32",
       "term": "has-part",
       "term_label": "has-part",
       "term_type": "ObjectProperty",
@@ -625,11 +838,10 @@
       "cq_numbers": [
         "CQ4",
         "CQ14"
-      ],
-      "missing_elements": "CQ4/14: is-part-of transitive"
+      ]
     },
     {
-      "id": "AX21",
+      "id": "AX33",
       "term": "is-part-of",
       "term_label": "is-part-of",
       "term_type": "ObjectProperty",
@@ -649,11 +861,10 @@
       "cq_numbers": [
         "CQ4",
         "CQ14"
-      ],
-      "missing_elements": "CQ4/14: is-part-of reflexive — everything is part of itself"
+      ]
     },
     {
-      "id": "AX22",
+      "id": "AX34",
       "term": "is-part-of",
       "term_label": "is-part-of",
       "term_type": "ObjectProperty",
@@ -673,11 +884,34 @@
       "cq_numbers": [
         "CQ4",
         "CQ14"
-      ],
-      "missing_elements": "CQ4/14 use is-proper-part-of; it's a sub-property of is-part-of"
+      ]
     },
     {
-      "id": "AX23",
+      "id": "AX35",
+      "term": "is-part-of",
+      "term_label": "is-part-of",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is-part-of",
+      "subject_label": "is-part-of",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is-part-of (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is-part-of"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ3",
+        "CQ4",
+        "CQ14"
+      ]
+    },
+    {
+      "id": "AX36",
       "term": "is-part-of",
       "term_label": "is-part-of",
       "term_type": "ObjectProperty",
@@ -697,11 +931,10 @@
       "cq_numbers": [
         "CQ4",
         "CQ14"
-      ],
-      "missing_elements": "CQ4/14: is-proper-part-of irreflexive — nothing is a proper part of itself"
+      ]
     },
     {
-      "id": "AX24",
+      "id": "AX37",
       "term": "is-proper-part-of",
       "term_label": "is-proper-part-of",
       "term_type": "ObjectProperty",
@@ -719,12 +952,36 @@
         "name": "Irreflexive"
       },
       "cq_numbers": [
-        "CQ4"
-      ],
-      "missing_elements": "CQ4 asks about lion; lion is an animal"
+        "CQ4",
+        "CQ14"
+      ]
     },
     {
-      "id": "AX25",
+      "id": "AX38",
+      "term": "is-proper-part-of",
+      "term_label": "is-proper-part-of",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is-proper-part-of",
+      "subject_label": "is-proper-part-of",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is-proper-part-of (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is-proper-part-of"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ3",
+        "CQ4",
+        "CQ14"
+      ]
+    },
+    {
+      "id": "AX39",
       "term": "is-proper-part-of",
       "term_label": "is-proper-part-of",
       "term_type": "ObjectProperty",
@@ -742,9 +999,10 @@
         "name": "is-part-of"
       },
       "cq_numbers": [
-        "CQ4"
-      ],
-      "missing_elements": "CQ4 asks 'does lion eat plants'; lion only eats herbivores — answers the question"
+        "CQ3",
+        "CQ4",
+        "CQ14"
+      ]
     }
   ]
 }

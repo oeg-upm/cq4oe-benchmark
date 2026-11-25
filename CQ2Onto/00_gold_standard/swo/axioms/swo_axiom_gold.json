@@ -76,7 +76,8 @@
       },
       "cq_numbers": [
         "CQ22"
-      ]
+      ],
+      "missing_elements": ".csv is the open format named in CQ22."
     },
     {
       "id": "AX2",
@@ -98,7 +99,8 @@
       },
       "cq_numbers": [
         "CQ19"
-      ]
+      ],
+      "missing_elements": "CEL ASCII format is one of the .cel formats in CQ19."
     },
     {
       "id": "AX3",
@@ -120,7 +122,8 @@
       },
       "cq_numbers": [
         "CQ19"
-      ]
+      ],
+      "missing_elements": "CEL binary format is one of the .cel formats in CQ19."
     },
     {
       "id": "AX4",
@@ -142,7 +145,8 @@
       },
       "cq_numbers": [
         "CQ46"
-      ]
+      ],
+      "missing_elements": "Development status is the range of has declared status."
     },
     {
       "id": "AX5",
@@ -164,7 +168,8 @@
       },
       "cq_numbers": [
         "CQ68"
-      ]
+      ],
+      "missing_elements": "Free is one of the two answers of CQ68."
     },
     {
       "id": "AX6",
@@ -208,7 +213,8 @@
       },
       "cq_numbers": [
         "CQ14"
-      ]
+      ],
+      "missing_elements": "GIF is the format named in CQ14."
     },
     {
       "id": "AX8",
@@ -230,7 +236,8 @@
       },
       "cq_numbers": [
         "CQ46"
-      ]
+      ],
+      "missing_elements": "Maintained is the status that answers CQ46."
     },
     {
       "id": "AX9",
@@ -252,7 +259,8 @@
       },
       "cq_numbers": [
         "CQ46"
-      ]
+      ],
+      "missing_elements": "has declared status points to Development status. Maintained fits that range only through this axiom."
     },
     {
       "id": "AX10",
@@ -274,7 +282,8 @@
       },
       "cq_numbers": [
         "CQ68"
-      ]
+      ],
+      "missing_elements": "Not Free is one of the two answers of CQ68."
     },
     {
       "id": "AX11",
@@ -296,7 +305,8 @@
       },
       "cq_numbers": [
         "CQ68"
-      ]
+      ],
+      "missing_elements": "Same as above. Purchase cost is only the parent."
     },
     {
       "id": "AX12",
@@ -321,7 +331,8 @@
         "CQ58",
         "CQ60",
         "CQ65"
-      ]
+      ],
+      "missing_elements": "Open source software license is named in these CQs."
     },
     {
       "id": "AX13",
@@ -346,10 +357,12 @@
         }
       },
       "cq_numbers": [
+        "CQ26",
         "CQ58",
         "CQ60",
         "CQ65"
-      ]
+      ],
+      "missing_elements": "Defines an open source licence by its source code clause. This is how the CQs decide whether a licence is open source."
     },
     {
       "id": "AX14",
@@ -370,6 +383,7 @@
         "name": "licence"
       },
       "cq_numbers": [
+        "CQ26",
         "CQ58",
         "CQ59",
         "CQ60",
@@ -399,10 +413,12 @@
         }
       },
       "cq_numbers": [
+        "CQ26",
         "CQ58",
         "CQ60",
         "CQ65"
-      ]
+      ],
+      "missing_elements": "Already entailed by the equivalence above."
     },
     {
       "id": "AX16",
@@ -423,8 +439,10 @@
         "term_type": "Class"
       },
       "cq_numbers": [
-        "CQ08"
-      ]
+        "CQ08",
+        "CQ16"
+      ],
+      "missing_elements": "The task in CQ08 and CQ16 is a process reached through is software for."
     },
     {
       "id": "AX17",
@@ -446,7 +464,8 @@
       },
       "cq_numbers": [
         "CQ68"
-      ]
+      ],
+      "missing_elements": "Purchase cost is only the parent of Free and Not Free. No CQ needs it."
     },
     {
       "id": "AX18",
@@ -470,7 +489,8 @@
         "CQ58",
         "CQ60",
         "CQ65"
-      ]
+      ],
+      "missing_elements": "Source code available is the clause that makes a licence open source."
     },
     {
       "id": "AX19",
@@ -492,7 +512,8 @@
       },
       "cq_numbers": [
         "CQ06"
-      ]
+      ],
+      "missing_elements": "XML is the format named in CQ06."
     },
     {
       "id": "AX20",
@@ -514,7 +535,8 @@
       },
       "cq_numbers": [
         "CQ06"
-      ]
+      ],
+      "missing_elements": "CQ06 asks about an editing function. Nothing in it uses data format specification."
     },
     {
       "id": "AX21",
@@ -537,7 +559,8 @@
       "cq_numbers": [
         "CQ04",
         "CQ05"
-      ]
+      ],
+      "missing_elements": "algorithm is named in both CQs and is the range of implements."
     },
     {
       "id": "AX22",
@@ -559,7 +582,8 @@
       },
       "cq_numbers": [
         "CQ07"
-      ]
+      ],
+      "missing_elements": "application programming interface is one answer of CQ07."
     },
     {
       "id": "AX23",
@@ -581,7 +605,8 @@
       },
       "cq_numbers": [
         "CQ07"
-      ]
+      ],
+      "missing_elements": "has interface points to software interface. An API fits that range only through this axiom."
     },
     {
       "id": "AX24",
@@ -602,9 +627,13 @@
         "term_type": "Class"
       },
       "cq_numbers": [
+        "CQ17",
         "CQ22",
-        "CQ23"
-      ]
+        "CQ23",
+        "CQ26",
+        "CQ29"
+      ],
+      "missing_elements": "data format specification is the format these CQs ask about."
     },
     {
       "id": "AX25",
@@ -630,38 +659,8 @@
         "CQ22",
         "CQ23",
         "CQ29"
-      ]
-    },
-    {
-      "id": "AX26",
-      "term": "data item",
-      "term_label": "data item",
-      "term_type": "Class",
-      "axiom_type": "SubClassOf",
-      "subject": "data item",
-      "subject_label": "data item",
-      "object": "∃is encoded in.data format specification",
-      "dl": "data item ⊑ ∃is encoded in.data format specification",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "data item"
-      },
-      "rhs_struct": {
-        "expr_type": "ObjectSomeValuesFrom",
-        "property": "is encoded in",
-        "filler": {
-          "expr_type": "Class",
-          "name": "data format specification"
-        }
-      },
-      "cq_numbers": [
-        "CQ15",
-        "CQ16",
-        "CQ22",
-        "CQ23",
-        "CQ29",
-        "CQ84"
-      ]
+      ],
+      "missing_elements": "data item is the range of has specified data input and output."
     },
     {
       "id": "AX27",
@@ -683,7 +682,8 @@
       },
       "cq_numbers": [
         "CQ07"
-      ]
+      ],
+      "missing_elements": "desktop graphical user interface is one answer of CQ07."
     },
     {
       "id": "AX28",
@@ -705,7 +705,8 @@
       },
       "cq_numbers": [
         "CQ14"
-      ]
+      ],
+      "missing_elements": "file rendering is the task named in CQ14."
     },
     {
       "id": "AX29",
@@ -726,8 +727,10 @@
         "term_type": "Class"
       },
       "cq_numbers": [
+        "CQ06",
         "CQ55"
-      ]
+      ],
+      "missing_elements": "function is the range of has function."
     },
     {
       "id": "AX30",
@@ -748,8 +751,10 @@
         "term_type": "Class"
       },
       "cq_numbers": [
+        "CQ59",
         "CQ68"
-      ]
+      ],
+      "missing_elements": "licence is named in CQ59 and holds the clauses of CQ68."
     },
     {
       "id": "AX31",
@@ -770,8 +775,9 @@
         "term_type": "Class"
       },
       "cq_numbers": [
-        "CQ46"
-      ]
+        "CQ22"
+      ],
+      "missing_elements": "plain text file format is the txt format named in CQ22."
     },
     {
       "id": "AX32",
@@ -792,8 +798,9 @@
         "term_type": "Class"
       },
       "cq_numbers": [
-        "CQ46"
-      ]
+        "CQ84"
+      ],
+      "missing_elements": "programming language is the answer of CQ84."
     },
     {
       "id": "AX33",
@@ -812,985 +819,6 @@
       "rhs_struct": {
         "expr_type": "Declaration",
         "term_type": "Class"
-      },
-      "cq_numbers": [
-        "CQ73"
-      ]
-    },
-    {
-      "id": "AX34",
-      "term": "software developer organization",
-      "term_label": "software developer organization",
-      "term_type": "Class",
-      "axiom_type": "Declaration",
-      "subject": "software developer organization",
-      "subject_label": "software developer organization",
-      "object": "Class",
-      "dl": "Declaration: software developer organization (Class)",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "software developer organization"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "Class"
-      },
-      "cq_numbers": [
-        "CQ73"
-      ]
-    },
-    {
-      "id": "AX35",
-      "term": "software developer role",
-      "term_label": "software developer role",
-      "term_type": "Class",
-      "axiom_type": "Declaration",
-      "subject": "software developer role",
-      "subject_label": "software developer role",
-      "object": "Class",
-      "dl": "Declaration: software developer role (Class)",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "software developer role"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "Class"
-      },
-      "cq_numbers": [
-        "CQ30",
-        "CQ40"
-      ]
-    },
-    {
-      "id": "AX36",
-      "term": "software interface",
-      "term_label": "software interface",
-      "term_type": "Class",
-      "axiom_type": "Declaration",
-      "subject": "software interface",
-      "subject_label": "software interface",
-      "object": "Class",
-      "dl": "Declaration: software interface (Class)",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "software interface"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "Class"
-      },
-      "cq_numbers": [
-        "CQ30",
-        "CQ37",
-        "CQ40"
-      ]
-    },
-    {
-      "id": "AX37",
-      "term": "text editing",
-      "term_label": "text editing",
-      "term_type": "Class",
-      "axiom_type": "Declaration",
-      "subject": "text editing",
-      "subject_label": "text editing",
-      "object": "Class",
-      "dl": "Declaration: text editing (Class)",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "text editing"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "Class"
-      },
-      "cq_numbers": [
-        "CQ30",
-        "CQ40"
-      ]
-    },
-    {
-      "id": "AX38",
-      "term": "version number",
-      "term_label": "version number",
-      "term_type": "Class",
-      "axiom_type": "Declaration",
-      "subject": "version number",
-      "subject_label": "version number",
-      "object": "Class",
-      "dl": "Declaration: version number (Class)",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "version number"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "Class"
-      },
-      "cq_numbers": [
-        "CQ17",
-        "CQ22",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX39",
-      "term": "web service",
-      "term_label": "web service",
-      "term_type": "Class",
-      "axiom_type": "Declaration",
-      "subject": "web service",
-      "subject_label": "web service",
-      "object": "Class",
-      "dl": "Declaration: web service (Class)",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "web service"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "Class"
-      },
-      "cq_numbers": [
-        "CQ17",
-        "CQ22",
-        "CQ23",
-        "CQ84"
-      ]
-    },
-    {
-      "id": "AX40",
-      "term": "web service",
-      "term_label": "web service",
-      "term_type": "Class",
-      "axiom_type": "SubClassOf",
-      "subject": "web service",
-      "subject_label": "web service",
-      "object": "software interface",
-      "dl": "web service ⊑ software interface",
-      "lhs_struct": {
-        "expr_type": "Class",
-        "name": "web service"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "software interface"
-      },
-      "cq_numbers": [
-        "CQ17",
-        "CQ22",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX41",
-      "term": "has clause",
-      "term_label": "has clause",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has clause",
-      "subject_label": "has clause",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has clause (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has clause"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ17",
-        "CQ22",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX42",
-      "term": "has declared status",
-      "term_label": "has declared status",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has declared status",
-      "subject_label": "has declared status",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has declared status (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has declared status"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ06",
-        "CQ55"
-      ]
-    },
-    {
-      "id": "AX43",
-      "term": "has declared status",
-      "term_label": "has declared status",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "has declared status",
-      "subject_label": "has declared status",
-      "object": "Development status",
-      "dl": "⊤ ⊑ ∀has declared status.Development status",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has declared status"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "Development status"
-      },
-      "cq_numbers": [
-        "CQ55"
-      ]
-    },
-    {
-      "id": "AX44",
-      "term": "has format specification",
-      "term_label": "has format specification",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has format specification",
-      "subject_label": "has format specification",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has format specification (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has format specification"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ21",
-        "CQ29"
-      ]
-    },
-    {
-      "id": "AX45",
-      "term": "has format specification",
-      "term_label": "has format specification",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Domain",
-      "subject": "has format specification",
-      "subject_label": "has format specification",
-      "object": "data item",
-      "dl": "∃has format specification.⊤ ⊑ data item",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has format specification"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "data item"
-      },
-      "cq_numbers": [
-        "CQ07",
-        "CQ11"
-      ]
-    },
-    {
-      "id": "AX46",
-      "term": "has format specification",
-      "term_label": "has format specification",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "has format specification",
-      "subject_label": "has format specification",
-      "object": "data format specification",
-      "dl": "⊤ ⊑ ∀has format specification.data format specification",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has format specification"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "data format specification"
-      },
-      "cq_numbers": [
-        "CQ07",
-        "CQ11"
-      ]
-    },
-    {
-      "id": "AX47",
-      "term": "has format specification",
-      "term_label": "has format specification",
-      "term_type": "ObjectProperty",
-      "axiom_type": "SubPropertyOf",
-      "subject": "has format specification",
-      "subject_label": "has format specification",
-      "object": "is encoded in",
-      "dl": "has format specification ⊑ is encoded in",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has format specification"
-      },
-      "rhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is encoded in"
-      },
-      "cq_numbers": [
-        "CQ26",
-        "CQ58",
-        "CQ59",
-        "CQ60",
-        "CQ65",
-        "CQ68"
-      ]
-    },
-    {
-      "id": "AX48",
-      "term": "has function",
-      "term_label": "has function",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has function",
-      "subject_label": "has function",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has function (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has function"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ22",
-        "CQ23",
-        "CQ29"
-      ]
-    },
-    {
-      "id": "AX49",
-      "term": "has function",
-      "term_label": "has function",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "has function",
-      "subject_label": "has function",
-      "object": "function",
-      "dl": "⊤ ⊑ ∀has function.function",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has function"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "function"
-      },
-      "cq_numbers": [
-        "CQ45",
-        "CQ57"
-      ]
-    },
-    {
-      "id": "AX50",
-      "term": "has input",
-      "term_label": "has input",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has input",
-      "subject_label": "has input",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has input (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has input"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ45",
-        "CQ57"
-      ]
-    },
-    {
-      "id": "AX51",
-      "term": "has interface",
-      "term_label": "has interface",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has interface",
-      "subject_label": "has interface",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has interface (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has interface"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ16",
-        "CQ17",
-        "CQ19",
-        "CQ22",
-        "CQ23",
-        "CQ26",
-        "CQ29"
-      ]
-    },
-    {
-      "id": "AX52",
-      "term": "has interface",
-      "term_label": "has interface",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "has interface",
-      "subject_label": "has interface",
-      "object": "software interface",
-      "dl": "⊤ ⊑ ∀has interface.software interface",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has interface"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "software interface"
-      },
-      "cq_numbers": [
-        "CQ16",
-        "CQ17",
-        "CQ19",
-        "CQ22",
-        "CQ23",
-        "CQ26",
-        "CQ29"
-      ]
-    },
-    {
-      "id": "AX53",
-      "term": "has license",
-      "term_label": "has license",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has license",
-      "subject_label": "has license",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has license (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has license"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ14",
-        "CQ15",
-        "CQ17",
-        "CQ22",
-        "CQ23",
-        "CQ29"
-      ]
-    },
-    {
-      "id": "AX54",
-      "term": "has output",
-      "term_label": "has output",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has output",
-      "subject_label": "has output",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has output (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has output"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ14",
-        "CQ15",
-        "CQ17",
-        "CQ22",
-        "CQ23",
-        "CQ29"
-      ]
-    },
-    {
-      "id": "AX55",
-      "term": "has specified data input",
-      "term_label": "has specified data input",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has specified data input",
-      "subject_label": "has specified data input",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has specified data input (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has specified data input"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ30",
-        "CQ32",
-        "CQ40"
-      ]
-    },
-    {
-      "id": "AX56",
-      "term": "has specified data input",
-      "term_label": "has specified data input",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "has specified data input",
-      "subject_label": "has specified data input",
-      "object": "data item",
-      "dl": "⊤ ⊑ ∀has specified data input.data item",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has specified data input"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "data item"
-      },
-      "cq_numbers": [
-        "CQ30",
-        "CQ32",
-        "CQ40"
-      ]
-    },
-    {
-      "id": "AX57",
-      "term": "has specified data output",
-      "term_label": "has specified data output",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has specified data output",
-      "subject_label": "has specified data output",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has specified data output (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has specified data output"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ29",
-        "CQ54",
-        "CQ55",
-        "CQ57"
-      ]
-    },
-    {
-      "id": "AX58",
-      "term": "has specified data output",
-      "term_label": "has specified data output",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "has specified data output",
-      "subject_label": "has specified data output",
-      "object": "data item",
-      "dl": "⊤ ⊑ ∀has specified data output.data item",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has specified data output"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "data item"
-      },
-      "cq_numbers": [
-        "CQ29",
-        "CQ54",
-        "CQ55",
-        "CQ57"
-      ]
-    },
-    {
-      "id": "AX59",
-      "term": "has version",
-      "term_label": "has version",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "has version",
-      "subject_label": "has version",
-      "object": "ObjectProperty",
-      "dl": "Declaration: has version (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has version"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ30",
-        "CQ37",
-        "CQ73"
-      ]
-    },
-    {
-      "id": "AX60",
-      "term": "has version",
-      "term_label": "has version",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "has version",
-      "subject_label": "has version",
-      "object": "version number",
-      "dl": "⊤ ⊑ ∀has version.version number",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "has version"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "version number"
-      },
-      "cq_numbers": [
-        "CQ30",
-        "CQ37",
-        "CQ73"
-      ]
-    },
-    {
-      "id": "AX61",
-      "term": "implements",
-      "term_label": "implements",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "implements",
-      "subject_label": "implements",
-      "object": "ObjectProperty",
-      "dl": "Declaration: implements (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "implements"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ04",
-        "CQ05"
-      ]
-    },
-    {
-      "id": "AX62",
-      "term": "implements",
-      "term_label": "implements",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "implements",
-      "subject_label": "implements",
-      "object": "algorithm",
-      "dl": "⊤ ⊑ ∀implements.algorithm",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "implements"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "algorithm"
-      },
-      "cq_numbers": [
-        "CQ04",
-        "CQ05"
-      ]
-    },
-    {
-      "id": "AX63",
-      "term": "is alternative format of",
-      "term_label": "is alternative format of",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Characteristics",
-      "subject": "is alternative format of",
-      "subject_label": "is alternative format of",
-      "object": "Symmetric",
-      "dl": "Symmetric(is alternative format of)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is alternative format of"
-      },
-      "rhs_struct": {
-        "expr_type": "PropertyCharacteristic",
-        "name": "Symmetric"
-      },
-      "cq_numbers": [
-        "CQ22",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX64",
-      "term": "is alternative format of",
-      "term_label": "is alternative format of",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "is alternative format of",
-      "subject_label": "is alternative format of",
-      "object": "ObjectProperty",
-      "dl": "Declaration: is alternative format of (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is alternative format of"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ22",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX65",
-      "term": "is alternative format of",
-      "term_label": "is alternative format of",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Domain",
-      "subject": "is alternative format of",
-      "subject_label": "is alternative format of",
-      "object": "data format specification",
-      "dl": "∃is alternative format of.⊤ ⊑ data format specification",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is alternative format of"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "data format specification"
-      },
-      "cq_numbers": [
-        "CQ22",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX66",
-      "term": "is alternative format of",
-      "term_label": "is alternative format of",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "is alternative format of",
-      "subject_label": "is alternative format of",
-      "object": "data format specification",
-      "dl": "⊤ ⊑ ∀is alternative format of.data format specification",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is alternative format of"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "data format specification"
-      },
-      "cq_numbers": [
-        "CQ22",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX67",
-      "term": "is developed by",
-      "term_label": "is developed by",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "is developed by",
-      "subject_label": "is developed by",
-      "object": "ObjectProperty",
-      "dl": "Declaration: is developed by (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is developed by"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ36",
-        "CQ38",
-        "CQ58"
-      ]
-    },
-    {
-      "id": "AX68",
-      "term": "is encoded in",
-      "term_label": "is encoded in",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "is encoded in",
-      "subject_label": "is encoded in",
-      "object": "ObjectProperty",
-      "dl": "Declaration: is encoded in (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is encoded in"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ84"
-      ]
-    },
-    {
-      "id": "AX69",
-      "term": "is software for",
-      "term_label": "is software for",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "is software for",
-      "subject_label": "is software for",
-      "object": "ObjectProperty",
-      "dl": "Declaration: is software for (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is software for"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ06",
-        "CQ08",
-        "CQ14",
-        "CQ16"
-      ]
-    },
-    {
-      "id": "AX70",
-      "term": "is software for",
-      "term_label": "is software for",
-      "term_type": "ObjectProperty",
-      "axiom_type": "InverseOf",
-      "subject": "is software for",
-      "subject_label": "is software for",
-      "object": "uses software",
-      "dl": "is software for ≡ uses software⁻",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "is software for"
-      },
-      "rhs_struct": {
-        "expr_type": "InverseObjectProperty",
-        "name": "uses software"
-      },
-      "cq_numbers": [
-        "CQ06",
-        "CQ08",
-        "CQ14",
-        "CQ16",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX71",
-      "term": "uses platform",
-      "term_label": "uses platform",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "uses platform",
-      "subject_label": "uses platform",
-      "object": "ObjectProperty",
-      "dl": "Declaration: uses platform (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "uses platform"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ59",
-        "CQ68"
-      ]
-    },
-    {
-      "id": "AX72",
-      "term": "uses software",
-      "term_label": "uses software",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Declaration",
-      "subject": "uses software",
-      "subject_label": "uses software",
-      "object": "ObjectProperty",
-      "dl": "Declaration: uses software (ObjectProperty)",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "uses software"
-      },
-      "rhs_struct": {
-        "expr_type": "Declaration",
-        "term_type": "ObjectProperty"
-      },
-      "cq_numbers": [
-        "CQ22"
-      ]
-    },
-    {
-      "id": "AX73",
-      "term": "uses software",
-      "term_label": "uses software",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Domain",
-      "subject": "uses software",
-      "subject_label": "uses software",
-      "object": "⊤",
-      "dl": "∃uses software.⊤ ⊑ ⊤",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "uses software"
-      },
-      "rhs_struct": {
-        "expr_type": "Top"
-      },
-      "cq_numbers": [
-        "CQ84"
-      ]
-    },
-    {
-      "id": "AX74",
-      "term": "uses software",
-      "term_label": "uses software",
-      "term_type": "ObjectProperty",
-      "axiom_type": "InverseOf",
-      "subject": "uses software",
-      "subject_label": "uses software",
-      "object": "is software for",
-      "dl": "uses software ≡ is software for⁻",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "uses software"
-      },
-      "rhs_struct": {
-        "expr_type": "InverseObjectProperty",
-        "name": "is software for"
       },
       "cq_numbers": [
         "CQ04",
@@ -1828,29 +856,949 @@
         "CQ73",
         "CQ84",
         "CQ85"
-      ]
+      ],
+      "missing_elements": "software is named in every CQ."
     },
     {
-      "id": "AX75",
-      "term": "uses software",
-      "term_label": "uses software",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "uses software",
-      "subject_label": "uses software",
-      "object": "⊤",
-      "dl": "⊤ ⊑ ∀uses software.⊤",
+      "id": "AX34",
+      "term": "software developer organization",
+      "term_label": "software developer organization",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "software developer organization",
+      "subject_label": "software developer organization",
+      "object": "Class",
+      "dl": "Declaration: software developer organization (Class)",
       "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "uses software"
+        "expr_type": "Class",
+        "name": "software developer organization"
       },
       "rhs_struct": {
-        "expr_type": "Top"
+        "expr_type": "Declaration",
+        "term_type": "Class"
       },
       "cq_numbers": [
         "CQ36",
         "CQ38",
         "CQ58"
+      ],
+      "missing_elements": "software developer organization is the developer returned by is developed by."
+    },
+    {
+      "id": "AX35",
+      "term": "software developer role",
+      "term_label": "software developer role",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "software developer role",
+      "subject_label": "software developer role",
+      "object": "Class",
+      "dl": "Declaration: software developer role (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "software developer role"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ36",
+        "CQ38",
+        "CQ58"
+      ],
+      "missing_elements": "software developer role is the developer named in CQ38."
+    },
+    {
+      "id": "AX36",
+      "term": "software interface",
+      "term_label": "software interface",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "software interface",
+      "subject_label": "software interface",
+      "object": "Class",
+      "dl": "Declaration: software interface (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "software interface"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ07",
+        "CQ11"
+      ],
+      "missing_elements": "software interface is the range of has interface."
+    },
+    {
+      "id": "AX37",
+      "term": "text editing",
+      "term_label": "text editing",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "text editing",
+      "subject_label": "text editing",
+      "object": "Class",
+      "dl": "Declaration: text editing (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "text editing"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ06"
+      ],
+      "missing_elements": "text editing is the function named in CQ06."
+    },
+    {
+      "id": "AX38",
+      "term": "version number",
+      "term_label": "version number",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "version number",
+      "subject_label": "version number",
+      "object": "Class",
+      "dl": "Declaration: version number (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "version number"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ54",
+        "CQ55",
+        "CQ57"
+      ],
+      "missing_elements": "version number is the range of has version."
+    },
+    {
+      "id": "AX39",
+      "term": "web service",
+      "term_label": "web service",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "web service",
+      "subject_label": "web service",
+      "object": "Class",
+      "dl": "Declaration: web service (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "web service"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ11"
+      ],
+      "missing_elements": "web service is the interface named in CQ11."
+    },
+    {
+      "id": "AX40",
+      "term": "web service",
+      "term_label": "web service",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "web service",
+      "subject_label": "web service",
+      "object": "software interface",
+      "dl": "web service ⊑ software interface",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "web service"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "software interface"
+      },
+      "cq_numbers": [
+        "CQ11"
+      ],
+      "missing_elements": "has interface points to software interface. A web service fits that range only through this axiom."
+    },
+    {
+      "id": "AX41",
+      "term": "has clause",
+      "term_label": "has clause",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has clause",
+      "subject_label": "has clause",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has clause (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has clause"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ58",
+        "CQ60",
+        "CQ65",
+        "CQ68"
+      ],
+      "missing_elements": "has clause links a licence to its clauses."
+    },
+    {
+      "id": "AX42",
+      "term": "has declared status",
+      "term_label": "has declared status",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has declared status",
+      "subject_label": "has declared status",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has declared status (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has declared status"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ46"
+      ],
+      "missing_elements": "has declared status gives the development status."
+    },
+    {
+      "id": "AX43",
+      "term": "has declared status",
+      "term_label": "has declared status",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has declared status",
+      "subject_label": "has declared status",
+      "object": "Development status",
+      "dl": "⊤ ⊑ ∀has declared status.Development status",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has declared status"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Development status"
+      },
+      "cq_numbers": [
+        "CQ46"
+      ],
+      "missing_elements": "The value is a Development status."
+    },
+    {
+      "id": "AX44",
+      "term": "has format specification",
+      "term_label": "has format specification",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has format specification",
+      "subject_label": "has format specification",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has format specification (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has format specification"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ17",
+        "CQ22",
+        "CQ23"
+      ],
+      "missing_elements": "has format specification links a data item to its format."
+    },
+    {
+      "id": "AX45",
+      "term": "has format specification",
+      "term_label": "has format specification",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has format specification",
+      "subject_label": "has format specification",
+      "object": "data item",
+      "dl": "∃has format specification.⊤ ⊑ data item",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has format specification"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "data item"
+      },
+      "cq_numbers": [
+        "CQ17",
+        "CQ22",
+        "CQ23"
+      ],
+      "missing_elements": "Starts from the input or output data item."
+    },
+    {
+      "id": "AX46",
+      "term": "has format specification",
+      "term_label": "has format specification",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has format specification",
+      "subject_label": "has format specification",
+      "object": "data format specification",
+      "dl": "⊤ ⊑ ∀has format specification.data format specification",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has format specification"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "data format specification"
+      },
+      "cq_numbers": [
+        "CQ17",
+        "CQ22",
+        "CQ23"
+      ],
+      "missing_elements": "The value is a data format specification."
+    },
+    {
+      "id": "AX48",
+      "term": "has function",
+      "term_label": "has function",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has function",
+      "subject_label": "has function",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has function (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has function"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ55"
+      ],
+      "missing_elements": "has function links software to what it can do."
+    },
+    {
+      "id": "AX49",
+      "term": "has function",
+      "term_label": "has function",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has function",
+      "subject_label": "has function",
+      "object": "function",
+      "dl": "⊤ ⊑ ∀has function.function",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has function"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "function"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ55"
+      ],
+      "missing_elements": "The value is a function."
+    },
+    {
+      "id": "AX50",
+      "term": "has input",
+      "term_label": "has input",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has input",
+      "subject_label": "has input",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has input (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has input"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ21",
+        "CQ29"
+      ],
+      "missing_elements": "has input gives the valid input of the software."
+    },
+    {
+      "id": "AX51",
+      "term": "has interface",
+      "term_label": "has interface",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has interface",
+      "subject_label": "has interface",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has interface (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has interface"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ07",
+        "CQ11"
+      ],
+      "missing_elements": "has interface gives the type of interface."
+    },
+    {
+      "id": "AX52",
+      "term": "has interface",
+      "term_label": "has interface",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has interface",
+      "subject_label": "has interface",
+      "object": "software interface",
+      "dl": "⊤ ⊑ ∀has interface.software interface",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has interface"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "software interface"
+      },
+      "cq_numbers": [
+        "CQ07",
+        "CQ11"
+      ],
+      "missing_elements": "The value is a software interface."
+    },
+    {
+      "id": "AX53",
+      "term": "has license",
+      "term_label": "has license",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has license",
+      "subject_label": "has license",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has license (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has license"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ58",
+        "CQ59",
+        "CQ60",
+        "CQ65",
+        "CQ68"
+      ],
+      "missing_elements": "has license links software to its licence."
+    },
+    {
+      "id": "AX54",
+      "term": "has output",
+      "term_label": "has output",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has output",
+      "subject_label": "has output",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has output (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has output"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ22",
+        "CQ23",
+        "CQ29"
+      ],
+      "missing_elements": "has output gives the output of the software."
+    },
+    {
+      "id": "AX55",
+      "term": "has specified data input",
+      "term_label": "has specified data input",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has specified data input",
+      "subject_label": "has specified data input",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has specified data input (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has specified data input"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ16",
+        "CQ17",
+        "CQ19",
+        "CQ23",
+        "CQ26",
+        "CQ29"
+      ],
+      "missing_elements": "has specified data input gives the data the software reads."
+    },
+    {
+      "id": "AX56",
+      "term": "has specified data input",
+      "term_label": "has specified data input",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has specified data input",
+      "subject_label": "has specified data input",
+      "object": "data item",
+      "dl": "⊤ ⊑ ∀has specified data input.data item",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has specified data input"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "data item"
+      },
+      "cq_numbers": [
+        "CQ16",
+        "CQ17",
+        "CQ19",
+        "CQ23",
+        "CQ26",
+        "CQ29"
+      ],
+      "missing_elements": "The input is a data item. Its format is then read through has format specification."
+    },
+    {
+      "id": "AX57",
+      "term": "has specified data output",
+      "term_label": "has specified data output",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has specified data output",
+      "subject_label": "has specified data output",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has specified data output (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has specified data output"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ14",
+        "CQ15",
+        "CQ17",
+        "CQ22",
+        "CQ23",
+        "CQ29"
+      ],
+      "missing_elements": "has specified data output gives the data the software writes."
+    },
+    {
+      "id": "AX58",
+      "term": "has specified data output",
+      "term_label": "has specified data output",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has specified data output",
+      "subject_label": "has specified data output",
+      "object": "data item",
+      "dl": "⊤ ⊑ ∀has specified data output.data item",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has specified data output"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "data item"
+      },
+      "cq_numbers": [
+        "CQ14",
+        "CQ15",
+        "CQ17",
+        "CQ22",
+        "CQ23",
+        "CQ29"
+      ],
+      "missing_elements": "The output is a data item. Its format is then read through has format specification."
+    },
+    {
+      "id": "AX59",
+      "term": "has version",
+      "term_label": "has version",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has version",
+      "subject_label": "has version",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has version (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has version"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ54",
+        "CQ55",
+        "CQ57"
+      ],
+      "missing_elements": "has version gives the version of the software."
+    },
+    {
+      "id": "AX60",
+      "term": "has version",
+      "term_label": "has version",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has version",
+      "subject_label": "has version",
+      "object": "version number",
+      "dl": "⊤ ⊑ ∀has version.version number",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has version"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "version number"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ54",
+        "CQ55",
+        "CQ57"
+      ],
+      "missing_elements": "The value is a version number."
+    },
+    {
+      "id": "AX61",
+      "term": "implements",
+      "term_label": "implements",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "implements",
+      "subject_label": "implements",
+      "object": "ObjectProperty",
+      "dl": "Declaration: implements (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "implements"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ05"
+      ],
+      "missing_elements": "implements links software to its algorithm."
+    },
+    {
+      "id": "AX62",
+      "term": "implements",
+      "term_label": "implements",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "implements",
+      "subject_label": "implements",
+      "object": "algorithm",
+      "dl": "⊤ ⊑ ∀implements.algorithm",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "implements"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "algorithm"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ05"
+      ],
+      "missing_elements": "The value is an algorithm."
+    },
+    {
+      "id": "AX64",
+      "term": "is alternative format of",
+      "term_label": "is alternative format of",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is alternative format of",
+      "subject_label": "is alternative format of",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is alternative format of (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is alternative format of"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ22",
+        "CQ23"
+      ],
+      "missing_elements": "is alternative format of links the proprietary format to the open one."
+    },
+    {
+      "id": "AX65",
+      "term": "is alternative format of",
+      "term_label": "is alternative format of",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "is alternative format of",
+      "subject_label": "is alternative format of",
+      "object": "data format specification",
+      "dl": "∃is alternative format of.⊤ ⊑ data format specification",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is alternative format of"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "data format specification"
+      },
+      "cq_numbers": [
+        "CQ22",
+        "CQ23"
+      ],
+      "missing_elements": "Starts from the format of the data."
+    },
+    {
+      "id": "AX66",
+      "term": "is alternative format of",
+      "term_label": "is alternative format of",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is alternative format of",
+      "subject_label": "is alternative format of",
+      "object": "data format specification",
+      "dl": "⊤ ⊑ ∀is alternative format of.data format specification",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is alternative format of"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "data format specification"
+      },
+      "cq_numbers": [
+        "CQ22",
+        "CQ23"
+      ],
+      "missing_elements": "The alternative is a data format specification."
+    },
+    {
+      "id": "AX67",
+      "term": "is developed by",
+      "term_label": "is developed by",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is developed by",
+      "subject_label": "is developed by",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is developed by (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is developed by"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ36",
+        "CQ38",
+        "CQ58"
+      ],
+      "missing_elements": "is developed by gives the developer."
+    },
+    {
+      "id": "AX68",
+      "term": "is encoded in",
+      "term_label": "is encoded in",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is encoded in",
+      "subject_label": "is encoded in",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is encoded in (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is encoded in"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ84"
+      ],
+      "missing_elements": "is encoded in gives the programming language."
+    },
+    {
+      "id": "AX69",
+      "term": "is software for",
+      "term_label": "is software for",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is software for",
+      "subject_label": "is software for",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is software for (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is software for"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ08",
+        "CQ14",
+        "CQ16"
+      ],
+      "missing_elements": "is software for links software to the task it supports."
+    },
+    {
+      "id": "AX70",
+      "term": "is software for",
+      "term_label": "is software for",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "is software for",
+      "subject_label": "is software for",
+      "object": "uses software",
+      "dl": "is software for ≡ uses software⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is software for"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "uses software"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ23"
+      ],
+      "missing_elements": "uses software is explicit in these CQs. This axiom links it to is software for."
+    },
+    {
+      "id": "AX71",
+      "term": "uses platform",
+      "term_label": "uses platform",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "uses platform",
+      "subject_label": "uses platform",
+      "object": "ObjectProperty",
+      "dl": "Declaration: uses platform (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "uses platform"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ85"
+      ],
+      "missing_elements": "uses platform gives the platform."
+    },
+    {
+      "id": "AX72",
+      "term": "uses software",
+      "term_label": "uses software",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "uses software",
+      "subject_label": "uses software",
+      "object": "ObjectProperty",
+      "dl": "Declaration: uses software (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "uses software"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ23"
+      ],
+      "missing_elements": "uses software is explicit in these CQs."
+    },
+    {
+      "id": "AX74",
+      "term": "uses software",
+      "term_label": "uses software",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "uses software",
+      "subject_label": "uses software",
+      "object": "is software for",
+      "dl": "uses software ≡ is software for⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "uses software"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "is software for"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ23"
       ]
     },
     {
@@ -1872,10 +1820,9 @@
         "term_type": "DatatypeProperty"
       },
       "cq_numbers": [
-        "CQ36",
-        "CQ38",
-        "CQ58"
-      ]
+        "CQ73"
+      ],
+      "missing_elements": "has documentation gives where the documentation is."
     },
     {
       "id": "AX77",
@@ -1896,8 +1843,7 @@
         "name": "xsd:string"
       },
       "cq_numbers": [
-        "CQ07",
-        "CQ11"
+        "CQ73"
       ]
     },
     {
@@ -1919,8 +1865,10 @@
         "term_type": "DatatypeProperty"
       },
       "cq_numbers": [
-        "CQ06"
-      ]
+        "CQ30",
+        "CQ40"
+      ],
+      "missing_elements": "has download location gives where to get the software."
     },
     {
       "id": "AX79",
@@ -1941,7 +1889,8 @@
         "name": "xsd:string"
       },
       "cq_numbers": [
-        "CQ85"
+        "CQ30",
+        "CQ40"
       ]
     },
     {
@@ -1963,9 +1912,9 @@
         "name": "has website homepage"
       },
       "cq_numbers": [
-        "CQ06",
-        "CQ23"
-      ]
+        "CQ30"
+      ],
+      "missing_elements": "Both properties are explicit in CQ30. This axiom makes the download location a kind of homepage link."
     },
     {
       "id": "AX81",
@@ -1986,9 +1935,10 @@
         "term_type": "DatatypeProperty"
       },
       "cq_numbers": [
-        "CQ06",
-        "CQ23"
-      ]
+        "CQ45",
+        "CQ57"
+      ],
+      "missing_elements": "has release date gives when the software or version was released."
     },
     {
       "id": "AX82",
@@ -2009,8 +1959,8 @@
         "name": "xsd:string"
       },
       "cq_numbers": [
-        "CQ06",
-        "CQ23"
+        "CQ45",
+        "CQ57"
       ]
     },
     {
@@ -2032,30 +1982,11 @@
         "term_type": "DatatypeProperty"
       },
       "cq_numbers": [
-        "CQ06",
-        "CQ23"
-      ]
-    },
-    {
-      "id": "AX84",
-      "term": "has support URL",
-      "term_label": "has support URL",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "has support URL",
-      "subject_label": "has support URL",
-      "object": "⊤",
-      "dl": "has support URL maps-to ⊤",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "has support URL"
-      },
-      "rhs_struct": {
-        "expr_type": "Top"
-      },
-      "cq_numbers": [
-        "CQ55"
-      ]
+        "CQ30",
+        "CQ32",
+        "CQ40"
+      ],
+      "missing_elements": "has support URL gives where to get help or the software."
     },
     {
       "id": "AX85",
@@ -2076,29 +2007,11 @@
         "term_type": "DatatypeProperty"
       },
       "cq_numbers": [
-        "CQ11"
-      ]
-    },
-    {
-      "id": "AX86",
-      "term": "has website homepage",
-      "term_label": "has website homepage",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "has website homepage",
-      "subject_label": "has website homepage",
-      "object": "⊤",
-      "dl": "has website homepage maps-to ⊤",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "has website homepage"
-      },
-      "rhs_struct": {
-        "expr_type": "Top"
-      },
-      "cq_numbers": [
-        "CQ11"
-      ]
+        "CQ30",
+        "CQ37",
+        "CQ73"
+      ],
+      "missing_elements": "has website homepage gives the homepage."
     }
   ]
 }
