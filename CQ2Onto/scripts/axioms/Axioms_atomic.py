@@ -2,6 +2,8 @@ import sys
 import os
 import json
 import tempfile
+import datetime
+import decimal
 from collections import defaultdict
 from owlready2 import *
 import rdflib
@@ -85,13 +87,46 @@ def _get_prop_name(prop):
     return _to_display_name(_clean_name(getattr(prop, 'name', str(prop))))
 
 
+_PY_TO_XSD = {
+    int: "xsd:integer",
+    float: "xsd:float",
+    str: "xsd:string",
+    bool: "xsd:boolean",
+    datetime.datetime: "xsd:dateTime",
+    datetime.date: "xsd:date",
+    datetime.time: "xsd:time",
+    decimal.Decimal: "xsd:decimal",
+}
+
+
 def _python_type_to_xsd(t):
-    return {
-        int: "xsd:integer",
-        float: "xsd:float",
-        str: "xsd:string",
-        bool: "xsd:boolean",
-    }.get(t, _clean_name(str(t)))
+    # owlready2 turns XSD datatypes into Python types. The old fallback
+    # _clean_name(str(t)) turned <class 'datetime.datetime'> into "datetime'>".
+    if t in _PY_TO_XSD:
+        return _PY_TO_XSD[t]
+    tname = getattr(t, "__name__", None)
+    if tname == "normstr":
+        return "xsd:normalizedString"
+    if tname == "locstr":
+        return "rdf:langString"
+    return _clean_name(tname or str(t))
+
+
+_DATATYPE_NS = {
+    "http://www.w3.org/2001/XMLSchema#": "xsd:",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf:",
+    "http://www.w3.org/2000/01/rdf-schema#": "rdfs:",
+}
+
+
+def _datatype_curie(iri):
+    # Datatype IRI as declared in the file, e.g. xsd:positiveInteger
+    # (owlready2 alone would report it as int -> xsd:integer).
+    s = str(iri)
+    for ns, prefix in _DATATYPE_NS.items():
+        if s.startswith(ns):
+            return prefix + s[len(ns):]
+    return _to_display_name(_clean_name(s))
 
 
 def _is_literal_like(v):
@@ -364,6 +399,21 @@ def extract_tbox_axioms(ontology_path):
     global _LABEL_LOOKUP
     _LABEL_LOOKUP = dict(name_to_label)
 
+    # Terms are keyed by display name (the rdfs:label). Entities that share a label
+    # (e.g. class Body and property body both labelled "Body") would be merged into
+    # one term. For those, use the IRI fragment as the name instead.
+    frags_by_label = defaultdict(list)
+    for frag, lab in name_to_label.items():
+        frags_by_label[lab].append(frag)
+    label_collisions = {lab: sorted(frags) for lab, frags in frags_by_label.items()
+                        if len(frags) > 1}
+    for frags in label_collisions.values():
+        for frag in frags:
+            _LABEL_LOOKUP[frag] = frag
+    if label_collisions:
+        print(f"  [warn] {len(label_collisions)} label(s) shared by several entities; "
+              f"using IRI fragments for them: {label_collisions}")
+
     terms = defaultdict(lambda: {"term_type": None, "axioms": []})
     stats = defaultdict(int)
     seen_disjoint_classes = set()
@@ -371,10 +421,16 @@ def extract_tbox_axioms(ontology_path):
     seen_subclass = set()
     seen_subprop = set()
 
+    type_conflicts = set()
+
     def add_axiom(term_name, term_type, axiom_type, dl_str, subject, object_,
                   lhs_struct=None, rhs_struct=None):
         if terms[term_name]["term_type"] is None:
             terms[term_name]["term_type"] = term_type
+        elif terms[term_name]["term_type"] != term_type:
+            # still two kinds of entity under one name (e.g. a property declared
+            # both as object and as datatype property); report it
+            type_conflicts.add((term_name, terms[term_name]["term_type"], term_type))
         terms[term_name]["axioms"].append({
             "axiom_type": axiom_type,
             "dl": dl_str,
@@ -689,7 +745,28 @@ def extract_tbox_axioms(ontology_path):
                 rhs_struct=expr_to_struct(d),
             )
 
+        # XSD ranges are read from the RDF graph so the declared datatype is kept
+        # (owlready2 maps xsd:decimal/xsd:double to float, xsd:positiveInteger to int,
+        # and xsd:dateTime to a Python type that used to come out as "datetime'>").
+        # Other ranges (rdfs:Literal, classes, data ranges) keep the original path.
+        named_ranges = [o for o in rdf_graph.objects(URIRef(prop.iri), RDFS.range)
+                        if isinstance(o, URIRef)
+                        and str(o).startswith("http://www.w3.org/2001/XMLSchema#")]
+        for o in named_ranges:
+            dt = _datatype_curie(o)
+            add_axiom(
+                term_name=name,
+                term_type="DatatypeProperty",
+                axiom_type="Range",
+                dl_str=f"{name} maps-to {dt}",
+                subject=name,
+                object_=dt,
+                lhs_struct={"expr_type": "DatatypeProperty", "name": name},
+                rhs_struct={"expr_type": "Datatype", "name": dt},
+            )
         for r in prop.range:
+            if named_ranges and isinstance(r, type) and not isinstance(r, ThingClass):
+                continue  # the XSD datatype was already added from the RDF graph above
             dl = to_dl(r)
             add_axiom(
                 term_name=name,
@@ -742,6 +819,10 @@ def extract_tbox_axioms(ontology_path):
                     rhs_struct={"expr_type": prop_type, "name": b},
                 )
 
+    if type_conflicts:
+        print(f"  [warn] {len(type_conflicts)} name(s) carry axioms of two term types "
+              f"(first type kept): {sorted(type_conflicts)}")
+
     if temp_to_cleanup and os.path.exists(temp_to_cleanup):
         try:
             os.unlink(temp_to_cleanup)
@@ -772,63 +853,20 @@ def _sanitize_for_excel(value):
     return out
 
 
-def save_excel(terms, excel_path, name_to_label=None):
-    from openpyxl import Workbook
-    name_to_label = name_to_label or {}
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "Atomic TBox Axioms"
-
-    headers = ["Term", "TermLabel", "TermType", "AxiomType",
-               "Subject", "SubjectLabel", "Object", "DL"]
-    ws.append(headers)
-
-    header_fill = PatternFill("solid", fgColor="4472C4")
-    for cell in ws[1]:
-        cell.font = Font(bold=True, color="FFFFFF", size=11)
-        cell.fill = header_fill
-        cell.alignment = Alignment(horizontal="center", vertical="center")
-
-    def _label_for(name):
-        return name_to_label.get(name, name)
-
-    for term_name, entry in sorted(terms.items()):
-        for ax in entry["axioms"]:
-            subj = ax.get("subject", "")
-            ws.append([
-                _sanitize_for_excel(term_name),
-                _sanitize_for_excel(_label_for(term_name)),
-                _sanitize_for_excel(entry["term_type"] or ""),
-                _sanitize_for_excel(ax["axiom_type"]),
-                _sanitize_for_excel(subj),
-                _sanitize_for_excel(_label_for(subj)),
-                _sanitize_for_excel(ax.get("object", "")),
-                _sanitize_for_excel(ax.get("dl", "")),
-            ])
-
-    for col in ws.columns:
-        max_len = max((len(str(cell.value or "")) for cell in col), default=10)
-        ws.column_dimensions[col[0].column_letter].width = min(max_len + 4, 80)
-
-    ws.freeze_panes = "A2"
-    wb.save(excel_path)
-    print(f"Excel saved to: {excel_path}")
+_TYPE_ORDER = {"Class": 0, "ObjectProperty": 1, "DatatypeProperty": 2}
 
 
-
-def save_json(terms, stats, json_path, name_to_label=None):
+def build_flat_axioms(terms, name_to_label=None):
+    """One sorted, numbered list of axioms. Both save_json and save_excel use it,
+    so AXk in the JSON and row k of the Excel are always the same axiom."""
     name_to_label = name_to_label or {}
 
     def _label_for(name):
         return name_to_label.get(name, name)
-
-    type_order = {"Class": 0, "ObjectProperty": 1, "DatatypeProperty": 2}
 
     flat = []
-    items = sorted(
-        terms.items(),
-        key=lambda kv: (type_order.get(kv[1]["term_type"], 99), kv[0]),
-    )
+    items = sorted(terms.items(),
+                   key=lambda kv: (_TYPE_ORDER.get(kv[1]["term_type"], 99), kv[0]))
     for term_name, entry in items:
         for ax in entry["axioms"]:
             subj = ax.get("subject", "")
@@ -844,22 +882,55 @@ def save_json(terms, stats, json_path, name_to_label=None):
                 "lhs_struct": ax.get("lhs_struct"),
                 "rhs_struct": ax.get("rhs_struct"),
             })
+    flat.sort(key=lambda a: (_TYPE_ORDER.get(a["term_type"], 99), a["term"], a["axiom_type"]))
+    return [{"id": f"AX{i}", **ax} for i, ax in enumerate(flat, start=1)]
 
 
-    flat.sort(key=lambda a: (
-        type_order.get(a["term_type"], 99),
-        a["term"],
-        a["axiom_type"],
-    ))
+def save_excel(terms, excel_path, name_to_label=None):
+    from openpyxl import Workbook
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Atomic TBox Axioms"
 
-    for i, ax in enumerate(flat, start=1):
-        ax_with_id = {"id": f"AX{i}"}
-        ax_with_id.update(ax)
-        flat[i - 1] = ax_with_id
+    # Same column positions as the review sheet that build_gold_from_review.py reads
+    # (DL in column 7, then Candidate CQs, Missing elements, Keep left empty to fill in).
+    headers = ["ID", "Term", "TermType", "AxiomType", "Subject", "Object", "DL",
+               "Candidate CQs", "Missing elements", "Keep", "TermLabel", "SubjectLabel"]
+    ws.append(headers)
 
+    header_fill = PatternFill("solid", fgColor="4472C4")
+    for cell in ws[1]:
+        cell.font = Font(bold=True, color="FFFFFF", size=11)
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="center", vertical="center")
+
+    for ax in build_flat_axioms(terms, name_to_label):
+        ws.append([
+            ax["id"],
+            _sanitize_for_excel(ax["term"]),
+            _sanitize_for_excel(ax["term_type"] or ""),
+            _sanitize_for_excel(ax["axiom_type"]),
+            _sanitize_for_excel(ax["subject"]),
+            _sanitize_for_excel(ax["object"]),
+            _sanitize_for_excel(ax["dl"]),
+            "", "", "",
+            _sanitize_for_excel(ax["term_label"]),
+            _sanitize_for_excel(ax["subject_label"]),
+        ])
+
+    for col in ws.columns:
+        max_len = max((len(str(cell.value or "")) for cell in col), default=10)
+        ws.column_dimensions[col[0].column_letter].width = min(max_len + 4, 80)
+
+    ws.freeze_panes = "A2"
+    wb.save(excel_path)
+    print(f"Excel saved to: {excel_path}")
+
+
+def save_json(terms, stats, json_path, name_to_label=None):
     output = {
         "stats": dict(stats),
-        "axioms": flat,
+        "axioms": build_flat_axioms(terms, name_to_label),
     }
     if name_to_label:
         output["name_to_label"] = dict(name_to_label)
