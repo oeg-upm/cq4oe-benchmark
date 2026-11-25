@@ -1,0 +1,3121 @@
+{
+  "cq_definitions": [],
+  "name_to_label": {
+    "Achievement": "Achievement",
+    "Character": "Character",
+    "Collection": "Collection",
+    "Completion": "Completion",
+    "Curiosity": "Curiosity",
+    "Fandom": "Fandom",
+    "Feature": "Feature",
+    "Game": "Game",
+    "GameProduct": "game product",
+    "Genre": "Genre",
+    "HardMode": "hard mode",
+    "InAppPurchaseEvent": "in-app purchase event",
+    "Item": "Item",
+    "Leaderboard": "Leaderboard",
+    "Loyalty": "Loyalty",
+    "Luck": "Luck",
+    "Paragon": "Paragon",
+    "Player": "Player",
+    "PlayingArea": "playing area",
+    "Session": "Session",
+    "SpecialPlayStyle": "special play style",
+    "Tutorial": "Tutorial",
+    "Veteran": "Veteran",
+    "Virtuosity": "Virtuosity",
+    "Thing": "Thing",
+    "hasAchievement": "has achievement",
+    "hasCharacter": "has character",
+    "hasFeature": "has feature",
+    "hasGameGenre": "has game genre",
+    "hasItem": "has item",
+    "hasLeaderboard": "has leaderboard",
+    "hasPlayingArea": "has playing area",
+    "involvesCharacter": "involves character",
+    "involvesPlayer": "involves player",
+    "isAchievementInGame": "is achievement in game",
+    "isCharacterInGame": "is character in game",
+    "isCharacterInSession": "is character in session",
+    "isEventAssociatedToPlayer": "is event associated to player",
+    "isFriendWithPlayer": "is friend with player",
+    "isLeaderboardInGame": "is leaderboard in game",
+    "isPlayerInSession": "is player in session",
+    "isSessionInGame": "is session in game",
+    "livesIn": "lives in",
+    "ownsAchievement": "owns achievement",
+    "ownsCharacter": "owns character",
+    "ownsItem": "owns item",
+    "playsGame": "plays game",
+    "purchasesGameOffering": "purchases game offering",
+    "endTime": "end time",
+    "eventTime": "event time",
+    "releaseDate": "release date",
+    "startTime": "start time",
+    "username": "username"
+  },
+  "gold_axioms": [
+    {
+      "id": "AX1",
+      "term": "Achievement",
+      "term_label": "Achievement",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Achievement",
+      "subject_label": "Achievement",
+      "object": "Class",
+      "dl": "Declaration: Achievement (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ05",
+        "CQ07",
+        "CQ08",
+        "CQ10",
+        "CQ11",
+        "CQ24",
+        "CQ27",
+        "CQ35"
+      ],
+      "missing_elements": "Achievement is named in these CQs."
+    },
+    {
+      "id": "AX2",
+      "term": "Character",
+      "term_label": "Character",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Character",
+      "subject_label": "Character",
+      "object": "Class",
+      "dl": "Declaration: Character (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Character"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "Character holds the items of a player and links them to a game."
+    },
+    {
+      "id": "AX3",
+      "term": "Collection",
+      "term_label": "Collection",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Collection",
+      "subject_label": "Collection",
+      "object": "Class",
+      "dl": "Declaration: Collection (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Collection"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Collection is one of the achievement types."
+    },
+    {
+      "id": "AX4",
+      "term": "Collection",
+      "term_label": "Collection",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Collection",
+      "subject_label": "Collection",
+      "object": "Achievement",
+      "dl": "Collection ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Collection"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Collection a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX5",
+      "term": "Completion",
+      "term_label": "Completion",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Completion",
+      "subject_label": "Completion",
+      "object": "Class",
+      "dl": "Declaration: Completion (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Completion"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Completion is one of the achievement types."
+    },
+    {
+      "id": "AX6",
+      "term": "Completion",
+      "term_label": "Completion",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Completion",
+      "subject_label": "Completion",
+      "object": "Achievement",
+      "dl": "Completion ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Completion"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Completion a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX7",
+      "term": "Curiosity",
+      "term_label": "Curiosity",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Curiosity",
+      "subject_label": "Curiosity",
+      "object": "Class",
+      "dl": "Declaration: Curiosity (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Curiosity"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Curiosity is one of the achievement types."
+    },
+    {
+      "id": "AX8",
+      "term": "Curiosity",
+      "term_label": "Curiosity",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Curiosity",
+      "subject_label": "Curiosity",
+      "object": "Achievement",
+      "dl": "Curiosity ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Curiosity"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Curiosity a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX9",
+      "term": "Fandom",
+      "term_label": "Fandom",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Fandom",
+      "subject_label": "Fandom",
+      "object": "Class",
+      "dl": "Declaration: Fandom (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Fandom"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Fandom is one of the achievement types."
+    },
+    {
+      "id": "AX10",
+      "term": "Fandom",
+      "term_label": "Fandom",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Fandom",
+      "subject_label": "Fandom",
+      "object": "Achievement",
+      "dl": "Fandom ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Fandom"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Fandom a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX11",
+      "term": "Feature",
+      "term_label": "Feature",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Feature",
+      "subject_label": "Feature",
+      "object": "Class",
+      "dl": "Declaration: Feature (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Feature"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ19"
+      ],
+      "missing_elements": "Feature is the ability asked by CQ19."
+    },
+    {
+      "id": "AX12",
+      "term": "Game",
+      "term_label": "Game",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Game",
+      "subject_label": "Game",
+      "object": "Class",
+      "dl": "Declaration: Game (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ08",
+        "CQ09",
+        "CQ10",
+        "CQ11",
+        "CQ12",
+        "CQ13",
+        "CQ15",
+        "CQ17",
+        "CQ22",
+        "CQ25",
+        "CQ29",
+        "CQ35",
+        "CQ52",
+        "CQ55",
+        "CQ64",
+        "CQNew1"
+      ],
+      "missing_elements": "Game is named in these CQs."
+    },
+    {
+      "id": "AX13",
+      "term": "Genre",
+      "term_label": "Genre",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Genre",
+      "subject_label": "Genre",
+      "object": "Class",
+      "dl": "Declaration: Genre (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Genre"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ12",
+        "CQ17"
+      ],
+      "missing_elements": "Genre is named in both CQs."
+    },
+    {
+      "id": "AX14",
+      "term": "Item",
+      "term_label": "Item",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Item",
+      "subject_label": "Item",
+      "object": "Class",
+      "dl": "Declaration: Item (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Item"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ13",
+        "CQ19",
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "Item is named in these CQs or is the equipment of CQ52."
+    },
+    {
+      "id": "AX15",
+      "term": "Leaderboard",
+      "term_label": "Leaderboard",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Leaderboard",
+      "subject_label": "Leaderboard",
+      "object": "Class",
+      "dl": "Declaration: Leaderboard (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Leaderboard"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "Leaderboard is where the best kill count is kept."
+    },
+    {
+      "id": "AX16",
+      "term": "Loyalty",
+      "term_label": "Loyalty",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Loyalty",
+      "subject_label": "Loyalty",
+      "object": "Class",
+      "dl": "Declaration: Loyalty (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Loyalty"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Loyalty is one of the achievement types."
+    },
+    {
+      "id": "AX17",
+      "term": "Loyalty",
+      "term_label": "Loyalty",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Loyalty",
+      "subject_label": "Loyalty",
+      "object": "Achievement",
+      "dl": "Loyalty ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Loyalty"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Loyalty a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX18",
+      "term": "Luck",
+      "term_label": "Luck",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Luck",
+      "subject_label": "Luck",
+      "object": "Class",
+      "dl": "Declaration: Luck (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Luck"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Luck is one of the achievement types."
+    },
+    {
+      "id": "AX19",
+      "term": "Luck",
+      "term_label": "Luck",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Luck",
+      "subject_label": "Luck",
+      "object": "Achievement",
+      "dl": "Luck ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Luck"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Luck a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX20",
+      "term": "Paragon",
+      "term_label": "Paragon",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Paragon",
+      "subject_label": "Paragon",
+      "object": "Class",
+      "dl": "Declaration: Paragon (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Paragon"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Paragon is one of the achievement types."
+    },
+    {
+      "id": "AX21",
+      "term": "Paragon",
+      "term_label": "Paragon",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Paragon",
+      "subject_label": "Paragon",
+      "object": "Achievement",
+      "dl": "Paragon ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Paragon"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Paragon a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX22",
+      "term": "Player",
+      "term_label": "Player",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Player",
+      "subject_label": "Player",
+      "object": "Class",
+      "dl": "Declaration: Player (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ01",
+        "CQ02",
+        "CQ03",
+        "CQ05",
+        "CQ07",
+        "CQ22",
+        "CQ24",
+        "CQ25",
+        "CQ26",
+        "CQ27",
+        "CQ29",
+        "CQ35",
+        "CQ52",
+        "CQ55",
+        "CQ56",
+        "CQ57",
+        "CQ63",
+        "CQ64",
+        "CQ65",
+        "CQ66"
+      ],
+      "missing_elements": "Player is named in these CQs."
+    },
+    {
+      "id": "AX23",
+      "term": "Session",
+      "term_label": "Session",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Session",
+      "subject_label": "Session",
+      "object": "Class",
+      "dl": "Declaration: Session (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Session"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "Session gives the play time of a player in a game."
+    },
+    {
+      "id": "AX25",
+      "term": "Tutorial",
+      "term_label": "Tutorial",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Tutorial",
+      "subject_label": "Tutorial",
+      "object": "Class",
+      "dl": "Declaration: Tutorial (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Tutorial"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Tutorial is one of the achievement types."
+    },
+    {
+      "id": "AX26",
+      "term": "Tutorial",
+      "term_label": "Tutorial",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Tutorial",
+      "subject_label": "Tutorial",
+      "object": "Achievement",
+      "dl": "Tutorial ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Tutorial"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Tutorial a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX27",
+      "term": "Veteran",
+      "term_label": "Veteran",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Veteran",
+      "subject_label": "Veteran",
+      "object": "Class",
+      "dl": "Declaration: Veteran (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Veteran"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Veteran is one of the achievement types."
+    },
+    {
+      "id": "AX28",
+      "term": "Veteran",
+      "term_label": "Veteran",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Veteran",
+      "subject_label": "Veteran",
+      "object": "Achievement",
+      "dl": "Veteran ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Veteran"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Veteran a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX29",
+      "term": "Virtuosity",
+      "term_label": "Virtuosity",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Virtuosity",
+      "subject_label": "Virtuosity",
+      "object": "Class",
+      "dl": "Declaration: Virtuosity (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Virtuosity"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Virtuosity is one of the achievement types."
+    },
+    {
+      "id": "AX30",
+      "term": "Virtuosity",
+      "term_label": "Virtuosity",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Virtuosity",
+      "subject_label": "Virtuosity",
+      "object": "Achievement",
+      "dl": "Virtuosity ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Virtuosity"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes Virtuosity a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX31",
+      "term": "game product",
+      "term_label": "game product",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "game product",
+      "subject_label": "game product",
+      "object": "Class",
+      "dl": "Declaration: game product (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "game product"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ56"
+      ],
+      "missing_elements": "game product is the range of purchases game offering."
+    },
+    {
+      "id": "AX33",
+      "term": "hard mode",
+      "term_label": "hard mode",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "hard mode",
+      "subject_label": "hard mode",
+      "object": "Class",
+      "dl": "Declaration: hard mode (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "hard mode"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "hard mode is one of the achievement types."
+    },
+    {
+      "id": "AX34",
+      "term": "hard mode",
+      "term_label": "hard mode",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "hard mode",
+      "subject_label": "hard mode",
+      "object": "Achievement",
+      "dl": "hard mode ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "hard mode"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes hard mode a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX35",
+      "term": "in-app purchase event",
+      "term_label": "in-app purchase event",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "in-app purchase event",
+      "subject_label": "in-app purchase event",
+      "object": "Class",
+      "dl": "Declaration: in-app purchase event (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "in-app purchase event"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ56",
+        "CQ57",
+        "CQ62",
+        "CQ63",
+        "CQ64",
+        "CQ65",
+        "CQ66"
+      ],
+      "missing_elements": "in-app purchase event is the purchase these CQs count or filter on."
+    },
+    {
+      "id": "AX36",
+      "term": "playing area",
+      "term_label": "playing area",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "playing area",
+      "subject_label": "playing area",
+      "object": "Class",
+      "dl": "Declaration: playing area (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "playing area"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQNew1"
+      ],
+      "missing_elements": "playing area is the answer of New CQ1."
+    },
+    {
+      "id": "AX37",
+      "term": "special play style",
+      "term_label": "special play style",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "special play style",
+      "subject_label": "special play style",
+      "object": "Class",
+      "dl": "Declaration: special play style (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "special play style"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "special play style is one of the achievement types."
+    },
+    {
+      "id": "AX38",
+      "term": "special play style",
+      "term_label": "special play style",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "special play style",
+      "subject_label": "special play style",
+      "object": "Achievement",
+      "dl": "special play style ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "special play style"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ11",
+        "CQ27"
+      ],
+      "missing_elements": "Makes special play style a kind of Achievement. The types of achievements are these subclasses."
+    },
+    {
+      "id": "AX39",
+      "term": "has achievement",
+      "term_label": "has achievement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has achievement",
+      "subject_label": "has achievement",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has achievement (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQ11",
+        "CQ35"
+      ],
+      "missing_elements": "has achievement links a game to its achievements."
+    },
+    {
+      "id": "AX40",
+      "term": "has achievement",
+      "term_label": "has achievement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has achievement",
+      "subject_label": "has achievement",
+      "object": "Game",
+      "dl": "∃has achievement.⊤ ⊑ Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQ11",
+        "CQ35"
+      ],
+      "missing_elements": "Starts from the given game."
+    },
+    {
+      "id": "AX41",
+      "term": "has achievement",
+      "term_label": "has achievement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "has achievement",
+      "subject_label": "has achievement",
+      "object": "is achievement in game",
+      "dl": "has achievement ≡ is achievement in game⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "is achievement in game"
+      },
+      "cq_numbers": [
+        "CQ35"
+      ],
+      "missing_elements": "is achievement in game is annotated in CQ35. This axiom ties it to has achievement."
+    },
+    {
+      "id": "AX42",
+      "term": "has achievement",
+      "term_label": "has achievement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has achievement",
+      "subject_label": "has achievement",
+      "object": "Achievement",
+      "dl": "⊤ ⊑ ∀has achievement.Achievement",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQ11",
+        "CQ35"
+      ],
+      "missing_elements": "The value is an Achievement."
+    },
+    {
+      "id": "AX43",
+      "term": "has character",
+      "term_label": "has character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has character",
+      "subject_label": "has character",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has character (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has character"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ55"
+      ],
+      "missing_elements": "has character is annotated in CQ55 to find the games of a character."
+    },
+    {
+      "id": "AX44",
+      "term": "has character",
+      "term_label": "has character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has character",
+      "subject_label": "has character",
+      "object": "Game",
+      "dl": "∃has character.⊤ ⊑ Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has character"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ55"
+      ],
+      "missing_elements": "The subject is a Game."
+    },
+    {
+      "id": "AX45",
+      "term": "has character",
+      "term_label": "has character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "has character",
+      "subject_label": "has character",
+      "object": "is character in game",
+      "dl": "has character ≡ is character in game⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has character"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "is character in game"
+      },
+      "cq_numbers": [
+        "CQ55"
+      ],
+      "missing_elements": "CQ55 annotates both has character and is character in game. This axiom ties them together."
+    },
+    {
+      "id": "AX46",
+      "term": "has character",
+      "term_label": "has character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has character",
+      "subject_label": "has character",
+      "object": "Character",
+      "dl": "⊤ ⊑ ∀has character.Character",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has character"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Character"
+      },
+      "cq_numbers": [
+        "CQ55"
+      ],
+      "missing_elements": "The value is a Character."
+    },
+    {
+      "id": "AX47",
+      "term": "has feature",
+      "term_label": "has feature",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has feature",
+      "subject_label": "has feature",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has feature (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has feature"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ19"
+      ],
+      "missing_elements": "has feature links an item to its abilities."
+    },
+    {
+      "id": "AX48",
+      "term": "has feature",
+      "term_label": "has feature",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has feature",
+      "subject_label": "has feature",
+      "object": "Item",
+      "dl": "∃has feature.⊤ ⊑ Item",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has feature"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Item"
+      },
+      "cq_numbers": [
+        "CQ19"
+      ],
+      "missing_elements": "Starts from the given item."
+    },
+    {
+      "id": "AX49",
+      "term": "has feature",
+      "term_label": "has feature",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has feature",
+      "subject_label": "has feature",
+      "object": "Feature",
+      "dl": "⊤ ⊑ ∀has feature.Feature",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has feature"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Feature"
+      },
+      "cq_numbers": [
+        "CQ19"
+      ],
+      "missing_elements": "The ability is a Feature."
+    },
+    {
+      "id": "AX50",
+      "term": "has game genre",
+      "term_label": "has game genre",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has game genre",
+      "subject_label": "has game genre",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has game genre (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has game genre"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ12",
+        "CQ17"
+      ],
+      "missing_elements": "has game genre links a game to its genre."
+    },
+    {
+      "id": "AX51",
+      "term": "has game genre",
+      "term_label": "has game genre",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has game genre",
+      "subject_label": "has game genre",
+      "object": "Game",
+      "dl": "∃has game genre.⊤ ⊑ Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has game genre"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ12",
+        "CQ17"
+      ],
+      "missing_elements": "The subject is a Game."
+    },
+    {
+      "id": "AX52",
+      "term": "has game genre",
+      "term_label": "has game genre",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has game genre",
+      "subject_label": "has game genre",
+      "object": "Genre",
+      "dl": "⊤ ⊑ ∀has game genre.Genre",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has game genre"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Genre"
+      },
+      "cq_numbers": [
+        "CQ12",
+        "CQ17"
+      ],
+      "missing_elements": "The value is a Genre."
+    },
+    {
+      "id": "AX53",
+      "term": "has item",
+      "term_label": "has item",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has item",
+      "subject_label": "has item",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has item (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has item"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ13",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "has item links a game to the items that exist in it."
+    },
+    {
+      "id": "AX54",
+      "term": "has item",
+      "term_label": "has item",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has item",
+      "subject_label": "has item",
+      "object": "Game",
+      "dl": "∃has item.⊤ ⊑ Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has item"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ13",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "The subject is a Game. CQ55 returns these games."
+    },
+    {
+      "id": "AX55",
+      "term": "has item",
+      "term_label": "has item",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has item",
+      "subject_label": "has item",
+      "object": "Item",
+      "dl": "⊤ ⊑ ∀has item.Item",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has item"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Item"
+      },
+      "cq_numbers": [
+        "CQ13",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "The value is an Item."
+    },
+    {
+      "id": "AX56",
+      "term": "has leaderboard",
+      "term_label": "has leaderboard",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has leaderboard",
+      "subject_label": "has leaderboard",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has leaderboard (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has leaderboard"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "has leaderboard links the game to its leaderboard."
+    },
+    {
+      "id": "AX57",
+      "term": "has leaderboard",
+      "term_label": "has leaderboard",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has leaderboard",
+      "subject_label": "has leaderboard",
+      "object": "Game",
+      "dl": "∃has leaderboard.⊤ ⊑ Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has leaderboard"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "Starts from the given game."
+    },
+    {
+      "id": "AX58",
+      "term": "has leaderboard",
+      "term_label": "has leaderboard",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "has leaderboard",
+      "subject_label": "has leaderboard",
+      "object": "is leaderboard in game",
+      "dl": "has leaderboard ≡ is leaderboard in game⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has leaderboard"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "is leaderboard in game"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "CQ22 annotates both has leaderboard and is leaderboard in game. This axiom ties them together."
+    },
+    {
+      "id": "AX59",
+      "term": "has leaderboard",
+      "term_label": "has leaderboard",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has leaderboard",
+      "subject_label": "has leaderboard",
+      "object": "Leaderboard",
+      "dl": "⊤ ⊑ ∀has leaderboard.Leaderboard",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has leaderboard"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Leaderboard"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "The value is a Leaderboard."
+    },
+    {
+      "id": "AX60",
+      "term": "has playing area",
+      "term_label": "has playing area",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has playing area",
+      "subject_label": "has playing area",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has playing area (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has playing area"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQNew1"
+      ],
+      "missing_elements": "has playing area links a game to its playing areas."
+    },
+    {
+      "id": "AX61",
+      "term": "has playing area",
+      "term_label": "has playing area",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has playing area",
+      "subject_label": "has playing area",
+      "object": "Game",
+      "dl": "∃has playing area.⊤ ⊑ Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has playing area"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQNew1"
+      ],
+      "missing_elements": "Starts from the given game."
+    },
+    {
+      "id": "AX62",
+      "term": "has playing area",
+      "term_label": "has playing area",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has playing area",
+      "subject_label": "has playing area",
+      "object": "playing area",
+      "dl": "⊤ ⊑ ∀has playing area.playing area",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has playing area"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "playing area"
+      },
+      "cq_numbers": [
+        "CQNew1"
+      ],
+      "missing_elements": "The value is a playing area."
+    },
+    {
+      "id": "AX63",
+      "term": "involves character",
+      "term_label": "involves character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "involves character",
+      "subject_label": "involves character",
+      "object": "ObjectProperty",
+      "dl": "Declaration: involves character (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "involves character"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52"
+      ]
+    },
+    {
+      "id": "AX65",
+      "term": "involves character",
+      "term_label": "involves character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "involves character",
+      "subject_label": "involves character",
+      "object": "is character in session",
+      "dl": "involves character ≡ is character in session⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "involves character"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "is character in session"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52"
+      ]
+    },
+    {
+      "id": "AX67",
+      "term": "involves player",
+      "term_label": "involves player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "involves player",
+      "subject_label": "involves player",
+      "object": "ObjectProperty",
+      "dl": "Declaration: involves player (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "involves player"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ64"
+      ],
+      "missing_elements": "involves player links a session to its player. CQ64 needs it. CQ26 reaches items through characters."
+    },
+    {
+      "id": "AX68",
+      "term": "involves player",
+      "term_label": "involves player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "involves player",
+      "subject_label": "involves player",
+      "object": "Session",
+      "dl": "∃involves player.⊤ ⊑ Session",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "involves player"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Session"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ64"
+      ],
+      "missing_elements": "The subject is a Session."
+    },
+    {
+      "id": "AX69",
+      "term": "involves player",
+      "term_label": "involves player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "involves player",
+      "subject_label": "involves player",
+      "object": "is player in session",
+      "dl": "involves player ≡ is player in session⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "involves player"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "is player in session"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "Both CQs annotate is player in session. This axiom ties it to involves player."
+    },
+    {
+      "id": "AX70",
+      "term": "involves player",
+      "term_label": "involves player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "involves player",
+      "subject_label": "involves player",
+      "object": "Player",
+      "dl": "⊤ ⊑ ∀involves player.Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "involves player"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ64"
+      ],
+      "missing_elements": "The value is a Player."
+    },
+    {
+      "id": "AX71",
+      "term": "is achievement in game",
+      "term_label": "is achievement in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is achievement in game",
+      "subject_label": "is achievement in game",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is achievement in game (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is achievement in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ35"
+      ],
+      "missing_elements": "is achievement in game is annotated in CQ35."
+    },
+    {
+      "id": "AX72",
+      "term": "is achievement in game",
+      "term_label": "is achievement in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "is achievement in game",
+      "subject_label": "is achievement in game",
+      "object": "Achievement",
+      "dl": "∃is achievement in game.⊤ ⊑ Achievement",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is achievement in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ35"
+      ],
+      "missing_elements": "The subject is an Achievement."
+    },
+    {
+      "id": "AX73",
+      "term": "is achievement in game",
+      "term_label": "is achievement in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "is achievement in game",
+      "subject_label": "is achievement in game",
+      "object": "has achievement",
+      "dl": "is achievement in game ≡ has achievement⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is achievement in game"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "has achievement"
+      },
+      "cq_numbers": [
+        "CQ35"
+      ]
+    },
+    {
+      "id": "AX74",
+      "term": "is achievement in game",
+      "term_label": "is achievement in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is achievement in game",
+      "subject_label": "is achievement in game",
+      "object": "Game",
+      "dl": "⊤ ⊑ ∀is achievement in game.Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is achievement in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ35"
+      ],
+      "missing_elements": "The value is a Game."
+    },
+    {
+      "id": "AX75",
+      "term": "is character in game",
+      "term_label": "is character in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is character in game",
+      "subject_label": "is character in game",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is character in game (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is character in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "is character in game links a character to the game it is in."
+    },
+    {
+      "id": "AX76",
+      "term": "is character in game",
+      "term_label": "is character in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "is character in game",
+      "subject_label": "is character in game",
+      "object": "Character",
+      "dl": "∃is character in game.⊤ ⊑ Character",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is character in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Character"
+      },
+      "cq_numbers": [
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "Starts from the character of the player."
+    },
+    {
+      "id": "AX77",
+      "term": "is character in game",
+      "term_label": "is character in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "is character in game",
+      "subject_label": "is character in game",
+      "object": "has character",
+      "dl": "is character in game ≡ has character⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is character in game"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "has character"
+      },
+      "cq_numbers": [
+        "CQ52",
+        "CQ55"
+      ]
+    },
+    {
+      "id": "AX78",
+      "term": "is character in game",
+      "term_label": "is character in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is character in game",
+      "subject_label": "is character in game",
+      "object": "Game",
+      "dl": "⊤ ⊑ ∀is character in game.Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is character in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "The value is a Game."
+    },
+    {
+      "id": "AX79",
+      "term": "is character in session",
+      "term_label": "is character in session",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is character in session",
+      "subject_label": "is character in session",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is character in session (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is character in session"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52"
+      ]
+    },
+    {
+      "id": "AX81",
+      "term": "is character in session",
+      "term_label": "is character in session",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "is character in session",
+      "subject_label": "is character in session",
+      "object": "involves character",
+      "dl": "is character in session ≡ involves character⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is character in session"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "involves character"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52"
+      ]
+    },
+    {
+      "id": "AX83",
+      "term": "is event associated to player",
+      "term_label": "is event associated to player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is event associated to player",
+      "subject_label": "is event associated to player",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is event associated to player (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is event associated to player"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ56",
+        "CQ57",
+        "CQ63",
+        "CQ64",
+        "CQ65",
+        "CQ66"
+      ],
+      "missing_elements": "is event associated to player links a purchase to the player who made it."
+    },
+    {
+      "id": "AX84",
+      "term": "is event associated to player",
+      "term_label": "is event associated to player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is event associated to player",
+      "subject_label": "is event associated to player",
+      "object": "Player",
+      "dl": "⊤ ⊑ ∀is event associated to player.Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is event associated to player"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ56",
+        "CQ57",
+        "CQ63",
+        "CQ64",
+        "CQ65",
+        "CQ66"
+      ],
+      "missing_elements": "The value is a Player."
+    },
+    {
+      "id": "AX85",
+      "term": "is friend with player",
+      "term_label": "is friend with player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Characteristics",
+      "subject": "is friend with player",
+      "subject_label": "is friend with player",
+      "object": "Symmetric",
+      "dl": "Symmetric(is friend with player)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is friend with player"
+      },
+      "rhs_struct": {
+        "expr_type": "PropertyCharacteristic",
+        "name": "Symmetric"
+      },
+      "cq_numbers": [
+        "CQ02",
+        "CQ03",
+        "CQ05",
+        "CQ07"
+      ]
+    },
+    {
+      "id": "AX86",
+      "term": "is friend with player",
+      "term_label": "is friend with player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is friend with player",
+      "subject_label": "is friend with player",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is friend with player (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is friend with player"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ02",
+        "CQ03",
+        "CQ05",
+        "CQ07"
+      ],
+      "missing_elements": "is friend with player links a player to the friends."
+    },
+    {
+      "id": "AX87",
+      "term": "is friend with player",
+      "term_label": "is friend with player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "is friend with player",
+      "subject_label": "is friend with player",
+      "object": "Player",
+      "dl": "∃is friend with player.⊤ ⊑ Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is friend with player"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ02",
+        "CQ03",
+        "CQ05",
+        "CQ07"
+      ],
+      "missing_elements": "Starts from the given player."
+    },
+    {
+      "id": "AX88",
+      "term": "is friend with player",
+      "term_label": "is friend with player",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is friend with player",
+      "subject_label": "is friend with player",
+      "object": "Player",
+      "dl": "⊤ ⊑ ∀is friend with player.Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is friend with player"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ02",
+        "CQ03",
+        "CQ05",
+        "CQ07"
+      ],
+      "missing_elements": "The friend is a Player."
+    },
+    {
+      "id": "AX89",
+      "term": "is leaderboard in game",
+      "term_label": "is leaderboard in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is leaderboard in game",
+      "subject_label": "is leaderboard in game",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is leaderboard in game (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is leaderboard in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "is leaderboard in game is annotated in CQ22."
+    },
+    {
+      "id": "AX90",
+      "term": "is leaderboard in game",
+      "term_label": "is leaderboard in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "is leaderboard in game",
+      "subject_label": "is leaderboard in game",
+      "object": "Leaderboard",
+      "dl": "∃is leaderboard in game.⊤ ⊑ Leaderboard",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is leaderboard in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Leaderboard"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "The subject is a Leaderboard."
+    },
+    {
+      "id": "AX91",
+      "term": "is leaderboard in game",
+      "term_label": "is leaderboard in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "is leaderboard in game",
+      "subject_label": "is leaderboard in game",
+      "object": "has leaderboard",
+      "dl": "is leaderboard in game ≡ has leaderboard⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is leaderboard in game"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "has leaderboard"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ]
+    },
+    {
+      "id": "AX92",
+      "term": "is leaderboard in game",
+      "term_label": "is leaderboard in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is leaderboard in game",
+      "subject_label": "is leaderboard in game",
+      "object": "Game",
+      "dl": "⊤ ⊑ ∀is leaderboard in game.Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is leaderboard in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ22"
+      ],
+      "missing_elements": "The value is a Game."
+    },
+    {
+      "id": "AX93",
+      "term": "is player in session",
+      "term_label": "is player in session",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is player in session",
+      "subject_label": "is player in session",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is player in session (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is player in session"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "is player in session links a player to the sessions played."
+    },
+    {
+      "id": "AX94",
+      "term": "is player in session",
+      "term_label": "is player in session",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "is player in session",
+      "subject_label": "is player in session",
+      "object": "Player",
+      "dl": "∃is player in session.⊤ ⊑ Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is player in session"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "Starts from the given player."
+    },
+    {
+      "id": "AX95",
+      "term": "is player in session",
+      "term_label": "is player in session",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "is player in session",
+      "subject_label": "is player in session",
+      "object": "involves player",
+      "dl": "is player in session ≡ involves player⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is player in session"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "involves player"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ64"
+      ]
+    },
+    {
+      "id": "AX96",
+      "term": "is player in session",
+      "term_label": "is player in session",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is player in session",
+      "subject_label": "is player in session",
+      "object": "Session",
+      "dl": "⊤ ⊑ ∀is player in session.Session",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is player in session"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Session"
+      },
+      "cq_numbers": [
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "The value is a Session."
+    },
+    {
+      "id": "AX97",
+      "term": "is session in game",
+      "term_label": "is session in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is session in game",
+      "subject_label": "is session in game",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is session in game (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is session in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "is session in game links a session to its game."
+    },
+    {
+      "id": "AX98",
+      "term": "is session in game",
+      "term_label": "is session in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "is session in game",
+      "subject_label": "is session in game",
+      "object": "Session",
+      "dl": "∃is session in game.⊤ ⊑ Session",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is session in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Session"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "The subject is a Session."
+    },
+    {
+      "id": "AX99",
+      "term": "is session in game",
+      "term_label": "is session in game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "is session in game",
+      "subject_label": "is session in game",
+      "object": "Game",
+      "dl": "⊤ ⊑ ∀is session in game.Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is session in game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "The value is a Game."
+    },
+    {
+      "id": "AX100",
+      "term": "lives in",
+      "term_label": "lives in",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "lives in",
+      "subject_label": "lives in",
+      "object": "ObjectProperty",
+      "dl": "Declaration: lives in (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "lives in"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ63",
+        "CQ65",
+        "CQ66"
+      ],
+      "missing_elements": "lives in gives where a player lives."
+    },
+    {
+      "id": "AX101",
+      "term": "lives in",
+      "term_label": "lives in",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "lives in",
+      "subject_label": "lives in",
+      "object": "Player",
+      "dl": "∃lives in.⊤ ⊑ Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "lives in"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ63",
+        "CQ65",
+        "CQ66"
+      ],
+      "missing_elements": "Starts from the player."
+    },
+    {
+      "id": "AX102",
+      "term": "owns achievement",
+      "term_label": "owns achievement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "owns achievement",
+      "subject_label": "owns achievement",
+      "object": "ObjectProperty",
+      "dl": "Declaration: owns achievement (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ05",
+        "CQ07",
+        "CQ24",
+        "CQ27",
+        "CQ35"
+      ],
+      "missing_elements": "owns achievement links a player to the achievements obtained."
+    },
+    {
+      "id": "AX103",
+      "term": "owns achievement",
+      "term_label": "owns achievement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "owns achievement",
+      "subject_label": "owns achievement",
+      "object": "Player",
+      "dl": "∃owns achievement.⊤ ⊑ Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ05",
+        "CQ07",
+        "CQ24",
+        "CQ27",
+        "CQ35"
+      ],
+      "missing_elements": "Starts from the player or the friend."
+    },
+    {
+      "id": "AX104",
+      "term": "owns achievement",
+      "term_label": "owns achievement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "owns achievement",
+      "subject_label": "owns achievement",
+      "object": "Achievement",
+      "dl": "⊤ ⊑ ∀owns achievement.Achievement",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns achievement"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Achievement"
+      },
+      "cq_numbers": [
+        "CQ05",
+        "CQ07",
+        "CQ24",
+        "CQ27",
+        "CQ35"
+      ],
+      "missing_elements": "The value is an Achievement."
+    },
+    {
+      "id": "AX105",
+      "term": "owns character",
+      "term_label": "owns character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "owns character",
+      "subject_label": "owns character",
+      "object": "ObjectProperty",
+      "dl": "Declaration: owns character (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns character"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "owns character links a player to the characters that hold the items."
+    },
+    {
+      "id": "AX106",
+      "term": "owns character",
+      "term_label": "owns character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "owns character",
+      "subject_label": "owns character",
+      "object": "Player",
+      "dl": "∃owns character.⊤ ⊑ Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns character"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "Starts from the given player."
+    },
+    {
+      "id": "AX107",
+      "term": "owns character",
+      "term_label": "owns character",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "owns character",
+      "subject_label": "owns character",
+      "object": "Character",
+      "dl": "⊤ ⊑ ∀owns character.Character",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns character"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Character"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "The value is a Character."
+    },
+    {
+      "id": "AX108",
+      "term": "owns item",
+      "term_label": "owns item",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "owns item",
+      "subject_label": "owns item",
+      "object": "ObjectProperty",
+      "dl": "Declaration: owns item (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns item"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "owns item gives the items of a character."
+    },
+    {
+      "id": "AX109",
+      "term": "owns item",
+      "term_label": "owns item",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "owns item",
+      "subject_label": "owns item",
+      "object": "Character",
+      "dl": "∃owns item.⊤ ⊑ Character",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns item"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Character"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "Items belong to characters not to players. The path goes through owns character."
+    },
+    {
+      "id": "AX110",
+      "term": "owns item",
+      "term_label": "owns item",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "owns item",
+      "subject_label": "owns item",
+      "object": "Item",
+      "dl": "⊤ ⊑ ∀owns item.Item",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "owns item"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Item"
+      },
+      "cq_numbers": [
+        "CQ26",
+        "CQ52",
+        "CQ55"
+      ],
+      "missing_elements": "The value is an Item."
+    },
+    {
+      "id": "AX111",
+      "term": "plays game",
+      "term_label": "plays game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "plays game",
+      "subject_label": "plays game",
+      "object": "ObjectProperty",
+      "dl": "Declaration: plays game (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "plays game"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ25",
+        "CQ29",
+        "CQ35",
+        "CQ55"
+      ],
+      "missing_elements": "plays game links a player to the games played."
+    },
+    {
+      "id": "AX112",
+      "term": "plays game",
+      "term_label": "plays game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "plays game",
+      "subject_label": "plays game",
+      "object": "Player",
+      "dl": "∃plays game.⊤ ⊑ Player",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "plays game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ25",
+        "CQ29",
+        "CQ35",
+        "CQ55"
+      ],
+      "missing_elements": "Starts from the player."
+    },
+    {
+      "id": "AX113",
+      "term": "plays game",
+      "term_label": "plays game",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "plays game",
+      "subject_label": "plays game",
+      "object": "Game",
+      "dl": "⊤ ⊑ ∀plays game.Game",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "plays game"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ25",
+        "CQ29",
+        "CQ35",
+        "CQ55"
+      ],
+      "missing_elements": "The value is a Game."
+    },
+    {
+      "id": "AX114",
+      "term": "purchases game offering",
+      "term_label": "purchases game offering",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "purchases game offering",
+      "subject_label": "purchases game offering",
+      "object": "ObjectProperty",
+      "dl": "Declaration: purchases game offering (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "purchases game offering"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ56"
+      ],
+      "missing_elements": "purchases game offering is explicit in CQ56."
+    },
+    {
+      "id": "AX115",
+      "term": "purchases game offering",
+      "term_label": "purchases game offering",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "purchases game offering",
+      "subject_label": "purchases game offering",
+      "object": "in-app purchase event",
+      "dl": "∃purchases game offering.⊤ ⊑ in-app purchase event",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "purchases game offering"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "in-app purchase event"
+      },
+      "cq_numbers": [
+        "CQ56"
+      ],
+      "missing_elements": "The subject is an in-app purchase event."
+    },
+    {
+      "id": "AX116",
+      "term": "purchases game offering",
+      "term_label": "purchases game offering",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "purchases game offering",
+      "subject_label": "purchases game offering",
+      "object": "game product",
+      "dl": "⊤ ⊑ ∀purchases game offering.game product",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "purchases game offering"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "game product"
+      },
+      "cq_numbers": [
+        "CQ56"
+      ],
+      "missing_elements": "The value is a game product."
+    },
+    {
+      "id": "AX117",
+      "term": "end time",
+      "term_label": "end time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "end time",
+      "subject_label": "end time",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: end time (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "end time"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "end time gives when a session ended."
+    },
+    {
+      "id": "AX118",
+      "term": "end time",
+      "term_label": "end time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Domain",
+      "subject": "end time",
+      "subject_label": "end time",
+      "object": "Session",
+      "dl": "∃end time.⊤ ⊑ Session",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "end time"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Session"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "The subject is a Session."
+    },
+    {
+      "id": "AX119",
+      "term": "end time",
+      "term_label": "end time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Range",
+      "subject": "end time",
+      "subject_label": "end time",
+      "object": "xsd:dateTime",
+      "dl": "end time maps-to xsd:dateTime",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "end time"
+      },
+      "rhs_struct": {
+        "expr_type": "Datatype",
+        "name": "xsd:dateTime"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ]
+    },
+    {
+      "id": "AX120",
+      "term": "event time",
+      "term_label": "event time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "event time",
+      "subject_label": "event time",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: event time (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "event time"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ57",
+        "CQ62",
+        "CQ64"
+      ],
+      "missing_elements": "event time gives when a purchase was made."
+    },
+    {
+      "id": "AX121",
+      "term": "event time",
+      "term_label": "event time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Range",
+      "subject": "event time",
+      "subject_label": "event time",
+      "object": "xsd:dateTime",
+      "dl": "event time maps-to xsd:dateTime",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "event time"
+      },
+      "rhs_struct": {
+        "expr_type": "Datatype",
+        "name": "xsd:dateTime"
+      },
+      "cq_numbers": [
+        "CQ57",
+        "CQ62",
+        "CQ64"
+      ]
+    },
+    {
+      "id": "AX122",
+      "term": "release date",
+      "term_label": "release date",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "release date",
+      "subject_label": "release date",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: release date (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "release date"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ15"
+      ],
+      "missing_elements": "release date gives the release date."
+    },
+    {
+      "id": "AX123",
+      "term": "release date",
+      "term_label": "release date",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Domain",
+      "subject": "release date",
+      "subject_label": "release date",
+      "object": "Game",
+      "dl": "∃release date.⊤ ⊑ Game",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "release date"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Game"
+      },
+      "cq_numbers": [
+        "CQ15"
+      ],
+      "missing_elements": "The subject is a Game."
+    },
+    {
+      "id": "AX124",
+      "term": "release date",
+      "term_label": "release date",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Range",
+      "subject": "release date",
+      "subject_label": "release date",
+      "object": "xsd:dateTime",
+      "dl": "release date maps-to xsd:dateTime",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "release date"
+      },
+      "rhs_struct": {
+        "expr_type": "Datatype",
+        "name": "xsd:dateTime"
+      },
+      "cq_numbers": [
+        "CQ15"
+      ]
+    },
+    {
+      "id": "AX125",
+      "term": "start time",
+      "term_label": "start time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "start time",
+      "subject_label": "start time",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: start time (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "start time"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "start time gives when a session started."
+    },
+    {
+      "id": "AX126",
+      "term": "start time",
+      "term_label": "start time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Domain",
+      "subject": "start time",
+      "subject_label": "start time",
+      "object": "Session",
+      "dl": "∃start time.⊤ ⊑ Session",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "start time"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Session"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ],
+      "missing_elements": "The subject is a Session."
+    },
+    {
+      "id": "AX127",
+      "term": "start time",
+      "term_label": "start time",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Range",
+      "subject": "start time",
+      "subject_label": "start time",
+      "object": "xsd:dateTime",
+      "dl": "start time maps-to xsd:dateTime",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "start time"
+      },
+      "rhs_struct": {
+        "expr_type": "Datatype",
+        "name": "xsd:dateTime"
+      },
+      "cq_numbers": [
+        "CQ09",
+        "CQ29",
+        "CQ64"
+      ]
+    },
+    {
+      "id": "AX128",
+      "term": "username",
+      "term_label": "username",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "username",
+      "subject_label": "username",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: username (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "username"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ01"
+      ],
+      "missing_elements": "username gives the username."
+    },
+    {
+      "id": "AX129",
+      "term": "username",
+      "term_label": "username",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Domain",
+      "subject": "username",
+      "subject_label": "username",
+      "object": "Player",
+      "dl": "∃username.⊤ ⊑ Player",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "username"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Player"
+      },
+      "cq_numbers": [
+        "CQ01"
+      ],
+      "missing_elements": "The subject is a Player."
+    },
+    {
+      "id": "AX130",
+      "term": "username",
+      "term_label": "username",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Range",
+      "subject": "username",
+      "subject_label": "username",
+      "object": "xsd:string",
+      "dl": "username maps-to xsd:string",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "username"
+      },
+      "rhs_struct": {
+        "expr_type": "Datatype",
+        "name": "xsd:string"
+      },
+      "cq_numbers": [
+        "CQ01"
+      ]
+    }
+  ]
+}
