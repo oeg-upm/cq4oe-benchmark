@@ -1,0 +1,2500 @@
+{
+  "cq_definitions": [],
+  "name_to_label": {
+    "AssetCollection": "AssetCollection",
+    "Action": "Action",
+    "Asset": "Asset",
+    "AssetScope": "AssetScope",
+    "ConflictTerm": "ConflictTerm",
+    "Constraint": "Constraint",
+    "Duty": "Duty",
+    "LeftOperand": "LeftOperand",
+    "LogicalConstraint": "LogicalConstraint",
+    "Operator": "Operator",
+    "Permission": "Permission",
+    "Policy": "Policy",
+    "Prohibition": "Prohibition",
+    "Rule": "Rule",
+    "Party": "Party",
+    "action": "action",
+    "and": "and",
+    "andSequence": "andSequence",
+    "assignee": "assignee",
+    "assigner": "assigner",
+    "conflict": "conflict",
+    "consequence": "consequence",
+    "constraint": "constraint",
+    "duty": "duty",
+    "failure": "failure",
+    "function": "function",
+    "hasPolicy": "hasPolicy",
+    "implies": "implies",
+    "inheritFrom": "inheritFrom",
+    "inheritRelation": "inheritRelation",
+    "leftOperand": "leftOperand",
+    "obligation": "obligation",
+    "operand": "operand",
+    "operator": "operator",
+    "or": "or",
+    "partOf": "partOf",
+    "permission": "permission",
+    "prohibition": "prohibition",
+    "relation": "relation",
+    "remedy": "remedy",
+    "scope": "scope",
+    "xone": "Only One",
+    "target": "target"
+  },
+  "gold_axioms": [
+    {
+      "id": "AX1",
+      "term": "Action",
+      "term_label": "Action",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Action",
+      "subject_label": "Action",
+      "object": "Class",
+      "dl": "Declaration: Action (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Action"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ24"
+      ],
+      "missing_elements": "Action is named in both CQs and is the range of action."
+    },
+    {
+      "id": "AX2",
+      "term": "Asset",
+      "term_label": "Asset",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Asset",
+      "subject_label": "Asset",
+      "object": "Class",
+      "dl": "Declaration: Asset (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Asset"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ30",
+        "CQNew1"
+      ],
+      "missing_elements": "Asset is named in both CQs."
+    },
+    {
+      "id": "AX3",
+      "term": "AssetCollection",
+      "term_label": "AssetCollection",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "AssetCollection",
+      "subject_label": "AssetCollection",
+      "object": "Class",
+      "dl": "Declaration: AssetCollection (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "AssetCollection"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "AssetCollection is the container that CQ30 asks about."
+    },
+    {
+      "id": "AX4",
+      "term": "AssetCollection",
+      "term_label": "AssetCollection",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "AssetCollection",
+      "subject_label": "AssetCollection",
+      "object": "Asset",
+      "dl": "AssetCollection ⊑ Asset",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "AssetCollection"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Asset"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "target points to Asset. This axiom lets a collection be the target of a policy."
+    },
+    {
+      "id": "AX6",
+      "term": "ConflictTerm",
+      "term_label": "ConflictTerm",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "ConflictTerm",
+      "subject_label": "ConflictTerm",
+      "object": "Class",
+      "dl": "Declaration: ConflictTerm (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "ConflictTerm"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQNew2"
+      ],
+      "missing_elements": "ConflictTerm is the strategy returned by conflict."
+    },
+    {
+      "id": "AX7",
+      "term": "Constraint",
+      "term_label": "Constraint",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Constraint",
+      "subject_label": "Constraint",
+      "object": "Class",
+      "dl": "Declaration: Constraint (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Constraint"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ13",
+        "CQ14",
+        "CQ21",
+        "CQ24",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "Constraint is named in these CQs or lies on their path from a rule to an operator."
+    },
+    {
+      "id": "AX8",
+      "term": "Duty",
+      "term_label": "Duty",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Duty",
+      "subject_label": "Duty",
+      "object": "Class",
+      "dl": "Declaration: Duty (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Duty"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10",
+        "CQ21",
+        "CQ31",
+        "CQNew3",
+        "CQNew5"
+      ],
+      "missing_elements": "Duty is named in these CQs or is their answer."
+    },
+    {
+      "id": "AX11",
+      "term": "Duty",
+      "term_label": "Duty",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Duty",
+      "subject_label": "Duty",
+      "object": "Rule",
+      "dl": "Duty ⊑ Rule",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Duty"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Rule"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10",
+        "CQ21"
+      ],
+      "missing_elements": "assignee, assigner, function and constraint have the domain Policy or Rule. Duty reaches them only through this axiom."
+    },
+    {
+      "id": "AX12",
+      "term": "LeftOperand",
+      "term_label": "LeftOperand",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "LeftOperand",
+      "subject_label": "LeftOperand",
+      "object": "Class",
+      "dl": "Declaration: LeftOperand (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "LeftOperand"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ26"
+      ],
+      "missing_elements": "LeftOperand is the range of leftOperand used to build a condition."
+    },
+    {
+      "id": "AX13",
+      "term": "LogicalConstraint",
+      "term_label": "LogicalConstraint",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "LogicalConstraint",
+      "subject_label": "LogicalConstraint",
+      "object": "Class",
+      "dl": "Declaration: LogicalConstraint (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "LogicalConstraint"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ13",
+        "CQ14",
+        "CQ26"
+      ],
+      "missing_elements": "LogicalConstraint is the subject of and, or, xone and operand."
+    },
+    {
+      "id": "AX14",
+      "term": "Operator",
+      "term_label": "Operator",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Operator",
+      "subject_label": "Operator",
+      "object": "Class",
+      "dl": "Declaration: Operator (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Operator"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ21",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "Operator is the range of operator."
+    },
+    {
+      "id": "AX15",
+      "term": "Party",
+      "term_label": "Party",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Party",
+      "subject_label": "Party",
+      "object": "Class",
+      "dl": "Declaration: Party (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Party"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "Party is the range of assignee, assigner and function."
+    },
+    {
+      "id": "AX16",
+      "term": "Permission",
+      "term_label": "Permission",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Permission",
+      "subject_label": "Permission",
+      "object": "Class",
+      "dl": "Declaration: Permission (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Permission"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ06",
+        "CQ10",
+        "CQ24"
+      ],
+      "missing_elements": "Permission is named in these CQs."
+    },
+    {
+      "id": "AX18",
+      "term": "Permission",
+      "term_label": "Permission",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Permission",
+      "subject_label": "Permission",
+      "object": "Rule",
+      "dl": "Permission ⊑ Rule",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Permission"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Rule"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ06",
+        "CQ10",
+        "CQ24"
+      ],
+      "missing_elements": "action, assignee, assigner, function and constraint have the domain Policy or Rule. Permission reaches them only through this axiom."
+    },
+    {
+      "id": "AX19",
+      "term": "Policy",
+      "term_label": "Policy",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Policy",
+      "subject_label": "Policy",
+      "object": "Class",
+      "dl": "Declaration: Policy (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ08",
+        "CQ10",
+        "CQ21",
+        "CQ24",
+        "CQ33",
+        "CQNew1",
+        "CQNew2",
+        "CQNew6"
+      ],
+      "missing_elements": "Policy is named in these CQs or is the domain of permission, prohibition or obligation that they use."
+    },
+    {
+      "id": "AX20",
+      "term": "Prohibition",
+      "term_label": "Prohibition",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Prohibition",
+      "subject_label": "Prohibition",
+      "object": "Class",
+      "dl": "Declaration: Prohibition (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Prohibition"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQNew3",
+        "CQNew6"
+      ],
+      "missing_elements": "Prohibition is named in these CQs."
+    },
+    {
+      "id": "AX21",
+      "term": "Prohibition",
+      "term_label": "Prohibition",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Prohibition",
+      "subject_label": "Prohibition",
+      "object": "Rule",
+      "dl": "Prohibition ⊑ Rule",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Prohibition"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Rule"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQNew6"
+      ],
+      "missing_elements": "constraint, assignee and assigner have the domain Policy or Rule. Prohibition reaches them only through this axiom."
+    },
+    {
+      "id": "AX22",
+      "term": "Rule",
+      "term_label": "Rule",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Rule",
+      "subject_label": "Rule",
+      "object": "Class",
+      "dl": "Declaration: Rule (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Rule"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ06",
+        "CQ08",
+        "CQ10",
+        "CQ21",
+        "CQ24",
+        "CQNew4",
+        "CQNew6"
+      ],
+      "missing_elements": "Rule is the domain of failure and the parent that gives permissions, duties and prohibitions their properties."
+    },
+    {
+      "id": "AX23",
+      "term": "Only One",
+      "term_label": "Only One",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "Only One",
+      "subject_label": "Only One",
+      "object": "ObjectProperty",
+      "dl": "Declaration: Only One (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "Only One"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ14"
+      ],
+      "missing_elements": "Only One is the xor asked by CQ14."
+    },
+    {
+      "id": "AX24",
+      "term": "Only One",
+      "term_label": "Only One",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "Only One",
+      "subject_label": "Only One",
+      "object": "operand",
+      "dl": "Only One ⊑ operand",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "Only One"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operand"
+      },
+      "cq_numbers": [
+        "CQ14"
+      ],
+      "missing_elements": "operand is an explicit property of CQ14. This axiom makes xor a kind of operand."
+    },
+    {
+      "id": "AX25",
+      "term": "action",
+      "term_label": "action",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "action",
+      "subject_label": "action",
+      "object": "ObjectProperty",
+      "dl": "Declaration: action (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "action"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ24"
+      ],
+      "missing_elements": "action links a permission to its action."
+    },
+    {
+      "id": "AX26",
+      "term": "action",
+      "term_label": "action",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "action",
+      "subject_label": "action",
+      "object": "(Policy ⊔ Rule)",
+      "dl": "∃action.⊤ ⊑ (Policy ⊔ Rule)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "action"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Policy"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Rule"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ24"
+      ],
+      "missing_elements": "Starts from the permission through its parent Rule."
+    },
+    {
+      "id": "AX27",
+      "term": "action",
+      "term_label": "action",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "action",
+      "subject_label": "action",
+      "object": "Action",
+      "dl": "⊤ ⊑ ∀action.Action",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "action"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Action"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ24"
+      ],
+      "missing_elements": "The value is an Action."
+    },
+    {
+      "id": "AX28",
+      "term": "and",
+      "term_label": "and",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "and",
+      "subject_label": "and",
+      "object": "ObjectProperty",
+      "dl": "Declaration: and (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "and"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ14"
+      ],
+      "missing_elements": "and is asked by CQ14."
+    },
+    {
+      "id": "AX29",
+      "term": "and",
+      "term_label": "and",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "and",
+      "subject_label": "and",
+      "object": "operand",
+      "dl": "and ⊑ operand",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "and"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operand"
+      },
+      "cq_numbers": [
+        "CQ14"
+      ],
+      "missing_elements": "operand is an explicit property of CQ14. This axiom makes and a kind of operand."
+    },
+    {
+      "id": "AX30",
+      "term": "andSequence",
+      "term_label": "andSequence",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "andSequence",
+      "subject_label": "andSequence",
+      "object": "ObjectProperty",
+      "dl": "Declaration: andSequence (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "andSequence"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ31"
+      ],
+      "missing_elements": "andSequence is the sequencing construct asked by CQ31."
+    },
+    {
+      "id": "AX31",
+      "term": "andSequence",
+      "term_label": "andSequence",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "andSequence",
+      "subject_label": "andSequence",
+      "object": "operand",
+      "dl": "andSequence ⊑ operand",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "andSequence"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operand"
+      },
+      "cq_numbers": [
+        "CQ31"
+      ],
+      "missing_elements": "andSequence alone answers CQ31. operand is not in its annotation."
+    },
+    {
+      "id": "AX32",
+      "term": "assignee",
+      "term_label": "assignee",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "assignee",
+      "subject_label": "assignee",
+      "object": "ObjectProperty",
+      "dl": "Declaration: assignee (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assignee"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "assignee is one of the party roles."
+    },
+    {
+      "id": "AX33",
+      "term": "assignee",
+      "term_label": "assignee",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "assignee",
+      "subject_label": "assignee",
+      "object": "(Policy ⊔ Rule)",
+      "dl": "∃assignee.⊤ ⊑ (Policy ⊔ Rule)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assignee"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Policy"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Rule"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "Starts from the permission or duty through its parent Rule."
+    },
+    {
+      "id": "AX34",
+      "term": "assignee",
+      "term_label": "assignee",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "assignee",
+      "subject_label": "assignee",
+      "object": "Party",
+      "dl": "⊤ ⊑ ∀assignee.Party",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assignee"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Party"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "The role is played by a Party."
+    },
+    {
+      "id": "AX35",
+      "term": "assignee",
+      "term_label": "assignee",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "assignee",
+      "subject_label": "assignee",
+      "object": "function",
+      "dl": "assignee ⊑ function",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assignee"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "function"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "function is in the annotation of both CQs. This axiom makes assignee one of the party roles."
+    },
+    {
+      "id": "AX36",
+      "term": "assigner",
+      "term_label": "assigner",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "assigner",
+      "subject_label": "assigner",
+      "object": "ObjectProperty",
+      "dl": "Declaration: assigner (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assigner"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "assigner is one of the party roles."
+    },
+    {
+      "id": "AX37",
+      "term": "assigner",
+      "term_label": "assigner",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "assigner",
+      "subject_label": "assigner",
+      "object": "(Policy ⊔ Rule)",
+      "dl": "∃assigner.⊤ ⊑ (Policy ⊔ Rule)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assigner"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Policy"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Rule"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "Starts from the permission or duty through its parent Rule."
+    },
+    {
+      "id": "AX38",
+      "term": "assigner",
+      "term_label": "assigner",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "assigner",
+      "subject_label": "assigner",
+      "object": "Party",
+      "dl": "⊤ ⊑ ∀assigner.Party",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assigner"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Party"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "The role is played by a Party."
+    },
+    {
+      "id": "AX39",
+      "term": "assigner",
+      "term_label": "assigner",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "assigner",
+      "subject_label": "assigner",
+      "object": "function",
+      "dl": "assigner ⊑ function",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "assigner"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "function"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "function is in the annotation of both CQs. This axiom makes assigner one of the party roles."
+    },
+    {
+      "id": "AX40",
+      "term": "conflict",
+      "term_label": "conflict",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "conflict",
+      "subject_label": "conflict",
+      "object": "ObjectProperty",
+      "dl": "Declaration: conflict (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "conflict"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQNew2"
+      ],
+      "missing_elements": "conflict is the property behind handlePolicyConflicts."
+    },
+    {
+      "id": "AX41",
+      "term": "conflict",
+      "term_label": "conflict",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "conflict",
+      "subject_label": "conflict",
+      "object": "Policy",
+      "dl": "∃conflict.⊤ ⊑ Policy",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "conflict"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "cq_numbers": [
+        "CQNew2"
+      ],
+      "missing_elements": "Starts from the given policy."
+    },
+    {
+      "id": "AX42",
+      "term": "conflict",
+      "term_label": "conflict",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "conflict",
+      "subject_label": "conflict",
+      "object": "ConflictTerm",
+      "dl": "⊤ ⊑ ∀conflict.ConflictTerm",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "conflict"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "ConflictTerm"
+      },
+      "cq_numbers": [
+        "CQNew2"
+      ],
+      "missing_elements": "The strategy is a ConflictTerm."
+    },
+    {
+      "id": "AX43",
+      "term": "consequence",
+      "term_label": "consequence",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "consequence",
+      "subject_label": "consequence",
+      "object": "ObjectProperty",
+      "dl": "Declaration: consequence (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "consequence"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ31",
+        "CQNew4",
+        "CQNew5"
+      ],
+      "missing_elements": "consequence is named in CQ31 and CQNew5. It is also a kind of failure for CQNew4."
+    },
+    {
+      "id": "AX44",
+      "term": "consequence",
+      "term_label": "consequence",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "consequence",
+      "subject_label": "consequence",
+      "object": "Duty",
+      "dl": "∃consequence.⊤ ⊑ Duty",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "consequence"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Duty"
+      },
+      "cq_numbers": [
+        "CQ31",
+        "CQNew5"
+      ],
+      "missing_elements": "Starts from the given duty."
+    },
+    {
+      "id": "AX45",
+      "term": "consequence",
+      "term_label": "consequence",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "consequence",
+      "subject_label": "consequence",
+      "object": "Duty",
+      "dl": "⊤ ⊑ ∀consequence.Duty",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "consequence"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Duty"
+      },
+      "cq_numbers": [
+        "CQ31",
+        "CQNew5"
+      ],
+      "missing_elements": "The consequence is a Duty."
+    },
+    {
+      "id": "AX46",
+      "term": "consequence",
+      "term_label": "consequence",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "consequence",
+      "subject_label": "consequence",
+      "object": "failure",
+      "dl": "consequence ⊑ failure",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "consequence"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "failure"
+      },
+      "cq_numbers": [
+        "CQNew4"
+      ],
+      "missing_elements": "A consequence is a rule activated on failure. CQNew4 needs this axiom to return it through failure."
+    },
+    {
+      "id": "AX47",
+      "term": "constraint",
+      "term_label": "constraint",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "constraint",
+      "subject_label": "constraint",
+      "object": "ObjectProperty",
+      "dl": "Declaration: constraint (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "constraint"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ13",
+        "CQ14",
+        "CQ21",
+        "CQ24",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "constraint attaches constraints to rules and policies."
+    },
+    {
+      "id": "AX48",
+      "term": "constraint",
+      "term_label": "constraint",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "constraint",
+      "subject_label": "constraint",
+      "object": "(Policy ⊔ Rule)",
+      "dl": "∃constraint.⊤ ⊑ (Policy ⊔ Rule)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "constraint"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Policy"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Rule"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ13",
+        "CQ14",
+        "CQ21",
+        "CQ24",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "Starts from the rule or policy that carries the constraint."
+    },
+    {
+      "id": "AX49",
+      "term": "constraint",
+      "term_label": "constraint",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "constraint",
+      "subject_label": "constraint",
+      "object": "(Constraint ⊔ LogicalConstraint)",
+      "dl": "⊤ ⊑ ∀constraint.(Constraint ⊔ LogicalConstraint)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "constraint"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Constraint"
+          },
+          {
+            "expr_type": "Class",
+            "name": "LogicalConstraint"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ13",
+        "CQ14",
+        "CQ21",
+        "CQ24",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "The value is a Constraint or a LogicalConstraint. CQ13 needs the LogicalConstraint part for nesting."
+    },
+    {
+      "id": "AX50",
+      "term": "duty",
+      "term_label": "duty",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "duty",
+      "subject_label": "duty",
+      "object": "ObjectProperty",
+      "dl": "Declaration: duty (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "duty"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ10"
+      ],
+      "missing_elements": "duty is the hasduty property of CQ10."
+    },
+    {
+      "id": "AX51",
+      "term": "duty",
+      "term_label": "duty",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "duty",
+      "subject_label": "duty",
+      "object": "Permission",
+      "dl": "∃duty.⊤ ⊑ Permission",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "duty"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Permission"
+      },
+      "cq_numbers": [
+        "CQ10"
+      ],
+      "missing_elements": "Links a permission to the duties attached to it."
+    },
+    {
+      "id": "AX52",
+      "term": "duty",
+      "term_label": "duty",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "duty",
+      "subject_label": "duty",
+      "object": "Duty",
+      "dl": "⊤ ⊑ ∀duty.Duty",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "duty"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Duty"
+      },
+      "cq_numbers": [
+        "CQ10"
+      ],
+      "missing_elements": "The value is a Duty."
+    },
+    {
+      "id": "AX53",
+      "term": "failure",
+      "term_label": "failure",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "failure",
+      "subject_label": "failure",
+      "object": "ObjectProperty",
+      "dl": "Declaration: failure (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "failure"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQNew4"
+      ],
+      "missing_elements": "failure is the explicit property of CQNew4."
+    },
+    {
+      "id": "AX54",
+      "term": "failure",
+      "term_label": "failure",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "failure",
+      "subject_label": "failure",
+      "object": "Rule",
+      "dl": "∃failure.⊤ ⊑ Rule",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "failure"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Rule"
+      },
+      "cq_numbers": [
+        "CQNew4"
+      ],
+      "missing_elements": "Starts from the rule that failed."
+    },
+    {
+      "id": "AX55",
+      "term": "failure",
+      "term_label": "failure",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "failure",
+      "subject_label": "failure",
+      "object": "Rule",
+      "dl": "⊤ ⊑ ∀failure.Rule",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "failure"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Rule"
+      },
+      "cq_numbers": [
+        "CQNew4"
+      ],
+      "missing_elements": "The activated rule is the answer."
+    },
+    {
+      "id": "AX56",
+      "term": "function",
+      "term_label": "function",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "function",
+      "subject_label": "function",
+      "object": "ObjectProperty",
+      "dl": "Declaration: function (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "function"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "function is the general party role."
+    },
+    {
+      "id": "AX57",
+      "term": "function",
+      "term_label": "function",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "function",
+      "subject_label": "function",
+      "object": "(Policy ⊔ Rule)",
+      "dl": "∃function.⊤ ⊑ (Policy ⊔ Rule)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "function"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Policy"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Rule"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "Starts from the permission or duty through its parent Rule."
+    },
+    {
+      "id": "AX58",
+      "term": "function",
+      "term_label": "function",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "function",
+      "subject_label": "function",
+      "object": "Party",
+      "dl": "⊤ ⊑ ∀function.Party",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "function"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Party"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ10"
+      ],
+      "missing_elements": "The role is played by a Party."
+    },
+    {
+      "id": "AX59",
+      "term": "hasPolicy",
+      "term_label": "hasPolicy",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "hasPolicy",
+      "subject_label": "hasPolicy",
+      "object": "ObjectProperty",
+      "dl": "Declaration: hasPolicy (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "hasPolicy"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQNew1"
+      ],
+      "missing_elements": "hasPolicy is the targetPolicy property of CQNew1."
+    },
+    {
+      "id": "AX60",
+      "term": "hasPolicy",
+      "term_label": "hasPolicy",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "hasPolicy",
+      "subject_label": "hasPolicy",
+      "object": "Asset",
+      "dl": "∃hasPolicy.⊤ ⊑ Asset",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "hasPolicy"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Asset"
+      },
+      "cq_numbers": [
+        "CQNew1"
+      ],
+      "missing_elements": "Starts from the given asset."
+    },
+    {
+      "id": "AX61",
+      "term": "hasPolicy",
+      "term_label": "hasPolicy",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "hasPolicy",
+      "subject_label": "hasPolicy",
+      "object": "Policy",
+      "dl": "⊤ ⊑ ∀hasPolicy.Policy",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "hasPolicy"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "cq_numbers": [
+        "CQNew1"
+      ],
+      "missing_elements": "The linked policy is the answer."
+    },
+    {
+      "id": "AX62",
+      "term": "implies",
+      "term_label": "implies",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "implies",
+      "subject_label": "implies",
+      "object": "ObjectProperty",
+      "dl": "Declaration: implies (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "implies"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ03"
+      ],
+      "missing_elements": "implies relates one action to another."
+    },
+    {
+      "id": "AX63",
+      "term": "implies",
+      "term_label": "implies",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "implies",
+      "subject_label": "implies",
+      "object": "Action",
+      "dl": "∃implies.⊤ ⊑ Action",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "implies"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Action"
+      },
+      "cq_numbers": [
+        "CQ03"
+      ],
+      "missing_elements": "Starts from the action of the permission."
+    },
+    {
+      "id": "AX64",
+      "term": "implies",
+      "term_label": "implies",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "implies",
+      "subject_label": "implies",
+      "object": "Action",
+      "dl": "⊤ ⊑ ∀implies.Action",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "implies"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Action"
+      },
+      "cq_numbers": [
+        "CQ03"
+      ],
+      "missing_elements": "The other action is the answer."
+    },
+    {
+      "id": "AX65",
+      "term": "inheritFrom",
+      "term_label": "inheritFrom",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "inheritFrom",
+      "subject_label": "inheritFrom",
+      "object": "ObjectProperty",
+      "dl": "Declaration: inheritFrom (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "inheritFrom"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ33"
+      ],
+      "missing_elements": "inheritFrom expresses inheritance between policies."
+    },
+    {
+      "id": "AX66",
+      "term": "inheritFrom",
+      "term_label": "inheritFrom",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "inheritFrom",
+      "subject_label": "inheritFrom",
+      "object": "Policy",
+      "dl": "∃inheritFrom.⊤ ⊑ Policy",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "inheritFrom"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "cq_numbers": [
+        "CQ33"
+      ],
+      "missing_elements": "Starts from the child policy."
+    },
+    {
+      "id": "AX67",
+      "term": "inheritFrom",
+      "term_label": "inheritFrom",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "inheritFrom",
+      "subject_label": "inheritFrom",
+      "object": "Policy",
+      "dl": "⊤ ⊑ ∀inheritFrom.Policy",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "inheritFrom"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "cq_numbers": [
+        "CQ33"
+      ],
+      "missing_elements": "The parent is a Policy."
+    },
+    {
+      "id": "AX68",
+      "term": "inheritRelation",
+      "term_label": "inheritRelation",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "inheritRelation",
+      "subject_label": "inheritRelation",
+      "object": "ObjectProperty",
+      "dl": "Declaration: inheritRelation (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "inheritRelation"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ33"
+      ]
+    },
+    {
+      "id": "AX69",
+      "term": "leftOperand",
+      "term_label": "leftOperand",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "leftOperand",
+      "subject_label": "leftOperand",
+      "object": "ObjectProperty",
+      "dl": "Declaration: leftOperand (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "leftOperand"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ26"
+      ],
+      "missing_elements": "leftOperand gives the left side of a condition."
+    },
+    {
+      "id": "AX70",
+      "term": "leftOperand",
+      "term_label": "leftOperand",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "leftOperand",
+      "subject_label": "leftOperand",
+      "object": "Constraint",
+      "dl": "∃leftOperand.⊤ ⊑ Constraint",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "leftOperand"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Constraint"
+      },
+      "cq_numbers": [
+        "CQ26"
+      ],
+      "missing_elements": "Starts from the constraint."
+    },
+    {
+      "id": "AX71",
+      "term": "leftOperand",
+      "term_label": "leftOperand",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "leftOperand",
+      "subject_label": "leftOperand",
+      "object": "LeftOperand",
+      "dl": "⊤ ⊑ ∀leftOperand.LeftOperand",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "leftOperand"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "LeftOperand"
+      },
+      "cq_numbers": [
+        "CQ26"
+      ],
+      "missing_elements": "The value is a LeftOperand."
+    },
+    {
+      "id": "AX72",
+      "term": "obligation",
+      "term_label": "obligation",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "obligation",
+      "subject_label": "obligation",
+      "object": "ObjectProperty",
+      "dl": "Declaration: obligation (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "obligation"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ21"
+      ],
+      "missing_elements": "obligation links a policy to its duties."
+    },
+    {
+      "id": "AX73",
+      "term": "obligation",
+      "term_label": "obligation",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "obligation",
+      "subject_label": "obligation",
+      "object": "Policy",
+      "dl": "∃obligation.⊤ ⊑ Policy",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "obligation"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ21"
+      ],
+      "missing_elements": "Starts from the policy."
+    },
+    {
+      "id": "AX74",
+      "term": "obligation",
+      "term_label": "obligation",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "obligation",
+      "subject_label": "obligation",
+      "object": "Duty",
+      "dl": "⊤ ⊑ ∀obligation.Duty",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "obligation"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Duty"
+      },
+      "cq_numbers": [
+        "CQ10",
+        "CQ21"
+      ],
+      "missing_elements": "The value is a Duty."
+    },
+    {
+      "id": "AX75",
+      "term": "operand",
+      "term_label": "operand",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "operand",
+      "subject_label": "operand",
+      "object": "ObjectProperty",
+      "dl": "Declaration: operand (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operand"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ13",
+        "CQ14",
+        "CQ26"
+      ],
+      "missing_elements": "operand links a logical constraint to its parts."
+    },
+    {
+      "id": "AX76",
+      "term": "operand",
+      "term_label": "operand",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "operand",
+      "subject_label": "operand",
+      "object": "LogicalConstraint",
+      "dl": "∃operand.⊤ ⊑ LogicalConstraint",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operand"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "LogicalConstraint"
+      },
+      "cq_numbers": [
+        "CQ13",
+        "CQ14",
+        "CQ26"
+      ],
+      "missing_elements": "Nested and combined constraints start from a LogicalConstraint."
+    },
+    {
+      "id": "AX77",
+      "term": "operator",
+      "term_label": "operator",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "operator",
+      "subject_label": "operator",
+      "object": "ObjectProperty",
+      "dl": "Declaration: operator (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operator"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ21",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "operator gives the operator of a constraint."
+    },
+    {
+      "id": "AX78",
+      "term": "operator",
+      "term_label": "operator",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "operator",
+      "subject_label": "operator",
+      "object": "Constraint",
+      "dl": "∃operator.⊤ ⊑ Constraint",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operator"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Constraint"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ21",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "Starts from the constraint."
+    },
+    {
+      "id": "AX79",
+      "term": "operator",
+      "term_label": "operator",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "operator",
+      "subject_label": "operator",
+      "object": "Operator",
+      "dl": "⊤ ⊑ ∀operator.Operator",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operator"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Operator"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ21",
+        "CQ26",
+        "CQNew6"
+      ],
+      "missing_elements": "The value is an Operator."
+    },
+    {
+      "id": "AX80",
+      "term": "or",
+      "term_label": "or",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "or",
+      "subject_label": "or",
+      "object": "ObjectProperty",
+      "dl": "Declaration: or (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "or"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ14"
+      ],
+      "missing_elements": "or is asked by CQ14."
+    },
+    {
+      "id": "AX81",
+      "term": "or",
+      "term_label": "or",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "or",
+      "subject_label": "or",
+      "object": "operand",
+      "dl": "or ⊑ operand",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "or"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "operand"
+      },
+      "cq_numbers": [
+        "CQ14"
+      ],
+      "missing_elements": "operand is an explicit property of CQ14. This axiom makes or a kind of operand."
+    },
+    {
+      "id": "AX82",
+      "term": "partOf",
+      "term_label": "partOf",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "partOf",
+      "subject_label": "partOf",
+      "object": "ObjectProperty",
+      "dl": "Declaration: partOf (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "partOf"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "partOf links an asset to its collection."
+    },
+    {
+      "id": "AX83",
+      "term": "partOf",
+      "term_label": "partOf",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "partOf",
+      "subject_label": "partOf",
+      "object": "(Asset ⊔ Party)",
+      "dl": "∃partOf.⊤ ⊑ (Asset ⊔ Party)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "partOf"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Asset"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Party"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "Starts from the asset inside a collection."
+    },
+    {
+      "id": "AX84",
+      "term": "partOf",
+      "term_label": "partOf",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "partOf",
+      "subject_label": "partOf",
+      "object": "(AssetCollection)",
+      "dl": "⊤ ⊑ ∀partOf.(AssetCollection)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "partOf"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "AssetCollection"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "The container is an AssetCollection."
+    },
+    {
+      "id": "AX85",
+      "term": "permission",
+      "term_label": "permission",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "permission",
+      "subject_label": "permission",
+      "object": "ObjectProperty",
+      "dl": "Declaration: permission (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "permission"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ10",
+        "CQ24"
+      ],
+      "missing_elements": "permission is the hasPermission property of these CQs."
+    },
+    {
+      "id": "AX86",
+      "term": "permission",
+      "term_label": "permission",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "permission",
+      "subject_label": "permission",
+      "object": "Policy",
+      "dl": "∃permission.⊤ ⊑ Policy",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "permission"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ10",
+        "CQ24"
+      ],
+      "missing_elements": "Starts from the policy."
+    },
+    {
+      "id": "AX87",
+      "term": "permission",
+      "term_label": "permission",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "permission",
+      "subject_label": "permission",
+      "object": "Permission",
+      "dl": "⊤ ⊑ ∀permission.Permission",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "permission"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Permission"
+      },
+      "cq_numbers": [
+        "CQ03",
+        "CQ10",
+        "CQ24"
+      ],
+      "missing_elements": "The value is a Permission."
+    },
+    {
+      "id": "AX88",
+      "term": "prohibition",
+      "term_label": "prohibition",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "prohibition",
+      "subject_label": "prohibition",
+      "object": "ObjectProperty",
+      "dl": "Declaration: prohibition (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "prohibition"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQNew6"
+      ],
+      "missing_elements": "prohibition is the hasProhibition property of these CQs."
+    },
+    {
+      "id": "AX89",
+      "term": "prohibition",
+      "term_label": "prohibition",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "prohibition",
+      "subject_label": "prohibition",
+      "object": "Policy",
+      "dl": "∃prohibition.⊤ ⊑ Policy",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "prohibition"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Policy"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQNew6"
+      ],
+      "missing_elements": "Starts from the policy."
+    },
+    {
+      "id": "AX90",
+      "term": "prohibition",
+      "term_label": "prohibition",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "prohibition",
+      "subject_label": "prohibition",
+      "object": "Prohibition",
+      "dl": "⊤ ⊑ ∀prohibition.Prohibition",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "prohibition"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Prohibition"
+      },
+      "cq_numbers": [
+        "CQ08",
+        "CQ10",
+        "CQNew6"
+      ],
+      "missing_elements": "The value is a Prohibition."
+    },
+    {
+      "id": "AX91",
+      "term": "relation",
+      "term_label": "relation",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "relation",
+      "subject_label": "relation",
+      "object": "ObjectProperty",
+      "dl": "Declaration: relation (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "relation"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "relation is in the annotation of CQ30 and is the parent of target."
+    },
+    {
+      "id": "AX92",
+      "term": "relation",
+      "term_label": "relation",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "relation",
+      "subject_label": "relation",
+      "object": "(Policy ⊔ Rule)",
+      "dl": "∃relation.⊤ ⊑ (Policy ⊔ Rule)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "relation"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Policy"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Rule"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "Starts from the policy or rule."
+    },
+    {
+      "id": "AX93",
+      "term": "relation",
+      "term_label": "relation",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "relation",
+      "subject_label": "relation",
+      "object": "Asset",
+      "dl": "⊤ ⊑ ∀relation.Asset",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "relation"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Asset"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "The value is an Asset."
+    },
+    {
+      "id": "AX94",
+      "term": "remedy",
+      "term_label": "remedy",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "remedy",
+      "subject_label": "remedy",
+      "object": "ObjectProperty",
+      "dl": "Declaration: remedy (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "remedy"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQNew3",
+        "CQNew4"
+      ],
+      "missing_elements": "remedy is named in CQNew3. It is also a kind of failure for CQNew4."
+    },
+    {
+      "id": "AX95",
+      "term": "remedy",
+      "term_label": "remedy",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "remedy",
+      "subject_label": "remedy",
+      "object": "Prohibition",
+      "dl": "∃remedy.⊤ ⊑ Prohibition",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "remedy"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Prohibition"
+      },
+      "cq_numbers": [
+        "CQNew3"
+      ],
+      "missing_elements": "Starts from the given prohibition."
+    },
+    {
+      "id": "AX96",
+      "term": "remedy",
+      "term_label": "remedy",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "remedy",
+      "subject_label": "remedy",
+      "object": "Duty",
+      "dl": "⊤ ⊑ ∀remedy.Duty",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "remedy"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Duty"
+      },
+      "cq_numbers": [
+        "CQNew3"
+      ],
+      "missing_elements": "The remedy is a Duty."
+    },
+    {
+      "id": "AX97",
+      "term": "remedy",
+      "term_label": "remedy",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "remedy",
+      "subject_label": "remedy",
+      "object": "failure",
+      "dl": "remedy ⊑ failure",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "remedy"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "failure"
+      },
+      "cq_numbers": [
+        "CQNew4"
+      ],
+      "missing_elements": "A remedy is a rule activated on failure. CQNew4 needs this axiom to return it through failure."
+    },
+    {
+      "id": "AX98",
+      "term": "scope",
+      "term_label": "scope",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "scope",
+      "subject_label": "scope",
+      "object": "ObjectProperty",
+      "dl": "Declaration: scope (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "scope"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ]
+    },
+    {
+      "id": "AX99",
+      "term": "target",
+      "term_label": "target",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "target",
+      "subject_label": "target",
+      "object": "ObjectProperty",
+      "dl": "Declaration: target (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "target"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "target links a policy or rule to its asset."
+    },
+    {
+      "id": "AX100",
+      "term": "target",
+      "term_label": "target",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "target",
+      "subject_label": "target",
+      "object": "(Policy ⊔ Rule)",
+      "dl": "∃target.⊤ ⊑ (Policy ⊔ Rule)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "target"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectUnionOf",
+        "operands": [
+          {
+            "expr_type": "Class",
+            "name": "Policy"
+          },
+          {
+            "expr_type": "Class",
+            "name": "Rule"
+          }
+        ]
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "Starts from the policy or rule."
+    },
+    {
+      "id": "AX101",
+      "term": "target",
+      "term_label": "target",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "target",
+      "subject_label": "target",
+      "object": "Asset",
+      "dl": "⊤ ⊑ ∀target.Asset",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "target"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Asset"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "The target is an Asset or a collection of assets."
+    },
+    {
+      "id": "AX102",
+      "term": "target",
+      "term_label": "target",
+      "term_type": "ObjectProperty",
+      "axiom_type": "SubPropertyOf",
+      "subject": "target",
+      "subject_label": "target",
+      "object": "relation",
+      "dl": "target ⊑ relation",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "target"
+      },
+      "rhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "relation"
+      },
+      "cq_numbers": [
+        "CQ30"
+      ],
+      "missing_elements": "relation is an explicit property of CQ30. This axiom makes target a kind of relation."
+    }
+  ]
+}
