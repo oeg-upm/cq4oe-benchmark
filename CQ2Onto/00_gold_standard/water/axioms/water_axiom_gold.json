@@ -50,53 +50,75 @@
   "gold_axioms": [
     {
       "id": "AX1",
-      "term": "AcceptabilityProperty",
+      "term": "Acceptability property",
       "term_label": "Acceptability property",
       "term_type": "Class",
-      "axiom_type": "SubClassOf",
-      "subject": "AcceptabilityProperty",
+      "axiom_type": "Declaration",
+      "subject": "Acceptability property",
       "subject_label": "Acceptability property",
-      "object": "WaterProperty",
-      "dl": "AcceptabilityProperty ⊑ WaterProperty",
+      "object": "Class",
+      "dl": "Declaration: Acceptability property (Class)",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "AcceptabilityProperty"
+        "name": "Acceptability property"
       },
       "rhs_struct": {
-        "expr_type": "Class",
-        "name": "WaterProperty"
+        "expr_type": "Declaration",
+        "term_type": "Class"
       },
       "cq_numbers": [
         "CQ33"
       ],
-      "missing_elements": "CQ33 uses Acceptability property as Implicit and Water property as Explicit; subClassOf links them"
+      "missing_elements": "Acceptability property is the class annotated for the physical properties of water."
     },
     {
       "id": "AX2",
+      "term": "Acceptability property",
+      "term_label": "Acceptability property",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Acceptability property",
+      "subject_label": "Acceptability property",
+      "object": "Water property",
+      "dl": "Acceptability property ⊑ Water property",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Acceptability property"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Water property"
+      },
+      "cq_numbers": [
+        "CQ33"
+      ],
+      "missing_elements": "Water property is explicit in CQ33. This axiom makes these properties water properties."
+    },
+    {
+      "id": "AX3",
       "term": "Actuator",
       "term_label": "Actuator",
       "term_type": "Class",
-      "axiom_type": "DisjointClasses",
+      "axiom_type": "Declaration",
       "subject": "Actuator",
       "subject_label": "Actuator",
-      "object": "Sensor",
-      "dl": "DisjointClasses(Actuator, Sensor)",
+      "object": "Class",
+      "dl": "Declaration: Actuator (Class)",
       "lhs_struct": {
         "expr_type": "Class",
         "name": "Actuator"
       },
       "rhs_struct": {
-        "expr_type": "Class",
-        "name": "Sensor"
+        "expr_type": "Declaration",
+        "term_type": "Class"
       },
       "cq_numbers": [
-        "CQ05",
-        "CQ06"
+        "CQ05"
       ],
-      "missing_elements": "CQ05 uses Actuator Explicit; CQ06 uses Device Explicit; Actuator subClassOf Device"
+      "missing_elements": "Actuator is named in CQ05."
     },
     {
-      "id": "AX3",
+      "id": "AX5",
       "term": "Actuator",
       "term_label": "Actuator",
       "term_type": "Class",
@@ -114,80 +136,148 @@
         "name": "Device"
       },
       "cq_numbers": [
-        "CQ04",
         "CQ05"
-      ],
-      "missing_elements": "CQ04 uses Sensor Explicit; CQ05 uses Actuator Explicit; they are disjoint"
+      ]
     },
     {
-      "id": "AX4",
+      "id": "AX6",
+      "term": "ChemicalProperty",
+      "term_label": "ChemicalProperty",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "ChemicalProperty",
+      "subject_label": "ChemicalProperty",
+      "object": "Class",
+      "dl": "Declaration: ChemicalProperty (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "ChemicalProperty"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ34"
+      ],
+      "missing_elements": "ChemicalProperty is the class of the chemical properties asked by CQ34."
+    },
+    {
+      "id": "AX7",
       "term": "ChemicalProperty",
       "term_label": "ChemicalProperty",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
       "subject": "ChemicalProperty",
       "subject_label": "ChemicalProperty",
-      "object": "WaterProperty",
-      "dl": "ChemicalProperty ⊑ WaterProperty",
+      "object": "Water property",
+      "dl": "ChemicalProperty ⊑ Water property",
       "lhs_struct": {
         "expr_type": "Class",
         "name": "ChemicalProperty"
       },
       "rhs_struct": {
         "expr_type": "Class",
-        "name": "WaterProperty"
+        "name": "Water property"
       },
       "cq_numbers": [
         "CQ34"
       ],
-      "missing_elements": "CQ34 uses ChemicalProperty as Implicit and Water property as Explicit"
+      "missing_elements": "Water property is explicit in CQ34. This axiom makes chemical properties water properties."
     },
     {
-      "id": "AX5",
+      "id": "AX8",
+      "term": "Device",
+      "term_label": "Device",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Device",
+      "subject_label": "Device",
+      "object": "Class",
+      "dl": "Declaration: Device (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Device"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06"
+      ],
+      "missing_elements": "Device is named in CQ06 and is the range of feature is measured by device."
+    },
+    {
+      "id": "AX9",
       "term": "Device",
       "term_label": "Device",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
       "subject": "Device",
       "subject_label": "Device",
-      "object": "∀makesMeasurement.Measurement",
-      "dl": "Device ⊑ ∀makesMeasurement.Measurement",
+      "object": "∀makes measurement.Measurement",
+      "dl": "Device ⊑ ∀makes measurement.Measurement",
       "lhs_struct": {
         "expr_type": "Class",
         "name": "Device"
       },
       "rhs_struct": {
         "expr_type": "ObjectAllValuesFrom",
-        "property": "makesMeasurement",
+        "property": "makes measurement",
         "filler": {
           "expr_type": "Class",
           "name": "Measurement"
         }
       },
       "cq_numbers": [
-        "CQ04",
         "CQ06",
         "CQ25"
       ],
-      "missing_elements": "CQ04/06 use Device Explicit; CQ25 uses Measurement; Device makes Measurement"
+      "missing_elements": "What a device or water meter measures is a Measurement."
     },
     {
-      "id": "AX6",
+      "id": "AX10",
+      "term": "FeatureOfInterest",
+      "term_label": "FeatureOfInterest",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "FeatureOfInterest",
+      "subject_label": "FeatureOfInterest",
+      "object": "Class",
+      "dl": "Declaration: FeatureOfInterest (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "FeatureOfInterest"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06"
+      ],
+      "missing_elements": "FeatureOfInterest is the domain of feature is measured by device."
+    },
+    {
+      "id": "AX11",
       "term": "FeatureOfInterest",
       "term_label": "FeatureOfInterest",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
       "subject": "FeatureOfInterest",
       "subject_label": "FeatureOfInterest",
-      "object": "∀hasMeasurement.Measurement",
-      "dl": "FeatureOfInterest ⊑ ∀hasMeasurement.Measurement",
+      "object": "∀has measurement.Measurement",
+      "dl": "FeatureOfInterest ⊑ ∀has measurement.Measurement",
       "lhs_struct": {
         "expr_type": "Class",
         "name": "FeatureOfInterest"
       },
       "rhs_struct": {
         "expr_type": "ObjectAllValuesFrom",
-        "property": "hasMeasurement",
+        "property": "has measurement",
         "filler": {
           "expr_type": "Class",
           "name": "Measurement"
@@ -195,41 +285,135 @@
       },
       "cq_numbers": [
         "CQ04",
-        "CQ06"
+        "CQ05"
       ],
-      "missing_elements": "CQ04/06 use FeatureOfInterest as Implicit; FoI has Measurement"
+      "missing_elements": "has measurement is explicit in CQ04 and leads to the Measurement made by a sensor. Actuators do not make measurements so CQ05 does not use it. Under the strict rule this link is not sanctioned because nothing makes Water infrastructure a FeatureOfInterest."
     },
     {
-      "id": "AX7",
+      "id": "AX12",
+      "term": "Geometry",
+      "term_label": "Geometry",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Geometry",
+      "subject_label": "Geometry",
+      "object": "Class",
+      "dl": "Declaration: Geometry (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Geometry"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ20"
+      ],
+      "missing_elements": "Geometry is the type of the geolocation."
+    },
+    {
+      "id": "AX13",
+      "term": "Key Performance Indicator",
+      "term_label": "Key Performance Indicator",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Key Performance Indicator",
+      "subject_label": "Key Performance Indicator",
+      "object": "Class",
+      "dl": "Declaration: Key Performance Indicator (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Key Performance Indicator"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ37"
+      ],
+      "missing_elements": "Key Performance Indicator is named in CQ37."
+    },
+    {
+      "id": "AX14",
+      "term": "Measurement",
+      "term_label": "Measurement",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Measurement",
+      "subject_label": "Measurement",
+      "object": "Class",
+      "dl": "Declaration: Measurement (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Measurement"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06",
+        "CQ25"
+      ],
+      "missing_elements": "Measurement is named in CQ06 and CQ25 and links sensors to what they measure."
+    },
+    {
+      "id": "AX15",
       "term": "Measurement",
       "term_label": "Measurement",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
       "subject": "Measurement",
       "subject_label": "Measurement",
-      "object": "∀hasTimestamp.datetime'>",
-      "dl": "Measurement ⊑ ∀hasTimestamp.datetime'>",
+      "object": "∀has timestamp.xsd:dateTime",
+      "dl": "Measurement ⊑ ∀has timestamp.xsd:dateTime",
       "lhs_struct": {
         "expr_type": "Class",
         "name": "Measurement"
       },
       "rhs_struct": {
         "expr_type": "DataAllValuesFrom",
-        "property": "hasTimestamp",
+        "property": "has timestamp",
         "filler": {
           "expr_type": "Datatype",
-          "name": "datetime'>"
+          "name": "xsd:dateTime"
         }
       },
       "cq_numbers": [
-        "CQ06",
         "CQ25",
         "CQ38"
-      ],
-      "missing_elements": "CQ06/25 use Measurement Explicit; CQ38 uses has timestamp Explicit"
+      ]
     },
     {
-      "id": "AX8",
+      "id": "AX16",
+      "term": "Meter",
+      "term_label": "Meter",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Meter",
+      "subject_label": "Meter",
+      "object": "Class",
+      "dl": "Declaration: Meter (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Meter"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06",
+        "CQ25"
+      ],
+      "missing_elements": "Meter links Water meter to Sensor and Device."
+    },
+    {
+      "id": "AX17",
       "term": "Meter",
       "term_label": "Meter",
       "term_type": "Class",
@@ -248,20 +432,36 @@
       },
       "cq_numbers": [
         "CQ04",
-        "CQ08",
-        "CQ09",
-        "CQ10",
-        "CQ11",
-        "CQ12",
-        "CQ18",
-        "CQ19",
-        "CQ20",
+        "CQ06",
         "CQ25"
       ],
-      "missing_elements": "All CQs using Meter as Explicit class; Meter is a Sensor (used in CQ04)"
+      "missing_elements": "Makes a water meter a sensor. CQ06 and CQ25 then reach Device and its measurements."
     },
     {
-      "id": "AX9",
+      "id": "AX18",
+      "term": "Point",
+      "term_label": "Point",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Point",
+      "subject_label": "Point",
+      "object": "Class",
+      "dl": "Declaration: Point (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Point"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ20"
+      ],
+      "missing_elements": "Point is the geolocation of the water meter."
+    },
+    {
+      "id": "AX19",
       "term": "Point",
       "term_label": "Point",
       "term_type": "Class",
@@ -281,10 +481,33 @@
       "cq_numbers": [
         "CQ20"
       ],
-      "missing_elements": "CQ20 uses Point and Geometry as Implicit Class"
+      "missing_elements": "Makes the point a Geometry. hasGeometry has no range here so keep it only if the location is typed as Geometry."
     },
     {
-      "id": "AX10",
+      "id": "AX20",
+      "term": "Sensor",
+      "term_label": "Sensor",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Sensor",
+      "subject_label": "Sensor",
+      "object": "Class",
+      "dl": "Declaration: Sensor (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Sensor"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ04"
+      ],
+      "missing_elements": "Sensor is named in CQ04."
+    },
+    {
+      "id": "AX21",
       "term": "Sensor",
       "term_label": "Sensor",
       "term_type": "Class",
@@ -305,21 +528,119 @@
         "CQ04",
         "CQ06"
       ],
-      "missing_elements": "CQ04 uses Sensor Explicit; CQ06 uses Device Explicit; Sensor subClassOf Device"
+      "missing_elements": "feature is measured by device points to Device. Sensors fit that range only through this axiom."
     },
     {
-      "id": "AX11",
-      "term": "TimeBasedTariff",
+      "id": "AX22",
+      "term": "Tariff",
+      "term_label": "Tariff",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Tariff",
+      "subject_label": "Tariff",
+      "object": "Class",
+      "dl": "Declaration: Tariff (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Tariff"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ38",
+        "CQ39",
+        "CQ40",
+        "CQ42",
+        "CQ43"
+      ],
+      "missing_elements": "Tariff is named in these CQs."
+    },
+    {
+      "id": "AX23",
+      "term": "Temporal duration",
+      "term_label": "Temporal duration",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Temporal duration",
+      "subject_label": "Temporal duration",
+      "object": "Class",
+      "dl": "Declaration: Temporal duration (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Temporal duration"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ39",
+        "CQ40",
+        "CQ43"
+      ],
+      "missing_elements": "Temporal duration is the range of the duration and period properties."
+    },
+    {
+      "id": "AX24",
+      "term": "Temporal entity",
+      "term_label": "Temporal entity",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Temporal entity",
+      "subject_label": "Temporal entity",
+      "object": "Class",
+      "dl": "Declaration: Temporal entity (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Temporal entity"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ25"
+      ],
+      "missing_elements": "Temporal entity is the range of has phenomenon time."
+    },
+    {
+      "id": "AX25",
+      "term": "Time-based tariff",
+      "term_label": "Time-based tariff",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Time-based tariff",
+      "subject_label": "Time-based tariff",
+      "object": "Class",
+      "dl": "Declaration: Time-based tariff (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Time-based tariff"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ38",
+        "CQ39"
+      ]
+    },
+    {
+      "id": "AX26",
+      "term": "Time-based tariff",
       "term_label": "Time-based tariff",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
-      "subject": "TimeBasedTariff",
+      "subject": "Time-based tariff",
       "subject_label": "Time-based tariff",
       "object": "Tariff",
-      "dl": "TimeBasedTariff ⊑ Tariff",
+      "dl": "Time-based tariff ⊑ Tariff",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "TimeBasedTariff"
+        "name": "Time-based tariff"
       },
       "rhs_struct": {
         "expr_type": "Class",
@@ -328,11 +649,34 @@
       "cq_numbers": [
         "CQ38",
         "CQ39"
-      ],
-      "missing_elements": "CQ38/39 use Time-based tariff as Implicit Class; Tariff as Explicit"
+      ]
     },
     {
-      "id": "AX12",
+      "id": "AX27",
+      "term": "Water",
+      "term_label": "Water",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Water",
+      "subject_label": "Water",
+      "object": "Class",
+      "dl": "Declaration: Water (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Water"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ33",
+        "CQ34"
+      ],
+      "missing_elements": "Water is named in both CQs."
+    },
+    {
+      "id": "AX28",
       "term": "Water",
       "term_label": "Water",
       "term_type": "Class",
@@ -352,50 +696,73 @@
       "cq_numbers": [
         "CQ33",
         "CQ34"
-      ],
-      "missing_elements": "CQ33/34 use Water Explicit; FeatureOfInterest covered indirectly via Water"
+      ]
     },
     {
-      "id": "AX13",
+      "id": "AX29",
       "term": "Water",
       "term_label": "Water",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
       "subject": "Water",
       "subject_label": "Water",
-      "object": "∀hasProperty.WaterProperty",
-      "dl": "Water ⊑ ∀hasProperty.WaterProperty",
+      "object": "∀has property.Water property",
+      "dl": "Water ⊑ ∀has property.Water property",
       "lhs_struct": {
         "expr_type": "Class",
         "name": "Water"
       },
       "rhs_struct": {
         "expr_type": "ObjectAllValuesFrom",
-        "property": "hasProperty",
+        "property": "has property",
         "filler": {
           "expr_type": "Class",
-          "name": "WaterProperty"
+          "name": "Water property"
         }
       },
       "cq_numbers": [
         "CQ33",
         "CQ34"
       ],
-      "missing_elements": "CQ33/34 use Water and Water property Explicit with has property"
+      "missing_elements": "The properties of water are Water property instances."
     },
     {
-      "id": "AX14",
-      "term": "WaterAsset",
+      "id": "AX30",
+      "term": "Water asset",
+      "term_label": "Water asset",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Water asset",
+      "subject_label": "Water asset",
+      "object": "Class",
+      "dl": "Declaration: Water asset (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Water asset"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ01",
+        "CQ37"
+      ],
+      "missing_elements": "Water asset is named in CQ01 and annotated in CQ37."
+    },
+    {
+      "id": "AX31",
+      "term": "Water asset",
       "term_label": "Water asset",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
-      "subject": "WaterAsset",
+      "subject": "Water asset",
       "subject_label": "Water asset",
       "object": "FeatureOfInterest",
-      "dl": "WaterAsset ⊑ FeatureOfInterest",
+      "dl": "Water asset ⊑ FeatureOfInterest",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "WaterAsset"
+        "name": "Water asset"
       },
       "rhs_struct": {
         "expr_type": "Class",
@@ -404,29 +771,55 @@
       "cq_numbers": [
         "CQ01",
         "CQ37"
-      ],
-      "missing_elements": "CQ01 uses Water asset Explicit; CQ37 uses Water asset Implicit; FoI covered indirectly"
+      ]
     },
     {
-      "id": "AX15",
-      "term": "WaterMeter",
-      "term_label": "Water meter",
+      "id": "AX32",
+      "term": "Water infrastructure",
+      "term_label": "Water infrastructure",
       "term_type": "Class",
-      "axiom_type": "SubClassOf",
-      "subject": "WaterMeter",
-      "subject_label": "Water meter",
-      "object": "Meter",
-      "dl": "WaterMeter ⊑ Meter",
+      "axiom_type": "Declaration",
+      "subject": "Water infrastructure",
+      "subject_label": "Water infrastructure",
+      "object": "Class",
+      "dl": "Declaration: Water infrastructure (Class)",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "WaterMeter"
+        "name": "Water infrastructure"
       },
       "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ01",
+        "CQ04",
+        "CQ05",
+        "CQ06"
+      ],
+      "missing_elements": "Water infrastructure is named in these CQs."
+    },
+    {
+      "id": "AX33",
+      "term": "Water meter",
+      "term_label": "Water meter",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Water meter",
+      "subject_label": "Water meter",
+      "object": "Class",
+      "dl": "Declaration: Water meter (Class)",
+      "lhs_struct": {
         "expr_type": "Class",
-        "name": "Meter"
+        "name": "Water meter"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
       },
       "cq_numbers": [
         "CQ04",
+        "CQ06",
         "CQ08",
         "CQ09",
         "CQ10",
@@ -442,25 +835,50 @@
         "CQ42",
         "CQ43"
       ],
-      "missing_elements": "All CQs using Water meter as Explicit; Water meter is a Meter"
+      "missing_elements": "Water meter is named in these CQs."
     },
     {
-      "id": "AX16",
-      "term": "WaterMeter",
+      "id": "AX34",
+      "term": "Water meter",
       "term_label": "Water meter",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
-      "subject": "WaterMeter",
+      "subject": "Water meter",
       "subject_label": "Water meter",
-      "object": "≤1 hasFabricationNumber.⊤",
-      "dl": "WaterMeter ⊑ ≤1 hasFabricationNumber.⊤",
+      "object": "Meter",
+      "dl": "Water meter ⊑ Meter",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "WaterMeter"
+        "name": "Water meter"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Meter"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06",
+        "CQ25"
+      ],
+      "missing_elements": "Makes a water meter a Meter and through it a sensor and a device."
+    },
+    {
+      "id": "AX35",
+      "term": "Water meter",
+      "term_label": "Water meter",
+      "term_type": "Class",
+      "axiom_type": "SubClassOf",
+      "subject": "Water meter",
+      "subject_label": "Water meter",
+      "object": "≤1 has fabrication number.⊤",
+      "dl": "Water meter ⊑ ≤1 has fabrication number.⊤",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Water meter"
       },
       "rhs_struct": {
         "expr_type": "ObjectMaxCardinality",
-        "property": "hasFabricationNumber",
+        "property": "has fabrication number",
         "cardinality": 1,
         "filler": {
           "expr_type": "Top"
@@ -468,26 +886,25 @@
       },
       "cq_numbers": [
         "CQ08"
-      ],
-      "missing_elements": "CQ08 uses Water meter and has fabrication number Explicit; cardinality ≤1"
+      ]
     },
     {
-      "id": "AX17",
-      "term": "WaterMeter",
+      "id": "AX36",
+      "term": "Water meter",
       "term_label": "Water meter",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
-      "subject": "WaterMeter",
+      "subject": "Water meter",
       "subject_label": "Water meter",
-      "object": "≤1 hasFirmwareVersion.⊤",
-      "dl": "WaterMeter ⊑ ≤1 hasFirmwareVersion.⊤",
+      "object": "≤1 has firmware version.⊤",
+      "dl": "Water meter ⊑ ≤1 has firmware version.⊤",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "WaterMeter"
+        "name": "Water meter"
       },
       "rhs_struct": {
         "expr_type": "ObjectMaxCardinality",
-        "property": "hasFirmwareVersion",
+        "property": "has firmware version",
         "cardinality": 1,
         "filler": {
           "expr_type": "Top"
@@ -495,26 +912,25 @@
       },
       "cq_numbers": [
         "CQ12"
-      ],
-      "missing_elements": "CQ12 uses has firmware version Explicit; cardinality ≤1"
+      ]
     },
     {
-      "id": "AX18",
-      "term": "WaterMeter",
+      "id": "AX37",
+      "term": "Water meter",
       "term_label": "Water meter",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
-      "subject": "WaterMeter",
+      "subject": "Water meter",
       "subject_label": "Water meter",
-      "object": "≤1 hasHardwareVersion.⊤",
-      "dl": "WaterMeter ⊑ ≤1 hasHardwareVersion.⊤",
+      "object": "≤1 has hardware version.⊤",
+      "dl": "Water meter ⊑ ≤1 has hardware version.⊤",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "WaterMeter"
+        "name": "Water meter"
       },
       "rhs_struct": {
         "expr_type": "ObjectMaxCardinality",
-        "property": "hasHardwareVersion",
+        "property": "has hardware version",
         "cardinality": 1,
         "filler": {
           "expr_type": "Top"
@@ -522,26 +938,25 @@
       },
       "cq_numbers": [
         "CQ11"
-      ],
-      "missing_elements": "CQ11 uses has hardware version Explicit; cardinality ≤1"
+      ]
     },
     {
-      "id": "AX19",
-      "term": "WaterMeter",
+      "id": "AX38",
+      "term": "Water meter",
       "term_label": "Water meter",
       "term_type": "Class",
       "axiom_type": "SubClassOf",
-      "subject": "WaterMeter",
+      "subject": "Water meter",
       "subject_label": "Water meter",
-      "object": "≤1 hasVersion.⊤",
-      "dl": "WaterMeter ⊑ ≤1 hasVersion.⊤",
+      "object": "≤1 has version.⊤",
+      "dl": "Water meter ⊑ ≤1 has version.⊤",
       "lhs_struct": {
         "expr_type": "Class",
-        "name": "WaterMeter"
+        "name": "Water meter"
       },
       "rhs_struct": {
         "expr_type": "ObjectMaxCardinality",
-        "property": "hasVersion",
+        "property": "has version",
         "cardinality": 1,
         "filler": {
           "expr_type": "Top"
@@ -549,22 +964,72 @@
       },
       "cq_numbers": [
         "CQ10"
-      ],
-      "missing_elements": "CQ10 uses has version Explicit; cardinality ≤1"
+      ]
     },
     {
-      "id": "AX20",
-      "term": "appliesTo",
+      "id": "AX39",
+      "term": "Water property",
+      "term_label": "Water property",
+      "term_type": "Class",
+      "axiom_type": "Declaration",
+      "subject": "Water property",
+      "subject_label": "Water property",
+      "object": "Class",
+      "dl": "Declaration: Water property (Class)",
+      "lhs_struct": {
+        "expr_type": "Class",
+        "name": "Water property"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "Class"
+      },
+      "cq_numbers": [
+        "CQ33",
+        "CQ34"
+      ],
+      "missing_elements": "Water property is named in both CQs."
+    },
+    {
+      "id": "AX40",
+      "term": "applies to",
+      "term_label": "applies to",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "applies to",
+      "subject_label": "applies to",
+      "object": "ObjectProperty",
+      "dl": "Declaration: applies to (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "applies to"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ38",
+        "CQ39",
+        "CQ40",
+        "CQ42",
+        "CQ43"
+      ],
+      "missing_elements": "applies to links the tariff to the water meter."
+    },
+    {
+      "id": "AX41",
+      "term": "applies to",
       "term_label": "applies to",
       "term_type": "ObjectProperty",
       "axiom_type": "Domain",
-      "subject": "appliesTo",
+      "subject": "applies to",
       "subject_label": "applies to",
       "object": "Tariff",
-      "dl": "∃appliesTo.⊤ ⊑ Tariff",
+      "dl": "∃applies to.⊤ ⊑ Tariff",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "appliesTo"
+        "name": "applies to"
       },
       "rhs_struct": {
         "expr_type": "Class",
@@ -577,25 +1042,25 @@
         "CQ42",
         "CQ43"
       ],
-      "missing_elements": "All Tariff CQs use applies to as Explicit Property; domain = Tariff"
+      "missing_elements": "The subject is a Tariff."
     },
     {
-      "id": "AX21",
-      "term": "appliesTo",
+      "id": "AX42",
+      "term": "applies to",
       "term_label": "applies to",
       "term_type": "ObjectProperty",
       "axiom_type": "Range",
-      "subject": "appliesTo",
+      "subject": "applies to",
       "subject_label": "applies to",
-      "object": "WaterMeter",
-      "dl": "⊤ ⊑ ∀appliesTo.WaterMeter",
+      "object": "Water meter",
+      "dl": "⊤ ⊑ ∀applies to.Water meter",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "appliesTo"
+        "name": "applies to"
       },
       "rhs_struct": {
         "expr_type": "Class",
-        "name": "WaterMeter"
+        "name": "Water meter"
       },
       "cq_numbers": [
         "CQ38",
@@ -604,21 +1069,45 @@
         "CQ42",
         "CQ43"
       ],
-      "missing_elements": "Range = Water meter; all Tariff CQs use Water meter Explicit"
+      "missing_elements": "Starts from the given water meter."
     },
     {
-      "id": "AX22",
-      "term": "featureIsMeasuredByDevice",
+      "id": "AX43",
+      "term": "feature is measured by device",
+      "term_label": "feature is measured by device",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "feature is measured by device",
+      "subject_label": "feature is measured by device",
+      "object": "ObjectProperty",
+      "dl": "Declaration: feature is measured by device (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "feature is measured by device"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06"
+      ],
+      "missing_elements": "feature is measured by device links what is measured to the device."
+    },
+    {
+      "id": "AX44",
+      "term": "feature is measured by device",
       "term_label": "feature is measured by device",
       "term_type": "ObjectProperty",
       "axiom_type": "Domain",
-      "subject": "featureIsMeasuredByDevice",
+      "subject": "feature is measured by device",
       "subject_label": "feature is measured by device",
       "object": "FeatureOfInterest",
-      "dl": "∃featureIsMeasuredByDevice.⊤ ⊑ FeatureOfInterest",
+      "dl": "∃feature is measured by device.⊤ ⊑ FeatureOfInterest",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "featureIsMeasuredByDevice"
+        "name": "feature is measured by device"
       },
       "rhs_struct": {
         "expr_type": "Class",
@@ -628,21 +1117,21 @@
         "CQ04",
         "CQ06"
       ],
-      "missing_elements": "CQ04/06 use feature is measured by device as Implicit Property; domain = FoI"
+      "missing_elements": "The subject is a FeatureOfInterest. Under the strict rule this link is not sanctioned because nothing makes Water infrastructure a FeatureOfInterest."
     },
     {
-      "id": "AX23",
-      "term": "featureIsMeasuredByDevice",
+      "id": "AX45",
+      "term": "feature is measured by device",
       "term_label": "feature is measured by device",
       "term_type": "ObjectProperty",
       "axiom_type": "Range",
-      "subject": "featureIsMeasuredByDevice",
+      "subject": "feature is measured by device",
       "subject_label": "feature is measured by device",
       "object": "Device",
-      "dl": "⊤ ⊑ ∀featureIsMeasuredByDevice.Device",
+      "dl": "⊤ ⊑ ∀feature is measured by device.Device",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "featureIsMeasuredByDevice"
+        "name": "feature is measured by device"
       },
       "rhs_struct": {
         "expr_type": "Class",
@@ -652,69 +1141,44 @@
         "CQ04",
         "CQ06"
       ],
-      "missing_elements": "Range = Device; CQ06 uses Device Explicit"
+      "missing_elements": "The value is a Device."
     },
     {
-      "id": "AX24",
-      "term": "hasBillingPeriod",
+      "id": "AX46",
+      "term": "has billing period",
+      "term_label": "has billing period",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has billing period",
+      "subject_label": "has billing period",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has billing period (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has billing period"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ43"
+      ],
+      "missing_elements": "has billing period gives the billing period."
+    },
+    {
+      "id": "AX47",
+      "term": "has billing period",
       "term_label": "has billing period",
       "term_type": "ObjectProperty",
       "axiom_type": "Domain",
-      "subject": "hasBillingPeriod",
+      "subject": "has billing period",
       "subject_label": "has billing period",
       "object": "Tariff",
-      "dl": "∃hasBillingPeriod.⊤ ⊑ Tariff",
+      "dl": "∃has billing period.⊤ ⊑ Tariff",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "hasBillingPeriod"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "Tariff"
-      },
-      "cq_numbers": [
-        "CQ42",
-        "CQ43"
-      ],
-      "missing_elements": "CQ42 uses has billing date Explicit; CQ43 also includes it"
-    },
-    {
-      "id": "AX25",
-      "term": "hasBillingPeriod",
-      "term_label": "has billing period",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Range",
-      "subject": "hasBillingPeriod",
-      "subject_label": "has billing period",
-      "object": "TemporalDuration",
-      "dl": "⊤ ⊑ ∀hasBillingPeriod.TemporalDuration",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "hasBillingPeriod"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "TemporalDuration"
-      },
-      "cq_numbers": [
-        "CQ42",
-        "CQ43"
-      ],
-      "missing_elements": "Range = dateTime"
-    },
-    {
-      "id": "AX26",
-      "term": "hasDuration",
-      "term_label": "has duration",
-      "term_type": "ObjectProperty",
-      "axiom_type": "Domain",
-      "subject": "hasDuration",
-      "subject_label": "has duration",
-      "object": "Tariff",
-      "dl": "∃hasDuration.⊤ ⊑ Tariff",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "hasDuration"
+        "name": "has billing period"
       },
       "rhs_struct": {
         "expr_type": "Class",
@@ -723,397 +1187,866 @@
       "cq_numbers": [
         "CQ43"
       ],
-      "missing_elements": "CQ43 uses has billing period Explicit; domain = Tariff"
+      "missing_elements": "The subject is a Tariff."
     },
     {
-      "id": "AX27",
-      "term": "hasDuration",
-      "term_label": "has duration",
+      "id": "AX48",
+      "term": "has billing period",
+      "term_label": "has billing period",
       "term_type": "ObjectProperty",
       "axiom_type": "Range",
-      "subject": "hasDuration",
-      "subject_label": "has duration",
-      "object": "TemporalDuration",
-      "dl": "⊤ ⊑ ∀hasDuration.TemporalDuration",
+      "subject": "has billing period",
+      "subject_label": "has billing period",
+      "object": "Temporal duration",
+      "dl": "⊤ ⊑ ∀has billing period.Temporal duration",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "hasDuration"
+        "name": "has billing period"
       },
       "rhs_struct": {
         "expr_type": "Class",
-        "name": "TemporalDuration"
+        "name": "Temporal duration"
       },
       "cq_numbers": [
         "CQ43"
       ],
-      "missing_elements": "CQ43 uses Temporal duration Implicit"
+      "missing_elements": "The period is a Temporal duration."
     },
     {
-      "id": "AX28",
-      "term": "hasKPI",
+      "id": "AX49",
+      "term": "has duration",
+      "term_label": "has duration",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has duration",
+      "subject_label": "has duration",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has duration (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has duration"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ39"
+      ],
+      "missing_elements": "has duration gives the duration of the tariff."
+    },
+    {
+      "id": "AX50",
+      "term": "has duration",
+      "term_label": "has duration",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Domain",
+      "subject": "has duration",
+      "subject_label": "has duration",
+      "object": "Tariff",
+      "dl": "∃has duration.⊤ ⊑ Tariff",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has duration"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Tariff"
+      },
+      "cq_numbers": [
+        "CQ39"
+      ],
+      "missing_elements": "The subject is a Tariff."
+    },
+    {
+      "id": "AX51",
+      "term": "has duration",
+      "term_label": "has duration",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Range",
+      "subject": "has duration",
+      "subject_label": "has duration",
+      "object": "Temporal duration",
+      "dl": "⊤ ⊑ ∀has duration.Temporal duration",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has duration"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Temporal duration"
+      },
+      "cq_numbers": [
+        "CQ39"
+      ],
+      "missing_elements": "The duration is a Temporal duration."
+    },
+    {
+      "id": "AX52",
+      "term": "has key performance indicator",
+      "term_label": "has key performance indicator",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has key performance indicator",
+      "subject_label": "has key performance indicator",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has key performance indicator (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has key performance indicator"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ37"
+      ],
+      "missing_elements": "has key performance indicator links Burgos to its indicators."
+    },
+    {
+      "id": "AX53",
+      "term": "has key performance indicator",
       "term_label": "has key performance indicator",
       "term_type": "ObjectProperty",
       "axiom_type": "InverseOf",
-      "subject": "hasKPI",
+      "subject": "has key performance indicator",
       "subject_label": "has key performance indicator",
       "object": "isKPIOf",
-      "dl": "hasKPI ≡ isKPIOf⁻",
+      "dl": "has key performance indicator ≡ isKPIOf⁻",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "hasKPI"
+        "name": "has key performance indicator"
       },
       "rhs_struct": {
         "expr_type": "InverseObjectProperty",
         "name": "isKPIOf"
       },
       "cq_numbers": [
-        "CQ39"
+        "CQ37"
       ],
-      "missing_elements": "CQ39 uses has duration Explicit; domain = Tariff"
+      "missing_elements": "isKPIOf is annotated in CQ37. This axiom gives it the meaning of has key performance indicator read backwards."
     },
     {
-      "id": "AX29",
-      "term": "hasPeriod",
+      "id": "AX54",
+      "term": "has measurement",
+      "term_label": "has measurement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has measurement",
+      "subject_label": "has measurement",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has measurement (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has measurement"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ05"
+      ],
+      "missing_elements": "has measurement is explicit in CQ04 and CQ05."
+    },
+    {
+      "id": "AX55",
+      "term": "has period",
+      "term_label": "has period",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has period",
+      "subject_label": "has period",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has period (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has period"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ40"
+      ],
+      "missing_elements": "has period gives the tariff period."
+    },
+    {
+      "id": "AX56",
+      "term": "has period",
       "term_label": "has period",
       "term_type": "ObjectProperty",
       "axiom_type": "Domain",
-      "subject": "hasPeriod",
+      "subject": "has period",
       "subject_label": "has period",
       "object": "Tariff",
-      "dl": "∃hasPeriod.⊤ ⊑ Tariff",
+      "dl": "∃has period.⊤ ⊑ Tariff",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "hasPeriod"
+        "name": "has period"
       },
       "rhs_struct": {
         "expr_type": "Class",
         "name": "Tariff"
       },
       "cq_numbers": [
-        "CQ39"
+        "CQ40"
       ],
-      "missing_elements": "CQ39 uses Temporal duration Implicit"
+      "missing_elements": "The subject is a Tariff."
     },
     {
-      "id": "AX30",
-      "term": "hasPeriod",
+      "id": "AX57",
+      "term": "has period",
       "term_label": "has period",
       "term_type": "ObjectProperty",
       "axiom_type": "Range",
-      "subject": "hasPeriod",
+      "subject": "has period",
       "subject_label": "has period",
-      "object": "TemporalDuration",
-      "dl": "⊤ ⊑ ∀hasPeriod.TemporalDuration",
+      "object": "Temporal duration",
+      "dl": "⊤ ⊑ ∀has period.Temporal duration",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "hasPeriod"
+        "name": "has period"
       },
       "rhs_struct": {
         "expr_type": "Class",
-        "name": "TemporalDuration"
+        "name": "Temporal duration"
       },
       "cq_numbers": [
-        "CQ08"
+        "CQ40"
       ],
-      "missing_elements": "CQ08 uses has fabrication number Explicit"
+      "missing_elements": "The period is a Temporal duration."
     },
     {
-      "id": "AX31",
-      "term": "hasPhenomenonTime",
+      "id": "AX58",
+      "term": "has phenomenon time",
+      "term_label": "has phenomenon time",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has phenomenon time",
+      "subject_label": "has phenomenon time",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has phenomenon time (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has phenomenon time"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ25"
+      ],
+      "missing_elements": "has phenomenon time gives the temporal setting of a measurement."
+    },
+    {
+      "id": "AX59",
+      "term": "has phenomenon time",
       "term_label": "has phenomenon time",
       "term_type": "ObjectProperty",
       "axiom_type": "Domain",
-      "subject": "hasPhenomenonTime",
+      "subject": "has phenomenon time",
       "subject_label": "has phenomenon time",
       "object": "Measurement",
-      "dl": "∃hasPhenomenonTime.⊤ ⊑ Measurement",
+      "dl": "∃has phenomenon time.⊤ ⊑ Measurement",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "hasPhenomenonTime"
+        "name": "has phenomenon time"
       },
       "rhs_struct": {
         "expr_type": "Class",
         "name": "Measurement"
       },
       "cq_numbers": [
-        "CQ12"
+        "CQ25"
       ],
-      "missing_elements": "CQ12 uses has firmware version Explicit"
+      "missing_elements": "The subject is a Measurement."
     },
     {
-      "id": "AX32",
-      "term": "hasPhenomenonTime",
+      "id": "AX60",
+      "term": "has phenomenon time",
       "term_label": "has phenomenon time",
       "term_type": "ObjectProperty",
       "axiom_type": "Range",
-      "subject": "hasPhenomenonTime",
+      "subject": "has phenomenon time",
       "subject_label": "has phenomenon time",
-      "object": "TemporalEntity",
-      "dl": "⊤ ⊑ ∀hasPhenomenonTime.TemporalEntity",
+      "object": "Temporal entity",
+      "dl": "⊤ ⊑ ∀has phenomenon time.Temporal entity",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "hasPhenomenonTime"
+        "name": "has phenomenon time"
       },
       "rhs_struct": {
         "expr_type": "Class",
-        "name": "TemporalEntity"
+        "name": "Temporal entity"
       },
       "cq_numbers": [
-        "CQ11"
+        "CQ25"
       ],
-      "missing_elements": "CQ11 uses has hardware version Explicit"
+      "missing_elements": "The value is a Temporal entity."
     },
     {
-      "id": "AX33",
+      "id": "AX61",
+      "term": "has property",
+      "term_label": "has property",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "has property",
+      "subject_label": "has property",
+      "object": "ObjectProperty",
+      "dl": "Declaration: has property (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "has property"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ33",
+        "CQ34"
+      ],
+      "missing_elements": "has property links water to its properties."
+    },
+    {
+      "id": "AX62",
+      "term": "hasGeometry",
+      "term_label": "hasGeometry",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "hasGeometry",
+      "subject_label": "hasGeometry",
+      "object": "ObjectProperty",
+      "dl": "Declaration: hasGeometry (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "hasGeometry"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ20"
+      ],
+      "missing_elements": "hasGeometry gives the location of the water meter."
+    },
+    {
+      "id": "AX63",
+      "term": "is measured by device",
+      "term_label": "is measured by device",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "is measured by device",
+      "subject_label": "is measured by device",
+      "object": "ObjectProperty",
+      "dl": "Declaration: is measured by device (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "is measured by device"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06"
+      ]
+    },
+    {
+      "id": "AX64",
+      "term": "isKPIOf",
+      "term_label": "isKPIOf",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "isKPIOf",
+      "subject_label": "isKPIOf",
+      "object": "ObjectProperty",
+      "dl": "Declaration: isKPIOf (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "isKPIOf"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ37"
+      ],
+      "missing_elements": "isKPIOf is annotated in CQ37 as the inverse reading."
+    },
+    {
+      "id": "AX65",
       "term": "isKPIOf",
       "term_label": "isKPIOf",
       "term_type": "ObjectProperty",
       "axiom_type": "InverseOf",
       "subject": "isKPIOf",
       "subject_label": "isKPIOf",
-      "object": "hasKPI",
-      "dl": "isKPIOf ≡ hasKPI⁻",
+      "object": "has key performance indicator",
+      "dl": "isKPIOf ≡ has key performance indicator⁻",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
         "name": "isKPIOf"
       },
       "rhs_struct": {
         "expr_type": "InverseObjectProperty",
-        "name": "hasKPI"
+        "name": "has key performance indicator"
       },
       "cq_numbers": [
         "CQ37"
       ],
-      "missing_elements": "CQ37 uses has key performance indicator Explicit and is key performance indicator of Implicit"
+      "missing_elements": "Duplicate of the inverse axiom above."
     },
     {
-      "id": "AX34",
-      "term": "makesMeasurement",
+      "id": "AX66",
+      "term": "makes measurement",
+      "term_label": "makes measurement",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "makes measurement",
+      "subject_label": "makes measurement",
+      "object": "ObjectProperty",
+      "dl": "Declaration: makes measurement (ObjectProperty)",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "makes measurement"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
+      },
+      "cq_numbers": [
+        "CQ06",
+        "CQ25"
+      ],
+      "missing_elements": "makes measurement links the water meter to its measurements."
+    },
+    {
+      "id": "AX67",
+      "term": "makes measurement",
       "term_label": "makes measurement",
       "term_type": "ObjectProperty",
       "axiom_type": "InverseOf",
-      "subject": "makesMeasurement",
+      "subject": "makes measurement",
       "subject_label": "makes measurement",
-      "object": "measurementMadeBy",
-      "dl": "makesMeasurement ≡ measurementMadeBy⁻",
+      "object": "measurement made by",
+      "dl": "makes measurement ≡ measurement made by⁻",
       "lhs_struct": {
         "expr_type": "ObjectProperty",
-        "name": "makesMeasurement"
+        "name": "makes measurement"
       },
       "rhs_struct": {
         "expr_type": "InverseObjectProperty",
-        "name": "measurementMadeBy"
-      },
-      "cq_numbers": [
-        "CQ40"
-      ],
-      "missing_elements": "CQ40 uses has period Explicit; domain = Tariff"
-    },
-    {
-      "id": "AX35",
-      "term": "measurementMadeBy",
-      "term_label": "measurement made by",
-      "term_type": "ObjectProperty",
-      "axiom_type": "InverseOf",
-      "subject": "measurementMadeBy",
-      "subject_label": "measurement made by",
-      "object": "makesMeasurement",
-      "dl": "measurementMadeBy ≡ makesMeasurement⁻",
-      "lhs_struct": {
-        "expr_type": "ObjectProperty",
-        "name": "measurementMadeBy"
-      },
-      "rhs_struct": {
-        "expr_type": "InverseObjectProperty",
-        "name": "makesMeasurement"
-      },
-      "cq_numbers": [
-        "CQ40"
-      ],
-      "missing_elements": "CQ40 uses Temporal duration Implicit"
-    },
-    {
-      "id": "AX36",
-      "term": "hasBillingDate",
-      "term_label": "has billing date",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Domain",
-      "subject": "hasBillingDate",
-      "subject_label": "has billing date",
-      "object": "Tariff",
-      "dl": "∃hasBillingDate.⊤ ⊑ Tariff",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasBillingDate"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "Tariff"
-      },
-      "cq_numbers": [
-        "CQ25"
-      ],
-      "missing_elements": "CQ25 uses has phenomenon time and Measurement Explicit"
-    },
-    {
-      "id": "AX37",
-      "term": "hasBillingDate",
-      "term_label": "has billing date",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "hasBillingDate",
-      "subject_label": "has billing date",
-      "object": "datetime'>",
-      "dl": "hasBillingDate maps-to datetime'>",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasBillingDate"
-      },
-      "rhs_struct": {
-        "expr_type": "Datatype",
-        "name": "datetime'>"
-      },
-      "cq_numbers": [
-        "CQ25"
-      ],
-      "missing_elements": "CQ25 uses Temporal entity Implicit"
-    },
-    {
-      "id": "AX38",
-      "term": "hasFabricationNumber",
-      "term_label": "has fabrication number",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "hasFabricationNumber",
-      "subject_label": "has fabrication number",
-      "object": "⊤",
-      "dl": "hasFabricationNumber maps-to ⊤",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasFabricationNumber"
-      },
-      "rhs_struct": {
-        "expr_type": "Top"
-      },
-      "cq_numbers": [
-        "CQ38"
-      ],
-      "missing_elements": "CQ38 uses has start timestamp Explicit; domain = Tariff"
-    },
-    {
-      "id": "AX39",
-      "term": "hasFirmwareVersion",
-      "term_label": "has firmware version",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "hasFirmwareVersion",
-      "subject_label": "has firmware version",
-      "object": "⊤",
-      "dl": "hasFirmwareVersion maps-to ⊤",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasFirmwareVersion"
-      },
-      "rhs_struct": {
-        "expr_type": "Top"
-      },
-      "cq_numbers": [
-        "CQ38"
-      ],
-      "missing_elements": "Range = dateTime"
-    },
-    {
-      "id": "AX40",
-      "term": "hasHardwareVersion",
-      "term_label": "has hardware version",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "hasHardwareVersion",
-      "subject_label": "has hardware version",
-      "object": "⊤",
-      "dl": "hasHardwareVersion maps-to ⊤",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasHardwareVersion"
-      },
-      "rhs_struct": {
-        "expr_type": "Top"
-      },
-      "cq_numbers": [
-        "CQ10"
-      ],
-      "missing_elements": "CQ10 uses has version Explicit"
-    },
-    {
-      "id": "AX41",
-      "term": "hasStartTimestamp",
-      "term_label": "has start timestamp",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Domain",
-      "subject": "hasStartTimestamp",
-      "subject_label": "has start timestamp",
-      "object": "Tariff",
-      "dl": "∃hasStartTimestamp.⊤ ⊑ Tariff",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasStartTimestamp"
-      },
-      "rhs_struct": {
-        "expr_type": "Class",
-        "name": "Tariff"
-      },
-      "cq_numbers": [
-        "CQ37"
-      ],
-      "missing_elements": "CQ37 uses both as Explicit/Implicit; inverse"
-    },
-    {
-      "id": "AX42",
-      "term": "hasStartTimestamp",
-      "term_label": "has start timestamp",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "hasStartTimestamp",
-      "subject_label": "has start timestamp",
-      "object": "datetime'>",
-      "dl": "hasStartTimestamp maps-to datetime'>",
-      "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasStartTimestamp"
-      },
-      "rhs_struct": {
-        "expr_type": "Datatype",
-        "name": "datetime'>"
+        "name": "measurement made by"
       },
       "cq_numbers": [
         "CQ04",
         "CQ06",
         "CQ25"
       ],
-      "missing_elements": "CQ06/25 use makes measurement Explicit; CQ04/06 use measurement made by Implicit"
+      "missing_elements": "measurement made by is annotated in CQ04 and CQ06. This axiom ties it to makes measurement."
     },
     {
-      "id": "AX43",
-      "term": "hasVersion",
-      "term_label": "has version",
-      "term_type": "DatatypeProperty",
-      "axiom_type": "Range",
-      "subject": "hasVersion",
-      "subject_label": "has version",
-      "object": "⊤",
-      "dl": "hasVersion maps-to ⊤",
+      "id": "AX68",
+      "term": "measurement made by",
+      "term_label": "measurement made by",
+      "term_type": "ObjectProperty",
+      "axiom_type": "Declaration",
+      "subject": "measurement made by",
+      "subject_label": "measurement made by",
+      "object": "ObjectProperty",
+      "dl": "Declaration: measurement made by (ObjectProperty)",
       "lhs_struct": {
-        "expr_type": "DatatypeProperty",
-        "name": "hasVersion"
+        "expr_type": "ObjectProperty",
+        "name": "measurement made by"
       },
       "rhs_struct": {
-        "expr_type": "Top"
+        "expr_type": "Declaration",
+        "term_type": "ObjectProperty"
       },
       "cq_numbers": [
         "CQ04",
         "CQ06"
       ],
-      "missing_elements": "CQ04/06 use measurement made by as Implicit Property; inverse of makes measurement"
+      "missing_elements": "measurement made by links a measurement to the sensor that made it."
+    },
+    {
+      "id": "AX69",
+      "term": "measurement made by",
+      "term_label": "measurement made by",
+      "term_type": "ObjectProperty",
+      "axiom_type": "InverseOf",
+      "subject": "measurement made by",
+      "subject_label": "measurement made by",
+      "object": "makes measurement",
+      "dl": "measurement made by ≡ makes measurement⁻",
+      "lhs_struct": {
+        "expr_type": "ObjectProperty",
+        "name": "measurement made by"
+      },
+      "rhs_struct": {
+        "expr_type": "InverseObjectProperty",
+        "name": "makes measurement"
+      },
+      "cq_numbers": [
+        "CQ04",
+        "CQ06",
+        "CQ25"
+      ],
+      "missing_elements": "Duplicate of the inverse axiom above."
+    },
+    {
+      "id": "AX70",
+      "term": "has billing date",
+      "term_label": "has billing date",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has billing date",
+      "subject_label": "has billing date",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has billing date (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has billing date"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ42",
+        "CQ43"
+      ],
+      "missing_elements": "has billing date gives the billing date."
+    },
+    {
+      "id": "AX71",
+      "term": "has billing date",
+      "term_label": "has billing date",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Domain",
+      "subject": "has billing date",
+      "subject_label": "has billing date",
+      "object": "Tariff",
+      "dl": "∃has billing date.⊤ ⊑ Tariff",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has billing date"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Tariff"
+      },
+      "cq_numbers": [
+        "CQ42",
+        "CQ43"
+      ],
+      "missing_elements": "The subject is a Tariff."
+    },
+    {
+      "id": "AX72",
+      "term": "has billing date",
+      "term_label": "has billing date",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Range",
+      "subject": "has billing date",
+      "subject_label": "has billing date",
+      "object": "xsd:dateTime",
+      "dl": "has billing date maps-to xsd:dateTime",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has billing date"
+      },
+      "rhs_struct": {
+        "expr_type": "Datatype",
+        "name": "xsd:dateTime"
+      },
+      "cq_numbers": [
+        "CQ42",
+        "CQ43"
+      ]
+    },
+    {
+      "id": "AX73",
+      "term": "has fabrication number",
+      "term_label": "has fabrication number",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has fabrication number",
+      "subject_label": "has fabrication number",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has fabrication number (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has fabrication number"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ08"
+      ],
+      "missing_elements": "has fabrication number gives the fabrication number."
+    },
+    {
+      "id": "AX75",
+      "term": "has firmware version",
+      "term_label": "has firmware version",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has firmware version",
+      "subject_label": "has firmware version",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has firmware version (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has firmware version"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ12"
+      ],
+      "missing_elements": "has firmware version gives the firmware version."
+    },
+    {
+      "id": "AX77",
+      "term": "has hardware version",
+      "term_label": "has hardware version",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has hardware version",
+      "subject_label": "has hardware version",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has hardware version (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has hardware version"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ11"
+      ],
+      "missing_elements": "has hardware version gives the hardware version."
+    },
+    {
+      "id": "AX79",
+      "term": "has manufacturer",
+      "term_label": "has manufacturer",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has manufacturer",
+      "subject_label": "has manufacturer",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has manufacturer (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has manufacturer"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ09"
+      ],
+      "missing_elements": "has manufacturer gives the manufacturer."
+    },
+    {
+      "id": "AX80",
+      "term": "has model",
+      "term_label": "has model",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has model",
+      "subject_label": "has model",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has model (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has model"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ09"
+      ],
+      "missing_elements": "has model gives the model."
+    },
+    {
+      "id": "AX81",
+      "term": "has start timestamp",
+      "term_label": "has start timestamp",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has start timestamp",
+      "subject_label": "has start timestamp",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has start timestamp (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has start timestamp"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ38"
+      ],
+      "missing_elements": "has start timestamp gives the start date and time."
+    },
+    {
+      "id": "AX82",
+      "term": "has start timestamp",
+      "term_label": "has start timestamp",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Domain",
+      "subject": "has start timestamp",
+      "subject_label": "has start timestamp",
+      "object": "Tariff",
+      "dl": "∃has start timestamp.⊤ ⊑ Tariff",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has start timestamp"
+      },
+      "rhs_struct": {
+        "expr_type": "Class",
+        "name": "Tariff"
+      },
+      "cq_numbers": [
+        "CQ38"
+      ],
+      "missing_elements": "The subject is a Tariff."
+    },
+    {
+      "id": "AX83",
+      "term": "has start timestamp",
+      "term_label": "has start timestamp",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Range",
+      "subject": "has start timestamp",
+      "subject_label": "has start timestamp",
+      "object": "xsd:dateTime",
+      "dl": "has start timestamp maps-to xsd:dateTime",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has start timestamp"
+      },
+      "rhs_struct": {
+        "expr_type": "Datatype",
+        "name": "xsd:dateTime"
+      },
+      "cq_numbers": [
+        "CQ38"
+      ]
+    },
+    {
+      "id": "AX84",
+      "term": "has timestamp",
+      "term_label": "has timestamp",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has timestamp",
+      "subject_label": "has timestamp",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has timestamp (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has timestamp"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ38"
+      ]
+    },
+    {
+      "id": "AX85",
+      "term": "has version",
+      "term_label": "has version",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "has version",
+      "subject_label": "has version",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: has version (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "has version"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ10"
+      ],
+      "missing_elements": "has version gives the version."
+    },
+    {
+      "id": "AX87",
+      "term": "operates at radio frequency",
+      "term_label": "operates at radio frequency",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "operates at radio frequency",
+      "subject_label": "operates at radio frequency",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: operates at radio frequency (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "operates at radio frequency"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ19"
+      ],
+      "missing_elements": "operates at radio frequency gives the radio frequency."
+    },
+    {
+      "id": "AX88",
+      "term": "requires power",
+      "term_label": "requires power",
+      "term_type": "DatatypeProperty",
+      "axiom_type": "Declaration",
+      "subject": "requires power",
+      "subject_label": "requires power",
+      "object": "DatatypeProperty",
+      "dl": "Declaration: requires power (DatatypeProperty)",
+      "lhs_struct": {
+        "expr_type": "DatatypeProperty",
+        "name": "requires power"
+      },
+      "rhs_struct": {
+        "expr_type": "Declaration",
+        "term_type": "DatatypeProperty"
+      },
+      "cq_numbers": [
+        "CQ18"
+      ],
+      "missing_elements": "requires power gives the power."
     }
   ]
 }
